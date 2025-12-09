@@ -1,0 +1,232 @@
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { Layout } from '@/components/layout/Layout';
+import { fetchCompanyBySlug, fetchNews, fetchAnalytics, fetchCompanies, Company, NewsItem, AnalyticsArticle } from '@/lib/api';
+import { NewsCard } from '@/components/NewsCard';
+import { AnalyticsCard } from '@/components/AnalyticsCard';
+import { CompanyCard } from '@/components/CompanyCard';
+import { SkeletonCard } from '@/components/ui/skeleton-card';
+import { Building2, MapPin, Users, Calendar, ArrowLeft, DollarSign } from 'lucide-react';
+
+export default function CompanyDetailPage() {
+  const { slug } = useParams();
+  const [company, setCompany] = useState<Company | null>(null);
+  const [news, setNews] = useState<NewsItem[]>([]);
+  const [analytics, setAnalytics] = useState<AnalyticsArticle[]>([]);
+  const [similarCompanies, setSimilarCompanies] = useState<Company[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadData() {
+      if (slug) {
+        const [companyData, newsData, analyticsData, companiesData] = await Promise.all([
+          fetchCompanyBySlug(slug),
+          fetchNews(),
+          fetchAnalytics(),
+          fetchCompanies(),
+        ]);
+        setCompany(companyData);
+        setNews(newsData.slice(0, 3));
+        setAnalytics(analyticsData.slice(0, 2));
+        // Filter similar companies (same sector, exclude current)
+        setSimilarCompanies(
+          companiesData
+            .filter(c => c.slug !== slug && c.sector === companyData?.sector)
+            .slice(0, 3)
+        );
+        setLoading(false);
+      }
+    }
+
+    loadData();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="container-wide section-spacing">
+          <div className="animate-pulse space-y-8">
+            <div className="h-48 bg-muted rounded-xl" />
+            <div className="grid md:grid-cols-3 gap-6">
+              <SkeletonCard lines={4} />
+              <SkeletonCard lines={4} />
+              <SkeletonCard lines={4} />
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (!company) {
+    return (
+      <Layout>
+        <div className="container-narrow section-spacing text-center">
+          <h1 className="heading-lg mb-4">Company not found</h1>
+          <Link to="/companies" className="text-primary hover:underline">
+            Return to companies
+          </Link>
+        </div>
+      </Layout>
+    );
+  }
+
+  const stats = [
+    { label: 'Founded', value: company.founded, icon: Calendar },
+    { label: 'Headquarters', value: company.headquarters, icon: MapPin },
+    { label: 'Employees', value: company.employees, icon: Users },
+    { label: 'Market Cap', value: company.marketCap, icon: DollarSign },
+  ];
+
+  return (
+    <Layout>
+      {/* Hero Banner - Pantera Style */}
+      <section className="bg-primary text-primary-foreground">
+        <div className="container-wide py-16 md:py-24">
+          <Link
+            to="/companies"
+            className="inline-flex items-center gap-2 text-sm opacity-70 hover:opacity-100 mb-8 transition-opacity"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            All Companies
+          </Link>
+
+          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
+              {company.logo ? (
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  className="w-12 h-12 md:w-14 md:h-14 object-contain"
+                />
+              ) : (
+                <Building2 className="w-10 h-10 opacity-50" />
+              )}
+            </div>
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="badge-primary bg-primary-foreground/10 text-primary-foreground">
+                  {company.sector}
+                </span>
+              </div>
+              <h1 className="heading-lg">{company.name}</h1>
+              <p className="body-md text-primary-foreground/70 mt-2 max-w-2xl">
+                {company.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Grid */}
+      <section className="border-b border-border">
+        <div className="container-wide py-8 md:py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {stats.map((stat) => (
+              <div key={stat.label} className="p-4 md:p-6 rounded-xl border border-border/60 bg-card">
+                <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                  <stat.icon className="h-4 w-4" />
+                  <span className="text-xs md:text-sm">{stat.label}</span>
+                </div>
+                <p className="text-lg md:text-2xl font-heading font-medium">{stat.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="section-spacing-sm">
+        <div className="container-wide">
+          <h2 className="heading-sm mb-6">Company Overview</h2>
+          <div className="p-6 md:p-8 rounded-xl border border-border/60 bg-card">
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              {company.overview}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Metrics Table */}
+      <section className="section-spacing-sm bg-secondary/30">
+        <div className="container-wide">
+          <h2 className="heading-sm mb-6">Key Metrics</h2>
+          <div className="rounded-xl border border-border/60 bg-card overflow-hidden">
+            <table className="w-full">
+              <tbody className="divide-y divide-border/60">
+                <tr className="hover:bg-secondary/50 transition-colors">
+                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Market Capitalization</td>
+                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.marketCap}</td>
+                </tr>
+                <tr className="hover:bg-secondary/50 transition-colors">
+                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Sector</td>
+                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.sector}</td>
+                </tr>
+                <tr className="hover:bg-secondary/50 transition-colors">
+                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Number of Employees</td>
+                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.employees}</td>
+                </tr>
+                <tr className="hover:bg-secondary/50 transition-colors">
+                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Year Founded</td>
+                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.founded}</td>
+                </tr>
+                <tr className="hover:bg-secondary/50 transition-colors">
+                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Headquarters</td>
+                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.headquarters}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Company News */}
+      <section className="section-spacing-sm">
+        <div className="container-wide">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="heading-sm">Company News</h2>
+            <Link to="/news" className="text-sm text-primary hover:underline">
+              All news →
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+            {news.map((item, index) => (
+              <NewsCard key={item.id} news={item} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Company Analytics */}
+      <section className="section-spacing-sm bg-secondary/30">
+        <div className="container-wide">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="heading-sm">Analytics</h2>
+            <Link to="/analytics" className="text-sm text-primary hover:underline">
+              All analytics →
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+            {analytics.map((article, index) => (
+              <AnalyticsCard key={article.slug} article={article} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Similar Companies */}
+      {similarCompanies.length > 0 && (
+        <section className="section-spacing-sm">
+          <div className="container-wide">
+            <h2 className="heading-sm mb-6">Similar Companies</h2>
+            <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+              {similarCompanies.map((comp, index) => (
+                <CompanyCard key={comp.slug} company={comp} index={index} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </Layout>
+  );
+}

@@ -1,0 +1,105 @@
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { Layout } from '@/components/layout/Layout';
+import { fetchAnalyticsBySlug, AnalyticsArticle } from '@/lib/api';
+import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
+
+const typeLabels: Record<string, string> = {
+  expert: 'Expert Opinion',
+  markets: 'Markets',
+  longterm: 'Long-term Analysis',
+  technical: 'Technical Analysis',
+};
+
+export default function AnalyticsDetailPage() {
+  const { slug } = useParams();
+  const [article, setArticle] = useState<AnalyticsArticle | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadArticle() {
+      if (slug) {
+        const data = await fetchAnalyticsBySlug(slug);
+        setArticle(data);
+        setLoading(false);
+      }
+    }
+
+    loadArticle();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="container-narrow section-spacing">
+          <div className="animate-pulse space-y-4">
+            <div className="h-8 w-1/4 bg-muted rounded" />
+            <div className="h-12 w-3/4 bg-muted rounded" />
+            <div className="h-4 w-1/2 bg-muted rounded" />
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (!article) {
+    return (
+      <Layout>
+        <div className="container-narrow section-spacing text-center">
+          <h1 className="heading-lg mb-4">Article not found</h1>
+          <Link to="/analytics" className="text-primary hover:underline">
+            Return to analytics
+          </Link>
+        </div>
+      </Layout>
+    );
+  }
+
+  return (
+    <Layout>
+      <article className="section-spacing">
+        <div className="container-narrow">
+          <Link
+            to="/analytics"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to analytics
+          </Link>
+
+          <div className="flex items-center gap-3 mb-6">
+            <span className="px-3 py-1 text-sm font-medium rounded bg-primary/10 text-primary">
+              {typeLabels[article.type]}
+            </span>
+            <span className="flex items-center gap-1 text-sm text-muted-foreground">
+              <Clock className="h-4 w-4" />
+              {article.readTime}
+            </span>
+          </div>
+
+          <h1 className="heading-lg mb-6">{article.title}</h1>
+
+          <div className="flex items-center gap-6 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
+            <span className="flex items-center gap-2">
+              <User className="h-4 w-4" />
+              {article.author}
+            </span>
+            <span className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" />
+              {new Date(article.date).toLocaleDateString('en-US', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+              })}
+            </span>
+          </div>
+
+          <div className="prose prose-lg max-w-none">
+            <p className="text-lg text-muted-foreground mb-6">{article.excerpt}</p>
+            <p className="text-foreground leading-relaxed">{article.content}</p>
+          </div>
+        </div>
+      </article>
+    </Layout>
+  );
+}
