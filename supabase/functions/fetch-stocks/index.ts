@@ -43,7 +43,7 @@ const SYMBOLS: Record<string, string[]> = {
   stocks: ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META', 'JPM', 'V', 'WMT'],
   indices: ['^GSPC', '^DJI', '^IXIC', '^RUT', '^FTSE'],
   commodities: ['GC=F', 'SI=F', 'CL=F', 'NG=F', 'HG=F'],
-  currencies: ['EURUSD=X', 'GBPUSD=X', 'JPY=X', 'CHF=X', 'AUDUSD=X'],
+  currencies: ['EURUSD=X', 'GBPUSD=X', 'USDJPY=X', 'USDCHF=X', 'AUDUSD=X'],
 };
 
 async function fetchYahooQuotes(type: string) {
@@ -97,7 +97,16 @@ function formatSymbol(symbol: string, type: string): string {
     return symbol.replace('=F', '');
   }
   if (type === 'currencies') {
-    return symbol.replace('=X', '').replace('USD', '/USD');
+    // Format currency pairs: EURUSD=X -> EUR/USD, USDJPY=X -> USD/JPY
+    const cleaned = symbol.replace('=X', '');
+    if (cleaned.startsWith('USD') && cleaned.length === 6) {
+      // USDXXX -> USD/XXX
+      return `${cleaned.substring(0, 3)}/${cleaned.substring(3)}`;
+    } else if (cleaned.endsWith('USD') && cleaned.length === 6) {
+      // XXXUSD -> XXX/USD
+      return `${cleaned.substring(0, 3)}/${cleaned.substring(3)}`;
+    }
+    return cleaned;
   }
   return symbol;
 }

@@ -34,27 +34,35 @@ export function useMarketData({ type, refreshInterval = 60000 }: UseMarketDataOp
           setLastUpdated(new Date(responseData.timestamp));
         }
       } else {
-        const { data: responseData, error: fetchError } = await supabase.functions.invoke('fetch-stocks', {
-          body: null,
-          headers: {},
-        });
+        // For non-crypto types (indices, stocks, commodities, currencies), use fetch-stocks with type parameter
+        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+        const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
         
-        // For non-crypto, we need to pass query params via a different approach
+        if (!supabaseUrl || !supabaseKey) {
+          throw new Error('Supabase configuration missing');
+        }
+        
         const response = await fetch(
-          `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/fetch-stocks?type=${type}`,
+          `${supabaseUrl}/functions/v1/fetch-stocks?type=${type}`,
           {
             headers: {
-              'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+              'Authorization': `Bearer ${supabaseKey}`,
+              'Content-Type': 'application/json',
             },
           }
         );
         
-        if (!response.ok) throw new Error('Failed to fetch data');
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Failed to fetch ${type} data: ${response.status} ${errorText}`);
+        }
         
         const result = await response.json();
         if (result?.data) {
           setData(result.data);
           setLastUpdated(new Date(result.timestamp));
+        } else if (result?.error) {
+          throw new Error(result.error);
         }
       }
     } catch (err) {
