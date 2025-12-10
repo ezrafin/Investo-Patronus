@@ -112,7 +112,7 @@ export function Header() {
     if (href === '/') return location.pathname === '/';
     return location.pathname.startsWith(href);
   };
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border/50' : 'bg-transparent'}`}>
+  return <header role="banner" className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border/50' : 'bg-transparent'}`}>
       <nav className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -123,8 +123,8 @@ export function Header() {
             <span className="text-lg font-semibold tracking-tight">INVESTOPATRONUS</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+                 {/* Desktop Navigation */}
+                 <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
             {navigation.map(item => item.children ? <div key={item.name} className="relative" onMouseEnter={() => setActiveDropdown(item.name)} onMouseLeave={() => setActiveDropdown(null)}>
                   <button className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${isActive(item.href) ? 'text-foreground bg-secondary/50' : 'text-muted-foreground hover:text-foreground hover:bg-secondary/30'}`}>
                     {item.name}

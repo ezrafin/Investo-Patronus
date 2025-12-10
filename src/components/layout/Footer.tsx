@@ -91,7 +91,7 @@ video: [{
   }]
 };
 export function Footer() {
-  return <footer className="border-t border-border bg-card/30">
+  return <footer role="contentinfo" className="border-t border-border bg-card/30">
       <div className="container-wide py-16 md:py-20">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 lg:gap-6">
           {/* Brand */}

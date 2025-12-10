@@ -1,6 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { videos } from '@/data/videoLibrary';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+import { generateOrganizationSchema } from '@/utils/structuredData';
 import { 
   Play, Clock, Calendar, ArrowLeft, CheckCircle, 
   HelpCircle, BookOpen, ExternalLink, Lightbulb 
@@ -39,12 +43,19 @@ export default function VideoDetailPage() {
 
   return (
     <Layout>
+      <SEOHead
+        title={video.title}
+        description={video.description}
+        type="video"
+      />
+      <StructuredData data={[generateOrganizationSchema()]} />
       <div className="pt-24 pb-16">
         <section className="container-wide section-spacing-sm">
+          <Breadcrumbs pageTitle={video.title} />
           {/* Back Link */}
           <Link 
             to="/video" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 mt-4"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Video Library

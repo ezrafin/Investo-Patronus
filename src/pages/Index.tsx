@@ -64,6 +64,8 @@ export default function Index() {
 
   return (
     <Layout>
+      <SEOHead />
+      <StructuredData data={[generateOrganizationSchema(), generateWebSiteSchema()]} />
       {/* Hero Section */}
       <section className="min-h-[80vh] flex items-center relative overflow-hidden">
         <div className="absolute inset-0 hero-gradient" />

@@ -7,6 +7,10 @@ import { ReplyEditor } from '@/components/forum/ReplyEditor';
 import { ReactionButton } from '@/components/forum/ReactionButton';
 import { ReportButton } from '@/components/forum/ReportButton';
 import { UserAvatar } from '@/components/user/UserAvatar';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+import { generateOrganizationSchema } from '@/utils/structuredData';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -208,12 +212,24 @@ export default function ForumTopicPage() {
 
   return (
     <Layout>
+      {topic && (
+        <>
+          <SEOHead
+            title={topic.title}
+            description={topic.content?.substring(0, 160) || `Discussion about ${topic.title}`}
+            type="article"
+            noindex={false}
+          />
+          <StructuredData data={[generateOrganizationSchema()]} />
+        </>
+      )}
       {/* Header */}
       <section className="border-b border-border">
         <div className="container-wide py-12 md:py-16">
+          {topic && <Breadcrumbs pageTitle={topic.title} />}
           <Link
             to="/forum"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 mt-4 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to forum

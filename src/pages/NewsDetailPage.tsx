@@ -5,6 +5,10 @@ import { fetchNewsById, NewsItem } from '@/lib/api';
 import { BookmarkButton } from '@/components/content/BookmarkButton';
 import { RelatedContent } from '@/components/content/RelatedContent';
 import { useReadingHistory } from '@/hooks/useReadingHistory';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+import { generateArticleSchema, generateOrganizationSchema } from '@/utils/structuredData';
 import { Calendar, ExternalLink, ArrowLeft, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -72,13 +76,40 @@ export default function NewsDetailPage() {
     );
   }
 
+  if (!news) return null;
+
+  const articleUrl = `https://investopatronus.com/news/${id}`;
+  const articleImage = news.image || 'https://investopatronus.com/og-image.png';
+
   return (
     <Layout>
+      <SEOHead
+        title={news.title}
+        description={news.excerpt}
+        image={articleImage}
+        type="article"
+        author={news.author}
+        publishedTime={news.date}
+      />
+      <StructuredData
+        data={[
+          generateOrganizationSchema(),
+          generateArticleSchema(
+            news.title,
+            news.excerpt,
+            articleImage,
+            news.date,
+            news.author,
+            articleUrl
+          ),
+        ]}
+      />
       <article className="section-spacing">
         <div className="container-narrow">
+          <Breadcrumbs pageTitle={news.title} />
           <Link
             to="/news"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 mt-4"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to news

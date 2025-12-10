@@ -5,6 +5,10 @@ import { fetchAnalyticsBySlug, AnalyticsArticle } from '@/lib/api';
 import { BookmarkButton } from '@/components/content/BookmarkButton';
 import { RelatedContent } from '@/components/content/RelatedContent';
 import { useReadingHistory } from '@/hooks/useReadingHistory';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+import { generateArticleSchema, generateOrganizationSchema } from '@/utils/structuredData';
 import { Calendar, Clock, User, ArrowLeft, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -65,13 +69,40 @@ export default function AnalyticsDetailPage() {
     );
   }
 
+  if (!article) return null;
+
+  const articleUrl = `https://investopatronus.com/analytics/${slug}`;
+  const articleImage = 'https://investopatronus.com/og-image.png';
+
   return (
     <Layout>
+      <SEOHead
+        title={article.title}
+        description={article.excerpt}
+        image={articleImage}
+        type="article"
+        author={article.author}
+        publishedTime={article.date}
+      />
+      <StructuredData
+        data={[
+          generateOrganizationSchema(),
+          generateArticleSchema(
+            article.title,
+            article.excerpt,
+            articleImage,
+            article.date,
+            article.author,
+            articleUrl
+          ),
+        ]}
+      />
       <article className="section-spacing">
         <div className="container-narrow">
+          <Breadcrumbs pageTitle={article.title} />
           <Link
             to="/analytics"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 mt-4"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to analytics

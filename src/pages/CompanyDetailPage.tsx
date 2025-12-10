@@ -5,6 +5,10 @@ import { fetchCompanyBySlug, fetchNews, fetchAnalytics, fetchCompanies, Company,
 import { NewsCard } from '@/components/NewsCard';
 import { AnalyticsCard } from '@/components/AnalyticsCard';
 import { CompanyCard } from '@/components/CompanyCard';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+import { generateOrganizationSchema } from '@/utils/structuredData';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { Building2, MapPin, Users, Calendar, ArrowLeft, DollarSign } from 'lucide-react';
 
@@ -80,12 +84,19 @@ export default function CompanyDetailPage() {
 
   return (
     <Layout>
+      <SEOHead
+        title={`${company.name} - Company Profile`}
+        description={company.description || `Detailed information about ${company.name}`}
+        type="website"
+      />
+      <StructuredData data={[generateOrganizationSchema()]} />
       {/* Hero Banner - Pantera Style */}
       <section className="bg-primary text-primary-foreground">
         <div className="container-wide py-16 md:py-24">
+          <Breadcrumbs pageTitle={company.name} />
           <Link
             to="/companies"
-            className="inline-flex items-center gap-2 text-sm opacity-70 hover:opacity-100 mb-8 transition-opacity"
+            className="inline-flex items-center gap-2 text-sm opacity-70 hover:opacity-100 mb-8 mt-4 transition-opacity"
           >
             <ArrowLeft className="h-4 w-4" />
             All Companies

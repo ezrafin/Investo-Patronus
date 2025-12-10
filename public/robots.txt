@@ -1,3 +1,17 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow private/admin pages
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /profile
+Disallow: /settings
+Disallow: /watchlists
+Disallow: /bookmarks
+Disallow: /users/
+
+# Allow specific bots
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +24,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap location
+Sitemap: https://investopatronus.com/sitemap.xml
