@@ -34,152 +34,152 @@ export interface Course {
 
 export const courseData: Course = {
   id: 'master-the-markets',
-  title: 'Мастер Инвестиций',
-  description: 'Комплексный курс от основ до продвинутых стратегий инвестирования',
+  title: 'Investment Master',
+  description: 'Comprehensive course from basics to advanced investment strategies',
   finalExamPassRate: 75,
   modules: [
     {
       id: 'module-1',
-      title: 'Введение в финансовые рынки',
-      description: 'Основы работы финансовых рынков и ключевые понятия',
+      title: 'Introduction to Financial Markets',
+      description: 'Basics of financial markets and key concepts',
       lessons: [
         {
           id: 'lesson-1-1',
-          title: 'Что такое финансовые рынки',
-          duration: '12 мин',
+          title: 'What Are Financial Markets',
+          duration: '12 min',
           notes: `
-# Что такое финансовые рынки
+# What Are Financial Markets
 
-Финансовые рынки — это площадки, где происходит обмен финансовыми инструментами между участниками. Это фондовые биржи, валютные рынки, рынки облигаций и другие.
+Financial markets are platforms where financial instruments are exchanged between participants. These include stock exchanges, currency markets, bond markets, and others.
 
-## Основные функции:
-- **Перераспределение капитала** — направление денег туда, где они работают эффективнее
-- **Ценообразование** — определение справедливой стоимости активов
-- **Ликвидность** — возможность быстро купить или продать актив
+## Main Functions:
+- **Capital Redistribution** — directing money where it works more efficiently
+- **Price Discovery** — determining fair value of assets
+- **Liquidity** — ability to quickly buy or sell an asset
 
-## Почему это важно для вас
-Понимание работы рынков позволяет принимать осознанные инвестиционные решения вместо того, чтобы полагаться на маркетинговые обещания финансовых посредников.
+## Why This Matters to You
+Understanding how markets work allows you to make informed investment decisions instead of relying on marketing promises from financial intermediaries.
 
-> **Факт для размышления:** Банковский депозит — это тоже участие в финансовом рынке, но через посредника (банк), который забирает значительную часть доходности в качестве своей маржи.
+> **Food for Thought:** A bank deposit is also participation in financial markets, but through an intermediary (the bank), which takes a significant portion of returns as its margin.
           `,
           importantPoints: [
-            'Финансовые рынки — механизм эффективного распределения капитала',
-            'Прямое участие в рынке убирает посредников и их комиссии',
-            'Понимание рынков — основа финансовой грамотности'
+            'Financial markets are a mechanism for efficient capital allocation',
+            'Direct market participation removes intermediaries and their fees',
+            'Understanding markets is the foundation of financial literacy'
           ],
           quiz: [
             {
               id: 'q1-1-1',
-              question: 'Какая основная функция финансовых рынков?',
-              options: ['Только торговля акциями', 'Перераспределение капитала и ценообразование', 'Хранение денег', 'Выдача кредитов'],
+              question: 'What is the main function of financial markets?',
+              options: ['Only trading stocks', 'Capital redistribution and price discovery', 'Storing money', 'Issuing loans'],
               correctAnswer: 1,
-              explanation: 'Финансовые рынки выполняют множество функций, ключевые из которых — эффективное перераспределение капитала и определение справедливых цен на активы.'
+              explanation: 'Financial markets perform many functions, key among which are efficient capital redistribution and determining fair prices for assets.'
             },
             {
               id: 'q1-1-2',
-              question: 'Что происходит с вашими деньгами, когда вы кладёте их на депозит?',
-              options: ['Они просто лежат в хранилище банка', 'Банк инвестирует их и выдаёт кредиты, забирая большую часть прибыли', 'Они сразу идут на биржу', 'Ничего не происходит'],
+              question: 'What happens to your money when you put it in a deposit?',
+              options: ['It just sits in the bank vault', 'The bank invests it and issues loans, taking most of the profit', 'It immediately goes to the exchange', 'Nothing happens'],
               correctAnswer: 1,
-              explanation: 'Банк использует депозиты для выдачи кредитов под более высокий процент. Разница между ставкой депозита и кредита — это маржа банка.'
+              explanation: 'The bank uses deposits to issue loans at higher interest rates. The difference between deposit and loan rates is the bank\'s margin.'
             }
           ]
         },
         {
           id: 'lesson-1-2',
-          title: 'Классы активов: акции, облигации, товары',
-          duration: '18 мин',
+          title: 'Asset Classes: Stocks, Bonds, Commodities',
+          duration: '18 min',
           notes: `
-# Классы активов
+# Asset Classes
 
-## Акции
-Долевые ценные бумаги, дающие право на часть прибыли компании и участие в управлении.
-- Историческая доходность: 7-10% годовых (после инфляции)
-- Риск: высокий в краткосрочной перспективе, умеренный в долгосрочной
+## Stocks
+Equity securities giving the right to a portion of company profits and participation in management.
+- Historical returns: 7-10% annually (after inflation)
+- Risk: high in short term, moderate in long term
 
-## Облигации
-Долговые ценные бумаги — вы даёте деньги в долг эмитенту.
-- Доходность: 2-6% сверх инфляции для корпоративных облигаций
-- Риск: ниже акций, но выше "безрисковой" ставки
+## Bonds
+Debt securities — you lend money to the issuer.
+- Returns: 2-6% above inflation for corporate bonds
+- Risk: lower than stocks, but higher than "risk-free" rate
 
-## Товары (commodities)
-Золото, нефть, сельскохозяйственные товары.
-- Защита от инфляции (особенно золото)
-- Высокая волатильность
+## Commodities
+Gold, oil, agricultural products.
+- Inflation hedge (especially gold)
+- High volatility
 
-## Банковские депозиты — это тоже актив
-Но с особенностями:
-- Доходность: часто ниже инфляции в реальном выражении
-- Риск: низкий номинально, но **инфляционный риск** значителен
-- Ликвидность: ограничена условиями договора
+## Bank Deposits — Also an Asset
+But with features:
+- Returns: often below inflation in real terms
+- Risk: low nominally, but **inflation risk** is significant
+- Liquidity: limited by contract terms
           `,
           importantPoints: [
-            'Акции исторически приносят 7-10% годовых сверх инфляции',
-            'Облигации — баланс между риском и доходностью',
-            'Депозиты часто проигрывают инфляции в реальном выражении'
+            'Stocks historically yield 7-10% annually above inflation',
+            'Bonds — balance between risk and return',
+            'Deposits often lose to inflation in real terms'
           ],
           quiz: [
             {
               id: 'q1-2-1',
-              question: 'Какой класс активов исторически показывает наибольшую доходность в долгосрочной перспективе?',
-              options: ['Банковские депозиты', 'Облигации', 'Акции', 'Наличные деньги'],
+              question: 'Which asset class historically shows the highest returns in the long term?',
+              options: ['Bank deposits', 'Bonds', 'Stocks', 'Cash'],
               correctAnswer: 2,
-              explanation: 'Акции исторически приносят 7-10% годовых сверх инфляции, что значительно выше других классов активов в долгосрочной перспективе.'
+              explanation: 'Stocks historically yield 7-10% annually above inflation, which is significantly higher than other asset classes in the long term.'
             },
             {
               id: 'q1-2-2',
-              question: 'Что такое инфляционный риск банковского депозита?',
-              options: ['Банк может обанкротиться', 'Покупательная способность ваших денег может снизиться', 'Процентная ставка может измениться', 'Деньги могут украсть'],
+              question: 'What is the inflation risk of a bank deposit?',
+              options: ['The bank may go bankrupt', 'Your money\'s purchasing power may decrease', 'Interest rate may change', 'Money may be stolen'],
               correctAnswer: 1,
-              explanation: 'Инфляционный риск — это риск того, что реальная стоимость ваших сбережений уменьшится из-за роста цен, даже если номинальная сумма увеличивается.'
+              explanation: 'Inflation risk is the risk that the real value of your savings will decrease due to rising prices, even if the nominal amount increases.'
             }
           ]
         },
         {
           id: 'lesson-1-3',
-          title: 'Номинальная vs реальная доходность',
-          duration: '15 мин',
+          title: 'Nominal vs Real Returns',
+          duration: '15 min',
           notes: `
-# Номинальная vs реальная доходность
+# Nominal vs Real Returns
 
-## Номинальная доходность
-То, что вы видите в рекламе: "8% годовых!", "Лучшая ставка на рынке!"
+## Nominal Returns
+What you see in ads: "8% annually!", "Best rate on the market!"
 
-## Реальная доходность
-Номинальная доходность минус инфляция. **Это то, что действительно важно.**
+## Real Returns
+Nominal returns minus inflation. **This is what really matters.**
 
-### Пример расчёта:
-- Депозит: 8% годовых
-- Инфляция: 6%
-- Реальная доходность: 8% - 6% = **2%**
+### Calculation Example:
+- Deposit: 8% annually
+- Inflation: 6%
+- Real return: 8% - 6% = **2%**
 
-За 10 лет при таких условиях:
-- Номинально ваши 100,000 превратятся в ~215,000
-- Реально (с учётом инфляции): ~122,000 в сегодняшних деньгах
+Over 10 years under these conditions:
+- Nominally your $100,000 becomes ~$215,000
+- Real (accounting for inflation): ~$122,000 in today's money
 
-## Почему банки говорят только о номинальной ставке?
-Потому что она выглядит привлекательнее. Реальная доходность депозитов часто близка к нулю или отрицательна.
+## Why Do Banks Only Talk About Nominal Rates?
+Because it looks more attractive. Real returns on deposits are often close to zero or negative.
 
-> **Важно:** Всегда считайте реальную доходность при сравнении инвестиционных альтернатив!
+> **Important:** Always calculate real returns when comparing investment alternatives!
           `,
           importantPoints: [
-            'Реальная доходность = Номинальная - Инфляция',
-            'Банки акцентируют внимание на номинальной ставке',
-            'Реальная доходность депозитов часто близка к нулю'
+            'Real Return = Nominal - Inflation',
+            'Banks emphasize nominal rates',
+            'Real returns on deposits are often close to zero'
           ],
           quiz: [
             {
               id: 'q1-3-1',
-              question: 'Если депозит даёт 7%, а инфляция 5%, какова реальная доходность?',
+              question: 'If a deposit gives 7% and inflation is 5%, what is the real return?',
               options: ['7%', '12%', '2%', '5%'],
               correctAnswer: 2,
-              explanation: 'Реальная доходность = 7% - 5% = 2%. Это то, что реально увеличивает вашу покупательную способность.'
+              explanation: 'Real return = 7% - 5% = 2%. This is what actually increases your purchasing power.'
             },
             {
               id: 'q1-3-2',
-              question: 'Почему банки в рекламе обычно указывают номинальную ставку?',
-              options: ['Так требует закон', 'Номинальная ставка выглядит привлекательнее', 'Они не знают уровень инфляции', 'Реальную ставку невозможно посчитать'],
+              question: 'Why do banks usually indicate nominal rates in advertising?',
+              options: ['The law requires it', 'Nominal rates look more attractive', 'They don\'t know the inflation level', 'Real rates cannot be calculated'],
               correctAnswer: 1,
-              explanation: 'Номинальная ставка всегда выглядит привлекательнее реальной. Это маркетинговый приём, на который стоит обращать внимание.'
+              explanation: 'Nominal rates always look more attractive than real ones. This is a marketing technique worth paying attention to.'
             }
           ]
         }
@@ -187,19 +187,19 @@ export const courseData: Course = {
       moduleTest: [
         {
           id: 'mt1-1',
-          question: 'Какая основная функция финансовых рынков?',
-          options: ['Хранение денег', 'Эффективное перераспределение капитала', 'Печать денег', 'Выплата зарплат'],
+          question: 'What is the main function of financial markets?',
+          options: ['Storing money', 'Efficient capital redistribution', 'Printing money', 'Paying salaries'],
           correctAnswer: 1
         },
         {
           id: 'mt1-2',
-          question: 'Какой класс активов имеет наибольшую историческую доходность?',
-          options: ['Депозиты', 'Облигации', 'Акции', 'Наличные'],
+          question: 'Which asset class has the highest historical returns?',
+          options: ['Deposits', 'Bonds', 'Stocks', 'Cash'],
           correctAnswer: 2
         },
         {
           id: 'mt1-3',
-          question: 'Реальная доходность депозита 9% при инфляции 7% составляет:',
+          question: 'Real return of a 9% deposit with 7% inflation is:',
           options: ['9%', '16%', '7%', '2%'],
           correctAnswer: 3
         }
@@ -207,83 +207,83 @@ export const courseData: Course = {
     },
     {
       id: 'module-2',
-      title: 'Понимание реальной доходности',
-      description: 'Глубокое погружение в концепцию реальной доходности и её влияние на ваши сбережения',
+      title: 'Understanding Real Returns',
+      description: 'Deep dive into the concept of real returns and their impact on your savings',
       lessons: [
         {
           id: 'lesson-2-1',
-          title: 'Инфляция: тихий враг сбережений',
-          duration: '14 мин',
+          title: 'Inflation: The Silent Enemy of Savings',
+          duration: '14 min',
           notes: `
-# Инфляция: тихий враг сбережений
+# Inflation: The Silent Enemy of Savings
 
-Инфляция — это устойчивое повышение общего уровня цен. Каждый год ваши деньги теряют покупательную способность.
+Inflation is a sustained increase in the general price level. Every year your money loses purchasing power.
 
-## Как инфляция влияет на сбережения
+## How Inflation Affects Savings
 
-| Год | Сумма на депозите (8%) | Реальная стоимость (инфл. 6%) |
-|-----|------------------------|-------------------------------|
-| 0   | 100,000               | 100,000                       |
-| 5   | 146,933               | 109,836                       |
-| 10  | 215,892               | 120,642                       |
-| 20  | 466,096               | 145,545                       |
+| Year | Amount on Deposit (8%) | Real Value (6% inflation) |
+|------|------------------------|--------------------------|
+| 0    | 100,000               | 100,000                  |
+| 5    | 146,933               | 109,836                  |
+| 10   | 215,892               | 120,642                  |
+| 20   | 466,096               | 145,545                  |
 
-**Вывод:** За 20 лет номинально вы "заработали" 366,000, но реально — только 45,545 в сегодняшних деньгах.
+**Conclusion:** Over 20 years, nominally you "earned" 366,000, but really — only 45,545 in today's money.
 
-## Почему это важно
-Многие люди выбирают "безопасные" депозиты, не понимая, что инфляционный риск — это тоже риск. Просто он проявляется не резким падением цифр на счёте, а постепенной потерей покупательной способности.
+## Why This Matters
+Many people choose "safe" deposits without understanding that inflation risk is also a risk. It just doesn't manifest as a sharp drop in account numbers, but as a gradual loss of purchasing power.
           `,
           importantPoints: [
-            'Инфляция постоянно обесценивает ваши сбережения',
-            'За 20 лет реальная доходность депозита может быть в 8 раз меньше номинальной',
-            'Инфляционный риск часто недооценивается'
+            'Inflation constantly devalues your savings',
+            'Over 20 years, real deposit returns can be 8 times less than nominal',
+            'Inflation risk is often underestimated'
           ],
           quiz: [
             {
               id: 'q2-1-1',
-              question: 'Что происходит с покупательной способностью денег при инфляции?',
-              options: ['Увеличивается', 'Остаётся неизменной', 'Уменьшается', 'Зависит от банка'],
+              question: 'What happens to money\'s purchasing power during inflation?',
+              options: ['Increases', 'Remains unchanged', 'Decreases', 'Depends on the bank'],
               correctAnswer: 2,
-              explanation: 'Инфляция означает рост цен, поэтому на ту же сумму денег вы можете купить меньше товаров и услуг.'
+              explanation: 'Inflation means rising prices, so with the same amount of money you can buy fewer goods and services.'
             }
           ]
         },
         {
           id: 'lesson-2-2',
-          title: 'Сравнение: депозиты vs инвестиционные инструменты',
-          duration: '20 мин',
+          title: 'Comparison: Deposits vs Investment Instruments',
+          duration: '20 min',
           notes: `
-# Сравнение: депозиты vs инвестиционные инструменты
+# Comparison: Deposits vs Investment Instruments
 
-## Историческая доходность (реальная, после инфляции)
+## Historical Returns (Real, After Inflation)
 
-| Инструмент | Доходность | Риск | Ликвидность |
-|------------|-----------|------|-------------|
-| Депозиты | 0-2% | Низкий* | Средняя** |
-| ОФЗ | 1-3% | Низкий | Высокая |
-| Корп. облигации | 2-5% | Средний | Высокая |
-| ETF на акции | 5-8% | Высокий*** | Высокая |
-| Акции | 7-10% | Очень высокий | Высокая |
+| Instrument | Returns | Risk | Liquidity |
+|------------|---------|------|-----------|
+| Deposits | 0-2% | Low* | Medium** |
+| Government Bonds | 1-3% | Low | High |
+| Corporate Bonds | 2-5% | Medium | High |
+| Stock ETFs | 5-8% | High*** | High |
+| Stocks | 7-10% | Very High | High |
 
-*Номинально низкий, но инфляционный риск значителен
-**Досрочное снятие часто обнуляет проценты
-***В краткосрочной перспективе; в долгосрочной (10+ лет) риск снижается
+*Low nominally, but inflation risk is significant
+**Early withdrawal often cancels interest
+***In short term; in long term (10+ years) risk decreases
 
-## Ключевой вывод
-При горизонте инвестирования 10+ лет диверсифицированный портфель из ETF имеет высокую вероятность превзойти депозиты по реальной доходности.
+## Key Takeaway
+With an investment horizon of 10+ years, a diversified ETF portfolio has a high probability of outperforming deposits in real returns.
           `,
           importantPoints: [
-            'Депозиты дают 0-2% реальной доходности',
-            'ETF на акции исторически приносят 5-8% реальной доходности',
-            'Долгосрочный горизонт снижает риски инвестирования в акции'
+            'Deposits give 0-2% real returns',
+            'Stock ETFs historically yield 5-8% real returns',
+            'Long-term horizon reduces risks of investing in stocks'
           ],
           quiz: [
             {
               id: 'q2-2-1',
-              question: 'Какова типичная реальная доходность банковских депозитов?',
+              question: 'What is the typical real return of bank deposits?',
               options: ['8-10%', '5-7%', '0-2%', '10-15%'],
               correctAnswer: 2,
-              explanation: 'После вычета инфляции депозиты обычно приносят 0-2% реальной доходности, а иногда и отрицательную.'
+              explanation: 'After deducting inflation, deposits usually yield 0-2% real returns, sometimes even negative.'
             }
           ]
         }
@@ -291,13 +291,13 @@ export const courseData: Course = {
       moduleTest: [
         {
           id: 'mt2-1',
-          question: 'Какой инструмент исторически показывает наибольшую реальную доходность?',
-          options: ['Банковские депозиты', 'Наличные деньги', 'ETF на акции', 'Валюта под матрасом'],
+          question: 'Which instrument historically shows the highest real returns?',
+          options: ['Bank deposits', 'Cash', 'Stock ETFs', 'Currency under the mattress'],
           correctAnswer: 2
         },
         {
           id: 'mt2-2',
-          question: 'Инфляция 6% означает, что через год на 100,000 можно купить товаров примерно на:',
+          question: '6% inflation means that in a year, with 100,000 you can buy goods worth approximately:',
           options: ['106,000', '100,000', '94,340', '90,000'],
           correctAnswer: 2
         }
@@ -305,79 +305,79 @@ export const courseData: Course = {
     },
     {
       id: 'module-3',
-      title: 'Построение инвестиционного портфеля',
-      description: 'Практические принципы создания и управления портфелем',
+      title: 'Building an Investment Portfolio',
+      description: 'Practical principles of creating and managing a portfolio',
       lessons: [
         {
           id: 'lesson-3-1',
-          title: 'Принципы диверсификации',
-          duration: '16 мин',
+          title: 'Diversification Principles',
+          duration: '16 min',
           notes: `
-# Принципы диверсификации
+# Diversification Principles
 
-"Не кладите все яйца в одну корзину" — базовый принцип инвестирования.
+"Don't put all your eggs in one basket" — a basic investment principle.
 
-## Виды диверсификации:
-1. **По классам активов** — акции, облигации, товары
-2. **По географии** — разные страны и регионы
-3. **По секторам** — технологии, финансы, здравоохранение
-4. **По валютам** — рубли, доллары, евро
+## Types of Diversification:
+1. **By Asset Classes** — stocks, bonds, commodities
+2. **By Geography** — different countries and regions
+3. **By Sectors** — technology, finance, healthcare
+4. **By Currencies** — dollars, euros, etc.
 
-## Почему диверсификация работает
-Разные активы реагируют на экономические события по-разному. Когда одни падают, другие могут расти или оставаться стабильными.
+## Why Diversification Works
+Different assets react to economic events differently. When some fall, others may rise or remain stable.
 
-## Диверсификация vs концентрация
-Банковский депозит — это концентрация в одном типе актива с низкой реальной доходностью. Диверсифицированный портфель распределяет риски и увеличивает потенциальную доходность.
+## Diversification vs Concentration
+A bank deposit is concentration in one type of asset with low real returns. A diversified portfolio distributes risks and increases potential returns.
           `,
           importantPoints: [
-            'Диверсификация снижает риск без существенной потери доходности',
-            'Важно диверсифицировать по классам активов, географии и секторам',
-            'Депозит — это концентрация, а не диверсификация'
+            'Diversification reduces risk without significant loss of returns',
+            'It\'s important to diversify by asset classes, geography, and sectors',
+            'A deposit is concentration, not diversification'
           ],
           quiz: [
             {
               id: 'q3-1-1',
-              question: 'Что НЕ является видом диверсификации?',
-              options: ['По классам активов', 'По географии', 'Размещение всех денег в одном банке', 'По секторам экономики'],
+              question: 'What is NOT a type of diversification?',
+              options: ['By asset classes', 'By geography', 'Placing all money in one bank', 'By economic sectors'],
               correctAnswer: 2,
-              explanation: 'Размещение всех денег в одном банке — это концентрация, а не диверсификация. Даже страхование вкладов не защищает от инфляционного риска.'
+              explanation: 'Placing all money in one bank is concentration, not diversification. Even deposit insurance doesn\'t protect against inflation risk.'
             }
           ]
         },
         {
           id: 'lesson-3-2',
-          title: 'Распределение активов по возрасту и целям',
-          duration: '18 мин',
+          title: 'Asset Allocation by Age and Goals',
+          duration: '18 min',
           notes: `
-# Распределение активов по возрасту и целям
+# Asset Allocation by Age and Goals
 
-## Классическое правило "100 минус возраст"
-Процент акций в портфеле = 100 - ваш возраст
+## Classic "100 Minus Age" Rule
+Percentage of stocks in portfolio = 100 - your age
 
-- 25 лет → 75% акции, 25% облигации
-- 40 лет → 60% акции, 40% облигации
-- 60 лет → 40% акции, 60% облигации
+- Age 25 → 75% stocks, 25% bonds
+- Age 40 → 60% stocks, 40% bonds
+- Age 60 → 40% stocks, 60% bonds
 
-## Почему молодым можно больше рисковать
-1. Больше времени для восстановления после просадок
-2. Основной доход от работы, не зависящий от портфеля
-3. Эффект сложного процента работает сильнее на длинном горизонте
+## Why Young People Can Take More Risk
+1. More time to recover from drawdowns
+2. Main income from work, independent of portfolio
+3. Compound interest effect works stronger over long horizon
 
-## Ошибка молодых инвесторов
-Многие молодые люди держат деньги на депозитах "для безопасности", упуская годы потенциального роста на фондовом рынке.
+## Young Investor Mistake
+Many young people keep money in deposits "for safety", missing years of potential growth in the stock market.
           `,
           importantPoints: [
-            'Молодые инвесторы могут позволить больше акций в портфеле',
-            'С возрастом доля облигаций должна расти',
-            'Время — главный союзник инвестора в акции'
+            'Young investors can afford more stocks in portfolio',
+            'Bond allocation should increase with age',
+            'Time is the investor\'s main ally in stocks'
           ],
           quiz: [
             {
               id: 'q3-2-1',
-              question: 'Какое распределение активов рекомендуется для 30-летнего инвестора по правилу "100 минус возраст"?',
-              options: ['30% акции, 70% облигации', '70% акции, 30% облигации', '50% акции, 50% облигации', '100% депозиты'],
+              question: 'What asset allocation is recommended for a 30-year-old investor by the "100 minus age" rule?',
+              options: ['30% stocks, 70% bonds', '70% stocks, 30% bonds', '50% stocks, 50% bonds', '100% deposits'],
               correctAnswer: 1,
-              explanation: '100 - 30 = 70, то есть 70% акций и 30% облигаций. Это агрессивный, но подходящий портфель для молодого инвестора с длинным горизонтом.'
+              explanation: '100 - 30 = 70, meaning 70% stocks and 30% bonds. This is an aggressive but suitable portfolio for a young investor with a long horizon.'
             }
           ]
         }
@@ -385,13 +385,13 @@ export const courseData: Course = {
       moduleTest: [
         {
           id: 'mt3-1',
-          question: 'Что такое диверсификация?',
-          options: ['Вложение всех денег в акции одной компании', 'Распределение инвестиций между разными активами', 'Хранение денег на депозите', 'Покупка недвижимости'],
+          question: 'What is diversification?',
+          options: ['Investing all money in one company\'s stock', 'Distributing investments among different assets', 'Keeping money in deposits', 'Buying real estate'],
           correctAnswer: 1
         },
         {
           id: 'mt3-2',
-          question: 'По правилу "100 минус возраст", сколько процентов акций должно быть в портфеле 45-летнего инвестора?',
+          question: 'By the "100 minus age" rule, what percentage of stocks should be in a 45-year-old investor\'s portfolio?',
           options: ['45%', '55%', '100%', '0%'],
           correctAnswer: 1
         }
@@ -399,88 +399,88 @@ export const courseData: Course = {
     },
     {
       id: 'module-4',
-      title: 'Практические инструменты',
-      description: 'ETF, облигации и другие инструменты для самостоятельного инвестирования',
+      title: 'Practical Instruments',
+      description: 'ETFs, bonds, and other instruments for independent investing',
       lessons: [
         {
           id: 'lesson-4-1',
-          title: 'ETF: простой способ инвестировать',
-          duration: '22 мин',
+          title: 'ETF: A Simple Way to Invest',
+          duration: '22 min',
           notes: `
-# ETF: простой способ инвестировать
+# ETF: A Simple Way to Invest
 
-ETF (Exchange Traded Fund) — это фонд, акции которого торгуются на бирже.
+ETF (Exchange Traded Fund) is a fund whose shares trade on an exchange.
 
-## Преимущества ETF:
-1. **Диверсификация** — один ETF может содержать сотни акций
-2. **Низкие комиссии** — 0.03-0.5% годовых vs 1-3% у банковских продуктов
-3. **Ликвидность** — можно купить/продать в любой момент
-4. **Прозрачность** — состав фонда известен
+## ETF Advantages:
+1. **Diversification** — one ETF can contain hundreds of stocks
+2. **Low Fees** — 0.03-0.5% annually vs 1-3% for bank products
+3. **Liquidity** — can buy/sell at any time
+4. **Transparency** — fund composition is known
 
-## Примеры популярных ETF:
-- **S&P 500 ETF** — 500 крупнейших компаний США
-- **Всемирный ETF** — акции компаний всего мира
-- **Облигационный ETF** — диверсифицированный портфель облигаций
+## Examples of Popular ETFs:
+- **S&P 500 ETF** — 500 largest US companies
+- **World ETF** — stocks of companies worldwide
+- **Bond ETF** — diversified bond portfolio
 
-## ETF vs банковские инвестиционные продукты
-| Критерий | ETF | Банковский продукт |
-|----------|-----|-------------------|
-| Комиссия | 0.03-0.5% | 1-3% |
-| Прозрачность | Полная | Частичная |
-| Ликвидность | Мгновенная | Ограниченная |
-| Контроль | Полный | Через управляющего |
+## ETF vs Bank Investment Products
+| Criterion | ETF | Bank Product |
+|-----------|-----|--------------|
+| Fee | 0.03-0.5% | 1-3% |
+| Transparency | Full | Partial |
+| Liquidity | Instant | Limited |
+| Control | Full | Through manager |
           `,
           importantPoints: [
-            'ETF — простой способ получить диверсификацию',
-            'Комиссии ETF в 10-100 раз ниже банковских продуктов',
-            'ETF можно купить/продать в любой момент без потери дохода'
+            'ETF is a simple way to get diversification',
+            'ETF fees are 10-100 times lower than bank products',
+            'ETF can be bought/sold at any time without losing income'
           ],
           quiz: [
             {
               id: 'q4-1-1',
-              question: 'Какое преимущество ETF перед банковскими инвестиционными продуктами?',
-              options: ['Гарантированная доходность', 'Более низкие комиссии и прозрачность', 'Страхование вкладов', 'Возможность получать кредиты'],
+              question: 'What advantage do ETFs have over bank investment products?',
+              options: ['Guaranteed returns', 'Lower fees and transparency', 'Deposit insurance', 'Ability to get loans'],
               correctAnswer: 1,
-              explanation: 'ETF имеют значительно более низкие комиссии (0.03-0.5% vs 1-3%) и полную прозрачность состава.'
+              explanation: 'ETFs have significantly lower fees (0.03-0.5% vs 1-3%) and full transparency of composition.'
             }
           ]
         },
         {
           id: 'lesson-4-2',
-          title: 'Как открыть брокерский счёт',
-          duration: '15 мин',
+          title: 'How to Open a Brokerage Account',
+          duration: '15 min',
           notes: `
-# Как открыть брокерский счёт
+# How to Open a Brokerage Account
 
-## Шаги:
-1. **Выберите брокера** — сравните комиссии, удобство, надёжность
-2. **Подайте заявку** — онлайн или в офисе
-3. **Пройдите идентификацию** — загрузите документы
-4. **Пополните счёт** — переведите деньги
-5. **Начните инвестировать** — купите первые активы
+## Steps:
+1. **Choose a broker** — compare fees, convenience, reliability
+2. **Submit application** — online or in office
+3. **Complete identification** — upload documents
+4. **Fund account** — transfer money
+5. **Start investing** — buy first assets
 
-## На что обращать внимание:
-- Комиссия за сделки
-- Комиссия за хранение
-- Минимальная сумма
-- Доступные рынки и инструменты
-- Качество поддержки
+## What to Pay Attention To:
+- Trading fees
+- Custody fees
+- Minimum amount
+- Available markets and instruments
+- Support quality
 
-## Миф о сложности
-Открытие брокерского счёта сегодня не сложнее открытия банковского счёта. Многие боятся начать, хотя процесс занимает 15-30 минут.
+## The Complexity Myth
+Opening a brokerage account today is no more difficult than opening a bank account. Many are afraid to start, although the process takes 15-30 minutes.
           `,
           importantPoints: [
-            'Открыть брокерский счёт так же просто, как банковский',
-            'Сравнивайте брокеров по комиссиям и удобству',
-            'Не откладывайте — время работает на инвестора'
+            'Opening a brokerage account is as simple as a bank account',
+            'Compare brokers by fees and convenience',
+            'Don\'t delay — time works for the investor'
           ],
           quiz: [
             {
               id: 'q4-2-1',
-              question: 'Сколько времени обычно занимает открытие брокерского счёта?',
-              options: ['Несколько дней', '15-30 минут', 'Несколько месяцев', 'Невозможно открыть самостоятельно'],
+              question: 'How long does opening a brokerage account usually take?',
+              options: ['Several days', '15-30 minutes', 'Several months', 'Cannot be opened independently'],
               correctAnswer: 1,
-              explanation: 'Современные брокеры позволяют открыть счёт онлайн за 15-30 минут. Это не сложнее открытия банковского счёта.'
+              explanation: 'Modern brokers allow opening an account online in 15-30 minutes. It\'s no more difficult than opening a bank account.'
             }
           ]
         }
@@ -488,14 +488,14 @@ ETF (Exchange Traded Fund) — это фонд, акции которого то
       moduleTest: [
         {
           id: 'mt4-1',
-          question: 'Какова типичная комиссия ETF?',
-          options: ['5-10%', '1-3%', '0.03-0.5%', 'ETF не имеют комиссий'],
+          question: 'What is the typical ETF fee?',
+          options: ['5-10%', '1-3%', '0.03-0.5%', 'ETFs have no fees'],
           correctAnswer: 2
         },
         {
           id: 'mt4-2',
-          question: 'Открытие брокерского счёта обычно занимает:',
-          options: ['Несколько месяцев', '15-30 минут', 'Требует посещения налоговой', 'Невозможно для физических лиц'],
+          question: 'Opening a brokerage account usually takes:',
+          options: ['Several months', '15-30 minutes', 'Requires visiting tax office', 'Impossible for individuals'],
           correctAnswer: 1
         }
       ]
@@ -506,63 +506,63 @@ ETF (Exchange Traded Fund) — это фонд, акции которого то
 export const finalExamQuestions: QuizQuestion[] = [
   {
     id: 'fe-1',
-    question: 'Какова формула реальной доходности?',
-    options: ['Номинальная + Инфляция', 'Номинальная - Инфляция', 'Номинальная × Инфляция', 'Инфляция - Номинальная'],
+    question: 'What is the formula for real returns?',
+    options: ['Nominal + Inflation', 'Nominal - Inflation', 'Nominal × Inflation', 'Inflation - Nominal'],
     correctAnswer: 1,
-    explanation: 'Реальная доходность = Номинальная доходность - Инфляция'
+    explanation: 'Real Return = Nominal Return - Inflation'
   },
   {
     id: 'fe-2',
-    question: 'Какой класс активов исторически показывает наибольшую реальную доходность?',
-    options: ['Банковские депозиты', 'Наличные деньги', 'Акции', 'Золото'],
+    question: 'Which asset class historically shows the highest real returns?',
+    options: ['Bank deposits', 'Cash', 'Stocks', 'Gold'],
     correctAnswer: 2,
-    explanation: 'Акции исторически приносят 7-10% реальной доходности в долгосрочной перспективе.'
+    explanation: 'Stocks historically yield 7-10% real returns in the long term.'
   },
   {
     id: 'fe-3',
-    question: 'Что такое диверсификация?',
-    options: ['Вложение всех средств в один актив', 'Распределение инвестиций между разными активами', 'Хранение денег в банке', 'Покупка только облигаций'],
+    question: 'What is diversification?',
+    options: ['Investing all funds in one asset', 'Distributing investments among different assets', 'Keeping money in bank', 'Buying only bonds'],
     correctAnswer: 1
   },
   {
     id: 'fe-4',
-    question: 'Какова типичная комиссия ETF по сравнению с банковскими инвестиционными продуктами?',
-    options: ['Одинаковая', 'В 10-100 раз ниже', 'В 2 раза выше', 'ETF не имеют комиссий'],
+    question: 'What is the typical ETF fee compared to bank investment products?',
+    options: ['The same', '10-100 times lower', '2 times higher', 'ETFs have no fees'],
     correctAnswer: 1
   },
   {
     id: 'fe-5',
-    question: 'По правилу "100 минус возраст", какой процент акций рекомендуется для 35-летнего инвестора?',
+    question: 'By the "100 minus age" rule, what percentage of stocks is recommended for a 35-year-old investor?',
     options: ['35%', '65%', '100%', '50%'],
     correctAnswer: 1
   },
   {
     id: 'fe-6',
-    question: 'Что такое инфляционный риск банковского депозита?',
-    options: ['Риск банкротства банка', 'Риск потери покупательной способности из-за инфляции', 'Риск изменения ставки', 'Риск блокировки счёта'],
+    question: 'What is the inflation risk of a bank deposit?',
+    options: ['Risk of bank bankruptcy', 'Risk of losing purchasing power due to inflation', 'Risk of rate change', 'Risk of account blocking'],
     correctAnswer: 1
   },
   {
     id: 'fe-7',
-    question: 'Какое преимущество ETF по сравнению с депозитом по ликвидности?',
-    options: ['ETF нельзя продать', 'ETF можно продать мгновенно без потери накопленного дохода', 'Одинаковая ликвидность', 'Депозит более ликвиден'],
+    question: 'What liquidity advantage do ETFs have compared to deposits?',
+    options: ['ETFs cannot be sold', 'ETFs can be sold instantly without losing accumulated income', 'Same liquidity', 'Deposits are more liquid'],
     correctAnswer: 1
   },
   {
     id: 'fe-8',
-    question: 'Как банки зарабатывают на депозитах?',
-    options: ['Хранят деньги в сейфе', 'Выдают кредиты под более высокий процент', 'Инвестируют в золото', 'Не зарабатывают на депозитах'],
+    question: 'How do banks earn on deposits?',
+    options: ['Store money in vault', 'Issue loans at higher interest rates', 'Invest in gold', 'Don\'t earn on deposits'],
     correctAnswer: 1
   },
   {
     id: 'fe-9',
-    question: 'Какой горизонт инвестирования снижает риски вложений в акции?',
-    options: ['1 месяц', '1 год', '10+ лет', 'Горизонт не влияет на риски'],
+    question: 'What investment horizon reduces risks of investing in stocks?',
+    options: ['1 month', '1 year', '10+ years', 'Horizon doesn\'t affect risks'],
     correctAnswer: 2
   },
   {
     id: 'fe-10',
-    question: 'Реальная доходность депозита 10% при инфляции 8% составляет:',
+    question: 'Real return of a 10% deposit with 8% inflation is:',
     options: ['10%', '18%', '2%', '8%'],
     correctAnswer: 2
   }

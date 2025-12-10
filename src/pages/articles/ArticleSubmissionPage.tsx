@@ -67,7 +67,7 @@ export default function ArticleSubmissionPage() {
     e.preventDefault();
     
     if (!formData.email || !formData.topic || !formData.proposedTitle || !formData.detailedDescription) {
-      toast.error('Заполните все обязательные поля');
+      toast.error('Please fill in all required fields');
       return;
     }
 
@@ -78,7 +78,7 @@ export default function ArticleSubmissionPage() {
     
     const applicationId = `APP-${Date.now().toString(36).toUpperCase()}`;
     
-    toast.success(`Заявка отправлена! ID: ${applicationId}`);
+    toast.success(`Proposal submitted! ID: ${applicationId}`);
     localStorage.removeItem('articleDraft');
     
     setFormData({
@@ -102,17 +102,17 @@ export default function ArticleSubmissionPage() {
       <div className="pt-24 pb-16">
         <section className="container-narrow section-spacing-sm">
           <div className="text-center mb-12">
-            <span className="badge-primary mb-4">Стать автором</span>
-            <h1 className="heading-xl mb-6">Подать заявку на статью</h1>
+            <span className="badge-primary mb-4">Become an Author</span>
+            <h1 className="heading-xl mb-6">Submit Article Proposal</h1>
             <p className="body-xl max-w-2xl mx-auto">
-              Предложите тему для публикации на нашем форуме. Мы ценим качественный 
-              аналитический контент, особенно сравнения реальной доходности различных инструментов.
+              Propose a topic for publication on our forum. We value quality 
+              analytical content, especially comparisons of real returns of various instruments.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="glass-card p-6 space-y-6">
-              <h2 className="heading-sm">Контактная информация</h2>
+              <h2 className="heading-sm">Contact Information</h2>
               
               <div>
                 <Label htmlFor="email">Email *</Label>
@@ -128,17 +128,17 @@ export default function ArticleSubmissionPage() {
             </div>
 
             <div className="glass-card p-6 space-y-6">
-              <h2 className="heading-sm">Тема статьи</h2>
+              <h2 className="heading-sm">Article Topic</h2>
               
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <Label>Категория *</Label>
+                  <Label>Category *</Label>
                   <Select 
                     value={formData.topic} 
                     onValueChange={(value) => setFormData({ ...formData, topic: value, subtopic: '' })}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Выберите категорию" />
+                      <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent>
                       {Object.entries(articleTopics).map(([key, { name }]) => (
@@ -149,14 +149,14 @@ export default function ArticleSubmissionPage() {
                 </div>
 
                 <div>
-                  <Label>Подтема</Label>
+                  <Label>Subtopic</Label>
                   <Select 
                     value={formData.subtopic} 
                     onValueChange={(value) => setFormData({ ...formData, subtopic: value })}
                     disabled={!formData.topic}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Выберите подтему" />
+                      <SelectValue placeholder="Select subtopic" />
                     </SelectTrigger>
                     <SelectContent>
                       {subtopics.map((subtopic) => (
@@ -168,18 +168,18 @@ export default function ArticleSubmissionPage() {
               </div>
 
               <div>
-                <Label htmlFor="title">Название статьи *</Label>
+                <Label htmlFor="title">Article Title *</Label>
                 <Input
                   id="title"
                   value={formData.proposedTitle}
                   onChange={(e) => setFormData({ ...formData, proposedTitle: e.target.value })}
-                  placeholder="Например: Сравнение реальной доходности депозитов и ETF за 10 лет"
+                  placeholder="Example: Comparison of Real Returns of Deposits and ETFs Over 10 Years"
                   required
                 />
               </div>
 
               <div>
-                <Label>Формат</Label>
+                <Label>Format</Label>
                 <Select 
                   value={formData.format} 
                   onValueChange={(value: any) => setFormData({ ...formData, format: value })}
@@ -199,35 +199,35 @@ export default function ArticleSubmissionPage() {
             </div>
 
             <div className="glass-card p-6 space-y-6">
-              <h2 className="heading-sm">Содержание</h2>
+              <h2 className="heading-sm">Content</h2>
               
               <div>
-                <Label htmlFor="description">Подробное описание *</Label>
+                <Label htmlFor="description">Detailed Description *</Label>
                 <Textarea
                   id="description"
                   value={formData.detailedDescription}
                   onChange={(e) => setFormData({ ...formData, detailedDescription: e.target.value })}
-                  placeholder="Опишите суть вопроса, который вы хотите раскрыть..."
+                  placeholder="Describe the essence of the issue you want to address..."
                   rows={5}
                   required
                 />
               </div>
 
               <div>
-                <Label htmlFor="sourceData">Исходные данные и параметры</Label>
+                <Label htmlFor="sourceData">Source Data and Parameters</Label>
                 <Textarea
                   id="sourceData"
                   value={formData.sourceData}
                   onChange={(e) => setFormData({ ...formData, sourceData: e.target.value })}
-                  placeholder="Укажите данные, которые будете использовать..."
+                  placeholder="Specify the data you will use..."
                   rows={3}
                 />
               </div>
 
               <div>
-                <Label>Тезисы статьи</Label>
+                <Label>Article Theses</Label>
                 <p className="text-xs text-muted-foreground mb-2">
-                  Перечислите основные тезисы, которые планируете раскрыть
+                  List the main theses you plan to address
                 </p>
                 <div className="space-y-2">
                   {formData.thesisList?.map((thesis, index) => (
@@ -235,7 +235,7 @@ export default function ArticleSubmissionPage() {
                       <Input
                         value={thesis}
                         onChange={(e) => updateThesis(index, e.target.value)}
-                        placeholder={`Тезис ${index + 1}`}
+                        placeholder={`Thesis ${index + 1}`}
                       />
                       {(formData.thesisList?.length || 0) > 1 && (
                         <Button 
@@ -251,18 +251,18 @@ export default function ArticleSubmissionPage() {
                   ))}
                   <Button type="button" variant="outline" onClick={addThesis}>
                     <Plus className="h-4 w-4 mr-2" />
-                    Добавить тезис
+                    Add Thesis
                   </Button>
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="references">Источники и ссылки (опционально)</Label>
+                <Label htmlFor="references">Sources and Links (optional)</Label>
                 <Textarea
                   id="references"
                   value={formData.references}
                   onChange={(e) => setFormData({ ...formData, references: e.target.value })}
-                  placeholder="Укажите источники данных, ссылки на исследования..."
+                  placeholder="Specify data sources, links to research..."
                   rows={2}
                 />
               </div>
@@ -271,15 +271,15 @@ export default function ArticleSubmissionPage() {
             <div className="flex items-center justify-between">
               <p className="text-xs text-muted-foreground flex items-center gap-1">
                 <Save className="h-3 w-3" />
-                Черновик сохраняется автоматически
+                Draft saves automatically
               </p>
               <Button type="submit" size="lg" disabled={isSubmitting}>
                 {isSubmitting ? (
-                  <>Отправка...</>
+                  <>Submitting...</>
                 ) : (
                   <>
                     <Send className="h-4 w-4 mr-2" />
-                    Отправить заявку
+                    Submit Proposal
                   </>
                 )}
               </Button>

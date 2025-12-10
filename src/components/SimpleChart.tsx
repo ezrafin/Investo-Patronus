@@ -50,7 +50,7 @@ export function SimpleChart({ positive = true, data }: SimpleChartProps) {
             color: 'hsl(210, 40%, 98%)',
           }}
           labelStyle={{ display: 'none' }}
-          formatter={(value: number) => [`${value.toFixed(2)}`, 'Значение']}
+          formatter={(value: number) => [`${value.toFixed(2)}`, 'Value']}
         />
         <Area
           type="monotone"

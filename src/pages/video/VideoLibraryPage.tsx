@@ -51,11 +51,11 @@ export default function VideoLibraryPage() {
         <section className="container-wide section-spacing-sm">
           {/* Header */}
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <span className="badge-primary mb-4">Видеотека</span>
-            <h1 className="heading-xl mb-6">Видео библиотека</h1>
+            <span className="badge-primary mb-4">Video Library</span>
+            <h1 className="heading-xl mb-6">Video Library</h1>
             <p className="body-xl">
-              Образовательные видео по инвестированию, анализу рынков и финансовой грамотности. 
-              Изучайте в удобном темпе.
+              Educational videos on investing, market analysis, and financial literacy. 
+              Learn at your own pace.
             </p>
           </div>
 
@@ -67,7 +67,7 @@ export default function VideoLibraryPage() {
               onClick={() => setShowFilters(!showFilters)}
             >
               <Filter className="h-4 w-4 mr-2" />
-              {showFilters ? 'Скрыть фильтры' : 'Показать фильтры'}
+              {showFilters ? 'Hide Filters' : 'Show Filters'}
             </Button>
           </div>
 
@@ -88,10 +88,10 @@ export default function VideoLibraryPage() {
 
                 {/* Hint Box */}
                 <div className="glass-card p-4 mt-6 border-l-4 border-primary">
-                  <h4 className="font-medium text-sm mb-2">💡 Рекомендация</h4>
+                  <h4 className="font-medium text-sm mb-2">💡 Recommendation</h4>
                   <p className="text-xs text-muted-foreground">
-                    Начните с раздела "Банки vs Инвестиции" чтобы понять, 
-                    какую реальную доходность приносят различные финансовые инструменты.
+                    Start with the "Banks vs Investments" section to understand 
+                    what real returns various financial instruments provide.
                   </p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function VideoLibraryPage() {
             <div className="lg:col-span-3">
               <div className="flex items-center justify-between mb-6">
                 <span className="text-sm text-muted-foreground">
-                  {filteredVideos.length} видео
+                  {filteredVideos.length} videos
                 </span>
               </div>
 
@@ -114,9 +114,9 @@ export default function VideoLibraryPage() {
               ) : (
                 <div className="glass-card p-12 text-center">
                   <Video className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="heading-sm mb-2">Видео не найдены</h3>
+                  <h3 className="heading-sm mb-2">No Videos Found</h3>
                   <p className="body-sm">
-                    Попробуйте изменить параметры фильтрации
+                    Try adjusting your filter settings
                   </p>
                 </div>
               )}

@@ -46,7 +46,7 @@ export default function CoursePlatformPage() {
               <h2 className="font-semibold">{courseData.title}</h2>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-sm mb-1">
-                  <span className="text-muted-foreground">Прогресс</span>
+                  <span className="text-muted-foreground">Progress</span>
                   <span className="font-medium">{Math.round(progressPercent)}%</span>
                 </div>
                 <Progress value={progressPercent} className="h-2" />
@@ -66,7 +66,7 @@ export default function CoursePlatformPage() {
                       <ChevronRight className="h-4 w-4 flex-shrink-0" />
                     )}
                     <div className="flex-1 min-w-0">
-                      <span className="text-xs text-muted-foreground">Модуль {moduleIndex + 1}</span>
+                      <span className="text-xs text-muted-foreground">Module {moduleIndex + 1}</span>
                       <p className="text-sm font-medium truncate">{module.title}</p>
                     </div>
                   </button>
@@ -93,7 +93,7 @@ export default function CoursePlatformPage() {
                       ))}
                       <button className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm text-muted-foreground hover:bg-secondary/50">
                         <Award className="h-4 w-4" />
-                        Тест модуля
+                        Module Test
                       </button>
                     </div>
                   )}
@@ -103,7 +103,7 @@ export default function CoursePlatformPage() {
               <div className="mt-4 p-3 border-t border-border">
                 <button className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm font-medium hover:bg-secondary/50">
                   <Award className="h-5 w-5 text-primary" />
-                  Финальный экзамен
+                  Final Exam
                   <Lock className="h-4 w-4 ml-auto text-muted-foreground" />
                 </button>
               </div>
@@ -121,7 +121,7 @@ export default function CoursePlatformPage() {
                       <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center mx-auto mb-3 cursor-pointer hover:scale-110 transition-transform">
                         <Play className="h-6 w-6 text-primary-foreground ml-1" />
                       </div>
-                      <p className="text-sm text-muted-foreground">Видео урока</p>
+                      <p className="text-sm text-muted-foreground">Lesson Video</p>
                     </div>
                   </div>
                 </div>
@@ -137,9 +137,9 @@ export default function CoursePlatformPage() {
                   </div>
                   <Button onClick={markComplete} disabled={completedLessons.includes(selectedLesson.id)}>
                     {completedLessons.includes(selectedLesson.id) ? (
-                      <><CheckCircle className="h-4 w-4 mr-2" /> Завершён</>
+                      <><CheckCircle className="h-4 w-4 mr-2" /> Completed</>
                     ) : (
-                      <>Отметить как пройденный</>
+                      <>Mark as Completed</>
                     )}
                   </Button>
                 </div>
@@ -148,7 +148,7 @@ export default function CoursePlatformPage() {
                 <div className="glass-card p-6">
                   <h2 className="heading-sm mb-4 flex items-center gap-2">
                     <BookOpen className="h-5 w-5 text-primary" />
-                    Конспект урока
+                    Lesson Notes
                   </h2>
                   <div className="prose prose-sm prose-invert max-w-none">
                     <div dangerouslySetInnerHTML={{ __html: selectedLesson.notes.replace(/\n/g, '<br/>') }} />
@@ -159,7 +159,7 @@ export default function CoursePlatformPage() {
                 <div className="glass-card p-6 border-l-4 border-yellow-500">
                   <h2 className="heading-sm mb-4 flex items-center gap-2">
                     <Lightbulb className="h-5 w-5 text-yellow-500" />
-                    Важно запомнить
+                    Key Points to Remember
                   </h2>
                   <ul className="space-y-2">
                     {selectedLesson.importantPoints.map((point, index) => (
@@ -174,7 +174,7 @@ export default function CoursePlatformPage() {
                 {/* Quiz Button */}
                 {selectedLesson.quiz.length > 0 && (
                   <Button onClick={() => setShowQuiz(true)} className="w-full" size="lg">
-                    Пройти мини-квиз <ArrowRight className="h-4 w-4 ml-2" />
+                    Take Mini-Quiz <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 )}
               </div>
@@ -184,9 +184,9 @@ export default function CoursePlatformPage() {
             {showQuiz && selectedLesson && (
               <div className="max-w-2xl mx-auto space-y-6">
                 <div className="flex items-center justify-between">
-                  <h2 className="heading-md">Мини-квиз</h2>
+                  <h2 className="heading-md">Mini-Quiz</h2>
                   <Button variant="outline" onClick={() => setShowQuiz(false)}>
-                    Вернуться к уроку
+                    Back to Lesson
                   </Button>
                 </div>
 

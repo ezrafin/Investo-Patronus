@@ -1,35 +1,35 @@
 export const articleTopics = {
   markets: {
-    name: 'Рынки',
-    subtopics: ['Фондовый рынок', 'Криптовалюты', 'Сырьевые товары', 'Валюты', 'Недвижимость']
+    name: 'Markets',
+    subtopics: ['Stock Market', 'Cryptocurrencies', 'Commodities', 'Currencies', 'Real Estate']
   },
   strategies: {
-    name: 'Стратегии',
-    subtopics: ['Долгосрочное инвестирование', 'Трейдинг', 'Пассивный доход', 'Хеджирование', 'Дивидендная стратегия']
+    name: 'Strategies',
+    subtopics: ['Long-term Investing', 'Trading', 'Passive Income', 'Hedging', 'Dividend Strategy']
   },
   analysis: {
-    name: 'Анализ',
-    subtopics: ['Технический анализ', 'Фундаментальный анализ', 'Количественный анализ', 'Макроэкономический анализ']
+    name: 'Analysis',
+    subtopics: ['Technical Analysis', 'Fundamental Analysis', 'Quantitative Analysis', 'Macroeconomic Analysis']
   },
   education: {
-    name: 'Обучение',
-    subtopics: ['Для начинающих', 'Продвинутый уровень', 'Психология инвестирования', 'Финансовая грамотность']
+    name: 'Education',
+    subtopics: ['For Beginners', 'Advanced Level', 'Investment Psychology', 'Financial Literacy']
   },
   instruments: {
-    name: 'Инструменты',
-    subtopics: ['ETF', 'Акции', 'Облигации', 'Опционы', 'Деривативы']
+    name: 'Instruments',
+    subtopics: ['ETF', 'Stocks', 'Bonds', 'Options', 'Derivatives']
   },
   comparison: {
-    name: 'Сравнения',
-    subtopics: ['Депозиты vs инвестиции', 'Активное vs пассивное управление', 'Брокеры', 'Инвестиционные платформы']
+    name: 'Comparisons',
+    subtopics: ['Deposits vs Investments', 'Active vs Passive Management', 'Brokers', 'Investment Platforms']
   }
 };
 
 export const articleFormats = [
-  { id: 'guide', name: 'Гайд', description: 'Пошаговое руководство' },
-  { id: 'case_study', name: 'Разбор кейса', description: 'Анализ конкретной ситуации' },
-  { id: 'comparison', name: 'Сравнение', description: 'Сравнительный анализ вариантов' },
-  { id: 'checklist', name: 'Чек-лист', description: 'Список для проверки' }
+  { id: 'guide', name: 'Guide', description: 'Step-by-step guide' },
+  { id: 'case_study', name: 'Case Study', description: 'Analysis of a specific situation' },
+  { id: 'comparison', name: 'Comparison', description: 'Comparative analysis of options' },
+  { id: 'checklist', name: 'Checklist', description: 'List for verification' }
 ];
 
 export interface ArticleApplication {

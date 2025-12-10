@@ -16,45 +16,45 @@ export interface Video {
 }
 
 export const videoCategories = [
-  { id: 'markets', name: 'Рынки', count: 8 },
-  { id: 'analysis', name: 'Анализ', count: 6 },
-  { id: 'strategy', name: 'Стратегии', count: 7 },
-  { id: 'education', name: 'Обучение', count: 9 },
-  { id: 'interview', name: 'Интервью', count: 4 },
-  { id: 'banking-reality', name: 'Банки vs Инвестиции', count: 5 },
+  { id: 'markets', name: 'Markets', count: 8 },
+  { id: 'analysis', name: 'Analysis', count: 6 },
+  { id: 'strategy', name: 'Strategies', count: 7 },
+  { id: 'education', name: 'Education', count: 9 },
+  { id: 'interview', name: 'Interviews', count: 4 },
+  { id: 'banking-reality', name: 'Banks vs Investments', count: 5 },
 ];
 
 export const videoTags = [
-  'акции', 'облигации', 'ETF', 'криптовалюта', 'форекс', 
-  'технический анализ', 'фундаментальный анализ', 'риск-менеджмент',
-  'портфель', 'дивиденды', 'инфляция', 'реальная доходность', 
-  'банковские депозиты', 'альтернативы банкам'
+  'stocks', 'bonds', 'ETF', 'cryptocurrency', 'forex', 
+  'technical analysis', 'fundamental analysis', 'risk management',
+  'portfolio', 'dividends', 'inflation', 'real returns', 
+  'bank deposits', 'bank alternatives'
 ];
 
 export const videos: Video[] = [
   {
     id: 'real-returns-inflation',
-    title: 'Реальная доходность: что остаётся после инфляции',
+    title: 'Real Returns: What Remains After Inflation',
     category: 'banking-reality',
-    tags: ['инфляция', 'реальная доходность', 'банковские депозиты'],
+    tags: ['inflation', 'real returns', 'bank deposits'],
     level: 'beginner',
     format: 'lecture',
-    duration: '28 мин',
-    description: 'Разбираем, как инфляция съедает ваши сбережения на депозитах. Сравниваем номинальную и реальную доходность различных инструментов.',
+    duration: '28 min',
+    description: 'We break down how inflation erodes your savings in deposits. Compare nominal and real returns of various instruments.',
     keyTakeaways: [
-      'Номинальная ставка депозита 8% при инфляции 6% = реальная доходность всего 2%',
-      'За 10 лет депозит с "хорошей" ставкой может потерять 30-40% покупательной способности',
-      'Альтернативные инструменты (ETF на акции, облигации) исторически обгоняют инфляцию',
-      'Банки зарабатывают на разнице между ставкой депозита и ставкой кредита (маржа 5-15%)'
+      'A deposit rate of 8% with 6% inflation = only 2% real return',
+      'Over 10 years, a deposit with a "good" rate can lose 30-40% of purchasing power',
+      'Alternative instruments (stock ETFs, bonds) historically outpace inflation',
+      'Banks profit from the spread between deposit rates and loan rates (margin 5-15%)'
     ],
     selfCheckQuestions: [
-      { question: 'Если депозит предлагает 7% годовых, а инфляция 5%, какова реальная доходность?', hint: 'Простое вычитание: 7% - 5% = 2%' },
-      { question: 'Почему банки могут предлагать "гарантированную" доходность?', hint: 'Подумайте, как банк использует ваши деньги' },
-      { question: 'Какие инструменты исторически показывают доходность выше инфляции?', hint: 'Акции, ETF, недвижимость' }
+      { question: 'If a deposit offers 7% annually and inflation is 5%, what is the real return?', hint: 'Simple subtraction: 7% - 5% = 2%' },
+      { question: 'Why can banks offer "guaranteed" returns?', hint: 'Think about how the bank uses your money' },
+      { question: 'Which instruments historically show returns above inflation?', hint: 'Stocks, ETFs, real estate' }
     ],
     resources: [
-      { title: 'Калькулятор реальной доходности', url: '/tools/real-return-calculator' },
-      { title: 'Статья: Инфляция и сбережения', url: '/education/basic' }
+      { title: 'Real Return Calculator', url: '/tools/real-return-calculator' },
+      { title: 'Article: Inflation and Savings', url: '/education/basic' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop',
     relatedForumTopics: ['deposits-vs-investments', 'inflation-protection'],
@@ -62,25 +62,25 @@ export const videos: Video[] = [
   },
   {
     id: 'hidden-bank-fees',
-    title: 'Скрытые комиссии банковских продуктов',
+    title: 'Hidden Fees in Banking Products',
     category: 'banking-reality',
-    tags: ['банковские депозиты', 'комиссии', 'реальная доходность'],
+    tags: ['bank deposits', 'fees', 'real returns'],
     level: 'beginner',
     format: 'case',
-    duration: '32 мин',
-    description: 'Разбор реальных примеров: как маркетинговые обещания банков расходятся с реальностью. Учимся читать мелкий шрифт.',
+    duration: '32 min',
+    description: 'Real examples breakdown: how bank marketing promises diverge from reality. Learn to read the fine print.',
     keyTakeaways: [
-      'Комиссия за обслуживание счёта может "съесть" 0.5-2% годовой доходности',
-      'Досрочное снятие часто обнуляет проценты — это скрытый риск ликвидности',
-      'Страхование вкладов не защищает от инфляции — только от банкротства банка',
-      'Сравните: ETF с комиссией 0.1% vs банковский продукт с комиссией 1-2%'
+      'Account maintenance fees can "eat up" 0.5-2% of annual returns',
+      'Early withdrawal often cancels interest — a hidden liquidity risk',
+      'Deposit insurance doesn\'t protect against inflation — only bank bankruptcy',
+      'Compare: ETF with 0.1% fee vs bank product with 1-2% fee'
     ],
     selfCheckQuestions: [
-      { question: 'Что происходит с процентами при досрочном закрытии вклада?', hint: 'Проверьте условия своего текущего депозита' },
-      { question: 'Какую часть доходности "съедают" комиссии банковских продуктов?', hint: 'Обычно 0.5-3% в зависимости от продукта' }
+      { question: 'What happens to interest when closing a deposit early?', hint: 'Check the terms of your current deposit' },
+      { question: 'How much of returns do bank product fees "eat up"?', hint: 'Usually 0.5-3% depending on the product' }
     ],
     resources: [
-      { title: 'Чек-лист: на что смотреть в договоре', url: '/education/basic' }
+      { title: 'Checklist: What to Look for in Contracts', url: '/education/basic' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop',
     relatedForumTopics: ['bank-fees-analysis'],
@@ -88,26 +88,26 @@ export const videos: Video[] = [
   },
   {
     id: 'etf-basics',
-    title: 'ETF для начинающих: альтернатива банковским продуктам',
+    title: 'ETF for Beginners: Alternative to Banking Products',
     category: 'education',
-    tags: ['ETF', 'портфель', 'альтернативы банкам'],
+    tags: ['ETF', 'portfolio', 'bank alternatives'],
     level: 'beginner',
     format: 'lecture',
-    duration: '45 мин',
-    description: 'Полное руководство по ETF: что это, как выбрать, какую доходность ожидать. Сравнение с традиционными банковскими инструментами.',
+    duration: '45 min',
+    description: 'Complete guide to ETFs: what they are, how to choose, what returns to expect. Comparison with traditional banking instruments.',
     keyTakeaways: [
-      'ETF на индексы исторически приносят 7-10% годовых в долгосрочной перспективе',
-      'Диверсификация через один ETF снижает риски по сравнению с отдельными акциями',
-      'Комиссии ETF (0.03-0.5%) значительно ниже комиссий активно управляемых фондов банков (1-3%)',
-      'Ликвидность ETF выше: можно продать в любой момент без потери накопленного дохода'
+      'Index ETFs historically yield 7-10% annually in the long term',
+      'Diversification through a single ETF reduces risks compared to individual stocks',
+      'ETF fees (0.03-0.5%) are significantly lower than bank actively managed fund fees (1-3%)',
+      'ETF liquidity is higher: can be sold at any time without losing accumulated returns'
     ],
     selfCheckQuestions: [
-      { question: 'Какова средняя историческая доходность индекса S&P 500?', hint: 'Около 10% годовых до вычета инфляции' },
-      { question: 'Почему ETF часто выгоднее банковских инвестиционных продуктов?', hint: 'Сравните комиссии и прозрачность' }
+      { question: 'What is the average historical return of the S&P 500 index?', hint: 'About 10% annually before inflation' },
+      { question: 'Why are ETFs often more profitable than bank investment products?', hint: 'Compare fees and transparency' }
     ],
     resources: [
-      { title: 'Список популярных ETF', url: '/markets/currencies' },
-      { title: 'Калькулятор доходности ETF', url: '/tools/etf-calculator' }
+      { title: 'List of Popular ETFs', url: '/markets/currencies' },
+      { title: 'ETF Return Calculator', url: '/tools/etf-calculator' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop',
     relatedForumTopics: ['etf-discussion', 'passive-investing'],
@@ -115,25 +115,25 @@ export const videos: Video[] = [
   },
   {
     id: 'technical-analysis-intro',
-    title: 'Основы технического анализа',
+    title: 'Technical Analysis Fundamentals',
     category: 'analysis',
-    tags: ['технический анализ', 'акции', 'графики'],
+    tags: ['technical analysis', 'stocks', 'charts'],
     level: 'intermediate',
     format: 'lecture',
-    duration: '52 мин',
-    description: 'Изучаем ключевые паттерны, индикаторы и методы технического анализа для принятия торговых решений.',
+    duration: '52 min',
+    description: 'Learn key patterns, indicators, and technical analysis methods for making trading decisions.',
     keyTakeaways: [
-      'Уровни поддержки и сопротивления — основа технического анализа',
-      'Объём торгов подтверждает или опровергает ценовые движения',
-      'Скользящие средние помогают определить тренд',
-      'Технический анализ работает лучше на ликвидных рынках'
+      'Support and resistance levels are the foundation of technical analysis',
+      'Trading volume confirms or refutes price movements',
+      'Moving averages help identify trends',
+      'Technical analysis works better on liquid markets'
     ],
     selfCheckQuestions: [
-      { question: 'Что такое уровень поддержки?', hint: 'Ценовой уровень, где покупатели активизируются' },
-      { question: 'Как объём подтверждает пробой уровня?', hint: 'Высокий объём = сильный сигнал' }
+      { question: 'What is a support level?', hint: 'Price level where buyers become active' },
+      { question: 'How does volume confirm a level breakout?', hint: 'High volume = strong signal' }
     ],
     resources: [
-      { title: 'Глоссарий терминов ТА', url: '/education/advanced' }
+      { title: 'Technical Analysis Terms Glossary', url: '/education/advanced' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=600&h=400&fit=crop',
     relatedForumTopics: ['technical-analysis'],
@@ -141,25 +141,25 @@ export const videos: Video[] = [
   },
   {
     id: 'fundamental-analysis',
-    title: 'Фундаментальный анализ компаний',
+    title: 'Fundamental Company Analysis',
     category: 'analysis',
-    tags: ['фундаментальный анализ', 'акции', 'отчётность'],
+    tags: ['fundamental analysis', 'stocks', 'financial statements'],
     level: 'intermediate',
     format: 'lecture',
-    duration: '58 мин',
-    description: 'Как читать финансовую отчётность, оценивать компании и находить недооценённые акции.',
+    duration: '58 min',
+    description: 'How to read financial statements, evaluate companies, and find undervalued stocks.',
     keyTakeaways: [
-      'P/E ratio показывает, сколько вы платите за каждый рубль прибыли',
-      'ROE отражает эффективность использования капитала компанией',
-      'Свободный денежный поток — ключевой показатель для оценки бизнеса',
-      'Сравнивайте показатели с конкурентами и средними по отрасли'
+      'P/E ratio shows how much you pay for each dollar of profit',
+      'ROE reflects the efficiency of capital use by the company',
+      'Free cash flow is a key metric for business valuation',
+      'Compare metrics with competitors and industry averages'
     ],
     selfCheckQuestions: [
-      { question: 'Что означает P/E = 15?', hint: 'Цена акции = 15 годовых прибылей' },
-      { question: 'Почему важен свободный денежный поток?', hint: 'Это реальные деньги, которые компания может распределить' }
+      { question: 'What does P/E = 15 mean?', hint: 'Stock price = 15 annual profits' },
+      { question: 'Why is free cash flow important?', hint: 'These are real dollars the company can distribute' }
     ],
     resources: [
-      { title: 'Шаблон анализа компании', url: '/education/advanced' }
+      { title: 'Company Analysis Template', url: '/education/advanced' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
     relatedForumTopics: ['fundamental-analysis', 'stock-picks'],
@@ -167,25 +167,25 @@ export const videos: Video[] = [
   },
   {
     id: 'portfolio-construction',
-    title: 'Построение инвестиционного портфеля',
+    title: 'Building an Investment Portfolio',
     category: 'strategy',
-    tags: ['портфель', 'диверсификация', 'риск-менеджмент'],
+    tags: ['portfolio', 'diversification', 'risk management'],
     level: 'intermediate',
     format: 'lecture',
-    duration: '48 мин',
-    description: 'Принципы построения сбалансированного портфеля с учётом ваших целей, горизонта и толерантности к риску.',
+    duration: '48 min',
+    description: 'Principles of building a balanced portfolio considering your goals, time horizon, and risk tolerance.',
     keyTakeaways: [
-      'Диверсификация по классам активов снижает волатильность без существенной потери доходности',
-      'Молодые инвесторы могут позволить более агрессивный портфель (80% акции, 20% облигации)',
-      'Ребалансировка раз в год поддерживает целевое распределение активов',
-      'Консервативный портфель из ETF обгоняет большинство банковских инвестпродуктов'
+      'Diversification across asset classes reduces volatility without significant loss of returns',
+      'Young investors can afford a more aggressive portfolio (80% stocks, 20% bonds)',
+      'Annual rebalancing maintains target asset allocation',
+      'A conservative ETF portfolio outperforms most bank investment products'
     ],
     selfCheckQuestions: [
-      { question: 'Какое распределение активов подходит для горизонта 20+ лет?', hint: 'Больше акций, меньше облигаций' },
-      { question: 'Зачем нужна ребалансировка портфеля?', hint: 'Поддержание целевого соотношения риск/доходность' }
+      { question: 'What asset allocation suits a 20+ year horizon?', hint: 'More stocks, fewer bonds' },
+      { question: 'Why is portfolio rebalancing needed?', hint: 'Maintaining target risk/return ratio' }
     ],
     resources: [
-      { title: 'Калькулятор распределения активов', url: '/tools/asset-allocation' }
+      { title: 'Asset Allocation Calculator', url: '/tools/asset-allocation' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
     relatedForumTopics: ['portfolio-discussion'],
@@ -193,25 +193,25 @@ export const videos: Video[] = [
   },
   {
     id: 'dividend-investing',
-    title: 'Дивидендное инвестирование',
+    title: 'Dividend Investing',
     category: 'strategy',
-    tags: ['дивиденды', 'пассивный доход', 'акции'],
+    tags: ['dividends', 'passive income', 'stocks'],
     level: 'beginner',
     format: 'lecture',
-    duration: '38 мин',
-    description: 'Как построить портфель из дивидендных акций для получения регулярного пассивного дохода.',
+    duration: '38 min',
+    description: 'How to build a portfolio of dividend stocks for regular passive income.',
     keyTakeaways: [
-      'Дивидендная доходность 3-5% — это разумный диапазон для стабильных компаний',
-      'Реинвестирование дивидендов ускоряет рост капитала (эффект сложного процента)',
-      'Дивидендные акции исторически менее волатильны, чем акции роста',
-      'Сравните: дивиденды 4% + рост 3% = 7% vs депозит 6% (минус инфляция = 0-1%)'
+      'Dividend yield of 3-5% is a reasonable range for stable companies',
+      'Dividend reinvestment accelerates capital growth (compound interest effect)',
+      'Dividend stocks are historically less volatile than growth stocks',
+      'Compare: 4% dividends + 3% growth = 7% vs 6% deposit (minus inflation = 0-1%)'
     ],
     selfCheckQuestions: [
-      { question: 'Какая дивидендная доходность считается подозрительно высокой?', hint: 'Выше 8-10% — сигнал для проверки устойчивости' },
-      { question: 'Как реинвестирование влияет на долгосрочный результат?', hint: 'Эффект сложного процента' }
+      { question: 'What dividend yield is considered suspiciously high?', hint: 'Above 8-10% — a signal to check sustainability' },
+      { question: 'How does reinvestment affect long-term results?', hint: 'Compound interest effect' }
     ],
     resources: [
-      { title: 'Список дивидендных аристократов', url: '/companies' }
+      { title: 'List of Dividend Aristocrats', url: '/companies' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&h=400&fit=crop',
     relatedForumTopics: ['dividend-stocks'],
@@ -219,25 +219,25 @@ export const videos: Video[] = [
   },
   {
     id: 'risk-management',
-    title: 'Управление рисками для частного инвестора',
+    title: 'Risk Management for Individual Investors',
     category: 'strategy',
-    tags: ['риск-менеджмент', 'портфель', 'стоп-лоссы'],
+    tags: ['risk management', 'portfolio', 'stop losses'],
     level: 'intermediate',
     format: 'lecture',
-    duration: '42 мин',
-    description: 'Практические методы управления рисками: от диверсификации до стоп-лоссов.',
+    duration: '42 min',
+    description: 'Practical risk management methods: from diversification to stop losses.',
     keyTakeaways: [
-      'Не вкладывайте более 5% портфеля в одну позицию',
-      'Определите максимально допустимую просадку ДО входа в позицию',
-      'Риск-менеджмент важнее выбора "правильных" акций',
-      'Банковские продукты не защищают от инфляционного риска — это тоже риск!'
+      'Don\'t invest more than 5% of portfolio in one position',
+      'Determine maximum acceptable drawdown BEFORE entering a position',
+      'Risk management is more important than choosing "right" stocks',
+      'Banking products don\'t protect against inflation risk — that\'s also a risk!'
     ],
     selfCheckQuestions: [
-      { question: 'Какой процент портфеля можно рисковать в одной сделке?', hint: 'Обычно рекомендуют 1-2%' },
-      { question: 'Что такое инфляционный риск?', hint: 'Потеря покупательной способности денег' }
+      { question: 'What percentage of portfolio can be risked in one trade?', hint: 'Usually recommend 1-2%' },
+      { question: 'What is inflation risk?', hint: 'Loss of purchasing power of money' }
     ],
     resources: [
-      { title: 'Калькулятор размера позиции', url: '/tools/position-size' }
+      { title: 'Position Size Calculator', url: '/tools/position-size' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
     relatedForumTopics: ['risk-management'],
@@ -245,25 +245,25 @@ export const videos: Video[] = [
   },
   {
     id: 'how-banks-use-your-money',
-    title: 'Как банки используют деньги вкладчиков',
+    title: 'How Banks Use Depositor Money',
     category: 'banking-reality',
-    tags: ['банковские депозиты', 'банковская система', 'реальная доходность'],
+    tags: ['bank deposits', 'banking system', 'real returns'],
     level: 'beginner',
     format: 'analysis',
-    duration: '35 мин',
-    description: 'Объясняем бизнес-модель банков: почему они могут платить вам 6%, выдавая кредиты под 15-25%.',
+    duration: '35 min',
+    description: 'We explain the bank business model: why they can pay you 6% while issuing loans at 15-25%.',
     keyTakeaways: [
-      'Банк — это посредник между вкладчиками и заёмщиками, зарабатывающий на марже',
-      'Ваши 100,000 на депозите банк может выдать в кредит под ставку в 2-3 раза выше',
-      'Частичное резервирование означает, что банк держит только 10-20% вкладов в резерве',
-      'Прямое инвестирование убирает посредника и его маржу'
+      'A bank is an intermediary between depositors and borrowers, earning on the margin',
+      'Your $100,000 deposit can be loaned out at a rate 2-3 times higher',
+      'Fractional reserve means the bank keeps only 10-20% of deposits in reserve',
+      'Direct investing removes the intermediary and their margin'
     ],
     selfCheckQuestions: [
-      { question: 'Какую маржу зарабатывает банк на разнице ставок?', hint: 'Обычно 5-15% в зависимости от продукта' },
-      { question: 'Почему банки могут предлагать "гарантированную" ставку?', hint: 'Они зарабатывают значительно больше на кредитах' }
+      { question: 'What margin does a bank earn on the rate spread?', hint: 'Usually 5-15% depending on the product' },
+      { question: 'Why can banks offer a "guaranteed" rate?', hint: 'They earn significantly more on loans' }
     ],
     resources: [
-      { title: 'Статья: Альтернативы депозитам', url: '/education/basic' }
+      { title: 'Article: Deposit Alternatives', url: '/education/basic' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=600&h=400&fit=crop',
     relatedForumTopics: ['banking-system'],
@@ -271,25 +271,25 @@ export const videos: Video[] = [
   },
   {
     id: 'crypto-basics',
-    title: 'Введение в криптовалюты',
+    title: 'Introduction to Cryptocurrencies',
     category: 'markets',
-    tags: ['криптовалюта', 'биткоин', 'блокчейн'],
+    tags: ['cryptocurrency', 'bitcoin', 'blockchain'],
     level: 'beginner',
     format: 'lecture',
-    duration: '55 мин',
-    description: 'Основы криптовалютного рынка: технология, риски, возможности и место в инвестиционном портфеле.',
+    duration: '55 min',
+    description: 'Cryptocurrency market basics: technology, risks, opportunities, and place in an investment portfolio.',
     keyTakeaways: [
-      'Криптовалюты — высокорисковый актив с высокой волатильностью',
-      'Рекомендуемая доля в портфеле: 1-5% для умеренных инвесторов',
-      'Биткоин как "цифровое золото" — средство защиты от инфляции для некоторых инвесторов',
-      'Регуляторные риски остаются значительными'
+      'Cryptocurrencies are a high-risk asset with high volatility',
+      'Recommended portfolio allocation: 1-5% for moderate investors',
+      'Bitcoin as "digital gold" — inflation hedge for some investors',
+      'Regulatory risks remain significant'
     ],
     selfCheckQuestions: [
-      { question: 'Какой процент портфеля рекомендуется выделять на криптовалюты?', hint: '1-5% для умеренного риска' },
-      { question: 'В чём главный риск криптовалют?', hint: 'Высокая волатильность и регуляторная неопределённость' }
+      { question: 'What percentage of portfolio is recommended for cryptocurrencies?', hint: '1-5% for moderate risk' },
+      { question: 'What is the main risk of cryptocurrencies?', hint: 'High volatility and regulatory uncertainty' }
     ],
     resources: [
-      { title: 'Рынок криптовалют', url: '/markets/crypto' }
+      { title: 'Cryptocurrency Market', url: '/markets/crypto' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=600&h=400&fit=crop',
     relatedForumTopics: ['crypto-discussion'],
@@ -297,25 +297,25 @@ export const videos: Video[] = [
   },
   {
     id: 'bonds-vs-deposits',
-    title: 'Облигации vs банковские депозиты',
+    title: 'Bonds vs Bank Deposits',
     category: 'banking-reality',
-    tags: ['облигации', 'банковские депозиты', 'сравнение'],
+    tags: ['bonds', 'bank deposits', 'comparison'],
     level: 'beginner',
     format: 'analysis',
-    duration: '40 мин',
-    description: 'Детальное сравнение государственных и корпоративных облигаций с банковскими депозитами.',
+    duration: '40 min',
+    description: 'Detailed comparison of government and corporate bonds with bank deposits.',
     keyTakeaways: [
-      'ОФЗ дают сопоставимую с депозитами доходность, но с налоговыми льготами',
-      'Корпоративные облигации надёжных эмитентов часто доходнее депозитов на 1-3%',
-      'Облигации можно продать на вторичном рынке без потери накопленного дохода',
-      'ETF на облигации обеспечивают диверсификацию и ликвидность'
+      'Government bonds offer comparable returns to deposits, but with tax benefits',
+      'Corporate bonds from reliable issuers are often 1-3% more profitable than deposits',
+      'Bonds can be sold on the secondary market without losing accumulated income',
+      'Bond ETFs provide diversification and liquidity'
     ],
     selfCheckQuestions: [
-      { question: 'Какое преимущество облигаций перед депозитами по ликвидности?', hint: 'Можно продать без потери накопленного купона' },
-      { question: 'Что такое ОФЗ?', hint: 'Облигации федерального займа — гос. облигации России' }
+      { question: 'What liquidity advantage do bonds have over deposits?', hint: 'Can be sold without losing accumulated coupon' },
+      { question: 'What are government bonds?', hint: 'Government-issued debt securities' }
     ],
     resources: [
-      { title: 'Калькулятор доходности облигаций', url: '/tools/bond-calculator' }
+      { title: 'Bond Yield Calculator', url: '/tools/bond-calculator' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=600&h=400&fit=crop',
     relatedForumTopics: ['bonds-vs-deposits'],
@@ -323,25 +323,25 @@ export const videos: Video[] = [
   },
   {
     id: 'market-psychology',
-    title: 'Психология рынков и инвестора',
+    title: 'Market and Investor Psychology',
     category: 'education',
-    tags: ['психология', 'эмоции', 'дисциплина'],
+    tags: ['psychology', 'emotions', 'discipline'],
     level: 'intermediate',
     format: 'lecture',
-    duration: '46 мин',
-    description: 'Когнитивные искажения, влияющие на инвестиционные решения, и как с ними бороться.',
+    duration: '46 min',
+    description: 'Cognitive biases affecting investment decisions and how to combat them.',
     keyTakeaways: [
-      'FOMO (страх упустить) — причина покупок на максимумах',
-      'Эффект якоря заставляет держать убыточные позиции',
-      'Системный подход побеждает эмоциональное инвестирование',
-      'Банки эксплуатируют когнитивные искажения в маркетинге ("гарантированная доходность")'
+      'FOMO (Fear Of Missing Out) — cause of buying at peaks',
+      'Anchoring effect makes you hold losing positions',
+      'Systematic approach beats emotional investing',
+      'Banks exploit cognitive biases in marketing ("guaranteed returns")'
     ],
     selfCheckQuestions: [
-      { question: 'Что такое FOMO в контексте инвестирования?', hint: 'Fear Of Missing Out — страх упустить возможность' },
-      { question: 'Как банки используют слово "гарантированная"?', hint: 'Создают ложное чувство безопасности, скрывая инфляционный риск' }
+      { question: 'What is FOMO in the context of investing?', hint: 'Fear Of Missing Out — fear of missing an opportunity' },
+      { question: 'How do banks use the word "guaranteed"?', hint: 'Create false sense of security, hiding inflation risk' }
     ],
     resources: [
-      { title: 'Книга: Думай медленно, решай быстро', url: '#' }
+      { title: 'Book: Thinking, Fast and Slow', url: '#' }
     ],
     thumbnail: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600&h=400&fit=crop',
     relatedForumTopics: ['psychology'],

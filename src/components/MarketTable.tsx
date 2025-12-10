@@ -76,7 +76,7 @@ export function MarketTable({ data, showVolume = false, showChart = true }: Mark
                   onClick={() => handleSort('symbol')}
                   className="flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Символ <SortIcon column="symbol" />
+                  Symbol <SortIcon column="symbol" />
                 </button>
               </th>
               <th className="text-left px-4 py-3">
@@ -84,7 +84,7 @@ export function MarketTable({ data, showVolume = false, showChart = true }: Mark
                   onClick={() => handleSort('name')}
                   className="flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Название <SortIcon column="name" />
+                  Name <SortIcon column="name" />
                 </button>
               </th>
               <th className="text-right px-4 py-3">
@@ -92,7 +92,7 @@ export function MarketTable({ data, showVolume = false, showChart = true }: Mark
                   onClick={() => handleSort('price')}
                   className="flex items-center gap-1 justify-end text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Цена <SortIcon column="price" />
+                  Price <SortIcon column="price" />
                 </button>
               </th>
               <th className="text-right px-4 py-3">
@@ -100,7 +100,7 @@ export function MarketTable({ data, showVolume = false, showChart = true }: Mark
                   onClick={() => handleSort('change')}
                   className="flex items-center gap-1 justify-end text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Изм. <SortIcon column="change" />
+                  Change <SortIcon column="change" />
                 </button>
               </th>
               <th className="text-right px-4 py-3">
@@ -117,7 +117,7 @@ export function MarketTable({ data, showVolume = false, showChart = true }: Mark
                     onClick={() => handleSort('volume')}
                     className="flex items-center gap-1 justify-end text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    Объём <SortIcon column="volume" />
+                    Volume <SortIcon column="volume" />
                   </button>
                 </th>
               )}

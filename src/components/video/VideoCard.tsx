@@ -13,16 +13,16 @@ const levelColors = {
 };
 
 const levelLabels = {
-  beginner: 'Начальный',
-  intermediate: 'Средний',
-  pro: 'Продвинутый'
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  pro: 'Advanced'
 };
 
 const formatLabels = {
-  lecture: 'Лекция',
-  case: 'Кейс',
-  analysis: 'Анализ',
-  discussion: 'Дискуссия'
+  lecture: 'Lecture',
+  case: 'Case Study',
+  analysis: 'Analysis',
+  discussion: 'Discussion'
 };
 
 export function VideoCard({ video }: VideoCardProps) {

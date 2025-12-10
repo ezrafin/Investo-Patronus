@@ -10,16 +10,16 @@ interface NewsCardProps {
 }
 
 const marketLabels: Record<string, string> = {
-  indices: 'Индексы',
-  stocks: 'Акции',
-  crypto: 'Криптовалюты',
-  commodities: 'Сырьё',
-  currencies: 'Валюты',
-  general: 'Общее',
+  indices: 'Indices',
+  stocks: 'Stocks',
+  crypto: 'Crypto',
+  commodities: 'Commodities',
+  currencies: 'Currencies',
+  general: 'General',
 };
 
 export function NewsCard({ news, featured = false, index = 0 }: NewsCardProps) {
-  const formattedDate = new Date(news.date).toLocaleDateString('ru-RU', {
+  const formattedDate = new Date(news.date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'short',
   });
@@ -66,7 +66,7 @@ export function NewsCard({ news, featured = false, index = 0 }: NewsCardProps) {
           <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/50">
             <span className="text-xs text-muted-foreground">{news.source}</span>
             <span className="flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-              Читать
+              Read
               <ArrowUpRight className="h-4 w-4" />
             </span>
           </div>

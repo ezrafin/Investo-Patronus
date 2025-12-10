@@ -15,9 +15,9 @@ interface VideoFiltersProps {
 }
 
 const levels = [
-  { id: 'beginner', name: 'Начальный' },
-  { id: 'intermediate', name: 'Средний' },
-  { id: 'pro', name: 'Продвинутый' }
+  { id: 'beginner', name: 'Beginner' },
+  { id: 'intermediate', name: 'Intermediate' },
+  { id: 'pro', name: 'Advanced' }
 ];
 
 export function VideoFilters({
@@ -51,11 +51,11 @@ export function VideoFilters({
     <div className="glass-card p-6 space-y-6">
       {/* Search */}
       <div>
-        <label className="text-sm font-medium mb-2 block">Поиск</label>
+        <label className="text-sm font-medium mb-2 block">Search</label>
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Поиск видео..."
+            placeholder="Search videos..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-10"
@@ -65,7 +65,7 @@ export function VideoFilters({
 
       {/* Categories */}
       <div>
-        <label className="text-sm font-medium mb-2 block">Категории</label>
+        <label className="text-sm font-medium mb-2 block">Categories</label>
         <div className="space-y-1">
           {videoCategories.map(category => (
             <button
@@ -92,7 +92,7 @@ export function VideoFilters({
 
       {/* Levels */}
       <div>
-        <label className="text-sm font-medium mb-2 block">Уровень</label>
+        <label className="text-sm font-medium mb-2 block">Level</label>
         <div className="flex flex-wrap gap-2">
           {levels.map(level => (
             <button
@@ -112,7 +112,7 @@ export function VideoFilters({
 
       {/* Tags */}
       <div>
-        <label className="text-sm font-medium mb-2 block">Теги</label>
+        <label className="text-sm font-medium mb-2 block">Tags</label>
         <div className="flex flex-wrap gap-2">
           {videoTags.slice(0, 10).map(tag => (
             <button
@@ -138,7 +138,7 @@ export function VideoFilters({
           onClick={clearFilters}
         >
           <X className="h-4 w-4 mr-2" />
-          Сбросить фильтры
+          Clear Filters
         </Button>
       )}
     </div>

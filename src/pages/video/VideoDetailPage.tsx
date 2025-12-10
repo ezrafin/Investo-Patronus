@@ -8,16 +8,16 @@ import {
 import { Button } from '@/components/ui/button';
 
 const levelLabels = {
-  beginner: 'Начальный',
-  intermediate: 'Средний',
-  pro: 'Продвинутый'
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  pro: 'Advanced'
 };
 
 const formatLabels = {
-  lecture: 'Лекция',
-  case: 'Кейс',
-  analysis: 'Анализ',
-  discussion: 'Дискуссия'
+  lecture: 'Lecture',
+  case: 'Case Study',
+  analysis: 'Analysis',
+  discussion: 'Discussion'
 };
 
 export default function VideoDetailPage() {
@@ -28,9 +28,9 @@ export default function VideoDetailPage() {
     return (
       <Layout>
         <div className="pt-24 pb-16 container-wide text-center">
-          <h1 className="heading-lg mb-4">Видео не найдено</h1>
+          <h1 className="heading-lg mb-4">Video Not Found</h1>
           <Link to="/video" className="btn-primary">
-            Вернуться к видеотеке
+            Back to Video Library
           </Link>
         </div>
       </Layout>
@@ -47,7 +47,7 @@ export default function VideoDetailPage() {
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
-            Назад к видеотеке
+            Back to Video Library
           </Link>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -67,7 +67,7 @@ export default function VideoDetailPage() {
                         <Play className="h-8 w-8 text-primary-foreground ml-1" />
                       </div>
                       <p className="text-sm text-muted-foreground">
-                        Видеоплеер будет доступен скоро
+                        Video player coming soon
                       </p>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ export default function VideoDetailPage() {
                   </span>
                   <span className="flex items-center gap-1 text-sm text-muted-foreground">
                     <Calendar className="h-4 w-4" />
-                    {new Date(video.publishedAt).toLocaleDateString('ru-RU')}
+                    {new Date(video.publishedAt).toLocaleDateString('en-US')}
                   </span>
                 </div>
 
@@ -105,7 +105,7 @@ export default function VideoDetailPage() {
               <div className="glass-card p-6">
                 <h2 className="heading-sm mb-4 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  Ключевые выводы
+                  Key Takeaways
                 </h2>
                 <ul className="space-y-3">
                   {video.keyTakeaways.map((takeaway, index) => (
@@ -121,7 +121,7 @@ export default function VideoDetailPage() {
               <div className="glass-card p-6">
                 <h2 className="heading-sm mb-4 flex items-center gap-2">
                   <HelpCircle className="h-5 w-5 text-primary" />
-                  Вопросы для самопроверки
+                  Self-Check Questions
                 </h2>
                 <div className="space-y-4">
                   {video.selfCheckQuestions.map((item, index) => (
@@ -130,7 +130,7 @@ export default function VideoDetailPage() {
                       {item.hint && (
                         <details className="text-sm">
                           <summary className="text-primary cursor-pointer hover:underline">
-                            Показать подсказку
+                            Show Hint
                           </summary>
                           <p className="mt-2 text-muted-foreground pl-4 border-l-2 border-primary">
                             {item.hint}
@@ -150,7 +150,7 @@ export default function VideoDetailPage() {
                 <div className="glass-card p-6">
                   <h3 className="font-semibold mb-4 flex items-center gap-2">
                     <BookOpen className="h-5 w-5 text-primary" />
-                    Дополнительные материалы
+                    Additional Resources
                   </h3>
                   <ul className="space-y-2">
                     {video.resources.map((resource, index) => (
@@ -171,7 +171,7 @@ export default function VideoDetailPage() {
               {/* Related Forum Topics */}
               {video.relatedForumTopics.length > 0 && (
                 <div className="glass-card p-6">
-                  <h3 className="font-semibold mb-4">Обсуждение на форуме</h3>
+                  <h3 className="font-semibold mb-4">Forum Discussion</h3>
                   <ul className="space-y-2">
                     {video.relatedForumTopics.map((topic, index) => (
                       <li key={index}>
@@ -189,17 +189,17 @@ export default function VideoDetailPage() {
 
               {/* Hint Box */}
               <div className="glass-card p-4 border-l-4 border-yellow-500">
-                <h4 className="font-medium text-sm mb-2">💡 Совет</h4>
+                <h4 className="font-medium text-sm mb-2">💡 Tip</h4>
                 <p className="text-xs text-muted-foreground">
-                  При оценке любых финансовых предложений всегда рассчитывайте 
-                  <strong> реальную доходность</strong> — номинальную ставку минус 
-                  ожидаемую инфляцию. Это даст вам объективную картину.
+                  When evaluating any financial offers, always calculate 
+                  <strong> real returns</strong> — nominal rate minus 
+                  expected inflation. This will give you an objective picture.
                 </p>
               </div>
 
               {/* Related Videos */}
               <div className="glass-card p-6">
-                <h3 className="font-semibold mb-4">Похожие видео</h3>
+                <h3 className="font-semibold mb-4">Related Videos</h3>
                 <div className="space-y-3">
                   {videos
                     .filter(v => v.id !== video.id && v.category === video.category)
