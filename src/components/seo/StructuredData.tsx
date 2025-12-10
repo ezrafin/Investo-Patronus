@@ -1,24 +1,30 @@
-import { useEffect } from 'react';
+import { useEffect, useId } from 'react';
 
 interface StructuredDataProps {
   data: object | object[];
 }
 
 export function StructuredData({ data }: StructuredDataProps) {
+  const uniqueId = useId().replace(/:/g, '-');
+  const scriptId = `structured-data-${uniqueId}`;
+
   useEffect(() => {
-    const scriptId = 'structured-data';
-    let script = document.getElementById(scriptId) as HTMLScriptElement;
+    try {
+      let script = document.getElementById(scriptId) as HTMLScriptElement;
 
-    if (!script) {
-      script = document.createElement('script');
-      script.id = scriptId;
-      script.type = 'application/ld+json';
-      document.head.appendChild(script);
+      if (!script) {
+        script = document.createElement('script');
+        script.id = scriptId;
+        script.type = 'application/ld+json';
+        document.head.appendChild(script);
+      }
+
+      const jsonData = Array.isArray(data) ? data : [data];
+      script.textContent = JSON.stringify(jsonData);
+    } catch (error) {
+      console.error('StructuredData error:', error);
     }
-
-    const jsonData = Array.isArray(data) ? data : [data];
-    script.textContent = JSON.stringify(jsonData);
-  }, [data]);
+  }, [data, scriptId]);
 
   return null;
 }

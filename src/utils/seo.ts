@@ -53,62 +53,74 @@ export function generateSEOTags(data: SEOData = {}) {
 }
 
 export function updateDocumentHead(seoData: SEOData) {
-  const tags = generateSEOTags(seoData);
+  try {
+    const tags = generateSEOTags(seoData);
 
-  // Update title
-  if (document.title !== tags.title) {
-    document.title = tags.title;
-  }
-
-  // Update or create meta tags
-  const updateMetaTag = (name: string, content: string, attribute: string = 'name') => {
-    let element = document.querySelector(`meta[${attribute}="${name}"]`) as HTMLMetaElement;
-    if (!element) {
-      element = document.createElement('meta');
-      element.setAttribute(attribute, name);
-      document.head.appendChild(element);
+    // Update title
+    if (document.title !== tags.title) {
+      document.title = tags.title;
     }
-    element.setAttribute('content', content);
-  };
 
-  // Basic meta tags
-  updateMetaTag('description', tags.description);
-  if (tags.keywords) {
-    updateMetaTag('keywords', tags.keywords);
-  }
-  updateMetaTag('robots', tags.robots);
+    // Update or create meta tags
+    const updateMetaTag = (name: string, content: string, attribute: string = 'name') => {
+      try {
+        let element = document.querySelector(`meta[${attribute}="${name}"]`) as HTMLMetaElement;
+        if (!element) {
+          element = document.createElement('meta');
+          element.setAttribute(attribute, name);
+          document.head.appendChild(element);
+        }
+        element.setAttribute('content', content);
+      } catch (error) {
+        console.error(`Error updating meta tag ${name}:`, error);
+      }
+    };
 
-  // Open Graph tags
-  updateMetaTag('og:title', tags.title, 'property');
-  updateMetaTag('og:description', tags.description, 'property');
-  updateMetaTag('og:image', tags.image, 'property');
-  updateMetaTag('og:url', tags.url, 'property');
-  updateMetaTag('og:type', tags.type, 'property');
-  if (tags.type === 'article') {
-    if (tags.author) {
-      updateMetaTag('article:author', tags.author, 'property');
+    // Basic meta tags
+    updateMetaTag('description', tags.description);
+    if (tags.keywords) {
+      updateMetaTag('keywords', tags.keywords);
     }
-    if (tags.publishedTime) {
-      updateMetaTag('article:published_time', tags.publishedTime, 'property');
-    }
-    if (tags.modifiedTime) {
-      updateMetaTag('article:modified_time', tags.modifiedTime, 'property');
-    }
-  }
+    updateMetaTag('robots', tags.robots);
 
-  // Twitter Card tags
-  updateMetaTag('twitter:card', 'summary_large_image');
-  updateMetaTag('twitter:title', tags.title);
-  updateMetaTag('twitter:description', tags.description);
-  updateMetaTag('twitter:image', tags.image);
+    // Open Graph tags
+    updateMetaTag('og:title', tags.title, 'property');
+    updateMetaTag('og:description', tags.description, 'property');
+    updateMetaTag('og:image', tags.image, 'property');
+    updateMetaTag('og:url', tags.url, 'property');
+    updateMetaTag('og:type', tags.type, 'property');
+    if (tags.type === 'article') {
+      if (tags.author) {
+        updateMetaTag('article:author', tags.author, 'property');
+      }
+      if (tags.publishedTime) {
+        updateMetaTag('article:published_time', tags.publishedTime, 'property');
+      }
+      if (tags.modifiedTime) {
+        updateMetaTag('article:modified_time', tags.modifiedTime, 'property');
+      }
+    }
 
-  // Canonical URL
-  let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-  if (!canonicalLink) {
-    canonicalLink = document.createElement('link');
-    canonicalLink.setAttribute('rel', 'canonical');
-    document.head.appendChild(canonicalLink);
+    // Twitter Card tags
+    updateMetaTag('twitter:card', 'summary_large_image');
+    updateMetaTag('twitter:title', tags.title);
+    updateMetaTag('twitter:description', tags.description);
+    updateMetaTag('twitter:image', tags.image);
+
+    // Canonical URL
+    try {
+      let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.setAttribute('href', tags.canonical);
+    } catch (error) {
+      console.error('Error updating canonical URL:', error);
+    }
+  } catch (error) {
+    console.error('Error updating document head:', error);
   }
-  canonicalLink.setAttribute('href', tags.canonical);
 }
 

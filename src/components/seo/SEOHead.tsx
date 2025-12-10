@@ -30,22 +30,26 @@ export function SEOHead({
   const location = useLocation();
 
   useEffect(() => {
-    const fullUrl = `https://investopatronus.com${location.pathname}`;
-    
-    updateDocumentHead({
-      title,
-      description,
-      keywords,
-      image,
-      url: fullUrl,
-      canonical: fullUrl,
-      type: type || 'website',
-      author,
-      publishedTime,
-      modifiedTime,
-      noindex,
-      nofollow,
-    });
+    try {
+      const fullUrl = `https://investopatronus.com${location.pathname}`;
+      
+      updateDocumentHead({
+        title,
+        description,
+        keywords,
+        image,
+        url: fullUrl,
+        canonical: fullUrl,
+        type: type || 'website',
+        author,
+        publishedTime,
+        modifiedTime,
+        noindex,
+        nofollow,
+      });
+    } catch (error) {
+      console.error('SEOHead update error:', error);
+    }
   }, [
     location.pathname,
     title,

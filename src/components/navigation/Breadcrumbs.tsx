@@ -19,10 +19,24 @@ interface BreadcrumbsProps {
 
 export function Breadcrumbs({ pageTitle, items, className }: BreadcrumbsProps) {
   const location = useLocation();
-  const breadcrumbItems = items || generateBreadcrumbs(location.pathname, pageTitle);
+  
+  // Add try-catch for safety
+  let breadcrumbItems: BreadcrumbItemType[];
+  try {
+    breadcrumbItems = items || generateBreadcrumbs(location.pathname, pageTitle);
+  } catch (error) {
+    console.error('Breadcrumb generation error:', error);
+    breadcrumbItems = [];
+  }
 
   // Generate structured data
-  const structuredData = generateBreadcrumbListSchema(breadcrumbItems);
+  let structuredData;
+  try {
+    structuredData = generateBreadcrumbListSchema(breadcrumbItems);
+  } catch (error) {
+    console.error('BreadcrumbList schema generation error:', error);
+    structuredData = null;
+  }
 
   if (breadcrumbItems.length <= 1) {
     return null;
@@ -30,7 +44,7 @@ export function Breadcrumbs({ pageTitle, items, className }: BreadcrumbsProps) {
 
   return (
     <>
-      <StructuredData data={structuredData} />
+      {structuredData && <StructuredData data={structuredData} />}
       <Breadcrumb className={className}>
         <BreadcrumbList>
           {breadcrumbItems.map((item, index) => {
