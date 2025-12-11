@@ -14,10 +14,21 @@ import {
 } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-export function AchievementSystem() {
+interface AchievementSystemProps {
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  trigger?: React.ReactNode;
+}
+
+export function AchievementSystem({ open: controlledOpen, onOpenChange, trigger }: AchievementSystemProps = {}) {
   const { user } = useUser();
   const [unlockedAchievements, setUnlockedAchievements] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
+  const [internalOpen, setInternalOpen] = useState(false);
+  
+  const isControlled = controlledOpen !== undefined;
+  const open = isControlled ? controlledOpen : internalOpen;
+  const setOpen = isControlled ? (onOpenChange || (() => {})) : setInternalOpen;
 
   useEffect(() => {
     if (user) {
@@ -26,6 +37,12 @@ export function AchievementSystem() {
       setLoading(false);
     }
   }, [user]);
+
+  useEffect(() => {
+    if (open && user) {
+      loadAchievements();
+    }
+  }, [open, user]);
 
   const loadAchievements = async () => {
     if (!user) return;
@@ -56,15 +73,22 @@ export function AchievementSystem() {
   if (!user) return null;
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <button className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-secondary/50 transition-colors">
-          <Trophy className="h-4 w-4 text-amber-500" />
-          <span className="text-sm font-medium">
-            {unlockedAchievements.length} / {achievements.length}
-          </span>
-        </button>
-      </DialogTrigger>
+    <Dialog open={open} onOpenChange={setOpen}>
+      {trigger && (
+        <DialogTrigger asChild>
+          {trigger}
+        </DialogTrigger>
+      )}
+      {!trigger && (
+        <DialogTrigger asChild>
+          <button className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-secondary/50 transition-colors">
+            <Trophy className="h-4 w-4 text-amber-500" />
+            <span className="text-sm font-medium">
+              {unlockedAchievements.length} / {achievements.length}
+            </span>
+          </button>
+        </DialogTrigger>
+      )}
       <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Achievements</DialogTitle>

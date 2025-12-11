@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, Mic, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark } from 'lucide-react';
+import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark } from 'lucide-react';
 import { MarketAlerts } from '@/components/markets/MarketAlerts';
 import { AchievementSystem } from '@/components/forum/AchievementSystem';
+import { Trophy } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useUser } from '@/context/UserContext';
 import { UserAvatar } from '@/components/user/UserAvatar';
@@ -50,20 +53,6 @@ const navigation = [{
     description: 'Forex and exchange-traded funds'
   }]
 }, {
-  name: 'Video',
-  href: '/video',
-  children: [{
-    name: 'Video Library',
-    href: '/video',
-    icon: GraduationCap,
-    description: 'Educational videos'
-  }, {
-    name: 'Podcasts',
-    href: '/video/podcasts',
-    icon: Mic,
-    description: 'Expert audio discussions'
-  }]
-}, {
   name: 'Education',
   href: '/education',
   children: [{
@@ -76,6 +65,11 @@ const navigation = [{
     href: '/education/advanced',
     icon: Award,
     description: 'In-depth analysis'
+  }, {
+    name: 'Video Library',
+    href: '/education/video',
+    icon: GraduationCap,
+    description: 'Educational videos'
   }, {
     name: 'Investor Course',
     href: '/course',
@@ -163,10 +157,7 @@ export function Header() {
           {/* Live indicator + CTA */}
           <div className="hidden lg:flex items-center gap-4">
             {user && (
-              <>
-                <MarketAlerts />
-                <AchievementSystem />
-              </>
+              <MarketAlerts />
             )}
             {user ? (
               <DropdownMenu>
@@ -179,9 +170,12 @@ export function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56">
                   <DropdownMenuLabel>
-                    <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-medium">{profile?.display_name || 'User'}</p>
-                      <p className="text-xs text-muted-foreground">{user.email}</p>
+                    <div className="flex items-center justify-between w-full">
+                      <div className="flex flex-col space-y-1">
+                        <p className="text-sm font-medium">{profile?.display_name || 'User'}</p>
+                        <p className="text-xs text-muted-foreground">{user.email}</p>
+                      </div>
+                      <AchievementBadge userId={user.id} />
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
@@ -205,6 +199,7 @@ export function Header() {
                     <Settings className="mr-2 h-4 w-4" />
                     Settings
                   </DropdownMenuItem>
+                  <AchievementMenuItem />
                   {/* Moderator link - would check user role in real app */}
                   {/* <DropdownMenuItem onClick={() => navigate('/admin/moderation')}>
                     <Shield className="mr-2 h-4 w-4" />
@@ -299,4 +294,48 @@ export function Header() {
           </motion.div>}
       </AnimatePresence>
     </header>;
+}
+
+function AchievementBadge({ userId }: { userId: string }) {
+  const [unlockedCount, setUnlockedCount] = useState(0);
+  const [totalCount] = useState(12); // Total achievements from achievements.ts
+
+  useEffect(() => {
+    async function loadAchievements() {
+      try {
+        const { data, error } = await (supabase
+          .from('user_achievements' as any)
+          .select('achievement_id')
+          .eq('user_id', userId) as any);
+
+        if (error) throw error;
+        setUnlockedCount(data?.length || 0);
+      } catch (error) {
+        console.error('Error loading achievements:', error);
+      }
+    }
+
+    loadAchievements();
+  }, [userId]);
+
+  return (
+    <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-amber-500/10 text-amber-500">
+      <Trophy className="h-3.5 w-3.5" />
+      <span className="text-xs font-medium">{unlockedCount}/{totalCount}</span>
+    </div>
+  );
+}
+
+function AchievementMenuItem() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <DropdownMenuItem onClick={() => setOpen(true)}>
+        <Trophy className="mr-2 h-4 w-4" />
+        Achievements
+      </DropdownMenuItem>
+      <AchievementSystem open={open} onOpenChange={setOpen} />
+    </>
+  );
 }

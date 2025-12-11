@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, Mic, Video, BookOpen, Award, Rocket } from 'lucide-react';
+import { TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, Video, BookOpen, Award, Rocket, GraduationCap } from 'lucide-react';
 const footerLinks = {
   markets: [{
     name: 'Indices',
@@ -22,11 +22,6 @@ const footerLinks = {
     href: '/markets/currencies',
     icon: DollarSign
   }],
-video: [{
-    name: 'Podcasts',
-    href: '/video/podcasts',
-    icon: Mic
-  }],
   education: [{
     name: 'Basic Articles',
     href: '/education/basic',
@@ -35,6 +30,10 @@ video: [{
     name: 'Advanced Articles',
     href: '/education/advanced',
     icon: Award
+  }, {
+    name: 'Video Library',
+    href: '/education/video',
+    icon: GraduationCap
   }, {
     name: 'Learning Course',
     href: '/education/course',
@@ -120,17 +119,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Video & Education */}
+          {/* Education */}
           <div>
-            <h3 className="text-sm font-semibold mb-4">Video</h3>
-            <ul className="space-y-2.5 mb-6">
-              {footerLinks.video.map(link => <li key={link.href}>
-                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
-                    <link.icon className="h-3.5 w-3.5" />
-                    {link.name}
-                  </Link>
-                </li>)}
-            </ul>
             <h3 className="text-sm font-semibold mb-4">Education</h3>
             <ul className="space-y-2.5">
               {footerLinks.education.map(link => <li key={link.href}>

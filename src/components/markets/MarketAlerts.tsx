@@ -81,12 +81,18 @@ export function MarketAlerts() {
     return null;
   }
 
+  const activeAlertsCount = alerts.filter(a => a.is_active).length;
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm">
-          <Bell className="h-4 w-4 mr-2" />
-          Alerts ({alerts.filter(a => a.is_active).length})
+        <Button variant="outline" size="sm" className="relative p-2 h-9 w-9">
+          <Bell className="h-4 w-4" />
+          {activeAlertsCount > 0 && (
+            <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
+              {activeAlertsCount > 99 ? '99+' : activeAlertsCount}
+            </span>
+          )}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">

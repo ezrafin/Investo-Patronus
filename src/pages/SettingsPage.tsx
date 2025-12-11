@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { useUser } from '@/context/UserContext';
+import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { Save, Bell, Palette, Globe, RefreshCw, TrendingUp } from 'lucide-react';
+import { Save, Bell, Palette, Globe, RefreshCw, TrendingUp, Lock, Eye, EyeOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function SettingsPage() {
@@ -15,6 +17,15 @@ export default function SettingsPage() {
   const { preferences, loading, updatePreferences } = useUserPreferences();
   const [saving, setSaving] = useState(false);
   const [localPrefs, setLocalPrefs] = useState(preferences);
+  
+  // Password change state
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [changingPassword, setChangingPassword] = useState(false);
 
   if (!user) {
     return (
@@ -54,6 +65,45 @@ export default function SettingsPage() {
       toast.error('Failed to save settings');
     }
     setSaving(false);
+  };
+
+  const handleChangePassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!newPassword || !confirmPassword) {
+      toast.error('Please fill in all password fields');
+      return;
+    }
+
+    if (newPassword.length < 6) {
+      toast.error('New password must be at least 6 characters long');
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      toast.error('New passwords do not match');
+      return;
+    }
+
+    setChangingPassword(true);
+    try {
+      // Supabase requires re-authentication for password change
+      // We'll use updateUser which sends a confirmation email
+      const { error } = await supabase.auth.updateUser({
+        password: newPassword
+      });
+
+      if (error) throw error;
+
+      toast.success('Password change request sent. Please check your email to confirm.');
+      setCurrentPassword('');
+      setNewPassword('');
+      setConfirmPassword('');
+    } catch (error: any) {
+      toast.error(error.message || 'Failed to change password');
+    } finally {
+      setChangingPassword(false);
+    }
   };
 
   return (
@@ -190,6 +240,71 @@ export default function SettingsPage() {
                   </Select>
                 </div>
               </div>
+            </div>
+
+            {/* Security */}
+            <div className="premium-card p-6">
+              <h2 className="font-heading font-semibold text-lg mb-6 flex items-center gap-2">
+                <Lock className="h-5 w-5" />
+                Security
+              </h2>
+
+              <form onSubmit={handleChangePassword} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="newPassword">New Password</Label>
+                  <div className="relative">
+                    <Input
+                      id="newPassword"
+                      type={showNewPassword ? 'text' : 'password'}
+                      value={newPassword}
+                      onChange={(e) => setNewPassword(e.target.value)}
+                      placeholder="Enter new password"
+                      minLength={6}
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowNewPassword(!showNewPassword)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                    >
+                      {showNewPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    </button>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Password must be at least 6 characters long
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="confirmPassword">Confirm New Password</Label>
+                  <div className="relative">
+                    <Input
+                      id="confirmPassword"
+                      type={showConfirmPassword ? 'text' : 'password'}
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      placeholder="Confirm new password"
+                      minLength={6}
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                    >
+                      {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    </button>
+                  </div>
+                </div>
+
+                <Button type="submit" disabled={changingPassword} className="w-full md:w-auto">
+                  <Lock className="mr-2 h-4 w-4" />
+                  {changingPassword ? 'Changing Password...' : 'Change Password'}
+                </Button>
+                <p className="text-xs text-muted-foreground">
+                  You will receive a confirmation email to verify the password change
+                </p>
+              </form>
             </div>
 
             <Button onClick={handleSave} disabled={saving} className="w-full md:w-auto">

@@ -4,6 +4,8 @@ import { Organization, OrganizationType } from '@/lib/organizations';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 interface OrganizationCardProps {
   organization: Organization;
@@ -48,6 +50,25 @@ function getTrustBgColor(score: number): string {
 
 export function OrganizationCard({ organization, index = 0 }: OrganizationCardProps) {
   const combinedTrust = Math.round((organization.communityTrust + organization.expertTrust) / 2);
+  const [ratingCount, setRatingCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    async function loadRatingCount() {
+      try {
+        const { count, error } = await supabase
+          .from('company_evaluations')
+          .select('*', { count: 'exact', head: true })
+          .eq('company_slug', organization.id);
+
+        if (error) throw error;
+        setRatingCount(count || 0);
+      } catch (error) {
+        console.error('Error loading rating count:', error);
+      }
+    }
+
+    loadRatingCount();
+  }, [organization.id]);
   
   return (
     <motion.div
@@ -156,6 +177,12 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
           <span>Est. {organization.founded}</span>
           <span>·</span>
           <span>{organization.headquarters}</span>
+          {ratingCount !== null && ratingCount > 0 && (
+            <>
+              <span>·</span>
+              <span className="text-[10px]">Rated by {ratingCount} {ratingCount === 1 ? 'user' : 'users'}</span>
+            </>
+          )}
         </div>
         {organization.website && (
           <a 

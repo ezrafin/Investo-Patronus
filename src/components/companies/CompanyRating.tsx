@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Star, MessageSquare } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Slider } from '@/components/ui/slider';
+import { Label } from '@/components/ui/label';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -30,11 +33,11 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
   const [evaluations, setEvaluations] = useState<Evaluation[]>([]);
   const [userRating, setUserRating] = useState<number>(0);
   const [userComment, setUserComment] = useState('');
-  const [hoveredStar, setHoveredStar] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [existingEvaluation, setExistingEvaluation] = useState<Evaluation | null>(null);
+  const [ratingCount, setRatingCount] = useState<number>(0);
 
   useEffect(() => {
     loadEvaluations();
@@ -52,6 +55,7 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
       if (error) throw error;
 
       setEvaluations(evals || []);
+      setRatingCount(evals?.length || 0);
 
       // Check if current user has an evaluation
       if (user) {
@@ -118,28 +122,11 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
     }
   };
 
-  const renderStars = (rating: number, interactive = false, size = 'md') => {
-    const sizeClasses = size === 'sm' ? 'h-4 w-4' : 'h-5 w-5';
-    
-    return (
-      <div className="flex gap-1">
-        {[1, 2, 3, 4, 5].map((star) => (
-          <Star
-            key={star}
-            className={cn(
-              sizeClasses,
-              interactive && 'cursor-pointer transition-colors',
-              (interactive ? (hoveredStar || userRating) >= star : rating >= star)
-                ? 'fill-yellow-400 text-yellow-400'
-                : 'text-muted-foreground/30'
-            )}
-            onMouseEnter={() => interactive && setHoveredStar(star)}
-            onMouseLeave={() => interactive && setHoveredStar(0)}
-            onClick={() => interactive && setUserRating(star)}
-          />
-        ))}
-      </div>
-    );
+  const getRatingColor = (rating: number) => {
+    if (rating >= 80) return 'text-green-500';
+    if (rating >= 60) return 'text-yellow-500';
+    if (rating >= 40) return 'text-orange-500';
+    return 'text-red-500';
   };
 
   if (loading) {
@@ -153,10 +140,17 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
 
   return (
     <div className={cn('space-y-6', className)}>
-      <h3 className="font-heading font-semibold text-lg flex items-center gap-2">
-        <MessageSquare className="h-5 w-5 text-primary" />
-        Community Evaluations ({evaluations.length})
-      </h3>
+      <div className="flex items-center justify-between">
+        <h3 className="font-heading font-semibold text-lg flex items-center gap-2">
+          <MessageSquare className="h-5 w-5 text-primary" />
+          Community Evaluations
+        </h3>
+        {ratingCount > 0 && (
+          <span className="text-xs text-muted-foreground">
+            Rated by {ratingCount} {ratingCount === 1 ? 'user' : 'users'}
+          </span>
+        )}
+      </div>
 
       {/* User Rating Section */}
       {user ? (
@@ -164,13 +158,44 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
           <p className="text-sm text-muted-foreground mb-3">
             {existingEvaluation ? 'Update your rating:' : 'Rate this organization:'}
           </p>
-          <div className="flex items-center gap-4 mb-3">
-            {renderStars(userRating, true)}
-            {userRating > 0 && (
-              <span className="text-sm text-muted-foreground">
-                {userRating}/5 stars
-              </span>
-            )}
+          <div className="space-y-4 mb-3">
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <Label htmlFor="rating-slider">Rating (0-100)</Label>
+                <span className={cn('text-lg font-bold', getRatingColor(userRating))}>
+                  {userRating}/100
+                </span>
+              </div>
+              <Slider
+                id="rating-slider"
+                min={0}
+                max={100}
+                step={1}
+                value={[userRating]}
+                onValueChange={(value) => setUserRating(value[0])}
+                className="w-full"
+              />
+              <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <span>0</span>
+                <span>50</span>
+                <span>100</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Input
+                type="number"
+                min={0}
+                max={100}
+                value={userRating}
+                onChange={(e) => {
+                  const value = parseInt(e.target.value) || 0;
+                  setUserRating(Math.max(0, Math.min(100, value)));
+                }}
+                className="w-20"
+                placeholder="0-100"
+              />
+              <span className="text-sm text-muted-foreground">/ 100</span>
+            </div>
           </div>
           
           {!showCommentForm && userRating > 0 && (
@@ -243,7 +268,9 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
-                    {renderStars(evaluation.rating, false, 'sm')}
+                    <span className={cn('text-lg font-bold', getRatingColor(evaluation.rating))}>
+                      {evaluation.rating}/100
+                    </span>
                     <span className="text-xs text-muted-foreground">
                       {new Date(evaluation.created_at).toLocaleDateString()}
                     </span>

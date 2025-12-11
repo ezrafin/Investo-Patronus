@@ -28,7 +28,6 @@ import DisclaimerPage from "./pages/DisclaimerPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 // Video Pages
-import PodcastsPage from "./pages/video/PodcastsPage";
 import VideoLibraryPage from "./pages/video/VideoLibraryPage";
 import VideoDetailPage from "./pages/video/VideoDetailPage";
 // Education Pages
@@ -97,13 +96,12 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
 {/* Video Pages */}
-          <Route path="/video" element={<VideoLibraryPage />} />
-          <Route path="/video/podcasts" element={<PodcastsPage />} />
           <Route path="/video/:videoId" element={<VideoDetailPage />} />
           {/* Education Pages */}
           <Route path="/education/basic" element={<BasicArticlesPage />} />
           <Route path="/education/advanced" element={<AdvancedArticlesPage />} />
           <Route path="/education/course" element={<LearningCoursePage />} />
+          <Route path="/education/video" element={<VideoLibraryPage />} />
           {/* Course Platform */}
           <Route path="/course" element={<CoursePlatformPage />} />
           {/* Article Submission */}
