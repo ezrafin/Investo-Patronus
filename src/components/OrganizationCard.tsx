@@ -59,8 +59,19 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
     >
       {/* Header */}
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center flex-shrink-0">
-          <Building2 className="h-6 w-6 text-muted-foreground" />
+        <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center flex-shrink-0 overflow-hidden border border-border/50">
+          {organization.logo ? (
+            <img 
+              src={organization.logo} 
+              alt={`${organization.name} logo`}
+              className="w-8 h-8 object-contain"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+          ) : null}
+          <Building2 className={`h-6 w-6 text-muted-foreground ${organization.logo ? 'hidden' : ''}`} />
         </div>
         
         <div className="flex-1 min-w-0">
