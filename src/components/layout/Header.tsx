@@ -110,10 +110,11 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-              <span className="text-primary-foreground font-bold text-sm">IP</span>
-            </div>
-            <span className="text-lg font-semibold tracking-tight">INVESTOPATRONUS</span>
+            <img 
+              src="/investo.png" 
+              alt="INVESTOPATRONUS" 
+              className="h-8 md:h-10 transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
                  {/* Desktop Navigation */}

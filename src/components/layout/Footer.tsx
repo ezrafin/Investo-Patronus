@@ -93,10 +93,11 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">IP</span>
-              </div>
-              <span className="text-lg font-semibold">PATRONUS</span>
+              <img 
+                src="/investo.png" 
+                alt="INVESTOPATRONUS" 
+                className="h-8 md:h-10"
+              />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               Your Guardian in Global Markets. Professional analytics and real-time financial data.
