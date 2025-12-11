@@ -14,7 +14,7 @@ import { generateOrganizationSchema } from '@/utils/structuredData';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { ArrowLeft, ThumbsUp, ThumbsDown, MessageCircle, Calendar, Eye, Award, Star, Bookmark, Share2 } from 'lucide-react';
+import { ThumbsUp, ThumbsDown, MessageCircle, Calendar, Eye, Award, Star, Bookmark, Share2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -166,13 +166,6 @@ export default function ForumTopicPage() {
       <section className="border-b border-border">
         <div className="container-wide py-12 md:py-16">
           {topic && <Breadcrumbs pageTitle={topic.title} />}
-          <Link
-            to="/forum"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 mt-4 transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to forum
-          </Link>
 
           <div className="flex items-start justify-between gap-4 mb-6">
             <h1 className="heading-md flex-1">{topic.title}</h1>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { useUser } from '@/context/UserContext';
-import { BookOpen, Plus, Trash2, FileText, MessageSquare, Video, Newspaper, ArrowLeft, Users, Lock, Globe } from 'lucide-react';
+import { BookOpen, Plus, Trash2, FileText, MessageSquare, Video, Newspaper, Users, Lock, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { toast } from 'sonner';
@@ -176,13 +176,6 @@ export default function CollectionDetailPage() {
     <Layout>
       <div className="section-spacing">
         <div className="container-wide max-w-4xl">
-          <Link
-            to="/community"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Community
-          </Link>
 
           {/* Collection Header */}
           <div className="premium-card p-6 md:p-8 mb-6">

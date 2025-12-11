@@ -6,7 +6,7 @@ import { StructuredData } from '@/components/seo/StructuredData';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 import { generateOrganizationSchema } from '@/utils/structuredData';
 import { 
-  Play, Clock, Calendar, ArrowLeft, CheckCircle, 
+  Play, Clock, Calendar, CheckCircle, 
   HelpCircle, BookOpen, ExternalLink, Lightbulb 
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -52,14 +52,6 @@ export default function VideoDetailPage() {
       <div className="pt-24 pb-16">
         <section className="container-wide section-spacing-sm">
           <Breadcrumbs pageTitle={video.title} />
-          {/* Back Link */}
-          <Link 
-            to="/video" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 mt-4"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Video Library
-          </Link>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Main Content */}
