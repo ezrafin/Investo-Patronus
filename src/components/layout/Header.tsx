@@ -74,11 +74,6 @@ const navigation = [{
     href: '/course',
     icon: Rocket,
     description: 'Structured learning'
-  }, {
-    name: 'Submit Article',
-    href: '/articles/submit',
-    icon: GraduationCap,
-    description: 'Become an author'
   }]
 }, {
   name: 'Companies',
