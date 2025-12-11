@@ -169,12 +169,12 @@ export function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56">
                   <DropdownMenuLabel>
-                    <div className="flex items-center justify-between w-full">
-                      <div className="flex flex-col space-y-1">
-                        <p className="text-sm font-medium">{profile?.display_name || 'User'}</p>
-                        <p className="text-xs text-muted-foreground">{user.email}</p>
+                    <div className="flex flex-col space-y-1">
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm font-medium">{profile?.username || profile?.display_name || 'User'}</p>
+                        <AchievementBadge userId={user.id} />
                       </div>
-                      <AchievementBadge userId={user.id} />
+                      <p className="text-xs text-muted-foreground">{user.email}</p>
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
