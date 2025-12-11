@@ -52,7 +52,7 @@ const footerLinks = {
     name: 'Forum',
     href: '/forum'
   }],
-  company: [{
+  community: [{
     name: 'About Us',
     href: '/about'
   }, {
@@ -64,9 +64,6 @@ const footerLinks = {
   }, {
     name: 'Partnerships',
     href: '/partnerships'
-  }, {
-    name: 'Advertise',
-    href: '/advertise'
   }, {
     name: 'Authors',
     href: '/authors'
@@ -144,11 +141,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Community */}
           <div>
-            <h3 className="text-sm font-semibold mb-4">Company</h3>
+            <h3 className="text-sm font-semibold mb-4">Community</h3>
             <ul className="space-y-2.5">
-              {footerLinks.company.map(link => <li key={link.href}>
+              {footerLinks.community.map(link => <li key={link.href}>
                   <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
                   </Link>

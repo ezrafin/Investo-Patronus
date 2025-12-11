@@ -20,7 +20,6 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import CareersPage from "./pages/CareersPage";
 import PartnershipsPage from "./pages/PartnershipsPage";
-import AdvertisePage from "./pages/AdvertisePage";
 import AuthorsPage from "./pages/AuthorsPage";
 import TopicsPage from "./pages/TopicsPage";
 import EventsPage from "./pages/EventsPage";
@@ -88,7 +87,6 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/partnerships" element={<PartnershipsPage />} />
-          <Route path="/advertise" element={<AdvertisePage />} />
           <Route path="/authors" element={<AuthorsPage />} />
           <Route path="/topics" element={<TopicsPage />} />
           <Route path="/events" element={<EventsPage />} />
