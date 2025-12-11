@@ -16,12 +16,21 @@ serve(async (req) => {
     
     console.log(`Fetching ${type} data...`);
 
-    // Try Yahoo Finance first, fallback to mock data
+    const FINNHUB_API_KEY = Deno.env.get('FINNHUB_API_KEY');
+    
     let marketData;
-    try {
-      marketData = await fetchYahooQuotes(type);
-    } catch (apiError) {
-      console.log(`Yahoo API unavailable, using curated mock data for ${type}`);
+    
+    // Try Finnhub first if API key is available
+    if (FINNHUB_API_KEY) {
+      try {
+        marketData = await fetchFinnhubQuotes(type, FINNHUB_API_KEY);
+        console.log(`Successfully fetched ${type} data from Finnhub`);
+      } catch (apiError) {
+        console.log(`Finnhub API error, falling back to mock data:`, apiError);
+        marketData = getMockData(type);
+      }
+    } else {
+      console.log(`No Finnhub API key, using mock data for ${type}`);
       marketData = getMockData(type);
     }
 
@@ -38,48 +47,182 @@ serve(async (req) => {
   }
 });
 
-// Stock symbols to fetch
-const SYMBOLS: Record<string, string[]> = {
-  stocks: ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META', 'JPM', 'V', 'WMT'],
-  indices: ['^GSPC', '^DJI', '^IXIC', '^RUT', '^FTSE'],
-  commodities: ['GC=F', 'SI=F', 'CL=F', 'NG=F', 'HG=F'],
-  currencies: ['EURUSD=X', 'GBPUSD=X', 'USDJPY=X', 'USDCHF=X', 'AUDUSD=X'],
-};
+// Stock symbols for simple fetching
+const STOCK_SYMBOLS = [
+  'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META', 'JPM', 'V', 'WMT',
+  'INTC', 'AMD', 'NFLX', 'DIS', 'PYPL', 'SQ', 'COIN', 'HOOD', 'BA', 'GS',
+  'MA', 'UNH', 'PFE', 'KO', 'PEP', 'NKE', 'SBUX', 'MCD', 'CRM', 'ORCL'
+];
 
-async function fetchYahooQuotes(type: string) {
-  const symbols = SYMBOLS[type] || SYMBOLS.stocks;
-  const symbolsStr = symbols.join(',');
-  
-  const url = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(symbolsStr)}`;
-  
-  const response = await fetch(url, {
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-      'Accept': 'application/json',
-    },
-  });
+// Index symbols with ETF proxies for Finnhub
+const INDEX_SYMBOLS = [
+  { symbol: '^GSPC', name: 'S&P 500', finnhub: 'SPY' },
+  { symbol: '^DJI', name: 'Dow Jones Industrial Average', finnhub: 'DIA' },
+  { symbol: '^IXIC', name: 'NASDAQ Composite', finnhub: 'QQQ' },
+  { symbol: '^RUT', name: 'Russell 2000', finnhub: 'IWM' },
+  { symbol: '^FTSE', name: 'FTSE 100', finnhub: 'EWU' },
+  { symbol: '^GDAXI', name: 'DAX', finnhub: 'EWG' },
+  { symbol: '^FCHI', name: 'CAC 40', finnhub: 'EWQ' },
+  { symbol: '^N225', name: 'Nikkei 225', finnhub: 'EWJ' },
+  { symbol: '^HSI', name: 'Hang Seng', finnhub: 'EWH' },
+];
 
-  if (!response.ok) {
-    throw new Error(`Yahoo Finance API error: ${response.status}`);
+// Commodity symbols with ETF proxies
+const COMMODITY_SYMBOLS = [
+  { symbol: 'GC=F', name: 'Gold Futures', finnhub: 'GLD' },
+  { symbol: 'SI=F', name: 'Silver Futures', finnhub: 'SLV' },
+  { symbol: 'CL=F', name: 'Crude Oil WTI', finnhub: 'USO' },
+  { symbol: 'NG=F', name: 'Natural Gas', finnhub: 'UNG' },
+  { symbol: 'HG=F', name: 'Copper Futures', finnhub: 'CPER' },
+  { symbol: 'PL=F', name: 'Platinum Futures', finnhub: 'PPLT' },
+  { symbol: 'PA=F', name: 'Palladium Futures', finnhub: 'PALL' },
+  { symbol: 'ZW=F', name: 'Wheat Futures', finnhub: 'WEAT' },
+  { symbol: 'ZC=F', name: 'Corn Futures', finnhub: 'CORN' },
+  { symbol: 'KC=F', name: 'Coffee Futures', finnhub: 'JO' },
+];
+
+// Currency pairs
+const CURRENCY_SYMBOLS = [
+  { symbol: 'EURUSD', name: 'Euro / US Dollar' },
+  { symbol: 'GBPUSD', name: 'British Pound / US Dollar' },
+  { symbol: 'USDJPY', name: 'US Dollar / Japanese Yen' },
+  { symbol: 'USDCHF', name: 'US Dollar / Swiss Franc' },
+  { symbol: 'AUDUSD', name: 'Australian Dollar / US Dollar' },
+  { symbol: 'USDCAD', name: 'US Dollar / Canadian Dollar' },
+  { symbol: 'NZDUSD', name: 'New Zealand Dollar / US Dollar' },
+  { symbol: 'EURGBP', name: 'Euro / British Pound' },
+  { symbol: 'USDCNY', name: 'US Dollar / Chinese Yuan' },
+  { symbol: 'USDSGD', name: 'US Dollar / Singapore Dollar' },
+];
+
+async function fetchFinnhubQuotes(type: string, apiKey: string) {
+  if (type === 'stocks') {
+    const results = await Promise.all(
+      STOCK_SYMBOLS.map(async (symbol) => {
+        try {
+          const [quoteRes, profileRes] = await Promise.all([
+            fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`),
+            fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${apiKey}`)
+          ]);
+          
+          const quote = await quoteRes.json();
+          const profile = await profileRes.json();
+          
+          if (quote.c === 0) return null;
+          
+          return {
+            symbol,
+            name: profile.name || symbol,
+            price: quote.c || 0,
+            change: quote.d || 0,
+            changePercent: quote.dp || 0,
+            high: quote.h || quote.c,
+            low: quote.l || quote.c,
+            volume: formatVolume(0),
+          };
+        } catch {
+          return null;
+        }
+      })
+    );
+    return results.filter(Boolean);
   }
-
-  const data = await response.json();
-  const quotes = data?.quoteResponse?.result || [];
-
-  if (quotes.length === 0) {
-    throw new Error('No quotes returned');
+  
+  // For indices use ETF proxies
+  if (type === 'indices') {
+    const results = await Promise.all(
+      INDEX_SYMBOLS.map(async (item) => {
+        try {
+          const quoteRes = await fetch(`https://finnhub.io/api/v1/quote?symbol=${item.finnhub}&token=${apiKey}`);
+          const quote = await quoteRes.json();
+          
+          if (quote.c === 0) return null;
+          
+          return {
+            symbol: formatSymbol(item.symbol, 'indices'),
+            name: item.name,
+            price: quote.c || 0,
+            change: quote.d || 0,
+            changePercent: quote.dp || 0,
+            high: quote.h || quote.c,
+            low: quote.l || quote.c,
+          };
+        } catch {
+          return null;
+        }
+      })
+    );
+    return results.filter(Boolean);
   }
-
-  return quotes.map((quote: any) => ({
-    symbol: formatSymbol(quote.symbol, type),
-    name: quote.shortName || quote.longName || quote.symbol,
-    price: quote.regularMarketPrice || 0,
-    change: quote.regularMarketChange || 0,
-    changePercent: quote.regularMarketChangePercent || 0,
-    high: quote.regularMarketDayHigh || quote.regularMarketPrice,
-    low: quote.regularMarketDayLow || quote.regularMarketPrice,
-    volume: formatVolume(quote.regularMarketVolume),
-  }));
+  
+  // For commodities use ETF proxies
+  if (type === 'commodities') {
+    const results = await Promise.all(
+      COMMODITY_SYMBOLS.map(async (item) => {
+        try {
+          const quoteRes = await fetch(`https://finnhub.io/api/v1/quote?symbol=${item.finnhub}&token=${apiKey}`);
+          const quote = await quoteRes.json();
+          
+          if (quote.c === 0) return null;
+          
+          return {
+            symbol: formatSymbol(item.symbol, 'commodities'),
+            name: item.name,
+            price: quote.c || 0,
+            change: quote.d || 0,
+            changePercent: quote.dp || 0,
+            high: quote.h || quote.c,
+            low: quote.l || quote.c,
+          };
+        } catch {
+          return null;
+        }
+      })
+    );
+    return results.filter(Boolean);
+  }
+  
+  // For currencies, use forex endpoint
+  if (type === 'currencies') {
+    const results = await Promise.all(
+      CURRENCY_SYMBOLS.map(async (item) => {
+        try {
+          const pair = item.symbol.substring(0, 3) + '/' + item.symbol.substring(3);
+          const quoteRes = await fetch(`https://finnhub.io/api/v1/forex/candle?symbol=OANDA:${item.symbol}&resolution=D&count=2&token=${apiKey}`);
+          const data = await quoteRes.json();
+          
+          if (!data.c || data.c.length < 2) {
+            return null;
+          }
+          
+          const currentPrice = data.c[data.c.length - 1];
+          const prevPrice = data.c[data.c.length - 2];
+          const change = currentPrice - prevPrice;
+          const changePercent = (change / prevPrice) * 100;
+          
+          return {
+            symbol: pair,
+            name: item.name,
+            price: currentPrice,
+            change,
+            changePercent,
+            high: data.h ? data.h[data.h.length - 1] : currentPrice,
+            low: data.l ? data.l[data.l.length - 1] : currentPrice,
+          };
+        } catch {
+          return null;
+        }
+      })
+    );
+    
+    const validResults = results.filter(Boolean);
+    if (validResults.length < 3) {
+      return getMockData('currencies');
+    }
+    return validResults;
+  }
+  
+  return getMockData(type);
 }
 
 function formatSymbol(symbol: string, type: string): string {
@@ -90,23 +233,15 @@ function formatSymbol(symbol: string, type: string): string {
       '^IXIC': 'IXIC',
       '^RUT': 'RUT',
       '^FTSE': 'FTSE',
+      '^GDAXI': 'DAX',
+      '^FCHI': 'CAC40',
+      '^N225': 'N225',
+      '^HSI': 'HSI',
     };
     return indexMap[symbol] || symbol.replace('^', '');
   }
   if (type === 'commodities') {
     return symbol.replace('=F', '');
-  }
-  if (type === 'currencies') {
-    // Format currency pairs: EURUSD=X -> EUR/USD, USDJPY=X -> USD/JPY
-    const cleaned = symbol.replace('=X', '');
-    if (cleaned.startsWith('USD') && cleaned.length === 6) {
-      // USDXXX -> USD/XXX
-      return `${cleaned.substring(0, 3)}/${cleaned.substring(3)}`;
-    } else if (cleaned.endsWith('USD') && cleaned.length === 6) {
-      // XXXUSD -> XXX/USD
-      return `${cleaned.substring(0, 3)}/${cleaned.substring(3)}`;
-    }
-    return cleaned;
   }
   return symbol;
 }
@@ -133,6 +268,10 @@ function getMockData(type: string) {
       { symbol: 'IXIC', name: 'NASDAQ Composite', price: addVariation(19150.75), change: addVariation(175.25, 50), changePercent: addVariation(0.92, 50), high: 19200.00, low: 18950.00 },
       { symbol: 'RUT', name: 'Russell 2000', price: addVariation(2380.50), change: addVariation(-12.30, 50), changePercent: addVariation(-0.51, 50), high: 2400.00, low: 2365.00 },
       { symbol: 'FTSE', name: 'FTSE 100', price: addVariation(8312.40), change: addVariation(28.60, 50), changePercent: addVariation(0.35, 50), high: 8340.00, low: 8280.00 },
+      { symbol: 'DAX', name: 'DAX', price: addVariation(19850.00), change: addVariation(120.50, 50), changePercent: addVariation(0.61, 50), high: 19900.00, low: 19700.00 },
+      { symbol: 'CAC40', name: 'CAC 40', price: addVariation(7520.00), change: addVariation(-45.20, 50), changePercent: addVariation(-0.60, 50), high: 7580.00, low: 7490.00 },
+      { symbol: 'N225', name: 'Nikkei 225', price: addVariation(38650.00), change: addVariation(285.00, 50), changePercent: addVariation(0.74, 50), high: 38800.00, low: 38400.00 },
+      { symbol: 'HSI', name: 'Hang Seng', price: addVariation(19250.00), change: addVariation(-180.30, 50), changePercent: addVariation(-0.93, 50), high: 19500.00, low: 19100.00 },
     ],
     stocks: [
       { symbol: 'AAPL', name: 'Apple Inc.', price: addVariation(195.50), change: addVariation(3.20, 50), changePercent: addVariation(1.67, 50), high: 196.80, low: 192.10, volume: '52.3M' },
@@ -145,6 +284,16 @@ function getMockData(type: string) {
       { symbol: 'JPM', name: 'JPMorgan Chase & Co.', price: addVariation(245.80), change: addVariation(-1.20, 50), changePercent: addVariation(-0.49, 50), high: 248.00, low: 244.00, volume: '8.5M' },
       { symbol: 'V', name: 'Visa Inc.', price: addVariation(295.40), change: addVariation(3.80, 50), changePercent: addVariation(1.30, 50), high: 297.00, low: 291.00, volume: '6.2M' },
       { symbol: 'WMT', name: 'Walmart Inc.', price: addVariation(92.30), change: addVariation(0.85, 50), changePercent: addVariation(0.93, 50), high: 93.00, low: 91.50, volume: '12.1M' },
+      { symbol: 'INTC', name: 'Intel Corporation', price: addVariation(24.80), change: addVariation(-0.45, 50), changePercent: addVariation(-1.78, 50), high: 25.50, low: 24.50, volume: '45.2M' },
+      { symbol: 'AMD', name: 'Advanced Micro Devices', price: addVariation(138.90), change: addVariation(4.20, 50), changePercent: addVariation(3.12, 50), high: 140.00, low: 134.00, volume: '62.3M' },
+      { symbol: 'NFLX', name: 'Netflix Inc.', price: addVariation(895.50), change: addVariation(15.30, 50), changePercent: addVariation(1.74, 50), high: 900.00, low: 875.00, volume: '4.8M' },
+      { symbol: 'DIS', name: 'Walt Disney Co.', price: addVariation(115.40), change: addVariation(2.10, 50), changePercent: addVariation(1.85, 50), high: 116.50, low: 112.80, volume: '9.2M' },
+      { symbol: 'PYPL', name: 'PayPal Holdings', price: addVariation(88.50), change: addVariation(-1.30, 50), changePercent: addVariation(-1.45, 50), high: 90.20, low: 87.80, volume: '11.5M' },
+      { symbol: 'SQ', name: 'Block Inc.', price: addVariation(92.30), change: addVariation(3.50, 50), changePercent: addVariation(3.94, 50), high: 93.50, low: 88.00, volume: '8.7M' },
+      { symbol: 'COIN', name: 'Coinbase Global', price: addVariation(285.40), change: addVariation(12.80, 50), changePercent: addVariation(4.70, 50), high: 290.00, low: 270.00, volume: '15.3M' },
+      { symbol: 'HOOD', name: 'Robinhood Markets', price: addVariation(38.50), change: addVariation(1.85, 50), changePercent: addVariation(5.04, 50), high: 39.20, low: 36.50, volume: '22.1M' },
+      { symbol: 'BA', name: 'Boeing Co.', price: addVariation(178.90), change: addVariation(-3.20, 50), changePercent: addVariation(-1.76, 50), high: 183.00, low: 177.50, volume: '6.8M' },
+      { symbol: 'GS', name: 'Goldman Sachs Group', price: addVariation(585.20), change: addVariation(8.50, 50), changePercent: addVariation(1.47, 50), high: 590.00, low: 575.00, volume: '2.1M' },
     ],
     commodities: [
       { symbol: 'GC', name: 'Gold Futures', price: addVariation(2075.50), change: addVariation(12.30, 50), changePercent: addVariation(0.60, 50), high: 2082.00, low: 2060.00 },
@@ -152,6 +301,11 @@ function getMockData(type: string) {
       { symbol: 'CL', name: 'Crude Oil WTI', price: addVariation(74.20), change: addVariation(-2.80, 50), changePercent: addVariation(-3.64, 50), high: 77.50, low: 73.80 },
       { symbol: 'NG', name: 'Natural Gas', price: addVariation(2.95), change: addVariation(0.08, 50), changePercent: addVariation(2.79, 50), high: 3.02, low: 2.85 },
       { symbol: 'HG', name: 'Copper Futures', price: addVariation(4.32), change: addVariation(0.05, 50), changePercent: addVariation(1.17, 50), high: 4.38, low: 4.25 },
+      { symbol: 'PL', name: 'Platinum Futures', price: addVariation(985.50), change: addVariation(8.20, 50), changePercent: addVariation(0.84, 50), high: 992.00, low: 975.00 },
+      { symbol: 'PA', name: 'Palladium Futures', price: addVariation(1025.80), change: addVariation(-15.40, 50), changePercent: addVariation(-1.48, 50), high: 1045.00, low: 1015.00 },
+      { symbol: 'ZW', name: 'Wheat Futures', price: addVariation(5.85), change: addVariation(0.12, 50), changePercent: addVariation(2.09, 50), high: 5.95, low: 5.72 },
+      { symbol: 'ZC', name: 'Corn Futures', price: addVariation(4.52), change: addVariation(-0.08, 50), changePercent: addVariation(-1.74, 50), high: 4.62, low: 4.48 },
+      { symbol: 'KC', name: 'Coffee Futures', price: addVariation(325.50), change: addVariation(5.80, 50), changePercent: addVariation(1.81, 50), high: 330.00, low: 318.00 },
     ],
     currencies: [
       { symbol: 'EUR/USD', name: 'Euro / US Dollar', price: addVariation(1.0520, 0.5), change: addVariation(-0.0035, 100), changePercent: addVariation(-0.33, 50), high: 1.0560, low: 1.0495 },
@@ -159,6 +313,11 @@ function getMockData(type: string) {
       { symbol: 'USD/JPY', name: 'US Dollar / Japanese Yen', price: addVariation(149.85, 0.5), change: addVariation(0.75, 100), changePercent: addVariation(0.50, 50), high: 150.20, low: 148.90 },
       { symbol: 'USD/CHF', name: 'US Dollar / Swiss Franc', price: addVariation(0.8820, 0.5), change: addVariation(0.0015, 100), changePercent: addVariation(0.17, 50), high: 0.8845, low: 0.8790 },
       { symbol: 'AUD/USD', name: 'Australian Dollar / US Dollar', price: addVariation(0.6485, 0.5), change: addVariation(-0.0028, 100), changePercent: addVariation(-0.43, 50), high: 0.6520, low: 0.6470 },
+      { symbol: 'USD/CAD', name: 'US Dollar / Canadian Dollar', price: addVariation(1.3580, 0.5), change: addVariation(0.0042, 100), changePercent: addVariation(0.31, 50), high: 1.3610, low: 1.3540 },
+      { symbol: 'NZD/USD', name: 'New Zealand Dollar / US Dollar', price: addVariation(0.5920, 0.5), change: addVariation(-0.0018, 100), changePercent: addVariation(-0.30, 50), high: 0.5945, low: 0.5900 },
+      { symbol: 'EUR/GBP', name: 'Euro / British Pound', price: addVariation(0.8295, 0.5), change: addVariation(-0.0012, 100), changePercent: addVariation(-0.14, 50), high: 0.8315, low: 0.8280 },
+      { symbol: 'USD/CNY', name: 'US Dollar / Chinese Yuan', price: addVariation(7.2450, 0.3), change: addVariation(0.0085, 100), changePercent: addVariation(0.12, 50), high: 7.2520, low: 7.2380 },
+      { symbol: 'USD/SGD', name: 'US Dollar / Singapore Dollar', price: addVariation(1.3420, 0.5), change: addVariation(0.0028, 100), changePercent: addVariation(0.21, 50), high: 1.3450, low: 1.3390 },
     ],
   };
   return mockData[type] || mockData.stocks;

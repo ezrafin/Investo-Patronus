@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { ArrowLeft, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const categories = [
@@ -86,13 +86,6 @@ export default function CreateDiscussionPage() {
     <Layout>
       <div className="section-spacing">
         <div className="container-wide max-w-4xl">
-          <Link
-            to="/forum"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to forum
-          </Link>
 
           <h1 className="heading-lg mb-8">Create New Discussion</h1>
 

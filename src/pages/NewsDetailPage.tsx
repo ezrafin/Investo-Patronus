@@ -9,7 +9,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 import { generateArticleSchema, generateOrganizationSchema } from '@/utils/structuredData';
-import { Calendar, ExternalLink, ArrowLeft, Share2 } from 'lucide-react';
+import { Calendar, ExternalLink, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const marketLabels: Record<string, string> = {
@@ -108,13 +108,6 @@ export default function NewsDetailPage() {
       <article className="section-spacing">
         <div className="container-narrow">
           <Breadcrumbs pageTitle={news.title} />
-          <Link
-            to="/news"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 mt-4"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to news
-          </Link>
 
           <div className="flex items-center gap-3 mb-6">
             <span className="px-3 py-1 text-sm font-medium rounded bg-secondary text-secondary-foreground">

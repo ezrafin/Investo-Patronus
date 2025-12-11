@@ -64,6 +64,36 @@ export type Database = {
         }
         Relationships: []
       }
+      company_evaluations: {
+        Row: {
+          comment: string | null
+          company_slug: string
+          created_at: string
+          id: string
+          rating: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          comment?: string | null
+          company_slug: string
+          created_at?: string
+          id?: string
+          rating: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          comment?: string | null
+          company_slug?: string
+          created_at?: string
+          id?: string
+          rating?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       content_relationships: {
         Row: {
           created_at: string

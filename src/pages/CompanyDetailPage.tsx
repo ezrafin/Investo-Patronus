@@ -5,12 +5,13 @@ import { fetchCompanyBySlug, fetchNews, fetchAnalytics, fetchCompanies, Company,
 import { NewsCard } from '@/components/NewsCard';
 import { AnalyticsCard } from '@/components/AnalyticsCard';
 import { CompanyCard } from '@/components/CompanyCard';
+import { CompanyRating } from '@/components/companies/CompanyRating';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 import { generateOrganizationSchema } from '@/utils/structuredData';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
-import { Building2, MapPin, Users, Calendar, ArrowLeft, DollarSign } from 'lucide-react';
+import { Building2, MapPin, Users, Calendar, DollarSign } from 'lucide-react';
 
 export default function CompanyDetailPage() {
   const { slug } = useParams();
@@ -94,13 +95,6 @@ export default function CompanyDetailPage() {
       <section className="bg-primary text-primary-foreground">
         <div className="container-wide py-16 md:py-24">
           <Breadcrumbs pageTitle={company.name} />
-          <Link
-            to="/companies"
-            className="inline-flex items-center gap-2 text-sm opacity-70 hover:opacity-100 mb-8 mt-4 transition-opacity"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            All Companies
-          </Link>
 
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
             <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
@@ -181,13 +175,20 @@ export default function CompanyDetailPage() {
                   <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Year Founded</td>
                   <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.founded}</td>
                 </tr>
-                <tr className="hover:bg-secondary/50 transition-colors">
+              <tr className="hover:bg-secondary/50 transition-colors">
                   <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Headquarters</td>
                   <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.headquarters}</td>
                 </tr>
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      {/* Community Evaluations */}
+      <section className="section-spacing-sm">
+        <div className="container-wide">
+          <CompanyRating companySlug={slug || ''} />
         </div>
       </section>
 
