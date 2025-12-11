@@ -5,8 +5,9 @@ import { Pagination } from '@/components/Pagination';
 import { organizations, organizationTypes, regions, sortByTrust, filterOrganizations, OrganizationType, Region } from '@/lib/organizations';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
-import { Building2, TrendingUp, Users, Award, ArrowUpDown, Globe } from 'lucide-react';
+import { Building2, TrendingUp, Users, Award, ArrowUpDown, Globe, Search } from 'lucide-react';
 
 type SortOption = 'combined' | 'community' | 'expert';
 const ITEMS_PER_PAGE = 15;
@@ -15,12 +16,24 @@ export default function CompaniesPage() {
   const [selectedType, setSelectedType] = useState<OrganizationType | 'all'>('all');
   const [selectedRegion, setSelectedRegion] = useState<Region | 'all'>('all');
   const [sortBy, setSortBy] = useState<SortOption>('combined');
+  const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredOrganizations = useMemo(() => {
-    const filtered = filterOrganizations(selectedType, selectedRegion);
+    let filtered = filterOrganizations(selectedType, selectedRegion);
+    
+    // Apply search filter
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(org => 
+        org.name.toLowerCase().includes(query) ||
+        org.description.toLowerCase().includes(query) ||
+        org.headquarters.toLowerCase().includes(query)
+      );
+    }
+    
     return sortByTrust(filtered, sortBy);
-  }, [selectedType, selectedRegion, sortBy]);
+  }, [selectedType, selectedRegion, sortBy, searchQuery]);
 
   const stats = useMemo(() => ({
     total: organizations.length,
@@ -93,13 +106,29 @@ export default function CompaniesPage() {
             </div>
           </motion.div>
 
-          {/* Filters */}
+          {/* Search and Filters */}
           <motion.div 
-            className="flex flex-wrap items-center gap-4 mb-8"
+            className="space-y-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
+            {/* Search Bar */}
+            <div className="relative max-w-md">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search by name, description, or location..."
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setCurrentPage(1);
+                }}
+                className="pl-10"
+              />
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4">
             {/* Type Filter Buttons */}
             <div className="flex flex-wrap gap-2">
               {organizationTypes.map((type) => (
@@ -147,6 +176,7 @@ export default function CompaniesPage() {
                   </SelectContent>
                 </Select>
               </div>
+            </div>
             </div>
           </motion.div>
 
