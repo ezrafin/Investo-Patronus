@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Building2, Shield, ShieldCheck, Users, Award, ExternalLink } from 'lucide-react';
 import { Organization, OrganizationType } from '@/lib/organizations';
 import { Badge } from '@/components/ui/badge';
@@ -6,7 +7,6 @@ import { Progress } from '@/components/ui/progress';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-
 interface OrganizationCardProps {
   organization: Organization;
   index?: number;
@@ -71,13 +71,14 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
   }, [organization.id]);
   
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="group premium-card p-5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
-    >
+    <Link to={`/companies/${organization.id}`}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: index * 0.05 }}
+        className="group premium-card p-5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 cursor-pointer"
+      >
       {/* Header */}
       <div className="flex items-start gap-4 mb-4">
         <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center flex-shrink-0 overflow-hidden border border-border/50">
@@ -190,11 +191,13 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"
+            onClick={(e) => e.stopPropagation()}
           >
             <ExternalLink className="h-3 w-3" />
           </a>
         )}
       </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 }

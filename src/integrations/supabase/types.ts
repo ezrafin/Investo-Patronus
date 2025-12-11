@@ -236,6 +236,7 @@ export type Database = {
           created_at: string
           discussion_id: string
           id: string
+          user_id: string | null
         }
         Insert: {
           author_name?: string
@@ -243,6 +244,7 @@ export type Database = {
           created_at?: string
           discussion_id: string
           id?: string
+          user_id?: string | null
         }
         Update: {
           author_name?: string
@@ -250,6 +252,7 @@ export type Database = {
           created_at?: string
           discussion_id?: string
           id?: string
+          user_id?: string | null
         }
         Relationships: [
           {
