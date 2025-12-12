@@ -1,7 +1,7 @@
 import { CompanyOverview as CompanyOverviewType } from '@/lib/companyOverviews';
 import { CompanyServices } from './CompanyServices';
 import { CompanyEvents } from './CompanyEvents';
-import { Trophy, Image as ImageIcon } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import { Building2, TrendingUp, Users, MapPin } from 'lucide-react';
 
 interface CompanyOverviewProps {
@@ -115,30 +115,6 @@ export function CompanyOverview({ overview }: CompanyOverviewProps) {
       {/* Recent Events */}
       {overview.recentEvents && overview.recentEvents.length > 0 && (
         <CompanyEvents events={overview.recentEvents} />
-      )}
-
-      {/* Image Gallery */}
-      {overview.images && overview.images.length > 0 && (
-        <div>
-          <h3 className="text-lg font-heading font-semibold mb-4 flex items-center gap-2">
-            <ImageIcon className="h-5 w-5" />
-            Image Gallery
-          </h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            {overview.images.map((image, index) => (
-              <div key={index} className="rounded-xl overflow-hidden border border-border/60">
-                <img
-                  src={image}
-                  alt={`Company image ${index + 1}`}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
       )}
     </div>
   );
