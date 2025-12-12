@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { MarketTable } from '@/components/MarketTable';
-import { SimpleChart } from '@/components/SimpleChart';
+
 import { SkeletonTable } from '@/components/ui/skeleton-card';
 import { LastUpdated } from '@/components/LastUpdated';
 import { useMarketData } from '@/hooks/useMarketData';
@@ -68,7 +68,6 @@ export default function MarketsPage() {
   const { data: allCurrencies } = useMarketData({ type: 'currencies', refreshInterval: shouldLoadAll ? 0 : 0 });
 
   const info = marketInfo[marketType] || marketInfo.indices;
-  const isPositive = data.length > 0 && data[0].changePercent >= 0;
 
   // Combine all assets for search
   const allAssets = useMemo(() => {
@@ -193,12 +192,6 @@ export default function MarketsPage() {
             </div>
           )}
 
-          {/* Chart */}
-          <div className="p-6 rounded-lg border border-border bg-card mb-10">
-            <h3 className="font-heading font-semibold mb-4">Market Overview</h3>
-            <SimpleChart positive={isPositive} />
-          </div>
-
           {/* Market Table */}
           <div className="rounded-lg border border-border bg-card overflow-hidden">
             {loading && data.length === 0 ? (
@@ -207,7 +200,10 @@ export default function MarketsPage() {
               </div>
             ) : (
               <MarketTable 
-                data={displayData.map(({ marketType: _, ...item }) => item)} 
+                data={displayData.map((item) => {
+                  const { marketType: _, ...rest } = item as any;
+                  return rest;
+                })} 
                 showVolume={info.showVolume} 
                 marketType={marketType} 
               />
