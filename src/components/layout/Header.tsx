@@ -55,15 +55,10 @@ const navigation = [{
   name: 'Education',
   href: '/education',
   children: [{
-    name: 'Basic Articles',
-    href: '/education/basic',
+    name: 'Learning',
+    href: '/education/learning',
     icon: BookOpen,
-    description: 'Fundamentals for beginners'
-  }, {
-    name: 'Advanced Articles',
-    href: '/education/advanced',
-    icon: Award,
-    description: 'In-depth analysis'
+    description: 'Articles and guides'
   }, {
     name: 'Video Library',
     href: '/education/video',

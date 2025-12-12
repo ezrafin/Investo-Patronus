@@ -23,13 +23,9 @@ const footerLinks = {
     icon: DollarSign
   }],
   education: [{
-    name: 'Basic Articles',
-    href: '/education/basic',
+    name: 'Learning',
+    href: '/education/learning',
     icon: BookOpen
-  }, {
-    name: 'Advanced Articles',
-    href: '/education/advanced',
-    icon: Award
   }, {
     name: 'Video Library',
     href: '/education/video',
@@ -61,9 +57,6 @@ const footerLinks = {
   }, {
     name: 'Careers',
     href: '/careers'
-  }, {
-    name: 'Partnerships',
-    href: '/partnerships'
   }, {
     name: 'Authors',
     href: '/authors'

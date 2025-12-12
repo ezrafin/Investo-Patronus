@@ -26,8 +26,6 @@ export function generateBreadcrumbs(pathname: string, pageTitle?: string): Bread
     about: 'About',
     contact: 'Contact',
     careers: 'Careers',
-    partnerships: 'Partnerships',
-    advertise: 'Advertise',
     authors: 'Authors',
     topics: 'Topics',
     events: 'Events',

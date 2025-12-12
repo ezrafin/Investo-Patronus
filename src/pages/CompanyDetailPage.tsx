@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
-import { fetchCompanyBySlug, fetchNews, fetchAnalytics, fetchCompanies, Company, NewsItem, AnalyticsArticle } from '@/lib/api';
+import { fetchCompanyBySlug, fetchCompanies, Company } from '@/lib/api';
 import { organizations, Organization } from '@/lib/organizations';
-import { NewsCard } from '@/components/NewsCard';
-import { AnalyticsCard } from '@/components/AnalyticsCard';
 import { CompanyCard } from '@/components/CompanyCard';
 import { CompanyRating } from '@/components/companies/CompanyRating';
 import { SEOHead } from '@/components/seo/SEOHead';
@@ -33,8 +31,6 @@ function organizationToCompany(org: Organization): Company {
 export default function CompanyDetailPage() {
   const { slug } = useParams();
   const [company, setCompany] = useState<Company | null>(null);
-  const [news, setNews] = useState<NewsItem[]>([]);
-  const [analytics, setAnalytics] = useState<AnalyticsArticle[]>([]);
   const [similarCompanies, setSimilarCompanies] = useState<Company[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -52,15 +48,9 @@ export default function CompanyDetailPage() {
           companyData = await fetchCompanyBySlug(slug);
         }
 
-        const [newsData, analyticsData, companiesData] = await Promise.all([
-          fetchNews(),
-          fetchAnalytics(),
-          fetchCompanies(),
-        ]);
+        const companiesData = await fetchCompanies();
         
         setCompany(companyData);
-        setNews(newsData.slice(0, 3));
-        setAnalytics(analyticsData.slice(0, 2));
         
         // For similar companies, find other organizations of same type
         if (org) {
@@ -226,40 +216,6 @@ export default function CompanyDetailPage() {
       <section className="section-spacing-sm">
         <div className="container-wide">
           <CompanyRating companySlug={slug || ''} />
-        </div>
-      </section>
-
-      {/* Company News */}
-      <section className="section-spacing-sm">
-        <div className="container-wide">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="heading-sm">Company News</h2>
-            <Link to="/news" className="text-sm text-primary hover:underline">
-              All news →
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            {news.map((item, index) => (
-              <NewsCard key={item.id} news={item} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Company Analytics */}
-      <section className="section-spacing-sm bg-secondary/30">
-        <div className="container-wide">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="heading-sm">Analytics</h2>
-            <Link to="/analytics" className="text-sm text-primary hover:underline">
-              All analytics →
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-            {analytics.map((article, index) => (
-              <AnalyticsCard key={article.slug} article={article} index={index} />
-            ))}
-          </div>
         </div>
       </section>
 

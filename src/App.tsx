@@ -21,7 +21,6 @@ import NotFound from "./pages/NotFound";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import CareersPage from "./pages/CareersPage";
-import PartnershipsPage from "./pages/PartnershipsPage";
 import AuthorsPage from "./pages/AuthorsPage";
 import TopicsPage from "./pages/TopicsPage";
 import EventsPage from "./pages/EventsPage";
@@ -32,8 +31,7 @@ import TermsPage from "./pages/TermsPage";
 import VideoLibraryPage from "./pages/video/VideoLibraryPage";
 import VideoDetailPage from "./pages/video/VideoDetailPage";
 // Education Pages
-import BasicArticlesPage from "./pages/education/BasicArticlesPage";
-import AdvancedArticlesPage from "./pages/education/AdvancedArticlesPage";
+import LearningPage from "./pages/education/LearningPage";
 import LearningCoursePage from "./pages/education/LearningCoursePage";
 // Course Platform
 import CoursePlatformPage from "./pages/course/CoursePlatformPage";
@@ -102,7 +100,6 @@ const App = () => {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/careers" element={<CareersPage />} />
-              <Route path="/partnerships" element={<PartnershipsPage />} />
               <Route path="/authors" element={<AuthorsPage />} />
               <Route path="/topics" element={<TopicsPage />} />
               <Route path="/events" element={<EventsPage />} />
@@ -112,8 +109,7 @@ const App = () => {
               {/* Video Pages */}
               <Route path="/video/:videoId" element={<VideoDetailPage />} />
               {/* Education Pages */}
-              <Route path="/education/basic" element={<BasicArticlesPage />} />
-              <Route path="/education/advanced" element={<AdvancedArticlesPage />} />
+              <Route path="/education/learning" element={<LearningPage />} />
               <Route path="/education/course" element={<LearningCoursePage />} />
               <Route path="/education/video" element={<VideoLibraryPage />} />
               {/* Course Platform */}
