@@ -5,30 +5,30 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
-
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: '',
+    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
     toast.success('Message sent successfully! We will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
     setIsSubmitting(false);
   };
-
-  return (
-    <Layout>
+  return <Layout>
       <div className="pt-24 pb-16">
         <section className="container-wide section-spacing-sm">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -55,18 +55,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="glass-card p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
-                    <p className="text-sm text-muted-foreground">Mon-Fri, 9am-6pm EST</p>
-                  </div>
-                </div>
-              </div>
+              
 
               <div className="glass-card p-6">
                 <div className="flex items-start gap-4">
@@ -89,42 +78,32 @@ export default function ContactPage() {
                 <div className="grid sm:grid-cols-2 gap-4 mb-4">
                   <div>
                     <label className="text-sm font-medium mb-2 block">Name</label>
-                    <Input
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Your name"
-                      required
-                    />
+                    <Input value={formData.name} onChange={e => setFormData({
+                    ...formData,
+                    name: e.target.value
+                  })} placeholder="Your name" required />
                   </div>
                   <div>
                     <label className="text-sm font-medium mb-2 block">Email</label>
-                    <Input
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="your@email.com"
-                      required
-                    />
+                    <Input type="email" value={formData.email} onChange={e => setFormData({
+                    ...formData,
+                    email: e.target.value
+                  })} placeholder="your@email.com" required />
                   </div>
                 </div>
                 <div className="mb-4">
                   <label className="text-sm font-medium mb-2 block">Subject</label>
-                  <Input
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="How can we help?"
-                    required
-                  />
+                  <Input value={formData.subject} onChange={e => setFormData({
+                  ...formData,
+                  subject: e.target.value
+                })} placeholder="How can we help?" required />
                 </div>
                 <div className="mb-6">
                   <label className="text-sm font-medium mb-2 block">Message</label>
-                  <Textarea
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Your message..."
-                    rows={6}
-                    required
-                  />
+                  <Textarea value={formData.message} onChange={e => setFormData({
+                  ...formData,
+                  message: e.target.value
+                })} placeholder="Your message..." rows={6} required />
                 </div>
                 <Button type="submit" className="w-full" disabled={isSubmitting}>
                   <Send className="h-4 w-4 mr-2" />
@@ -135,6 +114,5 @@ export default function ContactPage() {
           </div>
         </section>
       </div>
-    </Layout>
-  );
+    </Layout>;
 }
