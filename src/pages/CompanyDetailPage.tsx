@@ -3,8 +3,10 @@ import { useParams, Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { fetchCompanyBySlug, fetchCompanies, Company } from '@/lib/api';
 import { organizations, Organization } from '@/lib/organizations';
+import { getCompanyOverview } from '@/lib/companyOverviews';
 import { CompanyCard } from '@/components/CompanyCard';
 import { CompanyRating } from '@/components/companies/CompanyRating';
+import { CompanyOverview } from '@/components/companies/CompanyOverview';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
@@ -17,12 +19,12 @@ function organizationToCompany(org: Organization): Company {
   return {
     slug: org.id,
     name: org.name,
-    logo: org.logo,
+    logo: org.logo || '',
     sector: org.type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase()),
     description: org.description,
     founded: org.founded,
     headquarters: org.headquarters,
-    employees: 'N/A',
+    employees: org.employees || 'N/A',
     marketCap: org.aum || 'N/A',
     overview: org.description,
   };
@@ -172,9 +174,27 @@ export default function CompanyDetailPage() {
         <div className="container-wide">
           <h2 className="heading-sm mb-6">Company Overview</h2>
           <div className="p-6 md:p-8 rounded-xl border border-border/60 bg-card">
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              {company.overview}
-            </p>
+            {(() => {
+              const org = organizations.find(o => o.id === company.slug);
+              if (org) {
+                const overview = getCompanyOverview(
+                  org.id,
+                  org.name,
+                  org.type,
+                  org.region,
+                  org.founded,
+                  org.headquarters,
+                  org.aum
+                );
+                return <CompanyOverview overview={overview} />;
+              }
+              // Fallback to simple text for legacy companies
+              return (
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  {company.overview}
+                </p>
+              );
+            })()}
           </div>
         </div>
       </section>
