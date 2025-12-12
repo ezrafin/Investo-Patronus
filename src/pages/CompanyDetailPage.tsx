@@ -199,39 +199,6 @@ export default function CompanyDetailPage() {
         </div>
       </section>
 
-      {/* Key Metrics Table */}
-      <section className="section-spacing-sm bg-secondary/30">
-        <div className="container-wide">
-          <h2 className="heading-sm mb-6">Key Metrics</h2>
-          <div className="rounded-xl border border-border/60 bg-card overflow-hidden">
-            <table className="w-full">
-              <tbody className="divide-y divide-border/60">
-                <tr className="hover:bg-secondary/50 transition-colors">
-                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Market Capitalization</td>
-                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.marketCap}</td>
-                </tr>
-                <tr className="hover:bg-secondary/50 transition-colors">
-                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Sector</td>
-                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.sector}</td>
-                </tr>
-                <tr className="hover:bg-secondary/50 transition-colors">
-                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Number of Employees</td>
-                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.employees}</td>
-                </tr>
-                <tr className="hover:bg-secondary/50 transition-colors">
-                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Year Founded</td>
-                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.founded}</td>
-                </tr>
-              <tr className="hover:bg-secondary/50 transition-colors">
-                  <td className="px-4 md:px-6 py-4 text-sm text-muted-foreground">Headquarters</td>
-                  <td className="px-4 md:px-6 py-4 text-sm font-medium text-right">{company.headquarters}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* Community Evaluations */}
       <section className="section-spacing-sm">
         <div className="container-wide">
