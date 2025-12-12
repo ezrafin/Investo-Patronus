@@ -38,6 +38,7 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [existingEvaluation, setExistingEvaluation] = useState<Evaluation | null>(null);
   const [ratingCount, setRatingCount] = useState<number>(0);
+  const [averageRating, setAverageRating] = useState<number>(0);
 
   useEffect(() => {
     loadEvaluations();
@@ -54,14 +55,37 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
 
       if (error) throw error;
 
-      setEvaluations(evals || []);
+      // Fetch profiles for evaluations
+      if (evals && evals.length > 0) {
+        const userIds = [...new Set(evals.map(e => e.user_id))];
+        const { data: profiles } = await supabase
+          .from('profiles')
+          .select('id, display_name, avatar_url')
+          .in('id', userIds);
+        
+        const profileMap = new Map(profiles?.map(p => [p.id, p]) || []);
+        
+        const evalsWithProfiles = evals.map(e => ({
+          ...e,
+          profiles: profileMap.get(e.user_id) || null
+        }));
+        
+        setEvaluations(evalsWithProfiles as any);
+        
+        // Calculate average rating
+        const avg = evals.reduce((sum, e) => sum + e.rating, 0) / evals.length;
+        setAverageRating(Math.round(avg * 10) / 10);
+      } else {
+        setEvaluations([]);
+      }
+      
       setRatingCount(evals?.length || 0);
 
       // Check if current user has an evaluation
-      if (user) {
-        const userEval = evals?.find(e => e.user_id === user.id);
+      if (user && evals) {
+        const userEval = evals.find(e => e.user_id === user.id);
         if (userEval) {
-          setExistingEvaluation(userEval);
+          setExistingEvaluation(userEval as any);
           setUserRating(userEval.rating);
           setUserComment(userEval.comment || '');
         }
@@ -140,15 +164,25 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
 
   return (
     <div className={cn('space-y-6', className)}>
-      <div className="flex items-center justify-between">
+      {/* Header with Average Rating */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <h3 className="font-heading font-semibold text-lg flex items-center gap-2">
           <MessageSquare className="h-5 w-5 text-primary" />
           Community Evaluations
         </h3>
+        
         {ratingCount > 0 && (
-          <span className="text-xs text-muted-foreground">
-            Rated by {ratingCount} {ratingCount === 1 ? 'user' : 'users'}
-          </span>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary/50 border border-border">
+              <span className={cn('text-2xl font-bold', getRatingColor(averageRating))}>
+                {averageRating}
+              </span>
+              <span className="text-muted-foreground">/100</span>
+            </div>
+            <span className="text-sm text-muted-foreground">
+              {ratingCount} {ratingCount === 1 ? 'review' : 'reviews'}
+            </span>
+          </div>
         )}
       </div>
 
@@ -260,32 +294,46 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
       {/* Evaluations List */}
       {evaluations.length > 0 ? (
         <div className="space-y-4">
-          {evaluations.slice(0, 5).map((evaluation) => (
+          {evaluations.slice(0, 10).map((evaluation) => (
             <div
               key={evaluation.id}
               className="p-4 rounded-lg border border-border/50 bg-card"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className={cn('text-lg font-bold', getRatingColor(evaluation.rating))}>
-                      {evaluation.rating}/100
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      {new Date(evaluation.created_at).toLocaleDateString()}
-                    </span>
+                  <div className="flex items-center gap-3 mb-2">
+                    {evaluation.profiles?.avatar_url && (
+                      <img 
+                        src={evaluation.profiles.avatar_url} 
+                        alt="" 
+                        className="w-8 h-8 rounded-full"
+                      />
+                    )}
+                    <div>
+                      <span className="text-sm font-medium">
+                        {evaluation.profiles?.display_name || 'Anonymous'}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className={cn('text-lg font-bold', getRatingColor(evaluation.rating))}>
+                          {evaluation.rating}/100
+                        </span>
+                        <span className="text-xs text-muted-foreground">
+                          {new Date(evaluation.created_at).toLocaleDateString()}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   {evaluation.comment && (
-                    <p className="text-sm text-foreground">{evaluation.comment}</p>
+                    <p className="text-sm text-foreground mt-2">{evaluation.comment}</p>
                   )}
                 </div>
               </div>
             </div>
           ))}
           
-          {evaluations.length > 5 && (
+          {evaluations.length > 10 && (
             <p className="text-sm text-muted-foreground text-center">
-              +{evaluations.length - 5} more evaluations
+              +{evaluations.length - 10} more reviews
             </p>
           )}
         </div>
