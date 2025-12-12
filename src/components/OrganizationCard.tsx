@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Building2, Shield, ShieldCheck, Users, Award, ExternalLink } from 'lucide-react';
+import { Building2, Shield, ShieldCheck, Users, Award, ExternalLink, Star } from 'lucide-react';
 import { Organization, OrganizationType } from '@/lib/organizations';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { useUser } from '@/context/UserContext';
 interface OrganizationCardProps {
   organization: Organization;
   index?: number;
@@ -49,26 +50,44 @@ function getTrustBgColor(score: number): string {
 }
 
 export function OrganizationCard({ organization, index = 0 }: OrganizationCardProps) {
+  const { user } = useUser();
   const combinedTrust = Math.round((organization.communityTrust + organization.expertTrust) / 2);
   const [ratingCount, setRatingCount] = useState<number | null>(null);
+  const [userRating, setUserRating] = useState<number | null>(null);
 
   useEffect(() => {
-    async function loadRatingCount() {
+    async function loadRatingData() {
       try {
-        const { count, error } = await supabase
+        // Get total rating count
+        const { count, error: countError } = await supabase
           .from('company_evaluations')
           .select('*', { count: 'exact', head: true })
           .eq('company_slug', organization.id);
 
-        if (error) throw error;
+        if (countError) throw countError;
         setRatingCount(count || 0);
+
+        // Get user's rating if logged in
+        if (user) {
+          const { data, error: userError } = await supabase
+            .from('company_evaluations')
+            .select('rating')
+            .eq('company_slug', organization.id)
+            .eq('user_id', user.id)
+            .maybeSingle();
+
+          if (userError) throw userError;
+          setUserRating(data?.rating ?? null);
+        } else {
+          setUserRating(null);
+        }
       } catch (error) {
-        console.error('Error loading rating count:', error);
+        console.error('Error loading rating data:', error);
       }
     }
 
-    loadRatingCount();
-  }, [organization.id]);
+    loadRatingData();
+  }, [organization.id, user]);
   
   return (
     <Link to={`/companies/${organization.id}`}>
@@ -182,6 +201,24 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
             <>
               <span>·</span>
               <span className="text-[10px]">Rated by {ratingCount} {ratingCount === 1 ? 'user' : 'users'}</span>
+            </>
+          )}
+          {userRating !== null && (
+            <>
+              <span>·</span>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger className="flex items-center gap-1">
+                    <Star className="h-3 w-3 text-primary fill-primary" />
+                    <span className={`font-medium ${getTrustColor(userRating)}`}>
+                      {userRating}
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Your rating for this company</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </>
           )}
         </div>
