@@ -123,7 +123,7 @@ export default function CompanyDetailPage() {
       {/* Hero Banner - Pantera Style */}
       <section className="bg-primary text-primary-foreground">
         <div className="container-wide py-16 md:py-24">
-          <Breadcrumbs pageTitle={company.name} />
+          <Breadcrumbs pageTitle={company.name} className="[&_*]:text-primary-foreground/80 [&_a]:text-primary-foreground/80 [&_a:hover]:text-primary-foreground" />
 
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
             <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">

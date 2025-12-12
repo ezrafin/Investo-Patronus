@@ -57,8 +57,8 @@ export function Breadcrumbs({ pageTitle, items, className }: BreadcrumbsProps) {
     <>
       {structuredData && <StructuredData data={structuredData} />}
       <div className="mb-6 md:mb-8">
-        <Breadcrumb className={className}>
-          <BreadcrumbList>
+        <Breadcrumb>
+          <BreadcrumbList className={className}>
             {breadcrumbItems.map((item, index) => {
               const isLast = index === breadcrumbItems.length - 1;
               const path = item.url.replace('https://investopatronus.com', '');
