@@ -170,8 +170,10 @@ export type Database = {
           is_featured: boolean
           is_pinned: boolean
           reply_count: number
+          tags: string[] | null
           title: string
           updated_at: string
+          user_id: string | null
           view_count: number
         }
         Insert: {
@@ -183,8 +185,10 @@ export type Database = {
           is_featured?: boolean
           is_pinned?: boolean
           reply_count?: number
+          tags?: string[] | null
           title: string
           updated_at?: string
+          user_id?: string | null
           view_count?: number
         }
         Update: {
@@ -196,8 +200,10 @@ export type Database = {
           is_featured?: boolean
           is_pinned?: boolean
           reply_count?: number
+          tags?: string[] | null
           title?: string
           updated_at?: string
+          user_id?: string | null
           view_count?: number
         }
         Relationships: []

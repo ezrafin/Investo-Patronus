@@ -5,10 +5,11 @@ import { fetchForumCategories, fetchForumTopics, ForumCategory, ForumTopic } fro
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { ForumFilters, SortOption, DateFilter } from '@/components/forum/ForumFilters';
 import { ForumSorting } from '@/components/forum/ForumSorting';
-import { MessageSquare, Users, Clock, Eye, MessageCircle, TrendingUp, Flame, ArrowUpRight, Plus } from 'lucide-react';
+import { MessageSquare, Users, Clock, Eye, MessageCircle, TrendingUp, Briefcase, ArrowUpRight, Plus, HelpCircle, Newspaper, Coins, AlertCircle, RefreshCw } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useUser } from '@/context/UserContext';
+import { toast } from 'sonner';
 
 export default function ForumPage() {
   const [searchParams] = useSearchParams();
@@ -16,6 +17,7 @@ export default function ForumPage() {
   const [categories, setCategories] = useState<ForumCategory[]>([]);
   const [topics, setTopics] = useState<ForumTopic[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
   // Filter states
   const [sortBy, setSortBy] = useState<SortOption>('newest');
@@ -25,27 +27,37 @@ export default function ForumPage() {
   const [dateFilter, setDateFilter] = useState<DateFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  useEffect(() => {
-    async function loadData() {
+  const loadData = async () => {
+    setLoading(true);
+    setError(null);
+    try {
       const [categoriesData, topicsData] = await Promise.all([
         fetchForumCategories(),
         fetchForumTopics(categoryFilter),
       ]);
       setCategories(categoriesData);
       setTopics(topicsData);
+    } catch (err: any) {
+      console.error('Error loading forum data:', err);
+      setError('Failed to load forum data. Please try again.');
+      toast.error('Failed to load forum data');
+    } finally {
       setLoading(false);
     }
+  };
 
+  useEffect(() => {
     loadData();
   }, [categoryFilter]);
 
+  // Map category slugs to icons
   const categoryIcons: Record<string, typeof MessageSquare> = {
     general: MessageSquare,
     stocks: TrendingUp,
-    crypto: MessageCircle,
-    etfs: Flame,
-    beginners: Users,
-    news: Eye,
+    crypto: Coins,
+    etfs: Briefcase,
+    beginners: HelpCircle,
+    news: Newspaper,
   };
 
   // Filter and sort topics
@@ -137,7 +149,17 @@ export default function ForumPage() {
       <section className="section-spacing-sm">
         <div className="container-wide">
           <h2 className="heading-sm mb-8">Categories</h2>
-          {loading ? (
+          {error ? (
+            <div className="premium-card p-12 text-center">
+              <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
+              <h3 className="font-semibold text-lg mb-2">Error loading categories</h3>
+              <p className="text-muted-foreground mb-6">{error}</p>
+              <Button onClick={loadData} variant="outline">
+                <RefreshCw className="mr-2 h-4 w-4" />
+                Try Again
+              </Button>
+            </div>
+          ) : loading ? (
             <div className="grid md:grid-cols-2 gap-6">
               {Array.from({ length: 4 }).map((_, i) => (
                 <SkeletonCard key={i} lines={3} />
@@ -282,9 +304,7 @@ export default function ForumPage() {
                       <span className="hidden sm:inline">•</span>
                       <span className="hidden sm:inline">{new Date(topic.date).toLocaleDateString('en-US')}</span>
                       <span className="badge-secondary text-[10px] px-2 py-0.5">
-                        {topic.categoryId === 'crypto' ? 'Crypto' : 
-                         topic.categoryId === 'investments' ? 'Investments' :
-                         topic.categoryId === 'companies' ? 'Companies' : 'Markets'}
+                        {categories.find(c => c.id === topic.categoryId)?.name || topic.categoryId}
                       </span>
                     </div>
                   </div>

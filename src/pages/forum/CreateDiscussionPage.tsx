@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
@@ -11,22 +11,35 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const categories = [
-  { id: 'investments', name: 'Investments' },
-  { id: 'companies', name: 'Companies' },
-  { id: 'markets', name: 'Markets' },
-  { id: 'crypto', name: 'Crypto' },
-];
+import { fetchForumCategories, ForumCategory } from '@/lib/api';
 
 export default function CreateDiscussionPage() {
   const { user, profile } = useUser();
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [category, setCategory] = useState('investments');
+  const [category, setCategory] = useState('general');
   const [tags, setTags] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [categories, setCategories] = useState<ForumCategory[]>([]);
+  const [loadingCategories, setLoadingCategories] = useState(true);
+
+  useEffect(() => {
+    async function loadCategories() {
+      try {
+        const data = await fetchForumCategories();
+        setCategories(data);
+        if (data.length > 0) {
+          setCategory(data[0].id);
+        }
+      } catch (error) {
+        console.error('Error loading categories:', error);
+      } finally {
+        setLoadingCategories(false);
+      }
+    }
+    loadCategories();
+  }, []);
 
   if (!user) {
     return (
@@ -103,9 +116,9 @@ export default function CreateDiscussionPage() {
 
             <div className="space-y-2">
               <Label htmlFor="category">Category *</Label>
-              <Select value={category} onValueChange={setCategory}>
+              <Select value={category} onValueChange={setCategory} disabled={loadingCategories}>
                 <SelectTrigger id="category">
-                  <SelectValue />
+                  <SelectValue placeholder={loadingCategories ? "Loading..." : "Select category"} />
                 </SelectTrigger>
                 <SelectContent>
                   {categories.map((cat) => (

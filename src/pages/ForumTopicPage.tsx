@@ -43,13 +43,18 @@ export default function ForumTopicPage() {
   useEffect(() => {
     async function loadData() {
       if (topicId) {
-        const [topicData, commentsData] = await Promise.all([
-          fetchTopicById(topicId),
-          fetchForumComments(topicId),
-        ]);
-        setTopic(topicData);
-        setComments(commentsData);
-        setLoading(false);
+        try {
+          const [topicData, commentsData] = await Promise.all([
+            fetchTopicById(topicId),
+            fetchForumComments(topicId),
+          ]);
+          setTopic(topicData);
+          setComments(commentsData);
+        } catch (error) {
+          console.error('Error loading topic:', error);
+        } finally {
+          setLoading(false);
+        }
       }
     }
 
