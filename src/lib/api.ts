@@ -184,9 +184,324 @@ const articleTemplates: Array<{
   relatedMarkets?: string[];
 }> = [
   // Investment & Portfolio topics
-  { title: 'ETF Strategies for Long-Term Wealth Building', excerpt: 'Comprehensive guide to building a diversified ETF portfolio that grows over time.', content: 'Exchange-traded funds have revolutionized investing by providing low-cost access to diversified portfolios. This comprehensive guide explores proven ETF strategies for long-term wealth accumulation. We examine core-satellite approaches, sector rotation strategies, and the importance of rebalancing. Understanding expense ratios, tracking error, and tax efficiency is crucial for maximizing returns. We also discuss how to combine different ETF categories to create a balanced portfolio that aligns with your risk tolerance and investment goals.', type: 'longterm', readTime: '14 min', tags: ['ETF', 'Portfolio', 'Diversification'], relatedMarkets: ['indices', 'stocks'] },
-  { title: 'Dividend Investing: Building Passive Income Streams', excerpt: 'How to identify and invest in quality dividend-paying stocks for steady income.', content: 'Dividend investing remains one of the most reliable strategies for generating passive income and building long-term wealth. This article explores how to identify high-quality dividend stocks, understand dividend yield versus dividend growth, and construct a dividend-focused portfolio. We examine the importance of dividend sustainability, payout ratios, and the power of dividend reinvestment. Real-world examples illustrate how dividend investing can provide both income and capital appreciation over time.', type: 'longterm', readTime: '12 min', tags: ['Dividends', 'Income', 'Stocks'] },
-  { title: 'Portfolio Diversification: Beyond Stocks and Bonds', excerpt: 'Exploring alternative assets and strategies to reduce portfolio risk and enhance returns.', content: 'True portfolio diversification goes far beyond the traditional 60/40 stock-bond split. This comprehensive analysis explores alternative asset classes including real estate investment trusts (REITs), commodities, international equities, and emerging market bonds. We examine correlation patterns, risk-adjusted returns, and how different asset classes perform in various economic environments. Practical guidance helps investors understand how to allocate across multiple asset classes while maintaining their target risk profile.', type: 'expert', readTime: '16 min', tags: ['Diversification', 'Portfolio', 'Risk Management'] },
+  { title: 'ETF Strategies for Long-Term Wealth Building', excerpt: 'Comprehensive guide to building a diversified ETF portfolio that grows over time.', content: `Exchange-traded funds (ETFs) have revolutionized investing by providing low-cost access to diversified portfolios that were once only available to institutional investors. This comprehensive guide explores proven ETF strategies for long-term wealth accumulation, helping you build a portfolio that grows steadily over decades while minimizing costs and complexity.
+
+## Understanding ETFs: The Foundation
+
+ETFs are investment funds that trade on stock exchanges, combining the diversification of mutual funds with the flexibility of individual stocks. Unlike traditional mutual funds, ETFs can be bought and sold throughout the trading day at market prices. They typically track an index, sector, commodity, or other asset class, providing instant diversification with a single purchase.
+
+The primary advantages of ETFs include low expense ratios, tax efficiency, transparency, and liquidity. Most ETFs have expense ratios below 0.50%, significantly lower than actively managed mutual funds. This cost advantage compounds over time, potentially adding tens of thousands of dollars to your portfolio over decades.
+
+## Core-Satellite Strategy: Balancing Stability and Growth
+
+The core-satellite approach is one of the most effective ETF strategies for long-term wealth building. This method allocates the majority of your portfolio (typically 70-80%) to low-cost, broad-market ETFs that form your "core" holdings. These core positions provide stability and market exposure through funds tracking major indices like the S&P 500, total stock market, or international developed markets.
+
+The remaining 20-30% serves as "satellite" positions, allowing you to tilt toward specific sectors, themes, or strategies you believe will outperform. Satellite positions might include technology ETFs, emerging markets, small-cap value stocks, or thematic investments like clean energy or artificial intelligence.
+
+This strategy balances the proven benefits of broad market exposure with the potential for enhanced returns through strategic tilts. The core ensures you capture market returns, while satellites allow for customization based on your risk tolerance and investment thesis.
+
+## Sector Rotation Strategies
+
+Sector rotation involves shifting ETF allocations based on economic cycles and market conditions. Different sectors perform better during various phases of the economic cycle. For example, defensive sectors like utilities and consumer staples typically outperform during economic downturns, while cyclical sectors like technology and industrials excel during expansion phases.
+
+Implementing sector rotation requires understanding economic indicators and market cycles. You can use sector-specific ETFs to overweight sectors expected to outperform while maintaining diversification. However, this strategy requires active management and market timing, which can be challenging for most investors.
+
+A more passive approach involves maintaining consistent sector allocations while periodically rebalancing. This ensures you're not overexposed to any single sector and helps you buy low and sell high through systematic rebalancing.
+
+## The Critical Role of Rebalancing
+
+Rebalancing is essential for maintaining your target asset allocation and risk profile. Over time, winning investments grow to represent a larger portion of your portfolio, increasing your risk exposure. Regular rebalancing forces you to sell high (trimming winners) and buy low (adding to underperformers), which can improve returns over the long term.
+
+The frequency of rebalancing depends on your strategy and tolerance for drift. Some investors rebalance quarterly or annually, while others use threshold-based rebalancing, adjusting when allocations drift more than 5% from targets. Research suggests annual rebalancing often provides the best balance between maintaining targets and minimizing transaction costs and taxes.
+
+## Understanding Expense Ratios and Tracking Error
+
+Expense ratios represent the annual fee charged by ETF providers, expressed as a percentage of assets. A 0.03% expense ratio means you pay $3 annually for every $10,000 invested. While seemingly small, these fees compound over decades. Choosing ETFs with lower expense ratios can save tens of thousands of dollars over an investment lifetime.
+
+Tracking error measures how closely an ETF follows its underlying index. Lower tracking error indicates better index replication. Factors affecting tracking error include expense ratios, sampling methods, dividend reinvestment timing, and fund size. When selecting ETFs, prioritize those with low expense ratios and minimal tracking error.
+
+## Tax Efficiency in ETF Investing
+
+ETFs offer significant tax advantages through their unique structure. The creation and redemption process allows ETF providers to transfer securities in-kind rather than selling them, minimizing capital gains distributions. This structure means you typically only pay taxes when you sell your ETF shares, giving you control over when to realize gains.
+
+Tax-loss harvesting involves selling losing positions to realize losses that offset gains, then reinvesting in similar but not identical ETFs to maintain market exposure. This strategy can reduce your tax burden while keeping your portfolio aligned with your investment goals.
+
+Holding ETFs in tax-advantaged accounts like IRAs or 401(k)s eliminates tax considerations entirely, allowing for more frequent rebalancing and trading without tax consequences.
+
+## Building a Balanced ETF Portfolio
+
+Constructing a balanced ETF portfolio requires considering multiple factors: asset allocation, geographic diversification, market capitalization, and investment style. A well-diversified portfolio might include:
+
+- Broad U.S. stock market exposure (40-50%)
+- International developed markets (20-30%)
+- Emerging markets (5-10%)
+- Bonds for stability (20-30%, decreasing with age)
+- Real estate through REIT ETFs (5-10%)
+- Commodities for inflation protection (0-5%)
+
+The exact allocation depends on your age, risk tolerance, time horizon, and financial goals. Younger investors can afford higher stock allocations, while those nearing retirement should increase bond exposure for stability.
+
+## Risk Management and Portfolio Construction
+
+Effective risk management in ETF investing involves diversification across asset classes, geographies, and sectors. However, true diversification requires understanding correlations between assets. During market stress, many seemingly different assets can move together, reducing diversification benefits.
+
+Consider your risk capacity (ability to take risk) versus risk tolerance (willingness to take risk). Your risk capacity depends on factors like time horizon, income stability, and financial obligations. Your risk tolerance is psychological and relates to how comfortable you are with volatility.
+
+Regular portfolio reviews help ensure your allocation remains appropriate as your circumstances change. Life events like marriage, children, career changes, or approaching retirement may warrant portfolio adjustments.
+
+## Common Mistakes to Avoid
+
+Many investors make costly mistakes when building ETF portfolios. Over-diversification can lead to unnecessary complexity and higher costs. Holding dozens of ETFs that overlap significantly provides little benefit while complicating management.
+
+Chasing performance by buying last year's top-performing ETFs often leads to buying high and selling low. Past performance doesn't predict future results, and yesterday's winners often become tomorrow's laggards.
+
+Ignoring costs can significantly erode returns over time. While a 0.50% difference in expense ratios seems small, over 30 years it can reduce your final portfolio value by 15% or more.
+
+Failing to rebalance allows portfolios to drift from target allocations, increasing risk over time. Set a rebalancing schedule and stick to it, regardless of market conditions.
+
+## Long-Term Wealth Building Principles
+
+Successful long-term wealth building with ETFs requires discipline, patience, and a focus on factors within your control: costs, diversification, and staying invested. Market timing and stock picking are unreliable, but maintaining a low-cost, diversified portfolio and staying invested through market cycles has historically produced strong returns.
+
+Start early to maximize the power of compounding. Time in the market matters more than timing the market. Regular contributions, even small ones, can grow substantially over decades through compound growth.
+
+Stay the course during market volatility. Market downturns are normal and temporary. Selling during downturns locks in losses and prevents participation in recoveries. A well-constructed ETF portfolio should weather market storms while continuing to grow over the long term.
+
+## Conclusion
+
+Building long-term wealth with ETFs requires understanding their structure, implementing sound strategies like core-satellite allocation, maintaining discipline through rebalancing, and focusing on low costs and broad diversification. By following these principles and avoiding common mistakes, you can construct a portfolio that grows steadily over decades while minimizing complexity and costs. The key is starting early, staying invested, and letting time and compounding work in your favor.`, type: 'longterm', readTime: '14 min', tags: ['ETF', 'Portfolio', 'Diversification'], relatedMarkets: ['indices', 'stocks'] },
+  { title: 'Dividend Investing: Building Passive Income Streams', excerpt: 'How to identify and invest in quality dividend-paying stocks for steady income.', content: `Dividend investing remains one of the most reliable strategies for generating passive income and building long-term wealth. Unlike growth stocks that rely solely on price appreciation, dividend-paying stocks provide regular income payments while still offering potential for capital gains. This comprehensive guide explores how to identify high-quality dividend stocks, construct a dividend-focused portfolio, and maximize the power of dividend reinvestment.
+
+## The Fundamentals of Dividend Investing
+
+Dividends are cash payments that companies distribute to shareholders from their profits. Not all companies pay dividends; those that do typically represent mature, profitable businesses with stable cash flows. Dividend investing appeals to investors seeking regular income, those in or approaching retirement, and anyone looking to build wealth through the power of compounding.
+
+Dividend yield, calculated as annual dividends per share divided by stock price, shows the income return on your investment. However, high yield alone doesn't indicate a good investment. A company with a 10% yield might be in financial distress, while a 2% yield from a growing company could provide better total returns over time.
+
+## Dividend Yield vs. Dividend Growth
+
+Understanding the difference between dividend yield and dividend growth is crucial for successful dividend investing. High-yield stocks provide immediate income but may offer limited growth potential. These companies often operate in mature industries with slow growth, paying out most of their earnings as dividends.
+
+Dividend growth stocks, on the other hand, may start with lower yields but increase their dividend payments over time. Companies like those in the Dividend Aristocrats index have increased dividends for 25+ consecutive years. While their current yield might be modest, the growing dividend payments can eventually exceed what you'd receive from high-yield stocks, especially when combined with price appreciation.
+
+The best dividend strategy often combines both approaches: core holdings in reliable high-yield stocks for immediate income, supplemented by dividend growth stocks for long-term wealth building. This balanced approach provides current income while positioning your portfolio for future growth.
+
+## Identifying High-Quality Dividend Stocks
+
+Evaluating dividend sustainability is critical when selecting dividend stocks. Several key metrics help identify companies capable of maintaining and growing their dividends:
+
+**Payout Ratio**: This measures the percentage of earnings paid as dividends. A payout ratio below 60% generally indicates a company has room to maintain dividends during tough times and potentially increase them. Ratios above 80% suggest the dividend might be at risk if earnings decline.
+
+**Free Cash Flow**: Companies need strong cash flow to sustain dividends. Free cash flow (operating cash flow minus capital expenditures) shows how much cash a company generates after maintaining its business. Positive and growing free cash flow supports dividend sustainability.
+
+**Debt Levels**: Excessive debt can threaten dividend payments, especially during economic downturns. Review debt-to-equity ratios and interest coverage ratios to assess financial health. Companies with manageable debt levels are better positioned to maintain dividends.
+
+**Business Model Stability**: Companies in defensive industries like utilities, consumer staples, and healthcare tend to have more stable earnings and reliable dividends. These sectors provide essential services that remain in demand regardless of economic conditions.
+
+**Dividend History**: A long track record of consistent or growing dividends indicates management's commitment to shareholder returns. Look for companies with at least 5-10 years of dividend payments, preferably with a history of increases.
+
+## Constructing a Dividend-Focused Portfolio
+
+Building a dividend portfolio requires diversification across sectors, company sizes, and geographic regions. Concentrating in a single sector or company exposes you to significant risk if that industry faces challenges.
+
+A well-diversified dividend portfolio might include:
+
+- **Consumer Staples** (20-25%): Companies selling essential products that maintain demand during economic downturns
+- **Utilities** (15-20%): Regulated businesses with stable cash flows and high dividend yields
+- **Healthcare** (15-20%): Aging demographics support long-term growth in this defensive sector
+- **Financials** (10-15%): Banks and insurance companies often pay substantial dividends
+- **Real Estate (REITs)** (10-15%): Required to distribute most income as dividends, providing high yields
+- **Energy** (5-10%): Can be volatile but often offers high yields
+- **Technology** (5-10%): Many tech companies now pay dividends as they mature
+
+Geographic diversification is equally important. International dividend stocks can provide exposure to different economic cycles and currency diversification. Many foreign markets offer higher dividend yields than U.S. markets, though currency risk and different tax treatments require consideration.
+
+## The Power of Dividend Reinvestment
+
+Dividend reinvestment is one of the most powerful wealth-building tools available to investors. Instead of taking dividend payments as cash, reinvesting them to purchase additional shares compounds your returns over time. This strategy, often called DRIP (Dividend Reinvestment Plan), allows you to buy more shares without additional capital.
+
+The compounding effect becomes dramatic over long periods. For example, a $10,000 investment in a stock with a 4% dividend yield, reinvested annually, could grow to over $70,000 in 30 years (assuming 8% total annual return). Without reinvestment, you'd have the original $10,000 plus $12,000 in dividends, totaling just $22,000.
+
+Many companies and brokerages offer automatic dividend reinvestment programs, making this strategy easy to implement. Some programs even offer discounts on share purchases or waive fees, further enhancing returns.
+
+## Tax Considerations in Dividend Investing
+
+Understanding dividend taxation is important for maximizing after-tax returns. Qualified dividends from U.S. companies are taxed at favorable long-term capital gains rates (0%, 15%, or 20% depending on income), rather than ordinary income rates that can reach 37%.
+
+To qualify for these lower rates, you must hold the stock for more than 60 days during the 121-day period surrounding the ex-dividend date. This holding period requirement means dividend investors should plan for longer holding periods, which aligns with the buy-and-hold nature of dividend investing.
+
+Non-qualified dividends, including those from REITs and many foreign companies, are taxed as ordinary income. Holding dividend stocks in tax-advantaged accounts like IRAs eliminates tax considerations and allows for more flexible trading.
+
+## Dividend ETFs vs. Individual Stocks
+
+Investors can access dividend investing through individual stocks or dividend-focused ETFs. Each approach has advantages:
+
+**Individual Stocks**: Provide control over specific holdings, potential for higher yields, and the ability to avoid companies you don't want to own. However, they require more research, time, and carry higher risk from lack of diversification.
+
+**Dividend ETFs**: Offer instant diversification, professional management, and lower individual stock risk. Popular options include funds tracking the Dividend Aristocrats, high-dividend yield indices, or dividend growth strategies. ETFs simplify portfolio management but may have slightly lower yields due to fees and broader diversification.
+
+Many investors combine both approaches: using ETFs for core diversification while holding individual dividend stocks for specific opportunities or higher yields in areas of expertise.
+
+## Common Dividend Investing Mistakes
+
+Several mistakes can undermine dividend investing success:
+
+**Chasing Yield**: The highest-yielding stocks often carry the highest risk. Companies with unsustainable payout ratios or declining businesses may cut dividends, causing both income loss and price declines.
+
+**Ignoring Total Return**: Focusing solely on dividend yield ignores capital appreciation potential. A stock with a 3% yield and 8% annual price growth provides better total returns than a 6% yield with no growth.
+
+**Lack of Diversification**: Concentrating in dividend stocks from a single sector or company creates unnecessary risk. Even reliable dividend payers can cut or eliminate dividends during severe downturns.
+
+**Reinvesting Without Strategy**: Automatic dividend reinvestment is powerful, but periodically reviewing your portfolio ensures reinvestment aligns with your target allocation and doesn't create overconcentration.
+
+**Ignoring Company Fundamentals**: A history of dividend payments doesn't guarantee future payments. Regularly review company financials, competitive position, and industry trends to ensure dividend sustainability.
+
+## Building Long-Term Wealth Through Dividends
+
+Successful dividend investing requires patience, discipline, and a long-term perspective. The strategy works best when you reinvest dividends, hold positions for years or decades, and focus on companies with sustainable business models and growing dividends.
+
+Start with a solid foundation of reliable dividend payers, then gradually add dividend growth stocks as your portfolio matures. Regular contributions, combined with dividend reinvestment, can build substantial wealth over time. The key is staying invested through market cycles, trusting in the power of compounding, and maintaining a diversified portfolio of quality companies.
+
+Remember that dividend investing is a marathon, not a sprint. The real power of dividends reveals itself over decades as reinvested dividends purchase more shares, which generate more dividends, creating a compounding cycle that can significantly grow your wealth.`, type: 'longterm', readTime: '12 min', tags: ['Dividends', 'Income', 'Stocks'] },
+  { title: 'Portfolio Diversification: Beyond Stocks and Bonds', excerpt: 'Exploring alternative assets and strategies to reduce portfolio risk and enhance returns.', content: `True portfolio diversification goes far beyond the traditional 60/40 stock-bond split that has dominated investment advice for decades. While stocks and bonds form a solid foundation, incorporating alternative asset classes can reduce portfolio risk, enhance returns, and provide protection during different economic environments. This comprehensive analysis explores alternative investments, correlation patterns, and practical strategies for building a truly diversified portfolio.
+
+## The Limitations of Traditional Diversification
+
+The classic 60/40 portfolio (60% stocks, 40% bonds) has served investors well for generations, but it has significant limitations. During market stress, correlations between stocks and bonds can increase, reducing diversification benefits. Both asset classes can decline simultaneously during periods of high inflation or economic uncertainty.
+
+Traditional diversification also misses entire categories of investments that offer different risk-return profiles and respond differently to economic conditions. By limiting yourself to stocks and bonds, you're missing opportunities to reduce risk and potentially enhance returns through alternative asset classes.
+
+Modern portfolio theory suggests that adding uncorrelated or negatively correlated assets can improve risk-adjusted returns. This means your portfolio can achieve the same returns with less risk, or higher returns with the same risk level, simply by including assets that don't move in lockstep with stocks and bonds.
+
+## Real Estate Investment Trusts (REITs)
+
+REITs offer exposure to real estate markets without the challenges of direct property ownership. These companies own and operate income-producing real estate, from office buildings and shopping centers to apartments and warehouses. REITs must distribute at least 90% of taxable income as dividends, providing attractive yields often ranging from 3-6%.
+
+Real estate has historically shown low correlation with stocks and bonds, making REITs valuable diversification tools. During periods of inflation, real estate values and rental income often increase, providing a hedge against purchasing power erosion. REITs also offer liquidity that direct real estate ownership lacks—you can buy and sell shares instantly rather than waiting months to complete a property transaction.
+
+Different REIT categories serve different purposes:
+
+- **Equity REITs** own properties and generate income from rents
+- **Mortgage REITs** invest in real estate debt and earn interest income
+- **Specialty REITs** focus on specific property types like data centers, cell towers, or healthcare facilities
+
+Allocating 5-15% of your portfolio to REITs can provide diversification benefits, though be aware that REITs can be volatile and sensitive to interest rate changes.
+
+## Commodities: Inflation Protection and Diversification
+
+Commodities include physical assets like gold, silver, oil, natural gas, agricultural products, and industrial metals. These assets often perform well during inflationary periods when the purchasing power of currency declines. Commodities also tend to have low or negative correlation with stocks and bonds, making them powerful diversification tools.
+
+Gold, in particular, has served as a store of value for thousands of years and often performs well during economic uncertainty, currency devaluation, and geopolitical tensions. While gold doesn't generate income like stocks or bonds, it can preserve wealth during crises.
+
+Energy commodities like oil and natural gas are essential to the global economy and can provide returns that don't correlate directly with stock market movements. However, commodity prices can be highly volatile and subject to supply and demand shocks.
+
+Investors can access commodities through:
+
+- **Commodity ETFs**: Track commodity indices or hold physical commodities
+- **Commodity futures**: More complex but offer direct exposure
+- **Commodity stocks**: Mining, energy, and agricultural companies (though these correlate more with stocks)
+
+A 5-10% allocation to commodities can provide inflation protection and diversification, though higher allocations may increase portfolio volatility.
+
+## International Equities: Geographic Diversification
+
+International stocks offer exposure to different economic cycles, currencies, and growth opportunities. While U.S. markets have performed exceptionally well in recent decades, international diversification can reduce risk and provide access to faster-growing economies.
+
+**Developed International Markets**: Countries like Japan, the United Kingdom, Germany, and France offer mature markets with established companies. These markets often have different sector compositions than the U.S. market—for example, European markets have higher exposure to financials and industrials.
+
+**Emerging Markets**: Countries like China, India, Brazil, and South Korea offer higher growth potential but also higher risk. Emerging markets can experience significant volatility due to political instability, currency fluctuations, and less developed financial systems. However, they also provide access to rapidly growing middle classes and expanding economies.
+
+Currency exposure is an important consideration with international investments. A strengthening U.S. dollar can reduce returns from international stocks, while a weakening dollar can enhance them. Some investors hedge currency exposure, while others accept it as additional diversification.
+
+Allocating 20-40% of equity holdings to international markets can provide meaningful diversification benefits, though the exact allocation depends on your risk tolerance and views on global economic growth.
+
+## Emerging Market Bonds
+
+While emerging market stocks get most of the attention, emerging market bonds offer another diversification avenue. These bonds, issued by governments and corporations in developing countries, typically offer higher yields than developed market bonds to compensate for additional risk.
+
+Emerging market bonds can provide diversification because their performance often depends on different factors than developed market bonds. Currency movements, commodity prices, and local economic conditions drive returns more than U.S. interest rates.
+
+However, emerging market bonds carry significant risks including currency risk, default risk, and political instability. These bonds can experience sharp declines during global risk-off periods, even if they're uncorrelated during normal times.
+
+A small allocation (5-10% of fixed income) to emerging market bonds can enhance diversification, but most investors should keep the majority of their bond allocation in high-quality developed market bonds.
+
+## Alternative Investment Strategies
+
+Beyond traditional asset classes, several alternative strategies can further diversify portfolios:
+
+**Infrastructure**: Investments in essential infrastructure like toll roads, airports, and utilities. Infrastructure assets often have stable, inflation-linked cash flows and low correlation with traditional assets.
+
+**Private Equity**: Investments in private companies, though these are typically only accessible to accredited investors through private funds. Private equity can provide exposure to companies not available in public markets.
+
+**Hedge Funds**: Various strategies including long-short equity, market neutral, and managed futures. These strategies aim to generate returns uncorrelated with traditional markets, though fees are typically high and access is limited.
+
+**Cryptocurrency**: A newer asset class with extreme volatility but potential diversification benefits. Cryptocurrencies have shown low correlation with traditional assets, though regulatory uncertainty and volatility make them suitable only for risk-tolerant investors.
+
+Most individual investors should focus on publicly traded alternatives like REITs, commodities, and international securities rather than private investments that require large minimums and have limited liquidity.
+
+## Understanding Correlation and Its Limitations
+
+Correlation measures how assets move relative to each other. A correlation of +1.0 means assets move perfectly together, while -1.0 means they move in opposite directions. A correlation near zero indicates independent movement.
+
+However, correlations aren't static—they change over time and can break down during market stress. Assets that appear uncorrelated during normal times may move together during crises, reducing diversification benefits when you need them most.
+
+This correlation breakdown is why diversification doesn't eliminate risk—it reduces it. During severe market downturns, most risky assets decline together, though to varying degrees. Diversification helps, but it's not a guarantee against losses.
+
+Regular portfolio reviews should include correlation analysis to ensure your diversification strategy remains effective. Rebalancing helps maintain target allocations and can improve returns by forcing you to buy low and sell high.
+
+## Building a Diversified Portfolio
+
+Constructing a truly diversified portfolio requires balancing multiple factors:
+
+**Risk Tolerance**: More aggressive investors can allocate more to alternatives and emerging markets, while conservative investors should emphasize bonds and developed market stocks.
+
+**Time Horizon**: Longer time horizons allow for more aggressive allocations and can better weather the volatility of alternative assets.
+
+**Investment Knowledge**: Only invest in assets you understand. Complex alternatives may offer diversification but can introduce unexpected risks.
+
+**Cost Considerations**: Many alternative investments have higher fees that can erode returns. Ensure the diversification benefits justify the additional costs.
+
+A sample diversified portfolio might include:
+
+- U.S. Stocks: 35-40%
+- International Developed Stocks: 15-20%
+- Emerging Market Stocks: 5-10%
+- U.S. Bonds: 20-25%
+- International Bonds: 5-10%
+- REITs: 5-10%
+- Commodities: 5-10%
+
+This allocation provides exposure across multiple asset classes, geographies, and economic drivers while maintaining reasonable costs and complexity.
+
+## Rebalancing and Maintenance
+
+Diversification requires ongoing maintenance. As different assets perform differently, your portfolio will drift from target allocations. Rebalancing—selling winners and buying underperformers—maintains your diversification strategy and can improve returns.
+
+Rebalancing frequency depends on your strategy. Some investors rebalance quarterly or annually, while others use threshold-based rebalancing, adjusting when allocations drift more than 5% from targets. More frequent rebalancing maintains targets better but increases transaction costs and potential tax consequences.
+
+Consider tax implications when rebalancing. Selling winners in taxable accounts triggers capital gains taxes. Rebalancing within tax-advantaged accounts avoids this issue, making IRAs and 401(k)s ideal for maintaining diversification.
+
+## Common Diversification Mistakes
+
+Several mistakes can undermine diversification efforts:
+
+**Over-Diversification**: Holding too many similar assets provides little benefit while increasing complexity. Twenty technology stocks aren't meaningfully more diversified than five.
+
+**Correlation Confusion**: Assuming assets are uncorrelated without verifying. Many "alternative" investments actually correlate highly with stocks during market stress.
+
+**Ignoring Costs**: High fees on alternative investments can eliminate diversification benefits. Ensure the risk reduction justifies the additional costs.
+
+**Home Bias**: Overweighting domestic investments due to familiarity. International diversification is crucial for reducing country-specific risk.
+
+**Set-and-Forget Mentality**: Diversification requires maintenance. Regular reviews and rebalancing ensure your strategy remains effective.
+
+## Conclusion
+
+True portfolio diversification extends well beyond traditional stock-bond allocations. By incorporating REITs, commodities, international securities, and other alternative assets, investors can reduce risk, enhance returns, and protect against various economic environments. However, effective diversification requires understanding correlations, managing costs, and maintaining discipline through regular rebalancing.
+
+The key is building a portfolio that balances diversification benefits with complexity and cost. Most investors can achieve meaningful diversification through publicly traded alternatives like REITs, commodity ETFs, and international stock and bond funds. Start with a solid foundation of stocks and bonds, then gradually add alternative assets as you become comfortable with them.
+
+Remember that diversification is a tool for managing risk, not eliminating it. Even well-diversified portfolios can decline during severe market downturns. However, proper diversification can help you weather storms better and position your portfolio for long-term success across various economic conditions.`, type: 'expert', readTime: '16 min', tags: ['Diversification', 'Portfolio', 'Risk Management'] },
   { title: 'Active vs Passive Management: Which Strategy Wins?', excerpt: 'Comparing active and passive investment approaches with data-driven analysis.', content: 'The debate between active and passive management continues to divide investors. This data-driven analysis examines performance metrics, fee structures, and when each approach makes sense. We review academic research on fund manager performance, the impact of fees on long-term returns, and market conditions that favor active management. Case studies illustrate successful active strategies while highlighting the consistent benefits of low-cost index funds for most investors.', type: 'expert', readTime: '15 min', tags: ['Active Management', 'Passive Investing', 'Strategy'] },
   { title: 'Broker Comparison: Finding the Right Platform for Your Needs', excerpt: 'Detailed comparison of major brokerage platforms, fees, and features.', content: 'Choosing the right brokerage platform is crucial for successful investing. This comprehensive comparison examines major brokers across key dimensions: commission structures, account minimums, trading tools, research resources, and customer service. We analyze platforms for different investor types—from beginners seeking simplicity to active traders needing advanced features. The article includes fee calculators and helps readers identify which broker best matches their investment style and goals.', type: 'expert', readTime: '13 min', tags: ['Brokers', 'Comparison', 'Tools'] },
   
@@ -222,6 +537,81 @@ function generateSlug(title: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
+}
+
+// Function to parse content into sections based on markdown headers
+function parseContentIntoSections(content: string): Array<{ heading: string; content: string }> {
+  // Check if content has markdown headers (##)
+  const headerRegex = /^##\s+(.+)$/gm;
+  const headers = Array.from(content.matchAll(headerRegex));
+  
+  if (headers.length > 0) {
+    // Content has markdown headers, split by them
+    const sections: Array<{ heading: string; content: string }> = [];
+    
+    for (let i = 0; i < headers.length; i++) {
+      const headerMatch = headers[i];
+      const headerIndex = headerMatch.index!;
+      const headerText = headerMatch[1].trim();
+      
+      // Find the end of this section (next header or end of content)
+      const nextHeaderIndex = i < headers.length - 1 
+        ? headers[i + 1].index! 
+        : content.length;
+      
+      // Extract section content (from after the header to before next header)
+      let sectionContent = content.substring(headerIndex + headerMatch[0].length, nextHeaderIndex).trim();
+      
+      // Remove the markdown header from the content
+      sectionContent = sectionContent.replace(/^##\s+.+$/gm, '').trim();
+      
+      if (sectionContent.length > 0) {
+        sections.push({
+          heading: headerText,
+          content: sectionContent
+        });
+      }
+    }
+    
+    // If we found sections, return them
+    if (sections.length > 0) {
+      return sections;
+    }
+  }
+  
+  // No markdown headers found, split content into logical sections
+  const contentLength = content.length;
+  const minSectionLength = 500; // Minimum characters per section
+  const targetSections = 4;
+  const sectionLength = Math.max(minSectionLength, Math.floor(contentLength / targetSections));
+  
+  const sections: Array<{ heading: string; content: string }> = [];
+  const defaultHeadings = ['Introduction', 'Key Concepts', 'Practical Applications', 'Conclusion'];
+  
+  for (let i = 0; i < targetSections; i++) {
+    const start = i * sectionLength;
+    const end = i < targetSections - 1 ? (i + 1) * sectionLength : contentLength;
+    
+    // Try to break at paragraph boundaries (double newline)
+    let actualEnd = end;
+    if (i < targetSections - 1) {
+      const nextParagraph = content.indexOf('\n\n', end - 200);
+      if (nextParagraph > start && nextParagraph < end + 200) {
+        actualEnd = nextParagraph;
+      }
+    }
+    
+    const sectionContent = content.substring(start, actualEnd).trim();
+    
+    if (sectionContent.length > 0) {
+      sections.push({
+        heading: defaultHeadings[i] || `Section ${i + 1}`,
+        content: sectionContent
+      });
+    }
+  }
+  
+  return sections;
 }
 
 // Function to generate articles with proper date distribution
@@ -265,13 +655,8 @@ function generateAnalyticsArticles(): AnalyticsArticle[] {
       const day = Math.floor((i * daysInMonth) / monthData.count) + 1;
       const date = `${monthData.year}-${String(monthData.month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
       
-      // Generate additional content sections
-      const sections = [
-        { heading: 'Introduction', content: template.content.substring(0, 200) + '...' },
-        { heading: 'Key Concepts', content: template.content.substring(200, 400) + '...' },
-        { heading: 'Practical Applications', content: template.content.substring(400, 600) + '...' },
-        { heading: 'Conclusion', content: template.content.substring(600) + '...' },
-      ];
+      // Parse content into sections based on markdown headers or logical breaks
+      const sections = parseContentIntoSections(template.content);
       
       // Generate resources
       const resources = [
