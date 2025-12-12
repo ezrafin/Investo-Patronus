@@ -5,7 +5,7 @@ import { fetchForumCategories, fetchForumTopics, ForumCategory, ForumTopic } fro
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { ForumFilters, SortOption, DateFilter } from '@/components/forum/ForumFilters';
 import { ForumSorting } from '@/components/forum/ForumSorting';
-import { MessageSquare, Users, Clock, Eye, MessageCircle, TrendingUp, Briefcase, ArrowUpRight, Plus, HelpCircle, Newspaper, Coins, AlertCircle, RefreshCw, MoreHorizontal } from 'lucide-react';
+import { MessageSquare, Users, Clock, MessageCircle, TrendingUp, Briefcase, ArrowUpRight, Plus, HelpCircle, Newspaper, Coins, AlertCircle, RefreshCw, MoreHorizontal } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useUser } from '@/context/UserContext';
@@ -325,7 +325,7 @@ export default function ForumPage() {
                     <div className="flex flex-wrap items-center gap-2 md:gap-3 text-xs text-muted-foreground mt-1.5">
                       <span className="font-medium text-foreground/80">{topic.author}</span>
                       <span className="hidden sm:inline">•</span>
-                      <span className="hidden sm:inline">{new Date(topic.date).toLocaleDateString('en-US')}</span>
+                      <span className="hidden sm:inline">{new Date(topic.date).toLocaleString('sv-SE', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })}</span>
                       <span className="badge-secondary text-[10px] px-2 py-0.5">
                         {categories.find(c => c.id === topic.categoryId)?.name || topic.categoryId}
                       </span>
@@ -337,13 +337,9 @@ export default function ForumPage() {
                       <MessageCircle className="h-4 w-4" />
                       <span className="tabular-nums">{topic.replies}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 min-w-[60px]">
-                      <Eye className="h-4 w-4" />
-                      <span className="tabular-nums">{topic.views.toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 min-w-[100px] text-xs">
+                    <div className="flex items-center gap-1.5 min-w-[140px] text-xs">
                       <Clock className="h-3.5 w-3.5" />
-                      {topic.lastActivity}
+                      {new Date(topic.lastActivity).toLocaleString('sv-SE', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })}
                     </div>
                   </div>
                 </Link>
