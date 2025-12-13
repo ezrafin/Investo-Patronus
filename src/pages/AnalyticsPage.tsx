@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { AnalyticsCard } from '@/components/AnalyticsCard';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
@@ -28,6 +28,7 @@ export default function AnalyticsPage() {
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const sectionRef = useRef<HTMLElement>(null);
   useEffect(() => {
     async function loadAnalytics() {
       setLoading(true);
@@ -42,11 +43,19 @@ export default function AnalyticsPage() {
     setCurrentPage(1);
   };
 
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to top of section when page changes
+    setTimeout(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
+  };
+
   // Pagination
   const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
   const paginatedArticles = articles.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
   return <Layout>
-      <section className="section-spacing">
+      <section ref={sectionRef} className="section-spacing">
         <div className="container-wide">
           <div className="mb-10">
             <h1 className="heading-lg mb-4">Analytics</h1>
@@ -72,7 +81,7 @@ export default function AnalyticsPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedArticles.map((article, index) => <AnalyticsCard key={article.slug} article={article} index={index} />)}
               </div>
-              <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+              <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
             </> : <div className="text-center py-20">
               <p className="text-muted-foreground">No articles found</p>
             </div>}

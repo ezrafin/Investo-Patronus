@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { NewsCardReal } from '@/components/NewsCardReal';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
@@ -41,11 +41,20 @@ export default function NewsPage() {
   } = useNews(activeFilter);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [isFetchingHistorical, setIsFetchingHistorical] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
   const handleRefresh = async () => {
     setIsRefreshing(true);
     await refetch();
     setIsRefreshing(false);
   };
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to top of section when page changes
+    setTimeout(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
+  };
+
   const handleFetchHistorical = async () => {
     setIsFetchingHistorical(true);
     toast.info('Starting historical news fetch... This may take a few minutes.');
@@ -110,7 +119,7 @@ export default function NewsPage() {
   const totalPages = Math.ceil(news.length / ITEMS_PER_PAGE);
   const paginatedNews = news.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
   return <Layout>
-      <section className="section-spacing">
+      <section ref={sectionRef} className="section-spacing">
         <div className="container-wide">
           <div className="mb-10">
             <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
@@ -148,7 +157,7 @@ export default function NewsPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedNews.map((item, index) => <NewsCardReal key={item.id} article={item} featured={index === 0 && currentPage === 1} index={index} />)}
               </div>
-              <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+              <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
             </> : <div className="text-center py-20">
               <p className="text-muted-foreground">No news found</p>
             </div>}

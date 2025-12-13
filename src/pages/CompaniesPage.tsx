@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { OrganizationCard } from '@/components/OrganizationCard';
 import { Pagination } from '@/components/Pagination';
@@ -59,9 +59,17 @@ export default function CompaniesPage() {
     setCurrentPage(1);
   };
 
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to top of section when page changes
+    setTimeout(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
+  };
+
   return (
     <Layout>
-      <section className="section-spacing">
+      <section ref={sectionRef} className="section-spacing">
         <div className="container-wide">
           {/* Header */}
           <div className="mb-10">
@@ -202,7 +210,7 @@ export default function CompaniesPage() {
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
-              onPageChange={setCurrentPage}
+              onPageChange={handlePageChange}
             />
           )}
         </div>
