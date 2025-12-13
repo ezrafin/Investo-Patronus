@@ -4,6 +4,7 @@ import { Layout } from '@/components/layout/Layout';
 import { fetchAnalyticsBySlug, AnalyticsArticle } from '@/lib/api';
 import { BookmarkButton } from '@/components/content/BookmarkButton';
 import { RelatedContent } from '@/components/content/RelatedContent';
+import { MarkdownContent } from '@/components/content/MarkdownContent';
 import { useReadingHistory } from '@/hooks/useReadingHistory';
 import { useRelatedContent } from '@/hooks/useRelatedContent';
 import { SEOHead } from '@/components/seo/SEOHead';
@@ -216,19 +217,17 @@ export default function AnalyticsDetailPage() {
 
           {/* Structured Content Sections */}
           {article.sections && article.sections.length > 0 ? (
-            <div className="space-y-8 mb-12">
+            <div className="space-y-10 mb-12">
               {article.sections.map((section, index) => (
                 <div key={index} className="space-y-4">
-                  <h2 className="heading-sm">{section.heading}</h2>
-                  <div className="prose prose-lg max-w-none">
-                    <p className="text-foreground leading-relaxed">{section.content}</p>
-                  </div>
+                  <h2 className="heading-sm text-foreground border-b border-border/50 pb-3">{section.heading}</h2>
+                  <MarkdownContent content={section.content} />
                 </div>
               ))}
             </div>
           ) : (
-            <div className="prose prose-lg max-w-none mb-12">
-              <p className="text-foreground leading-relaxed">{article.content}</p>
+            <div className="mb-12">
+              <MarkdownContent content={article.content} />
             </div>
           )}
 
