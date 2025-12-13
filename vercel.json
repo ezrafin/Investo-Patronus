@@ -52,6 +52,10 @@
     {
       "source": "/sitemap.xml",
       "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/((?!api|_next|static|.*\\..*|sitemap\\.xml|robots\\.txt|favicon\\.ico|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.svg|.*\\.ico|.*\\.json|.*\\.xml|.*\\.txt).*)",
+      "destination": "/index.html"
     }
   ]
 }
