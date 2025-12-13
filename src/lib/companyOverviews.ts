@@ -594,43 +594,6 @@ export const companyOverviews: Record<string, CompanyOverview> = {
   },
 
   // Additional major companies with detailed overviews
-  'td-ameritrade': {
-    companyId: 'td-ameritrade',
-    history: `TD Ameritrade was founded in 1975 in Omaha, Nebraska, by Joe Ricketts. The company started as First Omaha Securities and grew to become one of the largest online brokers in the United States. TD Ameritrade was known for its innovative thinkorswim trading platform, which became one of the most popular platforms for active traders. The company went public in 1997 and expanded through acquisitions, including the purchase of Datek Online, Ameritrade, and Scottrade. In 2020, TD Ameritrade was acquired by Charles Schwab Corporation, and the integration was completed in 2023. The thinkorswim platform continues to be a flagship product for Schwab's active trading division.`,
-    services: [
-      'Online Brokerage',
-      'thinkorswim Trading Platform',
-      'Options Trading',
-      'Futures Trading',
-      'Forex Trading',
-      'Retirement Accounts (IRA, 401k)',
-      'Mutual Funds',
-      'ETFs',
-      'Fixed Income Products',
-      'Educational Resources',
-    ],
-    keyMetrics: {
-      clients: '11M+',
-      offices: '100+',
-    },
-    recentEvents: [
-      'December 2025: thinkorswim platform enhanced with new AI-powered market analysis tools',
-      'November 2025: Expanded options trading capabilities with new strategies',
-      'October 2025: Launched new educational program for beginner traders',
-      'Q4 2025: Continued integration with Charles Schwab platform infrastructure',
-    ],
-    competitiveAdvantages: [
-      'Award-winning thinkorswim platform for active traders',
-      'Comprehensive options and futures trading capabilities',
-      'Strong educational resources and customer support',
-      'Integration with Charles Schwab\'s extensive network',
-      'Advanced charting and analysis tools',
-    ],
-    images: [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
-    ],
-  },
 
   'robinhood': {
     companyId: 'robinhood',
@@ -2050,9 +2013,9 @@ export const companyOverviews: Record<string, CompanyOverview> = {
     ],
   },
 
-  'abrdn': {
-    companyId: 'abrdn',
-    history: `abrdn (formerly Aberdeen Asset Management and Standard Life Aberdeen) was formed through the merger of Aberdeen Asset Management (founded in 1983) and Standard Life (founded in 1825). The company rebranded to abrdn in 2021. abrdn is a global investment company managing over $580 billion in assets. The firm provides a comprehensive range of investment management services, including equities, fixed income, multi-asset, and alternative investments. abrdn is known for its active management approach, fundamental research, and focus on long-term value creation. The company serves institutional and retail clients globally.`,
+  'aberdeen': {
+    companyId: 'aberdeen',
+    history: `Aberdeen Investments (formerly abrdn, Aberdeen Asset Management and Standard Life Aberdeen) was formed through the merger of Aberdeen Asset Management (founded in 1983) and Standard Life (founded in 1825). Aberdeen Investments is a global investment company managing over $580 billion in assets. The firm provides a comprehensive range of investment management services, including equities, fixed income, multi-asset, and alternative investments. Aberdeen Investments is known for its active management approach, fundamental research, and focus on long-term value creation. The company serves institutional and retail clients globally.`,
     services: [
       'Active Equity Management',
       'Fixed Income Management',
@@ -3371,9 +3334,9 @@ export const companyOverviews: Record<string, CompanyOverview> = {
     ],
   },
 
-  'nikko-am': {
-    companyId: 'nikko-am',
-    history: `Nikko Asset Management was founded in 1959 in Tokyo, Japan, as an investment management company. The firm has grown to become one of Japan's leading asset managers, managing over $230 billion in assets. Nikko AM provides a comprehensive range of investment management services, including equities, fixed income, and multi-asset solutions. The firm is known for its expertise in Japanese and Asian markets and its focus on active management. Nikko AM serves institutional and retail clients globally and has a strong presence in Japan, Asia, and the Americas.`,
+  'amova-am': {
+    companyId: 'amova-am',
+    history: `Amova Asset Management was founded in 1959 in Tokyo, Japan, as an investment management company. The firm has grown to become one of Japan's leading asset managers, managing over $230 billion in assets. Amova Asset Management provides a comprehensive range of investment management services, including equities, fixed income, and multi-asset solutions. The firm is known for its expertise in Japanese and Asian markets and its focus on active management. Amova Asset Management serves institutional and retail clients globally and has a strong presence in Japan, Asia, and the Americas.`,
     services: [
       'Active Equity Management',
       'Fixed Income Management',
