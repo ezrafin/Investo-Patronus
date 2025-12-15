@@ -166,16 +166,12 @@ export default function UserProfilePage() {
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
                     <h1 className="heading-md mb-2">
-                      {profile.display_name || profile.username || 'Anonymous'}
+                      {profile.display_name || 'Anonymous'}
                     </h1>
-                    {profile.username ? (
-                      <p className="text-muted-foreground">@{profile.username}</p>
-                    ) : (
-                      <p className="text-muted-foreground flex items-center gap-2">
-                        <Calendar className="h-4 w-4" />
-                        Member since {formatJoinedDate(joinedAt)}
-                      </p>
-                    )}
+                    <p className="text-muted-foreground flex items-center gap-2">
+                      <Calendar className="h-4 w-4" />
+                      Member since {formatJoinedDate(joinedAt)}
+                    </p>
                   </div>
                   {!isOwnProfile && (
                     <FollowButton userId={userId!} />
@@ -211,14 +207,6 @@ export default function UserProfilePage() {
                     <span className="text-muted-foreground">Following</span>
                   </div>
                 </div>
-
-                {/* Show joined date if username exists */}
-                {profile.username && joinedAt && (
-                  <div className="mt-3 text-sm text-muted-foreground flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    Member since {formatJoinedDate(joinedAt)}
-                  </div>
-                )}
 
                 <div className="mt-4">
                   <ReputationBadge profile={profile} size="md" />

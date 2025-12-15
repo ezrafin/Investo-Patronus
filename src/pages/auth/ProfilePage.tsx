@@ -7,27 +7,40 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useUser } from '@/context/UserContext';
 import { toast } from 'sonner';
-import { Save, User, Mail, Shield, TrendingUp, MessageSquare, BookOpen, Trophy } from 'lucide-react';
+import { Save, User, Shield, TrendingUp, MessageSquare, BookOpen, Trophy, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AchievementSystem } from '@/components/forum/AchievementSystem';
 import { ReputationBadge } from '@/components/forum/ReputationBadge';
+import { AvatarSelector } from '@/components/user/AvatarSelector';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default function ProfilePage() {
   const { user, profile, loading: authLoading, updateProfile } = useUser();
   const [displayName, setDisplayName] = useState('');
-  const [username, setUsername] = useState('');
   const [bio, setBio] = useState('');
   const [privacyLevel, setPrivacyLevel] = useState<'public' | 'private' | 'friends'>('public');
   const [saving, setSaving] = useState(false);
+  const [avatarSelectorOpen, setAvatarSelectorOpen] = useState(false);
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
   useEffect(() => {
     if (profile) {
       setDisplayName(profile.display_name || '');
-      setUsername(profile.username || '');
       setBio(profile.bio || '');
       setPrivacyLevel(profile.privacy_level);
+      setAvatarUrl(profile.avatar_url || null);
     }
   }, [profile]);
+
+  const getInitials = (name: string | null) => {
+    if (!name) return 'U';
+    return name
+      .split(' ')
+      .map((n) => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  };
 
   if (authLoading) {
     return (
@@ -58,11 +71,20 @@ export default function ProfilePage() {
     );
   }
 
+  const handleAvatarSelect = async (url: string) => {
+    setAvatarUrl(url);
+    const { error } = await updateProfile({ avatar_url: url });
+    if (error) {
+      toast.error('Failed to update avatar');
+    } else {
+      toast.success('Avatar updated successfully');
+    }
+  };
+
   const handleSave = async () => {
     setSaving(true);
     const { error } = await updateProfile({
       display_name: displayName,
-      username: username,
       bio: bio,
       privacy_level: privacyLevel,
     });
@@ -85,13 +107,24 @@ export default function ProfilePage() {
             {/* Sidebar Stats */}
             <div className="space-y-6">
               <div className="premium-card p-6">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                    <User className="h-8 w-8 text-primary" />
-                  </div>
-                  <div>
+                <div className="flex flex-col items-center gap-4 mb-6">
+                  <button
+                    onClick={() => setAvatarSelectorOpen(true)}
+                    className="relative group cursor-pointer"
+                  >
+                    <Avatar className="w-20 h-20">
+                      <AvatarImage src={avatarUrl || undefined} alt={displayName || 'User'} />
+                      <AvatarFallback className="bg-primary/10 text-primary text-xl">
+                        {getInitials(displayName)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="absolute inset-0 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <Camera className="h-6 w-6 text-white" />
+                    </div>
+                  </button>
+                  <div className="text-center">
                     <h3 className="font-semibold">{profile?.display_name || 'User'}</h3>
-                    <p className="text-sm text-muted-foreground">@{profile?.username || 'username'}</p>
+                    <p className="text-xs text-muted-foreground mt-1">Click avatar to change</p>
                   </div>
                 </div>
 
@@ -144,17 +177,6 @@ export default function ProfilePage() {
                       className="bg-muted"
                     />
                     <p className="text-xs text-muted-foreground">Email cannot be changed</p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="username">Username</Label>
-                    <Input
-                      id="username"
-                      type="text"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      placeholder="johndoe"
-                    />
                   </div>
 
                   <div className="space-y-2">
@@ -222,7 +244,13 @@ export default function ProfilePage() {
           </div>
         </div>
       </div>
+
+      <AvatarSelector
+        open={avatarSelectorOpen}
+        onOpenChange={setAvatarSelectorOpen}
+        currentAvatar={avatarUrl}
+        onSelect={handleAvatarSelect}
+      />
     </Layout>
   );
 }
-
