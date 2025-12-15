@@ -2,24 +2,40 @@ import { useMarketData } from '@/hooks/useMarketData';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import type { MarketData } from '@/lib/api/types';
+
+const getMarketCap = (item: MarketData) => {
+  if (item.volume) {
+    const volumeNum = parseFloat(String(item.volume).replace(/[^0-9.]/g, ''));
+    return item.price * (isNaN(volumeNum) ? 1 : volumeNum);
+  }
+  return item.price;
+};
+
+const topByMarketCap = (list?: MarketData[], limit = 20): MarketData[] =>
+  (list ? [...list] : []).sort((a, b) => getMarketCap(b) - getMarketCap(a)).slice(0, limit);
 
 export function MarketOverview() {
   const { data: indices } = useMarketData({ type: 'indices', refreshInterval: 60000 });
   const { data: stocks } = useMarketData({ type: 'stocks', refreshInterval: 60000 });
   const { data: crypto } = useMarketData({ type: 'crypto', refreshInterval: 120000 });
 
-  const topGainers = [...(stocks || []), ...(crypto || [])]
+  const topIndices = topByMarketCap(indices, 20);
+  const topStocks = topByMarketCap(stocks, 20);
+  const topCrypto = topByMarketCap(crypto, 20);
+
+  const topGainers = [...topStocks, ...topCrypto]
     .filter((item) => item.changePercent > 0)
     .sort((a, b) => b.changePercent - a.changePercent)
     .slice(0, 5);
 
-  const topLosers = [...(stocks || []), ...(crypto || [])]
+  const topLosers = [...topStocks, ...topCrypto]
     .filter((item) => item.changePercent < 0)
     .sort((a, b) => a.changePercent - b.changePercent)
     .slice(0, 5);
 
   const marketSummary = {
-    totalMarkets: (indices?.length || 0) + (stocks?.length || 0) + (crypto?.length || 0),
+    totalMarkets: topIndices.length + topStocks.length + topCrypto.length,
     gainers: topGainers.length,
     losers: topLosers.length,
     avgChange: indices && indices.length > 0

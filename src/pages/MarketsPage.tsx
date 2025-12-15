@@ -80,10 +80,10 @@ export default function MarketsPage() {
     return item.price;
   };
 
-  // Get top 50 by market cap (default view)
+  // Get top 20 by market cap (default view)
   const top50Data = useMemo(() => {
     const sorted = [...data].sort((a, b) => getMarketCap(b) - getMarketCap(a));
-    return sorted.slice(0, 50);
+    return sorted.slice(0, 20);
   }, [data]);
 
   // Filter data based on search
@@ -166,7 +166,7 @@ export default function MarketsPage() {
             )}
             {!searchQuery && (
               <p className="mt-2 text-sm text-muted-foreground">
-                Showing top 50 assets by market capitalization
+                Showing top 20 assets by market capitalization
               </p>
             )}
           </div>

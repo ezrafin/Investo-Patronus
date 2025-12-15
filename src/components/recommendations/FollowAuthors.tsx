@@ -7,6 +7,7 @@ import { UserAvatar } from '@/components/user/UserAvatar';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
+import { authors as allAuthors, type AuthorProfile } from '@/data/authors';
 
 interface Author {
   id: string;
@@ -20,42 +21,17 @@ interface Author {
   is_following: boolean;
 }
 
-// Mock authors for demonstration
-const mockAuthors: Author[] = [
-  {
-    id: '1',
-    username: 'market_analyst',
-    display_name: 'Alexander Market',
-    avatar_url: null,
-    bio: 'Professional market analyst with 15 years of experience. Specializing in value investing and real return analysis.',
-    reputation: 2450,
-    post_count: 156,
-    comment_count: 892,
-    is_following: false,
-  },
-  {
-    id: '2',
-    username: 'crypto_expert',
-    display_name: 'Sarah Crypto',
-    avatar_url: null,
-    bio: 'Blockchain researcher and cryptocurrency investment strategist. Understanding real yields vs marketing promises.',
-    reputation: 1890,
-    post_count: 98,
-    comment_count: 567,
-    is_following: false,
-  },
-  {
-    id: '3',
-    username: 'value_investor',
-    display_name: 'Michael Value',
-    avatar_url: null,
-    bio: 'Long-term value investor. Helping others understand inflation-adjusted returns.',
-    reputation: 1560,
-    post_count: 67,
-    comment_count: 345,
-    is_following: false,
-  },
-];
+const mapAuthor = (profile: AuthorProfile): Author => ({
+  id: profile.id,
+  username: profile.username,
+  display_name: profile.display_name,
+  avatar_url: profile.avatar_url,
+  bio: profile.bio,
+  reputation: profile.reputation,
+  post_count: profile.post_count,
+  comment_count: profile.comment_count,
+  is_following: false,
+});
 
 export function FollowAuthors({ className, limit = 5 }: { className?: string; limit?: number }) {
   const { user } = useUser();
@@ -63,11 +39,11 @@ export function FollowAuthors({ className, limit = 5 }: { className?: string; li
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading
     const timer = setTimeout(() => {
-      setAuthors(mockAuthors.slice(0, limit));
+      const topAuthors = allAuthors.slice(0, limit).map(mapAuthor);
+      setAuthors(topAuthors);
       setLoading(false);
-    }, 500);
+    }, 300);
     return () => clearTimeout(timer);
   }, [user, limit]);
 

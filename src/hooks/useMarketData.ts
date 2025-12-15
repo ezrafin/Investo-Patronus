@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { MarketData } from '@/lib/api/types';
+import { fetchMarketData } from '@/lib/api/market';
 
 interface UseMarketDataOptions {
   type: 'crypto' | 'stocks' | 'indices' | 'commodities' | 'currencies';
@@ -29,9 +30,14 @@ export function useMarketData({ type, refreshInterval = 60000 }: UseMarketDataOp
         const { data: responseData, error: fetchError } = await supabase.functions.invoke('fetch-crypto');
         
         if (fetchError) throw fetchError;
-        if (responseData?.data) {
+        if (responseData?.data && responseData.data.length > 0) {
           setData(responseData.data);
           setLastUpdated(new Date(responseData.timestamp));
+        } else {
+          // Fallback to local mock data so UI is not empty
+          const fallback = await fetchMarketData('crypto');
+          setData(fallback);
+          setLastUpdated(new Date());
         }
       } else {
         // For non-crypto types (indices, stocks, commodities, currencies), use fetch-stocks with type parameter
