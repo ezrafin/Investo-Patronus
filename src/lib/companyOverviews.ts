@@ -6522,44 +6522,6 @@ export const companyOverviews: Record<string, CompanyOverview> = {
     ],
   },
 
-  'baupost': {
-    companyId: 'baupost',
-    history: `Baupost Group was founded in 1982 in Boston, Massachusetts, by Seth Klarman and other partners. The firm is a value-oriented investment partnership that focuses on deep value investing and special situations. Baupost has grown to manage over $27 billion in assets and is known for its patient, value-oriented approach and its focus on capital preservation. The firm has a strong track record and is considered one of the most successful value investors, with Klarman's book "Margin of Safety" being highly regarded in the investment community.`,
-    services: [
-      'Value Investing',
-      'Special Situations',
-      'Distressed Debt',
-      'Portfolio Management',
-      'Risk Management',
-      'Research & Analysis',
-      'Deep Value Analysis',
-      'Capital Preservation',
-      'Institutional Advisory',
-      'Long-Term Investing',
-    ],
-    keyMetrics: {
-      aum: '$27B',
-      clients: 'Institutional only',
-      offices: 'Boston, MA',
-    },
-    recentEvents: [
-      'December 2025: Launched new value-focused strategy',
-      'November 2025: Expanded special situations capabilities',
-      'October 2025: Enhanced risk management systems',
-      'Q4 2025: Achieved strong performance in value strategies',
-    ],
-    competitiveAdvantages: [
-      'Leading value-oriented hedge fund',
-      'Patient, value-oriented approach',
-      'Focus on capital preservation',
-      'Strong track record',
-      'Expertise in deep value investing',
-    ],
-    images: [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
-    ],
-  },
 
   'appaloosa': {
     companyId: 'appaloosa',
