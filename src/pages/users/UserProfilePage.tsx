@@ -8,24 +8,10 @@ import { UserActivity } from '@/components/social/UserActivity';
 import { AchievementSystem } from '@/components/forum/AchievementSystem';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { UserProfile } from '@/hooks/useAuth';
-import { MessageSquare, TrendingUp, BookOpen } from 'lucide-react';
+import { MessageSquare, TrendingUp, BookOpen, Calendar } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useUser } from '@/context/UserContext';
-
-// Mock profile data for users
-const mockProfiles: Record<string, UserProfile> = {
-  'unknown': {
-    id: 'unknown',
-    username: 'unknown_user',
-    display_name: 'Unknown User',
-    bio: 'This user profile is not available',
-    avatar_url: null,
-    reputation: 0,
-    post_count: 0,
-    comment_count: 0,
-    privacy_level: 'public',
-  },
-};
+import { supabase } from '@/integrations/supabase/client';
 
 export default function UserProfilePage() {
   const { userId } = useParams();
@@ -34,6 +20,7 @@ export default function UserProfilePage() {
   const [loading, setLoading] = useState(true);
   const [followerCount, setFollowerCount] = useState(0);
   const [followingCount, setFollowingCount] = useState(0);
+  const [joinedAt, setJoinedAt] = useState<string | null>(null);
 
   useEffect(() => {
     if (userId) {
@@ -57,31 +44,84 @@ export default function UserProfilePage() {
         comment_count: currentProfile.comment_count || 0,
         privacy_level: 'public',
       });
-      // Mock follow counts
+      // Fetch joined date from profiles table
+      const { data: profileData } = await (supabase
+        .from('profiles' as any)
+        .select('joined_at')
+        .eq('id', currentUser.id)
+        .maybeSingle() as any);
+      if (profileData?.joined_at) {
+        setJoinedAt(profileData.joined_at);
+      }
       setFollowerCount(Math.floor(Math.random() * 50));
       setFollowingCount(Math.floor(Math.random() * 30));
       setLoading(false);
       return;
     }
 
-    // Mock implementation for other users - user_profiles table uses 'profiles'
-    setTimeout(() => {
-      const mockProfile = mockProfiles[userId] || {
-        id: userId,
-        username: `user_${userId.slice(0, 8)}`,
-        display_name: `User ${userId.slice(0, 8)}`,
-        bio: 'A member of the community',
-        avatar_url: null,
-        reputation: Math.floor(Math.random() * 500),
-        post_count: Math.floor(Math.random() * 100),
-        comment_count: Math.floor(Math.random() * 200),
-        privacy_level: 'public' as const,
-      };
-      setProfile(mockProfile);
+    // Load profile from database for other users
+    try {
+      const { data, error } = await (supabase
+        .from('profiles' as any)
+        .select('*')
+        .eq('id', userId)
+        .maybeSingle() as any);
+
+      if (error) throw error;
+
+      if (data) {
+        setProfile({
+          id: data.id,
+          username: data.username || null,
+          display_name: data.display_name || data.username || 'User',
+          bio: data.bio || null,
+          avatar_url: data.avatar_url || null,
+          reputation: data.reputation_score || 0,
+          post_count: data.posts_count || 0,
+          comment_count: 0,
+          privacy_level: 'public',
+        });
+        setJoinedAt(data.joined_at || data.created_at);
+      } else {
+        // User not found in profiles
+        setProfile({
+          id: userId,
+          username: null,
+          display_name: 'Unknown User',
+          bio: 'This user profile is not available',
+          avatar_url: null,
+          reputation: 0,
+          post_count: 0,
+          comment_count: 0,
+          privacy_level: 'public',
+        });
+      }
       setFollowerCount(Math.floor(Math.random() * 50));
       setFollowingCount(Math.floor(Math.random() * 30));
+    } catch (error) {
+      console.error('Error loading profile:', error);
+      setProfile({
+        id: userId,
+        username: null,
+        display_name: 'Unknown User',
+        bio: 'This user profile is not available',
+        avatar_url: null,
+        reputation: 0,
+        post_count: 0,
+        comment_count: 0,
+        privacy_level: 'public',
+      });
+    } finally {
       setLoading(false);
-    }, 300);
+    }
+  };
+
+  const formatJoinedDate = (date: string | null): string => {
+    if (!date) return 'Unknown';
+    return new Date(date).toLocaleDateString('en-US', {
+      month: 'long',
+      year: 'numeric',
+    });
   };
 
   if (loading) {
@@ -128,8 +168,13 @@ export default function UserProfilePage() {
                     <h1 className="heading-md mb-2">
                       {profile.display_name || profile.username || 'Anonymous'}
                     </h1>
-                    {profile.username && (
+                    {profile.username ? (
                       <p className="text-muted-foreground">@{profile.username}</p>
+                    ) : (
+                      <p className="text-muted-foreground flex items-center gap-2">
+                        <Calendar className="h-4 w-4" />
+                        Member since {formatJoinedDate(joinedAt)}
+                      </p>
                     )}
                   </div>
                   {!isOwnProfile && (
@@ -166,6 +211,14 @@ export default function UserProfilePage() {
                     <span className="text-muted-foreground">Following</span>
                   </div>
                 </div>
+
+                {/* Show joined date if username exists */}
+                {profile.username && joinedAt && (
+                  <div className="mt-3 text-sm text-muted-foreground flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    Member since {formatJoinedDate(joinedAt)}
+                  </div>
+                )}
 
                 <div className="mt-4">
                   <ReputationBadge profile={profile} size="md" />

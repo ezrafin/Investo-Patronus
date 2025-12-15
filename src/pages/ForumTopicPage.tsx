@@ -351,8 +351,7 @@ export default function ForumTopicPage() {
                     {/* Content */}
                     <div className="flex-1 p-4 md:p-6">
                       <div className="flex items-center justify-between mb-4 text-xs text-muted-foreground">
-                        <span>{comment.date}</span>
-                        <span>#{index + 1}</span>
+                        <span>{new Date(comment.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
                       </div>
                       
                       <p className="text-foreground leading-relaxed mb-6">
@@ -377,9 +376,6 @@ export default function ForumTopicPage() {
                           contentId={comment.id}
                           reactionType="insightful"
                         />
-                        <button className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                          Reply
-                        </button>
                         <ReportButton
                           contentType="reply"
                           contentId={comment.id}
