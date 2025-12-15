@@ -39,6 +39,8 @@ import CoursePlatformPage from "./pages/course/CoursePlatformPage";
 import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
 import AuthCallbackPage from "./pages/auth/AuthCallbackPage";
+import ForgotPasswordPage from "./pages/auth/ForgotPasswordPage";
+import ResetPasswordPage from "./pages/auth/ResetPasswordPage";
 // Profile
 import ProfilePage from "./pages/auth/ProfilePage";
 // Settings
@@ -118,6 +120,8 @@ const App = () => {
               <Route path="/auth/login" element={<LoginPage />} />
               <Route path="/auth/register" element={<RegisterPage />} />
               <Route path="/auth/callback" element={<AuthCallbackPage />} />
+              <Route path="/auth/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="/auth/reset-password" element={<ResetPasswordPage />} />
               {/* Profile */}
               <Route path="/profile" element={<ProfilePage />} />
               {/* Settings */}
