@@ -279,7 +279,10 @@ export default function BasicArticlesPage() {
                         >
                           {isCompleted ? 'Mark as unread' : 'Mark as completed'}
                         </button>
-                        <Link to="#" className="inline-flex items-center text-sm text-primary hover:underline">
+                        <Link
+                          to={`/education/learning`}
+                          className="inline-flex items-center text-sm text-primary hover:underline"
+                        >
                           Read Article <ArrowRight className="h-4 w-4 ml-1" />
                         </Link>
                       </div>

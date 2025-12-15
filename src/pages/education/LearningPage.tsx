@@ -466,8 +466,12 @@ export default function LearningPage() {
                           </span>
                         )}
                       </div>
-                      <Link to="#" className="inline-flex items-center text-sm text-primary hover:underline">
-                        Read {article.type === 'advanced' ? '' : 'Article'} <ArrowRight className="h-4 w-4 ml-1" />
+                      <Link
+                        to={article.type === 'advanced' ? '/education/advanced' : '/education/basic'}
+                        className="inline-flex items-center text-sm text-primary hover:underline"
+                      >
+                        Read {article.type === 'advanced' ? 'Advanced Article' : 'Basic Article'}{' '}
+                        <ArrowRight className="h-4 w-4 ml-1" />
                       </Link>
                     </div>
                   </article>

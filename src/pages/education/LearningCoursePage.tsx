@@ -101,7 +101,7 @@ export default function LearningCoursePage() {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
               <Rocket className="h-4 w-4" />
-              <span className="text-sm font-medium">Launching Q1 2025</span>
+              <span className="text-sm font-medium">Launching Q1 2026</span>
             </div>
             <h1 className="heading-hero mb-6">
               Master the Markets
@@ -211,8 +211,18 @@ export default function LearningCoursePage() {
                 <div className="mt-8 pt-8 border-t border-border">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="flex -space-x-2">
-                      {[1, 2, 3, 4].map((i) => (
-                        <div key={i} className="w-8 h-8 rounded-full bg-secondary border-2 border-background" />
+                      {[
+                        'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face',
+                        'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=80&h=80&fit=crop&crop=face',
+                        'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=80&h=80&fit=crop&crop=face',
+                        'https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?w=80&h=80&fit=crop&crop=face',
+                      ].map((src, index) => (
+                        <img
+                          key={src}
+                          src={src}
+                          alt={`Student avatar ${index + 1}`}
+                          className="w-8 h-8 rounded-full border-2 border-background object-cover"
+                        />
                       ))}
                     </div>
                     <div className="text-sm">
@@ -284,7 +294,7 @@ export default function LearningCoursePage() {
           <div className="glass-card p-8 lg:p-12 text-center">
             <h2 className="heading-md mb-4">Be the First to Know</h2>
             <p className="body-lg mb-6 max-w-2xl mx-auto">
-              Join our waitlist to get early access and exclusive launch pricing when the course becomes available in Q1 2025.
+              Join our waitlist to get early access and exclusive launch pricing when the course becomes available in Q1 2026.
             </p>
             <form onSubmit={handleNotify} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input
