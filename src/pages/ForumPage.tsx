@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/button';
 import { useUser } from '@/context/UserContext';
 import { useForumCategories } from '@/hooks/useForumCategories';
 import { useForumTopics } from '@/hooks/useForumTopics';
+import { AssetBadge } from '@/components/forum/AssetBadge';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 export default function ForumPage() {
   const [searchParams] = useSearchParams();
@@ -172,6 +174,11 @@ export default function ForumPage() {
 
   return (
     <Layout>
+      <SEOHead
+        title="Forum — INVESTOPATRONUS Community Discussions"
+        description="Browse investor discussions, ask questions, and share insights about global markets."
+        path="/forum"
+      />
       {/* Hero */}
       <section className="border-b border-border">
         <div className="container-wide py-16 md:py-24">
@@ -351,6 +358,9 @@ export default function ForumPage() {
                         <span className="badge-secondary text-[10px] px-2 py-0.5">
                           {categories.find(c => c.id === topic.categoryId)?.name || topic.categoryId}
                         </span>
+                        {topic.symbol && (
+                          <AssetBadge symbol={topic.symbol} assetType={topic.asset_type} />
+                        )}
                       </div>
                       {/* Mobile replies hint */}
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1 sm:hidden">

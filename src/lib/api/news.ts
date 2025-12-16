@@ -1,7 +1,13 @@
 import type { NewsItem } from './types';
 
-// Dev-only mock news data for local development. In production we prefer
-// to surface real API errors instead of showing synthetic content.
+/**
+ * @deprecated Fallback-only mock data for development.
+ * @fallback-only Used only when Supabase API fails in DEV mode.
+ * @todo Remove after Supabase API is fully stabilized.
+ * 
+ * Dev-only mock news data for local development. In production we prefer
+ * to surface real API errors instead of showing synthetic content.
+ */
 const mockNews: NewsItem[] = [
   {
     id: '1',

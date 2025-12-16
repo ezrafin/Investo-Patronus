@@ -117,9 +117,9 @@ export function ActivityFeed() {
     return (
       <div className="premium-card p-6 text-center">
         <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-        <p className="text-muted-foreground mb-2">No activity yet</p>
+        <p className="text-muted-foreground mb-2">No recent activity yet</p>
         <p className="text-sm text-muted-foreground">
-          Community activity will appear here
+          Community activity will appear here when discussions and replies are posted
         </p>
       </div>
     );

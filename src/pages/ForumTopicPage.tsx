@@ -18,6 +18,8 @@ import { MessageCircle, Calendar, Award, Star, Bookmark, Share2 } from 'lucide-r
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useDiscussionActions } from '@/hooks/useDiscussionActions';
+import { AssetBadge } from '@/components/forum/AssetBadge';
+import { checkRateLimit } from '@/lib/api/rateLimit';
 
 const userLevels = [
   { min: 0, name: 'Newbie', color: 'bg-muted text-muted-foreground' },
@@ -81,6 +83,13 @@ export default function ForumTopicPage() {
   const handleReplySubmit = async (content: string) => {
     if (!user || !topicId) {
       toast.error('Please sign in to reply');
+      return;
+    }
+
+    // Check rate limit
+    const rateLimitCheck = await checkRateLimit('create_reply', 20, 60);
+    if (!rateLimitCheck.allowed) {
+      toast.error(rateLimitCheck.message || 'Rate limit exceeded. Please wait before posting another reply.');
       return;
     }
 
@@ -162,13 +171,21 @@ export default function ForumTopicPage() {
           {topic && <Breadcrumbs pageTitle={topic.title} />}
 
           <div className="flex items-start justify-between gap-4 mb-6">
-            <h1 className="heading-md flex-1">{topic.title}</h1>
+            <div className="flex-1">
+              <h1 className="heading-md mb-2">{topic.title}</h1>
+              {topic.symbol && (
+                <div className="flex items-center gap-2">
+                  <AssetBadge symbol={topic.symbol} assetType={topic.asset_type} />
+                </div>
+              )}
+            </div>
             <div className="flex items-center gap-2">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={toggleBookmark}
                 disabled={bookmarkLoading}
+                aria-label={isBookmarked ? 'Remove bookmark from discussion' : 'Bookmark this discussion'}
                 className={cn(isBookmarked && 'bg-primary/10')}
               >
                 <Bookmark className={cn('h-4 w-4 mr-2', isBookmarked && 'fill-current')} />
@@ -179,11 +196,17 @@ export default function ForumTopicPage() {
                 size="sm"
                 onClick={toggleFollow}
                 disabled={followLoading}
+                aria-label={isFollowing ? 'Unfollow discussion' : 'Follow discussion'}
                 className={cn(isFollowing && 'bg-primary/10')}
               >
                 {followLoading ? 'Saving…' : isFollowing ? 'Following' : 'Follow'}
               </Button>
-              <Button variant="outline" size="sm" onClick={handleShare}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleShare}
+                aria-label="Share discussion link"
+              >
                 <Share2 className="h-4 w-4 mr-2" />
                 Share
               </Button>

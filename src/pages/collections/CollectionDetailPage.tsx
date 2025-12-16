@@ -8,6 +8,7 @@ import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { toast } from 'sonner';
 import { UserAvatar } from '@/components/user/UserAvatar';
 import { supabase } from '@/integrations/supabase/client';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 
 interface Collection {
   id: string;
@@ -76,7 +77,22 @@ export default function CollectionDetailPage() {
 
       if (itemsError) throw itemsError;
 
+<<<<<<< Updated upstream
       setItems((itemsData || []) as unknown as CollectionItem[]);
+=======
+      setItems((itemsData || []) as CollectionItem[]);
+
+      // Check if user is following this collection
+      if (user) {
+        const { data: followData } = await supabase
+          .from('collection_follows' as any)
+          .select('id')
+          .eq('user_id', user.id)
+          .eq('collection_id', id)
+          .maybeSingle();
+        setIsFollowing(!!followData);
+      }
+>>>>>>> Stashed changes
     } catch (error) {
       console.error('Error loading collection:', error);
       toast.error('Failed to load collection');
@@ -92,9 +108,36 @@ export default function CollectionDetailPage() {
       toast.error('Please sign in to follow collections');
       return;
     }
-    // Mock implementation
-    setIsFollowing(!isFollowing);
-    toast.success(isFollowing ? 'Unfollowed collection' : 'Following collection');
+
+    const previousState = isFollowing;
+    setIsFollowing(!previousState); // Optimistic update
+
+    try {
+      if (previousState) {
+        const { error } = await supabase
+          .from('collection_follows' as any)
+          .delete()
+          .eq('user_id', user.id)
+          .eq('collection_id', id);
+        
+        if (error) throw error;
+        toast.success('Unfollowed collection');
+      } else {
+        const { error } = await supabase
+          .from('collection_follows' as any)
+          .insert({
+            user_id: user.id,
+            collection_id: id,
+          });
+        
+        if (error) throw error;
+        toast.success('Following collection');
+      }
+    } catch (error: any) {
+      setIsFollowing(previousState); // Rollback on error
+      toast.error(error.message || 'Failed to toggle follow');
+      console.error('Follow error:', error);
+    }
   };
 
   const removeItem = async (itemId: string) => {
@@ -178,6 +221,7 @@ export default function CollectionDetailPage() {
     <Layout>
       <div className="section-spacing">
         <div className="container-wide max-w-4xl">
+          <Breadcrumbs pageTitle={collection.title} />
 
           {/* Collection Header */}
           <div className="premium-card p-6 md:p-8 mb-6">

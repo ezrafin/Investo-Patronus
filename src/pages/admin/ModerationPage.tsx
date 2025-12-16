@@ -61,7 +61,7 @@ export default function ModerationPage() {
   };
 
   const handleModerationAction = async (
-    action: 'delete' | 'lock' | 'pin' | 'approve',
+    action: 'delete' | 'lock' | 'pin' | 'approve' | 'hide' | 'unhide',
     contentType: string,
     contentId: string
   ) => {
@@ -80,10 +80,37 @@ export default function ModerationPage() {
             .eq('id', contentId);
           if (error) throw error;
         }
+      } else if (action === 'hide') {
+        if (contentType === 'discussion') {
+          const { error } = await supabase
+            .from('forum_discussions')
+            .update({ hidden: true })
+            .eq('id', contentId);
+          if (error) throw error;
+        } else {
+          const { error } = await supabase
+            .from('forum_replies')
+            .update({ hidden: true })
+            .eq('id', contentId);
+          if (error) throw error;
+        }
+        toast.success('Content hidden');
+      } else if (action === 'unhide') {
+        if (contentType === 'discussion') {
+          const { error } = await supabase
+            .from('forum_discussions')
+            .update({ hidden: false, reported: false })
+            .eq('id', contentId);
+          if (error) throw error;
+        } else {
+          const { error } = await supabase
+            .from('forum_replies')
+            .update({ hidden: false, reported: false })
+            .eq('id', contentId);
+          if (error) throw error;
+        }
+        toast.success('Content unhidden');
         toast.success('Content deleted');
-      } else if (action === 'lock') {
-        // Note: is_locked column not in schema, using is_pinned as workaround
-        toast.success('Discussion locked (feature pending)');
       } else if (action === 'pin') {
         const { error } = await supabase
           .from('forum_discussions')
@@ -201,25 +228,37 @@ export default function ModerationPage() {
                             <Trash2 className="h-4 w-4 mr-2" />
                             Delete
                           </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={async () => {
+                            await handleModerationAction('hide', report.target_type, report.target_id);
+                            loadReports();
+                          }}
+                        >
+                          <Lock className="h-4 w-4 mr-2" />
+                          Hide
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={async () => {
+                            await handleModerationAction('unhide', report.target_type, report.target_id);
+                            loadReports();
+                          }}
+                        >
+                          <CheckCircle className="h-4 w-4 mr-2" />
+                          Unhide
+                        </Button>
                         {report.target_type === 'discussion' && (
-                          <>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => handleModerationAction('lock', report.target_type, report.target_id)}
-                            >
-                              <Lock className="h-4 w-4 mr-2" />
-                              Lock
-                            </Button>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => handleModerationAction('pin', report.target_type, report.target_id)}
-                            >
-                              <Pin className="h-4 w-4 mr-2" />
-                              Pin
-                            </Button>
-                          </>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => handleModerationAction('pin', report.target_type, report.target_id)}
+                          >
+                            <Pin className="h-4 w-4 mr-2" />
+                            Pin
+                          </Button>
                         )}
                         <Button
                           variant="outline"

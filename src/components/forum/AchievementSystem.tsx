@@ -105,7 +105,29 @@ function AchievementGrid({
   achievements: Achievement[];
   unlocked: string[];
 }) {
-  return <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  if (achievements.length === 0) {
+    return (
+      <div className="text-center py-12 text-muted-foreground">
+        <Trophy className="h-12 w-12 mx-auto mb-4 opacity-50" />
+        <p className="font-medium mb-2">No achievements in this category</p>
+      </div>
+    );
+  }
+
+  const hasUnlocked = achievements.some(a => unlocked.includes(a.id));
+
+  return (
+    <>
+      {!hasUnlocked && unlocked.length === 0 && (
+        <div className="text-center py-8 mb-4 text-muted-foreground border border-border/50 rounded-lg bg-muted/30">
+          <Lock className="h-10 w-10 mx-auto mb-3 opacity-50" />
+          <p className="font-medium mb-1">No achievements unlocked yet</p>
+          <p className="text-sm">
+            Start participating in discussions and creating content to unlock achievements!
+          </p>
+        </div>
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {achievements.map(achievement => {
       const isUnlocked = unlocked.includes(achievement.id);
       return <div key={achievement.id} className={cn('p-4 rounded-lg border transition-all', isUnlocked ? 'border-primary/30 bg-primary/5' : 'border-border/50 bg-muted/30 opacity-60')}>
@@ -132,5 +154,7 @@ function AchievementGrid({
             </div>
           </div>;
     })}
-    </div>;
+    </div>
+    </>
+  );
 }

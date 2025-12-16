@@ -6,10 +6,13 @@ import { Label } from '@/components/ui/label';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { Plus, Trash2, Star, AlertCircle, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign } from 'lucide-react';
+import { Plus, Trash2, Star, AlertCircle, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, MessageSquare } from 'lucide-react';
 import { MarketData } from '@/lib/api/types';
 import { useMarketData } from '@/hooks/useMarketData';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { fetchDiscussionsForWatchlist, ForumTopic } from '@/lib/api/index';
+import { AssetBadge } from '@/components/forum/AssetBadge';
 
 interface Watchlist {
   id: string;
@@ -39,14 +42,30 @@ export default function WatchlistPage() {
   const [loading, setLoading] = useState(true);
   const [newWatchlistName, setNewWatchlistName] = useState('');
   const [showCreateForm, setShowCreateForm] = useState(false);
+  const [discussions, setDiscussions] = useState<ForumTopic[]>([]);
+  const [discussionsLoading, setDiscussionsLoading] = useState(false);
 
   useEffect(() => {
     if (user) {
       loadWatchlists();
+      loadDiscussions();
     } else {
       setLoading(false);
     }
   }, [user]);
+
+  const loadDiscussions = async () => {
+    if (!user) return;
+    setDiscussionsLoading(true);
+    try {
+      const data = await fetchDiscussionsForWatchlist(user.id);
+      setDiscussions(data);
+    } catch (error) {
+      console.error('Error loading discussions:', error);
+    } finally {
+      setDiscussionsLoading(false);
+    }
+  };
 
   const loadWatchlists = async () => {
     if (!user) return;
@@ -124,6 +143,11 @@ export default function WatchlistPage() {
   if (!user) {
     return (
       <Layout>
+        <SEOHead
+          title="Watchlists — Sign in to track your assets"
+          description="Create and manage personalized watchlists to monitor your favorite market instruments."
+          path="/watchlist"
+        />
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
             <h1 className="heading-lg mb-4">Please sign in</h1>
@@ -140,6 +164,11 @@ export default function WatchlistPage() {
   if (loading) {
     return (
       <Layout>
+        <SEOHead
+          title="Watchlists — INVESTOPATRONUS"
+          description="Create and manage personalized watchlists to monitor your favorite market instruments."
+          path="/watchlist"
+        />
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
@@ -152,6 +181,11 @@ export default function WatchlistPage() {
 
   return (
     <Layout>
+      <SEOHead
+        title="My Watchlists — INVESTOPATRONUS"
+        description="Create and manage personalized watchlists to monitor your favorite market instruments."
+        path="/watchlist"
+      />
       <div className="section-spacing">
         <div className="container-wide max-w-6xl">
           <div className="flex items-center justify-between mb-8">
@@ -218,6 +252,67 @@ export default function WatchlistPage() {
                   onDelete={deleteWatchlist}
                 />
               ))}
+            </div>
+          )}
+
+          {/* Discussions Section */}
+          {watchlists.length > 0 && (
+            <div className="mt-12">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="heading-md mb-2">Discussions for Your Watchlist Assets</h2>
+                  <p className="text-muted-foreground text-sm">
+                    Forum discussions related to assets in your watchlists
+                  </p>
+                </div>
+              </div>
+
+              {discussionsLoading ? (
+                <div className="premium-card p-6 text-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+                  <p className="text-muted-foreground">Loading discussions...</p>
+                </div>
+              ) : discussions.length === 0 ? (
+                <div className="premium-card p-6 text-center">
+                  <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />
+                  <p className="text-muted-foreground mb-2">No discussions found</p>
+                  <p className="text-sm text-muted-foreground">
+                    Start a discussion about one of your watchlist assets to see it here
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {discussions.map((discussion) => (
+                    <Link
+                      key={discussion.id}
+                      to={`/forum/${discussion.id}`}
+                      className="block premium-card p-4 hover:border-primary/30 transition-colors"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-medium mb-2 line-clamp-1">{discussion.title}</h3>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-xs text-muted-foreground">
+                              {discussion.author}
+                            </span>
+                            <span className="text-xs text-muted-foreground">•</span>
+                            <span className="text-xs text-muted-foreground">
+                              {discussion.replies} replies
+                            </span>
+                            {discussion.symbol && (
+                              <>
+                                <span className="text-xs text-muted-foreground">•</span>
+                                <AssetBadge symbol={discussion.symbol} assetType={discussion.asset_type} />
+                              </>
+                            )}
+                          </div>
+                        </div>
+                        <MessageSquare className="h-5 w-5 text-muted-foreground flex-shrink-0" />
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>

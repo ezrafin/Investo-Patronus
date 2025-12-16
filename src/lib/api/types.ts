@@ -76,6 +76,8 @@ export interface ForumTopic {
   lastActivity: string;
   like_count?: number;
   authorReputation?: number;
+  symbol?: string;
+  asset_type?: 'stock' | 'crypto' | 'index' | 'commodity' | 'currency' | 'etf';
 }
 
 export interface ForumComment {

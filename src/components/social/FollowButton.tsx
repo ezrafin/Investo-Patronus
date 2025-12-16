@@ -26,6 +26,7 @@ export function FollowButton({ userId, className, variant = 'outline', size = 's
       size={size}
       onClick={toggleFollow}
       disabled={loading}
+      aria-label={isFollowing ? 'Unfollow user' : 'Follow user'}
       className={cn(isFollowing && 'bg-primary/10', className)}
     >
       {isFollowing ? (

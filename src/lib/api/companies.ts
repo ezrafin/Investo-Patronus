@@ -1,7 +1,13 @@
 import type { Company } from './types';
 import { delay } from './utils';
 
-// Dev-only mock companies data used before full backend integration.
+/**
+ * @deprecated Fallback-only mock data for development.
+ * @fallback-only Used only when Supabase API fails in DEV mode.
+ * @todo Remove after Supabase API is fully stabilized.
+ * 
+ * Dev-only mock companies data used before full backend integration.
+ */
 const mockCompanies: Company[] = [
   {
     slug: 'nvidia',

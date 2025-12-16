@@ -1,4 +1,5 @@
 import { Layout } from '@/components/layout/Layout';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Leaderboard } from '@/components/community/Leaderboard';
 import { RecommendedContent } from '@/components/recommendations/RecommendedContent';
 import { TrendingContent } from '@/components/recommendations/TrendingContent';
@@ -11,6 +12,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 export default function CommunityPage() {
   return (
     <Layout>
+      <SEOHead
+        title="Community Hub — INVESTOPATRONUS"
+        description="Explore top contributors, community activity, and curated content collections for investors."
+        path="/community"
+      />
       <div className="section-spacing">
         <div className="container-wide">
           {/* Hero */}

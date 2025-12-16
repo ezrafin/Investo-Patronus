@@ -12,6 +12,7 @@ import { MessageSquare, TrendingUp, BookOpen, Calendar } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 
 export default function UserProfilePage() {
   const { userId } = useParams();
@@ -172,6 +173,7 @@ export default function UserProfilePage() {
     <Layout>
       <div className="section-spacing">
         <div className="container-wide max-w-4xl">
+          <Breadcrumbs pageTitle={profile.display_name || profile.username || 'User profile'} />
           {/* Profile Header */}
           <div className="premium-card p-6 md:p-8 mb-6">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6">

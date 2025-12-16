@@ -106,8 +106,12 @@ export function Leaderboard() {
               ))}
             </div>
           ) : leaderboard.length === 0 ? (
-            <div className="text-center py-8 text-muted-foreground">
-              No data available yet. Be the first to participate!
+            <div className="text-center py-12 text-muted-foreground">
+              <Trophy className="h-12 w-12 mx-auto mb-4 opacity-50" />
+              <p className="font-medium mb-2">No leaderboard data yet</p>
+              <p className="text-sm">
+                Be the first to participate and earn reputation points!
+              </p>
             </div>
           ) : (
             <div className="space-y-2">

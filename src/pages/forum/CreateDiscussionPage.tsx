@@ -13,6 +13,7 @@ import { toast } from 'sonner';
 import { Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useForumCategories } from '@/hooks/useForumCategories';
+import { checkRateLimit } from '@/lib/api/rateLimit';
 import { z } from 'zod';
 
 const createDiscussionSchema = z.object({
@@ -20,6 +21,8 @@ const createDiscussionSchema = z.object({
   content: z.string().min(50, 'Content should be at least 50 characters'),
   category: z.string(),
   tags: z.string().optional(),
+  symbol: z.string().optional(),
+  asset_type: z.enum(['stock', 'crypto', 'index', 'commodity', 'currency', 'etf']).optional(),
 });
 
 export default function CreateDiscussionPage() {
@@ -30,6 +33,8 @@ export default function CreateDiscussionPage() {
   const [content, setContent] = useState('');
   const [category, setCategory] = useState('general');
   const [tags, setTags] = useState('');
+  const [symbol, setSymbol] = useState('');
+  const [assetType, setAssetType] = useState<'stock' | 'crypto' | 'index' | 'commodity' | 'currency' | 'etf' | ''>('');
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<{ title?: string; content?: string }>({});
 
@@ -66,6 +71,8 @@ export default function CreateDiscussionPage() {
       content: content.trim(),
       category,
       tags,
+      symbol: symbol.trim() || undefined,
+      asset_type: assetType || undefined,
     });
 
     if (!validation.success) {
@@ -79,6 +86,13 @@ export default function CreateDiscussionPage() {
     }
 
     setErrors({});
+
+    // Check rate limit
+    const rateLimitCheck = await checkRateLimit('create_discussion', 10, 60);
+    if (!rateLimitCheck.allowed) {
+      toast.error(rateLimitCheck.message || 'Rate limit exceeded. Please wait before creating another discussion.');
+      return;
+    }
 
     setSubmitting(true);
     try {
@@ -96,6 +110,8 @@ export default function CreateDiscussionPage() {
           category: validation.data.category,
           tags: tagsArray,
           user_id: user.id,
+          symbol: validation.data.symbol || null,
+          asset_type: validation.data.asset_type || null,
         })
         .select()
         .single();
@@ -167,6 +183,38 @@ export default function CreateDiscussionPage() {
               <p className="text-xs text-muted-foreground">
                 Add tags to help others find your discussion
               </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="symbol">Asset Symbol (optional)</Label>
+                <Input
+                  id="symbol"
+                  value={symbol}
+                  onChange={(e) => setSymbol(e.target.value.toUpperCase())}
+                  placeholder="e.g., AAPL, BTC, SPX"
+                  maxLength={10}
+                />
+                <p className="text-xs text-muted-foreground">
+                  Link this discussion to a specific asset
+                </p>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="asset_type">Asset Type (optional)</Label>
+                <Select value={assetType} onValueChange={(value) => setAssetType(value as typeof assetType)}>
+                  <SelectTrigger id="asset_type">
+                    <SelectValue placeholder="Select type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="stock">Stock</SelectItem>
+                    <SelectItem value="crypto">Crypto</SelectItem>
+                    <SelectItem value="index">Index</SelectItem>
+                    <SelectItem value="commodity">Commodity</SelectItem>
+                    <SelectItem value="currency">Currency</SelectItem>
+                    <SelectItem value="etf">ETF</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">

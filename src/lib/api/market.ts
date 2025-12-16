@@ -1,8 +1,14 @@
 import type { MarketData } from './types';
 import { delay } from './utils';
 
-// Dev-only mock market data for local development and testing.
-// In production we avoid showing synthetic prices.
+/**
+ * @deprecated Fallback-only mock data for development.
+ * @fallback-only Used only when Supabase Edge Functions fail in DEV mode.
+ * @todo Remove after Supabase API is fully stabilized.
+ * 
+ * Dev-only mock market data for local development and testing.
+ * In production we avoid showing synthetic prices.
+ */
 const mockIndices: MarketData[] = [
   { symbol: 'SPX', name: 'S&P 500', price: 6012.50, change: 45.30, changePercent: 0.76, high: 6025.00, low: 5980.00 },
   { symbol: 'DJI', name: 'Dow Jones', price: 44650.00, change: 280.50, changePercent: 0.63, high: 44720.00, low: 44300.00 },
@@ -11,6 +17,10 @@ const mockIndices: MarketData[] = [
   { symbol: 'FTSE', name: 'FTSE 100', price: 8312.40, change: 28.60, changePercent: 0.35, high: 8340.00, low: 8280.00 },
 ];
 
+/**
+ * @deprecated Fallback-only mock data for development.
+ * @fallback-only Used only when Supabase Edge Functions fail in DEV mode.
+ */
 const mockStocks: MarketData[] = [
   { symbol: 'AAPL', name: 'Apple Inc.', price: 195.50, change: 3.20, changePercent: 1.67, high: 196.80, low: 192.10, volume: '52.3M' },
   { symbol: 'MSFT', name: 'Microsoft', price: 415.30, change: 7.50, changePercent: 1.84, high: 418.00, low: 408.50, volume: '28.1M' },
@@ -19,6 +29,10 @@ const mockStocks: MarketData[] = [
   { symbol: 'TSLA', name: 'Tesla', price: 342.50, change: 18.75, changePercent: 5.79, high: 348.00, low: 322.00, volume: '98.5M' },
 ];
 
+/**
+ * @deprecated Fallback-only mock data for development.
+ * @fallback-only Used only when Supabase Edge Functions fail in DEV mode.
+ */
 const mockCrypto: MarketData[] = [
   { symbol: 'BTC', name: 'Bitcoin', price: 102500.00, change: 4250.00, changePercent: 4.33, high: 104000.00, low: 97500.00, volume: '$48.2B' },
   { symbol: 'ETH', name: 'Ethereum', price: 3850.00, change: 125.00, changePercent: 3.36, high: 3920.00, low: 3700.00, volume: '$22.1B' },
@@ -27,6 +41,10 @@ const mockCrypto: MarketData[] = [
   { symbol: 'XRP', name: 'XRP', price: 2.45, change: 0.18, changePercent: 7.93, high: 2.52, low: 2.25, volume: '$8.9B' },
 ];
 
+/**
+ * @deprecated Fallback-only mock data for development.
+ * @fallback-only Used only when Supabase Edge Functions fail in DEV mode.
+ */
 const mockCommodities: MarketData[] = [
   { symbol: 'GC', name: 'Gold', price: 2075.50, change: 12.30, changePercent: 0.60, high: 2082.00, low: 2060.00 },
   { symbol: 'SI', name: 'Silver', price: 24.85, change: 0.45, changePercent: 1.84, high: 25.10, low: 24.35 },
@@ -35,6 +53,10 @@ const mockCommodities: MarketData[] = [
   { symbol: 'HG', name: 'Copper', price: 4.32, change: 0.05, changePercent: 1.17, high: 4.38, low: 4.25 },
 ];
 
+/**
+ * @deprecated Fallback-only mock data for development.
+ * @fallback-only Used only when Supabase Edge Functions fail in DEV mode.
+ */
 const mockCurrencies: MarketData[] = [
   { symbol: 'EUR/USD', name: 'Euro / US Dollar', price: 1.0520, change: -0.0035, changePercent: -0.33, high: 1.0560, low: 1.0495 },
   { symbol: 'GBP/USD', name: 'British Pound / US Dollar', price: 1.2680, change: 0.0025, changePercent: 0.20, high: 1.2710, low: 1.2645 },
