@@ -66,7 +66,7 @@ export default function CollectionDetailPage() {
         return;
       }
 
-      setCollection(data as Collection);
+      setCollection(data as unknown as Collection);
 
       const { data: itemsData, error: itemsError } = await supabase
         .from('content_collection_items' as any)
@@ -76,7 +76,7 @@ export default function CollectionDetailPage() {
 
       if (itemsError) throw itemsError;
 
-      setItems((itemsData || []) as CollectionItem[]);
+      setItems((itemsData || []) as unknown as CollectionItem[]);
     } catch (error) {
       console.error('Error loading collection:', error);
       toast.error('Failed to load collection');
