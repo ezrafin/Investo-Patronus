@@ -44,7 +44,11 @@ serve(async (req) => {
     }
 
     return new Response(JSON.stringify({ data: marketData, timestamp: new Date().toISOString() }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      headers: { 
+        ...corsHeaders, 
+        'Content-Type': 'application/json',
+        'Cache-Control': 'public, max-age=30', // Cache for 30 seconds
+      },
     });
   } catch (error: unknown) {
     console.error('Error fetching crypto data:', error);

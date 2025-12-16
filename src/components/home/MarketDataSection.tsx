@@ -3,25 +3,19 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MarketMiniTable } from '@/components/MarketMiniTable';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
-import { useMarketData } from '@/hooks/useMarketData';
+import { useAllMarkets } from '@/hooks/useAllMarkets';
 import { ArrowRight, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign } from 'lucide-react';
 
 export const MarketDataSection = memo(function MarketDataSection() {
-  const { data: indices, loading: indicesLoading } = useMarketData({ type: 'indices', refreshInterval: 60000 });
-  const { data: stocks, loading: stocksLoading } = useMarketData({ type: 'stocks', refreshInterval: 60000 });
-  const { data: crypto, loading: cryptoLoading } = useMarketData({ type: 'crypto', refreshInterval: 120000 });
-  const { data: commodities, loading: commoditiesLoading } = useMarketData({ type: 'commodities', refreshInterval: 60000 });
-  const { data: currencies, loading: currenciesLoading } = useMarketData({ type: 'currencies', refreshInterval: 60000 });
-
-  const marketLoading = indicesLoading || stocksLoading || cryptoLoading || commoditiesLoading || currenciesLoading;
+  const { indices, stocks, crypto, commodities, currencies, loading: marketLoading } = useAllMarkets();
 
   const marketBlocks = useMemo(() => [
-    { title: 'Indices', data: indices, href: '/markets/indices', icon: TrendingUp },
-    { title: 'Stocks', data: stocks, href: '/markets/stocks', icon: BarChart3 },
-    { title: 'Commodities', data: commodities, href: '/markets/commodities', icon: Coins },
-    { title: 'Crypto', data: crypto, href: '/markets/crypto', icon: Bitcoin },
-    { title: 'Currencies', data: currencies, href: '/markets/currencies', icon: DollarSign },
-  ], [indices, stocks, commodities, crypto, currencies]);
+    { title: 'Indices', data: indices.data, href: '/markets/indices', icon: TrendingUp },
+    { title: 'Stocks', data: stocks.data, href: '/markets/stocks', icon: BarChart3 },
+    { title: 'Commodities', data: commodities.data, href: '/markets/commodities', icon: Coins },
+    { title: 'Crypto', data: crypto.data, href: '/markets/crypto', icon: Bitcoin },
+    { title: 'Currencies', data: currencies.data, href: '/markets/currencies', icon: DollarSign },
+  ], [indices.data, stocks.data, commodities.data, crypto.data, currencies.data]);
 
   return (
     <section className="section-spacing-sm section-gradient">
@@ -41,7 +35,7 @@ export const MarketDataSection = memo(function MarketDataSection() {
           </Link>
         </motion.div>
 
-        {marketLoading && indices.length === 0 ? (
+        {marketLoading && indices.data.length === 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             {Array.from({ length: 5 }).map((_, i) => <SkeletonCard key={i} lines={6} />)}
           </div>

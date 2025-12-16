@@ -1,22 +1,20 @@
-import { useEffect, useState, useMemo, useCallback, useRef } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
-import { fetchForumCategories, fetchForumTopics, ForumCategory, ForumTopic } from '@/lib/api/index';
+import { ForumTopic } from '@/lib/api/index';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { ForumFilters, SortOption, DateFilter } from '@/components/forum/ForumFilters';
 import { MessageSquare, Users, Clock, MessageCircle, TrendingUp, Briefcase, ArrowUpRight, Plus, HelpCircle, Newspaper, Coins, AlertCircle, RefreshCw, MoreHorizontal } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useUser } from '@/context/UserContext';
+import { useForumCategories } from '@/hooks/useForumCategories';
+import { useForumTopics } from '@/hooks/useForumTopics';
 
 export default function ForumPage() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { user } = useUser();
-  const [categories, setCategories] = useState<ForumCategory[]>([]);
-  const [topics, setTopics] = useState<ForumTopic[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   
   // Filter states
   const [sortBy, setSortBy] = useState<SortOption>('newest');
@@ -31,23 +29,12 @@ export default function ForumPage() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
-  const loadData = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const [categoriesData, topicsData] = await Promise.all([
-        fetchForumCategories(),
-        fetchForumTopics(categoryFilter),
-      ]);
-      setCategories(categoriesData);
-      setTopics(topicsData);
-    } catch (err) {
-      console.error('Error loading forum data:', err);
-      setError('Failed to load forum data. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  }, [categoryFilter]);
+  // Use React Query hooks
+  const { data: categories = [], isLoading: categoriesLoading, error: categoriesError, refetch: refetchCategories } = useForumCategories();
+  const { data: topics = [], isLoading: topicsLoading, error: topicsError, refetch: refetchTopics } = useForumTopics({ categoryId: categoryFilter });
+
+  const loading = categoriesLoading || topicsLoading;
+  const error = categoriesError?.message || topicsError?.message || null;
 
   // Sync categoryFilter with URL params when they change
   useEffect(() => {
@@ -56,10 +43,6 @@ export default function ForumPage() {
       setCategoryFilter(categoryFromUrl);
     }
   }, [searchParams]);
-
-  useEffect(() => {
-    loadData();
-  }, [loadData]);
 
   // Map category slugs to icons
   const categoryIcons: Record<string, typeof MessageSquare> = {
@@ -209,7 +192,7 @@ export default function ForumPage() {
               <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
               <h3 className="font-semibold text-lg mb-2">Error loading categories</h3>
               <p className="text-muted-foreground mb-6">{error}</p>
-              <Button onClick={loadData} variant="outline">
+              <Button onClick={() => { refetchCategories(); refetchTopics(); }} variant="outline">
                 <RefreshCw className="mr-2 h-4 w-4" />
                 Try Again
               </Button>

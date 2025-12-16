@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useQueryClient } from '@tanstack/react-query';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,7 +12,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { fetchForumCategories, ForumCategory } from '@/lib/api/index';
+import { useForumCategories } from '@/hooks/useForumCategories';
 import { z } from 'zod';
 
 const createDiscussionSchema = z.object({
@@ -24,31 +25,22 @@ const createDiscussionSchema = z.object({
 export default function CreateDiscussionPage() {
   const { user, profile } = useUser();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [category, setCategory] = useState('general');
   const [tags, setTags] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const [categories, setCategories] = useState<ForumCategory[]>([]);
-  const [loadingCategories, setLoadingCategories] = useState(true);
   const [errors, setErrors] = useState<{ title?: string; content?: string }>({});
 
+  // Use React Query hook for categories
+  const { data: categories = [], isLoading: loadingCategories } = useForumCategories();
+
   useEffect(() => {
-    async function loadCategories() {
-      try {
-        const data = await fetchForumCategories();
-        setCategories(data);
-        if (data.length > 0) {
-          setCategory(data[0].id);
-        }
-      } catch (error) {
-        console.error('Error loading categories:', error);
-      } finally {
-        setLoadingCategories(false);
-      }
+    if (categories.length > 0 && !category) {
+      setCategory(categories[0].id);
     }
-    loadCategories();
-  }, []);
+  }, [categories, category]);
 
   if (!user) {
     return (
@@ -109,6 +101,9 @@ export default function CreateDiscussionPage() {
         .single();
 
       if (error) throw error;
+
+      // Invalidate forum topics queries to refresh the list
+      queryClient.invalidateQueries({ queryKey: ['forumTopics'] });
 
       toast.success('Discussion created successfully');
       navigate(`/forum/${data.id}`);

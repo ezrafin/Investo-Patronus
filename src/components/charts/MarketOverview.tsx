@@ -1,4 +1,4 @@
-import { useMarketData } from '@/hooks/useMarketData';
+import { useAllMarkets } from '@/hooks/useAllMarkets';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
@@ -16,13 +16,11 @@ const topByMarketCap = (list?: MarketData[], limit = 20): MarketData[] =>
   (list ? [...list] : []).sort((a, b) => getMarketCap(b) - getMarketCap(a)).slice(0, limit);
 
 export function MarketOverview() {
-  const { data: indices } = useMarketData({ type: 'indices', refreshInterval: 60000 });
-  const { data: stocks } = useMarketData({ type: 'stocks', refreshInterval: 60000 });
-  const { data: crypto, isDemo: isCryptoDemo } = useMarketData({ type: 'crypto', refreshInterval: 120000 });
+  const { indices, stocks, crypto } = useAllMarkets();
 
-  const topIndices = topByMarketCap(indices, 20);
-  const topStocks = topByMarketCap(stocks, 20);
-  const topCrypto = topByMarketCap(crypto, 20);
+  const topIndices = topByMarketCap(indices.data, 20);
+  const topStocks = topByMarketCap(stocks.data, 20);
+  const topCrypto = topByMarketCap(crypto.data, 20);
 
   const topGainers = [...topStocks, ...topCrypto]
     .filter((item) => item.changePercent > 0)
@@ -38,16 +36,16 @@ export function MarketOverview() {
     totalMarkets: topIndices.length + topStocks.length + topCrypto.length,
     gainers: topGainers.length,
     losers: topLosers.length,
-    avgChange: indices && indices.length > 0
-      ? indices.reduce((sum, item) => sum + item.changePercent, 0) / indices.length
-      : 0,
+      avgChange: indices.data && indices.data.length > 0
+        ? indices.data.reduce((sum, item) => sum + item.changePercent, 0) / indices.data.length
+        : 0,
   };
 
   return (
     <div className="premium-card p-6">
       <div className="flex items-center justify-between mb-6">
         <h2 className="font-heading font-semibold text-lg">Market Overview</h2>
-        {isCryptoDemo && (
+        {crypto.isDemo && (
           <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400">
             Demo data
           </span>
