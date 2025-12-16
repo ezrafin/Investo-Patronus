@@ -8,7 +8,6 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Plus, Trash2, Star, AlertCircle, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, MessageSquare } from 'lucide-react';
 import { MarketData } from '@/lib/api/types';
-import { useMarketData } from '@/hooks/useMarketData';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { fetchDiscussionsForWatchlist, ForumTopic } from '@/lib/api/index';

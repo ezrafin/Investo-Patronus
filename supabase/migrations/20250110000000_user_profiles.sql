@@ -1,4 +1,9 @@
 -- User Profiles Table
+-- NOTE: This migration is superseded by 20251211083253_6b32ce33-25a7-4cd2-88be-5eb6c015601f.sql
+-- which creates the 'profiles' table instead of 'user_profiles'.
+-- This migration is kept for historical reference only.
+-- The current codebase uses 'profiles' table, not 'user_profiles'.
+
 CREATE TABLE IF NOT EXISTS public.user_profiles (
     id uuid PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
     username text UNIQUE,
@@ -80,6 +85,10 @@ CREATE POLICY "Users can manage own reading history" ON public.user_reading_hist
     FOR ALL USING (user_id = auth.uid());
 
 -- Function to automatically create profile on user signup
+-- NOTE: This function is superseded by the version in 20251211083253_6b32ce33-25a7-4cd2-88be-5eb6c015601f.sql
+-- which creates profiles in the 'profiles' table instead of 'user_profiles'.
+-- The newer version is the one currently active in the database.
+
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger AS $$
 BEGIN

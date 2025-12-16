@@ -7,7 +7,10 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA "extensions";
 --
 -- PostgreSQL database dump
 --
-
+-- NOTE: This is a large pg_dump migration that creates base tables.
+-- Later migrations (e.g., 20250110000001_forum_enhancements.sql) add columns to these tables.
+-- This migration is kept for historical reference and initial schema setup.
+-- If applying migrations to a fresh database, this should run first.
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1

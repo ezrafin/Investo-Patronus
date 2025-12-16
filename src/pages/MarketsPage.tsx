@@ -5,7 +5,7 @@ import { MarketTable } from '@/components/MarketTable';
 
 import { SkeletonTable } from '@/components/ui/skeleton-card';
 import { LastUpdated } from '@/components/LastUpdated';
-import { useMarketData } from '@/hooks/useMarketData';
+import { useMarketDataQuery } from '@/hooks/useMarketDataQuery';
 import { cn } from '@/lib/utils';
 import { AlertCircle, Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -54,10 +54,14 @@ export default function MarketsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   
   // Load current market type data
-  const { data, loading, error, lastUpdated, refresh } = useMarketData({
+  const { data, isLoading: loading, error, lastUpdated, refetch } = useMarketDataQuery({
     type: marketType,
     refreshInterval: marketType === 'crypto' ? 120000 : 60000,
   });
+  
+  const refresh = async () => {
+    refetch();
+  };
 
   // Only load additional market data when search is active and has 2+ characters
   const shouldLoadAll = searchQuery.trim().length >= 2;
@@ -177,7 +181,7 @@ export default function MarketsPage() {
               <AlertCircle className="h-5 w-5 text-destructive" />
               <div>
                 <p className="text-sm font-medium text-destructive">Failed to load data</p>
-                <p className="text-xs text-muted-foreground">{error}</p>
+                <p className="text-xs text-muted-foreground">{error?.message || String(error)}</p>
               </div>
             </div>
           )}

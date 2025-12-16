@@ -1,4 +1,8 @@
 -- Reputation & Gamification System Migration
+-- NOTE: This migration references 'user_profiles.reputation' and 'user_profiles.post_count',
+-- but the current codebase uses 'profiles.reputation_score' and 'profiles.posts_count'.
+-- The functions in this migration are superseded by 20251220000005_reputation_auto_update.sql
+-- which uses the correct 'profiles' table. This migration is kept for historical reference only.
 
 -- User Achievements Table
 CREATE TABLE IF NOT EXISTS public.user_achievements (
