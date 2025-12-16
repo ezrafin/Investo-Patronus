@@ -12,7 +12,7 @@ export function LoadingScreen() {
           className="relative"
         >
           <motion.img
-            src="/investo.png"
+            src="/favicon.png"
             alt="INVESTOPATRONUS"
             className="h-20 w-20 md:h-24 md:w-24"
             animate={{

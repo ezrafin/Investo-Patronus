@@ -102,7 +102,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src="/investo.png" 
+              src="/favicon.png" 
               alt="INVESTOPATRONUS" 
               className="h-8 md:h-10 transition-transform duration-300 group-hover:scale-105"
             />

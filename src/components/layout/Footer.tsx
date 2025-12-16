@@ -88,7 +88,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-4 lg:col-span-2">
             <Link to="/" className="flex justify-center mb-4">
               <img 
-                src="/investo.png" 
+                src="/favicon.png" 
                 alt="INVESTOPATRONUS" 
                 className="h-12 md:h-16 lg:h-20"
               />
