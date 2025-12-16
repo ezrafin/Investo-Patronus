@@ -59,7 +59,7 @@ export function ContentCollections({ className }: { className?: string }) {
         if (error) throw error;
 
         if (isMounted) {
-          setCollections((data || []) as Collection[]);
+          setCollections((data || []) as unknown as Collection[]);
         }
       } catch (error) {
         console.error('Error loading collections:', error);
@@ -102,7 +102,7 @@ export function ContentCollections({ className }: { className?: string }) {
       if (error) throw error;
 
       if (data) {
-        setCollections((prev) => [data as Collection, ...prev]);
+        setCollections((prev) => [data as unknown as Collection, ...prev]);
       }
 
       toast.success('Collection created');

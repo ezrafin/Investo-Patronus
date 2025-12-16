@@ -94,6 +94,86 @@ export type Database = {
         }
         Relationships: []
       }
+      content_collection_items: {
+        Row: {
+          added_at: string
+          collection_id: string
+          content_id: string
+          content_type: string
+          id: string
+          notes: string | null
+          position: number
+          title: string | null
+        }
+        Insert: {
+          added_at?: string
+          collection_id: string
+          content_id: string
+          content_type: string
+          id?: string
+          notes?: string | null
+          position?: number
+          title?: string | null
+        }
+        Update: {
+          added_at?: string
+          collection_id?: string
+          content_id?: string
+          content_type?: string
+          id?: string
+          notes?: string | null
+          position?: number
+          title?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "content_collection_items_collection_id_fkey"
+            columns: ["collection_id"]
+            isOneToOne: false
+            referencedRelation: "content_collections"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      content_collections: {
+        Row: {
+          cover_image_url: string | null
+          created_at: string
+          description: string | null
+          follower_count: number
+          id: string
+          is_public: boolean
+          item_count: number
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          cover_image_url?: string | null
+          created_at?: string
+          description?: string | null
+          follower_count?: number
+          id?: string
+          is_public?: boolean
+          item_count?: number
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          cover_image_url?: string | null
+          created_at?: string
+          description?: string | null
+          follower_count?: number
+          id?: string
+          is_public?: boolean
+          item_count?: number
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       content_relationships: {
         Row: {
           created_at: string
