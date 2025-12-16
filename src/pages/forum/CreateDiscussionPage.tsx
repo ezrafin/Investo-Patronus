@@ -12,6 +12,14 @@ import { toast } from 'sonner';
 import { Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { fetchForumCategories, ForumCategory } from '@/lib/api/index';
+import { z } from 'zod';
+
+const createDiscussionSchema = z.object({
+  title: z.string().min(10, 'Title must be at least 10 characters'),
+  content: z.string().min(50, 'Content should be at least 50 characters'),
+  category: z.string(),
+  tags: z.string().optional(),
+});
 
 export default function CreateDiscussionPage() {
   const { user, profile } = useUser();
@@ -23,6 +31,7 @@ export default function CreateDiscussionPage() {
   const [submitting, setSubmitting] = useState(false);
   const [categories, setCategories] = useState<ForumCategory[]>([]);
   const [loadingCategories, setLoadingCategories] = useState(true);
+  const [errors, setErrors] = useState<{ title?: string; content?: string }>({});
 
   useEffect(() => {
     async function loadCategories() {
@@ -59,14 +68,29 @@ export default function CreateDiscussionPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!title.trim() || !content.trim()) {
-      toast.error('Please fill in all required fields');
+
+    const validation = createDiscussionSchema.safeParse({
+      title: title.trim(),
+      content: content.trim(),
+      category,
+      tags,
+    });
+
+    if (!validation.success) {
+      const fieldErrors: { title?: string; content?: string } = {};
+      for (const issue of validation.error.issues) {
+        if (issue.path[0] === 'title') fieldErrors.title = issue.message;
+        if (issue.path[0] === 'content') fieldErrors.content = issue.message;
+      }
+      setErrors(fieldErrors);
       return;
     }
 
+    setErrors({});
+
     setSubmitting(true);
     try {
-      const tagsArray = tags
+      const tagsArray = validation.data.tags
         .split(',')
         .map((tag) => tag.trim())
         .filter((tag) => tag.length > 0);
@@ -74,10 +98,10 @@ export default function CreateDiscussionPage() {
       const { data, error } = await supabase
         .from('forum_discussions')
         .insert({
-          title: title.trim(),
-          content: content.trim(),
+          title: validation.data.title,
+          content: validation.data.content,
           author_name: profile?.display_name || user.email || 'Anonymous',
-          category,
+          category: validation.data.category,
           tags: tagsArray,
           user_id: user.id,
         })
@@ -112,6 +136,13 @@ export default function CreateDiscussionPage() {
                 placeholder="Enter a clear, descriptive title..."
                 required
               />
+              {errors.title ? (
+                <p className="text-xs text-destructive">{errors.title}</p>
+              ) : (
+                <p className="text-xs text-muted-foreground">
+                  Title should be at least 10 characters.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
@@ -155,9 +186,12 @@ export default function CreateDiscussionPage() {
                   className="font-mono text-sm"
                   required
                 />
-                <p className="text-xs text-muted-foreground">
-                  Markdown is supported. Use **bold**, *italic*, `code`, and more.
-                </p>
+              {errors.content && (
+                <p className="text-xs text-destructive mb-1">{errors.content}</p>
+              )}
+              <p className="text-xs text-muted-foreground">
+                Content should be at least 50 characters. Markdown is supported: use **bold**, *italic*, `code`, and more.
+              </p>
               </div>
 
               <div className="flex items-center justify-end gap-4">
@@ -166,7 +200,7 @@ export default function CreateDiscussionPage() {
                     Cancel
                   </Button>
                 </Link>
-                <Button type="submit" disabled={submitting || !title.trim() || !content.trim()}>
+                <Button type="submit" disabled={submitting}>
                   <Send className="mr-2 h-4 w-4" />
                   {submitting ? 'Creating...' : 'Create Discussion'}
                 </Button>

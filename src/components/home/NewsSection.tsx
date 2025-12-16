@@ -31,7 +31,7 @@ export const NewsSection = memo(function NewsSection() {
             <h2 className="heading-md">Latest News</h2>
           </div>
           <Link to="/news" className="flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-            All News <ArrowRight className="h-4 w-4" />
+          View all news <ArrowRight className="h-4 w-4" />
           </Link>
         </motion.div>
 

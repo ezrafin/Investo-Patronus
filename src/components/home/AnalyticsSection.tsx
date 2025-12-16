@@ -31,7 +31,7 @@ export const AnalyticsSection = memo(function AnalyticsSection() {
             <h2 className="heading-md">Expert Insights</h2>
           </div>
           <Link to="/analytics" className="flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-            All Analytics <ArrowRight className="h-4 w-4" />
+          View all analytics <ArrowRight className="h-4 w-4" />
           </Link>
         </motion.div>
 

@@ -17,6 +17,7 @@ import { toast } from 'sonner';
 import { MessageCircle, Calendar, Award, Star, Bookmark, Share2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { useDiscussionActions } from '@/hooks/useDiscussionActions';
 
 const userLevels = [
   { min: 0, name: 'Newbie', color: 'bg-muted text-muted-foreground' },
@@ -36,10 +37,16 @@ export default function ForumTopicPage() {
   const [topic, setTopic] = useState<ForumTopic | null>(null);
   const [comments, setComments] = useState<ForumComment[]>([]);
   const [loading, setLoading] = useState(true);
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  const [isFollowing, setIsFollowing] = useState(false);
   const [submittingReply, setSubmittingReply] = useState(false);
   const replyEditorRef = useRef<HTMLDivElement | null>(null);
+  const {
+    isBookmarked,
+    isFollowing,
+    bookmarkLoading,
+    followLoading,
+    toggleBookmark,
+    toggleFollow,
+  } = useDiscussionActions(topicId);
 
   useEffect(() => {
     async function loadData() {
@@ -60,76 +67,7 @@ export default function ForumTopicPage() {
     }
 
     loadData();
-    checkBookmarkStatus();
-    checkFollowStatus();
-  }, [topicId, user]);
-
-  const checkBookmarkStatus = async () => {
-    if (!user || !topicId) return;
-    const { data } = await supabase
-      .from('user_bookmarks')
-      .select('id')
-      .eq('user_id', user.id)
-      .eq('content_type', 'discussion')
-      .eq('content_id', topicId)
-      .maybeSingle();
-    setIsBookmarked(!!data);
-  };
-
-  const checkFollowStatus = async () => {
-    if (!user || !topicId) return;
-    const { data } = await (supabase as any)
-      .from('forum_follows')
-      .select('id')
-      .eq('user_id', user.id)
-      .eq('discussion_id', topicId)
-      .maybeSingle();
-    setIsFollowing(!!data);
-  };
-
-  const toggleBookmark = async () => {
-    if (!user || !topicId) {
-      toast.error('Please sign in to bookmark discussions');
-      return;
-    }
-    if (isBookmarked) {
-      await supabase.from('user_bookmarks').delete()
-        .eq('user_id', user.id)
-        .eq('content_type', 'discussion')
-        .eq('content_id', topicId);
-      setIsBookmarked(false);
-      toast.success('Removed from bookmarks');
-    } else {
-      await supabase.from('user_bookmarks').insert({
-        user_id: user.id,
-        content_type: 'discussion',
-        content_id: topicId
-      });
-      setIsBookmarked(true);
-      toast.success('Added to bookmarks');
-    }
-  };
-
-  const toggleFollow = async () => {
-    if (!user || !topicId) {
-      toast.error('Please sign in to follow discussions');
-      return;
-    }
-    if (isFollowing) {
-      await (supabase as any).from('forum_follows').delete()
-        .eq('user_id', user.id)
-        .eq('discussion_id', topicId);
-      setIsFollowing(false);
-      toast.success('Unfollowed discussion');
-    } else {
-      await (supabase as any).from('forum_follows').insert({
-        user_id: user.id,
-        discussion_id: topicId
-      });
-      setIsFollowing(true);
-      toast.success('Following discussion');
-    }
-  };
+  }, [topicId]);
 
   const handleShare = async () => {
     try {
@@ -230,18 +168,20 @@ export default function ForumTopicPage() {
                 variant="outline"
                 size="sm"
                 onClick={toggleBookmark}
+                disabled={bookmarkLoading}
                 className={cn(isBookmarked && 'bg-primary/10')}
               >
                 <Bookmark className={cn('h-4 w-4 mr-2', isBookmarked && 'fill-current')} />
-                {isBookmarked ? 'Bookmarked' : 'Bookmark'}
+                {bookmarkLoading ? 'Saving…' : isBookmarked ? 'Bookmarked' : 'Bookmark'}
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={toggleFollow}
+                disabled={followLoading}
                 className={cn(isFollowing && 'bg-primary/10')}
               >
-                {isFollowing ? 'Following' : 'Follow'}
+                {followLoading ? 'Saving…' : isFollowing ? 'Following' : 'Follow'}
               </Button>
               <Button variant="outline" size="sm" onClick={handleShare}>
                 <Share2 className="h-4 w-4 mr-2" />
