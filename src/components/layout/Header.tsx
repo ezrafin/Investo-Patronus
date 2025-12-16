@@ -141,7 +141,7 @@ export function Header() {
               alt="INVESTOPATRONUS" 
               className="h-8 md:h-10 transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="flex flex-col text-sm md:text-base font-bold text-white transition-opacity duration-300 group-hover:opacity-80 leading-tight">
+            <div className="flex flex-col text-sm md:text-base font-bold text-foreground transition-opacity duration-300 group-hover:opacity-80 leading-tight">
               <span>INVESTO</span>
               <span>PATRONUS</span>
             </div>

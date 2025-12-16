@@ -46,10 +46,6 @@ const footerLinks = {
     name: 'Forum',
     href: '/forum'
   }],
-  companies: [{
-    name: 'Companies',
-    href: '/companies'
-  }],
   community: [{
     name: 'About Us',
     href: '/about'
@@ -77,7 +73,7 @@ const footerLinks = {
 export function Footer() {
   return <footer role="contentinfo" className="border-t border-border bg-card/30">
       <div className="container-wide py-16 md:py-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 lg:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 lg:gap-6">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2">
             <Link to="/" className="flex justify-center mb-4">
@@ -135,18 +131,6 @@ export function Footer() {
             <h3 className="text-sm font-semibold mb-4">Community</h3>
             <ul className="space-y-2.5">
               {footerLinks.community.map(link => <li key={link.href}>
-                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    {link.name}
-                  </Link>
-                </li>)}
-            </ul>
-          </div>
-
-          {/* Companies */}
-          <div>
-            <h3 className="text-sm font-semibold mb-4">Companies</h3>
-            <ul className="space-y-2.5">
-              {footerLinks.companies.map(link => <li key={link.href}>
                   <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
                   </Link>
