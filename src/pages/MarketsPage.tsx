@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { MarketTable } from '@/components/MarketTable';
@@ -68,6 +68,15 @@ export default function MarketsPage() {
 
   const info = marketInfo[marketType] || marketInfo.indices;
 
+  // Memoize market cap calculation function
+  const getMarketCap = useCallback((item: typeof data[0]) => {
+    if (item.volume) {
+      const volumeNum = parseFloat(item.volume.replace(/[^0-9.]/g, ''));
+      return item.price * volumeNum;
+    }
+    return item.price;
+  }, []);
+
   // Combine current market data with search results from other markets
   const allAssets = useMemo(() => {
     if (!shouldLoadAll) return [];
@@ -75,20 +84,19 @@ export default function MarketsPage() {
     return data.map(item => ({ ...item, marketType }));
   }, [shouldLoadAll, data, marketType]);
 
-  // Calculate market cap (price * volume if available, otherwise use price)
-  const getMarketCap = (item: typeof data[0]) => {
-    if (item.volume) {
-      const volumeNum = parseFloat(item.volume.replace(/[^0-9.]/g, ''));
-      return item.price * volumeNum;
-    }
-    return item.price;
-  };
-
-  // Get top 20 by market cap (default view)
+  // Get top 20 by market cap (default view) - memoize with pre-computed market caps
   const top50Data = useMemo(() => {
-    const sorted = [...data].sort((a, b) => getMarketCap(b) - getMarketCap(a));
+    if (data.length === 0) return [];
+    
+    // Pre-compute market caps to avoid recalculating during sort
+    const dataWithMarketCap = data.map(item => ({
+      ...item,
+      marketCap: getMarketCap(item),
+    }));
+    
+    const sorted = dataWithMarketCap.sort((a, b) => b.marketCap - a.marketCap);
     return sorted.slice(0, 20);
-  }, [data]);
+  }, [data, getMarketCap]);
 
   // Filter data based on search
   const filteredData = useMemo(() => {
@@ -195,7 +203,8 @@ export default function MarketsPage() {
             ) : (
               <MarketTable 
                 data={displayData.map((item) => {
-                  const { marketType: _, ...rest } = item as any;
+                  // Remove marketType if it exists (added for search)
+                  const { marketType: _, marketCap: __, ...rest } = item;
                   return rest;
                 })} 
                 showVolume={info.showVolume} 

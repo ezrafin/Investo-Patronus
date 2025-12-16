@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark } from 'lucide-react';
-import { MarketAlerts } from '@/components/markets/MarketAlerts';
+import { logger } from '@/lib/logger';
 import { AchievementSystem } from '@/components/forum/AchievementSystem';
 import { ThemeSwitcher } from '@/components/layout/ThemeSwitcher';
 import { Trophy } from 'lucide-react';
@@ -186,9 +186,6 @@ export function Header() {
 
           {/* Live indicator + CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            {user && (
-              <MarketAlerts />
-            )}
             <ThemeSwitcher />
             {user ? (
               <DropdownMenu>
@@ -334,15 +331,15 @@ function AchievementBadge({ userId }: { userId: string }) {
   useEffect(() => {
     async function loadAchievements() {
       try {
-        const { data, error } = await (supabase
-          .from('user_achievements' as any)
+        const { data, error } = await supabase
+          .from('user_achievements')
           .select('achievement_id')
-          .eq('user_id', userId) as any);
+          .eq('user_id', userId);
 
         if (error) throw error;
         setUnlockedCount(data?.length || 0);
       } catch (error) {
-        console.error('Error loading achievements:', error);
+        logger.error('Error loading achievements:', error);
       }
     }
 

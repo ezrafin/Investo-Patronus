@@ -1,6 +1,7 @@
 import { supabase } from '@/integrations/supabase/client';
 import type { ForumCategory, ForumTopic, ForumComment } from './types';
 import { getAuthorAvatar } from './utils';
+import { logger } from '@/lib/logger';
 
 /**
  * @deprecated Fallback-only mock data for development.
@@ -58,7 +59,7 @@ export async function fetchForumCategories(): Promise<ForumCategory[]> {
       postCount: 0,
     }));
   } catch (error) {
-    console.error('Error fetching forum categories:', error);
+    logger.error('Error fetching forum categories:', error);
     if (import.meta.env.DEV) {
       return mockForumCategories;
     }
@@ -83,25 +84,35 @@ export async function fetchForumTopics(categoryId?: string): Promise<ForumTopic[
     
     if (error) throw error;
     
-    return (data || []).map((topic: any) => ({
-      id: topic.id,
-      categoryId: topic.category,
-      title: topic.title,
-      content: topic.content,
-      author: topic.author_name,
-      authorId: topic.user_id,
-      authorAvatar: getAuthorAvatar(topic.author_name),
-      date: topic.created_at,
-      replies: topic.reply_count || 0,
-      views: topic.view_count || 0,
-      lastActivity: topic.updated_at,
-      like_count: topic.like_count,
-      authorReputation: (topic as any).author_reputation ?? undefined,
-      symbol: topic.symbol ?? undefined,
-      asset_type: topic.asset_type ?? undefined,
-    }));
+    return (data || []).map((topic) => {
+      // Type-safe access to fields that may come from JOINs
+      const topicWithExtras = topic as typeof topic & {
+        author_reputation?: number;
+        symbol?: string;
+        asset_type?: string;
+        like_count?: number;
+      };
+      
+      return {
+        id: topic.id,
+        categoryId: topic.category,
+        title: topic.title,
+        content: topic.content,
+        author: topic.author_name,
+        authorId: topic.user_id,
+        authorAvatar: getAuthorAvatar(topic.author_name),
+        date: topic.created_at,
+        replies: topic.reply_count || 0,
+        views: topic.view_count || 0,
+        lastActivity: topic.updated_at,
+        like_count: topicWithExtras.like_count ?? 0,
+        authorReputation: topicWithExtras.author_reputation ?? undefined,
+        symbol: topicWithExtras.symbol ?? undefined,
+        asset_type: topicWithExtras.asset_type ?? undefined,
+      };
+    });
   } catch (error) {
-    console.error('Error fetching forum topics:', error);
+    logger.error('Error fetching forum topics:', error);
     if (import.meta.env.DEV) {
       if (categoryId) {
         return mockForumTopics.filter(t => t.categoryId === categoryId);
@@ -123,19 +134,27 @@ export async function fetchForumComments(topicId: string): Promise<ForumComment[
     
     if (error) throw error;
     
-    return (data || []).map((reply: any) => ({
-      id: reply.id,
-      topicId: reply.discussion_id,
-      author: reply.author_name,
-      authorId: reply.user_id,
-      authorAvatar: getAuthorAvatar(reply.author_name),
-      content: reply.content,
-      date: reply.created_at,
-      rating: reply.reaction_count ?? 0,
-      authorReputation: (reply as any).author_reputation ?? undefined,
-    }));
+    return (data || []).map((reply) => {
+      // Type-safe access to fields that may come from JOINs
+      const replyWithExtras = reply as typeof reply & {
+        author_reputation?: number;
+        reaction_count?: number;
+      };
+      
+      return {
+        id: reply.id,
+        topicId: reply.discussion_id,
+        author: reply.author_name,
+        authorId: reply.user_id,
+        authorAvatar: getAuthorAvatar(reply.author_name),
+        content: reply.content,
+        date: reply.created_at,
+        rating: replyWithExtras.reaction_count ?? 0,
+        authorReputation: replyWithExtras.author_reputation ?? undefined,
+      };
+    });
   } catch (error) {
-    console.error('Error fetching forum comments:', error);
+    logger.error('Error fetching forum comments:', error);
     if (import.meta.env.DEV) {
       return mockForumComments.filter(c => c.topicId === topicId);
     }
@@ -145,29 +164,31 @@ export async function fetchForumComments(topicId: string): Promise<ForumComment[
 
 export async function fetchDiscussionsForWatchlist(userId: string): Promise<ForumTopic[]> {
   try {
-    const { data, error } = await (supabase.rpc as any)('get_discussions_for_watchlist', {
+    // RPC functions may not be fully typed in Database types
+    const { data, error } = await supabase.rpc('get_discussions_for_watchlist', {
       p_user_id: userId,
-    });
+    }) as { data: unknown[] | null; error: Error | null };
 
     if (error) throw error;
 
-    return ((data || []) as any[]).map((topic: any) => ({
-      id: topic.id,
-      categoryId: topic.category,
-      title: topic.title,
-      content: topic.content,
-      author: topic.author_name,
-      authorAvatar: getAuthorAvatar(topic.author_name),
-      date: topic.created_at,
-      replies: topic.reply_count || 0,
-      views: topic.view_count || 0,
-      lastActivity: topic.updated_at,
-      like_count: topic.like_count,
-      symbol: topic.symbol ?? undefined,
-      asset_type: topic.asset_type ?? undefined,
+    return ((data || []) as Array<Record<string, unknown>>).map((topic) => ({
+      id: String(topic.id),
+      categoryId: String(topic.category),
+      title: String(topic.title),
+      content: String(topic.content || ''),
+      author: String(topic.author_name),
+      authorId: topic.user_id ? String(topic.user_id) : undefined,
+      authorAvatar: getAuthorAvatar(String(topic.author_name)),
+      date: String(topic.created_at),
+      replies: Number(topic.reply_count) || 0,
+      views: Number(topic.view_count) || 0,
+      lastActivity: String(topic.updated_at),
+      like_count: Number(topic.like_count) || 0,
+      symbol: topic.symbol ? String(topic.symbol) : undefined,
+      asset_type: topic.asset_type ? String(topic.asset_type) : undefined,
     }));
   } catch (error) {
-    console.error('Error fetching discussions for watchlist:', error);
+    logger.error('Error fetching discussions for watchlist:', error);
     return [];
   }
 }

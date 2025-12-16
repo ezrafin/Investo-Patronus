@@ -1,11 +1,12 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { AnalyticsCard } from '@/components/AnalyticsCard';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { Pagination } from '@/components/Pagination';
-import { fetchAnalytics, AnalyticsArticle } from '@/lib/api/index';
+import { useAnalytics } from '@/hooks/useAnalytics';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+
 const ITEMS_PER_PAGE = 15;
 const typeFilters = [{
   value: 'all',
@@ -23,24 +24,22 @@ const typeFilters = [{
   value: 'technical',
   label: 'Technical Analysis'
 }];
+
 export default function AnalyticsPage() {
-  const [articles, setArticles] = useState<AnalyticsArticle[]>([]);
-  const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const sectionRef = useRef<HTMLElement>(null);
-  useEffect(() => {
-    async function loadAnalytics() {
-      setLoading(true);
-      const data = await fetchAnalytics(activeFilter);
-      setArticles(data);
-      setLoading(false);
-    }
-    loadAnalytics();
-  }, [activeFilter]);
+  
+  const { data: articles = [], isLoading: loading } = useAnalytics({ 
+    type: activeFilter === 'all' ? undefined : activeFilter 
+  });
   const handleFilterChange = (filter: string) => {
     setActiveFilter(filter);
     setCurrentPage(1);
+    // Scroll to top when filter changes
+    setTimeout(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
   };
 
   const handlePageChange = (page: number) => {

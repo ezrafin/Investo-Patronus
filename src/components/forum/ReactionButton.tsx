@@ -55,14 +55,14 @@ export function ReactionButton({
     if (!user) return;
 
     try {
-      const { data } = await (supabase
-        .from('forum_reactions' as any)
+      const { data } = await supabase
+        .from('forum_reactions')
         .select('id')
         .eq('user_id', user.id)
         .eq('target_type', contentType)
         .eq('target_id', contentId)
         .eq('reaction_type', reactionType)
-        .maybeSingle() as any);
+        .maybeSingle();
 
       setIsReacted(!!data);
     } catch (error) {
@@ -76,32 +76,32 @@ export function ReactionButton({
       if (!user) throw new Error('Please sign in to react');
 
       if (action === 'remove') {
-        const { error } = await (supabase
-          .from('forum_reactions' as any)
+        const { error } = await supabase
+          .from('forum_reactions')
           .delete()
           .eq('user_id', user.id)
           .eq('target_type', contentType)
           .eq('target_id', contentId)
-          .eq('reaction_type', reactionType) as any);
+          .eq('reaction_type', reactionType);
         if (error) throw error;
       } else {
         // Remove any existing reaction of different type first
-        await (supabase
-          .from('forum_reactions' as any)
+        await supabase
+          .from('forum_reactions')
           .delete()
           .eq('user_id', user.id)
           .eq('target_type', contentType)
-          .eq('target_id', contentId) as any);
+          .eq('target_id', contentId);
 
         // Add new reaction
-        const { error } = await (supabase
-          .from('forum_reactions' as any)
+        const { error } = await supabase
+          .from('forum_reactions')
           .insert({
             user_id: user.id,
             target_type: contentType,
             target_id: contentId,
             reaction_type: reactionType,
-          }) as any);
+          });
         if (error) throw error;
       }
     },

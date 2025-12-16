@@ -1,4 +1,5 @@
 import { supabase } from '@/integrations/supabase/client';
+import { logger } from '@/lib/logger';
 
 export type RateLimitAction = 'create_discussion' | 'create_reply' | 'create_reaction' | 'create_bookmark';
 
@@ -19,16 +20,17 @@ export async function checkRateLimit(
     // For now, we'll use a placeholder that will be handled server-side
     const ipAddress = '0.0.0.0'; // This should be set by server/edge function
 
-    const { data, error } = await (supabase.rpc as any)('check_rate_limit', {
+    // RPC functions may not be fully typed in Database types
+    const { data, error } = await supabase.rpc('check_rate_limit', {
       p_user_id: (await supabase.auth.getUser()).data.user?.id || null,
       p_ip_address: ipAddress,
       p_action_type: actionType,
       p_max_attempts: maxAttempts,
       p_window_seconds: windowSeconds,
-    });
+    }) as { data: boolean | null; error: Error | null };
 
     if (error) {
-      console.error('Rate limit check error:', error);
+      logger.error('Rate limit check error:', error);
       // On error, allow the action (fail open) but log it
       return { allowed: true };
     }
@@ -42,7 +44,7 @@ export async function checkRateLimit(
 
     return { allowed: true };
   } catch (error) {
-    console.error('Rate limit check failed:', error);
+    logger.error('Rate limit check failed:', error);
     // Fail open - allow action if check fails
     return { allowed: true };
   }
