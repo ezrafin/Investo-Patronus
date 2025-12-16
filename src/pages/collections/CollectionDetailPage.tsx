@@ -67,7 +67,7 @@ export default function CollectionDetailPage() {
         return;
       }
 
-      setCollection(data as unknown as Collection);
+      setCollection(data as Collection);
 
       const { data: itemsData, error: itemsError } = await supabase
         .from('content_collection_items' as any)
@@ -77,9 +77,6 @@ export default function CollectionDetailPage() {
 
       if (itemsError) throw itemsError;
 
-<<<<<<< Updated upstream
-      setItems((itemsData || []) as unknown as CollectionItem[]);
-=======
       setItems((itemsData || []) as CollectionItem[]);
 
       // Check if user is following this collection
@@ -92,7 +89,6 @@ export default function CollectionDetailPage() {
           .maybeSingle();
         setIsFollowing(!!followData);
       }
->>>>>>> Stashed changes
     } catch (error) {
       console.error('Error loading collection:', error);
       toast.error('Failed to load collection');
