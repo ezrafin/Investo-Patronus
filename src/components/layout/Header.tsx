@@ -202,10 +202,10 @@ export function Header() {
                   <DropdownMenuLabel>
                     <div className="flex flex-col space-y-1">
                       <div className="flex items-center justify-between">
-                        <p className="text-sm font-medium">{profile?.username || profile?.display_name || 'User'}</p>
+                        <p className="text-sm font-medium">{profile?.display_name || profile?.username || 'User'}</p>
                         <AchievementBadge userId={user.id} />
                       </div>
-                      <p className="text-xs text-muted-foreground">{user.email}</p>
+                      <p className="text-xs text-muted-foreground">Profile</p>
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
