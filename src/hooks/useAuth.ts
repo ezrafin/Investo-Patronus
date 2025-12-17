@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -26,48 +26,113 @@ interface UseAuthReturn {
   updateProfile: (updates: Partial<UserProfile>) => Promise<{ error: any }>;
 }
 
+const PROFILE_LOAD_TIMEOUT = 10000; // 10 seconds
+
 export function useAuth(): UseAuthReturn {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+  const loadingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isInitializedRef = useRef(false);
+
+  // Cleanup function for timeout
+  const clearLoadingTimeout = () => {
+    if (loadingTimeoutRef.current) {
+      clearTimeout(loadingTimeoutRef.current);
+      loadingTimeoutRef.current = null;
+    }
+  };
+
+  // Set a safety timeout to prevent infinite loading
+  const setLoadingWithTimeout = () => {
+    clearLoadingTimeout();
+    loadingTimeoutRef.current = setTimeout(() => {
+      console.warn('Auth loading timeout - forcing loading state to false');
+      setLoading(false);
+    }, PROFILE_LOAD_TIMEOUT);
+  };
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        loadProfile(session.user.id);
-      } else {
-        setLoading(false);
-      }
-    });
+    // Prevent double initialization in React strict mode
+    if (isInitializedRef.current) return;
+    isInitializedRef.current = true;
 
+    // Set initial loading timeout
+    setLoadingWithTimeout();
+
+    // CRITICAL: Set up auth state listener FIRST (synchronous updates only!)
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        await loadProfile(session.user.id);
+    } = supabase.auth.onAuthStateChange((event, currentSession) => {
+      console.log('Auth state change:', event, currentSession?.user?.id);
+      
+      // Synchronous state updates only - no async operations here!
+      setSession(currentSession);
+      setUser(currentSession?.user ?? null);
+
+      if (event === 'SIGNED_OUT') {
+        setProfile(null);
+        setLoading(false);
+        clearLoadingTimeout();
+        return;
+      }
+
+      if (currentSession?.user) {
+        // Defer profile loading with setTimeout to avoid deadlock
+        setTimeout(() => {
+          loadProfile(currentSession.user.id);
+        }, 0);
       } else {
         setProfile(null);
         setLoading(false);
+        clearLoadingTimeout();
       }
     });
 
-    return () => subscription.unsubscribe();
+    // THEN check for existing session
+    supabase.auth.getSession().then(({ data: { session: existingSession } }) => {
+      console.log('Initial session check:', existingSession?.user?.id);
+      
+      setSession(existingSession);
+      setUser(existingSession?.user ?? null);
+      
+      if (existingSession?.user) {
+        // Defer profile loading
+        setTimeout(() => {
+          loadProfile(existingSession.user.id);
+        }, 0);
+      } else {
+        setLoading(false);
+        clearLoadingTimeout();
+      }
+    }).catch((error) => {
+      console.error('Error getting session:', error);
+      setLoading(false);
+      clearLoadingTimeout();
+    });
+
+    return () => {
+      subscription.unsubscribe();
+      clearLoadingTimeout();
+    };
   }, []);
 
   const loadProfile = async (userId: string) => {
     try {
+      console.log('Loading profile for:', userId);
+      
       const { data, error } = await (supabase
         .from('profiles' as any)
         .select('*')
         .eq('id', userId)
         .maybeSingle() as any);
 
-      if (error) throw error;
+      if (error) {
+        console.error('Profile load error:', error);
+        throw error;
+      }
+      
       if (data) {
         setProfile({
           id: data.id,
@@ -80,42 +145,90 @@ export function useAuth(): UseAuthReturn {
           comment_count: 0,
           privacy_level: 'public',
         });
+        console.log('Profile loaded successfully');
+      } else {
+        console.log('No profile found for user');
       }
     } catch (error) {
       console.error('Error loading profile:', error);
     } finally {
       setLoading(false);
+      clearLoadingTimeout();
     }
   };
 
   const signIn = async (email: string, password: string) => {
+    setLoading(true);
+    setLoadingWithTimeout();
     const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) {
+      setLoading(false);
+      clearLoadingTimeout();
+    }
     return { error };
   };
 
   const signUp = async (email: string, password: string, username?: string) => {
+    setLoading(true);
+    setLoadingWithTimeout();
+    const redirectUrl = `${window.location.origin}/auth/callback`;
+    
     const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
+        emailRedirectTo: redirectUrl,
         data: {
           username: username || email.split('@')[0],
           display_name: username || email.split('@')[0],
         },
       },
     });
+    
+    if (error) {
+      setLoading(false);
+      clearLoadingTimeout();
+    }
     return { error };
   };
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    console.log('Signing out...');
+    
+    // Clear state immediately for responsive UI
+    setUser(null);
+    setProfile(null);
+    setSession(null);
+    
+    try {
+      // Sign out from all devices/tabs
+      const { error } = await supabase.auth.signOut({ scope: 'global' });
+      if (error) {
+        console.error('Sign out error:', error);
+      }
+    } catch (error) {
+      console.error('Sign out exception:', error);
+    }
+    
+    setLoading(false);
+    console.log('Sign out complete');
   };
 
   const signInWithOAuth = async (provider: 'google' | 'github') => {
-    await supabase.auth.signInWithOAuth({
+    const redirectUrl = `${window.location.origin}/auth/callback`;
+    console.log('OAuth redirect URL:', redirectUrl);
+    
+    const { error } = await supabase.auth.signInWithOAuth({
       provider,
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: { 
+        redirectTo: redirectUrl,
+        skipBrowserRedirect: false,
+      },
     });
+    
+    if (error) {
+      console.error('OAuth error:', error);
+    }
   };
 
   const updateProfile = async (updates: Partial<UserProfile>) => {
@@ -126,7 +239,10 @@ export function useAuth(): UseAuthReturn {
       .update({ ...updates, updated_at: new Date().toISOString() })
       .eq('id', user.id) as any);
 
-    if (!error) await loadProfile(user.id);
+    if (!error) {
+      // Reload profile after update
+      await loadProfile(user.id);
+    }
     return { error };
   };
 
