@@ -48,7 +48,11 @@ export function RecommendedContent({ className, limit = 5 }: RecommendedContentP
   if (loading) {
     return (
       <div className={cn('space-y-3', className)}>
-        {Array.from({ length: limit }).map((_, i) => (
+        <div className="flex items-center gap-2 mb-4">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <h3 className="font-semibold text-lg">Recommended for You</h3>
+        </div>
+        {Array.from({ length: Math.min(limit, 3) }).map((_, i) => (
           <SkeletonCard key={i} lines={2} />
         ))}
       </div>
@@ -56,7 +60,13 @@ export function RecommendedContent({ className, limit = 5 }: RecommendedContentP
   }
 
   if (recommendations.length === 0) {
-    return null;
+    return (
+      <div className={cn('premium-card p-6 text-center', className)}>
+        <Sparkles className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />
+        <p className="text-muted-foreground">No recommendations yet</p>
+        <p className="text-xs text-muted-foreground mt-1">Explore content to get personalized suggestions</p>
+      </div>
+    );
   }
 
   return (
