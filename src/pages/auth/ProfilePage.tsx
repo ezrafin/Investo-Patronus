@@ -22,6 +22,17 @@ export default function ProfilePage() {
   const [saving, setSaving] = useState(false);
   const [avatarSelectorOpen, setAvatarSelectorOpen] = useState(false);
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+  const [loadingTimeout, setLoadingTimeout] = useState(false);
+
+  // Timeout to prevent infinite loading
+  useEffect(() => {
+    if (authLoading) {
+      const timeout = setTimeout(() => {
+        setLoadingTimeout(true);
+      }, 10000);
+      return () => clearTimeout(timeout);
+    }
+  }, [authLoading]);
 
   useEffect(() => {
     if (profile) {
@@ -42,13 +53,29 @@ export default function ProfilePage() {
       .slice(0, 2);
   };
 
-  if (authLoading) {
+  if (authLoading && !loadingTimeout) {
     return (
       <Layout>
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
             <p className="text-muted-foreground">Loading profile...</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (loadingTimeout && !user) {
+    return (
+      <Layout>
+        <div className="min-h-[80vh] flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="heading-lg mb-4">Session expired</h1>
+            <p className="text-muted-foreground mb-6">Please sign in again.</p>
+            <Link to="/auth/login">
+              <Button>Sign in</Button>
+            </Link>
           </div>
         </div>
       </Layout>
