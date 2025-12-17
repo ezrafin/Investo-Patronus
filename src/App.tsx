@@ -10,6 +10,7 @@ import { educationRoutes } from "@/lib/educationRoutes";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { CookieConsentBanner } from "@/components/cookies/CookieConsentBanner";
+import { NotificationManager } from "@/components/notifications/NotificationManager";
 
 // Eager load critical pages
 import Index from "./pages/Index";
@@ -145,6 +146,7 @@ const App = () => {
               </Routes>
             </Suspense>
           </BrowserRouter>
+          <NotificationManager />
           <CookieConsentBanner />
           <Analytics />
           <SpeedInsights />
