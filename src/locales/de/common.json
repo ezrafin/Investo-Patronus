@@ -1,0 +1,27 @@
+{
+  "welcome": "Willkommen",
+  "loading": "Laden...",
+  "error": "Fehler",
+  "success": "Erfolg",
+  "save": "Speichern",
+  "cancel": "Abbrechen",
+  "delete": "Löschen",
+  "edit": "Bearbeiten",
+  "create": "Erstellen",
+  "update": "Aktualisieren",
+  "close": "Schließen",
+  "back": "Zurück",
+  "next": "Weiter",
+  "previous": "Zurück",
+  "submit": "Absenden",
+  "search": "Suchen",
+  "filter": "Filtern",
+  "clear": "Löschen",
+  "apply": "Anwenden",
+  "reset": "Zurücksetzen",
+  "confirm": "Bestätigen",
+  "yes": "Ja",
+  "no": "Nein",
+  "ok": "OK"
+}
+

@@ -1,0 +1,52 @@
+{
+  "navigation": {
+    "content": "Treść",
+    "markets": "Rynki",
+    "education": "Edukacja",
+    "community": "Społeczność",
+    "companies": "Firmy",
+    "legal": "Prawne"
+  },
+  "buttons": {
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "create": "Utwórz",
+    "update": "Aktualizuj",
+    "close": "Zamknij",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "previous": "Poprzedni",
+    "submit": "Wyślij",
+    "search": "Szukaj",
+    "filter": "Filtruj",
+    "clear": "Wyczyść",
+    "apply": "Zastosuj",
+    "reset": "Resetuj",
+    "confirm": "Potwierdź",
+    "signIn": "Zaloguj się",
+    "signOut": "Wyloguj się",
+    "register": "Zarejestruj się",
+    "login": "Logowanie"
+  },
+  "labels": {
+    "email": "E-mail",
+    "password": "Hasło",
+    "username": "Nazwa użytkownika",
+    "name": "Nazwa",
+    "title": "Tytuł",
+    "description": "Opis",
+    "category": "Kategoria",
+    "tags": "Tagi",
+    "language": "Język"
+  },
+  "messages": {
+    "loading": "Ładowanie...",
+    "error": "Wystąpił błąd",
+    "success": "Operacja zakończona pomyślnie",
+    "noData": "Brak dostępnych danych",
+    "notFound": "Nie znaleziono"
+  }
+}
+

@@ -11,10 +11,15 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Save, Bell, Globe, Lock, Eye, EyeOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
+import { useI18n } from '@/context/I18nContext';
+import { LANGUAGE_NAMES, type SupportedLanguage } from '@/lib/i18n';
 
 export default function SettingsPage() {
   const { user } = useUser();
   const { preferences, loading, updatePreferences } = useUserPreferences();
+  const { t } = useTranslation();
+  const { changeLanguage } = useI18n();
   const [saving, setSaving] = useState(false);
   const [localPrefs, setLocalPrefs] = useState(preferences);
   
@@ -32,10 +37,10 @@ export default function SettingsPage() {
       <Layout>
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
-            <h1 className="heading-lg mb-4">Please sign in</h1>
-            <p className="text-muted-foreground mb-6">You need to be signed in to access settings.</p>
+            <h1 className="heading-lg mb-4">{t('settings.pleaseSignIn')}</h1>
+            <p className="text-muted-foreground mb-6">{t('settings.needSignIn')}</p>
             <Link to="/auth/login">
-              <Button>Sign in</Button>
+              <Button>{t('buttons.signIn')}</Button>
             </Link>
           </div>
         </div>
@@ -49,7 +54,7 @@ export default function SettingsPage() {
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-muted-foreground">Loading settings...</p>
+            <p className="text-muted-foreground">{t('settings.loadingSettings')}</p>
           </div>
         </div>
       </Layout>
@@ -137,22 +142,22 @@ export default function SettingsPage() {
     <Layout>
       <div className="section-spacing">
         <div className="container-wide max-w-4xl">
-          <h1 className="heading-lg mb-8">Settings</h1>
+          <h1 className="heading-lg mb-8">{t('settings.title')}</h1>
 
           <div className="space-y-6">
             {/* Notifications */}
             <div className="premium-card p-6">
               <h2 className="font-heading font-semibold text-lg mb-6 flex items-center gap-2">
                 <Bell className="h-5 w-5" />
-                Notifications
+                {t('settings.notifications')}
               </h2>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <Label htmlFor="emailNotifications">Email Notifications</Label>
+                    <Label htmlFor="emailNotifications">{t('settings.emailNotifications')}</Label>
                     <p className="text-sm text-muted-foreground">
-                      Receive email updates about your activity
+                      {t('settings.emailNotificationsDesc')}
                     </p>
                   </div>
                   <Switch
@@ -166,9 +171,9 @@ export default function SettingsPage() {
 
                 <div className="flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <Label htmlFor="pushNotifications">Push Notifications</Label>
+                    <Label htmlFor="pushNotifications">{t('settings.pushNotifications')}</Label>
                     <p className="text-sm text-muted-foreground">
-                      Receive browser push notifications
+                      {t('settings.pushNotificationsDesc')}
                     </p>
                   </div>
                   <Switch
@@ -186,24 +191,32 @@ export default function SettingsPage() {
             <div className="premium-card p-6">
               <h2 className="font-heading font-semibold text-lg mb-6 flex items-center gap-2">
                 <Globe className="h-5 w-5" />
-                Language
+                {t('settings.language')}
               </h2>
 
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="language">Language</Label>
+                  <Label htmlFor="language">{t('settings.language')}</Label>
                   <Select
                     value={localPrefs.language}
-                    onValueChange={(value) => setLocalPrefs({ ...localPrefs, language: value })}
+                    onValueChange={async (value) => {
+                      const lang = value as SupportedLanguage;
+                      setLocalPrefs({ ...localPrefs, language: lang });
+                      // Change language immediately without waiting for save
+                      await changeLanguage(lang);
+                    }}
                   >
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="en">English</SelectItem>
+                      <SelectItem value="zh">中文</SelectItem>
                       <SelectItem value="es">Español</SelectItem>
-                      <SelectItem value="fr">Français</SelectItem>
+                      <SelectItem value="ru">Русский</SelectItem>
                       <SelectItem value="de">Deutsch</SelectItem>
+                      <SelectItem value="fr">Français</SelectItem>
+                      <SelectItem value="pl">Polski</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -214,12 +227,12 @@ export default function SettingsPage() {
             <div className="premium-card p-6">
               <h2 className="font-heading font-semibold text-lg mb-6 flex items-center gap-2">
                 <Lock className="h-5 w-5" />
-                Security
+                {t('settings.security')}
               </h2>
 
               <form onSubmit={handleChangePassword} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="currentPassword">Current Password</Label>
+                  <Label htmlFor="currentPassword">{t('settings.currentPassword')}</Label>
                   <div className="relative">
                     <Input
                       id="currentPassword"
@@ -240,7 +253,7 @@ export default function SettingsPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="newPassword">New Password</Label>
+                  <Label htmlFor="newPassword">{t('settings.newPassword')}</Label>
                   <div className="relative">
                     <Input
                       id="newPassword"
@@ -265,7 +278,7 @@ export default function SettingsPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="confirmPassword">Confirm New Password</Label>
+                  <Label htmlFor="confirmPassword">{t('settings.confirmPassword')}</Label>
                   <div className="relative">
                     <Input
                       id="confirmPassword"
@@ -288,14 +301,14 @@ export default function SettingsPage() {
 
                 <Button type="submit" disabled={changingPassword} className="w-full md:w-auto">
                   <Lock className="mr-2 h-4 w-4" />
-                  {changingPassword ? 'Verifying & Changing...' : 'Change Password'}
+                  {changingPassword ? t('settings.changingPassword') : t('settings.changePassword')}
                 </Button>
               </form>
             </div>
 
             <Button onClick={handleSave} disabled={saving} className="w-full md:w-auto">
               <Save className="mr-2 h-4 w-4" />
-              {saving ? 'Saving...' : 'Save Settings'}
+              {saving ? t('settings.saving') : t('settings.saveSettings')}
             </Button>
           </div>
         </div>

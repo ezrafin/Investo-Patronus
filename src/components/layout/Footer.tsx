@@ -1,76 +1,80 @@
 import { Link } from 'react-router-dom';
 import { TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, Video, BookOpen, Award, Rocket, GraduationCap } from 'lucide-react';
 import { educationRoutes } from '@/lib/educationRoutes';
-const footerLinks = {
-  markets: [{
-    name: 'Indices',
-    href: '/markets/indices',
-    icon: TrendingUp
-  }, {
-    name: 'Stocks',
-    href: '/markets/stocks',
-    icon: BarChart3
-  }, {
-    name: 'Commodities',
-    href: '/markets/commodities',
-    icon: Coins
-  }, {
-    name: 'Crypto',
-    href: '/markets/crypto',
-    icon: Bitcoin
-  }, {
-    name: 'Currencies & ETFs',
-    href: '/markets/currencies',
-    icon: DollarSign
-  }],
-  education: [{
-    name: 'Learning',
-    href: educationRoutes.learning,
-    icon: BookOpen
-  }, {
-    name: 'Video Library',
-    href: educationRoutes.video,
-    icon: GraduationCap
-  }, {
-    name: 'Learning Course',
-    href: educationRoutes.course,
-    icon: Rocket
-  }],
-  content: [{
-    name: 'News',
-    href: '/news'
-  }, {
-    name: 'Analytics',
-    href: '/analytics'
-  }, {
-    name: 'Forum',
-    href: '/forum'
-  }],
-  community: [{
-    name: 'About Us',
-    href: '/about'
-  }, {
-    name: 'Contact Us',
-    href: '/contact'
-  }, {
-    name: 'Careers',
-    href: '/careers'
-  }, {
-    name: 'Authors',
-    href: '/authors'
-  }],
-  legal: [{
-    name: 'Terms of Service',
-    href: '/terms'
-  }, {
-    name: 'Privacy Policy',
-    href: '/privacy'
-  }, {
-    name: 'Disclaimer',
-    href: '/disclaimer'
-  }]
-};
+import { useTranslation } from '@/hooks/useTranslation';
+import { useMemo } from 'react';
 export function Footer() {
+  const { t } = useTranslation({ namespace: 'ui' });
+
+  const footerLinks = useMemo(() => ({
+    markets: [{
+      name: t('navigation.indices'),
+      href: '/markets/indices',
+      icon: TrendingUp
+    }, {
+      name: t('navigation.stocks'),
+      href: '/markets/stocks',
+      icon: BarChart3
+    }, {
+      name: t('navigation.commodities'),
+      href: '/markets/commodities',
+      icon: Coins
+    }, {
+      name: t('navigation.crypto'),
+      href: '/markets/crypto',
+      icon: Bitcoin
+    }, {
+      name: t('navigation.currenciesEtfs'),
+      href: '/markets/currencies',
+      icon: DollarSign
+    }],
+    education: [{
+      name: t('navigation.learning'),
+      href: educationRoutes.learning,
+      icon: BookOpen
+    }, {
+      name: t('navigation.videoLibrary'),
+      href: educationRoutes.video,
+      icon: GraduationCap
+    }, {
+      name: t('navigation.investorCourse'),
+      href: educationRoutes.course,
+      icon: Rocket
+    }],
+    content: [{
+      name: t('navigation.news'),
+      href: '/news'
+    }, {
+      name: t('navigation.analytics'),
+      href: '/analytics'
+    }, {
+      name: t('navigation.forum'),
+      href: '/forum'
+    }],
+    community: [{
+      name: t('navigation.aboutUs'),
+      href: '/about'
+    }, {
+      name: t('navigation.contactUs'),
+      href: '/contact'
+    }, {
+      name: t('navigation.careers'),
+      href: '/careers'
+    }, {
+      name: t('navigation.authors'),
+      href: '/authors'
+    }],
+    legal: [{
+      name: t('navigation.termsOfService'),
+      href: '/terms'
+    }, {
+      name: t('navigation.privacyPolicy'),
+      href: '/privacy'
+    }, {
+      name: t('navigation.disclaimer'),
+      href: '/disclaimer'
+    }]
+  }), [t]);
   return <footer role="contentinfo" className="border-t border-border bg-card/30">
       <div className="container-wide py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10 items-start">
@@ -93,7 +97,7 @@ export function Footer() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
               {/* Content */}
               <div>
-                <h3 className="text-sm font-semibold mb-4">Content</h3>
+                <h3 className="text-sm font-semibold mb-4">{t('navigation.content')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.content.map(link => <li key={link.href}>
                       <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -105,7 +109,7 @@ export function Footer() {
 
               {/* Markets */}
               <div>
-                <h3 className="text-sm font-semibold mb-4">Markets</h3>
+                <h3 className="text-sm font-semibold mb-4">{t('navigation.markets')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.markets.map(link => <li key={link.href}>
                       <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
@@ -118,7 +122,7 @@ export function Footer() {
 
               {/* Education */}
               <div>
-                <h3 className="text-sm font-semibold mb-4">Education</h3>
+                <h3 className="text-sm font-semibold mb-4">{t('navigation.education')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.education.map(link => <li key={link.href}>
                       <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
@@ -131,7 +135,7 @@ export function Footer() {
 
               {/* Community */}
               <div>
-                <h3 className="text-sm font-semibold mb-4">Community</h3>
+                <h3 className="text-sm font-semibold mb-4">{t('navigation.community')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.community.map(link => <li key={link.href}>
                       <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -143,7 +147,7 @@ export function Footer() {
 
               {/* Legal */}
               <div>
-                <h3 className="text-sm font-semibold mb-4">Legal</h3>
+                <h3 className="text-sm font-semibold mb-4">{t('navigation.legal')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.legal.map(link => <li key={link.href}>
                       <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">

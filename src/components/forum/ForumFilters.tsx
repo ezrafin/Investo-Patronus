@@ -4,6 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Label } from '@/components/ui/label';
 import { X, Filter } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export type SortOption = 'newest' | 'oldest' | 'most_active' | 'trending' | 'most_liked' | 'controversial';
 export type DateFilter = 'all' | 'today' | 'week' | 'month' | 'year';
@@ -33,17 +34,18 @@ export function ForumFilters({
   onClearFilters,
   categories = [],
 }: ForumFiltersProps) {
+  const { t } = useTranslation({ namespace: 'forum' });
   const hasActiveFilters = categoryFilter || dateFilter !== 'all' || searchQuery;
 
   return (
     <div className="space-y-4">
       {/* Search */}
       <div className="space-y-2">
-        <Label htmlFor="forum-search">Search discussions</Label>
+        <Label htmlFor="forum-search">{t('searchDiscussions')}</Label>
         <div className="relative">
           <Input
             id="forum-search"
-            placeholder="Search by title, content, or author..."
+            placeholder={t('searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             className="pr-10"
@@ -63,18 +65,18 @@ export function ForumFilters({
       <div className="flex flex-wrap gap-4 items-end">
         {/* Sort */}
         <div className="space-y-2 flex-1 min-w-[200px]">
-          <Label htmlFor="sort">Sort by</Label>
+          <Label htmlFor="sort">{t('sortBy')}</Label>
           <Select value={sortBy} onValueChange={(value: SortOption) => onSortChange(value)}>
             <SelectTrigger id="sort">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="newest">Newest First</SelectItem>
-              <SelectItem value="oldest">Oldest First</SelectItem>
-              <SelectItem value="most_active">Most Active</SelectItem>
-              <SelectItem value="trending">Trending</SelectItem>
-              <SelectItem value="most_liked">Most Liked</SelectItem>
-              <SelectItem value="controversial">Controversial</SelectItem>
+              <SelectItem value="newest">{t('sortNewest')}</SelectItem>
+              <SelectItem value="oldest">{t('sortOldest')}</SelectItem>
+              <SelectItem value="most_active">{t('sortMostActive')}</SelectItem>
+              <SelectItem value="trending">{t('sortTrending')}</SelectItem>
+              <SelectItem value="most_liked">{t('sortMostLiked')}</SelectItem>
+              <SelectItem value="controversial">{t('sortControversial')}</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -82,7 +84,7 @@ export function ForumFilters({
         {/* Category Filter */}
         {categories.length > 0 && (
           <div className="space-y-2 flex-1 min-w-[200px]">
-            <Label htmlFor="category">Category</Label>
+            <Label htmlFor="category">{t('category')}</Label>
             <Select
               value={categoryFilter || 'all'}
               onValueChange={(value) => onCategoryChange(value === 'all' ? undefined : value)}
@@ -91,7 +93,7 @@ export function ForumFilters({
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Categories</SelectItem>
+                <SelectItem value="all">{t('allCategories')}</SelectItem>
                 {categories.map((cat) => (
                   <SelectItem key={cat.id} value={cat.id}>
                     {cat.name}
@@ -104,17 +106,17 @@ export function ForumFilters({
 
         {/* Date Filter */}
         <div className="space-y-2 flex-1 min-w-[200px]">
-          <Label htmlFor="date">Time Period</Label>
+          <Label htmlFor="date">{t('date')}</Label>
           <Select value={dateFilter} onValueChange={(value: DateFilter) => onDateFilterChange(value)}>
             <SelectTrigger id="date">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Time</SelectItem>
-              <SelectItem value="today">Today</SelectItem>
-              <SelectItem value="week">This Week</SelectItem>
-              <SelectItem value="month">This Month</SelectItem>
-              <SelectItem value="year">This Year</SelectItem>
+              <SelectItem value="all">{t('dateAllTime')}</SelectItem>
+              <SelectItem value="today">{t('dateToday')}</SelectItem>
+              <SelectItem value="week">{t('dateThisWeek')}</SelectItem>
+              <SelectItem value="month">{t('dateThisMonth')}</SelectItem>
+              <SelectItem value="year">{t('dateThisYear')}</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -123,7 +125,7 @@ export function ForumFilters({
         {hasActiveFilters && (
           <Button variant="outline" onClick={onClearFilters} className="mb-0">
             <X className="mr-2 h-4 w-4" />
-            Clear Filters
+            {t('clearFilters')}
           </Button>
         )}
       </div>

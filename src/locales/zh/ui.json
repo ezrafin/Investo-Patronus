@@ -1,0 +1,52 @@
+{
+  "navigation": {
+    "content": "内容",
+    "markets": "市场",
+    "education": "教育",
+    "community": "社区",
+    "companies": "公司",
+    "legal": "法律"
+  },
+  "buttons": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "create": "创建",
+    "update": "更新",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "submit": "提交",
+    "search": "搜索",
+    "filter": "筛选",
+    "clear": "清除",
+    "apply": "应用",
+    "reset": "重置",
+    "confirm": "确认",
+    "signIn": "登录",
+    "signOut": "登出",
+    "register": "注册",
+    "login": "登录"
+  },
+  "labels": {
+    "email": "电子邮件",
+    "password": "密码",
+    "username": "用户名",
+    "name": "姓名",
+    "title": "标题",
+    "description": "描述",
+    "category": "类别",
+    "tags": "标签",
+    "language": "语言"
+  },
+  "messages": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "success": "操作成功完成",
+    "noData": "无可用数据",
+    "notFound": "未找到"
+  }
+}
+

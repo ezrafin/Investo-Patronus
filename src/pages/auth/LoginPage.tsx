@@ -8,6 +8,7 @@ import { useUser } from '@/context/UserContext';
 import { toast } from 'sonner';
 import { Eye, EyeOff, AlertCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/hooks/useTranslation';
 
 // Google icon component
 const GoogleIcon = () => (
@@ -32,6 +33,7 @@ const GoogleIcon = () => (
 );
 
 export default function LoginPage() {
+  const { t } = useTranslation({ namespace: 'ui' });
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -80,8 +82,8 @@ export default function LoginPage() {
       <div className="min-h-[80vh] flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
-            <h1 className="heading-lg mb-2">Welcome back</h1>
-            <p className="text-muted-foreground">Sign in to your account to continue</p>
+            <h1 className="heading-lg mb-2">{t('auth.welcomeBack')}</h1>
+            <p className="text-muted-foreground">{t('auth.signInToContinue')}</p>
           </div>
 
           <div className="premium-card p-8 space-y-6">
@@ -102,21 +104,21 @@ export default function LoginPage() {
               disabled={loading}
             >
               <GoogleIcon />
-              Continue with Google
+              {t('auth.continueWithGoogle')}
             </Button>
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t border-border" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-card px-2 text-muted-foreground">Or continue with email</span>
+                <span className="bg-card px-2 text-muted-foreground">{t('auth.orContinueWithEmail')}</span>
               </div>
             </div>
 
             {/* Email/Password Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t('labels.email')}</Label>
                 <Input
                   id="email"
                   type="email"
@@ -134,12 +136,12 @@ export default function LoginPage() {
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">{t('labels.password')}</Label>
                   <Link
                     to="/auth/forgot-password"
                     className="text-xs text-primary hover:underline"
                   >
-                    Forgot password?
+                    {t('auth.forgotPassword')}
                   </Link>
                 </div>
                 <div className="relative">
@@ -167,14 +169,14 @@ export default function LoginPage() {
               </div>
 
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? 'Signing in...' : 'Sign in'}
+                {loading ? t('auth.signingIn') : t('buttons.signIn')}
               </Button>
             </form>
 
             <p className="text-center text-sm text-muted-foreground">
-              Don't have an account?{' '}
+              {t('auth.dontHaveAccount')}{' '}
               <Link to="/auth/register" className="text-primary hover:underline font-medium">
-                Sign up
+                {t('auth.signUp')}
               </Link>
             </p>
           </div>

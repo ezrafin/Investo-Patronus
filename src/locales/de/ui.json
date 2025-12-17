@@ -1,0 +1,52 @@
+{
+  "navigation": {
+    "content": "Inhalt",
+    "markets": "Märkte",
+    "education": "Bildung",
+    "community": "Community",
+    "companies": "Unternehmen",
+    "legal": "Rechtliches"
+  },
+  "buttons": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "create": "Erstellen",
+    "update": "Aktualisieren",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "submit": "Absenden",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "clear": "Löschen",
+    "apply": "Anwenden",
+    "reset": "Zurücksetzen",
+    "confirm": "Bestätigen",
+    "signIn": "Anmelden",
+    "signOut": "Abmelden",
+    "register": "Registrieren",
+    "login": "Anmelden"
+  },
+  "labels": {
+    "email": "E-Mail",
+    "password": "Passwort",
+    "username": "Benutzername",
+    "name": "Name",
+    "title": "Titel",
+    "description": "Beschreibung",
+    "category": "Kategorie",
+    "tags": "Tags",
+    "language": "Sprache"
+  },
+  "messages": {
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "success": "Vorgang erfolgreich abgeschlossen",
+    "noData": "Keine Daten verfügbar",
+    "notFound": "Nicht gefunden"
+  }
+}
+

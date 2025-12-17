@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark } from 'lucide-react';
 import { logger } from '@/lib/logger';
@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useUser } from '@/context/UserContext';
 import { UserAvatar } from '@/components/user/UserAvatar';
 import { EDUCATION_BASE_PATH, educationRoutes } from '@/lib/educationRoutes';
+import { useTranslation } from '@/hooks/useTranslation';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,108 +19,110 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-const navigation = [{
-  name: 'Content',
-  href: '/news',
-  children: [{
-    name: 'News',
-    href: '/news',
-    icon: BookOpen,
-    description: 'Latest market news and updates'
-  }, {
-    name: 'Analytics',
-    href: '/analytics',
-    icon: BarChart3,
-    description: 'Market analysis and insights'
-  }, {
-    name: 'Forum',
-    href: '/forum',
-    icon: Award,
-    description: 'Community discussions'
-  }]
-}, {
-  name: 'Markets',
-  href: '/markets',
-  children: [{
-    name: 'Indices',
-    href: '/markets/indices',
-    icon: TrendingUp,
-    description: 'Track major market indices'
-  }, {
-    name: 'Stocks',
-    href: '/markets/stocks',
-    icon: BarChart3,
-    description: 'Individual stock analysis'
-  }, {
-    name: 'Commodities',
-    href: '/markets/commodities',
-    icon: Coins,
-    description: 'Gold, oil, and more'
-  }, {
-    name: 'Crypto',
-    href: '/markets/crypto',
-    icon: Bitcoin,
-    description: 'Cryptocurrency markets'
-  }, {
-    name: 'Currencies & ETFs',
-    href: '/markets/currencies',
-    icon: DollarSign,
-    description: 'Forex and exchange-traded funds'
-  }]
-}, {
-  name: 'Education',
-  href: EDUCATION_BASE_PATH,
-  children: [{
-    name: 'Learning',
-    href: educationRoutes.learning,
-    icon: BookOpen,
-    description: 'Articles and guides'
-  }, {
-    name: 'Video Library',
-    href: educationRoutes.video,
-    icon: GraduationCap,
-    description: 'Educational videos'
-  }, {
-    name: 'Investor Course',
-    href: '/course',
-    icon: Rocket,
-    description: 'Structured learning'
-  }]
-}, {
-  name: 'Community',
-  href: '/about',
-  children: [{
-    name: 'About Us',
-    href: '/about',
-    icon: Award,
-    description: 'Learn about our mission'
-  }, {
-    name: 'Contact Us',
-    href: '/contact',
-    icon: BookOpen,
-    description: 'Get in touch'
-  }, {
-    name: 'Careers',
-    href: '/careers',
-    icon: Rocket,
-    description: 'Join our team'
-  }, {
-    name: 'Authors',
-    href: '/authors',
-    icon: Award,
-    description: 'Meet our experts'
-  }]
-}, {
-  name: 'Companies',
-  href: '/companies'
-}];
 export function Header() {
+  const { t } = useTranslation({ namespace: 'ui' });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { user, profile, signOut } = useUser();
   const navigate = useNavigate();
+
+  const navigation = useMemo(() => [{
+    name: t('navigation.content'),
+    href: '/news',
+    children: [{
+      name: t('navigation.news'),
+      href: '/news',
+      icon: BookOpen,
+      description: t('descriptions.news')
+    }, {
+      name: t('navigation.analytics'),
+      href: '/analytics',
+      icon: BarChart3,
+      description: t('descriptions.analytics')
+    }, {
+      name: t('navigation.forum'),
+      href: '/forum',
+      icon: Award,
+      description: t('descriptions.forum')
+    }]
+  }, {
+    name: t('navigation.markets'),
+    href: '/markets',
+    children: [{
+      name: t('navigation.indices'),
+      href: '/markets/indices',
+      icon: TrendingUp,
+      description: t('descriptions.indices')
+    }, {
+      name: t('navigation.stocks'),
+      href: '/markets/stocks',
+      icon: BarChart3,
+      description: t('descriptions.stocks')
+    }, {
+      name: t('navigation.commodities'),
+      href: '/markets/commodities',
+      icon: Coins,
+      description: t('descriptions.commodities')
+    }, {
+      name: t('navigation.crypto'),
+      href: '/markets/crypto',
+      icon: Bitcoin,
+      description: t('descriptions.crypto')
+    }, {
+      name: t('navigation.currenciesEtfs'),
+      href: '/markets/currencies',
+      icon: DollarSign,
+      description: t('descriptions.currenciesEtfs')
+    }]
+  }, {
+    name: t('navigation.education'),
+    href: EDUCATION_BASE_PATH,
+    children: [{
+      name: t('navigation.learning'),
+      href: educationRoutes.learning,
+      icon: BookOpen,
+      description: t('descriptions.learning')
+    }, {
+      name: t('navigation.videoLibrary'),
+      href: educationRoutes.video,
+      icon: GraduationCap,
+      description: t('descriptions.videoLibrary')
+    }, {
+      name: t('navigation.investorCourse'),
+      href: '/course',
+      icon: Rocket,
+      description: t('descriptions.investorCourse')
+    }]
+  }, {
+    name: t('navigation.community'),
+    href: '/about',
+    children: [{
+      name: t('navigation.aboutUs'),
+      href: '/about',
+      icon: Award,
+      description: t('descriptions.aboutUs')
+    }, {
+      name: t('navigation.contactUs'),
+      href: '/contact',
+      icon: BookOpen,
+      description: t('descriptions.contactUs')
+    }, {
+      name: t('navigation.careers'),
+      href: '/careers',
+      icon: Rocket,
+      description: t('descriptions.careers')
+    }, {
+      name: t('navigation.authors'),
+      href: '/authors',
+      icon: Award,
+      description: t('descriptions.authors')
+    }]
+  }, {
+    name: t('navigation.companies'),
+    href: '/companies'
+  }], [t]);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -208,23 +211,23 @@ export function Header() {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => navigate('/profile')}>
                     <User className="mr-2 h-4 w-4" />
-                    Profile
+                    {t('buttons.profile')}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/watchlists')}>
                     <TrendingUp className="mr-2 h-4 w-4" />
-                    Watchlists
+                    {t('buttons.watchlists')}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/bookmarks')}>
                     <BookOpen className="mr-2 h-4 w-4" />
-                    Bookmarks
+                    {t('buttons.bookmarks')}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/community')}>
                     <TrendingUp className="mr-2 h-4 w-4" />
-                    Community
+                    {t('navigation.community')}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/settings')}>
                     <Settings className="mr-2 h-4 w-4" />
-                    Settings
+                    {t('buttons.settings')}
                   </DropdownMenuItem>
                   <AchievementMenuItem />
                   {/* Moderator link - would check user role in real app */}
@@ -238,17 +241,17 @@ export function Header() {
                     navigate('/');
                   }}>
                     <LogOut className="mr-2 h-4 w-4" />
-                    Sign out
+                    {t('buttons.signOut')}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
               <>
                 <Link to="/auth/login" className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                  Sign in
+                  {t('buttons.signIn')}
                 </Link>
                 <Link to="/auth/register" className="px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200 hover:shadow-lg hover:shadow-primary/25">
-                  Sign up
+                  {t('buttons.register')}
                 </Link>
               </>
             )}
@@ -293,7 +296,7 @@ export function Header() {
                 {user ? (
                   <>
                     <Link to="/profile" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 text-sm font-medium border border-border rounded-lg">
-                      Profile
+                      {t('buttons.profile')}
                     </Link>
                     <button
                       onClick={async () => {
@@ -303,16 +306,16 @@ export function Header() {
                       }}
                       className="block w-full text-center px-4 py-3 text-sm font-medium text-destructive border border-destructive/50 rounded-lg"
                     >
-                      Sign out
+                      {t('buttons.signOut')}
                     </button>
                   </>
                 ) : (
                   <>
                     <Link to="/auth/login" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 text-sm font-medium border border-border rounded-lg">
-                      Sign in
+                      {t('buttons.signIn')}
                     </Link>
                     <Link to="/auth/register" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-lg">
-                      Sign up
+                      {t('buttons.register')}
                     </Link>
                   </>
                 )}
@@ -367,7 +370,7 @@ function AchievementMenuItem() {
     <>
       <DropdownMenuItem onSelect={(e) => e.preventDefault()} onClick={handleClick}>
         <Trophy className="mr-2 h-4 w-4" />
-        Achievements
+        {t('buttons.achievements')}
       </DropdownMenuItem>
       <AchievementSystem open={open} onOpenChange={setOpen} />
     </>
