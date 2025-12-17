@@ -131,21 +131,23 @@ export default function MarketsPage() {
           </div>
 
           {/* Market Tabs */}
-          <div className="flex flex-wrap gap-2 mb-6 border-b border-border pb-4">
-            {marketTabs.map((tab) => (
-              <Link
-                key={tab.type}
-                to={`/markets/${tab.type}`}
-                className={cn(
-                  'px-4 py-2 rounded-md text-sm font-medium transition-colors',
-                  marketType === tab.type
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
-                )}
-              >
-                {tab.label}
-              </Link>
-            ))}
+          <div className="mb-6 border-b border-border pb-4">
+            <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1 sm:flex-wrap sm:overflow-visible">
+              {marketTabs.map((tab) => (
+                <Link
+                  key={tab.type}
+                  to={`/markets/${tab.type}`}
+                  className={cn(
+                    'px-4 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap',
+                    marketType === tab.type
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
+                  )}
+                >
+                  {tab.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Search Filter */}

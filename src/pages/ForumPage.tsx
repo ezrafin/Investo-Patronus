@@ -204,13 +204,13 @@ export default function ForumPage() {
               </Button>
             </div>
           ) : loading ? (
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {Array.from({ length: 4 }).map((_, i) => (
                 <SkeletonCard key={i} lines={3} />
               ))}
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {categories.map((category, index) => {
                 const Icon = categoryIcons[category.id] || MessageSquare;
                 return (

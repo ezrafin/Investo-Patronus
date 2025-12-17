@@ -184,12 +184,12 @@ export default function WatchlistPage() {
       />
       <div className="section-spacing">
         <div className="container-wide max-w-6xl">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
             <div>
               <h1 className="heading-lg mb-2">My Watchlists</h1>
               <p className="text-muted-foreground">Track your favorite market instruments</p>
             </div>
-            <Button onClick={() => setShowCreateForm(!showCreateForm)}>
+            <Button onClick={() => setShowCreateForm(!showCreateForm)} className="self-start sm:self-auto">
               <Plus className="mr-2 h-4 w-4" />
               New Watchlist
             </Button>
@@ -338,8 +338,8 @@ function WatchlistCard({ watchlist, onDelete }: { watchlist: Watchlist; onDelete
 
   return (
     <div className="premium-card p-6">
-      <div className="flex items-start justify-between mb-4">
-        <div>
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+        <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <h3 className="font-semibold text-lg">{watchlist.name}</h3>
             {watchlist.is_default && (

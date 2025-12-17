@@ -165,11 +165,11 @@ export default function ForumTopicPage() {
       )}
       {/* Header */}
       <section className="border-b border-border">
-        <div className="container-wide py-12 md:py-16">
+        <div className="container-wide py-10 md:py-16">
           {topic && <Breadcrumbs pageTitle={topic.title} />}
 
-          <div className="flex items-start justify-between gap-4 mb-6">
-            <div className="flex-1">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+            <div className="flex-1 min-w-0">
               <h1 className="heading-md mb-2">{topic.title}</h1>
               {topic.symbol && (
                 <div className="flex items-center gap-2">
@@ -177,7 +177,7 @@ export default function ForumTopicPage() {
                 </div>
               )}
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap md:flex-nowrap items-center justify-start md:justify-end gap-2">
               <Button
                 variant="outline"
                 size="sm"

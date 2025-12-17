@@ -65,19 +65,32 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Filters */}
-          <div className="flex flex-wrap gap-2 mb-10">
-            {typeFilters.map(filter => <Button key={filter.value} variant={activeFilter === filter.value ? 'default' : 'outline'} size="sm" onClick={() => handleFilterChange(filter.value)} className={cn(activeFilter === filter.value && 'bg-primary text-primary-foreground')}>
-                {filter.label}
-              </Button>)}
+          <div className="mb-10">
+            <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1 sm:flex-wrap sm:overflow-visible">
+              {typeFilters.map(filter => (
+                <Button
+                  key={filter.value}
+                  variant={activeFilter === filter.value ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFilterChange(filter.value)}
+                  className={cn(
+                    'whitespace-nowrap',
+                    activeFilter === filter.value && 'bg-primary text-primary-foreground'
+                  )}
+                >
+                  {filter.label}
+                </Button>
+              ))}
+            </div>
           </div>
 
           {/* Articles Grid */}
-          {loading ? <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {loading ? <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {Array.from({
             length: ITEMS_PER_PAGE
           }).map((_, i) => <SkeletonCard key={i} lines={4} />)}
             </div> : paginatedArticles.length > 0 ? <>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedArticles.map((article, index) => <AnalyticsCard key={article.slug} article={article} index={index} />)}
               </div>
               <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />

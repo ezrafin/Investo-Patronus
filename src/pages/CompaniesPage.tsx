@@ -137,55 +137,57 @@ export default function CompaniesPage() {
               />
             </div>
 
-            <div className="flex flex-wrap items-center gap-4">
-            {/* Type Filter Buttons */}
-            <div className="flex flex-wrap gap-2">
-              {organizationTypes.map((type) => (
-                <Button
-                  key={type.value}
-                  variant={selectedType === type.value ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => handleTypeChange(type.value)}
-                  className="text-sm"
-                >
-                  {type.label}
-                </Button>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-2 ml-auto flex-wrap">
-              {/* Region Filter */}
-              <div className="flex items-center gap-2">
-                <Globe className="h-4 w-4 text-muted-foreground" />
-                <Select value={selectedRegion} onValueChange={(v) => handleRegionChange(v as Region | 'all')}>
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Region" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {regions.map((region) => (
-                      <SelectItem key={region.value} value={region.value}>
-                        {region.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
+              {/* Type Filter Buttons */}
+              <div className="mb-2 md:mb-0">
+                <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1 md:flex-wrap md:overflow-visible">
+                  {organizationTypes.map((type) => (
+                    <Button
+                      key={type.value}
+                      variant={selectedType === type.value ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => handleTypeChange(type.value)}
+                      className="text-sm whitespace-nowrap"
+                    >
+                      {type.label}
+                    </Button>
+                  ))}
+                </div>
               </div>
 
-              {/* Sort Dropdown */}
-              <div className="flex items-center gap-2">
-                <ArrowUpDown className="h-4 w-4 text-muted-foreground" />
-                <Select value={sortBy} onValueChange={(v) => setSortBy(v as SortOption)}>
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Sort by" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="combined">Combined Trust</SelectItem>
-                    <SelectItem value="community">Community Trust</SelectItem>
-                    <SelectItem value="expert">Expert Trust</SelectItem>
-                  </SelectContent>
-                </Select>
+              <div className="flex flex-wrap items-center gap-2 md:ml-auto">
+                {/* Region Filter */}
+                <div className="flex items-center gap-2">
+                  <Globe className="h-4 w-4 text-muted-foreground" />
+                  <Select value={selectedRegion} onValueChange={(v) => handleRegionChange(v as Region | 'all')}>
+                    <SelectTrigger className="w-[160px] sm:w-[180px]">
+                      <SelectValue placeholder="Region" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {regions.map((region) => (
+                        <SelectItem key={region.value} value={region.value}>
+                          {region.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Sort Dropdown */}
+                <div className="flex items-center gap-2">
+                  <ArrowUpDown className="h-4 w-4 text-muted-foreground" />
+                  <Select value={sortBy} onValueChange={(v) => setSortBy(v as SortOption)}>
+                    <SelectTrigger className="w-[160px] sm:w-[180px]">
+                      <SelectValue placeholder="Sort by" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="combined">Combined Trust</SelectItem>
+                      <SelectItem value="community">Community Trust</SelectItem>
+                      <SelectItem value="expert">Expert Trust</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
-            </div>
             </div>
           </motion.div>
 
@@ -195,7 +197,7 @@ export default function CompaniesPage() {
           </div>
 
           {/* Organizations Grid */}
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
             {paginatedOrganizations.map((org, index) => (
               <OrganizationCard key={org.id} organization={org} index={index} />
             ))}
