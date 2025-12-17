@@ -46,7 +46,7 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
       >
         {/* Article Image */}
         {article.imageUrl && (
-          <div className="relative h-40 w-full overflow-hidden bg-muted">
+          <div className="relative h-32 sm:h-40 w-full overflow-hidden bg-muted">
             <img
               src={article.imageUrl}
               alt={article.title}
@@ -55,13 +55,13 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-            <span className={`absolute bottom-3 left-3 badge-outline text-xs bg-background/80 backdrop-blur-sm ${isDark ? 'border-border/50 text-muted-foreground' : ''}`}>
+            <span className={`absolute bottom-2 sm:bottom-3 left-2 sm:left-3 badge-outline text-xs bg-background/80 backdrop-blur-sm ${isDark ? 'border-border/50 text-muted-foreground' : ''}`}>
               {typeLabels[article.type] || article.type}
             </span>
           </div>
         )}
 
-        <div className="p-6 flex flex-col h-full">
+        <div className="p-4 sm:p-6 flex flex-col h-full">
           {/* Meta - only show if no image */}
           {!article.imageUrl && (
             <div className="flex items-center gap-3 mb-4">
@@ -76,12 +76,12 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
           )}
 
           {/* Title */}
-          <h3 className="text-lg font-semibold mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2">
+          <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2">
             {article.title}
           </h3>
 
           {/* Excerpt */}
-          <p className="text-sm text-muted-foreground flex-1 leading-relaxed line-clamp-2">
+          <p className="text-xs sm:text-sm text-muted-foreground flex-1 leading-relaxed line-clamp-2">
             {article.excerpt}
           </p>
 

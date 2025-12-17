@@ -69,11 +69,71 @@ export function MarketTable({ data, showVolume = false, showChart = true, market
 
   return (
     <div className="premium-card overflow-hidden">
-      <div className="overflow-x-auto">
-        <table className="w-full">
+      {/* Mobile: Card Mode */}
+      <div className="md:hidden space-y-3 p-4">
+        {sortedData.map((item, index) => {
+          const isPositive = item.change >= 0;
+          return (
+            <motion.div
+              key={item.symbol}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.03 }}
+              className="border border-border/50 rounded-lg p-4 space-y-3"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="font-mono font-semibold text-sm">{item.symbol}</span>
+                    <span className={`inline-flex items-center gap-1 font-mono text-xs font-medium ${
+                      isPositive ? 'text-positive' : 'text-negative'
+                    }`}>
+                      {isPositive ? (
+                        <TrendingUp className="h-3 w-3" />
+                      ) : (
+                        <TrendingDown className="h-3 w-3" />
+                      )}
+                      {Math.abs(item.changePercent).toFixed(2)}%
+                    </span>
+                  </div>
+                  <span className="text-xs text-muted-foreground line-clamp-1">{item.name}</span>
+                </div>
+                <WatchlistButton symbol={item.symbol} marketType={marketType} />
+              </div>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div>
+                  <span className="text-xs text-muted-foreground">Price</span>
+                  <div className="font-mono font-medium">{formatPrice(item.price)}</div>
+                </div>
+                <div>
+                  <span className="text-xs text-muted-foreground">Change</span>
+                  <div className={`font-mono ${isPositive ? 'text-positive' : 'text-negative'}`}>
+                    {isPositive ? '+' : ''}{formatPrice(item.change)}
+                  </div>
+                </div>
+                {showVolume && (
+                  <div className="col-span-2">
+                    <span className="text-xs text-muted-foreground">Volume</span>
+                    <div className="font-mono text-sm">{item.volume || '-'}</div>
+                  </div>
+                )}
+              </div>
+              {showChart && (
+                <div className="h-8 w-full">
+                  <SimpleChart positive={isPositive} />
+                </div>
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Tablet & Desktop: Table Mode */}
+      <div className="hidden md:block overflow-x-auto -webkit-overflow-scrolling-touch">
+        <table className="w-full min-w-[640px]">
           <thead>
             <tr className="border-b border-border/50">
-              <th className="text-left px-4 py-3">
+              <th className="text-left px-3 md:px-4 py-2 md:py-3">
                 <button
                   onClick={() => handleSort('symbol')}
                   className="flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -81,7 +141,7 @@ export function MarketTable({ data, showVolume = false, showChart = true, market
                   Symbol <SortIcon column="symbol" />
                 </button>
               </th>
-              <th className="text-left px-4 py-3">
+              <th className="text-left px-3 md:px-4 py-2 md:py-3">
                 <button
                   onClick={() => handleSort('name')}
                   className="flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -89,7 +149,7 @@ export function MarketTable({ data, showVolume = false, showChart = true, market
                   Name <SortIcon column="name" />
                 </button>
               </th>
-              <th className="text-right px-4 py-3">
+              <th className="text-right px-3 md:px-4 py-2 md:py-3">
                 <button
                   onClick={() => handleSort('price')}
                   className="flex items-center gap-1 justify-end text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -97,7 +157,7 @@ export function MarketTable({ data, showVolume = false, showChart = true, market
                   Price <SortIcon column="price" />
                 </button>
               </th>
-              <th className="text-right px-4 py-3">
+              <th className="text-right px-3 md:px-4 py-2 md:py-3">
                 <button
                   onClick={() => handleSort('change')}
                   className="flex items-center gap-1 justify-end text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -105,7 +165,7 @@ export function MarketTable({ data, showVolume = false, showChart = true, market
                   Change <SortIcon column="change" />
                 </button>
               </th>
-              <th className="text-right px-4 py-3">
+              <th className="text-right px-3 md:px-4 py-2 md:py-3">
                 <button
                   onClick={() => handleSort('changePercent')}
                   className="flex items-center gap-1 justify-end text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -114,7 +174,7 @@ export function MarketTable({ data, showVolume = false, showChart = true, market
                 </button>
               </th>
               {showVolume && (
-                <th className="text-right px-4 py-3">
+                <th className="text-right px-3 md:px-4 py-2 md:py-3">
                   <button
                     onClick={() => handleSort('volume')}
                     className="flex items-center gap-1 justify-end text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -124,11 +184,11 @@ export function MarketTable({ data, showVolume = false, showChart = true, market
                 </th>
               )}
               {showChart && (
-                <th className="text-right px-4 py-3 w-32">
+                <th className="text-right px-3 md:px-4 py-2 md:py-3 w-32">
                   <span className="text-xs font-medium text-muted-foreground">7D</span>
                 </th>
               )}
-              <th className="text-center px-4 py-3 w-24">
+              <th className="text-center px-3 md:px-4 py-2 md:py-3 w-24">
                 <span className="text-xs font-medium text-muted-foreground">Actions</span>
               </th>
             </tr>
@@ -144,22 +204,22 @@ export function MarketTable({ data, showVolume = false, showChart = true, market
                   transition={{ delay: index * 0.03 }}
                   className="border-b border-border/30 last:border-0 table-row-hover"
                 >
-                  <td className="px-4 py-4">
+                  <td className="px-3 md:px-4 py-3 md:py-4">
                     <span className="font-mono font-semibold text-sm">{item.symbol}</span>
                   </td>
-                  <td className="px-4 py-4">
+                  <td className="px-3 md:px-4 py-3 md:py-4">
                     <span className="text-sm text-muted-foreground">{item.name}</span>
                   </td>
-                  <td className="px-4 py-4 text-right">
-                    <span className="font-mono font-medium text-sm">{formatPrice(item.price)}</span>
+                  <td className="px-3 md:px-4 py-3 md:py-4 text-right">
+                    <span className="font-mono font-medium text-sm tabular-nums">{formatPrice(item.price)}</span>
                   </td>
-                  <td className="px-4 py-4 text-right">
-                    <span className={`font-mono text-sm ${isPositive ? 'text-positive' : 'text-negative'}`}>
+                  <td className="px-3 md:px-4 py-3 md:py-4 text-right">
+                    <span className={`font-mono text-sm tabular-nums ${isPositive ? 'text-positive' : 'text-negative'}`}>
                       {isPositive ? '+' : ''}{formatPrice(item.change)}
                     </span>
                   </td>
-                  <td className="px-4 py-4 text-right">
-                    <span className={`inline-flex items-center gap-1 font-mono text-sm font-medium ${
+                  <td className="px-3 md:px-4 py-3 md:py-4 text-right">
+                    <span className={`inline-flex items-center gap-1 font-mono text-sm font-medium tabular-nums ${
                       isPositive ? 'text-positive' : 'text-negative'
                     }`}>
                       {isPositive ? (
@@ -171,18 +231,18 @@ export function MarketTable({ data, showVolume = false, showChart = true, market
                     </span>
                   </td>
                   {showVolume && (
-                    <td className="px-4 py-4 text-right">
-                      <span className="font-mono text-sm text-muted-foreground">{item.volume || '-'}</span>
+                    <td className="px-3 md:px-4 py-3 md:py-4 text-right">
+                      <span className="font-mono text-sm text-muted-foreground tabular-nums">{item.volume || '-'}</span>
                     </td>
                   )}
                   {showChart && (
-                    <td className="px-4 py-4">
+                    <td className="px-3 md:px-4 py-3 md:py-4">
                       <div className="h-8 w-24 ml-auto">
                         <SimpleChart positive={isPositive} />
                       </div>
                     </td>
                   )}
-                  <td className="px-4 py-4">
+                  <td className="px-3 md:px-4 py-3 md:py-4">
                     <div className="flex justify-center">
                       <WatchlistButton symbol={item.symbol} marketType={marketType} />
                     </div>

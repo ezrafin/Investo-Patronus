@@ -34,11 +34,11 @@ export function NewsCard({ news, featured = false, index = 0 }: NewsCardProps) {
     >
       <Link
         to={`/news/${news.id}`}
-        className="group block h-full premium-card p-6 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300"
+        className="group block h-full premium-card p-4 sm:p-6 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300"
       >
         <div className="flex flex-col h-full">
           {/* Meta */}
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 flex-wrap">
             <span className="badge-outline text-xs">
               {marketLabels[news.market] || news.market}
             </span>
@@ -49,15 +49,15 @@ export function NewsCard({ news, featured = false, index = 0 }: NewsCardProps) {
           </div>
 
           {/* Title */}
-          <h3 className={`font-semibold mb-3 group-hover:text-primary transition-colors leading-snug ${
-            featured ? 'text-xl md:text-2xl' : 'text-base md:text-lg'
+          <h3 className={`font-semibold mb-2 sm:mb-3 group-hover:text-primary transition-colors leading-snug ${
+            featured ? 'text-lg sm:text-xl md:text-2xl' : 'text-base sm:text-lg'
           }`}>
             {news.title}
           </h3>
 
           {/* Excerpt */}
           <p className={`text-muted-foreground flex-1 leading-relaxed ${
-            featured ? 'text-base line-clamp-3' : 'text-sm line-clamp-2'
+            featured ? 'text-sm sm:text-base line-clamp-3' : 'text-xs sm:text-sm line-clamp-2'
           }`}>
             {news.excerpt}
           </p>

@@ -18,11 +18,11 @@ export function CompanyCard({ company, index = 0 }: CompanyCardProps) {
     >
       <Link
         to={`/companies/${company.slug}`}
-        className="group block h-full premium-card p-6 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300"
+        className="group block h-full premium-card p-4 sm:p-6 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300"
       >
-        <div className="flex items-start gap-4 mb-4">
+        <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
           {/* Logo */}
-          <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center overflow-hidden flex-shrink-0">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary flex items-center justify-center overflow-hidden flex-shrink-0">
             {company.logo ? (
               <img 
                 src={company.logo} 
@@ -34,12 +34,12 @@ export function CompanyCard({ company, index = 0 }: CompanyCardProps) {
                 }}
               />
             ) : null}
-            <Building2 className={`h-6 w-6 text-muted-foreground ${company.logo ? 'hidden' : ''}`} />
+            <Building2 className={`h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground ${company.logo ? 'hidden' : ''}`} />
           </div>
           
           {/* Title & Sector */}
           <div className="min-w-0 flex-1">
-            <h3 className="font-semibold text-base group-hover:text-primary transition-colors truncate">
+            <h3 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors truncate">
               {company.name}
             </h3>
             <span className="text-xs text-muted-foreground">{company.sector}</span>
@@ -47,7 +47,7 @@ export function CompanyCard({ company, index = 0 }: CompanyCardProps) {
         </div>
 
         {/* Description */}
-        <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+        <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 mb-3 sm:mb-4">
           {company.description}
         </p>
 

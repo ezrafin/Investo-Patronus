@@ -133,22 +133,22 @@ export function ActivityFeed() {
           <Link
             key={`${activity.type}-${activity.id}`}
             to={activity.link}
-            className="block p-3 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-secondary/50 transition-all"
+            className="block p-2 sm:p-3 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-secondary/50 transition-all"
           >
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                <Icon className="h-4 w-4 text-primary" />
+            <div className="flex items-start gap-2 sm:gap-3">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-medium text-sm">{activity.user_name}</span>
+                <div className="flex items-center gap-2 mb-1 flex-wrap">
+                  <span className="font-medium text-xs sm:text-sm">{activity.user_name}</span>
                   <span className="text-xs text-muted-foreground">
                     {activity.type === 'post' ? 'created a discussion' : 'replied'}
                   </span>
                 </div>
-                <div className="font-medium text-sm mb-1 line-clamp-1">{activity.title}</div>
+                <div className="font-medium text-xs sm:text-sm mb-1 line-clamp-1">{activity.title}</div>
                 {activity.content && (
-                  <p className="text-xs text-muted-foreground line-clamp-2 mb-2">
+                  <p className="text-xs text-muted-foreground line-clamp-2 mb-1 sm:mb-2">
                     {activity.content}
                   </p>
                 )}

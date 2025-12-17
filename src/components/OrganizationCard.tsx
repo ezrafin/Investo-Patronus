@@ -100,11 +100,11 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: index * 0.05 }}
-        className="group premium-card p-5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 cursor-pointer"
+        className="group premium-card p-4 sm:p-5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 cursor-pointer"
       >
       {/* Header */}
-      <div className="flex items-start gap-4 mb-4">
-        <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center flex-shrink-0 overflow-hidden border border-border/50">
+      <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center flex-shrink-0 overflow-hidden border border-border/50">
           {organization.logo ? (
             <img 
               src={organization.logo} 
@@ -118,12 +118,12 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
               }}
             />
           ) : null}
-          <Building2 className={`h-6 w-6 text-muted-foreground ${organization.logo ? 'hidden' : ''}`} />
+          <Building2 className={`h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground ${organization.logo ? 'hidden' : ''}`} />
         </div>
         
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <h3 className="font-semibold text-base truncate">{organization.name}</h3>
+            <h3 className="font-semibold text-sm sm:text-base truncate">{organization.name}</h3>
             {organization.regulated && (
               <TooltipProvider>
                 <Tooltip>
@@ -154,12 +154,12 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
       </div>
 
       {/* Description */}
-      <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+      <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 mb-3 sm:mb-4">
         {organization.description}
       </p>
 
       {/* Trust Scores */}
-      <div className="space-y-3 mb-4">
+      <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4">
         <div className="flex items-center gap-3">
           <TooltipProvider>
             <Tooltip>

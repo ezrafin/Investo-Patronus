@@ -153,11 +153,18 @@
 
   html {
     scroll-behavior: smooth;
+    /* Prevent iOS auto-zoom on input focus */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+    /* Smooth scrolling for iOS */
+    -webkit-overflow-scrolling: touch;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -198,69 +205,92 @@
   /* Container utilities */
   .container-narrow {
     @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+    /* Prevent horizontal overflow */
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .container-wide {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    /* Prevent horizontal overflow */
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .container-full {
     @apply max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8;
+    /* Prevent horizontal overflow */
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  /* Section spacing */
+  /* Section spacing - compact on mobile, more space on desktop */
   .section-spacing {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
   }
 
   .section-spacing-sm {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
   }
 
-  /* Typography - Premium Style */
+  /* Typography - Premium Style with responsive adjustments */
   .heading-hero {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.02em] leading-[1.05];
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[-0.02em] leading-[1.05];
   }
 
   .heading-xl {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.02em] leading-[1.1];
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[-0.02em] leading-[1.1];
   }
 
   .heading-lg {
-    @apply text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[-0.02em] leading-[1.15];
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[-0.02em] leading-[1.15];
   }
 
   .heading-md {
-    @apply text-xl sm:text-2xl md:text-3xl font-semibold tracking-[-0.01em] leading-[1.2];
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-[-0.01em] leading-[1.2];
   }
 
   .heading-sm {
-    @apply text-lg sm:text-xl md:text-2xl font-semibold tracking-[-0.01em] leading-[1.25];
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl font-semibold tracking-[-0.01em] leading-[1.25];
   }
 
   .heading-xs {
-    @apply text-base sm:text-lg md:text-xl font-semibold tracking-[-0.01em];
+    @apply text-sm sm:text-base md:text-lg lg:text-xl font-semibold tracking-[-0.01em];
   }
 
   .body-xl {
-    @apply text-lg md:text-xl text-muted-foreground leading-relaxed;
+    @apply text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed;
   }
 
   .body-lg {
-    @apply text-base md:text-lg text-muted-foreground leading-relaxed;
+    @apply text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed;
   }
 
   .body-md {
-    @apply text-sm md:text-base text-muted-foreground leading-relaxed;
+    @apply text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed;
   }
 
   .body-sm {
-    @apply text-xs md:text-sm text-muted-foreground leading-relaxed;
+    @apply text-xs sm:text-sm text-muted-foreground leading-relaxed;
+  }
+
+  /* Text content width limit for readability on desktop */
+  .text-content {
+    @apply max-w-none md:max-w-3xl lg:max-w-4xl;
+  }
+
+  .text-content-wide {
+    @apply max-w-none md:max-w-4xl lg:max-w-5xl;
   }
 
   /* Glass morphism card */
   .glass-card {
     @apply bg-card/50 backdrop-blur-xl border border-border/50 rounded-xl;
+  }
+
+  /* Responsive padding for glass cards */
+  .glass-card-padding {
+    @apply p-4 sm:p-6 md:p-8;
   }
 
   .glass-card-hover {
@@ -349,6 +379,39 @@
   /* Table styles */
   .table-row-hover {
     @apply transition-colors duration-150 hover:bg-secondary/50;
+  }
+
+  /* Horizontal scroll containers - smooth scrolling for iOS */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  /* Ensure inputs don't trigger iOS zoom (min 16px) */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select {
+    font-size: 16px; /* Prevent iOS zoom */
+  }
+
+  @media (min-width: 640px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    textarea,
+    select {
+      font-size: inherit; /* Allow responsive sizing on larger screens */
+    }
   }
 
   /* Link underline animation */

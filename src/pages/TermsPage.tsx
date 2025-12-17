@@ -11,8 +11,8 @@ export default function TermsPage() {
             <p className="text-sm text-muted-foreground">Last updated: December 1, 2024</p>
           </div>
 
-          <div className="space-y-8">
-            <div className="glass-card p-8">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="glass-card p-4 sm:p-6 md:p-8 text-content">
               <h2 className="heading-sm mb-4">1. Acceptance of Terms</h2>
               <p className="body-md">
                 By accessing and using INVESTOPATRONUS, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.

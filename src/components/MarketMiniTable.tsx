@@ -25,13 +25,13 @@ export function MarketMiniTable({ title, data, href, icon: Icon }: MarketMiniTab
     >
       <Link
         to={href}
-        className="group block h-full premium-card p-5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
+        className="group block h-full premium-card p-4 sm:p-5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
       >
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-3 sm:mb-4">
           <div className="flex items-center gap-2">
             {Icon && <Icon className="h-4 w-4 text-primary" />}
-            <h3 className="font-semibold text-sm">{title}</h3>
+            <h3 className="font-semibold text-xs sm:text-sm">{title}</h3>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="live-dot" />
@@ -40,21 +40,21 @@ export function MarketMiniTable({ title, data, href, icon: Icon }: MarketMiniTab
         </div>
 
         {/* Data rows */}
-        <div className="space-y-3">
+        <div className="space-y-2 sm:space-y-3">
           {data.slice(0, 4).map((item) => {
             const isPositive = item.change >= 0;
             return (
-              <div key={item.symbol} className="flex items-center justify-between">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-xs font-mono font-medium text-muted-foreground">
+              <div key={item.symbol} className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 min-w-0 flex-1">
+                  <span className="text-xs font-mono font-medium text-muted-foreground truncate">
                     {item.symbol}
                   </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-sm font-mono font-medium">
+                <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+                  <span className="text-xs sm:text-sm font-mono font-medium tabular-nums">
                     {formatPrice(item.price)}
                   </span>
-                  <span className={`flex items-center gap-0.5 text-xs font-medium ${
+                  <span className={`flex items-center gap-0.5 text-xs font-medium tabular-nums ${
                     isPositive ? 'text-positive' : 'text-negative'
                   }`}>
                     {isPositive ? (

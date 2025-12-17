@@ -102,7 +102,7 @@ export function NewsCardReal({ article, featured = false, index = 0 }: NewsCardR
         className="group block h-full premium-card overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300"
       >
         {/* Image */}
-        <div className={`relative ${featured ? 'h-52' : 'h-40'} w-full overflow-hidden bg-muted`}>
+        <div className={`relative ${featured ? 'h-40 sm:h-52' : 'h-32 sm:h-40'} w-full overflow-hidden bg-muted`}>
           <img
             src={imageUrl}
             alt={article.title}
@@ -114,7 +114,7 @@ export function NewsCardReal({ article, featured = false, index = 0 }: NewsCardR
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
-          <div className="absolute bottom-3 left-3 flex items-center gap-2">
+          <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 flex items-center gap-2 flex-wrap">
             <Badge 
               variant="outline" 
               className={`text-xs bg-background/80 backdrop-blur-sm ${marketColors[article.market] || marketColors.general}`}
@@ -129,9 +129,9 @@ export function NewsCardReal({ article, featured = false, index = 0 }: NewsCardR
           </div>
         </div>
 
-        <div className="p-6 flex flex-col">
+        <div className="p-4 sm:p-6 flex flex-col">
           {/* Meta */}
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-2 sm:mb-3">
             <span className="text-xs text-muted-foreground flex items-center gap-1">
               <Clock className="h-3 w-3" />
               {formattedDate}
@@ -139,8 +139,8 @@ export function NewsCardReal({ article, featured = false, index = 0 }: NewsCardR
           </div>
 
           {/* Title */}
-          <h3 className={`font-semibold mb-3 group-hover:text-primary transition-colors leading-snug ${
-            featured ? 'text-xl md:text-2xl line-clamp-2' : 'text-base md:text-lg line-clamp-2'
+          <h3 className={`font-semibold mb-2 sm:mb-3 group-hover:text-primary transition-colors leading-snug ${
+            featured ? 'text-lg sm:text-xl md:text-2xl line-clamp-2' : 'text-base sm:text-lg line-clamp-2'
           }`}>
             {article.title}
           </h3>
@@ -148,7 +148,7 @@ export function NewsCardReal({ article, featured = false, index = 0 }: NewsCardR
           {/* Excerpt */}
           {article.excerpt && (
             <p className={`text-muted-foreground flex-1 leading-relaxed ${
-              featured ? 'text-base line-clamp-3' : 'text-sm line-clamp-2'
+              featured ? 'text-sm sm:text-base line-clamp-3' : 'text-xs sm:text-sm line-clamp-2'
             }`}>
               {article.excerpt}
             </p>

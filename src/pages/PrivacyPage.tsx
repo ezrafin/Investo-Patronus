@@ -11,8 +11,8 @@ export default function PrivacyPage() {
             <p className="text-sm text-muted-foreground">Last updated: December 1, 2024</p>
           </div>
 
-          <div className="space-y-8">
-            <div className="glass-card p-8">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="glass-card p-4 sm:p-6 md:p-8 text-content">
               <h2 className="heading-sm mb-4">1. Information We Collect</h2>
               <p className="body-md mb-4">We collect information you provide directly to us, including:</p>
               <ul className="list-disc pl-6 space-y-2 body-md">

@@ -11,8 +11,8 @@ export default function DisclaimerPage() {
             <p className="text-sm text-muted-foreground">Last updated: December 1, 2024</p>
           </div>
 
-          <div className="prose prose-invert max-w-none">
-            <div className="glass-card p-8 mb-8 border-l-4 border-primary">
+          <div className="prose prose-invert max-w-none text-content">
+            <div className="glass-card p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border-l-4 border-primary">
               <p className="text-lg font-medium mb-0">
                 The information provided on INVESTOPATRONUS is for educational and informational purposes only and should not be construed as financial advice.
               </p>

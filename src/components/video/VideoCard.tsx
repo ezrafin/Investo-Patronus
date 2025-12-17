@@ -53,14 +53,14 @@ export function VideoCard({ video }: VideoCardProps) {
             </span>
           </div>
         </div>
-        <div className="p-4">
+        <div className="p-3 sm:p-4">
           <div className="flex items-center gap-2 mb-2">
             <span className="badge-secondary text-xs">{formatLabels[video.format]}</span>
           </div>
-          <h3 className="font-semibold mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+          <h3 className="font-semibold text-sm sm:text-base mb-2 line-clamp-2 group-hover:text-primary transition-colors">
             {video.title}
           </h3>
-          <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+          <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 mb-2 sm:mb-3">
             {video.description}
           </p>
           <div className="flex flex-wrap gap-1">
