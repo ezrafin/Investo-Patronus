@@ -200,12 +200,9 @@ export function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-64">
                   <DropdownMenuLabel>
-                    <div className="flex flex-col space-y-1.5">
-                      <div className="flex items-center justify-between gap-2">
-                        <p className="text-sm font-medium truncate flex-1">{profile?.display_name || profile?.username || 'User'}</p>
-                        <AchievementBadge userId={user.id} />
-                      </div>
-                      <p className="text-xs text-muted-foreground truncate">{user.email}</p>
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="text-sm font-medium truncate flex-1">{profile?.display_name || profile?.username || 'User'}</p>
+                      <AchievementBadge userId={user.id} />
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />

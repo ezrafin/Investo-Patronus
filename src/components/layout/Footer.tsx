@@ -157,11 +157,10 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-12 pt-8 border-t border-border flex items-center justify-center">
+          <p className="text-sm text-muted-foreground text-center">
             © {new Date().getFullYear()} INVESTOPATRONUS. All rights reserved.
           </p>
-          
         </div>
       </div>
     </footer>;
