@@ -4,7 +4,6 @@ import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { requestNotificationPermission, showNotification, formatNotificationMessage } from '@/lib/notifications';
 import { supabase } from '@/integrations/supabase/client';
 import type { RealtimeChannel } from '@supabase/supabase-js';
-import { useTranslation } from '@/hooks/useTranslation';
 
 /**
  * NotificationManager component
@@ -13,7 +12,6 @@ import { useTranslation } from '@/hooks/useTranslation';
 export function NotificationManager() {
   const { user } = useUser();
   const { preferences } = useUserPreferences();
-  const { t } = useTranslation({ namespace: 'forum' });
 
   useEffect(() => {
     if (!user || !preferences.push_notifications) {
@@ -53,14 +51,14 @@ export function NotificationManager() {
             data?: Record<string, any>;
           };
 
+          // Format notification without translation dependency
           const formatted = formatNotificationMessage(
             notification.type as any,
             {
               authorName: notification.data?.authorName,
               discussionTitle: notification.data?.discussionTitle,
               reactionType: notification.data?.reactionType,
-            },
-            t
+            }
           );
 
           // Show browser notification
