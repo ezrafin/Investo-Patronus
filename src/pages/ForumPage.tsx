@@ -12,8 +12,10 @@ import { useForumCategories } from '@/hooks/useForumCategories';
 import { useForumTopics } from '@/hooks/useForumTopics';
 import { AssetBadge } from '@/components/forum/AssetBadge';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function ForumPage() {
+  const { t } = useTranslation({ namespace: 'forum' });
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { user } = useUser();
@@ -175,16 +177,16 @@ export default function ForumPage() {
   return (
     <Layout>
       <SEOHead
-        title="Forum — INVESTOPATRONUS Community Discussions"
-        description="Browse investor discussions, ask questions, and share insights about global markets."
+        title={t('pageTitle')}
+        description={t('pageDescription')}
       />
       {/* Hero */}
       <section className="border-b border-border">
         <div className="container-wide py-16 md:py-24">
-          <span className="badge-outline mb-4">Community</span>
-          <h1 className="heading-lg mb-4">Forum</h1>
+          <span className="badge-outline mb-4">{t('community')}</span>
+          <h1 className="heading-lg mb-4">{t('forumTitle')}</h1>
           <p className="body-lg max-w-2xl">
-            Discuss investment strategies, share experiences, and analyze markets with the community
+            {t('forumDescription')}
           </p>
         </div>
       </section>
@@ -192,15 +194,15 @@ export default function ForumPage() {
       {/* Categories */}
       <section className="section-spacing-sm">
         <div className="container-wide">
-          <h2 className="heading-sm mb-8">Categories</h2>
+          <h2 className="heading-sm mb-8">{t('categories')}</h2>
           {error ? (
             <div className="premium-card p-12 text-center">
               <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
-              <h3 className="font-semibold text-lg mb-2">Error loading categories</h3>
+              <h3 className="font-semibold text-lg mb-2">{t('errorLoadingCategories')}</h3>
               <p className="text-muted-foreground mb-6">{error}</p>
               <Button onClick={() => { refetchCategories(); refetchTopics(); }} variant="outline">
                 <RefreshCw className="mr-2 h-4 w-4" />
-                Try Again
+                {t('tryAgain')}
               </Button>
             </div>
           ) : loading ? (
@@ -237,11 +239,11 @@ export default function ForumPage() {
                         <div className="flex items-center gap-4 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1.5">
                             <MessageCircle className="h-3.5 w-3.5" />
-                            {category.topicCount.toLocaleString()} topics
+                            {category.topicCount.toLocaleString()} {t('topics')}
                           </span>
                           <span className="flex items-center gap-1.5">
                             <Users className="h-3.5 w-3.5" />
-                            {category.postCount.toLocaleString()} posts
+                            {category.postCount.toLocaleString()} {t('posts')}
                           </span>
                         </div>
                       </div>
@@ -280,14 +282,14 @@ export default function ForumPage() {
           <div className="flex items-center justify-between mb-8">
             <h2 className="heading-sm">
               {categoryFilter 
-                ? categories.find(c => c.id === categoryFilter)?.name || 'Discussions'
-                : 'All Discussions'}
+                ? categories.find(c => c.id === categoryFilter)?.name || t('discussions')
+                : t('allDiscussions')}
             </h2>
             {user && (
               <Link to="/forum/new">
                 <Button>
                   <Plus className="mr-2 h-4 w-4" />
-                  New discussion
+                  {t('newDiscussion')}
                 </Button>
               </Link>
             )}
@@ -301,17 +303,17 @@ export default function ForumPage() {
           ) : filteredAndSortedTopics.length === 0 ? (
             <div className="premium-card p-12 text-center">
               <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="font-semibold text-lg mb-2">No discussions found</h3>
+              <h3 className="font-semibold text-lg mb-2">{t('noDiscussionsFound')}</h3>
               <p className="text-muted-foreground mb-6">
                 {searchQuery || categoryFilter || dateFilter !== 'all'
-                  ? 'Try adjusting your filters'
-                  : 'Be the first to start a discussion.'}
+                  ? t('tryAdjustingFilters')
+                  : t('beFirstToStart')}
               </p>
               {user && (
                 <Link to="/forum/new">
                   <Button>
                     <Plus className="mr-2 h-4 w-4" />
-                    Start Discussion
+                    {t('startDiscussion')}
                   </Button>
                 </Link>
               )}
@@ -346,7 +348,7 @@ export default function ForumPage() {
                         <span className="font-medium text-foreground/80">{topic.author}</span>
                         <span className="hidden sm:inline">•</span>
                         <span className="hidden sm:inline">
-                          Last activity ·{' '}
+                          {t('lastActivity')} ·{' '}
                           {new Date(topic.lastActivity).toLocaleString('en-US', {
                             month: 'short',
                             day: '2-digit',
@@ -365,7 +367,7 @@ export default function ForumPage() {
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1 sm:hidden">
                         <MessageCircle className="h-3.5 w-3.5" />
                         <span className="tabular-nums">{topic.replies}</span>
-                        <span>replies</span>
+                        <span>{t('replies').toLowerCase()}</span>
                       </div>
                     </div>
                     
@@ -387,13 +389,13 @@ export default function ForumPage() {
               {visibleCount < filteredAndSortedTopics.length && (
                 <div ref={loadMoreRef} className="flex justify-center py-6">
                   <div className="text-sm text-muted-foreground">
-                    Loading more discussions...
+                    {t('loadingMore')}
                   </div>
                 </div>
               )}
               
               <div className="text-center py-4 text-xs text-muted-foreground">
-                Showing {visibleTopics.length} of {filteredAndSortedTopics.length} discussions
+                {t('showing')} {visibleTopics.length} {t('of')} {filteredAndSortedTopics.length} {t('discussionsCount')}
               </div>
             </>
           )}

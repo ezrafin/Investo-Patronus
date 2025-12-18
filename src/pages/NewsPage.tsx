@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { NewsCardReal } from '@/components/NewsCardReal';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
@@ -8,28 +8,11 @@ import { useNews } from '@/hooks/useNews';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const ITEMS_PER_PAGE = 15;
-const marketFilters = [{
-  value: 'all',
-  label: 'All'
-}, {
-  value: 'indices',
-  label: 'Indices'
-}, {
-  value: 'stocks',
-  label: 'Stocks'
-}, {
-  value: 'crypto',
-  label: 'Crypto'
-}, {
-  value: 'commodities',
-  label: 'Commodities'
-}, {
-  value: 'political',
-  label: 'Political'
-}];
 export default function NewsPage() {
+  const { t } = useTranslation({ namespace: 'ui' });
   const [activeFilter, setActiveFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const {
@@ -42,6 +25,18 @@ export default function NewsPage() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [isFetchingHistorical, setIsFetchingHistorical] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const marketFilters = useMemo(
+    () => [
+      { value: 'all', label: t('newsPage.filterAll') },
+      { value: 'indices', label: t('newsPage.filterIndices') },
+      { value: 'stocks', label: t('newsPage.filterStocks') },
+      { value: 'crypto', label: t('newsPage.filterCrypto') },
+      { value: 'commodities', label: t('newsPage.filterCommodities') },
+      { value: 'political', label: t('newsPage.filterPolitical') },
+    ],
+    [t]
+  );
   const handleRefresh = async () => {
     setIsRefreshing(true);
     await refetch();
@@ -124,12 +119,11 @@ export default function NewsPage() {
           <div className="mb-10">
             <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
               <div>
-                <h1 className="heading-lg mb-2">News</h1>
+                <h1 className="heading-lg mb-2">{t('newsPage.title')}</h1>
                 <p className="body-md text-muted-foreground max-w-2xl">
-                  Latest financial and political news from around the world
+                  {t('newsPage.description')}
                 </p>
               </div>
-              
             </div>
           </div>
 
@@ -157,7 +151,7 @@ export default function NewsPage() {
           {error && <div className="text-center py-10 text-destructive">
               <p>{error}</p>
               <Button variant="outline" onClick={handleRefresh} className="mt-4">
-                Try Again
+                {t('messages.error')}
               </Button>
             </div>}
 
@@ -172,7 +166,7 @@ export default function NewsPage() {
               </div>
               <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
             </> : <div className="text-center py-20">
-              <p className="text-muted-foreground">No news found</p>
+              <p className="text-muted-foreground">{t('newsPage.noNews')}</p>
             </div>}
         </div>
       </section>

@@ -15,17 +15,10 @@ import { Link } from 'react-router-dom';
 import { useForumCategories } from '@/hooks/useForumCategories';
 import { checkRateLimit } from '@/lib/api/rateLimit';
 import { z } from 'zod';
-
-const createDiscussionSchema = z.object({
-  title: z.string().min(10, 'Title must be at least 10 characters'),
-  content: z.string().min(50, 'Content should be at least 50 characters'),
-  category: z.string(),
-  tags: z.string().optional(),
-  symbol: z.string().optional(),
-  asset_type: z.enum(['stock', 'crypto', 'index', 'commodity', 'currency', 'etf']).optional(),
-});
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function CreateDiscussionPage() {
+  const { t } = useTranslation({ namespace: 'forum' });
   const { user, profile } = useUser();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
@@ -52,10 +45,10 @@ export default function CreateDiscussionPage() {
       <Layout>
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
-            <h1 className="heading-lg mb-4">Please sign in</h1>
-            <p className="text-muted-foreground mb-6">You need to be signed in to create a discussion.</p>
+            <h1 className="heading-lg mb-4">{t('auth.pleaseSignIn', 'ui')}</h1>
+            <p className="text-muted-foreground mb-6">{t('needSignInToCreate')}</p>
             <Link to="/auth/login">
-              <Button>Sign in</Button>
+              <Button>{t('buttons.signIn', 'ui')}</Button>
             </Link>
           </div>
         </div>
@@ -65,6 +58,15 @@ export default function CreateDiscussionPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const createDiscussionSchema = z.object({
+      title: z.string().min(10, 'Title must be at least 10 characters'),
+      content: z.string().min(50, 'Content should be at least 50 characters'),
+      category: z.string(),
+      tags: z.string().optional(),
+      symbol: z.string().optional(),
+      asset_type: z.enum(['stock', 'crypto', 'index', 'commodity', 'currency', 'etf']).optional(),
+    });
 
     const validation = createDiscussionSchema.safeParse({
       title: title.trim(),
@@ -90,7 +92,7 @@ export default function CreateDiscussionPage() {
     // Check rate limit
     const rateLimitCheck = await checkRateLimit('create_discussion', 10, 60);
     if (!rateLimitCheck.allowed) {
-      toast.error(rateLimitCheck.message || 'Rate limit exceeded. Please wait before creating another discussion.');
+      toast.error(rateLimitCheck.message || t('rateLimitCreateExceeded'));
       return;
     }
 
@@ -121,10 +123,10 @@ export default function CreateDiscussionPage() {
       // Invalidate forum topics queries to refresh the list
       queryClient.invalidateQueries({ queryKey: ['forumTopics'] });
 
-      toast.success('Discussion created successfully');
+      toast.success(t('discussionCreatedSuccess'));
       navigate(`/forum/${data.id}`);
     } catch (error: any) {
-      toast.error(error.message || 'Failed to create discussion');
+      toast.error(error.message || t('discussionCreatedError'));
     } finally {
       setSubmitting(false);
     }
@@ -133,9 +135,9 @@ export default function CreateDiscussionPage() {
   return (
     <Layout>
       <div className="section-spacing">
-        <div className="container-wide max-w-4xl">
+          <div className="container-wide max-w-4xl">
 
-          <h1 className="heading-lg mb-8">Create new discussion</h1>
+          <h1 className="heading-lg mb-8">{t('createDiscussionPageTitle')}</h1>
 
           <div className="premium-card p-6 md:p-8 space-y-6">
             <div className="space-y-2">
@@ -240,12 +242,12 @@ export default function CreateDiscussionPage() {
               <div className="flex items-center justify-end gap-4">
                 <Link to="/forum">
                   <Button type="button" variant="outline" disabled={submitting}>
-                    Cancel
+                    {t('buttons.cancel', 'ui')}
                   </Button>
                 </Link>
                 <Button type="submit" disabled={submitting}>
                   <Send className="mr-2 h-4 w-4" />
-                  {submitting ? 'Creating...' : 'Create Discussion'}
+                  {submitting ? t('buttons.submit', 'ui') : t('createDiscussion')}
                 </Button>
               </div>
             </form>

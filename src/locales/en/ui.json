@@ -140,6 +140,17 @@
     "needSignIn": "You need to be signed in to access settings.",
     "loadingSettings": "Loading settings..."
   },
+  "newsPage": {
+    "title": "News",
+    "description": "Latest financial and political news from around the world",
+    "filterAll": "All",
+    "filterIndices": "Indices",
+    "filterStocks": "Stocks",
+    "filterCrypto": "Crypto",
+    "filterCommodities": "Commodities",
+    "filterPolitical": "Political",
+    "noNews": "No news found"
+  },
   "descriptions": {
     "news": "Latest market news and updates",
     "analytics": "Market analysis and insights",
