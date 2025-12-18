@@ -1,17 +1,20 @@
 import { Layout } from '@/components/layout/Layout';
 import { Link } from 'react-router-dom';
 import { authors } from '@/data/authors';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function AuthorsPage() {
+  const { t } = useTranslation({ namespace: 'ui' });
+
   return (
     <Layout>
       <div className="pt-24 pb-16">
         <section className="container-wide section-spacing-sm">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <span className="badge-primary mb-4">Authors</span>
-            <h1 className="heading-xl mb-6">Meet Our Experts</h1>
+            <span className="badge-primary mb-4">{t('authorsPage.badge')}</span>
+            <h1 className="heading-xl mb-6">{t('authorsPage.heroTitle')}</h1>
             <p className="body-xl">
-              Our team of experienced analysts and writers bring you the insights you need to make informed investment decisions.
+              {t('authorsPage.heroSubtitle')}
             </p>
           </div>
 
@@ -26,7 +29,7 @@ export default function AuthorsPage() {
                 <h3 className="heading-xs mb-1">{author.display_name}</h3>
                 <p className="text-sm text-primary mb-3">{author.bio}</p>
                 <div className="text-sm text-muted-foreground">
-                  {author.post_count} articles published
+                  {t('authorsPage.publishedCount', { count: author.post_count })}
                 </div>
               </div>
             ))}
@@ -34,12 +37,12 @@ export default function AuthorsPage() {
 
           {/* Become an Author */}
           <div className="mt-16 glass-card p-8 lg:p-12 text-center">
-            <h2 className="heading-md mb-4">Want to Contribute?</h2>
+            <h2 className="heading-md mb-4">{t('authorsPage.ctaTitle')}</h2>
             <p className="body-lg mb-6 max-w-2xl mx-auto">
-              We are always looking for knowledgeable writers to join our team. Share your expertise with our audience.
+              {t('authorsPage.ctaSubtitle')}
             </p>
             <Link to="/contact" className="btn-primary">
-              Apply to Write
+              {t('authorsPage.ctaButton')}
             </Link>
           </div>
         </section>

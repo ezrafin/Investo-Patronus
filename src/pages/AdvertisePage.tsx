@@ -1,52 +1,55 @@
 import { Layout } from '@/components/layout/Layout';
 import { Target, Users, TrendingUp, Zap, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const stats = [
-  { value: '500K+', label: 'Monthly Visitors' },
-  { value: '2.5M+', label: 'Page Views' },
-  { value: '150K+', label: 'Newsletter Subscribers' },
-  { value: '85%', label: 'High-Net-Worth Audience' },
-];
-
-const adFormats = [
-  {
-    icon: Target,
-    title: 'Display Advertising',
-    description: 'Premium banner placements across our platform with various sizes and formats.',
-    price: 'From $15 CPM',
-  },
-  {
-    icon: Users,
-    title: 'Sponsored Content',
-    description: 'Native articles and research reports that integrate naturally with our content.',
-    price: 'From $5,000',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Newsletter Sponsorship',
-    description: 'Reach our engaged email audience with dedicated or featured placements.',
-    price: 'From $2,500',
-  },
-  {
-    icon: Zap,
-    title: 'Custom Campaigns',
-    description: 'Tailored advertising solutions designed for your specific marketing goals.',
-    price: 'Custom Pricing',
-  },
-];
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function AdvertisePage() {
+  const { t } = useTranslation({ namespace: 'ui' });
+
+  const stats = [
+    { value: '500K+', label: t('advertisePage.statsVisitors') },
+    { value: '2.5M+', label: t('advertisePage.statsPageViews') },
+    { value: '150K+', label: t('advertisePage.statsSubscribers') },
+    { value: '85%', label: t('advertisePage.statsHnwi') },
+  ];
+
+  const adFormats = [
+    {
+      icon: Target,
+      title: t('advertisePage.formatDisplayTitle'),
+      description: t('advertisePage.formatDisplayDesc'),
+      price: t('advertisePage.formatDisplayPrice'),
+    },
+    {
+      icon: Users,
+      title: t('advertisePage.formatSponsoredTitle'),
+      description: t('advertisePage.formatSponsoredDesc'),
+      price: t('advertisePage.formatSponsoredPrice'),
+    },
+    {
+      icon: TrendingUp,
+      title: t('advertisePage.formatNewsletterTitle'),
+      description: t('advertisePage.formatNewsletterDesc'),
+      price: t('advertisePage.formatNewsletterPrice'),
+    },
+    {
+      icon: Zap,
+      title: t('advertisePage.formatCustomTitle'),
+      description: t('advertisePage.formatCustomDesc'),
+      price: t('advertisePage.formatCustomPrice'),
+    },
+  ];
+
   return (
     <Layout>
       <div className="pt-24 pb-16">
         {/* Hero */}
         <section className="container-wide section-spacing-sm">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="badge-primary mb-4">Advertise</span>
-            <h1 className="heading-xl mb-6">Reach Serious Investors</h1>
+            <span className="badge-primary mb-4">{t('advertisePage.badge')}</span>
+            <h1 className="heading-xl mb-6">{t('advertisePage.heroTitle')}</h1>
             <p className="body-xl">
-              Connect your brand with our highly engaged audience of investors, traders, and financial professionals.
+              {t('advertisePage.heroSubtitle')}
             </p>
           </div>
         </section>
@@ -67,9 +70,9 @@ export default function AdvertisePage() {
         <section className="section-gradient section-spacing">
           <div className="container-wide">
             <div className="text-center mb-12">
-              <h2 className="heading-lg mb-4">Advertising Solutions</h2>
+              <h2 className="heading-lg mb-4">{t('advertisePage.solutionsTitle')}</h2>
               <p className="body-lg max-w-2xl mx-auto">
-                Choose from our range of advertising options to meet your marketing objectives.
+                {t('advertisePage.solutionsSubtitle')}
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -92,26 +95,26 @@ export default function AdvertisePage() {
           <div className="glass-card p-8 lg:p-12">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="heading-lg mb-4">Our Audience</h2>
+                <h2 className="heading-lg mb-4">{t('advertisePage.audienceTitle')}</h2>
                 <p className="body-lg mb-6">
-                  Our readers are financially sophisticated individuals actively managing their investments.
+                  {t('advertisePage.audienceSubtitle')}
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span>Average portfolio size: $500K+</span>
+                    <span>{t('advertisePage.audiencePoint1')}</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span>70% make investment decisions weekly</span>
+                    <span>{t('advertisePage.audiencePoint2')}</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span>60% are financial professionals</span>
+                    <span>{t('advertisePage.audiencePoint3')}</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span>Average session duration: 8 minutes</span>
+                    <span>{t('advertisePage.audiencePoint4')}</span>
                   </li>
                 </ul>
               </div>
@@ -127,16 +130,16 @@ export default function AdvertisePage() {
         {/* CTA */}
         <section className="container-wide">
           <div className="glass-card p-8 lg:p-12 text-center">
-            <h2 className="heading-md mb-4">Request a Media Kit</h2>
+            <h2 className="heading-md mb-4">{t('advertisePage.ctaTitle')}</h2>
             <p className="body-lg mb-6 max-w-2xl mx-auto">
-              Download our comprehensive media kit or speak with our advertising team.
+              {t('advertisePage.ctaSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg">
-                Download Media Kit
+                {t('advertisePage.ctaDownload')}
               </Button>
               <Button size="lg" variant="outline">
-                Contact Sales <ArrowRight className="h-4 w-4 ml-2" />
+                {t('advertisePage.ctaContact')} <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </div>
           </div>

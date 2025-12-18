@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
+import { useTranslation } from '@/hooks/useTranslation';
 export default function ContactPage() {
+  const { t } = useTranslation({ namespace: 'ui' });
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,7 +21,7 @@ export default function ContactPage() {
 
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    toast.success('Message sent successfully! We will get back to you soon.');
+    toast.success(t('contactPage.toastSuccess'));
     setFormData({
       name: '',
       email: '',
@@ -32,10 +34,10 @@ export default function ContactPage() {
       <div className="pt-24 pb-16">
         <section className="container-wide section-spacing-sm">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <span className="badge-primary mb-4">Contact Us</span>
-            <h1 className="heading-xl mb-6">Get in Touch</h1>
+            <span className="badge-primary mb-4">{t('contactPage.badge')}</span>
+            <h1 className="heading-xl mb-6">{t('contactPage.heroTitle')}</h1>
             <p className="body-xl">
-              Have questions or feedback? We would love to hear from you. Our team is here to help.
+              {t('contactPage.heroSubtitle')}
             </p>
           </div>
 
@@ -48,9 +50,9 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-sm text-muted-foreground">support@investopatronus.com</p>
-                    <p className="text-sm text-muted-foreground">press@investopatronus.com</p>
+                    <h3 className="font-semibold mb-1">{t('contactPage.emailTitle')}</h3>
+                    <p className="text-sm text-muted-foreground">{t('contactPage.emailSupport')}</p>
+                    <p className="text-sm text-muted-foreground">{t('contactPage.emailPress')}</p>
                   </div>
                 </div>
               </div>
@@ -63,9 +65,9 @@ export default function ContactPage() {
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Office</h3>
-                    <p className="text-sm text-muted-foreground">123 Financial District</p>
-                    <p className="text-sm text-muted-foreground">New York, NY 10004</p>
+                    <h3 className="font-semibold mb-1">{t('contactPage.officeTitle')}</h3>
+                    <p className="text-sm text-muted-foreground">{t('contactPage.officeLine1')}</p>
+                    <p className="text-sm text-muted-foreground">{t('contactPage.officeLine2')}</p>
                   </div>
                 </div>
               </div>
@@ -74,40 +76,40 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <form onSubmit={handleSubmit} className="glass-card p-8">
-                <h2 className="heading-sm mb-6">Send us a message</h2>
+                <h2 className="heading-sm mb-6">{t('contactPage.formTitle')}</h2>
                 <div className="grid sm:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Name</label>
+                    <label className="text-sm font-medium mb-2 block">{t('contactPage.labelName')}</label>
                     <Input value={formData.name} onChange={e => setFormData({
                     ...formData,
                     name: e.target.value
-                  })} placeholder="Your name" required />
+                  })} placeholder={t('contactPage.placeholderName')} required />
                   </div>
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Email</label>
+                    <label className="text-sm font-medium mb-2 block">{t('contactPage.labelEmail')}</label>
                     <Input type="email" value={formData.email} onChange={e => setFormData({
                     ...formData,
                     email: e.target.value
-                  })} placeholder="your@email.com" required />
+                  })} placeholder={t('contactPage.placeholderEmail')} required />
                   </div>
                 </div>
                 <div className="mb-4">
-                  <label className="text-sm font-medium mb-2 block">Subject</label>
+                  <label className="text-sm font-medium mb-2 block">{t('contactPage.labelSubject')}</label>
                   <Input value={formData.subject} onChange={e => setFormData({
                   ...formData,
                   subject: e.target.value
-                })} placeholder="How can we help?" required />
+                })} placeholder={t('contactPage.placeholderSubject')} required />
                 </div>
                 <div className="mb-6">
-                  <label className="text-sm font-medium mb-2 block">Message</label>
+                  <label className="text-sm font-medium mb-2 block">{t('contactPage.labelMessage')}</label>
                   <Textarea value={formData.message} onChange={e => setFormData({
                   ...formData,
                   message: e.target.value
-                })} placeholder="Your message..." rows={6} required />
+                })} placeholder={t('contactPage.placeholderMessage')} rows={6} required />
                 </div>
                 <Button type="submit" className="w-full" disabled={isSubmitting}>
                   <Send className="h-4 w-4 mr-2" />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? t('contactPage.buttonSending') : t('contactPage.buttonSend')}
                 </Button>
               </form>
             </div>

@@ -5,17 +5,19 @@ import { MarketMiniTable } from '@/components/MarketMiniTable';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { useAllMarkets } from '@/hooks/useAllMarkets';
 import { ArrowRight, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export const MarketDataSection = memo(function MarketDataSection() {
   const { indices, stocks, crypto, commodities, currencies, loading: marketLoading } = useAllMarkets();
+  const { t } = useTranslation({ namespace: 'ui' });
 
   const marketBlocks = useMemo(() => [
-    { title: 'Indices', data: indices.data, href: '/markets/indices', icon: TrendingUp },
-    { title: 'Stocks', data: stocks.data, href: '/markets/stocks', icon: BarChart3 },
-    { title: 'Commodities', data: commodities.data, href: '/markets/commodities', icon: Coins },
-    { title: 'Crypto', data: crypto.data, href: '/markets/crypto', icon: Bitcoin },
-    { title: 'Currencies', data: currencies.data, href: '/markets/currencies', icon: DollarSign },
-  ], [indices.data, stocks.data, commodities.data, crypto.data, currencies.data]);
+    { title: t('marketsPage.indicesTitle'), data: indices.data, href: '/markets/indices', icon: TrendingUp },
+    { title: t('marketsPage.stocksTitle'), data: stocks.data, href: '/markets/stocks', icon: BarChart3 },
+    { title: t('marketsPage.commoditiesTitle'), data: commodities.data, href: '/markets/commodities', icon: Coins },
+    { title: t('marketsPage.cryptoTitle'), data: crypto.data, href: '/markets/crypto', icon: Bitcoin },
+    { title: t('marketsPage.currenciesTitle'), data: currencies.data, href: '/markets/currencies', icon: DollarSign },
+  ], [indices.data, stocks.data, commodities.data, crypto.data, currencies.data, t]);
 
   return (
     <section className="section-spacing-sm section-gradient">
@@ -27,11 +29,11 @@ export const MarketDataSection = memo(function MarketDataSection() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10"
         >
           <div>
-            <span className="badge-primary mb-4">Markets</span>
-            <h2 className="heading-md">Real-Time Market Data</h2>
+            <span className="badge-primary mb-4">{t('marketDataSection.badge')}</span>
+            <h2 className="heading-md">{t('marketDataSection.heading')}</h2>
           </div>
           <Link to="/markets/indices" className="flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-            All Markets <ArrowRight className="h-4 w-4" />
+            {t('marketDataSection.allMarkets')} <ArrowRight className="h-4 w-4" />
           </Link>
         </motion.div>
 
