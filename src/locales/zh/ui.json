@@ -348,6 +348,28 @@
     "signedOutDescription": "需要登录才能管理书签。",
     "signInButton": "登录"
   },
+  "homeNewsSection": {
+    "badge": "新闻",
+    "title": "最新资讯",
+    "viewAll": "查看全部新闻"
+  },
+  "homeAnalyticsSection": {
+    "badge": "分析",
+    "title": "专家洞察",
+    "viewAll": "查看全部分析"
+  },
+  "emailSubscription": {
+    "badge": "Newsletter",
+    "title": "保持关注",
+    "subtitle": "每日获取精选财经新闻和市场分析，直达你的邮箱",
+    "placeholder": "你的邮箱",
+    "cta": "订阅",
+    "ctaLoading": "订阅中...",
+    "successTitle": "成功！",
+    "successDesc": "你已订阅 INVESTOPATRONUS 新闻简报",
+    "successInline": "订阅成功！",
+    "privacyNote": "随时退订。我们尊重你的隐私。"
+  },
   "contactPage": {
     "badge": "联系我们",
     "heroTitle": "保持联系",

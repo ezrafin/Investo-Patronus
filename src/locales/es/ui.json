@@ -355,6 +355,28 @@
     "signedOutDescription": "Debes iniciar sesión para gestionar tus marcadores.",
     "signInButton": "Iniciar sesión"
   },
+  "homeNewsSection": {
+    "badge": "Noticias",
+    "title": "Últimas noticias",
+    "viewAll": "Ver todas las noticias"
+  },
+  "homeAnalyticsSection": {
+    "badge": "Analítica",
+    "title": "Ideas de expertos",
+    "viewAll": "Ver todas las analíticas"
+  },
+  "emailSubscription": {
+    "badge": "Newsletter",
+    "title": "Mantente informado",
+    "subtitle": "Recibe diariamente noticias financieras y análisis de mercado en tu bandeja",
+    "placeholder": "Tu email",
+    "cta": "Suscribirse",
+    "ctaLoading": "Suscribiendo...",
+    "successTitle": "¡Éxito!",
+    "successDesc": "Te has suscrito al newsletter de INVESTOPATRONUS",
+    "successInline": "Suscripción completada",
+    "privacyNote": "Cancela en cualquier momento. Respetamos tu privacidad."
+  },
   "contactPage": {
     "badge": "Contacto",
     "heroTitle": "Ponte en contacto",

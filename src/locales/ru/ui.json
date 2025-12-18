@@ -348,6 +348,28 @@
     "signedOutDescription": "Нужно войти, чтобы управлять закладками.",
     "signInButton": "Войти"
   },
+  "homeNewsSection": {
+    "badge": "Новости",
+    "title": "Последние новости",
+    "viewAll": "Смотреть все новости"
+  },
+  "homeAnalyticsSection": {
+    "badge": "Аналитика",
+    "title": "Экспертные инсайты",
+    "viewAll": "Смотреть всю аналитику"
+  },
+  "emailSubscription": {
+    "badge": "Рассылка",
+    "title": "Будьте в курсе",
+    "subtitle": "Получайте отобранные финансовые новости и рыночную аналитику на почту",
+    "placeholder": "Ваш email",
+    "cta": "Подписаться",
+    "ctaLoading": "Подписка...",
+    "successTitle": "Успех!",
+    "successDesc": "Вы подписаны на рассылку INVESTOPATRONUS",
+    "successInline": "Подписка оформлена!",
+    "privacyNote": "Можно отписаться в любой момент. Мы уважаем вашу конфиденциальность."
+  },
   "contactPage": {
     "badge": "Контакты",
     "heroTitle": "Свяжитесь с нами",

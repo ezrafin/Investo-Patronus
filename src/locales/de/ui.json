@@ -355,6 +355,28 @@
     "signedOutDescription": "Du musst angemeldet sein, um Lesezeichen zu verwalten.",
     "signInButton": "Anmelden"
   },
+  "homeNewsSection": {
+    "badge": "News",
+    "title": "Aktuelle Nachrichten",
+    "viewAll": "Alle News ansehen"
+  },
+  "homeAnalyticsSection": {
+    "badge": "Analysen",
+    "title": "Experten-Insights",
+    "viewAll": "Alle Analysen ansehen"
+  },
+  "emailSubscription": {
+    "badge": "Newsletter",
+    "title": "Bleib informiert",
+    "subtitle": "Erhalte täglich kuratierte Finanznews und Marktanalysen in dein Postfach",
+    "placeholder": "Deine E-Mail",
+    "cta": "Abonnieren",
+    "ctaLoading": "Abonniere...",
+    "successTitle": "Erfolg!",
+    "successDesc": "Du hast den INVESTOPATRONUS Newsletter abonniert",
+    "successInline": "Erfolgreich abonniert!",
+    "privacyNote": "Jederzeit abmelden. Wir respektieren deine Privatsphäre."
+  },
   "contactPage": {
     "badge": "Kontakt",
     "heroTitle": "Kontakt aufnehmen",

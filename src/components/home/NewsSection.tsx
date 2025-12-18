@@ -5,10 +5,12 @@ import { NewsCard } from '@/components/NewsCard';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { fetchNews, NewsItem } from '@/lib/api/index';
 import { ArrowRight, Newspaper } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export const NewsSection = memo(function NewsSection() {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation({ namespace: 'ui' });
 
   useEffect(() => {
     fetchNews().then(data => {
@@ -27,11 +29,11 @@ export const NewsSection = memo(function NewsSection() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10"
         >
           <div>
-            <span className="badge-outline mb-4"><Newspaper className="h-3 w-3 mr-1" />News</span>
-            <h2 className="heading-md">Latest News</h2>
+            <span className="badge-outline mb-4"><Newspaper className="h-3 w-3 mr-1" />{t('homeNewsSection.badge')}</span>
+            <h2 className="heading-md">{t('homeNewsSection.title')}</h2>
           </div>
           <Link to="/news" className="flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-          View all news <ArrowRight className="h-4 w-4" />
+          {t('homeNewsSection.viewAll')} <ArrowRight className="h-4 w-4" />
           </Link>
         </motion.div>
 

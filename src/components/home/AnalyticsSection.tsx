@@ -5,10 +5,12 @@ import { AnalyticsCard } from '@/components/AnalyticsCard';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { fetchAnalytics, AnalyticsArticle } from '@/lib/api/index';
 import { ArrowRight, BarChart3 } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export const AnalyticsSection = memo(function AnalyticsSection() {
   const [analytics, setAnalytics] = useState<AnalyticsArticle[]>([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation({ namespace: 'ui' });
 
   useEffect(() => {
     fetchAnalytics().then(data => {
@@ -27,11 +29,11 @@ export const AnalyticsSection = memo(function AnalyticsSection() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10"
         >
           <div>
-            <span className="badge-outline mb-4"><BarChart3 className="h-3 w-3 mr-1" />Analytics</span>
-            <h2 className="heading-md">Expert Insights</h2>
+            <span className="badge-outline mb-4"><BarChart3 className="h-3 w-3 mr-1" />{t('homeAnalyticsSection.badge')}</span>
+            <h2 className="heading-md">{t('homeAnalyticsSection.title')}</h2>
           </div>
           <Link to="/analytics" className="flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-          View all analytics <ArrowRight className="h-4 w-4" />
+          {t('homeAnalyticsSection.viewAll')} <ArrowRight className="h-4 w-4" />
           </Link>
         </motion.div>
 

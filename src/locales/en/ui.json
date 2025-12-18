@@ -426,6 +426,28 @@
     "signedOutDescription": "You need to be signed in to manage your bookmarks.",
     "signInButton": "Sign in"
   },
+  "homeNewsSection": {
+    "badge": "News",
+    "title": "Latest News",
+    "viewAll": "View all news"
+  },
+  "homeAnalyticsSection": {
+    "badge": "Analytics",
+    "title": "Expert Insights",
+    "viewAll": "View all analytics"
+  },
+  "emailSubscription": {
+    "badge": "Newsletter",
+    "title": "Stay Informed",
+    "subtitle": "Get daily curated financial news and market analytics delivered to your inbox",
+    "placeholder": "Your email",
+    "cta": "Subscribe",
+    "ctaLoading": "Subscribing...",
+    "successTitle": "Success!",
+    "successDesc": "You're now subscribed to INVESTOPATRONUS newsletter",
+    "successInline": "Successfully subscribed!",
+    "privacyNote": "Unsubscribe anytime. We respect your privacy."
+  },
   "cookieBanner": {
     "title": "We use cookies",
     "body": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking \"Accept All\", you consent to our use of cookies. You can customize your preferences or learn more in our Privacy Policy.",

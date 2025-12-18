@@ -348,6 +348,28 @@
     "signedOutDescription": "Vous devez être connecté pour gérer vos favoris.",
     "signInButton": "Se connecter"
   },
+  "homeNewsSection": {
+    "badge": "Actualités",
+    "title": "Dernières actualités",
+    "viewAll": "Voir toutes les actualités"
+  },
+  "homeAnalyticsSection": {
+    "badge": "Analyses",
+    "title": "Insights d'experts",
+    "viewAll": "Voir toutes les analyses"
+  },
+  "emailSubscription": {
+    "badge": "Newsletter",
+    "title": "Restez informé",
+    "subtitle": "Recevez chaque jour des actualités financières et des analyses de marché",
+    "placeholder": "Votre email",
+    "cta": "S'abonner",
+    "ctaLoading": "Abonnement...",
+    "successTitle": "Succès !",
+    "successDesc": "Vous êtes abonné à la newsletter INVESTOPATRONUS",
+    "successInline": "Abonnement réussi !",
+    "privacyNote": "Désinscription à tout moment. Nous respectons votre vie privée."
+  },
   "contactPage": {
     "badge": "Contact",
     "heroTitle": "Prenez contact",

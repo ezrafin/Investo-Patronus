@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, Check } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export function EmailSubscription() {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useTranslation({ namespace: 'ui' });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,8 +21,8 @@ export function EmailSubscription() {
     setIsSubmitted(true);
     
     toast({
-      title: "Success!",
-      description: "You're now subscribed to INVESTOPATRONUS newsletter",
+      title: t('emailSubscription.successTitle'),
+      description: t('emailSubscription.successDesc'),
     });
   };
 
@@ -39,15 +41,15 @@ export function EmailSubscription() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <Mail className="h-4 w-4" />
-            Newsletter
+            {t('emailSubscription.badge')}
           </div>
           
           <h2 className="heading-lg mb-4">
-            Stay Informed
+            {t('emailSubscription.title')}
           </h2>
           
           <p className="body-lg mb-8">
-            Get daily curated financial news and market analytics delivered to your inbox
+            {t('emailSubscription.subtitle')}
           </p>
 
           {isSubmitted ? (
@@ -57,7 +59,7 @@ export function EmailSubscription() {
               className="flex items-center justify-center gap-3 p-4 rounded-xl bg-positive/10 text-positive"
             >
               <Check className="h-5 w-5" />
-              <span className="font-medium">Successfully subscribed!</span>
+              <span className="font-medium">{t('emailSubscription.successInline')}</span>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -67,7 +69,7 @@ export function EmailSubscription() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
+                  placeholder={t('emailSubscription.placeholder')}
                   required
                   className="w-full pl-12 pr-4 py-3 bg-secondary/50 border border-border rounded-lg text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                 />
@@ -80,11 +82,11 @@ export function EmailSubscription() {
                 {isLoading ? (
                   <span className="flex items-center gap-2">
                     <span className="h-4 w-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                    Subscribing...
+                    {t('emailSubscription.ctaLoading')}
                   </span>
                 ) : (
                   <span className="flex items-center gap-2">
-                    Subscribe
+                    {t('emailSubscription.cta')}
                     <ArrowRight className="h-4 w-4" />
                   </span>
                 )}
@@ -93,7 +95,7 @@ export function EmailSubscription() {
           )}
 
           <p className="text-xs text-muted-foreground mt-4">
-            Unsubscribe anytime. We respect your privacy.
+            {t('emailSubscription.privacyNote')}
           </p>
         </motion.div>
       </div>
