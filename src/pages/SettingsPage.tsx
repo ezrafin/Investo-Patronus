@@ -239,7 +239,7 @@ export default function SettingsPage() {
                       type={showCurrentPassword ? 'text' : 'password'}
                       value={currentPassword}
                       onChange={(e) => setCurrentPassword(e.target.value)}
-                      placeholder="Enter current password"
+                      placeholder={t('settings.currentPassword')}
                       required
                     />
                     <button
@@ -260,7 +260,7 @@ export default function SettingsPage() {
                       type={showNewPassword ? 'text' : 'password'}
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
-                      placeholder="Enter new password"
+                      placeholder={t('settings.newPassword')}
                       minLength={8}
                       required
                     />
@@ -273,7 +273,7 @@ export default function SettingsPage() {
                     </button>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    Minimum 8 characters with at least one number and special character
+                    {t('auth.passwordRequirements.containsNumber')}, {t('auth.passwordRequirements.containsSpecial')}
                   </p>
                 </div>
 
@@ -285,7 +285,7 @@ export default function SettingsPage() {
                       type={showConfirmPassword ? 'text' : 'password'}
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      placeholder="Confirm new password"
+                      placeholder={t('settings.confirmPassword')}
                       minLength={8}
                       required
                     />
