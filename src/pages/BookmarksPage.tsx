@@ -8,6 +8,7 @@ import { Bookmark, Newspaper, MessageSquare, FileText, Video, Trash2 } from 'luc
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface BookmarkItem {
   id: string;
@@ -20,6 +21,7 @@ interface BookmarkItem {
 
 export default function BookmarksPage() {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [bookmarks, setBookmarks] = useState<BookmarkItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<string>('all');
@@ -108,7 +110,7 @@ export default function BookmarksPage() {
       setBookmarks(bookmarksWithData as BookmarkItem[]);
     } catch (error) {
       console.error('Error loading bookmarks:', error);
-      toast.error('Failed to load bookmarks');
+      toast.error(t('bookmarksPage.loadError'));
     } finally {
       setLoading(false);
     }
@@ -124,9 +126,9 @@ export default function BookmarksPage() {
       if (error) throw error;
 
       setBookmarks(bookmarks.filter((b) => b.id !== id));
-      toast.success('Bookmark removed');
+      toast.success(t('bookmarksPage.deleteSuccess'));
     } catch (error) {
-      toast.error('Failed to remove bookmark');
+      toast.error(t('bookmarksPage.deleteError'));
     }
   };
 
@@ -162,19 +164,21 @@ export default function BookmarksPage() {
     }
   };
 
+  const normalizeType = (type: string) => (type === 'article' ? 'news' : type);
+
   const filteredBookmarks = activeTab === 'all'
     ? bookmarks
-    : bookmarks.filter((b) => b.content_type === activeTab);
+    : bookmarks.filter((b) => normalizeType(b.content_type) === activeTab);
 
   if (!user) {
     return (
       <Layout>
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
-            <h1 className="heading-lg mb-4">Please sign in</h1>
-            <p className="text-muted-foreground mb-6">You need to be signed in to view your bookmarks.</p>
+            <h1 className="heading-lg mb-4">{t('bookmarksPage.signedOutTitle')}</h1>
+            <p className="text-muted-foreground mb-6">{t('bookmarksPage.signedOutDescription')}</p>
             <Link to="/auth/login">
-              <Button>Sign in</Button>
+              <Button>{t('bookmarksPage.signInButton')}</Button>
             </Link>
           </div>
         </div>
@@ -186,15 +190,15 @@ export default function BookmarksPage() {
     <Layout>
       <div className="section-spacing">
         <div className="container-wide max-w-4xl">
-          <h1 className="heading-lg mb-8">My Bookmarks</h1>
+          <h1 className="heading-lg mb-8">{t('bookmarksPage.title')}</h1>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="mb-6">
-              <TabsTrigger value="all">All</TabsTrigger>
-              <TabsTrigger value="forum">Forum</TabsTrigger>
-              <TabsTrigger value="article">Articles</TabsTrigger>
-              <TabsTrigger value="video">Videos</TabsTrigger>
-              <TabsTrigger value="analytics">Analytics</TabsTrigger>
+              <TabsTrigger value="all">{t('bookmarksPage.tabsAll')}</TabsTrigger>
+              <TabsTrigger value="news">{t('bookmarksPage.tabsNews')}</TabsTrigger>
+              <TabsTrigger value="analytics">{t('bookmarksPage.tabsAnalytics')}</TabsTrigger>
+              <TabsTrigger value="forum">{t('bookmarksPage.tabsForum')}</TabsTrigger>
+              <TabsTrigger value="video">{t('bookmarksPage.tabsVideo')}</TabsTrigger>
             </TabsList>
 
             {loading ? (
@@ -206,11 +210,9 @@ export default function BookmarksPage() {
             ) : filteredBookmarks.length === 0 ? (
               <div className="premium-card p-12 text-center">
                 <Bookmark className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="font-semibold text-lg mb-2">No bookmarks yet</h3>
+                <h3 className="font-semibold text-lg mb-2">{t('bookmarksPage.empty')}</h3>
                 <p className="text-muted-foreground">
-                  {activeTab === 'all'
-                    ? 'Start bookmarking content to save it for later'
-                    : `No ${activeTab} bookmarks yet`}
+                  {t('bookmarksPage.seoDescription')}
                 </p>
               </div>
             ) : (

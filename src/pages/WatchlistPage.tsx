@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { fetchDiscussionsForWatchlist, ForumTopic } from '@/lib/api/index';
 import { AssetBadge } from '@/components/forum/AssetBadge';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface Watchlist {
   id: string;
@@ -37,6 +38,7 @@ const marketIcons = {
 
 export default function WatchlistPage() {
   const { user, loading: authLoading } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [watchlists, setWatchlists] = useState<Watchlist[]>([]);
   const [loading, setLoading] = useState(true);
   const [newWatchlistName, setNewWatchlistName] = useState('');
@@ -81,7 +83,7 @@ export default function WatchlistPage() {
     // Add timeout to prevent infinite loading
     const timeoutId = setTimeout(() => {
       setLoading(false);
-      setLoadError('Request timed out. Please try again.');
+      setLoadError(t('watchlistPage.timeoutError'));
     }, 15000);
 
     try {
@@ -116,8 +118,8 @@ export default function WatchlistPage() {
     } catch (error: any) {
       clearTimeout(timeoutId);
       console.error('Error loading watchlists:', error);
-      setLoadError(error?.message || 'Failed to load watchlists');
-      toast.error('Failed to load watchlists');
+      setLoadError(error?.message || t('watchlistPage.loadError'));
+      toast.error(t('watchlistPage.loadError'));
     } finally {
       clearTimeout(timeoutId);
       setLoading(false);
@@ -143,9 +145,9 @@ export default function WatchlistPage() {
       setWatchlists([...watchlists, { ...data, items: [] }]);
       setNewWatchlistName('');
       setShowCreateForm(false);
-      toast.success('Watchlist created');
+      toast.success(t('watchlistPage.createSuccess'));
     } catch (error: any) {
-      toast.error(error.message || 'Failed to create watchlist');
+      toast.error(error.message || t('watchlistPage.createError'));
     }
   };
 
@@ -155,9 +157,9 @@ export default function WatchlistPage() {
       if (error) throw error;
 
       setWatchlists(watchlists.filter((w) => w.id !== id));
-      toast.success('Watchlist deleted');
+      toast.success(t('watchlistPage.deleteSuccess'));
     } catch (error) {
-      toast.error('Failed to delete watchlist');
+      toast.error(t('watchlistPage.deleteError'));
     }
   };
 
@@ -165,15 +167,15 @@ export default function WatchlistPage() {
     return (
       <Layout>
         <SEOHead
-          title="Watchlists — Sign in to track your assets"
-          description="Create and manage personalized watchlists to monitor your favorite market instruments."
+          title={t('watchlistPage.signedOutTitle')}
+          description={t('watchlistPage.signedOutDescription')}
         />
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
-            <h1 className="heading-lg mb-4">Please sign in</h1>
-            <p className="text-muted-foreground mb-6">You need to be signed in to manage watchlists.</p>
+            <h1 className="heading-lg mb-4">{t('watchlistPage.pleaseSignIn')}</h1>
+            <p className="text-muted-foreground mb-6">{t('watchlistPage.needSignIn')}</p>
             <Link to="/auth/login">
-              <Button>Sign in</Button>
+              <Button>{t('watchlistPage.signInButton')}</Button>
             </Link>
           </div>
         </div>
@@ -185,13 +187,13 @@ export default function WatchlistPage() {
     return (
       <Layout>
         <SEOHead
-          title="Watchlists — INVESTOPATRONUS"
-          description="Create and manage personalized watchlists to monitor your favorite market instruments."
+          title={t('watchlistPage.seoTitle')}
+          description={t('watchlistPage.seoDescription')}
         />
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-muted-foreground">Loading watchlists...</p>
+            <p className="text-muted-foreground">{t('watchlistPage.loading')}</p>
           </div>
         </div>
       </Layout>
@@ -202,16 +204,16 @@ export default function WatchlistPage() {
     return (
       <Layout>
         <SEOHead
-          title="Watchlists — INVESTOPATRONUS"
-          description="Create and manage personalized watchlists to monitor your favorite market instruments."
+          title={t('watchlistPage.seoTitle')}
+          description={t('watchlistPage.seoDescription')}
         />
         <div className="min-h-[80vh] flex items-center justify-center">
           <div className="text-center">
             <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
-            <h2 className="font-semibold text-lg mb-2">Failed to load watchlists</h2>
+            <h2 className="font-semibold text-lg mb-2">{t('watchlistPage.loadError')}</h2>
             <p className="text-muted-foreground mb-6">{loadError}</p>
             <Button onClick={() => loadWatchlists()}>
-              Try Again
+              {t('buttons.retry', { defaultValue: 'Try Again' })}
             </Button>
           </div>
         </div>
@@ -222,19 +224,19 @@ export default function WatchlistPage() {
   return (
     <Layout>
       <SEOHead
-        title="My Watchlists — INVESTOPATRONUS"
-        description="Create and manage personalized watchlists to monitor your favorite market instruments."
+        title={t('watchlistPage.seoTitle')}
+        description={t('watchlistPage.seoDescription')}
       />
       <div className="section-spacing">
         <div className="container-wide max-w-6xl">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
             <div>
-              <h1 className="heading-lg mb-2">My Watchlists</h1>
-              <p className="text-muted-foreground">Track your favorite market instruments</p>
+              <h1 className="heading-lg mb-2">{t('watchlistPage.yourWatchlists')}</h1>
+              <p className="text-muted-foreground">{t('watchlistPage.seoDescription')}</p>
             </div>
             <Button onClick={() => setShowCreateForm(!showCreateForm)} className="self-start sm:self-auto">
               <Plus className="mr-2 h-4 w-4" />
-              New Watchlist
+              {t('watchlistPage.createToggle')}
             </Button>
           </div>
 
@@ -243,12 +245,12 @@ export default function WatchlistPage() {
             <div className="premium-card p-6 mb-6">
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="watchlist-name">Watchlist Name</Label>
+                  <Label htmlFor="watchlist-name">{t('watchlistPage.newWatchlistLabel')}</Label>
                   <Input
                     id="watchlist-name"
                     value={newWatchlistName}
                     onChange={(e) => setNewWatchlistName(e.target.value)}
-                    placeholder="e.g., Tech Stocks, Crypto Long-term"
+                    placeholder={t('watchlistPage.newWatchlistPlaceholder')}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter') createWatchlist();
                     }}
@@ -256,13 +258,13 @@ export default function WatchlistPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Button onClick={createWatchlist} disabled={!newWatchlistName.trim()}>
-                    Create
+                    {t('watchlistPage.createButton')}
                   </Button>
                   <Button variant="outline" onClick={() => {
                     setShowCreateForm(false);
                     setNewWatchlistName('');
                   }}>
-                    Cancel
+                    {t('buttons.cancel')}
                   </Button>
                 </div>
               </div>
@@ -273,13 +275,13 @@ export default function WatchlistPage() {
           {watchlists.length === 0 ? (
             <div className="premium-card p-12 text-center">
               <Star className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="font-semibold text-lg mb-2">No watchlists yet</h3>
-              <p className="text-muted-foreground mb-6">
-                Create your first watchlist to start tracking market instruments
-              </p>
+                <h3 className="font-semibold text-lg mb-2">{t('watchlistPage.emptyState')}</h3>
+                <p className="text-muted-foreground mb-6">
+                  {t('watchlistPage.seoDescription')}
+                </p>
               <Button onClick={() => setShowCreateForm(true)}>
                 <Plus className="mr-2 h-4 w-4" />
-                Create Watchlist
+                  {t('watchlistPage.createButton')}
               </Button>
             </div>
           ) : (
@@ -299,9 +301,9 @@ export default function WatchlistPage() {
             <div className="mt-12">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h2 className="heading-md mb-2">Discussions for Your Watchlist Assets</h2>
+                  <h2 className="heading-md mb-2">{t('watchlistPage.discussionsTitle')}</h2>
                   <p className="text-muted-foreground text-sm">
-                    Forum discussions related to assets in your watchlists
+                    {t('watchlistPage.discussionsSubtitle')}
                   </p>
                 </div>
               </div>
@@ -309,14 +311,14 @@ export default function WatchlistPage() {
               {discussionsLoading ? (
                 <div className="premium-card p-6 text-center">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-                  <p className="text-muted-foreground">Loading discussions...</p>
+                  <p className="text-muted-foreground">{t('watchlistPage.discussionsLoading')}</p>
                 </div>
               ) : discussions.length === 0 ? (
                 <div className="premium-card p-6 text-center">
                   <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-                  <p className="text-muted-foreground mb-2">No discussions found</p>
+                  <p className="text-muted-foreground mb-2">{t('watchlistPage.discussionsNoneTitle')}</p>
                   <p className="text-sm text-muted-foreground">
-                    Start a discussion about one of your watchlist assets to see it here
+                    {t('watchlistPage.discussionsNoneSubtitle')}
                   </p>
                 </div>
               ) : (
@@ -362,6 +364,7 @@ export default function WatchlistPage() {
 
 function WatchlistCard({ watchlist, onDelete }: { watchlist: Watchlist; onDelete: (id: string) => void }) {
   const [itemsData, setItemsData] = useState<Record<string, MarketData[]>>({});
+  const { t } = useTranslation({ namespace: 'ui' });
 
   useEffect(() => {
     // Group items by market type and fetch data
@@ -386,7 +389,7 @@ function WatchlistCard({ watchlist, onDelete }: { watchlist: Watchlist; onDelete
           <div className="flex items-center gap-2 mb-1">
             <h3 className="font-semibold text-lg">{watchlist.name}</h3>
             {watchlist.is_default && (
-              <span className="badge-primary text-xs">Default</span>
+              <span className="badge-primary text-xs">{t('watchlistPage.defaultLabel')}</span>
             )}
           </div>
           {watchlist.description && (
@@ -405,11 +408,11 @@ function WatchlistCard({ watchlist, onDelete }: { watchlist: Watchlist; onDelete
 
       {watchlist.items.length === 0 ? (
         <div className="text-center py-8 text-muted-foreground">
-          <p className="mb-4">No items in this watchlist</p>
+          <p className="mb-4">{t('watchlistPage.noItems')}</p>
           <Link to="/markets/indices">
             <Button variant="outline" size="sm">
               <Plus className="mr-2 h-4 w-4" />
-              Add Instruments
+              {t('watchlistPage.addInstruments')}
             </Button>
           </Link>
         </div>
@@ -427,13 +430,13 @@ function WatchlistCard({ watchlist, onDelete }: { watchlist: Watchlist; onDelete
                   <div>
                     <span className="font-mono font-medium">{item.symbol}</span>
                     <span className="text-xs text-muted-foreground ml-2 capitalize">
-                      {item.market_type}
+                      {t(`watchlistPage.marketType.${item.market_type as keyof typeof marketIcons}`) || item.market_type}
                     </span>
                   </div>
                 </div>
                 <Link to={`/markets/${item.market_type}`}>
                   <Button variant="ghost" size="sm">
-                    View
+                    {t('buttons.view', { defaultValue: 'View' })}
                   </Button>
                 </Link>
               </div>
