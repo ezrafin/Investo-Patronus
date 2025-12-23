@@ -444,4 +444,262 @@ Central and Eastern Europe (CEE) sits at the intersection of energy markets, geo
     imageUrl: getImage('expert', 260),
     tags: ['Energy', 'CEE', 'Macro', 'Emerging Markets', 'FX'],
   },
+  {
+    slug: 'cee-banking-sectors-in-a-higher-rate-world',
+    title: 'CEE Banking Sectors in a Higher-Rate World: Balancing Growth, Risk, and Regulation',
+    excerpt:
+      'How higher interest rates, energy shocks, and EU policy interact in Central & Eastern European banking systems—and what that means for equity, credit, and local-currency investors.',
+    content: `# CEE Banking Sectors in a Higher-Rate World: Balancing Growth, Risk, and Regulation
+
+## Introduction
+
+Central and Eastern Europe’s banking systems sit at the intersection of multiple forces: higher global interest rates, regional energy shocks, EU regulatory frameworks, and evolving capital‑market integration. For many countries in the region, banks remain the primary transmission channel of monetary policy and the dominant source of credit to households and corporates.
+
+The shift from ultra‑low to structurally higher rates has reshaped banks’ income statements and balance sheets. Net interest margins have widened, but credit quality, funding costs, and regulatory expectations have also changed. This article offers a practical framework for analyzing **CEE banking sectors** in today’s higher‑rate environment and translating that view into cross‑asset positioning.
+
+## Structural Features of CEE Banking Systems
+
+### Foreign Ownership and Business Models
+
+Many CEE banking systems are characterized by:
+
+- **Significant foreign ownership**, often by Western European banking groups.
+- **Universal banking models** with a focus on:
+  - Retail and SME lending.
+  - Payment services and transaction banking.
+  - Limited capital‑markets activities compared with core Western hubs.
+
+Foreign‑owned banks bring:
+
+- Access to parent funding and expertise.
+- Group‑wide risk management frameworks.
+
+But they also introduce:
+
+- Potential for **strategic retrenchment** if parent banks refocus on core markets.
+- Complex intra‑group funding and capital relationships.
+
+### Currency Regimes and Euro Adoption
+
+CEE banking systems operate under heterogeneous currency regimes:
+
+- Eurozone members (e.g., Slovakia, Slovenia, the Baltics).
+- Countries with euro pegs or tightly managed regimes.
+- Independent floating currencies (e.g., Poland, Hungary, Czech Republic, Romania).
+
+This matters for:
+
+- **Interest‑rate differentials** versus the euro area.
+- **FX risk** on foreign‑currency lending and funding.
+- The extent to which ECB policy versus local central‑bank policy drives conditions.
+
+Investors should map each country’s regime, central‑bank reaction function, and track record of managing FX and inflation shocks.
+
+## Net Interest Margins and Higher-Rate Dynamics
+
+### Deposit Structures and Betas
+
+The benefit of higher rates for CEE banks depends heavily on **deposit structures**:
+
+- Retail‑heavy franchises with:
+  - Granular current accounts.
+  - Low‑beta savings deposits.
+  often see significant NIM expansion when policy rates rise.
+- Corporate‑heavy deposit bases or reliance on wholesale funding see faster pass‑through of higher rates to funding costs.
+
+Key diagnostics include:
+
+- Share of **non‑interest‑bearing or low‑rate deposits**.
+- Speed and magnitude of **deposit repricing** across cycles.
+- Competition from money‑market funds or government savings instruments.
+
+### Loan Repricing and Product Mix
+
+On the asset side, the impact of higher rates depends on:
+
+- Prevalence of **variable‑rate versus fixed‑rate** lending in:
+  - Mortgages.
+  - Consumer loans.
+  - Corporate credit.
+- Maturity structure and contractual repricing terms.
+
+In many CEE markets, variable‑rate or short‑reset loans are common, implying:
+
+- Faster NII uplift when rates rise.
+- Greater sensitivity of borrowers to interest‑rate shocks.
+
+Investors should track:
+
+- Loan‑book segmentation by rate type and currency.
+- Historical behavior of arrears and defaults under prior hiking cycles.
+
+## Credit Quality and Macro Sensitivity
+
+### Household and Corporate Balance Sheets
+
+Higher rates, combined with energy shocks and inflation, have pressured:
+
+- **Household real incomes**, especially where wage growth lagged price increases.
+- **Corporate margins** in energy‑intensive industries and export‑oriented sectors exposed to weaker Western European demand.
+
+CEE banks’ asset quality hinges on:
+
+- Household leverage levels (mortgages and consumer credit to income).
+- Sectoral exposures (construction, real estate, SMEs).
+- Share of loans with:
+  - FX risk.
+  - Variable rates and limited interest‑rate hedging.
+
+Investors should monitor:
+
+- Stage 2 loan migrations under IFRS 9.
+- Early‑arrears trends and restructuring volumes.
+- Coverage ratios and collateral valuations (especially in real estate).
+
+### Government Support and Policy Responses
+
+Governments in the region have used:
+
+- **Price caps, subsidies, and targeted transfers** to cushion energy and inflation shocks.
+- **Credit moratoria or relief schemes** during stress episodes (including the pandemic).
+
+While these measures can stabilize asset quality in the near term, they may:
+
+- Delay recognition of problem loans.
+- Introduce political risk if banks are asked to shoulder quasi‑fiscal burdens.
+
+Investors should assess:
+
+- The design and sunset clauses of prior support schemes.
+- The likelihood of **ad‑hoc interventions** in future crises.
+
+## Regulation, Taxation, and Windfall Measures
+
+### EU-Level Frameworks and Local Implementation
+
+Most CEE EU members operate under:
+
+- Single Rulebook bank regulation.
+- ECB or national competent authorities supervising capital and liquidity.
+
+However, **local implementation and political overlays** matter:
+
+- Sector‑specific taxes or levies on banks.
+- Windfall taxes during periods of high profitability.
+- Requirements to hold domestic sovereign bonds.
+
+Episodes of bank taxation in some CEE countries highlight:
+
+- The need to assess **political risk to earnings**.
+- Differences between headline ROE and **after‑tax, after‑levy sustainable profitability**.
+
+### Capital and Dividend Policies
+
+Capital positions in CEE banking systems are generally solid, but:
+
+- Some subsidiaries may run with **buffer levels tailored by parent banks**.
+- Regulatory add‑ons (systemic buffers, O‑SII buffers, counter‑cyclical buffers) vary by country.
+
+For equity investors, key questions include:
+
+- How much capital sits **above regulatory minima and management buffers**.
+- Regulator tolerance for **dividends and upstreaming** to parent groups.
+- Exposure to model risk and potential capital requirement changes.
+
+## Cross-Asset Implications
+
+### Bank Equities
+
+Bank equities in CEE can offer:
+
+- Attractive dividend yields.
+- Exposure to local credit and growth cycles.
+- Leverage to **NIM expansion** when rates remain supportive and asset quality holds.
+
+But they also carry:
+
+- Higher volatility than Western European peers.
+- Greater sensitivity to domestic politics and regulatory interventions.
+
+Valuation frameworks should consider:
+
+- Normalized ROE versus cost of equity.
+- Stability and credibility of dividend policies.
+- Country risk premia embedded in multiples.
+
+### Bank and Sovereign Credit
+
+CEEs’ bank and sovereign credit are often intertwined:
+
+- Banks hold domestic government debt on their balance sheets.
+- Sovereigns benefit from bank stability and funding.
+
+For credit investors, focus areas include:
+
+- Bank senior and subordinated spreads relative to Western peers.
+- Sovereign ratings trajectories and fiscal dynamics.
+- Systemic risk channels in stress scenarios (e.g., bank‑sovereign loops).
+
+### Local-Currency Bonds and FX
+
+Banking‑sector health influences:
+
+- Central‑bank tolerance for **higher or lower policy rates**.
+- The pace and nature of tightening or easing cycles.
+
+In markets where banks have strong capital and asset quality:
+
+- Monetary authorities may have more room to normalize rates gradually.
+
+Where vulnerabilities are larger:
+
+- Policy trade‑offs between inflation control and financial stability become sharper.
+
+For investors in local‑currency bonds and FX, it is important to integrate:
+
+- Banking‑sector diagnostics.
+- Sovereign balance‑sheet analysis.
+- External‑balance and terms‑of‑trade considerations.
+
+## A Practical Checklist for Investors
+
+When evaluating CEE banking exposures, a structured checklist can help:
+
+1. **Macro and policy context**
+   - Growth, inflation, energy dependence, and external balances.
+   - Currency regime and central‑bank credibility.
+2. **Banking‑system structure**
+   - Foreign versus domestic ownership.
+   - Market concentration and competitive dynamics.
+3. **Profitability and NIM drivers**
+   - Deposit structure and repricing behavior.
+   - Loan‑book mix, rate structure, and currency composition.
+4. **Asset quality and capital**
+   - NPL ratios, Stage 2 trends, and coverage.
+   - Capital buffers above minima; sensitivity to stress scenarios.
+5. **Policy and political risk**
+   - History of bank taxes or ad‑hoc interventions.
+   - Regulatory stance on dividends and payouts.
+
+This checklist applies across equity, credit, and local‑currency strategies, with position sizes and instruments tailored to mandate and risk appetite.
+
+## Conclusion
+
+CEE banking sectors are central to understanding the region’s macro and market dynamics in a higher‑rate world. They sit at the nexus of monetary policy, energy‑driven terms‑of‑trade shocks, and EU regulatory frameworks.
+
+For investors, the opportunity lies in identifying countries and banks where higher rates support sustainably stronger profitability **without** undermining asset quality or triggering political backlash. By combining macro diagnostics with granular banking‑sector analysis, cross‑asset investors can build exposures that capture the upside of financial‑sector normalization while managing the region’s distinctive risks.`,
+    date: formatDate(261),
+    author: 'Anastasia Petrova',
+    authorAvatar: getAuthorAvatar('Anastasia Petrova'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# CEE Banking Sectors in a Higher-Rate World: Balancing Growth, Risk, and Regulation
+
+## Introduction
+
+Central and Eastern Europe’s banking systems sit at the intersection of multiple forces: higher global interest rates, regional energy shocks, EU regulatory frameworks, and evolving capital‑market integration.`),
+    ),
+    imageUrl: getImage('expert', 261),
+    tags: ['CEE Banks', 'Emerging Europe', 'Financials', 'Macro', 'Regulation'],
+  },
 ];

@@ -483,4 +483,217 @@ For investors and risk managers, understanding how stablecoins really work is no
     imageUrl: getImage('markets', 95),
     tags: ['Stablecoins', 'Liquidity', 'Crypto Market Structure', 'Risk Management', 'Blockchain'],
   },
+  {
+    slug: 'defi-yield-and-risk-management-across-cycles',
+    title: 'DeFi Yield and Risk Management Across Cycles: A Practitioner’s Playbook',
+    excerpt:
+      'How to analyze DeFi yield sources, protocol risk, and liquidity behavior across bull and bear markets—and build a risk framework that treats on-chain yield as credit and volatility exposure, not free money.',
+    content: `# DeFi Yield and Risk Management Across Cycles: A Practitioner’s Playbook
+
+## Introduction
+
+Decentralized finance (DeFi) has created an always‑on, globally accessible market for leverage, credit, and liquidity. At the peak of prior cycles, yields advertised in double or triple digits attracted capital from both crypto‑native and traditional investors. Subsequent drawdowns, protocol failures, and de‑peggings revealed what many practitioners already suspected: most of that “yield” was a combination of **subsidies, leverage, and underpriced risk**.
+
+For professional allocators, DeFi should not be dismissed because of past excesses, nor embraced uncritically because of innovation narratives. It should be treated as a **new set of market venues and instruments**—with real but quantifiable risks. This article provides a pragmatic framework for analyzing DeFi yields, building risk controls, and operating across cycles.
+
+## Where DeFi Yield Really Comes From
+
+### Decomposing Yield Sources
+
+Behind every DeFi yield opportunity lies a mix of:
+
+- **Trading fees** – Paid by users of decentralized exchanges (DEXs) and derivatives protocols.
+- **Borrowing costs** – Paid by leveraged traders and borrowers in money markets and CDP systems.
+- **Incentives and subsidies** – Tokens emitted by protocols, foundations, or DAOs to bootstrap liquidity.
+- **Impermanent loss or basis risk** – Economic transfer that may or may not be understood by liquidity providers.
+
+A first step for any investor is to decompose a strategy’s return profile:
+
+- How much comes from **sustainable cash‑flow‑like sources** (fees, borrow rates)?
+- How much depends on **token emissions** or price appreciation?
+- How much is actually compensation for **volatility, tail risk, or illiquidity**?
+
+### Sustainable Versus Transient Yield
+
+Experience across cycles shows that:
+
+- Fee‑driven yields (e.g., from highly utilized money markets or deep spot DEXs) are more persistent, but can still fall sharply when volumes drop.
+- Emission‑driven yields collapse when token prices decline or DAO budgets are cut.
+- “Risk‑free” stablecoin yields often embed **protocol, counterparty, or legal risk** that is not immediately obvious.
+
+Investors should stress‑test yield assumptions under:
+
+- Lower trading volumes.
+- Reduced leverage demand.
+- Token price declines.
+
+If a strategy only works under optimistic volume and price assumptions, it should be sized and priced as a **high‑beta, cyclical exposure**, not a core yield allocation.
+
+## Risk Dimensions in DeFi Strategies
+
+### Smart-Contract and Protocol Risk
+
+Smart‑contract risk is often framed as “code risk,” but in practice includes:
+
+- **Implementation bugs** – Logic errors, re‑entrancy issues, inaccurate math.
+- **Design flaws** – Economic exploits, oracle manipulation vectors, flawed liquidation mechanics.
+- **Governance risk** – Admin keys, upgrade authority, DAO capture, or rushed parameter changes.
+
+Mitigation steps include:
+
+- Favoring protocols with **multiple independent audits** and public post‑mortems.
+- Reviewing whether contracts are **immutable** or upgradeable, and who controls upgrades.
+- Assessing the **bug bounty programs** and real‑world track record across market regimes.
+
+No audit eliminates risk, but a combination of time in market, transparent governance, and conservative design reduces the probability of catastrophic loss.
+
+### Market and Liquidity Risk
+
+Many DeFi yield strategies are implicitly:
+
+- **Short volatility** – Earn small carry while being exposed to large, sudden losses.
+- **Short liquidity** – Providing liquidity in markets that can evaporate in stress.
+
+Examples include:
+
+- AMM liquidity provision in volatile pairs.
+- Writing options via on‑chain vaults.
+- Leveraged stablecoin carry trades that depend on narrow spreads.
+
+Investors should:
+
+- Model **P&L under large price shocks** (e.g., 30–50% moves in underlying assets).
+- Understand the **liquidity profile** of tokens used as collateral or rewards.
+- Avoid excessive leverage on top of already leveraged protocols.
+
+### Counterparty and Legal Risk
+
+Even in “non‑custodial” settings, DeFi strategies can embed:
+
+- Centralized components (off‑chain oracles, sequencers, bridges).
+- Legal risk where regulators may treat certain tokens or activities as securities or unregistered products.
+
+Allocators need to:
+
+- Map all **off‑chain dependencies and trust assumptions**.
+- Consider jurisdictional exposure, especially when using wrappers, funds, or platforms that intermediate DeFi strategies.
+
+## Building a DeFi Risk Framework
+
+### Treat Yield as Credit and Volatility Exposure
+
+Conceptually, most DeFi yield can be analyzed as a **blend of credit spread, volatility premium, and protocol risk premium**. A practical framework involves:
+
+1. **Mapping risk factors**
+   - Is the strategy lending to leveraged traders, market‑makers, or stablecoin minters?
+   - Is it short option‑like payoffs (e.g., impermanent loss, liquidation risk)?
+2. **Classifying by seniority**
+   - Does the strategy hold senior collateral (e.g., over‑collateralized loans) or junior exposure (e.g., LP tokens in risky pools)?
+3. **Quantifying tail scenarios**
+   - What happens in a 50–70% drawdown of major collateral?
+   - What if a key stablecoin de‑pegs or a bridge is compromised?
+
+This does not produce precise probabilities, but it frames DeFi yield as **compensation for bearing identifiable risks** rather than as “free” return.
+
+### Position Sizing and Concentration Limits
+
+Risk frameworks should translate into explicit constraints, such as:
+
+- Maximum exposure to any **single protocol or smart‑contract system**.
+- Hard limits on **cross‑protocol dependency chains** (e.g., stablecoins backed by assets on another protocol that itself uses a bridge).
+- Caps on **aggregate stablecoin de‑peg risk** and **bridge exposure**.
+
+Professional allocators often:
+
+- Maintain a core allocation only to protocols with multi‑year track records.
+- Treat newer or more experimental opportunities as **tactical, capped‑size trades**.
+
+### Liquidity and Exit Planning
+
+In DeFi, the phrase “I’ll just exit if things get bad” is often illusory. When stress hits:
+
+- Liquidity disappears from DEX pools.
+- Borrow rates spike and collateral haircuts adjust.
+- Governance changes can alter parameters mid‑crisis.
+
+A robust plan includes:
+
+- Pre‑defined **exit thresholds** based on protocol metrics, TVL changes, or oracle behavior.
+- Operational readiness to **execute withdrawals and unwinds** quickly.
+- Avoiding strategies where exiting requires multiple steps under time pressure (e.g., bridge → swap → repay).
+
+## Operating Across Market Cycles
+
+### Bull Markets: Abundance of Yield, Scarcity of Discipline
+
+During bull phases:
+
+- Token prices and TVL rise.
+- Subsidy‑driven yields proliferate.
+- Risk perception narrows to recent realized volatility.
+
+Practitioners should:
+
+- Distinguish between **token‑denominated yield** and **risk‑adjusted, FX‑adjusted returns**.
+- Use bull markets to **harvest gains**, de‑risk, and build reserves.
+- Avoid extrapolating unsustainably high yields into long‑term business models.
+
+### Bear Markets: Scarcity of Yield, Abundance of Signal
+
+Bear markets compress speculative activity but provide excellent information:
+
+- Protocols with real product‑market fit retain usage even at lower rewards.
+- Governance quality becomes visible in how teams handle insolvencies, liquidations, and bad debt.
+- Fragile designs and unsound economics are exposed by stress.
+
+Allocators can use bear markets to:
+
+- Re‑underwrite core protocols based on **organic usage and fee generation**.
+- Increase exposure to high‑conviction venues at more attractive entry points.
+- Exit or write down exposures where design flaws or governance failures are clear.
+
+## Practical Implementation Guidelines
+
+For investors building a DeFi yield sleeve, a pragmatic approach might include:
+
+1. **Core Tier**
+   - Exposure only to protocols with:
+     - Multi‑year track records.
+     - Transparent governance.
+     - Conservatively designed collateral and liquidation systems.
+   - Focus on:
+     - Over‑collateralized lending markets.
+     - Deep, high‑volume stablecoin or blue‑chip DEX pools.
+2. **Satellite Tier**
+   - Smaller positions in newer protocols with:
+     - Clear innovation.
+     - Strong technical teams and audits.
+   - Treat yield here as **equity‑like risk**, with robust position limits.
+3. **Exclusion Tier**
+   - Avoid:
+     - Opaque reserves.
+     - Poorly documented code.
+     - Reliance on reflexive tokenomics and unsustainably high emissions.
+
+Throughout, transparency with stakeholders is essential. DeFi strategies should be framed as **exposure to specific, identifiable risks**, not as generic “enhanced cash.”
+
+## Conclusion
+
+DeFi has proven both its fragility and its resilience. Fragility arises from leverage, flawed designs, and speculative excess. Resilience comes from open‑source iteration, composability, and the ability to rebuild market infrastructure rapidly after shocks.
+
+For investors, the path forward is not to chase headline yields, but to apply the same discipline used in traditional credit and derivatives markets: understand where returns come from, price risk realistically, size positions conservatively, and respect liquidity constraints. Treated through that lens, DeFi yield can become a **specialized, actively risk‑managed sleeve** within a broader digital‑asset or alternative‑credit allocation—rather than a source of unpleasant surprises when the cycle turns.`,
+    date: formatDate(96),
+    author: 'Assunta Novak',
+    authorAvatar: getAuthorAvatar('Assunta Novak'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# DeFi Yield and Risk Management Across Cycles: A Practitioner’s Playbook
+
+## Introduction
+
+Decentralized finance (DeFi) has created an always‑on, globally accessible market for leverage, credit, and liquidity. At the peak of prior cycles, yields advertised in double or triple digits attracted capital from both crypto‑native and traditional investors.`),
+    ),
+    imageUrl: getImage('expert', 96),
+    tags: ['DeFi', 'Yield', 'Risk Management', 'Crypto Markets', 'Blockchain'],
+  },
 ];

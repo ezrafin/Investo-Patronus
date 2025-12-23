@@ -426,4 +426,243 @@ As global manufacturers reassess supply‑chain concentration risk, Southeast As
     imageUrl: getImage('longterm', 372),
     tags: ['ASEAN', 'Supply Chains', 'Emerging Markets', 'Asia-Pacific', 'Investment Themes'],
   },
+  {
+    slug: 'india-equities-and-the-new-growth-cycle',
+    title: 'India Equities and the New Growth Cycle: Structure, Reforms, and Market Positioning',
+    excerpt:
+      'How structural reforms, infrastructure investment, and domestic capital flows are reshaping India’s equity market—and what that means for sector allocation, style tilts, and risk management for global investors.',
+    content: `# India Equities and the New Growth Cycle: Structure, Reforms, and Market Positioning
+
+## Introduction
+
+India has emerged as one of the most closely watched stories in global equities. Supportive demographics, digitalization, infrastructure build‑out, and a more stable macro framework have led many investors to frame India as a **structural growth story** within emerging markets. At the same time, elevated valuations, policy complexity, and episodic volatility require a disciplined approach.
+
+For Asia‑Pacific portfolios, India offers diversification away from North‑East Asia, a large and increasingly sophisticated domestic investor base, and sector exposures that differ from both China and ASEAN. This article provides a practical framework for analyzing India’s equity market and building exposure across cycles.
+
+## Macro and Structural Backdrop
+
+### Growth Drivers and Reform Progress
+
+India’s growth narrative rests on several pillars:
+
+- **Demographics and urbanization**
+  - A young population entering the workforce.
+  - Rising urbanization supporting consumption and services.
+- **Digital and formalization reforms**
+  - Unified payments infrastructure (UPI) facilitating low‑cost digital transactions.
+  - Goods and Services Tax (GST) harmonizing state‑level taxation and encouraging formalization.
+- **Infrastructure push**
+  - Public investment in roads, rail, ports, and logistics.
+  - Focus on improving the ease of doing business.
+
+These shifts have:
+
+- Supported more stable macro conditions than prior cycles.
+- Improved tax buoyancy and expanded the formal economy.
+
+However, challenges remain:
+
+- Labor‑market participation, especially among women.
+- Execution capacity at state and local levels.
+- Ensuring that growth translates into broad‑based income gains.
+
+### External Position and Policy Mix
+
+India’s external position has improved compared with prior decades:
+
+- Adequate FX reserves.
+- More flexible exchange‑rate management.
+- Reduced dependence on volatile short‑term capital.
+
+The policy mix has focused on:
+
+- Gradual inflation targeting.
+- Managing twin deficits (fiscal and current account) without abrupt adjustments.
+
+For equity investors, this framework reduces—but does not eliminate—the risk of balance‑of‑payments crises that have historically plagued some emerging markets.
+
+## Market Structure and Sector Composition
+
+### Index Composition
+
+India’s main equity indices are heavily weighted toward:
+
+- **Financials**, especially private‑sector banks and diversified financials.
+- **Information technology services**, providing global outsourcing and consulting.
+- **Consumer staples and discretionary**, tied to domestic demand.
+- Increasing representation from **industrial and capital‑goods companies** tied to the investment cycle.
+
+Under‑representation exists in:
+
+- Traditional energy and materials relative to some EM peers.
+- Listed state‑owned enterprises (SOEs) in certain segments, though some remain significant.
+
+Investors should:
+
+- Recognize that buying the index equates to **specific sector and style exposures**.
+- Consider whether active allocation across sectors better aligns with their macro and thematic views.
+
+### Ownership and Flows
+
+India’s equity market is distinguished by:
+
+- A **large and growing domestic mutual‑fund and retail base**.
+- Significant **foreign institutional investor (FII)** participation, especially in large caps.
+
+Domestic flows can:
+
+- Buffer against FII outflows during global risk‑off episodes.
+- Reinforce valuation premia for favored sectors and quality franchises.
+
+However, they can also:
+
+- Create crowding in popular names.
+- Extend momentum beyond what fundamentals might justify.
+
+## Sector-Level Perspectives
+
+### Financials: Private Banks and NBFCs
+
+Private‑sector banks have:
+
+- Gained share from state‑owned banks.
+- Improved asset‑quality metrics after prior NPL cycles.
+- Benefited from digital adoption and risk‑based pricing.
+
+Key questions include:
+
+- Sustainability of **credit growth** in retail and SME segments.
+- Competitive dynamics between large private banks and nimble non‑bank financial companies (NBFCs).
+- Asset‑quality risks in microfinance, unsecured retail credit, and real estate.
+
+Investors often prefer:
+
+- Well‑capitalized private banks with strong deposit franchises.
+- Select NBFCs with niche specializations and conservative funding.
+
+### IT Services: Global Demand and Margin Cycles
+
+India’s IT services firms:
+
+- Serve global clients across industries.
+- Benefit from structural demand for digital transformation, cloud migration, and cybersecurity.
+
+However, they are also:
+
+- Exposed to global IT budgets and Western macro cycles.
+- Sensitive to currency moves and wage inflation.
+
+Equity narratives oscillate between:
+
+- Structural growth stories when global tech spending is strong.
+- Cyclical concerns when clients pause discretionary projects.
+
+Investors should examine:
+
+- Deal wins, pipeline commentary, and pricing trends.
+- Attrition rates and offshore/onshore mix.
+- Investment in higher‑value services (cloud, analytics, consulting).
+
+### Industrials and Capital Goods
+
+The infrastructure and manufacturing push has bolstered:
+
+- Capital‑goods and engineering companies.
+- Building materials and construction‑related names.
+
+Opportunities exist where:
+
+- Order books are diversified across segments and customers.
+- Balance sheets are strong enough to manage working‑capital swings.
+
+Risks include:
+
+- Project delays.
+- Execution challenges in large EPC contracts.
+
+## Valuation, Style, and Factor Considerations
+
+### Structural Premium and Relative Valuation
+
+India often trades at a **premium** to other large emerging markets on:
+
+- Price‑to‑earnings (P/E).
+- Price‑to‑book (P/B).
+- Enterprise‑value‑to‑EBITDA (EV/EBITDA).
+
+Justifications for the premium include:
+
+- Stronger governance and disclosure in many listed companies.
+- More stable macro framework than some EM peers.
+- Deeper domestic investor participation.
+
+The investment question is not whether India is “cheap” relative to peers, but whether:
+
+- The premium is **adequately supported** by growth, return on equity (ROE), and risk profile.
+- There is **valuation dispersion** within sectors that allows stock selection to add value.
+
+### Style Tilts: Quality, Growth, and Small Caps
+
+India’s market offers:
+
+- High‑quality compounders with strong franchises and ROEs.
+- Cyclical industrial and financial names tied to capex and credit cycles.
+- Small and mid caps with more idiosyncratic growth and risk.
+
+Style performance rotates with:
+
+- Global risk appetite.
+- Domestic rate cycles.
+- Sectoral earnings trends.
+
+Investors need to:
+
+- Align style exposures (quality, growth, value) with their **macro and risk views**.
+- Avoid unintended concentration in crowded “quality growth” names that dominate benchmarks and narratives.
+
+## Risk Management and Entry Strategy
+
+### Key Risks to Monitor
+
+Core risks for India equity investors include:
+
+- **Valuation risk**, especially in large‑cap quality franchises.
+- **Policy and regulatory risk**, including changes in taxation, sector regulation, or capital‑flow rules.
+- **Execution risk** on reforms and infrastructure projects.
+- **Geopolitical and regional tensions**, which can affect sentiment and flows.
+
+Scenario analysis—modelling earnings and multiples under slower growth or higher global rates—helps to gauge drawdown potential.
+
+### Phasing and Position Sizing
+
+Given valuation levels and cyclicality, many investors:
+
+- Build India exposure **gradually**, rather than in a single step.
+- Diversify entry points across time to manage volatility.
+
+Position sizing should consider:
+
+- Correlation with existing EM and Asia exposures.
+- Overlap with global sector holdings (e.g., IT, financials).
+- Liquidity and trading capacity, particularly in mid and small caps.
+
+## Conclusion
+
+India’s equity market combines structural growth drivers with an increasingly sophisticated market infrastructure and investor base. For Asia‑Pacific and global portfolios, it offers diversification and exposure to themes—digitalization, urbanization, domestic financial deepening—that may be less accessible elsewhere.
+
+At the same time, India is not a one‑way bet. Elevated valuations, policy complexity, and sensitivity to global conditions require a thoughtful, research‑driven, and risk‑aware approach. By combining macro assessment, sector‑level analysis, and disciplined valuation work, investors can build India allocations that participate in the country’s growth story while respecting the potential for volatility along the way.`,
+    date: formatDate(373),
+    author: 'Xu Meiling',
+    authorAvatar: getAuthorAvatar('Xu Meiling'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# India Equities and the New Growth Cycle: Structure, Reforms, and Market Positioning
+
+## Introduction
+
+India has emerged as one of the most closely watched stories in global equities. Supportive demographics, digitalization, infrastructure build‑out, and a more stable macro framework have led many investors to frame India as a structural growth story within emerging markets.`),
+    ),
+    imageUrl: getImage('markets', 373),
+    tags: ['India', 'Equities', 'Emerging Markets', 'Asia-Pacific', 'Macro'],
+  },
 ];

@@ -419,4 +419,231 @@ Green finance has traditionally focused on pure‑play climate solutions: wind f
     imageUrl: getImage('expert', 325),
     tags: ['Transition Finance', 'Net Zero', 'ESG', 'Fixed Income', 'Sustainable Investing'],
   },
+  {
+    slug: 'stewardship-and-esg-engagement-in-public-markets',
+    title: 'Stewardship and ESG Engagement in Public Markets: From Policy Documents to Real Outcomes',
+    excerpt:
+      'How asset managers can move beyond box-ticking stewardship to prioritize material ESG issues, set credible escalation paths, and measure real-world impact without losing sight of fiduciary duty.',
+    content: `# Stewardship and ESG Engagement in Public Markets: From Policy Documents to Real Outcomes
+
+## Introduction
+
+Stewardship has become a central pillar of sustainable investing. Asset managers and asset owners increasingly publish stewardship codes, active‑ownership reports, and case studies of engagement with portfolio companies. Regulators and beneficiaries, in turn, are asking a harder question: **What difference does any of this actually make?**
+
+At its best, stewardship links **ESG analysis** to **capital allocation** and **corporate behavior**. At its worst, it devolves into boilerplate policies, low‑impact conversations, and backward‑looking narratives designed primarily for marketing. This article focuses on what effective stewardship looks like in practice for listed equities and public credit, and how investors can design engagement programs that prioritize materiality, escalation, and measurable outcomes.
+
+## The Purpose of Stewardship
+
+### From Voting to Value Creation
+
+Stewardship tools include:
+
+- Proxy voting on shareholder and management resolutions.
+- Direct engagement with boards and management teams.
+- Collaborative initiatives across investors and regions.
+
+The underlying objectives are to:
+
+- Protect and enhance **long‑term risk‑adjusted returns**.
+- Improve transparency and governance.
+- Support credible transitions on environmental and social topics.
+
+Effective stewardship does **not** mean:
+
+- Managing companies day‑to‑day.
+- Replacing boards or dictating strategy in all but the most extreme cases.
+- Pursuing ESG objectives unrelated to financial materiality or client mandates.
+
+### Materiality and Mandate Alignment
+
+Investors must start by clarifying:
+
+- Which ESG topics are **financially material** for each sector and issuer.
+- How stewardship goals align with:
+  - Investment objectives (e.g., outperforming a benchmark, achieving net‑zero alignment).
+  - Client mandates and regulatory obligations.
+
+Without this foundation, engagement risks becoming diffuse, reactive, or misaligned with fiduciary duty.
+
+## Designing an Engagement Strategy
+
+### Prioritization: Where to Spend Scarce Time
+
+Stewardship resources are limited. A credible strategy requires **prioritization**:
+
+- **Issuer prioritization**
+  - Largest positions by portfolio weight or risk contribution.
+  - Companies with elevated ESG risks or controversies.
+  - Issuers critical to thematic objectives (e.g., hard‑to‑abate sectors in a net‑zero strategy).
+- **Topic prioritization**
+  - Climate and transition plans in carbon‑intensive sectors.
+  - Governance structures and capital‑allocation discipline.
+  - Human‑capital management and safety in labor‑intensive industries.
+
+Rather than engaging superficially with hundreds of names, many leading practitioners focus on **deep, multi‑year engagement** with a manageable subset of high‑impact issuers.
+
+### Setting Engagement Objectives
+
+Before meeting a company, investors should define:
+
+- The **baseline**: current practices, disclosures, and gaps.
+- The **objectives**: specific changes sought over a defined time horizon.
+- The **metrics**: how progress will be assessed (e.g., adoption of science‑based targets, board independence thresholds, safety metrics).
+
+Objectives should be:
+
+- **Company‑specific** – tailored to sector, footprint, and starting point.
+- **Time‑bound** – structured into near‑term asks and longer‑term milestones.
+- **Feasible but stretching** – ambitious enough to matter, realistic enough to be actionable.
+
+## Escalation: When Dialogue Is Not Enough
+
+### Building an Escalation Ladder
+
+Engagement without escalation risks becoming a **perpetual conversation** with limited outcomes. Investors should codify an escalation ladder, which may include:
+
+1. **Private dialogue**
+   - Meetings with management and board members.
+   - Follow‑up letters summarizing expectations.
+2. **Voting action**
+   - Voting against specific directors (e.g., chairs of relevant committees).
+   - Opposing remuneration policies when misaligned with ESG performance.
+3. **Public statements or collaborative engagement**
+   - Joining or spearheading investor coalitions.
+   - Clarifying expectations through public letters or initiatives.
+4. **Portfolio consequences**
+   - Position‑size reductions where risk/return deteriorates.
+   - In extreme cases, divestment consistent with mandate constraints.
+
+Clear escalation paths:
+
+- Create **credibility** with issuers, demonstrating that engagement has consequences.
+- Provide **governance clarity** internally and to clients.
+
+### Voting as a Stewardship Tool
+
+Voting is one of the most visible expressions of stewardship. Effective voting policies:
+
+- Align with engagement priorities (e.g., climate votes in high‑emitting sectors).
+- Include **pre‑disclosed voting principles** on:
+  - Board independence and diversity.
+  - Overboarding and tenure.
+  - Linking pay to material ESG metrics.
+
+Investors should avoid:
+
+- Blanket support for all management proposals.
+- Box‑ticking opposition that ignores company context.
+
+Instead, voting decisions should be:
+
+- **Case‑by‑case**, grounded in company‑specific analysis.
+- Communicated to issuers, especially where votes diverge from management recommendations.
+
+## Measuring Outcomes and Avoiding Greenwashing
+
+### Distinguishing Activity from Impact
+
+Stewardship reporting often emphasizes:
+
+- Number of meetings.
+- Engagement coverage by AUM.
+- Case‑study anecdotes.
+
+These activity metrics are useful but incomplete. Investors should also track **outcome‑oriented indicators**, such as:
+
+- Adoption of **climate transition plans** with interim targets and capex alignment.
+- Improvements in **safety records**, labor practices, or supply‑chain due‑diligence processes.
+- Changes in **governance structures**, such as independent chairs or ESG‑linked pay.
+
+Not every engagement will lead to a clear “win,” but over time, an effective program should demonstrate:
+
+- Meaningful changes in practice or disclosure at a subset of key issuers.
+- A systematic link between stewardship themes and investable risks.
+
+### Attribution and Realism
+
+Claiming full credit for every positive change risks overstating impact. Companies:
+
+- Face regulatory, competitive, and social pressures beyond investors.
+- May have been on a path to improvement regardless of engagement.
+
+Best practice is to:
+
+- Present **balanced narratives**, acknowledging multi‑factor drivers.
+- Focus stewardship claims on:
+  - Situations where investor pressure clearly influenced timing or ambition.
+  - Cases where investors supported or amplified internal champions for change.
+
+This realism improves credibility with both clients and issuers.
+
+## Integrating Stewardship with Investment Decisions
+
+### Feedback Loops into Research and Valuation
+
+Engagement should not be siloed from investment teams. A robust model integrates:
+
+- Stewardship insights into **financial analysis** and **valuation assumptions**.
+- Company responses into **ESG scores and risk assessments**.
+
+Concrete examples include:
+
+- Adjusting **cost of capital** or cash‑flow scenarios based on governance quality or transition risk.
+- Reflecting improved safety or compliance regimes in **downside‑risk estimates**.
+
+### Cross-Asset Considerations
+
+For investors active in both equity and credit:
+
+- Stewardship insights can inform **covenant negotiation**, **bond documentation**, and **engagement with treasurers**.
+- Credit portfolios can be powerful levers in capital‑intensive sectors where bond markets finance large transition capex.
+
+Consistency matters: divergent messages from equity and credit teams can undermine investor credibility.
+
+## Collaborative Engagement and Systemic Risks
+
+### When Collaboration Adds Value
+
+Some ESG challenges—climate change, biodiversity loss, digital rights—are **systemic**. Single investors may lack leverage or legitimacy to drive change alone. Collaborative initiatives can:
+
+- Pool expertise and resources.
+- Send stronger, coordinated signals to boards and policymakers.
+- Reduce duplication of effort on shared priorities.
+
+However, collaboration should not:
+
+- Dilute accountability.
+- Lead to generic demands disconnected from company realities.
+
+### Guardrails and Governance
+
+Investors participating in collaborative initiatives should:
+
+- Understand governance structures and decision processes.
+- Ensure alignment with **competition law** and regulatory expectations.
+- Maintain the ability to **deviate** where investment or client context requires.
+
+## Conclusion
+
+Stewardship and ESG engagement in public markets are evolving from marketing narratives to core components of investment practice. The most effective programs are:
+
+- **Focused** on material issues and high‑impact issuers.
+- **Structured** with clear objectives, escalation paths, and reporting frameworks.
+- **Integrated** with research, valuation, and portfolio decisions.
+
+By moving beyond box‑ticking and emphasizing real‑world outcomes, investors can use stewardship to improve risk management, support credible corporate transitions, and demonstrate that active ownership is not a side activity—but a central tool for delivering sustainable financial returns in a changing world.`,
+    date: formatDate(326),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Stewardship and ESG Engagement in Public Markets: From Policy Documents to Real Outcomes
+
+## Introduction
+
+Stewardship has become a central pillar of sustainable investing. Asset managers and asset owners increasingly publish stewardship codes, active‑ownership reports, and case studies of engagement with portfolio companies.`),
+    ),
+    imageUrl: getImage('expert', 326),
+    tags: ['Stewardship', 'Engagement', 'ESG', 'Active Ownership', 'Sustainable Investing'],
+  },
 ];

@@ -442,4 +442,209 @@ Duration is one of the most powerful—and misunderstood—concepts in fixed inc
     imageUrl: getImage('expert', 159),
     tags: ['Duration', 'Fixed Income', 'Risk Management', 'Interest Rates', 'Portfolio Strategy'],
   },
+  {
+    slug: 'credit-spreads-and-cycle-aware-bond-positioning',
+    title: 'Credit Spreads and Cycle-Aware Bond Positioning: Tools for Institutional Portfolios',
+    excerpt:
+      'How to interpret credit spreads across ratings buckets, sectors, and regions; build cycle-aware playbooks; and avoid procyclical mistakes when spreads blow out or grind tight.',
+    content: `# Credit Spreads and Cycle-Aware Bond Positioning: Tools for Institutional Portfolios
+
+## Introduction
+
+Credit spreads are one of the most closely watched indicators in fixed income markets. They summarize, in a single number, how much extra yield investors demand to hold risky bonds instead of government securities. Yet beneath that number lies a complex set of drivers: default risk, liquidity, technical flows, macro conditions, and investor behavior.
+
+For long‑horizon investors, the goal is not to forecast every short‑term spread move, but to **build a cycle‑aware framework**. That means understanding:
+
+- What spreads are compensating you for.
+- How spreads tend to behave across economic regimes.
+- How to position portfolios so that credit risk adds return over time without dominating total risk.
+
+This article provides a practical toolkit for analyzing credit spreads and translating views into portfolio decisions.
+
+## What Credit Spreads Really Price
+
+### Components of Credit Spread
+
+In simple terms, credit spreads reflect compensation for:
+
+- **Expected default losses** – Probability of default multiplied by loss given default.
+- **Risk premium** – Compensation for uncertainty and cyclicality in those losses.
+- **Liquidity premium** – Compensation for trading costs, market depth, and the ability to exit in stress.
+- **Technical and regulatory factors** – Benchmark composition, regulatory constraints, and structural demand.
+
+Empirically, the **risk and liquidity premia** are often more volatile than the expected‑loss component. That is why spreads can move hundreds of basis points in months, even when long‑run default expectations change only modestly.
+
+### Spread Levels Versus Spread Changes
+
+Investors commonly ask: “Are spreads tight or wide?” A more useful question is:
+
+- Relative to **what baseline** (history, fundamentals, peers)?
+- Under **which macro and policy regime**?
+
+For example:
+
+- Investment‑grade spreads at 100 bps may be tight versus long‑run averages, but fair relative to a stable, low‑volatility environment with strong balance sheets.
+- High‑yield spreads at 500 bps might seem generous, but if recession risks are rising and default cycles are turning, that cushion may not be sufficient.
+
+Understanding the **drivers of spread changes**—risk appetite, growth expectations, technical flows—is as important as measuring the level.
+
+## Mapping Spreads Across the Capital Structure and Ratings
+
+### Ratings Buckets: IG, BB, and B/CCC
+
+Credit markets are segmented by rating:
+
+- **Investment grade (IG)** – Typically BBB‑ and above.
+- **High yield (HY)** – BB+ and below, further segmented into:
+  - BB: “Fallen angels” and higher‑quality junk.
+  - B: Middle of the spectrum.
+  - CCC and below: Distressed or near‑distressed.
+
+The **shape of the spread curve across ratings** contains valuable information:
+
+- When BB spreads are only modestly wider than IG, but B and CCC are very wide, markets may be pricing **idiosyncratic risk at the lower end** rather than systemic stress.
+- When the entire HY spectrum is wide, especially BBs, markets may be pricing a **broad macro shock**.
+
+Investors can use this structure to:
+
+- Tilt toward **higher‑quality HY** when compensation for moving down from IG is attractive.
+- Move up in quality when lower‑rated tranches are not adequately compensating for cycle risk.
+
+### Sector and Capital-Structure Considerations
+
+Within sectors, spreads also reflect:
+
+- **Business model resilience** – Cyclicality, pricing power, regulation.
+- **Capital structure** – Leverage, debt seniority, and covenant protection.
+
+For example:
+
+- Defensive sectors (utilities, some healthcare) may trade tighter, but can still offer value when spreads widen mechanically during risk‑off episodes.
+- Highly cyclical sectors (autos, commodities) require more cautious late‑cycle positioning.
+
+Capital‑structure analysis helps distinguish between:
+
+- **Senior secured** bonds with strong collateral and covenants.
+- **Subordinated or hybrid** instruments that absorb losses first.
+
+Cycle‑aware investors often prefer to:
+
+- Own **safer tranches** in more cyclical sectors.
+- Take more structural risk (e.g., hybrids) only in **strong, diversified companies** with robust balance sheets.
+
+## Credit Spreads Across the Economic Cycle
+
+### Typical Spread Behavior by Phase
+
+While no cycle is identical, a stylized pattern often emerges:
+
+1. **Early cycle / recovery**
+   - Growth is rebounding from recession.
+   - Default rates remain elevated but are peaking.
+   - Spreads are still wide; carry and spread tightening offer attractive returns.
+2. **Mid‑cycle expansion**
+   - Growth is solid, default rates are low.
+   - Spreads grind tighter; carry dominates returns.
+   - Valuations may become rich; selectivity trumps beta.
+3. **Late cycle**
+   - Growth is slowing, policy is tightening or restrictive.
+   - Spreads may remain deceptively tight for a period.
+   - Eventually, volatility breaks out, and spreads widen sharply.
+4. **Downturn**
+   - Defaults rise, downgrades increase.
+   - Spreads blow out; liquidity deteriorates.
+   - Forward returns improve for investors with dry powder.
+
+The challenge is that **transitions between phases are rarely smooth**. Macroeconomic data, policy communication, and idiosyncratic shocks can compress or elongate these stages.
+
+### Avoiding Procyclical Mistakes
+
+Two classic errors repeat across cycles:
+
+- **Reaching for yield late in the cycle**, when spreads are tight, leverage is high, and documentation is weak.
+- **De‑risking aggressively at the worst point**, after spreads have already blown out and defaults are near their peak.
+
+Cycle‑aware investors counteract these tendencies by:
+
+- Gradually **reducing credit beta** (e.g., HY exposure, lower‑quality tranches) as cycles mature.
+- Maintaining a **pre‑committed playbook** for adding risk when spreads and defaults reach historically attractive entry points.
+
+## Implementing Views in Portfolios
+
+### Beta Versus Alpha in Credit
+
+At a high level, investors must decide:
+
+- How much **pure spread beta** to hold (e.g., via broad index exposure).
+- How much to allocate to **relative‑value and security selection**.
+
+Practical tools include:
+
+- Adjusting **overall HY weight** versus IG.
+- Tilting between **crossover buckets** (BBB/BB).
+- Rotating across sectors and regions based on fundamental and valuation views.
+
+In many institutional portfolios, the majority of long‑term return from credit comes from **being appropriately exposed to spread risk through the cycle**, not from tactical trading. The art is to calibrate that exposure to the macro environment and client risk tolerance.
+
+### Duration and Curve Positioning Within Credit
+
+Credit positioning cannot be separated from **interest‑rate risk**. For example:
+
+- Long‑duration IG corporates may deliver strong returns in a recession with falling rates, even if spreads widen somewhat.
+- Shorter‑duration HY can protect against rate volatility but is more sensitive to default risk and recovery values.
+
+Investors can:
+
+- Pair **longer‑duration government bonds** with intermediate‑duration credit to balance rate and spread risks.
+- Use **barbell structures** combining high‑quality, longer‑duration assets with shorter‑duration credit to manage convexity and carry.
+
+### Liquidity and Vehicle Choice
+
+Implementation vehicles—single‑name bonds, credit indices, ETFs, or derivatives—embed different liquidity and tracking characteristics:
+
+- **Single‑name bonds** offer granular control but can be illiquid in stress.
+- **Index futures or ETFs** provide flexibility for beta adjustment, but can decouple from NAV in extremes.
+- **Credit default swaps (CDS)** can be more liquid in downturns, but require derivatives infrastructure and expertise.
+
+Cycle‑aware positioning includes a plan for:
+
+- How to **scale risk up or down** using liquid instruments.
+- How to avoid being forced sellers of the least liquid holdings at the worst time.
+
+## A Structured Process for Credit Decisions
+
+A repeatable process might include:
+
+1. **Macro and cycle assessment**
+   - Growth, inflation, policy stance, and corporate fundamentals.
+2. **Valuation mapping**
+   - Current spreads versus history, adjusted for default outlook and sector mix.
+3. **Risk‑budget allocation**
+   - How much spread risk fits within the overall portfolio’s drawdown and tracking‑error limits.
+4. **Implementation choices**
+   - Balance between IG/HY, sectors, ratings buckets, and instruments.
+5. **Ongoing monitoring**
+   - Spreads, dispersion, downgrade/upgrade ratios, and liquidity conditions.
+
+The aim is not to predict every turning point but to **adapt exposures gradually** as information accumulates.
+
+## Conclusion
+
+Credit spreads condense a complex set of risks into a single observable price. For long‑horizon investors, the task is to look through that price to the underlying fundamentals and cycle dynamics, and to align portfolio positioning with a clear, disciplined framework.
+
+By understanding what spreads are really paying for, how they evolve through the cycle, and how to implement views using the full fixed‑income toolkit, institutional investors can make credit risk a **deliberate, well‑compensated component** of portfolio construction rather than a residual source of volatility. In an environment where both rates and spreads may remain more volatile than in the pre‑pandemic decade, such a framework is not optional—it is central to successful fixed‑income investing.`,
+    date: formatDate(160),
+    author: 'Lysander Truog',
+    authorAvatar: getAuthorAvatar('Lysander Truog'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Credit Spreads and Cycle-Aware Bond Positioning: Tools for Institutional Portfolios
+
+## Introduction
+
+Credit spreads are one of the most closely watched indicators in fixed income markets. They summarize, in a single number, how much extra yield investors demand to hold risky bonds instead of government securities.`),
+    ),
+    imageUrl: getImage('expert', 160),
+    tags: ['Credit Spreads', 'Fixed Income', 'Cycle Positioning', 'Investment Strategy', 'Risk Management'],
+  },
 ];
