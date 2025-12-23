@@ -28,7 +28,7 @@ export const xuArticles: AnalyticsArticle[] = [
   {
     slug: 'china-tech-investment-landscape-2024',
     title: 'China Tech Investment Landscape: Navigating Opportunities and Risks',
-    excerpt: 'Comprehensive analysis of China's technology sector, examining market dynamics, regulatory environment, and investment opportunities. Assessment of key players, competitive positioning, and long-term outlook for Chinese tech companies.',
+    excerpt: 'Comprehensive analysis of China\'s technology sector, examining market dynamics, regulatory environment, and investment opportunities. Assessment of key players, competitive positioning, and long-term outlook for Chinese tech companies.',
     content: `# China Tech Investment Landscape: Navigating Opportunities and Risks
 
 ## Introduction
