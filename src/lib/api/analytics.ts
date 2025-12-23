@@ -1,5 +1,13 @@
 import { AnalyticsArticle } from './types';
 import { getAuthorAvatar, categoryImages } from './utils';
+import { christinaArticles } from './analytics-christina';
+import { assuntaArticles } from './analytics-assunta';
+import { lysanderArticles } from './analytics-lysander';
+import { eliasArticles } from './analytics-elias';
+import { anastasiaArticles } from './analytics-anastasia';
+import { lucaArticles } from './analytics-luca';
+import { isabelleArticles } from './analytics-isabelle';
+import { xuArticles } from './analytics-xu';
 
 // Helper to get image by index cycling through available images
 const getImage = (type: string, index: number) => {
