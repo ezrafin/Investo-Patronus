@@ -358,7 +358,7 @@ function AchievementBadge({ userId }: { userId: string }) {
 
 function AchievementMenuItem() {
   const [open, setOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTranslation({ namespace: 'ui' });
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
