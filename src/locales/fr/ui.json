@@ -142,7 +142,18 @@
     "changingPassword": "Vérification et changement...",
     "pleaseSignIn": "Veuillez vous connecter",
     "needSignIn": "Vous devez être connecté pour accéder aux paramètres.",
-    "loadingSettings": "Chargement des paramètres..."
+    "loadingSettings": "Chargement des paramètres...",
+    "saveSuccess": "Paramètres enregistrés avec succès",
+    "saveError": "Échec de l'enregistrement des paramètres",
+    "errorCurrentPasswordRequired": "Veuillez saisir votre mot de passe actuel",
+    "errorPasswordsRequired": "Veuillez remplir tous les champs de mot de passe",
+    "errorPasswordTooShort": "Le nouveau mot de passe doit contenir au moins 8 caractères",
+    "errorPasswordNoNumber": "Le nouveau mot de passe doit contenir au moins un chiffre",
+    "errorPasswordNoSpecial": "Le nouveau mot de passe doit contenir au moins un caractère spécial (!@#$%^&*)",
+    "errorPasswordsMismatch": "Les nouveaux mots de passe ne correspondent pas",
+    "errorCurrentPasswordIncorrect": "Le mot de passe actuel est incorrect",
+    "passwordChangeSuccess": "Mot de passe modifié avec succès !",
+    "passwordChangeError": "Échec de la modification du mot de passe"
   },
   "newsPage": {
     "title": "Actualités",

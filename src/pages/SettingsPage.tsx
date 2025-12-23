@@ -66,9 +66,9 @@ export default function SettingsPage() {
     try {
       await updatePreferences(localPrefs);
       
-      toast.success('Settings saved successfully');
+      toast.success(t('settings.saveSuccess'));
     } catch (error) {
-      toast.error('Failed to save settings');
+      toast.error(t('settings.saveError'));
     }
     setSaving(false);
   };
@@ -77,32 +77,32 @@ export default function SettingsPage() {
     e.preventDefault();
     
     if (!currentPassword) {
-      toast.error('Please enter your current password');
+      toast.error(t('settings.errorCurrentPasswordRequired'));
       return;
     }
 
     if (!newPassword || !confirmPassword) {
-      toast.error('Please fill in all password fields');
+      toast.error(t('settings.errorPasswordsRequired'));
       return;
     }
 
     if (newPassword.length < 8) {
-      toast.error('New password must be at least 8 characters long');
+      toast.error(t('settings.errorPasswordTooShort'));
       return;
     }
 
     if (!/\d/.test(newPassword)) {
-      toast.error('New password must contain at least one number');
+      toast.error(t('settings.errorPasswordNoNumber'));
       return;
     }
 
     if (!/[!@#$%^&*(),.?":{}|<>]/.test(newPassword)) {
-      toast.error('New password must contain at least one special character');
+      toast.error(t('settings.errorPasswordNoSpecial'));
       return;
     }
 
     if (newPassword !== confirmPassword) {
-      toast.error('New passwords do not match');
+      toast.error(t('settings.errorPasswordsMismatch'));
       return;
     }
 
@@ -115,7 +115,7 @@ export default function SettingsPage() {
       });
 
       if (signInError) {
-        toast.error('Current password is incorrect');
+        toast.error(t('settings.errorCurrentPasswordIncorrect'));
         setChangingPassword(false);
         return;
       }
@@ -127,12 +127,12 @@ export default function SettingsPage() {
 
       if (error) throw error;
 
-      toast.success('Password changed successfully!');
+      toast.success(t('settings.passwordChangeSuccess'));
       setCurrentPassword('');
       setNewPassword('');
       setConfirmPassword('');
     } catch (error: any) {
-      toast.error(error.message || 'Failed to change password');
+      toast.error(error.message || t('settings.passwordChangeError'));
     } finally {
       setChangingPassword(false);
     }

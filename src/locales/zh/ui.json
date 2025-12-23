@@ -142,7 +142,18 @@
     "changingPassword": "验证并更改中...",
     "pleaseSignIn": "请登录",
     "needSignIn": "您需要登录才能访问设置。",
-    "loadingSettings": "加载设置中..."
+    "loadingSettings": "加载设置中...",
+    "saveSuccess": "设置已成功保存",
+    "saveError": "无法保存设置",
+    "errorCurrentPasswordRequired": "请输入当前密码",
+    "errorPasswordsRequired": "请填写所有密码字段",
+    "errorPasswordTooShort": "新密码长度至少为 8 个字符",
+    "errorPasswordNoNumber": "新密码必须包含至少一个数字",
+    "errorPasswordNoSpecial": "新密码必须包含至少一个特殊字符 (!@#$%^&*)",
+    "errorPasswordsMismatch": "两次输入的新密码不一致",
+    "errorCurrentPasswordIncorrect": "当前密码不正确",
+    "passwordChangeSuccess": "密码修改成功！",
+    "passwordChangeError": "无法修改密码"
   },
   "newsPage": {
     "title": "新闻",

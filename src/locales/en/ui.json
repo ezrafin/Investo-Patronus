@@ -151,7 +151,18 @@
     "changingPassword": "Verifying & Changing...",
     "pleaseSignIn": "Please sign in",
     "needSignIn": "You need to be signed in to access settings.",
-    "loadingSettings": "Loading settings..."
+    "loadingSettings": "Loading settings...",
+    "saveSuccess": "Settings saved successfully",
+    "saveError": "Failed to save settings",
+    "errorCurrentPasswordRequired": "Please enter your current password",
+    "errorPasswordsRequired": "Please fill in all password fields",
+    "errorPasswordTooShort": "New password must be at least 8 characters long",
+    "errorPasswordNoNumber": "New password must contain at least one number",
+    "errorPasswordNoSpecial": "New password must contain at least one special character",
+    "errorPasswordsMismatch": "New passwords do not match",
+    "errorCurrentPasswordIncorrect": "Current password is incorrect",
+    "passwordChangeSuccess": "Password changed successfully!",
+    "passwordChangeError": "Failed to change password"
   },
   "newsPage": {
     "title": "News",

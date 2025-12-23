@@ -142,7 +142,18 @@
     "changingPassword": "Weryfikacja i zmiana...",
     "pleaseSignIn": "Zaloguj się",
     "needSignIn": "Musisz być zalogowany, aby uzyskać dostęp do ustawień.",
-    "loadingSettings": "Ładowanie ustawień..."
+    "loadingSettings": "Ładowanie ustawień...",
+    "saveSuccess": "Ustawienia zostały zapisane",
+    "saveError": "Nie udało się zapisać ustawień",
+    "errorCurrentPasswordRequired": "Wprowadź swoje obecne hasło",
+    "errorPasswordsRequired": "Wypełnij wszystkie pola hasła",
+    "errorPasswordTooShort": "Nowe hasło musi mieć co najmniej 8 znaków",
+    "errorPasswordNoNumber": "Nowe hasło musi zawierać co najmniej jedną cyfrę",
+    "errorPasswordNoSpecial": "Nowe hasło musi zawierać co najmniej jeden znak specjalny (!@#$%^&*)",
+    "errorPasswordsMismatch": "Nowe hasła nie są takie same",
+    "errorCurrentPasswordIncorrect": "Obecne hasło jest nieprawidłowe",
+    "passwordChangeSuccess": "Hasło zostało pomyślnie zmienione!",
+    "passwordChangeError": "Nie udało się zmienić hasła"
   },
   "newsPage": {
     "title": "Wiadomości",
