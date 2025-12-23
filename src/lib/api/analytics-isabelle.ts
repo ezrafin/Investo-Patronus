@@ -646,4 +646,242 @@ Stewardship has become a central pillar of sustainable investing. Asset managers
     imageUrl: getImage('expert', 326),
     tags: ['Stewardship', 'Engagement', 'ESG', 'Active Ownership', 'Sustainable Investing'],
   },
+  {
+    slug: 'biodiversity-finance-and-nature-related-risks',
+    title: 'Biodiversity Finance and Nature-Related Risks: Integrating TNFD into Investment Decisions',
+    excerpt:
+      'Why biodiversity loss is becoming a financially material risk, how TNFD is reshaping disclosure expectations, and how investors can start to price nature-related dependencies and impacts.',
+    content: `# Biodiversity Finance and Nature-Related Risks: Integrating TNFD into Investment Decisions
+
+## Introduction
+
+Climate change has dominated the sustainable‑finance agenda for more than a decade. Yet an equally critical, and deeply interconnected, challenge is now moving rapidly up the agenda: **biodiversity loss and nature degradation**. From pollinator decline and soil erosion to deforestation and ocean acidification, nature‑related pressures are beginning to affect food systems, supply chains, and local communities in ways that have clear financial consequences.
+
+Regulators, standard setters, and investors are responding. The **Taskforce on Nature‑related Financial Disclosures (TNFD)** has developed a framework to help organizations assess and disclose nature‑related dependencies, impacts, risks, and opportunities. For investors, the question is no longer whether biodiversity matters, but **how to integrate it into research, engagement, and portfolio construction**.
+
+This article outlines a practical approach to biodiversity finance, focusing on the TNFD framework and the steps investors can take to incorporate nature‑related risks and opportunities into their processes.
+
+## Why Biodiversity Is Financially Material
+
+### Dependencies and Impacts
+
+Many sectors depend directly or indirectly on ecosystem services:
+
+- Agriculture and food rely on:
+  - Soil health.
+  - Water availability.
+  - Pollination.
+- Forestry, paper, and packaging depend on:
+  - Sustainable forest management.
+  - Biodiversity within forest ecosystems.
+- Pharmaceuticals and cosmetics draw on:
+  - Natural compounds.
+  - Genetic diversity and bioprospecting.
+
+At the same time, these sectors can **impact nature** through:
+
+- Land‑use change and deforestation.
+- Over‑extraction of water.
+- Pollution and chemical runoff.
+
+These dependencies and impacts can translate into:
+
+- Supply disruptions.
+- Regulatory penalties and litigation.
+- Reputational damage and changing consumer preferences.
+
+### Emerging Policy and Market Signals
+
+Policy and market developments are increasing the materiality of nature‑related issues:
+
+- Global biodiversity frameworks and national‑level implementation plans.
+- Deforestation regulations affecting commodity supply chains.
+- Corporate commitments to zero‑deforestation and nature‑positive strategies.
+
+As with climate, early movers in policy and regulation can:
+
+- Alter cost structures.
+- Create stranded‑asset risks.
+- Open markets for nature‑positive products and services.
+
+## The TNFD Framework: Core Concepts
+
+### The LEAP Approach
+
+TNFD proposes a **LEAP** process for organizations:
+
+- **Locate** their interfaces with nature.
+- **Evaluate** dependencies and impacts.
+- **Assess** material risks and opportunities.
+- **Prepare** to respond and report.
+
+For investors, this means:
+
+- Encouraging investee companies to adopt LEAP processes.
+- Using resulting disclosures to inform:
+  - Risk assessments.
+  - Engagement priorities.
+  - Capital‑allocation decisions.
+
+### Nature-Related Risk Categories
+
+TNFD categorizes nature‑related risks into:
+
+- **Physical risks**
+  - Degraded ecosystems reducing productivity (e.g., soil erosion).
+  - Extreme events where nature’s buffering capacity is weakened.
+- **Transition risks**
+  - Policy, regulatory, and legal changes.
+  - Shifts in consumer behavior and technology.
+- **Systemic risks**
+  - Widespread ecosystem breakdowns affecting entire sectors or geographies.
+
+These map closely to climate‑risk categories, enabling:
+
+- Consistency across climate and nature‑related risk management.
+- Integration into existing risk frameworks.
+
+## Practical Steps for Investors
+
+### 1. Define Scope and Priorities
+
+Investors should begin by:
+
+- Identifying **high‑exposure sectors and geographies** in their portfolios:
+  - Agriculture, food and beverage.
+  - Forestry and pulp & paper.
+  - Mining and extractives.
+  - Infrastructure and real estate near sensitive ecosystems.
+- Prioritizing where:
+  - Nature‑related risks are plausibly material within investment horizons.
+  - Data and engagement leverage are sufficient to drive change.
+
+### 2. Leverage Emerging Data and Tools
+
+Nature‑related data is less mature than climate data, but improving:
+
+- Geospatial tools and satellite imagery can:
+  - Map land‑use change and deforestation.
+  - Track proximity to protected or high‑biodiversity areas.
+- Corporate disclosures (where available) can highlight:
+  - Water use and stress.
+  - Land management practices.
+  - Supply‑chain sourcing policies.
+
+Investors can combine:
+
+- Third‑party datasets.
+- Company reports and controversy screening.
+- Sector‑level studies and scientific assessments.
+
+to build a first‑pass risk map.
+
+### 3. Integrate Nature into Research and Engagement
+
+Incorporating nature‑related issues into investment research involves:
+
+- Adding **sector‑specific nature questions** to analyst models:
+  - How exposed is the business model to degraded ecosystems or stricter land‑use rules?
+  - What mitigation and adaptation strategies are in place?
+- Evaluating **governance and oversight**:
+  - Board‑level responsibility for nature‑related risks.
+  - Management incentives linked to relevant KPIs.
+
+Engagement can focus on:
+
+- Encouraging adoption of TNFD‑aligned processes.
+- Asking companies to:
+  - Map their dependencies and impacts.
+  - Set nature‑related targets.
+  - Integrate findings into risk management and strategy.
+
+### 4. Reflect Nature-Related Risks in Valuation and Positioning
+
+Nature‑related risks can influence:
+
+- Revenue growth assumptions.
+- Margin sustainability.
+- Required return on capital.
+
+Examples:
+
+- Companies facing:
+  - High deforestation exposure.
+  - Weak mitigation plans.
+  may warrant:
+  - Lower growth and margin assumptions.
+  - Higher discount rates or lower valuation multiples.
+- Firms investing credibly in:
+  - Sustainable sourcing.
+  - Regenerative agriculture.
+  may:
+  - Reduce long‑term risk.
+  - Capture premium pricing or market share.
+
+Portfolio‑level actions can include:
+
+- Position‑size adjustments.
+- Sector tilts away from unmanaged high‑risk exposures.
+- Targeted allocations to nature‑positive themes.
+
+## Opportunities in Nature-Positive Solutions
+
+### Investment Themes
+
+Beyond risk management, biodiversity and nature create opportunities in:
+
+- **Sustainable agriculture and inputs**
+  - Precision farming.
+  - Biological pesticides and fertilizers.
+  - Soil‑health technologies.
+- **Water management**
+  - Treatment, efficiency, and leakage reduction.
+  - Infrastructure for water‑stressed regions.
+- **Restoration and conservation finance**
+  - Projects restoring wetlands, forests, and coastal ecosystems.
+  - Instruments like sustainability‑linked loans and bonds tied to nature outcomes.
+
+These themes can:
+
+- Benefit from supportive policies.
+- Address rising corporate and consumer demand for sustainable solutions.
+
+### Guarding Against “Nature-Washing”
+
+As with climate, investors must remain cautious about:
+
+- Over‑stated claims regarding biodiversity benefits.
+- Projects with weak baselines or unverifiable outcomes.
+
+Due diligence should examine:
+
+- Scientific robustness of metrics.
+- Independent verification and monitoring.
+- Alignment with credible standards and taxonomies.
+
+## Conclusion
+
+Biodiversity and nature‑related risks are moving from the periphery of ESG discussions into the core of financial risk and opportunity assessment. The TNFD framework provides a useful starting point for structuring analysis and disclosure, but integration into investment practice requires deliberate steps.
+
+For investors, the path forward involves:
+
+- Prioritizing high‑exposure sectors and geographies.
+- Using emerging data and tools to map dependencies and impacts.
+- Embedding nature‑related questions into research, engagement, and valuation.
+
+Over time, those who can systematically incorporate nature‑related considerations into capital allocation will be better positioned to manage downside risks and capture upside in the transition toward a more nature‑positive economy.`,
+    date: formatDate(327),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'longterm',
+    readTime: calculateReadTime(
+      countWords(`# Biodiversity Finance and Nature-Related Risks: Integrating TNFD into Investment Decisions
+
+## Introduction
+
+Climate change has dominated the sustainable‑finance agenda for more than a decade. Yet an equally critical, and deeply interconnected, challenge is now moving rapidly up the agenda: biodiversity loss and nature degradation.`),
+    ),
+    imageUrl: getImage('longterm', 327),
+    tags: ['Biodiversity', 'TNFD', 'Nature-Related Risk', 'ESG', 'Sustainable Finance'],
+  },
 ];

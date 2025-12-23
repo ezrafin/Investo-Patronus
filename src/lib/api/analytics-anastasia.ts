@@ -702,4 +702,238 @@ Central and Eastern Europe’s banking systems sit at the intersection of multip
     imageUrl: getImage('expert', 261),
     tags: ['CEE Banks', 'Emerging Europe', 'Financials', 'Macro', 'Regulation'],
   },
+  {
+    slug: 'fx-regimes-and-monetary-policy-in-central-eastern-europe',
+    title: 'FX Regimes and Monetary Policy in Central & Eastern Europe: Implications for Equities, Bonds, and FX',
+    excerpt:
+      'How different exchange-rate frameworks and monetary-policy strategies shape market risk and return across Central & Eastern Europe—and what that means for cross-asset positioning.',
+    content: `# FX Regimes and Monetary Policy in Central & Eastern Europe: Implications for Equities, Bonds, and FX
+
+## Introduction
+
+Central & Eastern Europe (CEE) is not a single macro bloc. Countries differ materially in their **exchange‑rate regimes, inflation histories, and monetary‑policy frameworks**. Some are euro area members; others manage de facto pegs; still others operate floating currencies with inflation‑targeting central banks.
+
+For investors, these differences are more than macro footnotes. They shape:
+
+- The behavior of **local‑currency bond yields**.
+- The volatility and direction of **FX rates**.
+- The resilience of **equity and banking sectors** to external shocks.
+
+This article provides a practitioner’s framework for analyzing FX regimes and monetary policy across CEE and translating that into cross‑asset views.
+
+## Mapping FX Regimes Across the Region
+
+### Euro Area Members
+
+Countries such as Slovakia, Slovenia, and the Baltic states are:
+
+- Members of the euro area.
+- Subject to **ECB monetary policy** and euro‑wide inflation targeting.
+
+Implications:
+
+- No independent monetary policy or nominal FX rate.
+- Shocks are absorbed through:
+  - Domestic wages and prices.
+  - Fiscal policy and capital flows.
+
+For investors:
+
+- Sovereign yields primarily reflect:
+  - Credit risk.
+  - Local supply/demand and liquidity.
+  - Euro area term premia.
+- Currency risk is largely removed for euro‑based investors.
+
+### Managed Exchange-Rate Regimes
+
+Some CEE countries maintain:
+
+- **Pegged or tightly managed exchange rates** versus the euro.
+
+This framework:
+
+- Constrains independent monetary policy—interest rates must broadly align with anchor currency conditions.
+- Offers exchange‑rate stability for trade and financial flows.
+
+However, it can create:
+
+- Tensions when domestic cycles diverge from the anchor.
+- Periodic speculative pressure if pegs are perceived as misaligned.
+
+### Floating Currencies and Inflation Targeting
+
+Large CEE economies such as Poland, Czech Republic, Hungary, and Romania typically:
+
+- Operate **floating or managed‑float FX regimes**.
+- Use **inflation‑targeting** as the main monetary‑policy framework.
+
+Implications:
+
+- Interest rates can adjust more flexibly to domestic conditions.
+- FX absorbs part of external and terms‑of‑trade shocks.
+
+For investors:
+
+- Local‑currency bonds and FX are closely linked:
+  - Aggressive hikes can support FX and anchor inflation expectations.
+  - FX depreciation can tighten domestic conditions via inflation and balance sheets.
+
+## Monetary Policy, Inflation, and Terms-of-Trade Shocks
+
+### Inflation Histories and Policy Credibility
+
+CEE countries entered the recent inflation surge with:
+
+- Different inflation track records.
+- Varying degrees of central‑bank credibility.
+
+Those with:
+
+- Stronger credibility and communication frameworks tended to:
+  - React earlier to inflation surprises.
+  - Maintain better‑anchored expectations.
+
+Others faced:
+
+- More persistent inflation.
+- Greater pressure on FX.
+- Higher risk premia in bond markets.
+
+Investors should:
+
+- Track central‑bank reaction functions over multiple cycles.
+- Assess how quickly policy settings adjust to changing data.
+
+### Energy and External Shocks
+
+Energy‑price spikes and terms‑of‑trade shocks have:
+
+- Widened current‑account deficits for import‑dependent economies.
+- Pressured FX and complicated policy trade‑offs.
+
+In floating‑rate regimes:
+
+- Depreciation can partially offset external shocks.
+- But also feeds into domestic inflation via imported prices.
+
+Central banks must choose between:
+
+- Higher rates to support FX and combat inflation.
+- More gradual tightening to protect growth and financial stability.
+
+These choices create:
+
+- Dispersion in **real yields**.
+- Diverging paths for FX and local bonds.
+
+## Cross-Asset Implications
+
+### Local-Currency Bonds
+
+For LCY bonds, key questions include:
+
+- Are **real policy rates** sufficiently positive to anchor expectations?
+- How steep is the real and nominal yield curve?
+- Is the market pricing a **credible disinflation path**, or persistent risk premia?
+
+Countries with:
+
+- Credible frameworks.
+- Appropriately tight policy.
+- Clear disinflation trajectories.
+
+can offer attractive LCY opportunities, especially when:
+
+- Yields embed significant risk premia after inflation spikes.
+
+### FX
+
+FX outcomes depend on:
+
+- Relative growth and rate differentials.
+- External balances and reserve adequacy.
+- Political and geopolitical risk.
+
+Floating currencies with credible inflation targeting may:
+
+- Offer carry opportunities when:
+  - Rate differentials are wide.
+  - External vulnerabilities are manageable.
+
+But they can also experience:
+
+- Sharp repricing during global risk‑off episodes.
+- Overshooting when markets test policy resolve.
+
+Investors should integrate:
+
+- FX analysis with LCY bonds and equities.
+- Hedging decisions with broader portfolio currency risk.
+
+### Equities and Banks
+
+FX and policy regimes influence:
+
+- **Corporate earnings** (especially exporters and FX‑debt borrowers).
+- **Bank profitability and asset quality**, via:
+  - FX‑linked lending.
+  - Funding and deposit behavior.
+
+For example:
+
+- Strong, credible policy that stabilizes inflation and FX can:
+  - Support bank margins.
+  - Reduce NPL risk in FX‑exposed borrowers.
+- Unanchored inflation and volatile FX can:
+  - Pressure real incomes and credit quality.
+  - Depress valuation multiples.
+
+## Practical Framework for Investors
+
+When analyzing CEE FX and policy regimes, investors can apply a checklist:
+
+1. **Regime classification**
+   - Euro, peg, or float.
+   - Degree of de facto flexibility.
+2. **Policy framework and credibility**
+   - Inflation‑targeting track record.
+   - Communication and transparency.
+3. **External balances and reserves**
+   - Current‑account dynamics.
+   - Reserve coverage ratios.
+4. **Market pricing**
+   - Real yields and curve shape.
+   - FX valuation and positioning indicators.
+
+This framework can inform:
+
+- LCY bond duration and curve positioning.
+- FX carry and hedging strategies.
+- Sector and factor tilts in equity allocations.
+
+## Conclusion
+
+FX regimes and monetary‑policy frameworks are central to understanding risk and return in Central & Eastern Europe. They determine how countries absorb shocks, how quickly inflation is brought under control, and how attractive local assets appear to both domestic and foreign investors.
+
+For cross‑asset portfolios, the opportunity lies in distinguishing between:
+
+- Countries where policy frameworks and external positions support **credible disinflation and FX stability**.
+- Those where policy trade‑offs are more acute and risk premia must be significantly higher.
+
+By integrating FX‑regime analysis with banking‑sector diagnostics, terms‑of‑trade assessments, and market pricing, investors can build more resilient exposures to CEE across equities, bonds, and currencies.`,
+    date: formatDate(262),
+    author: 'Anastasia Petrova',
+    authorAvatar: getAuthorAvatar('Anastasia Petrova'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# FX Regimes and Monetary Policy in Central & Eastern Europe: Implications for Equities, Bonds, and FX
+
+## Introduction
+
+Central & Eastern Europe (CEE) is not a single macro bloc. Countries differ materially in their exchange‑rate regimes, inflation histories, and monetary‑policy frameworks.`),
+    ),
+    imageUrl: getImage('markets', 262),
+    tags: ['FX', 'Monetary Policy', 'CEE', 'Local Currency Bonds', 'Macro'],
+  },
 ];

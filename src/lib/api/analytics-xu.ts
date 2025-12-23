@@ -665,4 +665,239 @@ India has emerged as one of the most closely watched stories in global equities.
     imageUrl: getImage('markets', 373),
     tags: ['India', 'Equities', 'Emerging Markets', 'Asia-Pacific', 'Macro'],
   },
+  {
+    slug: 'japan-equities-re-rating-and-governance-reform',
+    title: 'Japan Equities: Re-Rating, Governance Reform, and the Return of Domestic Risk Appetite',
+    excerpt:
+      'How corporate governance reforms, improving profitability, and changing domestic investor behavior are reshaping Japan’s equity market—and what that means for sector allocation and style tilts.',
+    content: `# Japan Equities: Re-Rating, Governance Reform, and the Return of Domestic Risk Appetite
+
+## Introduction
+
+For years, Japan was viewed as the archetype of a value trap: low growth, low inflation, and low valuations that rarely unlocked. In the last several years, however, a combination of **corporate governance reforms, profitability improvements, and changing domestic investor behavior** has begun to shift that narrative. Japanese equities have attracted renewed attention from global allocators and multi‑asset portfolios.
+
+For Asia‑Pacific investors, Japan offers:
+
+- A large, liquid market with deep sectoral diversity.
+- Exposure to manufacturing, automation, and technology supply chains.
+- Structural reforms that may support a **sustained re‑rating** if they continue.
+
+This article examines the drivers behind Japan’s evolving equity story and provides a framework for positioning across sectors and styles.
+
+## Governance Reform and Capital Efficiency
+
+### From Cross-Shareholdings to Capital Discipline
+
+Historically, Japanese corporates were characterized by:
+
+- Extensive cross‑shareholding networks.
+- Conservative balance sheets with large cash reserves.
+- Limited focus on return on equity (ROE) and shareholder distributions.
+
+Reform efforts have targeted:
+
+- Reduction of cross‑shareholdings.
+- Improved disclosure and investor communication.
+- Greater emphasis on:
+  - ROE and return on invested capital (ROIC).
+  - Shareholder returns via dividends and buybacks.
+
+Policy initiatives and exchange guidance have:
+
+- Encouraged companies trading persistently below book value to explain their capital policies.
+- Increased pressure on boards to address undervaluation and capital inefficiency.
+
+### Evidence of Change
+
+Signs of structural improvement include:
+
+- Rising aggregate ROE compared with prior decades.
+- Increased share‑buyback activity.
+- Higher payout ratios in many sectors.
+
+Yet progress is uneven:
+
+- Some companies have embraced more shareholder‑friendly practices.
+- Others have moved more cautiously or minimally.
+
+Investors should differentiate between:
+
+- Firms that are **genuinely reforming governance and capital allocation**.
+- Those that are slower to change or less aligned with minority shareholders.
+
+## Profitability, Inflation, and Policy Backdrop
+
+### A Shift Away from Deflation Psychology?
+
+Decades of low inflation conditioned:
+
+- Consumer and corporate expectations.
+- Wage dynamics.
+- Pricing behavior.
+
+Recent years have seen:
+
+- Higher inflation readings than in much of the prior two decades.
+- Early signs of:
+  - Wage negotiations incorporating price pressures.
+  - Companies passing through cost increases.
+
+If sustained, this shift could:
+
+- Support nominal revenue growth.
+- Enable margin stability or expansion in sectors with pricing power.
+
+### Monetary Policy and Yen Dynamics
+
+Japan’s monetary policy remains:
+
+- More accommodative than many peers, though the direction of travel is gradually changing.
+
+For equities:
+
+- A **weaker yen** can:
+  - Support exporters’ earnings.
+  - Boost translation effects for foreign investors.
+- A **stronger yen** may:
+  - Reflect improving domestic conditions.
+  - Weigh on export‑heavy sectors but support domestic consumption.
+
+Investors must:
+
+- Integrate FX considerations into sector and style tilts.
+- Decide whether to **hedge yen exposure** based on mandate and macro views.
+
+## Market Structure and Sector Opportunities
+
+### Manufacturing, Automation, and Supply Chains
+
+Japan hosts global leaders in:
+
+- Factory automation and robotics.
+- Precision machinery and components.
+- Automotive and mobility technologies.
+
+Themes include:
+
+- Supply‑chain diversification away from China, benefiting Japanese suppliers.
+- Investment in automation as labor markets tighten globally.
+
+Risks:
+
+- Cyclical sensitivity to global capex and industrial production.
+- Competitive pressures from Korea, China, and other emerging players.
+
+### Domestic Demand and Financials
+
+Domestic‑oriented sectors—retail, services, and financials—are influenced by:
+
+- Wage growth and labor‑market trends.
+- Demographics and household balance sheets.
+
+Banks and insurers may benefit from:
+
+- A shift away from ultra‑low or negative rates.
+- Steeper yield curves improving net interest margins and investment returns.
+
+However, the pace and scale of policy normalization are uncertain, requiring:
+
+- Scenario analysis around different rate and curve outcomes.
+
+### Technology and Intangibles
+
+Beyond hardware, Japan features:
+
+- Software, internet, and content companies.
+- Niches in gaming, e‑commerce, and digital services.
+
+Opportunities arise where:
+
+- Companies can leverage domestic scale and IP.
+- Governance and capital‑allocation improvements unlock value.
+
+## Style and Factor Considerations
+
+### Value, Quality, and Shareholder Returns
+
+Japan has long been fertile ground for fundamental value investors:
+
+- Low P/B and P/E multiples.
+- Net‑cash balance sheets.
+
+As reforms progress:
+
+- **Quality value**—companies with:
+  - Solid business models.
+  - Improving governance.
+  - Reasonable valuations—
+  may be particularly attractive.
+
+Buyback and dividend policies can:
+
+- Support total returns.
+- Signal management’s commitment to shareholder value.
+
+### Small and Mid Caps
+
+Japan’s small‑ and mid‑cap universe includes:
+
+- Specialized manufacturers.
+- Service providers and niche technology firms.
+
+Potential advantages:
+
+- Less sell‑side coverage.
+- Greater scope for idiosyncratic alpha.
+
+Risks:
+
+- Lower liquidity and higher volatility.
+- Governance and disclosure variability.
+
+Position sizing and liquidity management are critical when moving beyond large caps.
+
+## Practical Positioning Framework
+
+Investors constructing Japan allocations should consider:
+
+1. **Governance and capital allocation**
+   - Prioritize companies with:
+     - Clear improvement in ROE.
+     - Transparent and credible payout policies.
+2. **Sector balance**
+   - Blend:
+     - Export‑oriented industrial and tech names.
+     - Domestic demand and financials.
+3. **FX and hedging decisions**
+   - Align yen hedging with:
+     - Macro outlook.
+     - Portfolio‑level currency exposures.
+4. **Style diversification**
+   - Avoid over‑concentration in a single factor (e.g., only deep value or only quality growth).
+
+## Conclusion
+
+Japan’s equity market is undergoing a gradual but meaningful transformation. Governance reforms, evolving capital‑allocation practices, and shifting inflation dynamics are reshaping how investors view both risk and opportunity.
+
+For Asia‑Pacific and global portfolios, Japan can play multiple roles:
+
+- A source of **quality industrial and automation exposure**.
+- A diversifier away from Greater China risk.
+- A test case for how structural reforms can unlock value in mature economies.
+
+By focusing on governance progress, capital efficiency, sector positioning, and FX management, investors can build Japan allocations that participate in the country’s ongoing re‑rating while respecting the uncertainties that remain.`,
+    date: formatDate(374),
+    author: 'Xu Meiling',
+    authorAvatar: getAuthorAvatar('Xu Meiling'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Japan Equities: Re-Rating, Governance Reform, and the Return of Domestic Risk Appetite
+
+## Introduction
+
+For years, Japan was viewed as the archetype of a value trap: low growth, low inflation, and low valuations that rarely unlocked.`),
+    ),
+    imageUrl: getImage('markets', 374),
+    tags: ['Japan', 'Equities', 'Governance Reform', 'Asia-Pacific', 'Macro'],
+  },
 ];

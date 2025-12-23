@@ -647,4 +647,215 @@ Credit spreads are one of the most closely watched indicators in fixed income ma
     imageUrl: getImage('expert', 160),
     tags: ['Credit Spreads', 'Fixed Income', 'Cycle Positioning', 'Investment Strategy', 'Risk Management'],
   },
+  {
+    slug: 'inflation-linked-bonds-and-real-return-strategies',
+    title: 'Inflation-Linked Bonds and Real-Return Strategies: Positioning Across Regimes',
+    excerpt:
+      'How to use inflation-linked bonds, breakevens, and real-yield curves to build robust portfolios across disinflation, reflation, and inflation-scare regimes.',
+    content: `# Inflation-Linked Bonds and Real-Return Strategies: Positioning Across Regimes
+
+## Introduction
+
+After a decade in which inflation seemed structurally subdued, the post‑pandemic period delivered a sharp reminder that price stability cannot be taken for granted. Supply‑chain disruptions, fiscal stimulus, energy shocks, and shifting labor dynamics pushed inflation to multi‑decade highs in many economies. Central banks responded with aggressive tightening cycles, and fixed income investors were forced to re‑examine **how they protect real returns**.
+
+Inflation‑linked bonds (ILBs)—such as TIPS in the US or index‑linked gilts in the UK—are a natural tool for investors concerned about inflation risk. But they are often misunderstood. Their performance depends not only on realized inflation, but also on **real yields, breakeven inflation, and duration**. This article provides a practical framework for using ILBs and real‑return strategies across different macro regimes.
+
+## Mechanics of Inflation-Linked Bonds
+
+### How ILBs Work
+
+Inflation‑linked bonds typically:
+
+- Pay coupons and redeem principal that are **indexed to a consumer price index (CPI)**.
+- Apply an indexation lag (often a few months) to reflect data publication delays.
+
+Key components of return:
+
+- **Real yield** – The yield quoted on the ILB itself.
+- **Inflation accrual** – The change in the CPI index that adjusts principal.
+
+For buy‑and‑hold investors, ILBs can:
+
+- Protect purchasing power if held to maturity, subject to index design.
+- Provide a floor on **real returns** over the bond’s life, assuming no default.
+
+For mark‑to‑market investors, however, ILBs behave like any other bond:
+
+- Prices move as **real yields** and inflation expectations change.
+
+### Breakeven Inflation
+
+Breakeven inflation is the difference between the yield on a nominal bond and an ILB of the same maturity:
+
+\\[
+\\text{Breakeven} = y_{\\text{nominal}} - y_{\\text{real}}
+\\]
+
+Conceptually, breakevens reflect:
+
+- The inflation rate at which investors would be indifferent between holding the nominal or the ILB.
+- Market expectations of future inflation **plus** risk premia and technicals.
+
+Investors can use breakevens to:
+
+- Express **pure inflation views** by going long ILBs and short nominals (or vice versa).
+- Separate real‑yield risk from inflation‑expectation risk in portfolio construction.
+
+## Real Yields, Breakevens, and Regime Analysis
+
+### Real Yields as a Policy and Growth Signal
+
+Real yields embed views on:
+
+- The long‑run equilibrium policy rate.
+- Growth and productivity trends.
+- Term premia and risk compensation.
+
+High and rising real yields often signal:
+
+- Tighter monetary policy stances.
+- Improved real‑growth prospects.
+- Or an increase in required compensation for owning long‑duration assets.
+
+Low and falling real yields may reflect:
+
+- Growth concerns and easing policy.
+- “Safe‑asset” demand and term‑premium compression.
+
+For ILB investors:
+
+- Rising real yields **hurt prices**, even if inflation accrues.
+- Falling real yields can generate strong total returns, particularly when starting from high levels.
+
+### Inflation Expectations and Breakeven Dynamics
+
+Breakeven inflation responds to:
+
+- Macro data surprises (inflation, wages, growth).
+- Commodity and energy price moves.
+- Central‑bank communication and reaction functions.
+- Technical flows from asset allocators and hedgers.
+
+Typical patterns:
+
+- In **inflation scares**, breakevens widen sharply as investors reassess risk.
+- In **disinflationary periods**, breakevens compress, sometimes below central‑bank targets.
+
+Cycle‑aware investors can use breakevens to:
+
+- Add inflation protection when expectations seem too low relative to plausible scenarios.
+- Reduce exposure when breakevens overshoot and policy is turning restrictive.
+
+## Using ILBs in Portfolio Construction
+
+### Strategic and Tactical Roles
+
+Strategically, ILBs can:
+
+- Provide a **real‑return anchor** in liability‑driven and long‑horizon portfolios.
+- Hedge inflation risk for investors with nominal liabilities sensitive to price levels (e.g., retirees).
+
+Tactically, ILBs can be:
+
+- Overweighted when inflation risks are rising and breakevens are still modest.
+- Underweighted when inflation risk is declining and real yields are poised to rise.
+
+Crucially, investors should:
+
+- Distinguish between **hedging real‑return risk** and **speculating on inflation surprises**.
+- Avoid assuming that ILBs always outperform when inflation rises—returns depend on starting valuations.
+
+### Duration and Curve Considerations
+
+ILBs, like nominal bonds, carry duration risk:
+
+- Long‑maturity ILBs are highly sensitive to real‑yield moves.
+- Shorter maturities are more anchored by near‑term inflation and carry.
+
+Curve structure matters:
+
+- A **steep real‑yield curve** may reward extending duration, but increases rate sensitivity.
+- A **flat or inverted real‑yield curve** may favor shorter maturities or barbell structures.
+
+Investors can shape exposure by:
+
+- Combining ILBs across maturities.
+- Using swaps and futures to fine‑tune real‑yield and breakeven exposures.
+
+## Real-Return Strategies Beyond ILBs
+
+### Equities, Real Assets, and Diversification
+
+ILBs are one building block in a broader real‑return toolkit that also includes:
+
+- Equities in sectors with **pricing power** and low input‑cost sensitivity.
+- Real assets such as real estate and infrastructure, where cash flows may be linked to inflation.
+- Commodities and commodity‑linked equities.
+
+These assets:
+
+- Can provide long‑term inflation resilience.
+- Also introduce equity and commodity beta that must be managed.
+
+Real‑return strategies often blend:
+
+- A core allocation to ILBs and short‑duration real‑yield exposure.
+- Selective risk exposure to real assets and equities.
+
+### Implementation in Multi-Asset Portfolios
+
+In multi‑asset contexts, ILBs can:
+
+- Serve as **defensive assets** when inflation risk is a key concern.
+- Complement nominal government bonds as diversifiers against growth and policy shocks.
+
+Key design questions:
+
+- How much inflation risk is already embedded in other holdings?
+- What role should ILBs play relative to:
+  - Nominal bonds.
+  - Equities and real assets.
+  - Cash and alternatives?
+
+Scenario analysis can help:
+
+- Map portfolio outcomes under disinflation, reflation, and stagflation scenarios.
+- Calibrate ILB and breakeven exposures accordingly.
+
+## Practical Checklist for ILB Investors
+
+When evaluating ILB allocations, investors should consider:
+
+1. **Starting valuations**
+   - Level of real yields versus history and macro context.
+   - Breakeven inflation relative to central‑bank targets.
+2. **Macro regimes**
+   - Inflation trajectory and policy stance.
+   - Growth momentum and real‑rate expectations.
+3. **Portfolio role**
+   - Hedging versus return generation.
+   - Interaction with other inflation‑sensitive assets.
+4. **Implementation constraints**
+   - Market depth and liquidity.
+   - Hedging tools and derivative availability.
+
+## Conclusion
+
+Inflation‑linked bonds are powerful tools for managing real‑return risk, but they are not simple “inflation insurance.” Their performance reflects a combination of **real yields, inflation expectations, and duration**—all of which move with macro data, policy, and market sentiment.
+
+For long‑horizon investors, ILBs can provide a robust anchor in a world where inflation regimes may be less stable than in the pre‑pandemic decade. By understanding how ILBs behave across disinflationary, reflationary, and inflation‑scare environments—and by integrating them thoughtfully with nominal bonds and real assets—investors can build portfolios that are better prepared for a wider range of inflation outcomes.`,
+    date: formatDate(161),
+    author: 'Lysander Truog',
+    authorAvatar: getAuthorAvatar('Lysander Truog'),
+    type: 'longterm',
+    readTime: calculateReadTime(
+      countWords(`# Inflation-Linked Bonds and Real-Return Strategies: Positioning Across Regimes
+
+## Introduction
+
+After a decade in which inflation seemed structurally subdued, the post‑pandemic period delivered a sharp reminder that price stability cannot be taken for granted.`),
+    ),
+    imageUrl: getImage('longterm', 161),
+    tags: ['Inflation-Linked Bonds', 'Real Yields', 'Breakevens', 'Fixed Income', 'Real Return'],
+  },
 ];

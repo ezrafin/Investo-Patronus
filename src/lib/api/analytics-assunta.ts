@@ -696,4 +696,238 @@ Decentralized finance (DeFi) has created an always‑on, globally accessible mar
     imageUrl: getImage('expert', 96),
     tags: ['DeFi', 'Yield', 'Risk Management', 'Crypto Markets', 'Blockchain'],
   },
+  {
+    slug: 'on-chain-derivatives-and-perpetual-futures-risk',
+    title: 'On-Chain Derivatives and Perpetual Futures: Liquidity, Funding, and Risk in 24/7 Markets',
+    excerpt:
+      'How on-chain perpetual futures and options protocols really work, where liquidity comes from, and how professional investors can price funding, basis, and liquidation risk across crypto cycles.',
+    content: `# On-Chain Derivatives and Perpetual Futures: Liquidity, Funding, and Risk in 24/7 Markets
+
+## Introduction
+
+Perpetual futures, options, and structured products have become core building blocks of modern crypto market structure. On centralized venues, they enable leverage, hedging, and basis trades at scale. Increasingly, similar instruments exist **on-chain**, powered by automated market makers (AMMs), vault strategies, and oracle‑based pricing.
+
+For discretionary and quantitative investors, on‑chain derivatives present both opportunity and complexity. They offer:
+
+- 24/7 access to leverage and hedging.
+- Transparent positions and collateral on public blockchains.
+- The ability to route strategies through smart contracts rather than intermediaries.
+
+But they also embed:
+
+- Oracle and liquidation risk.
+- Smart‑contract and design risk.
+- Liquidity regimes that can change abruptly in stress.
+
+This article provides a practitioner’s view of on‑chain derivatives and perpetual futures—focusing on how liquidity is provisioned, how funding and pricing work, and how to build a risk framework for using these instruments across cycles.
+
+## Perpetual Futures: Design and Funding Mechanics
+
+### What Makes a Perpetual “Perpetual”?
+
+Unlike dated futures, perpetual contracts:
+
+- Do not expire on a fixed date.
+- Use **funding payments** between longs and shorts to tether prices to an underlying index.
+
+On-chain implementations typically rely on:
+
+- A **mark price** derived from oracles and/or internal order books.
+- Periodic funding intervals (e.g., hourly or every 8 hours).
+- Collateral posted and marked‑to‑market in real time.
+
+Funding rates are central:
+
+- When the perpetual trades above spot, longs pay shorts (positive funding).
+- When it trades below, shorts pay longs (negative funding).
+
+For investors, funding is not just a cost; it is a **signal of positioning and risk appetite** in the market.
+
+### On-Chain Variants: vAMMs, Order Books, and Hybrid Models
+
+On-chain perpetuals use several design patterns:
+
+- **vAMM (virtual AMM) designs**
+  - Prices are a function of a virtual invariant rather than a real asset pool.
+  - Liquidity is “virtual,” with collateral backing user positions and protocol risk modules.
+- **On-chain order books**
+  - Matching engines hosted on-chain or on specialized chains/rollups.
+  - More traditional feel but potentially limited by throughput and latency constraints.
+- **Hybrid models**
+  - Combining off-chain order books with on-chain settlement.
+
+Each design has implications for:
+
+- **Liquidity depth and slippage**.
+- **Liquidation cascades** during sharp moves.
+- The role of **backstop liquidity providers** and insurance funds.
+
+Investors must understand the specific mechanism used by a protocol before sizing positions.
+
+## Liquidity Provision and LP Risk
+
+### Where Liquidity Comes From
+
+On centralized exchanges, liquidity is provided by:
+
+- Market‑making firms using proprietary capital and algorithms.
+- Broker‑dealers and high‑frequency trading firms.
+
+On-chain, liquidity for derivatives can come from:
+
+- **LPs in AMM‑style perpetuals**, who commit capital to virtual liquidity curves.
+- **Vaults and structured‑product strategies** that take systematic risk (e.g., short volatility).
+- **Backstop market makers** who underwrite insurance funds and “last resort” auctions.
+
+Each of these actors is exposed to:
+
+- Adverse selection and inventory risk.
+- Impermanent loss in AMM structures.
+- Tail events in which insurance funds are depleted.
+
+### LP Economics and Risk/Return
+
+LPs earn:
+
+- Protocol fees (trading, funding spreads).
+- Incentive tokens or subsidies.
+
+But they are short:
+
+- **Volatility** – lose when realized volatility exceeds implied or expected levels.
+- **Tail risk** – particularly when liquidation systems or oracles fail.
+
+Professional LPs and sophisticated investors should:
+
+- Model P&L under different volatility regimes.
+- Understand how insurance funds are capitalized and backstopped.
+- Treat LP positions as **structured risk**, not passive income.
+
+## Oracle, Liquidation, and Design Risk
+
+### Oracle Design and Manipulation
+
+On-chain derivatives depend on price feeds to:
+
+- Mark positions to market.
+- Trigger liquidations.
+- Compute funding rates.
+
+Oracle risks include:
+
+- **Delayed updates** during volatile periods.
+- **Manipulation** using thin external markets or flash crashes.
+- **Dependency concentration** on a small set of oracle providers.
+
+Risk mitigants:
+
+- Multiple independent price sources and medianization.
+- Volume‑weighted price feeds resistant to single‑venue manipulation.
+- Clear documentation of oracle sources and update frequency.
+
+### Liquidation Mechanisms
+
+Liquidation design matters for both traders and protocols:
+
+- Overly aggressive liquidations can cause unnecessary losses and volatility.
+- Under‑aggressive systems can allow under‑collateralized positions to build up.
+
+Common patterns:
+
+- **Keeper‑based systems**
+  - Third parties trigger liquidations and earn a fee.
+- **Auction or Dutch mechanisms**
+  - Liquidated positions are sold via on‑chain auctions.
+- **Internal risk engines**
+  - Protocols auto‑execute risk‑off trades within AMM curves.
+
+Investors need to understand:
+
+- How quickly the system can de‑risk in a large market move.
+- Whether there are documented examples of stress events and how they were handled.
+
+## Basis, Funding, and Strategy Design
+
+### Basis and Carry Trades
+
+On-chain derivatives create classic basis opportunities:
+
+- Long spot/short perp when funding is strongly positive.
+- Short spot/long perp when funding is persistently negative.
+
+But these trades embed:
+
+- Counterparty and protocol risk (smart contract, oracle, liquidation).
+- Funding‑rate volatility.
+- Liquidity and slippage, especially in large size or stressed markets.
+
+Investors should:
+
+- Size basis trades conservatively relative to protocol depth.
+- Model P&L under funding‑rate mean reversion and extreme spikes.
+
+### Volatility and Options Protocols
+
+On-chain options and structured‑product protocols (e.g., covered‑call or put‑selling vaults):
+
+- Package volatility exposure into seemingly simple products.
+- Pay regular premiums to depositors as long as realized volatility stays within assumptions.
+
+For professional users, the questions are:
+
+- How is **implied volatility** estimated, and how does it compare to realized?
+- How do vaults behave in gaps and illiquid conditions?
+- What is the tail‑loss profile under a series of adverse moves?
+
+Options protocols should be analyzed like **exotic derivatives desks with limited risk capital**, not yield farms.
+
+## Risk Framework for Professional Allocators
+
+### Mapping the Risk Stack
+
+Investors integrating on‑chain derivatives into portfolios should explicitly map:
+
+- **Market and leverage risk**
+  - Position leverage, margin requirements, stress P&L.
+- **Protocol and counterparty risk**
+  - Smart‑contract audits, governance, oracle dependencies.
+- **Liquidity risk**
+  - Depth, spreads, and withdrawal mechanics in stress.
+
+Position sizing should reflect the **weakest link**: even if market risk appears manageable, protocol fragility or shallow liquidity can limit safe exposure.
+
+### Governance, Upgrades, and Change Management
+
+On-chain protocols evolve via:
+
+- Governance votes and parameter changes.
+- Contract upgrades and migrations.
+
+Allocators must treat governance as part of the risk set:
+
+- Who can change margin parameters or oracle sources?
+- How quickly can changes be implemented?
+- Are there effective checks and community oversight?
+
+Sudden parameter shifts can materially alter risk/return for existing positions.
+
+## Conclusion
+
+On-chain derivatives and perpetual futures have moved from experimental curiosities to central pillars of crypto market structure. They provide powerful tools for leverage, hedging, and yield strategies—but only for investors who understand their mechanics and risks.
+
+By dissecting liquidity sources, funding dynamics, oracle and liquidation design, and governance structures, professional investors can use these instruments more like **derivatives desks** and less like speculative casinos. Deployed with discipline, on‑chain derivatives can become a flexible tool in digital‑asset portfolios—provided that their risks are priced, sized, and managed with the same rigor used in traditional derivatives markets.`,
+    date: formatDate(97),
+    author: 'Assunta Novak',
+    authorAvatar: getAuthorAvatar('Assunta Novak'),
+    type: 'technical',
+    readTime: calculateReadTime(
+      countWords(`# On-Chain Derivatives and Perpetual Futures: Liquidity, Funding, and Risk in 24/7 Markets
+
+## Introduction
+
+Perpetual futures, options, and structured products have become core building blocks of modern crypto market structure.`),
+    ),
+    imageUrl: getImage('technical', 97),
+    tags: ['Derivatives', 'Perpetual Futures', 'DeFi', 'Funding Rates', 'Risk Management'],
+  },
 ];
