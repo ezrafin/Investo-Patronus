@@ -58,7 +58,8 @@
     "watchlists": "Listas de seguimiento",
     "bookmarks": "Marcadores",
     "settings": "Configuración",
-    "achievements": "Logros"
+    "achievements": "Logros",
+    "view": "Ver"
   },
   "labels": {
     "email": "Correo electrónico",

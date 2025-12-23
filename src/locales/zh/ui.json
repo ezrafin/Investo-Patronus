@@ -51,7 +51,8 @@
     "watchlists": "关注列表",
     "bookmarks": "书签",
     "settings": "设置",
-    "achievements": "成就"
+    "achievements": "成就",
+    "view": "查看"
   },
   "labels": {
     "email": "电子邮件",
