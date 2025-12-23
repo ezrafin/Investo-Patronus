@@ -26,6 +26,1185 @@ const countWords = (text: string): number => {
 // Anastasia Petrova - Eastern Europe & Emerging Markets (40 articles)
 export const anastasiaArticles: AnalyticsArticle[] = [
   {
+    slug: 'southeast-asia-infrastructure-investment-themes-and-opportunities',
+    title: 'Southeast Asia Infrastructure Investment: Themes and Opportunities',
+    excerpt:
+      'How Southeast Asia\'s infrastructure needs are creating investment opportunities, why demographics and urbanization drive infrastructure demand, and how to identify infrastructure investment themes across Southeast Asian markets.',
+    content: `# Southeast Asia Infrastructure Investment: Themes and Opportunities
+
+## Introduction
+
+Southeast Asia is one of the world's fastest-growing regions, with a population of over 650 million people and rapidly expanding economies. But this growth is straining existing infrastructure—roads, ports, airports, power plants, water systems, and telecommunications networks are struggling to keep pace with demand. The result is a massive infrastructure investment opportunity estimated at trillions of dollars over the coming decades.
+
+Southeast Asia's infrastructure needs are driven by several factors:
+- **Demographics** – young, growing populations requiring infrastructure.
+- **Urbanization** – rapid urbanization creating demand for urban infrastructure.
+- **Economic growth** – economic growth driving infrastructure needs.
+- **Trade** – trade growth requiring transportation and logistics infrastructure.
+- **Energy** – energy demand requiring power generation and distribution infrastructure.
+
+For investors, Southeast Asian infrastructure offers:
+- **Growth exposure** – exposure to long-term infrastructure growth.
+- **Stable income** – infrastructure assets often provide stable income.
+- **Diversification** – diversification from developed market infrastructure.
+- **ESG alignment** – infrastructure investment can align with ESG objectives.
+
+But challenges remain:
+- **Political risk** – political risk varies across countries.
+- **Regulatory risk** – regulatory frameworks vary and evolve.
+- **Execution risk** – infrastructure projects face execution challenges.
+- **Currency risk** – currency risk in local currency investments.
+
+This article explores Southeast Asia's infrastructure needs, investment themes, and how investors can identify opportunities across Southeast Asian markets.
+
+## Southeast Asia Infrastructure Needs
+
+### Transportation Infrastructure
+
+**Roads and Highways:**
+- **Current state** – many countries have underdeveloped road networks.
+- **Needs** – need for highway networks connecting cities and regions.
+- **Investment** – massive investment required for road infrastructure.
+- **Examples** – Malaysia's highway network, Thailand's expressway system.
+
+**Railways:**
+- **Current state** – limited railway networks in many countries.
+- **Needs** – need for high-speed rail and urban rail systems.
+- **Investment** – significant investment required for rail infrastructure.
+- **Examples** – Singapore's MRT, Malaysia's high-speed rail plans.
+
+**Ports:**
+- **Current state** – some world-class ports, but capacity constraints.
+- **Needs** – need for port expansion and modernization.
+- **Investment** – investment required for port infrastructure.
+- **Examples** – Singapore's port, Malaysia's Port Klang, Thailand's Laem Chabang.
+
+**Airports:**
+- **Current state** – some world-class airports, but capacity constraints.
+- **Needs** – need for airport expansion and new airports.
+- **Investment** – investment required for airport infrastructure.
+- **Examples** – Singapore's Changi Airport, Thailand's Suvarnabhumi Airport.
+
+### Energy Infrastructure
+
+**Power Generation:**
+- **Current state** – power generation capacity varies across countries.
+- **Needs** – need for additional power generation capacity.
+- **Investment** – massive investment required for power generation.
+- **Examples** – coal, gas, renewable energy projects.
+
+**Power Distribution:**
+- **Current state** – power distribution networks need upgrading.
+- **Needs** – need for grid modernization and expansion.
+- **Investment** – investment required for power distribution.
+- **Examples** – grid upgrades, smart grid projects.
+
+**Renewable Energy:**
+- **Current state** – growing renewable energy capacity.
+- **Needs** – need for renewable energy expansion.
+- **Investment** – investment required for renewable energy.
+- **Examples** – solar, wind, hydroelectric projects.
+
+### Water Infrastructure
+
+**Water Supply:**
+- **Current state** – water supply infrastructure varies across countries.
+- **Needs** – need for water supply expansion and improvement.
+- **Investment** – investment required for water supply infrastructure.
+- **Examples** – water treatment plants, distribution networks.
+
+**Wastewater Treatment:**
+- **Current state** – wastewater treatment infrastructure needs improvement.
+- **Needs** – need for wastewater treatment expansion.
+- **Investment** – investment required for wastewater treatment.
+- **Examples** – wastewater treatment plants, sewer systems.
+
+### Telecommunications Infrastructure
+
+**Broadband Networks:**
+- **Current state** – broadband penetration varies across countries.
+- **Needs** – need for broadband network expansion.
+- **Investment** – investment required for broadband infrastructure.
+- **Examples** – fiber networks, 5G networks.
+
+**Data Centers:**
+- **Current state** – growing data center capacity.
+- **Needs** – need for data center expansion.
+- **Investment** – investment required for data centers.
+- **Examples** – hyperscale data centers, edge data centers.
+
+## Investment Themes
+
+### Urbanization and Smart Cities
+
+**Urbanization Trends:**
+- **Urban population** – rapidly growing urban populations.
+- **Megacities** – emergence of megacities requiring infrastructure.
+- **Urban infrastructure** – need for urban infrastructure investment.
+- **Smart cities** – smart city initiatives driving infrastructure investment.
+
+**Investment Opportunities:**
+- **Urban transportation** – urban rail, bus rapid transit systems.
+- **Urban utilities** – water, power, waste management for cities.
+- **Smart city technology** – smart city platforms and solutions.
+- **Urban real estate** – infrastructure supporting urban development.
+
+### Trade and Logistics
+
+**Trade Growth:**
+- **Regional trade** – growing regional trade requiring infrastructure.
+- **Global trade** – Southeast Asia as global trade hub.
+- **Logistics** – need for logistics infrastructure.
+- **Supply chains** – infrastructure supporting supply chains.
+
+**Investment Opportunities:**
+- **Ports** – port expansion and modernization.
+- **Logistics parks** – logistics parks and distribution centers.
+- **Trade corridors** – infrastructure connecting trade corridors.
+- **E-commerce logistics** – infrastructure supporting e-commerce.
+
+### Energy Transition
+
+**Renewable Energy:**
+- **Solar** – solar energy projects across Southeast Asia.
+- **Wind** – wind energy projects in suitable locations.
+- **Hydroelectric** – hydroelectric projects in suitable locations.
+- **Energy storage** – energy storage supporting renewable energy.
+
+**Investment Opportunities:**
+- **Renewable energy projects** – solar, wind, hydroelectric projects.
+- **Energy storage** – battery storage and other energy storage.
+- **Grid infrastructure** – grid infrastructure supporting renewable energy.
+- **Energy efficiency** – energy efficiency projects.
+
+### Digital Infrastructure
+
+**Digital Economy:**
+- **E-commerce** – growing e-commerce requiring digital infrastructure.
+- **Digital services** – digital services requiring infrastructure.
+- **Data** – data growth requiring data center infrastructure.
+- **Connectivity** – need for broadband and mobile connectivity.
+
+**Investment Opportunities:**
+- **Data centers** – data center infrastructure.
+- **Broadband networks** – fiber and 5G networks.
+- **Digital platforms** – digital platforms supporting digital economy.
+- **Cybersecurity** – cybersecurity infrastructure.
+
+## Country-Specific Opportunities
+
+### Singapore
+
+**Characteristics:**
+- **Developed market** – developed infrastructure market.
+- **Hub** – regional hub for finance, trade, and logistics.
+- **Innovation** – focus on innovation and smart cities.
+
+**Opportunities:**
+- **Smart city** – smart city infrastructure and technology.
+- **Data centers** – data center infrastructure.
+- **Ports and airports** – port and airport expansion.
+- **Renewable energy** – renewable energy projects.
+
+### Malaysia
+
+**Characteristics:**
+- **Developing market** – developing infrastructure market.
+- **Resources** – natural resources supporting infrastructure.
+- **Growth** – economic growth driving infrastructure needs.
+
+**Opportunities:**
+- **Transportation** – highway and rail infrastructure.
+- **Energy** – power generation and renewable energy.
+- **Ports** – port expansion and modernization.
+- **Digital** – digital infrastructure expansion.
+
+### Thailand
+
+**Characteristics:**
+- **Developing market** – developing infrastructure market.
+- **Tourism** – tourism driving infrastructure needs.
+- **Manufacturing** – manufacturing requiring infrastructure.
+
+**Opportunities:**
+- **Transportation** – airport, port, and rail infrastructure.
+- **Energy** – power generation and renewable energy.
+- **Tourism infrastructure** – infrastructure supporting tourism.
+- **Digital** – digital infrastructure expansion.
+
+### Indonesia
+
+**Characteristics:**
+- **Large market** – large population and economy.
+- **Archipelago** – archipelago requiring transportation infrastructure.
+- **Resources** – natural resources supporting infrastructure.
+
+**Opportunities:**
+- **Transportation** – road, rail, port, and airport infrastructure.
+- **Energy** – power generation and renewable energy.
+- **Water** – water supply and wastewater treatment.
+- **Digital** – digital infrastructure expansion.
+
+### Vietnam
+
+**Characteristics:**
+- **Rapid growth** – rapidly growing economy.
+- **Manufacturing** – manufacturing hub requiring infrastructure.
+- **Urbanization** – rapid urbanization.
+
+**Opportunities:**
+- **Transportation** – highway, rail, port, and airport infrastructure.
+- **Energy** – power generation and renewable energy.
+- **Urban infrastructure** – urban infrastructure for growing cities.
+- **Digital** – digital infrastructure expansion.
+
+### Philippines
+
+**Characteristics:**
+- **Large population** – large population requiring infrastructure.
+- **Archipelago** – archipelago requiring transportation infrastructure.
+- **Growth** – economic growth driving infrastructure needs.
+
+**Opportunities:**
+- **Transportation** – road, rail, port, and airport infrastructure.
+- **Energy** – power generation and renewable energy.
+- **Water** – water supply and wastewater treatment.
+- **Digital** – digital infrastructure expansion.
+
+## Investment Vehicles and Implementation
+
+### Infrastructure Funds
+
+**Advantages:**
+- **Professional management** – professional infrastructure management.
+- **Diversification** – diversification across projects and countries.
+- **Access** – access to infrastructure investment opportunities.
+
+**Disadvantages:**
+- **Fees** – management fees reduce returns.
+- **Liquidity** – limited liquidity.
+- **Lock-ups** – lock-up periods.
+
+### Listed Infrastructure Companies
+
+**Advantages:**
+- **Liquidity** – daily liquidity.
+- **Transparency** – transparency and disclosure.
+- **Diversification** – diversification across companies.
+
+**Disadvantages:**
+- **Volatility** – share price volatility.
+- **Limited exposure** – limited exposure to unlisted infrastructure.
+- **Market risk** – market risk affecting share prices.
+
+### Direct Infrastructure Investment
+
+**Advantages:**
+- **Direct ownership** – direct ownership of infrastructure assets.
+- **Control** – control over infrastructure assets.
+- **Customization** – customize investment.
+
+**Disadvantages:**
+- **High minimums** – high minimum investment requirements.
+- **Execution risk** – execution risk for infrastructure projects.
+- **Illiquidity** – illiquid investments.
+
+## Risk Management
+
+### Political Risk
+
+**Country Risk:**
+- **Political stability** – political stability varies across countries.
+- **Policy changes** – policy changes affecting infrastructure.
+- **Regulatory risk** – regulatory risk affecting infrastructure.
+
+**Mitigation:**
+- **Diversification** – diversify across countries.
+- **Due diligence** – thorough due diligence on political risk.
+- **Insurance** – political risk insurance.
+
+### Regulatory Risk
+
+**Regulatory Frameworks:**
+- **Varying frameworks** – regulatory frameworks vary across countries.
+- **Evolving regulations** – regulations evolving over time.
+- **Compliance** – compliance requirements.
+
+**Mitigation:**
+- **Regulatory monitoring** – monitor regulatory developments.
+- **Compliance** – ensure compliance with regulations.
+- **Legal advice** – seek legal advice on regulatory matters.
+
+### Execution Risk
+
+**Project Risk:**
+- **Construction risk** – construction delays and cost overruns.
+- **Operational risk** – operational challenges.
+- **Technology risk** – technology risk for infrastructure projects.
+
+**Mitigation:**
+- **Due diligence** – thorough due diligence on projects.
+- **Experienced partners** – partner with experienced developers.
+- **Risk allocation** – allocate risks appropriately.
+
+### Currency Risk
+
+**Currency Exposure:**
+- **Local currency** – infrastructure investments often in local currency.
+- **Currency volatility** – currency volatility affecting returns.
+- **Hedging** – currency hedging options.
+
+**Mitigation:**
+- **Currency hedging** – hedge currency exposure.
+- **Diversification** – diversify across currencies.
+- **USD exposure** – consider USD-denominated investments.
+
+## Conclusion
+
+Southeast Asia's infrastructure needs create significant investment opportunities across transportation, energy, water, and telecommunications. Understanding Southeast Asian infrastructure requires:
+- **Infrastructure needs** – understanding infrastructure needs across countries.
+- **Investment themes** – identifying investment themes.
+- **Country-specific opportunities** – understanding country-specific opportunities.
+- **Risk management** – managing political, regulatory, execution, and currency risks.
+
+For investors, the key is to:
+- **Diversify** – diversify across countries, sectors, and projects.
+- **Understand risks** – understand and manage risks.
+- **Focus on quality** – focus on quality projects and partners.
+- **Be patient** – infrastructure investment requires patience.
+
+Southeast Asian infrastructure can provide attractive risk-adjusted returns when managed properly. Investors who understand Southeast Asian markets and construct resilient portfolios will be well-positioned to capture opportunities while managing risks.`,
+    date: formatDate(266),
+    author: 'Anastasia Petrova',
+    authorAvatar: getAuthorAvatar('Anastasia Petrova'),
+    type: 'longterm',
+    readTime: calculateReadTime(
+      countWords(`# Southeast Asia Infrastructure Investment: Themes and Opportunities
+
+## Introduction
+
+Southeast Asia is one of the world's fastest-growing regions, with a population of over 650 million people and rapidly expanding economies.`),
+    ),
+    imageUrl: getImage('longterm', 266),
+    tags: ['Southeast Asia', 'Infrastructure', 'Emerging Markets', 'Infrastructure Investing', 'Asia-Pacific'],
+  },
+  {
+    slug: 'middle-east-sovereign-wealth-funds-diversification-and-global-capital-allocation',
+    title: 'Middle East Sovereign Wealth Funds: Diversification and Global Capital Allocation',
+    excerpt:
+      'How Middle East sovereign wealth funds are diversifying beyond oil, deploying capital globally across asset classes, and reshaping their investment strategies for a post-oil future—and what this means for global markets and investors.',
+    content: `# Middle East Sovereign Wealth Funds: Diversification and Global Capital Allocation
+
+## Introduction
+
+The Middle East is home to some of the world's largest sovereign wealth funds (SWFs). Funds like the Abu Dhabi Investment Authority (ADIA), Saudi Arabia's Public Investment Fund (PIF), Kuwait Investment Authority (KIA), and Qatar Investment Authority (QIA) collectively manage trillions of dollars in assets. For decades, these funds have been primarily vehicles for recycling oil revenues into global financial markets, providing stability and diversification for resource-dependent economies.
+
+But the landscape is changing. As the world transitions away from fossil fuels, Middle East SWFs are:
+- **Diversifying portfolios** – reducing reliance on oil-linked assets and expanding into new sectors.
+- **Deploying capital domestically** – investing in local economic transformation and diversification.
+- **Shifting strategies** – moving from passive index investing to active, thematic, and direct investments.
+- **Expanding globally** – increasing allocations to international markets, especially Asia and emerging markets.
+
+For global investors, Middle East SWFs are:
+- **Major allocators** – influencing asset prices and market dynamics.
+- **Strategic partners** – potential co-investors and partners in deals.
+- **Market movers** – their allocation decisions can move markets.
+- **Long-term players** – their long investment horizons create stability.
+
+This article explores how Middle East SWFs are evolving, what drives their allocation decisions, and how investors should think about the implications for global markets.
+
+## The Middle East SWF Landscape: Size and Scope
+
+### Major Funds
+
+**Abu Dhabi Investment Authority (ADIA):**
+- **Assets under management** – estimated $700-800 billion.
+- **Strategy** – diversified global portfolio across asset classes.
+- **Focus** – long-term, diversified investments with emphasis on developed markets.
+
+**Saudi Arabia Public Investment Fund (PIF):**
+- **Assets under management** – estimated $700-800 billion (targeting $1 trillion by 2025).
+- **Strategy** – active, thematic investing with significant domestic allocation.
+- **Focus** – Vision 2030 transformation, technology, and global diversification.
+
+**Kuwait Investment Authority (KIA):**
+- **Assets under management** – estimated $700-800 billion.
+- **Strategy** – diversified global portfolio with emphasis on developed markets.
+- **Focus** – long-term, conservative investments.
+
+**Qatar Investment Authority (QIA):**
+- **Assets under management** – estimated $300-400 billion.
+- **Strategy** – active, direct investments with global focus.
+- **Focus** – technology, real estate, infrastructure, and strategic assets.
+
+**Other Major Funds:**
+- **Mubadala** (Abu Dhabi) – estimated $250-300 billion, focus on technology and innovation.
+- **Dubai Investment Corporation** – estimated $200-300 billion, focus on real estate and infrastructure.
+- **Oman Investment Authority** – estimated $40-50 billion, focus on diversification.
+
+### Historical Allocation Patterns
+
+Traditionally, Middle East SWFs have allocated:
+- **Developed market equities** – 40-60% of portfolios.
+- **Fixed income** – 20-30% of portfolios.
+- **Alternative investments** – 10-20% of portfolios (real estate, private equity, infrastructure).
+- **Emerging markets** – 5-15% of portfolios.
+
+**Characteristics:**
+- **Long-term horizon** – patient capital with multi-decade investment horizons.
+- **Low leverage** – typically unleveraged or low-leverage portfolios.
+- **Diversification** – broad diversification across geographies and asset classes.
+- **Passive bias** – historically more passive, index-tracking approaches.
+
+## The Diversification Imperative
+
+### Why Diversification Matters
+
+Middle East economies are highly dependent on oil:
+- **Oil revenues** – account for 60-90% of government revenues in most Gulf countries.
+- **Economic concentration** – limited economic diversification beyond oil and gas.
+- **Volatility** – oil price volatility creates fiscal and economic volatility.
+- **Transition risk** – energy transition threatens long-term oil demand.
+
+**SWF Role:**
+- **Stabilization** – SWFs provide fiscal buffers during oil price downturns.
+- **Diversification** – SWF investments diversify national wealth beyond oil.
+- **Transformation** – SWFs can support economic diversification and transformation.
+
+### Diversification Strategies
+
+**Geographic Diversification:**
+- **Reducing developed market concentration** – shifting from heavy U.S. and European exposure.
+- **Increasing Asia allocation** – growing allocations to China, India, and Southeast Asia.
+- **Emerging markets** – increasing allocations to emerging markets globally.
+
+**Sector Diversification:**
+- **Reducing oil-linked exposure** – reducing allocations to energy and oil-linked sectors.
+- **Technology** – increasing allocations to technology and innovation.
+- **Healthcare** – growing allocations to healthcare and life sciences.
+- **Consumer** – increasing allocations to consumer and retail sectors.
+- **Infrastructure** – growing allocations to infrastructure and real assets.
+
+**Asset Class Diversification:**
+- **Private markets** – increasing allocations to private equity, venture capital, and private credit.
+- **Real assets** – growing allocations to real estate, infrastructure, and commodities.
+- **Alternative strategies** – increasing allocations to hedge funds, commodities, and other alternatives.
+
+**Direct Investments:**
+- **Strategic stakes** – taking direct stakes in companies and assets.
+- **Co-investments** – partnering with other investors on large deals.
+- **Control investments** – acquiring controlling stakes in companies.
+
+## Domestic Transformation: Vision 2030 and Beyond
+
+### Saudi Arabia's Vision 2030
+
+Saudi Arabia's Vision 2030 is a comprehensive transformation plan:
+- **Economic diversification** – reducing dependence on oil.
+- **Social transformation** – modernizing society and increasing participation.
+- **Infrastructure** – massive investment in infrastructure and megaprojects.
+- **Technology** – building technology and innovation capabilities.
+
+**PIF Role:**
+- **Domestic investment** – PIF is the primary vehicle for Vision 2030 investments.
+- **Strategic projects** – investing in NEOM, Red Sea Project, Qiddiya, and other megaprojects.
+- **Sector development** – building new sectors (entertainment, tourism, technology).
+- **Job creation** – creating jobs and economic opportunities.
+
+**Investment Themes:**
+- **Technology** – building technology capabilities and investing in tech companies.
+- **Entertainment** – developing entertainment and tourism sectors.
+- **Infrastructure** – massive infrastructure investment.
+- **Manufacturing** – developing manufacturing capabilities.
+
+### Other Gulf Transformation Plans
+
+**UAE:**
+- **Economic diversification** – reducing dependence on oil.
+- **Technology hub** – positioning as a technology and innovation hub.
+- **Tourism** – developing tourism and hospitality sectors.
+- **Renewable energy** – investing in renewable energy and sustainability.
+
+**Qatar:**
+- **Economic diversification** – reducing dependence on gas.
+- **Infrastructure** – continuing infrastructure investment post-World Cup.
+- **Technology** – developing technology and innovation capabilities.
+- **Finance** – positioning as a financial center.
+
+**Kuwait:**
+- **Economic diversification** – reducing dependence on oil.
+- **Infrastructure** – investing in infrastructure and development.
+- **Private sector** – supporting private sector development.
+
+## Global Capital Allocation: Trends and Themes
+
+### Technology and Innovation
+
+Middle East SWFs are increasing allocations to technology:
+- **Venture capital** – investing in venture capital funds and direct investments.
+- **Growth equity** – investing in growth-stage technology companies.
+- **Public equities** – increasing allocations to technology stocks.
+- **Strategic stakes** – taking strategic stakes in technology companies.
+
+**Examples:**
+- **PIF** – investments in Uber, Lucid Motors, and various technology companies.
+- **Mubadala** – investments in technology and innovation.
+- **QIA** – investments in technology and digital assets.
+
+**Drivers:**
+- **Economic transformation** – technology is key to economic diversification.
+- **Returns** – technology has delivered strong returns.
+- **Strategic value** – technology investments can support domestic transformation.
+
+### Real Estate and Infrastructure
+
+Middle East SWFs are major investors in real estate and infrastructure:
+- **Global real estate** – investments in prime real estate globally.
+- **Infrastructure** – investments in infrastructure assets (ports, airports, utilities).
+- **Domestic real estate** – investments in domestic real estate development.
+- **Hospitality** – investments in hotels and hospitality assets.
+
+**Examples:**
+- **ADIA** – significant real estate portfolio globally.
+- **QIA** – investments in prime real estate (London, New York, etc.).
+- **PIF** – investments in domestic and international real estate.
+
+**Drivers:**
+- **Stable income** – real estate and infrastructure provide stable income.
+- **Inflation hedge** – real assets can hedge against inflation.
+- **Long-term value** – real assets can preserve and grow value over time.
+
+### Healthcare and Life Sciences
+
+Middle East SWFs are increasing allocations to healthcare:
+- **Pharmaceuticals** – investments in pharmaceutical companies.
+- **Biotechnology** – investments in biotechnology and life sciences.
+- **Healthcare services** – investments in healthcare services and providers.
+- **Medical devices** – investments in medical device companies.
+
+**Drivers:**
+- **Demographics** – aging populations increase healthcare demand.
+- **Domestic needs** – building domestic healthcare capabilities.
+- **Returns** – healthcare has delivered strong returns.
+- **Strategic value** – healthcare investments can support domestic transformation.
+
+### Emerging Markets
+
+Middle East SWFs are increasing allocations to emerging markets:
+- **Asia** – growing allocations to China, India, and Southeast Asia.
+- **Africa** – increasing allocations to African markets.
+- **Latin America** – growing allocations to Latin American markets.
+- **Other emerging markets** – expanding allocations globally.
+
+**Drivers:**
+- **Growth** – emerging markets offer higher growth potential.
+- **Diversification** – emerging markets provide diversification benefits.
+- **Strategic relationships** – investments can support strategic relationships.
+- **Returns** – emerging markets can offer attractive returns.
+
+## Market Implications
+
+### Asset Price Impact
+
+Middle East SWFs are major allocators:
+- **Market movers** – their allocation decisions can move asset prices.
+- **Liquidity providers** – they provide liquidity to markets.
+- **Price setters** – their demand can influence asset prices.
+
+**Examples:**
+- **Real estate** – SWF demand has supported global real estate prices.
+- **Technology** – SWF investments have supported technology valuations.
+- **Infrastructure** – SWF demand has supported infrastructure asset prices.
+
+### Capital Flow Patterns
+
+Middle East SWFs influence capital flows:
+- **Geographic flows** – their allocations influence capital flows across regions.
+- **Sector flows** – their sector preferences influence capital flows across sectors.
+- **Asset class flows** – their asset class preferences influence capital flows.
+
+**Trends:**
+- **Shift to Asia** – increasing allocations to Asia.
+- **Shift to alternatives** – increasing allocations to alternative investments.
+- **Shift to direct investments** – increasing direct investments.
+
+### Competitive Dynamics
+
+Middle East SWFs compete with other large allocators:
+- **Other SWFs** – competition with other SWFs for assets.
+- **Private equity** – competition with private equity firms.
+- **Pension funds** – competition with pension funds and other institutional investors.
+
+**Advantages:**
+- **Long-term capital** – patient capital with long investment horizons.
+- **Scale** – large capital bases enable large investments.
+- **Strategic value** – can provide strategic value beyond capital.
+
+**Challenges:**
+- **Competition** – intense competition for attractive assets.
+- **Valuations** – high valuations in many markets.
+- **Regulatory** – regulatory scrutiny of SWF investments.
+
+## Investment Implications
+
+### Opportunities
+
+**Co-Investment:**
+- **Partnerships** – opportunities to partner with SWFs on investments.
+- **Co-investments** – opportunities to co-invest alongside SWFs.
+- **Strategic relationships** – opportunities to build strategic relationships.
+
+**Market Access:**
+- **Emerging markets** – SWF investments can provide access to emerging markets.
+- **Alternative investments** – SWF allocations can provide access to alternative investments.
+- **Direct investments** – SWF direct investments can provide access to deals.
+
+**Capital Sources:**
+- **Fundraising** – SWFs can be sources of capital for funds and companies.
+- **Strategic investors** – SWFs can be strategic investors in companies.
+- **Long-term partners** – SWFs can be long-term partners.
+
+### Risks
+
+**Competition:**
+- **Asset competition** – SWFs compete for attractive assets.
+- **Valuation pressure** – SWF demand can drive up valuations.
+- **Market impact** – SWF allocations can impact market dynamics.
+
+**Geopolitical:**
+- **Political risk** – SWF investments can be subject to political risk.
+- **Regulatory risk** – regulatory scrutiny of SWF investments.
+- **Sanctions risk** – sanctions can impact SWF investments.
+
+**Market Risk:**
+- **Oil price risk** – oil price volatility affects SWF capital availability.
+- **Currency risk** – currency movements affect SWF returns.
+- **Market risk** – market volatility affects SWF portfolios.
+
+## Conclusion
+
+Middle East sovereign wealth funds are evolving from passive oil-revenue recyclers to active, strategic allocators driving economic transformation and global capital allocation. Their diversification strategies, domestic transformation investments, and global capital deployment are reshaping markets and creating opportunities and risks for investors.
+
+For global investors, the key is to:
+- **Understand SWF strategies** – understand how SWFs allocate capital and what drives their decisions.
+- **Identify opportunities** – identify opportunities to partner with or invest alongside SWFs.
+- **Manage risks** – manage competition, geopolitical, and market risks.
+- **Monitor trends** – monitor trends in SWF allocation and strategy.
+
+The Middle East SWF evolution is a multi-decade theme that will continue to influence global markets. Investors who understand these dynamics and position accordingly will be well-positioned to capture opportunities and manage risks in this evolving landscape.`,
+    date: formatDate(265),
+    author: 'Anastasia Petrova',
+    authorAvatar: getAuthorAvatar('Anastasia Petrova'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Middle East Sovereign Wealth Funds: Diversification and Global Capital Allocation
+
+## Introduction
+
+The Middle East is home to some of the world's largest sovereign wealth funds (SWFs).`),
+    ),
+    imageUrl: getImage('markets', 265),
+    tags: ['Middle East', 'Sovereign Wealth Funds', 'Capital Allocation', 'Emerging Markets', 'Global Markets'],
+  },
+  {
+    slug: 'turkey-fx-stabilization-credit-transmission-and-the-repricing-of-risk',
+    title: 'Turkey: FX Stabilization, Credit Transmission, and the Repricing of Risk',
+    excerpt:
+      'Turkey’s macro regime hinges on credibility and FX control. This framework connects reserves, credit transmission, and political constraints to the lira, rates, and the equity/sovereign risk premium.',
+    content: `# Turkey: FX Stabilization, Credit Transmission, and the Repricing of Risk
+
+## Introduction
+
+Turkey is one of the clearest examples of how macro markets are ultimately markets in credibility. The country’s recent history has included high inflation, abrupt policy shifts, unconventional monetary frameworks, FX interventions, and periods of strong growth followed by stress. For investors, Turkey is not a simple “high yield” story; it is a regime story where outcomes depend on whether policy can stabilize expectations and rebuild reserves without breaking domestic political constraints.
+
+This article provides a practical framework to evaluate Turkey across three linked variables:
+
+- **FX stabilization**: the lira’s path and the credibility of the regime;
+- **Credit transmission**: whether policy rates actually tighten financial conditions;
+- **Risk repricing**: how sovereign spreads, local rates, and equities adjust as credibility improves or deteriorates.
+
+The objective is to map scenarios, not to offer a single forecast. In Turkey, the distribution of outcomes matters more than the point estimate.
+
+## Turkey’s macro problem is a balance-sheet problem
+
+### Inflation, FX, and expectations
+
+High inflation in Turkey has historically been reinforced by:
+
+- FX depreciation feeding import prices;
+- Indexation behavior (wages and contracts adjusting faster);
+- A public that shortens horizons and seeks hard currency protection.
+
+In such regimes, stabilizing inflation requires stabilizing expectations. But expectations are anchored by credibility, and credibility depends on consistent policy and reserve adequacy.
+
+### Why reserves matter more than headlines
+
+Turkey’s reserve position is central because:
+
+- It determines the ability to smooth FX volatility;
+- It influences confidence in the ability to meet external obligations;
+- It constrains policy choices during stress.
+
+Investors should distinguish:
+
+- Gross reserves (headline);
+- Net usable reserves (after swaps and liabilities);
+- Reserve composition (liquid vs encumbered).
+
+Markets can tolerate high inflation temporarily if FX volatility is controlled and reserves look credible. They cannot tolerate a situation where reserves are thin and policy appears reactive.
+
+## FX stabilization: what “stability” actually means
+
+### Stability is not a fixed level
+
+FX stabilization does not necessarily mean a strong currency. It means:
+
+- Reduced volatility;
+- Predictable policy reaction function;
+- A credible buffer against shocks.
+
+If the market believes policy will defend stability with consistent tools, risk premia can compress even if the currency remains structurally weak.
+
+### The hidden cost of “defending” FX
+
+FX defense can take multiple forms:
+
+- Direct intervention;
+- Macroprudential constraints on domestic FX demand;
+- Capital controls or administrative measures;
+- Swap lines or temporary funding support.
+
+These tools can stabilize FX temporarily but often create distortions:
+
+- Offshore/onshore rate gaps;
+- Reduced market depth;
+- Mispricing of risk.
+
+The most durable stabilization comes from a combination of credible monetary policy and rebuilding reserves—not from suppression alone.
+
+## Credit transmission: do policy rates actually tighten?
+
+### Turkey’s unique transmission channels
+
+In many EMs, hiking the policy rate tightens credit. In Turkey, transmission can be weakened by:
+
+- Directed lending programs;
+- Bank balance-sheet incentives;
+- Administrative constraints that distort pricing;
+- FX-linked deposit schemes that change household behavior.
+
+The key investor question is: **does higher policy rate reduce credit growth and domestic demand, or is it neutralized by other channels?**
+
+### Banking system behavior is the hinge
+
+Banks transmit policy through:
+
+- Loan growth;
+- Deposit pricing;
+- Asset allocation (government bonds vs loans);
+- FX positioning and hedging.
+
+If banks are encouraged to lend regardless of rates, policy tightening may not slow demand. If banks are forced to hold certain assets or face constraints on deposit pricing, distortions can intensify.
+
+In Turkey, it is essential to analyze policy as a system:
+
+- Monetary policy;
+- Macroprudential policy;
+- Banking regulations;
+- Fiscal signals.
+
+## The risk premium: how markets reprice Turkey
+
+### Sovereign spreads: credibility plus liquidity
+
+Turkey’s sovereign spread reflects:
+
+- External financing needs;
+- Reserve adequacy;
+- Policy credibility;
+- Global risk appetite.
+
+When credibility improves, spreads can compress quickly—often faster than inflation improves—because the market prices regime change. But spreads can widen just as quickly if credibility is questioned. This creates asymmetric risk for investors who mistake “policy headline” for durable commitment.
+
+### Local rates: real yields and inflation momentum
+
+Local rates matter through:
+
+- Real yield level (policy vs inflation trajectory);
+- Yield curve shape (front-end credibility vs long-end inflation risk);
+- Liquidity and foreign participation.
+
+If real rates become meaningfully positive and the market believes inflation momentum is turning, long-term rates can fall. If the market doubts the regime, the curve can steepen with long-end inflation risk.
+
+### Equities: the FX and inflation hedge with a valuation overlay
+
+Turkish equities have historically been:
+
+- A partial hedge against inflation and currency depreciation (nominal revenue growth);
+- A volatility expression of macro regime risk.
+
+But equities are not automatically “safe” in high inflation. Key variables include:
+
+- FX exposure of earnings (exporters vs domestic demand);
+- Input cost sensitivity (energy, imports);
+- Balance-sheet currency mismatches;
+- Ability to pass through inflation.
+
+As credibility improves, equity valuation can re-rate because:
+
+- Discount rates fall;
+- Risk premia compress;
+- Foreign participation returns.
+
+But a re-rating requires confidence that the regime is stable, not tactical.
+
+## Scenario map: three plausible paths
+
+### Scenario 1: Credibility rebuild + reserve accumulation (positive regime shift)
+
+In this scenario:
+
+- Policy maintains a consistent tightening bias;
+- Credit slows and domestic demand cools;
+- FX volatility declines and reserves rebuild;
+- Inflation falls with a lag.
+
+Market implications:
+
+- Spreads compress;
+- Curve flattens as long-end inflation risk declines;
+- Equities re-rate, particularly quality exporters and banks with improved funding stability.
+
+### Scenario 2: Partial stabilization with ongoing distortions (muddle through)
+
+In this scenario:
+
+- Policy tightens intermittently, but administrative tools remain dominant;
+- Credit slows unevenly;
+- FX is stabilized through measures that reduce market depth;
+- Inflation remains sticky.
+
+Market implications:
+
+- Spreads remain volatile, with rallies that fade;
+- Local rates stay elevated due to inflation risk;
+- Equities perform unevenly, favoring exporters and inflation pass-through winners.
+
+### Scenario 3: Credibility break (stress regime)
+
+In this scenario:
+
+- Policy shifts or political constraints override tightening;
+- Reserves weaken and FX pressure returns;
+- Inflation accelerates again;
+- Controls tighten, reducing market depth.
+
+Market implications:
+
+- Spreads widen sharply;
+- Curve steepens;
+- Equities sell off or become purely nominal inflation hedges with high volatility and low real returns.
+
+## A monitoring dashboard for Turkey
+
+Because regime shifts can happen quickly, investors should monitor high-frequency signals:
+
+- Net usable reserves and swap reliance;
+- FX volatility and offshore/onshore rate gaps;
+- Credit growth and loan composition;
+- Deposit structure (FX vs local; maturity profile);
+- Inflation momentum vs administered price adjustments;
+- Policy communications consistency and governance stability.
+
+The best early warning indicators are often not GDP prints, but liquidity and balance-sheet signals.
+
+## The external financing channel: why global conditions still dominate
+
+Even if domestic policy improves, Turkey remains sensitive to global conditions because external financing needs and FX confidence interact:
+
+- Higher global rates raise the cost of rolling external debt and widen risk premia.
+- Risk-off regimes reduce foreign inflows and increase dollar demand domestically.
+- Strong global growth can support exports and tourism, indirectly stabilizing the current account.
+
+For investors, this means Turkey’s regime story is best evaluated with a global overlay: credibility can compress spreads, but global shocks can re-open them quickly. The most robust positioning assumes that volatility is not a bug; it is a feature of the asset.
+
+## Corporate balance sheets: the hidden transmission channel
+
+Turkey’s corporate sector often carries FX exposure through:
+
+- Import inputs priced in hard currency;
+- USD or EUR liabilities (directly or indirectly);
+- Revenue streams that are partly local-currency.
+
+Even when sovereign conditions improve, corporate stress can reappear if the lira weakens sharply or if domestic rates rise faster than cash flows adjust. Investors should watch indicators like FX deposit share, corporate refinancing needs, and banking sector asset quality. In EM regimes, corporate balance sheets are where macro stress becomes micro defaults.
+
+This is also why banks become a key barometer: loan growth, deposit dollarization, and non-performing loan trends often reveal whether “stabilization” is reaching the real economy or remaining a market-level phenomenon.
+
+If those indicators deteriorate while markets rally, it is a warning that the repricing may be fragile and dependent on sentiment rather than fundamentals.
+
+In Turkey, the market can move first—but the balance sheets always settle the argument later.
+
+That’s the regime reality.
+
+In practical portfolio terms, it argues for conservative sizing, diversification across instruments, and an explicit plan for liquidity when volatility spikes.
+
+## Conclusion
+
+Turkey’s investment case is fundamentally a credibility and balance-sheet case. FX stabilization, reserve adequacy, and credit transmission determine whether inflation can fall sustainably and whether risk premia can compress across sovereigns, rates, and equities.
+
+For investors, the key is to treat Turkey as a regime distribution. When credibility rebuilds, repricing can be powerful. When credibility breaks, moves can be abrupt and liquidity can vanish. The correct edge is not prediction—it is a framework that ties policy, reserves, and transmission into actionable scenario management.`,
+    date: formatDate(0),
+    author: 'Anastasia Petrova',
+    authorAvatar: getAuthorAvatar('Anastasia Petrova'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Turkey: FX Stabilization, Credit Transmission, and the Repricing of Risk
+
+## Introduction
+
+Turkey is one of the clearest examples of how macro markets are ultimately markets in credibility.`)
+    ),
+    imageUrl: getImage('markets', 1),
+    tags: ['Emerging Markets', 'Turkey', 'FX', 'Inflation', 'Rates'],
+    relatedMarkets: ['currencies', 'bonds', 'stocks'],
+  },
+  {
+    slug: 'argentina-dollarization-debt-curves-and-the-politics-of-disinflation',
+    title: 'Argentina: Dollarization, Debt Curves, and the Politics of Disinflation',
+    excerpt:
+      'Argentina is a recurring case study in credibility. This piece maps the sovereign curve through policy scenarios—dollarization, fiscal adjustment, and FX reform—and highlights where investors underestimate political and liquidity risk.',
+    content: `# Argentina: Dollarization, Debt Curves, and the Politics of Disinflation
+
+## Introduction
+
+Argentina is the macroeconomist’s stress test: high inflation, recurring currency crises, capital controls, and repeated sovereign restructurings. It is also, periodically, a magnet for global investors searching for asymmetric payoff profiles—deeply discounted bonds, high carry, and the possibility that a policy regime change resets expectations.
+
+The difficulty is that Argentina is rarely “one trade.” It is a multi-variable system where outcomes depend on credibility and sequencing:
+
+- Fiscal adjustment vs social tolerance;
+- FX reform vs reserve adequacy;
+- Monetary tightening vs financial stability;
+- Political coalition durability vs legislative constraints.
+
+This article provides a framework for evaluating Argentina through its sovereign curve and policy scenarios. It is not a prediction. It is a map: how different paths can affect spreads, FX dynamics, and the distribution of outcomes.
+
+## Why Argentina is a credibility problem first
+
+### Inflation is the symptom, not the disease
+
+Argentina’s inflation is not simply a result of bad luck or external shocks. It reflects repeated failures of:
+
+- Fiscal discipline (persistent deficits);
+- Monetary credibility (financing deficits through money creation);
+- Institutional trust (policy reversals and controls).
+
+When inflation is high, the economy becomes more “indexed”:
+
+- Wages, rents, and contracts adjust faster;
+- The public shortens its time horizon;
+- Velocity increases as people try to exit local currency.
+
+Disinflation requires more than tightening. It requires a credible regime that convinces households and firms that policy will not reverse at the first sign of pain.
+
+### Dollarization as a narrative vs dollarization as an implementation
+
+“Dollarization” is often treated as a binary. In practice, it is a spectrum:
+
+- Partial dollarization through pricing and savings behavior;
+- Formal dollarization (legal tender change);
+- A currency board-like constraint on money creation;
+- Full replacement of monetary sovereignty.
+
+Implementation is constrained by:
+
+- Reserve availability (you need dollars to convert monetary base);
+- Banking system architecture and liabilities;
+- Legal and political feasibility.
+
+The sovereign curve will price not the slogan, but the probability of credible execution.
+
+## Reading the sovereign curve: what it is actually telling you
+
+### The curve is a probability-weighted political forecast
+
+Sovereign bonds price a distribution of outcomes:
+
+- Stabilization with market access returning;
+- Gradual adjustment with recurring stress;
+- Another restructuring or maturity extension;
+- Controls and selective payments.
+
+The curve’s shape reflects:
+
+- Near-term liquidity risk (payments, IMF program cadence);
+- Medium-term credibility (fiscal primary balance, growth, social tolerance);
+- Long-term solvency (debt dynamics in real terms, FX regime).
+
+### Key decomposition: liquidity vs solvency vs convertibility
+
+Argentina is unusual because investors must separate:
+
+- **Liquidity**: Can the state pay in the next 6–24 months?
+- **Solvency**: Is debt sustainable over time under realistic growth/inflation assumptions?
+- **Convertibility**: Can FX be accessed at a unified market rate, or is there a multi-rate system with hidden taxes?
+
+Convertibility risk matters because it determines:
+
+- Tax base and import costs;
+- The competitiveness of export sectors;
+- The credibility of any disinflation program.
+
+## Scenario framework: three plausible paths
+
+### Scenario 1: Credible fiscal adjustment + FX normalization (base case for “reform optimism”)
+
+In this path:
+
+- The government achieves primary surplus through spending cuts, subsidy reform, and improved tax enforcement.
+- FX regime moves toward unification, gradually reducing distortions.
+- Inflation falls, but not instantly—indexation and inertia take time.
+- Market access improves as credibility builds.
+
+Bond implications:
+
+- Spreads compress, but likely in steps, not a straight line.
+- The belly of the curve may outperform if near-term rollover risk declines.
+- Local assets rally, but volatility remains high due to political events.
+
+Risks:
+
+- Social backlash and strikes;
+- Legislative gridlock;
+- External shocks (commodity prices, global rates).
+
+### Scenario 2: Partial reform + persistent controls (the “muddle through” path)
+
+In this path:
+
+- Fiscal adjustment is incomplete; deficits persist at a lower but still meaningful level.
+- Controls remain; FX becomes a patchwork of official and parallel rates.
+- Inflation declines temporarily but re-accelerates as credibility fades.
+- The IMF relationship becomes transactional rather than transformative.
+
+Bond implications:
+
+- Curve remains distressed with periodic rallies and selloffs.
+- Carry trades can look attractive but are fragile to sentiment shifts.
+- The market prices recurring “near misses” rather than a reset.
+
+### Scenario 3: Policy reversal or political fragmentation (stress case)
+
+In this path:
+
+- Coalition fractures or reforms are reversed.
+- FX pressure builds, reserves decline, and inflation spikes again.
+- Debt servicing becomes politically contested.
+
+Bond implications:
+
+- Spreads widen sharply; liquidity evaporates.
+- Restructuring risk moves from tail to central scenario.
+- Investors face “gap risk”: prices can reprice overnight.
+
+## FX regime: the hinge variable
+
+### Why FX unification is hard
+
+Multiple exchange rates function like a hidden tax system:
+
+- Importers receive an implicit subsidy or penalty depending on the rate they access.
+- Exporters face implicit taxation when forced to convert at unfavorable rates.
+- Arbitrage opportunities proliferate, creating rent-seeking and corruption.
+
+Unification removes distortions but can trigger:
+
+- A one-off price level adjustment (inflation spike);
+- Short-term recessionary effects via real income compression;
+- Financial stress if balance sheets are mismatched.
+
+For investors, FX policy is not a technical footnote—it is the pivot that determines inflation path, growth, and debt dynamics.
+
+## The political economy: disinflation is a social contract
+
+Disinflation is not simply “tighten and wait.” It requires:
+
+- Social tolerance for real wage compression in the short run;
+- Credibility that pain leads to stability;
+- Institutional capacity to enforce budgets and rules.
+
+Investors should treat political indicators as market indicators:
+
+- Legislative support and coalition cohesion;
+- Public approval and protest intensity;
+- Ability to maintain reform through mid-cycle elections.
+
+The market can price macro variables quickly, but political credibility is slower—and often the deciding factor.
+
+## Positioning and risk management: how professionals approach the problem
+
+### Size and liquidity discipline
+
+Argentina trades like a high beta credit. Liquidity can vanish during stress. Professionals typically:
+
+- Size positions assuming forced exit could be costly;
+- Avoid concentration in a single maturity;
+- Treat local market instruments as higher risk due to convertibility and controls.
+
+### Prefer frameworks over forecasts
+
+The correct approach is to define triggers:
+
+- What signals confirm credibility improving?
+- What signals suggest the program is failing?
+- What is the stop-loss logic in a market that gaps?
+
+Triggers are often a blend:
+
+- Fiscal prints and reserve dynamics;
+- FX policy announcements and implementation;
+- Political events (votes, protests, coalition shifts).
+
+## A concrete monitoring dashboard (what to track weekly)
+
+Argentina often moves faster than quarterly macro data. A practical dashboard focuses on variables that update frequently and signal credibility early:
+
+- **Net international reserves and reserve composition:** headline reserves can look stable while usable reserves decline. Watch changes in liquid reserves and the pace of FX intervention.
+- **Parallel vs official FX gap:** a widening gap is a pressure gauge for future devaluation or tighter controls; a narrowing gap can signal improving confidence or temporary suppression—context matters.
+- **Short-term cash flow calendar:** near-term payment dates, IMF disbursement timing, and local rollover needs often drive short-horizon volatility in the curve.
+- **Inflation momentum vs administered price adjustments:** disinflation can look strong until regulated prices (energy, transport) are reset. Track the timing of these resets.
+- **Political stability indicators:** cabinet changes, coalition votes, protest intensity, and polling trends can matter as much as fiscal prints.
+
+This dashboard does not eliminate risk, but it converts “Argentina uncertainty” into measurable signals that help investors reduce surprise.
+
+## Curve intuition: why “front-end vs belly vs long end” is a regime question
+
+Argentina’s curve often reflects regime risk more than traditional duration logic. In credibility-building phases, the **belly** can outperform as rollover risk declines and market access probabilities rise. In stress phases, the market can “flatten” in a painful way—short maturities reprice on liquidity fear while the long end prices restructuring risk. Investors should avoid assuming the curve will behave like developed market sovereigns; it behaves more like a set of conditional claims on policy durability.
+
+Practically, this means investors should define in advance whether they are expressing a **liquidity view** (front-end), a **credibility transition view** (belly), or a **terminal solvency view** (long end). Mixing the three without sizing discipline can produce unintended exposures—especially when local politics shift faster than macro data.
+
+In practice, many losses come from confusing a “policy headline” with implemented reform. The curve tends to reward execution, not announcements, and it punishes delays quickly.
+
+## Conclusion
+
+Argentina is a case study in credibility and sequencing. The sovereign curve is not just a reflection of “default risk”; it is a probability-weighted forecast of political durability, FX regime evolution, and fiscal discipline.
+
+For investors, the opportunity is not simply “buy distressed debt and wait.” The opportunity is to understand how specific policy paths change the distribution of outcomes—and to size exposure accordingly. In Argentina, the tail risks are real, the upside can be meaningful, and the difference is often made by politics rather than economics.`,
+    date: formatDate(0),
+    author: 'Anastasia Petrova',
+    authorAvatar: getAuthorAvatar('Anastasia Petrova'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Argentina: Dollarization, Debt Curves, and the Politics of Disinflation
+
+## Introduction
+
+Argentina is the macroeconomist’s stress test: high inflation, recurring currency crises, capital controls, and repeated sovereign restructurings.`)
+    ),
+    imageUrl: getImage('markets', 0),
+    tags: ['Emerging Markets', 'Argentina', 'Sovereign Debt', 'FX', 'Inflation'],
+    relatedMarkets: ['currencies', 'bonds'],
+  },
+  {
     slug: 'frontier-africa-debt-markets-opportunities-and-risks',
     title: 'Frontier Africa Debt Markets: Opportunities and Risks',
     excerpt:

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Building2, Newspaper, MessageSquare, X, FileText, Filter } from 'lucide-react';
+import { Search, Building2, Newspaper, MessageSquare, X, FileText, Filter, TrendingUp, User } from 'lucide-react';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -8,13 +8,17 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { organizations } from '@/lib/organizations';
 import { supabase } from '@/integrations/supabase/client';
+import type { MarketData } from '@/lib/api/types';
 
 interface SearchResult {
-  type: 'company' | 'news' | 'forum' | 'analytics';
+  type: 'company' | 'news' | 'forum' | 'analytics' | 'ticker' | 'author';
   id: string;
   title: string;
   subtitle?: string;
   date?: string;
+  symbol?: string;
+  marketType?: string;
+  authorId?: string;
 }
 
 export function GlobalSearch() {
@@ -22,7 +26,7 @@ export function GlobalSearch() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
-  const [contentType, setContentType] = useState<'all' | 'company' | 'news' | 'forum' | 'analytics'>('all');
+  const [contentType, setContentType] = useState<'all' | 'company' | 'news' | 'forum' | 'analytics' | 'ticker' | 'author'>('all');
   const [dateFilter, setDateFilter] = useState<'all' | 'today' | 'week' | 'month' | 'year'>('all');
   const navigate = useNavigate();
 
@@ -174,6 +178,82 @@ export function GlobalSearch() {
       }
     }
 
+    // Search tickers (market symbols)
+    if (contentType === 'all' || contentType === 'ticker') {
+      try {
+        const queryUpper = searchQuery.toUpperCase().trim();
+        const marketTypes: Array<'stocks' | 'crypto' | 'indices' | 'commodities' | 'currencies'> = 
+          ['stocks', 'crypto', 'indices', 'commodities', 'currencies'];
+        
+        for (const marketType of marketTypes) {
+          try {
+            const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+            const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+            
+            if (supabaseUrl && supabaseKey) {
+              const response = await fetch(
+                `${supabaseUrl}/functions/v1/fetch-stocks?type=${marketType}`,
+                {
+                  headers: {
+                    'Authorization': `Bearer ${supabaseKey}`,
+                    'Content-Type': 'application/json',
+                  },
+                }
+              );
+              
+              if (response.ok) {
+                const result = await response.json();
+                if (result?.data) {
+                  const matches = result.data
+                    .filter((item: MarketData) => 
+                      item.symbol.toUpperCase().includes(queryUpper) ||
+                      item.name.toUpperCase().includes(queryUpper)
+                    )
+                    .slice(0, 3)
+                    .map((item: MarketData) => ({
+                      type: 'ticker' as const,
+                      id: `${marketType}-${item.symbol}`,
+                      title: item.symbol,
+                      subtitle: item.name,
+                      symbol: item.symbol,
+                      marketType: marketType,
+                    }));
+                  allResults.push(...matches);
+                }
+              }
+            }
+          } catch (error) {
+            console.error(`Error searching ${marketType}:`, error);
+          }
+        }
+      } catch (error) {
+        console.error('Ticker search error:', error);
+      }
+    }
+
+    // Search authors (forum profiles)
+    if (contentType === 'all' || contentType === 'author') {
+      try {
+        const { data: profiles } = await supabase
+          .from('profiles')
+          .select('id, username, display_name, avatar_url')
+          .or(`username.ilike.%${searchQuery}%,display_name.ilike.%${searchQuery}%`)
+          .limit(5);
+        
+        if (profiles) {
+          allResults.push(...profiles.map(profile => ({
+            type: 'author' as const,
+            id: profile.id,
+            title: profile.display_name || profile.username,
+            subtitle: `@${profile.username}`,
+            authorId: profile.id,
+          })));
+        }
+      } catch (error) {
+        console.error('Author search error:', error);
+      }
+    }
+
     // Search analytics (would need analytics table)
     // For now, this is a placeholder
 
@@ -205,6 +285,16 @@ export function GlobalSearch() {
       case 'analytics':
         navigate(`/analytics/${result.id}`);
         break;
+      case 'ticker':
+        if (result.symbol && result.marketType) {
+          navigate(`/markets/${result.marketType}?symbol=${result.symbol}`);
+        }
+        break;
+      case 'author':
+        if (result.authorId) {
+          navigate(`/users/${result.authorId}`);
+        }
+        break;
     }
   };
 
@@ -218,6 +308,10 @@ export function GlobalSearch() {
         return <MessageSquare className="h-4 w-4 text-muted-foreground" />;
       case 'analytics':
         return <FileText className="h-4 w-4 text-muted-foreground" />;
+      case 'ticker':
+        return <TrendingUp className="h-4 w-4 text-muted-foreground" />;
+      case 'author':
+        return <User className="h-4 w-4 text-muted-foreground" />;
       default:
         return null;
     }
@@ -228,6 +322,8 @@ export function GlobalSearch() {
     news: results.filter(r => r.type === 'news'),
     forum: results.filter(r => r.type === 'forum'),
     analytics: results.filter(r => r.type === 'analytics'),
+    ticker: results.filter(r => r.type === 'ticker'),
+    author: results.filter(r => r.type === 'author'),
   };
 
   return (
@@ -250,7 +346,7 @@ export function GlobalSearch() {
               <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
               <input
                 className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
-                placeholder="Search companies, news, forum, analytics..."
+                placeholder="Search companies, news, forum, tickers, authors..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
@@ -277,6 +373,8 @@ export function GlobalSearch() {
                       <SelectItem value="news">News</SelectItem>
                       <SelectItem value="forum">Forum</SelectItem>
                       <SelectItem value="analytics">Analytics</SelectItem>
+                      <SelectItem value="ticker">Tickers</SelectItem>
+                      <SelectItem value="author">Authors</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -396,9 +494,52 @@ export function GlobalSearch() {
                 </CommandGroup>
               )}
 
+              {!loading && groupedResults.ticker.length > 0 && (
+                <CommandGroup heading="Tickers">
+                  {groupedResults.ticker.map((result) => (
+                    <CommandItem
+                      key={`ticker-${result.id}`}
+                      onSelect={() => handleSelect(result)}
+                      className="flex items-center gap-3 cursor-pointer"
+                    >
+                      {getIcon(result.type)}
+                      <div className="flex flex-col flex-1">
+                        <span className="font-medium">{result.title}</span>
+                        {result.subtitle && (
+                          <span className="text-xs text-muted-foreground">{result.subtitle}</span>
+                        )}
+                        {result.marketType && (
+                          <span className="text-xs text-muted-foreground capitalize">{result.marketType}</span>
+                        )}
+                      </div>
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              )}
+
+              {!loading && groupedResults.author.length > 0 && (
+                <CommandGroup heading="Authors">
+                  {groupedResults.author.map((result) => (
+                    <CommandItem
+                      key={`author-${result.id}`}
+                      onSelect={() => handleSelect(result)}
+                      className="flex items-center gap-3 cursor-pointer"
+                    >
+                      {getIcon(result.type)}
+                      <div className="flex flex-col flex-1">
+                        <span className="font-medium">{result.title}</span>
+                        {result.subtitle && (
+                          <span className="text-xs text-muted-foreground">{result.subtitle}</span>
+                        )}
+                      </div>
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              )}
+
               {!query && (
                 <div className="py-6 text-center text-sm text-muted-foreground">
-                  Type to search companies, news, and forum discussions...
+                  Type to search companies, news, forum, tickers, and authors...
                 </div>
               )}
             </CommandList>

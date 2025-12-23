@@ -1,4 +1,5 @@
 import React from 'react';
+import { parseTickers } from './TickerParser';
 
 interface MarkdownContentProps {
   content: string;
@@ -229,13 +230,22 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
     }
   }
 
+  // Helper function to parse tickers in a text segment
+  const parseTickersInSegment = (segment: string): React.ReactNode[] => {
+    const tickerParts = parseTickers(segment);
+    return tickerParts.map((part, idx) => 
+      typeof part === 'string' ? part : React.cloneElement(part as React.ReactElement, { key: `ticker-${key++}-${idx}` })
+    );
+  };
+
   // Build React nodes
   for (const match of filteredMatches) {
-    // Add text before match
+    // Add text before match (with ticker parsing)
     if (match.start > lastIndex) {
       const beforeText = text.substring(lastIndex, match.start);
       if (beforeText) {
-        parts.push(beforeText);
+        const tickerParts = parseTickersInSegment(beforeText);
+        parts.push(...tickerParts);
       }
     }
 
@@ -287,11 +297,22 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
     lastIndex = match.end;
   }
 
-  // Add remaining text
+  // Add remaining text (with ticker parsing)
   if (lastIndex < text.length) {
     const remainingText = text.substring(lastIndex);
     if (remainingText) {
-      parts.push(remainingText);
+      const tickerParts = parseTickersInSegment(remainingText);
+      parts.push(...tickerParts);
+    }
+  }
+
+  // If no markdown matches, check for tickers in the whole text
+  if (parts.length === 0 || (parts.length === 1 && typeof parts[0] === 'string' && parts[0] === text)) {
+    const tickerParts = parseTickers(text);
+    if (tickerParts.length > 1 || (tickerParts.length === 1 && typeof tickerParts[0] !== 'string')) {
+      return tickerParts.map((part, idx) => 
+        typeof part === 'string' ? part : React.cloneElement(part as React.ReactElement, { key: `ticker-${idx}` })
+      );
     }
   }
 

@@ -50,6 +50,9 @@ export function Footer() {
     }, {
       name: t('navigation.forum'),
       href: '/forum'
+    }, {
+      name: t('navigation.communityHub'),
+      href: '/community'
     }],
     community: [{
       name: t('navigation.aboutUs'),

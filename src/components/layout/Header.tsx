@@ -1,16 +1,15 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark, Users } from 'lucide-react';
+import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark, Users, Moon } from 'lucide-react';
 import { logger } from '@/lib/logger';
-import { AchievementSystem } from '@/components/forum/AchievementSystem';
-import { ThemeSwitcher } from '@/components/layout/ThemeSwitcher';
-import { Trophy } from 'lucide-react';
+import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { supabase } from '@/integrations/supabase/client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useUser } from '@/context/UserContext';
 import { UserAvatar } from '@/components/user/UserAvatar';
 import { EDUCATION_BASE_PATH, educationRoutes } from '@/lib/educationRoutes';
 import { useTranslation } from '@/hooks/useTranslation';
+import { GlobalSearch } from '@/components/GlobalSearch';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,6 +26,7 @@ export function Header() {
   const location = useLocation();
   const { user, profile, signOut } = useUser();
   const navigate = useNavigate();
+  const { preferences, updatePreferences } = useUserPreferences();
 
   const navigation = useMemo(() => [{
     name: t('navigation.content'),
@@ -46,6 +46,11 @@ export function Header() {
       href: '/forum',
       icon: Award,
       description: t('descriptions.forum')
+    }, {
+      name: t('navigation.communityHub'),
+      href: '/community',
+      icon: Users,
+      description: t('navigation.communityHub')
     }]
   }, {
     name: t('navigation.markets'),
@@ -130,9 +135,27 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Sync theme when preferences change
+    const html = document.documentElement;
+    const currentTheme = preferences.theme || 'dark';
+    html.classList.remove('light', 'dark', 'desert');
+    html.classList.add(currentTheme);
+  }, [preferences.theme]);
+
   const isActive = (href: string) => {
     if (href === '/') return location.pathname === '/';
     return location.pathname.startsWith(href);
+  };
+
+  const cycleTheme = async () => {
+    const themes: Array<'light' | 'dark' | 'desert'> = ['light', 'dark', 'desert'];
+    const currentIndex = themes.indexOf(preferences.theme || 'dark');
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const nextTheme = themes[nextIndex];
+    
+    await updatePreferences({ theme: nextTheme });
   };
   return <header role="banner" className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border/50' : 'bg-transparent'}`}>
       <nav className="container-wide">
@@ -189,7 +212,7 @@ export function Header() {
 
           {/* Live indicator + CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <ThemeSwitcher />
+            <GlobalSearch />
             {user ? (
               <DropdownMenu modal={false}>
                 <DropdownMenuTrigger asChild>
@@ -221,15 +244,14 @@ export function Header() {
                     <BookOpen className="mr-2 h-4 w-4" />
                     {t('buttons.bookmarks')}
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/community')}>
-                    <Users className="mr-2 h-4 w-4" />
-                    {t('navigation.community')}
+                  <DropdownMenuItem onClick={cycleTheme}>
+                    <Moon className="mr-2 h-4 w-4" />
+                    Theme
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/settings')}>
                     <Settings className="mr-2 h-4 w-4" />
                     {t('buttons.settings')}
                   </DropdownMenuItem>
-                  <AchievementMenuItem />
                   {/* Moderator link - would check user role in real app */}
                   {/* <DropdownMenuItem onClick={() => navigate('/admin/moderation')}>
                     <Shield className="mr-2 h-4 w-4" />
@@ -353,27 +375,5 @@ function AchievementBadge({ userId }: { userId: string }) {
       <Trophy className="h-3.5 w-3.5" />
       <span className="text-xs font-medium">{unlockedCount}/{totalCount}</span>
     </div>
-  );
-}
-
-function AchievementMenuItem() {
-  const [open, setOpen] = useState(false);
-  const { t } = useTranslation({ namespace: 'ui' });
-
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Delay opening to allow dropdown to close first
-    setTimeout(() => setOpen(true), 100);
-  };
-
-  return (
-    <>
-      <DropdownMenuItem onSelect={(e) => e.preventDefault()} onClick={handleClick}>
-        <Trophy className="mr-2 h-4 w-4" />
-        {t('buttons.achievements')}
-      </DropdownMenuItem>
-      <AchievementSystem open={open} onOpenChange={setOpen} />
-    </>
   );
 }

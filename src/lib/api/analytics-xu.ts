@@ -26,6 +26,1212 @@ const countWords = (text: string): number => {
 // Xu Meiling - Asia-Pacific Markets (47 articles)
 export const xuArticles: AnalyticsArticle[] = [
   {
+    slug: 'south-korea-tech-innovation-and-market-dynamics-investment-implications',
+    title: 'South Korea Tech Innovation and Market Dynamics: Investment Implications',
+    excerpt:
+      'How South Korea\'s tech innovation is driving market dynamics, why chaebol reform and startup ecosystem matter, and how investors can identify opportunities in South Korea\'s evolving technology landscape.',
+    content: `# South Korea Tech Innovation and Market Dynamics: Investment Implications
+
+## Introduction
+
+South Korea has transformed from a war-torn economy to a global technology powerhouse in just a few decades. Home to world-leading companies like Samsung, SK Hynix, and LG, South Korea dominates in semiconductors, displays, and consumer electronics. But South Korea's tech landscape is evolving. The traditional chaebol-dominated model is being challenged by a growing startup ecosystem, regulatory reforms, and shifting global technology trends. For investors, understanding these dynamics is crucial for identifying opportunities in South Korea's tech markets.
+
+South Korea's tech innovation is driven by several factors:
+- **R&D investment** – high R&D investment as a percentage of GDP.
+- **Education** – strong engineering education system.
+- **Government support** – government support for technology and innovation.
+- **Chaebol innovation** – innovation from large conglomerates.
+- **Startup ecosystem** – growing startup ecosystem.
+
+For investors, South Korea's tech markets offer:
+- **Technology leadership** – world-leading technology companies.
+- **Market dominance** – dominant positions in key technology sectors.
+- **Growth exposure** – exposure to long-term technology growth.
+- **Innovation** – exposure to technology innovation.
+
+But challenges remain:
+- **Chaebol concentration** – market concentration in chaebols.
+- **Geopolitical risk** – geopolitical risk from North Korea and regional tensions.
+- **Competition** – competition from China and other Asian markets.
+- **Regulatory changes** – regulatory changes affecting tech companies.
+
+This article explores South Korea's tech innovation, market dynamics, and how investors can identify opportunities in South Korea's evolving technology landscape.
+
+## South Korea's Tech Landscape
+
+### Technology Sectors
+
+**Semiconductors:**
+- **Market leaders** – Samsung and SK Hynix are global leaders.
+- **Market position** – dominant positions in memory semiconductors.
+- **Innovation** – innovation in advanced semiconductor technologies.
+- **Investment** – massive investment in semiconductor manufacturing.
+
+**Displays:**
+- **Market leaders** – Samsung Display and LG Display are global leaders.
+- **Market position** – dominant positions in OLED and LCD displays.
+- **Innovation** – innovation in display technologies.
+- **Investment** – investment in display manufacturing.
+
+**Consumer Electronics:**
+- **Market leaders** – Samsung and LG are global leaders.
+- **Market position** – strong positions in smartphones, TVs, and appliances.
+- **Innovation** – innovation in consumer electronics.
+- **Brands** – strong global brands.
+
+**Batteries:**
+- **Market leaders** – LG Energy Solution, Samsung SDI, SK Innovation.
+- **Market position** – strong positions in battery manufacturing.
+- **Innovation** – innovation in battery technologies.
+- **Growth** – growth driven by electric vehicles.
+
+**5G and Telecommunications:**
+- **Market leaders** – Samsung and LG in network equipment.
+- **Market position** – strong positions in 5G equipment.
+- **Innovation** – innovation in 5G and telecommunications.
+- **Investment** – investment in 5G infrastructure.
+
+### Chaebol Structure
+
+**Chaebol Characteristics:**
+- **Conglomerates** – large family-controlled conglomerates.
+- **Diversification** – diversified across multiple industries.
+- **Market dominance** – dominant positions in many industries.
+- **Governance** – governance challenges from family control.
+
+**Major Chaebols:**
+- **Samsung** – largest chaebol, dominant in technology.
+- **SK Group** – major chaebol in energy, telecommunications, semiconductors.
+- **LG Group** – major chaebol in electronics, chemicals, displays.
+- **Hyundai** – major chaebol in automotive, heavy industry.
+
+**Chaebol Reform:**
+- **Governance** – improving corporate governance.
+- **Transparency** – increasing transparency.
+- **Succession** – succession planning challenges.
+- **Regulatory pressure** – regulatory pressure for reform.
+
+## Investment Themes
+
+### Semiconductor Leadership
+
+**Memory Semiconductors:**
+- **Market dominance** – Samsung and SK Hynix dominate memory markets.
+- **Technology leadership** – technology leadership in advanced memory.
+- **Investment** – massive investment in memory manufacturing.
+- **Cyclicality** – memory markets are cyclical.
+
+**Logic Semiconductors:**
+- **Foundry** – Samsung Foundry competing with TSMC.
+- **Design** – limited chip design capabilities.
+- **Investment** – investment in foundry capacity.
+- **Competition** – competition from TSMC and others.
+
+**Investment Opportunities:**
+- **Semiconductor companies** – Samsung, SK Hynix, and related companies.
+- **Equipment** – semiconductor equipment companies.
+- **Materials** – semiconductor materials companies.
+
+### Display Technology
+
+**OLED Technology:**
+- **Market leadership** – Samsung Display and LG Display lead OLED markets.
+- **Technology** – advanced OLED technology.
+- **Applications** – smartphones, TVs, and other applications.
+- **Investment** – investment in OLED manufacturing.
+
+**LCD Technology:**
+- **Market position** – strong positions in LCD markets.
+- **Transition** – transition from LCD to OLED.
+- **Applications** – TVs and other large displays.
+- **Competition** – competition from Chinese manufacturers.
+
+**Investment Opportunities:**
+- **Display companies** – Samsung Display, LG Display, and related companies.
+- **Equipment** – display equipment companies.
+- **Materials** – display materials companies.
+
+### Battery Technology
+
+**Electric Vehicle Batteries:**
+- **Market leaders** – LG Energy Solution, Samsung SDI, SK Innovation.
+- **Market position** – strong positions in EV battery markets.
+- **Technology** – advanced battery technology.
+- **Growth** – growth driven by electric vehicle adoption.
+
+**Battery Innovation:**
+- **Technology development** – development of next-generation batteries.
+- **Solid-state batteries** – development of solid-state batteries.
+- **Investment** – investment in battery technology R&D.
+
+**Investment Opportunities:**
+- **Battery companies** – LG Energy Solution, Samsung SDI, SK Innovation.
+- **Materials** – battery materials companies.
+- **Equipment** – battery equipment companies.
+
+### Startup Ecosystem
+
+**Startup Growth:**
+- **Growing ecosystem** – growing startup ecosystem.
+- **Venture capital** – increasing venture capital investment.
+- **Government support** – government support for startups.
+- **Innovation** – innovation from startups.
+
+**Startup Sectors:**
+- **Fintech** – fintech startups.
+- **E-commerce** – e-commerce startups.
+- **Gaming** – gaming startups.
+- **Biotech** – biotech startups.
+
+**Investment Opportunities:**
+- **Startups** – direct investment in startups.
+- **Venture capital** – venture capital funds.
+- **Platforms** – platforms supporting startups.
+
+## Market Dynamics
+
+### Chaebol Reform
+
+**Governance Improvements:**
+- **Board independence** – increasing board independence.
+- **Transparency** – improving transparency and disclosure.
+- **Shareholder rights** – strengthening shareholder rights.
+- **Succession** – addressing succession planning.
+
+**Regulatory Pressure:**
+- **Antitrust** – antitrust enforcement.
+- **Governance** – governance regulations.
+- **Transparency** – transparency requirements.
+- **Reform** – pressure for chaebol reform.
+
+**Impact:**
+- **Valuations** – potential impact on valuations.
+- **Competitiveness** – impact on competitiveness.
+- **Innovation** – impact on innovation.
+- **Investor sentiment** – impact on investor sentiment.
+
+### Geopolitical Risk
+
+**North Korea:**
+- **Tensions** – tensions with North Korea.
+- **Uncertainty** – geopolitical uncertainty.
+- **Impact** – impact on markets and investor sentiment.
+
+**Regional Tensions:**
+- **China** – tensions with China.
+- **Japan** – historical tensions with Japan.
+- **U.S. relations** – relations with United States.
+
+**Mitigation:**
+- **Diversification** – geographic diversification.
+- **Risk management** – risk management strategies.
+- **Monitoring** – monitoring geopolitical developments.
+
+### Competition
+
+**Chinese Competition:**
+- **Semiconductors** – competition from Chinese semiconductor companies.
+- **Displays** – competition from Chinese display manufacturers.
+- **Batteries** – competition from Chinese battery companies.
+- **Technology** – competition on technology.
+
+**Global Competition:**
+- **Semiconductors** – competition from TSMC, Intel, and others.
+- **Displays** – competition from global display manufacturers.
+- **Batteries** – competition from global battery companies.
+
+**Response:**
+- **Innovation** – focus on innovation.
+- **Investment** – investment in technology and manufacturing.
+- **Partnerships** – strategic partnerships.
+
+## Investment Opportunities
+
+### Technology Leaders
+
+**Samsung:**
+- **Semiconductors** – leading semiconductor company.
+- **Displays** – leading display company.
+- **Consumer electronics** – leading consumer electronics company.
+- **Diversification** – diversified technology company.
+
+**SK Hynix:**
+- **Memory** – leading memory semiconductor company.
+- **Technology** – technology leadership in memory.
+- **Investment** – investment in advanced memory.
+
+**LG:**
+- **Displays** – leading display company.
+- **Batteries** – battery business through LG Energy Solution.
+- **Consumer electronics** – consumer electronics business.
+
+**Investment Drivers:**
+- **Technology leadership** – technology leadership provides competitive advantages.
+- **Market dominance** – market dominance provides pricing power.
+- **Innovation** – innovation drives growth.
+- **Cyclicality** – understanding cyclicality is important.
+
+### Battery Companies
+
+**LG Energy Solution:**
+- **Market leader** – leading EV battery company.
+- **Technology** – advanced battery technology.
+- **Growth** – growth driven by EV adoption.
+
+**Samsung SDI:**
+- **Battery business** – battery business for EVs and other applications.
+- **Technology** – battery technology.
+- **Growth** – growth driven by EV adoption.
+
+**SK Innovation:**
+- **Battery business** – battery business for EVs.
+- **Technology** – battery technology.
+- **Growth** – growth driven by EV adoption.
+
+**Investment Drivers:**
+- **EV growth** – EV adoption driving battery demand.
+- **Technology leadership** – technology leadership provides competitive advantages.
+- **Market position** – strong market positions.
+- **Growth potential** – significant growth potential.
+
+### Startup Ecosystem
+
+**Startup Investment:**
+- **Direct investment** – direct investment in startups.
+- **Venture capital** – venture capital funds.
+- **Platforms** – platforms supporting startups.
+
+**Investment Drivers:**
+- **Ecosystem growth** – growing startup ecosystem.
+- **Innovation** – innovation from startups.
+- **Government support** – government support for startups.
+- **Market opportunities** – market opportunities for startups.
+
+## Risk Management
+
+### Market Concentration
+
+**Chaebol Concentration:**
+- **Market dominance** – chaebols dominate many markets.
+- **Diversification** – need for diversification.
+- **Risk** – concentration risk.
+
+**Mitigation:**
+- **Diversification** – diversify across companies and sectors.
+- **Startup exposure** – exposure to startup ecosystem.
+- **International exposure** – international exposure.
+
+### Geopolitical Risk
+
+**North Korea:**
+- **Tensions** – tensions with North Korea.
+- **Uncertainty** – geopolitical uncertainty.
+- **Impact** – impact on markets.
+
+**Mitigation:**
+- **Monitoring** – monitor geopolitical developments.
+- **Diversification** – geographic diversification.
+- **Risk management** – risk management strategies.
+
+### Competition
+
+**Chinese Competition:**
+- **Technology** – competition on technology.
+- **Price** – competition on price.
+- **Market share** – competition for market share.
+
+**Mitigation:**
+- **Innovation** – focus on innovation.
+- **Quality** – focus on quality.
+- **Competitive advantages** – develop competitive advantages.
+
+## Conclusion
+
+South Korea's tech innovation and market dynamics create significant investment opportunities across semiconductors, displays, batteries, and startups. Understanding South Korea's tech landscape requires:
+- **Technology sectors** – understanding technology sectors and market positions.
+- **Chaebol structure** – understanding chaebol structure and reform.
+- **Startup ecosystem** – understanding startup ecosystem.
+- **Risk management** – managing market concentration, geopolitical, and competition risks.
+
+For investors, the key is to:
+- **Focus on quality** – focus on quality technology companies.
+- **Understand cycles** – understand cyclicality in technology markets.
+- **Diversify** – diversify across companies, sectors, and geographies.
+- **Monitor risks** – closely monitor geopolitical and competition risks.
+
+South Korea's tech markets can provide attractive risk-adjusted returns when managed properly. Investors who understand South Korea's tech landscape and construct resilient portfolios will be well-positioned to capture opportunities while managing risks.`,
+    date: formatDate(378),
+    author: 'Xu Meiling',
+    authorAvatar: getAuthorAvatar('Xu Meiling'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# South Korea Tech Innovation and Market Dynamics: Investment Implications
+
+## Introduction
+
+South Korea has transformed from a war-torn economy to a global technology powerhouse in just a few decades.`),
+    ),
+    imageUrl: getImage('markets', 378),
+    tags: ['South Korea', 'Technology', 'Semiconductors', 'Innovation', 'Asia-Pacific'],
+  },
+  {
+    slug: 'taiwan-semiconductor-supply-chain-and-geopolitical-risk-investment-implications',
+    title: 'Taiwan Semiconductor Supply Chain and Geopolitical Risk: Investment Implications',
+    excerpt:
+      'How Taiwan\'s dominance in semiconductor manufacturing creates both opportunities and risks for investors, why geopolitical tensions matter for tech supply chains, and how to think about Taiwan exposure in Asia-Pacific portfolios.',
+    content: `# Taiwan Semiconductor Supply Chain and Geopolitical Risk: Investment Implications
+
+## Introduction
+
+Taiwan is the world's most important semiconductor manufacturing hub. Taiwan Semiconductor Manufacturing Company (TSMC) alone produces over half of the world's advanced chips, powering everything from smartphones to data centers to artificial intelligence systems. This dominance has made Taiwan critical to global technology supply chains, but it has also made Taiwan a focal point of geopolitical tensions between the United States and China.
+
+For investors, Taiwan's semiconductor industry presents a complex set of opportunities and risks:
+- **Technology leadership** – Taiwan's semiconductor companies are world leaders in advanced manufacturing.
+- **Market dominance** – TSMC and other Taiwanese companies have dominant market positions.
+- **Growth exposure** – exposure to long-term growth in semiconductor demand.
+- **Geopolitical risk** – significant geopolitical risk from cross-strait tensions.
+- **Supply chain concentration** – concentration risk from over-reliance on Taiwan.
+
+The semiconductor industry is also undergoing significant changes:
+- **Geographic diversification** – companies are diversifying manufacturing away from Taiwan.
+- **Technology competition** – competition from other regions and companies.
+- **Regulatory changes** – export controls and trade restrictions affecting supply chains.
+- **Investment cycles** – cyclical demand and investment cycles.
+
+This article explores how Taiwan's semiconductor industry works, why geopolitical risk matters, and how investors should think about Taiwan exposure in Asia-Pacific portfolios.
+
+## Taiwan's Semiconductor Dominance: How It Happened
+
+### Historical Context
+
+Taiwan's semiconductor industry emerged from a deliberate industrial policy:
+- **Government support** – Taiwan's government invested heavily in semiconductor R&D and manufacturing.
+- **Technology transfer** – partnerships with foreign companies enabled technology transfer.
+- **Education** – strong engineering education system produced skilled workforce.
+- **Infrastructure** – investment in infrastructure supported semiconductor manufacturing.
+
+**Key Milestones:**
+- **1980s** – Taiwan began developing semiconductor manufacturing capabilities.
+- **1990s** – TSMC pioneered the foundry model, manufacturing chips for other companies.
+- **2000s** – Taiwan became a major semiconductor manufacturing hub.
+- **2010s** – Taiwan achieved dominance in advanced semiconductor manufacturing.
+
+### The Foundry Model
+
+TSMC's foundry model revolutionized semiconductor manufacturing:
+- **Fabless companies** – companies design chips but don't manufacture them.
+- **Foundries** – foundries manufacture chips for fabless companies.
+- **Specialization** – specialization enables economies of scale and technology leadership.
+
+**Advantages:**
+- **Scale** – large scale enables investment in advanced manufacturing.
+- **Technology leadership** – focus on manufacturing enables technology leadership.
+- **Cost efficiency** – scale and specialization enable cost efficiency.
+- **Customer relationships** – strong relationships with leading chip designers.
+
+### Technology Leadership
+
+Taiwan's semiconductor companies lead in advanced manufacturing:
+- **Process technology** – TSMC leads in advanced process nodes (5nm, 3nm, and beyond).
+- **Manufacturing expertise** – deep expertise in semiconductor manufacturing.
+- **Yield and quality** – high yields and quality enable competitive advantages.
+- **Innovation** – continuous innovation in manufacturing processes.
+
+**Competitive Advantages:**
+- **Scale** – large scale enables investment in advanced technology.
+- **Experience** – decades of experience in semiconductor manufacturing.
+- **Talent** – access to skilled engineering talent.
+- **Ecosystem** – strong ecosystem of suppliers and partners.
+
+## The Semiconductor Supply Chain: Taiwan's Role
+
+### Supply Chain Structure
+
+The semiconductor supply chain is complex:
+- **Design** – chip design companies (Apple, NVIDIA, Qualcomm, AMD).
+- **Manufacturing** – foundries (TSMC, Samsung, Intel).
+- **Packaging and testing** – packaging and testing companies.
+- **Equipment and materials** – semiconductor equipment and materials suppliers.
+
+**Taiwan's Position:**
+- **Manufacturing** – Taiwan dominates advanced semiconductor manufacturing.
+- **Packaging** – Taiwan has significant packaging and testing capabilities.
+- **Materials** – Taiwan has some materials and equipment capabilities.
+- **Design** – Taiwan has limited chip design capabilities.
+
+### Key Companies
+
+**TSMC:**
+- **Market share** – over 50% of global foundry market.
+- **Technology** – leads in advanced process nodes.
+- **Customers** – serves leading chip designers globally.
+- **Scale** – massive scale enables competitive advantages.
+
+**Other Taiwanese Companies:**
+- **UMC** – second-largest Taiwanese foundry.
+- **MediaTek** – chip design company.
+- **ASE** – packaging and testing company.
+- **Various suppliers** – numerous suppliers and partners.
+
+### Dependencies
+
+**Taiwan Dependencies:**
+- **Equipment** – depends on foreign equipment suppliers (ASML, Applied Materials, etc.).
+- **Materials** – depends on foreign materials suppliers.
+- **Design** – depends on foreign chip designers for orders.
+- **Markets** – depends on global markets for demand.
+
+**Global Dependencies on Taiwan:**
+- **Advanced chips** – global dependence on Taiwan for advanced chips.
+- **Supply chains** – many supply chains depend on Taiwan.
+- **Technology** – dependence on Taiwan's manufacturing technology.
+- **Capacity** – dependence on Taiwan's manufacturing capacity.
+
+## Geopolitical Risk: Cross-Strait Tensions
+
+### Historical Context
+
+Taiwan's status has been a source of tension:
+- **One China policy** – China claims Taiwan as part of China.
+- **U.S. support** – U.S. has supported Taiwan's defense.
+- **Cross-strait relations** – relations between China and Taiwan have been tense.
+
+**Recent Developments:**
+- **Increased tensions** – tensions have increased in recent years.
+- **Military activity** – increased Chinese military activity near Taiwan.
+- **U.S. policy** – U.S. policy has become more supportive of Taiwan.
+- **Technology competition** – technology competition between U.S. and China.
+
+### Risk Scenarios
+
+**Low-Probability, High-Impact Scenarios:**
+- **Military conflict** – military conflict could disrupt semiconductor manufacturing.
+- **Blockade** – blockade could disrupt supply chains.
+- **Sanctions** – sanctions could affect Taiwan's semiconductor industry.
+
+**Higher-Probability Scenarios:**
+- **Increased tensions** – increased tensions could affect business confidence.
+- **Regulatory changes** – regulatory changes could affect supply chains.
+- **Technology restrictions** – technology restrictions could affect Taiwan's semiconductor industry.
+
+### Mitigation Strategies
+
+**Geographic Diversification:**
+- **U.S. fabs** – TSMC is building fabs in the U.S.
+- **Japan fabs** – TSMC is building fabs in Japan.
+- **Europe fabs** – potential fabs in Europe.
+- **Other regions** – diversification to other regions.
+
+**Supply Chain Diversification:**
+- **Multiple suppliers** – customers diversifying suppliers.
+- **Inventory** – building inventory buffers.
+- **Alternative technologies** – developing alternative technologies.
+
+**Policy Support:**
+- **Government support** – government support for semiconductor manufacturing.
+- **Subsidies** – subsidies for semiconductor manufacturing.
+- **Regulatory support** – regulatory support for semiconductor industry.
+
+## Investment Themes and Opportunities
+
+### TSMC and Foundry Leaders
+
+**TSMC:**
+- **Market dominance** – dominant market position in foundry.
+- **Technology leadership** – leads in advanced process nodes.
+- **Growth exposure** – exposure to long-term semiconductor growth.
+- **Profitability** – strong profitability and cash generation.
+
+**Investment Drivers:**
+- **Semiconductor growth** – long-term growth in semiconductor demand.
+- **Technology leadership** – technology leadership provides competitive advantages.
+- **Market dominance** – market dominance provides pricing power.
+- **Geographic diversification** – geographic diversification reduces risk.
+
+**Risks:**
+- **Geopolitical risk** – significant geopolitical risk.
+- **Competition** – competition from Samsung, Intel, and others.
+- **Cyclicality** – semiconductor industry is cyclical.
+- **Capital intensity** – high capital intensity requires significant investment.
+
+### Semiconductor Equipment and Materials
+
+**Equipment Companies:**
+- **Taiwanese equipment** – limited Taiwanese equipment companies.
+- **Foreign equipment** – dependence on foreign equipment suppliers.
+- **Opportunities** – opportunities for Taiwanese equipment companies.
+
+**Materials Companies:**
+- **Taiwanese materials** – some Taiwanese materials companies.
+- **Foreign materials** – dependence on foreign materials suppliers.
+- **Opportunities** – opportunities for Taiwanese materials companies.
+
+**Investment Drivers:**
+- **Semiconductor growth** – growth in semiconductor manufacturing drives equipment and materials demand.
+- **Technology advancement** – technology advancement drives equipment and materials demand.
+- **Geographic diversification** – geographic diversification creates opportunities.
+- **Supply chain security** – supply chain security concerns create opportunities.
+
+**Risks:**
+- **Competition** – intense competition from foreign suppliers.
+- **Technology risk** – technology risk from rapid technology change.
+- **Cyclicality** – cyclicality in semiconductor industry.
+- **Geopolitical risk** – geopolitical risk affects supply chains.
+
+### Chip Design and Related Companies
+
+**MediaTek:**
+- **Chip design** – designs chips for smartphones and other devices.
+- **Market position** – strong market position in certain segments.
+- **Growth exposure** – exposure to semiconductor growth.
+
+**Other Companies:**
+- **Various startups** – numerous startups in chip design.
+- **Related companies** – companies in related areas.
+
+**Investment Drivers:**
+- **Semiconductor growth** – growth in semiconductor demand.
+- **Technology advancement** – technology advancement creates opportunities.
+- **Market position** – market position provides competitive advantages.
+
+**Risks:**
+- **Competition** – intense competition from global chip designers.
+- **Technology risk** – technology risk from rapid technology change.
+- **Cyclicality** – cyclicality in semiconductor industry.
+- **Geopolitical risk** – geopolitical risk affects supply chains.
+
+## Market Dynamics and Valuation
+
+### Sector Performance
+
+Taiwanese semiconductor stocks have performed well:
+- **TSMC** – strong performance driven by technology leadership and growth.
+- **Other semiconductor stocks** – mixed performance depending on company-specific factors.
+- **Cyclicality** – performance is cyclical, tied to semiconductor cycles.
+
+**Valuation Metrics:**
+- **Price-to-earnings** – TSMC trades at premium multiples.
+- **Price-to-book** – TSMC trades at premium to book value.
+- **Dividend yield** – TSMC offers moderate dividend yield.
+
+### Relative Value
+
+Taiwanese semiconductor stocks trade at:
+- **Premiums to global peers** – due to technology leadership and market dominance.
+- **Premiums to Taiwan market** – due to growth and profitability.
+- **Discounts during cycles** – discounts during semiconductor downturns.
+
+**Valuation Drivers:**
+- **Technology leadership** – technology leadership supports valuations.
+- **Market dominance** – market dominance supports valuations.
+- **Growth prospects** – growth prospects support valuations.
+- **Geopolitical risk** – geopolitical risk depresses valuations.
+
+### Risks and Challenges
+
+**Geopolitical Risk:**
+- **Cross-strait tensions** – tensions between China and Taiwan.
+- **U.S.-China competition** – U.S.-China technology competition.
+- **Regulatory changes** – export controls and trade restrictions.
+- **Military risk** – low-probability but high-impact military risk.
+
+**Technology Risk:**
+- **Technology competition** – competition from Samsung, Intel, and others.
+- **Technology change** – rapid technology change creates risks.
+- **Scaling challenges** – challenges scaling to advanced nodes.
+
+**Market Risk:**
+- **Cyclicality** – semiconductor industry is cyclical.
+- **Demand volatility** – demand volatility affects performance.
+- **Competition** – competition affects pricing and margins.
+
+**Operational Risk:**
+- **Supply chain** – supply chain disruptions.
+- **Capacity** – capacity constraints or overcapacity.
+- **Quality** – quality issues can affect reputation and orders.
+
+## Portfolio Construction and Implementation
+
+### Sector Allocation
+
+**Core Holdings:**
+- **TSMC** – core holding for semiconductor exposure.
+- **Other foundries** – selective exposure to other foundries.
+- **Equipment and materials** – selective exposure to equipment and materials.
+
+**Satellite Positions:**
+- **Chip design** – selective exposure to chip design companies.
+- **Related companies** – exposure to related companies.
+- **Geographic diversification** – exposure to semiconductor companies in other regions.
+
+### Risk Management
+
+**Geographic Diversification:**
+- **Taiwan exposure** – limit Taiwan exposure to manage geopolitical risk.
+- **Other regions** – diversify to other semiconductor manufacturing regions.
+- **Global exposure** – maintain global semiconductor exposure.
+
+**Sector Diversification:**
+- **Semiconductor exposure** – don't over-concentrate in semiconductors.
+- **Other sectors** – maintain exposure to other sectors.
+- **Technology exposure** – maintain broader technology exposure.
+
+**Risk Monitoring:**
+- **Geopolitical monitoring** – closely monitor geopolitical developments.
+- **Technology monitoring** – monitor technology developments and competition.
+- **Market monitoring** – monitor semiconductor market dynamics.
+
+**Position Sizing:**
+- **Core positions** – larger positions in quality companies like TSMC.
+- **Satellite positions** – smaller positions in other semiconductor companies.
+- **Risk limits** – limit exposure to single companies or regions.
+
+## Conclusion
+
+Taiwan's semiconductor industry presents both opportunities and risks for investors. Taiwan's dominance in semiconductor manufacturing provides:
+- **Technology leadership** – world-leading technology and manufacturing capabilities.
+- **Market dominance** – dominant market positions and competitive advantages.
+- **Growth exposure** – exposure to long-term semiconductor growth.
+- **Profitability** – strong profitability and cash generation.
+
+But geopolitical risk is significant:
+- **Cross-strait tensions** – tensions between China and Taiwan create risks.
+- **Supply chain concentration** – concentration risk from over-reliance on Taiwan.
+- **Regulatory changes** – export controls and trade restrictions affect supply chains.
+- **Military risk** – low-probability but high-impact military risk.
+
+For investors, the key is to:
+- **Focus on quality** – invest in companies with strong competitive positions like TSMC.
+- **Manage geopolitical risk** – limit Taiwan exposure and diversify geographically.
+- **Monitor developments** – closely monitor geopolitical and technology developments.
+- **Be patient** – semiconductor industry is cyclical, requiring patience.
+
+Taiwan's semiconductor industry will remain critical to global technology supply chains, but investors must carefully manage geopolitical risk while capturing the opportunities from Taiwan's technology leadership and market dominance.`,
+    date: formatDate(377),
+    author: 'Xu Meiling',
+    authorAvatar: getAuthorAvatar('Xu Meiling'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Taiwan Semiconductor Supply Chain and Geopolitical Risk: Investment Implications
+
+## Introduction
+
+Taiwan is the world's most important semiconductor manufacturing hub.`),
+    ),
+    imageUrl: getImage('markets', 377),
+    tags: ['Taiwan', 'Semiconductors', 'Supply Chain', 'Geopolitical Risk', 'Asia-Pacific'],
+  },
+  {
+    slug: 'southeast-asia-consumer-credit-boom-fintech-banks-and-regulatory-risk',
+    title: 'Southeast Asia’s Consumer Credit Boom: Fintech, Banks, and Regulatory Risk',
+    excerpt:
+      'Southeast Asia’s digital lenders are scaling fast, but credit cycles and regulation are the real gatekeepers. This framework maps unit economics, funding costs, and where the winners may emerge as the cycle matures.',
+    content: `# Southeast Asia’s Consumer Credit Boom: Fintech, Banks, and Regulatory Risk
+
+## Introduction
+
+Southeast Asia sits at a compelling intersection: young demographics, rising incomes, rapid smartphone adoption, and historically underpenetrated formal credit. In the last decade, digital platforms have expanded financial access through payments, e-commerce ecosystems, and increasingly, consumer lending. Investors often describe this as a simple growth story: “credit penetration will rise.”
+
+But credit is never only a growth story. It is a cycle, a risk transfer system, and a regulation-heavy industry. As digital lenders scale, the investable question shifts from “can they grow?” to “can they survive the credit cycle and earn durable returns on capital?”
+
+This article provides an investor framework for Southeast Asia’s consumer credit boom:
+
+- Why the opportunity is real (and why it’s not uniform across the region);
+- The unit economics of digital lending and embedded finance;
+- Funding and liquidity constraints that separate winners from hype;
+- The regulatory perimeter and its predictable tightening pattern;
+- How to position across fintech, banks, and ecosystem players.
+
+## Why consumer credit demand is expanding
+
+### Demographics and income growth
+
+Many Southeast Asian economies have:
+
+- Large working-age populations;
+- Rising middle classes;
+- Rapid urbanization.
+
+As incomes rise, demand grows for:
+
+- Installment financing for durable goods;
+- Credit cards and revolving credit for consumption smoothing;
+- Auto and motorcycle loans;
+- Education and healthcare financing.
+
+### Underbanked markets create room for non-traditional distribution
+
+In several markets, traditional banks historically served:
+
+- High-income urban customers;
+- Corporate and SME lending;
+- Secured lending with conservative underwriting.
+
+Digital lenders and embedded finance expand access by:
+
+- Using alternative data for underwriting;
+- Distributing loans via apps and platforms;
+- Offering smaller-ticket and short-duration products.
+
+The result is rapid volume growth—but also new risk profiles.
+
+## Digital lending economics: the three drivers that matter
+
+### 1) Customer acquisition cost (CAC) and channel control
+
+Lending is profitable when:
+
+- CAC is low and repeat borrowing is high;
+- Distribution is owned or deeply integrated into a platform;
+- Cross-sell improves lifetime value.
+
+Standalone lenders often face rising CAC as competition increases. Platform-based lenders (e-commerce, ride-hailing, payments ecosystems) have an advantage because they already own engagement.
+
+Investor question: **Is the lender paying for growth through marketing, or is growth embedded in a platform moat?**
+
+### 2) Underwriting and loss rates
+
+Digital underwriting often uses:
+
+- Transaction history (payments, wallet flows);
+- Device and behavioral signals;
+- Merchant data;
+- Employment and income proxies.
+
+These models can work, but they often look best during benign credit conditions. The true test is:
+
+- How do losses behave when unemployment rises or inflation squeezes households?
+- How does fraud change in stress?
+
+Loss rates and fraud management are the difference between “fast growth” and “durable lending.”
+
+### 3) Funding cost and liquidity
+
+Lenders need funding. Funding can come from:
+
+- Bank credit lines;
+- Deposits (for licensed banks);
+- Securitization and capital markets;
+- Equity funding (expensive and dilutive).
+
+In emerging markets, funding costs can be volatile and tied to FX and policy rates. Digital lenders without deposit funding can see margins compress quickly when:
+
+- Rates rise;
+- Liquidity tightens;
+- Investors demand higher risk premia.
+
+Investor question: **Does the lender have a stable, scalable funding engine—or is it structurally short liquidity?**
+
+## The credit cycle: why “growth” narratives break
+
+### Credit booms create their own risk
+
+When credit expands rapidly, the system often underprices risk:
+
+- Competition pushes underwriting standards down;
+- Fraud increases as incentives grow;
+- Borrowers take multiple loans across platforms (“stacking”).
+
+This creates a classic cycle:
+
+1. Growth accelerates and losses look manageable.
+2. Competition intensifies; underwriting loosens.
+3. A macro shock or policy tightening hits.
+4. Losses spike; funding tightens; growth collapses.
+5. Survivors consolidate; regulation tightens.
+
+Investors should assume the cycle will occur. The question is who survives it.
+
+### Data sharing and credit bureaus matter
+
+One structural variable is whether the market has:
+
+- Strong credit bureaus and data sharing;
+- Real-time reporting;
+- Effective identity verification.
+
+Weak data infrastructure increases:
+
+- Loan stacking risk;
+- Fraud;
+- Correlated losses.
+
+Regulators often respond by strengthening reporting requirements—usually after problems appear.
+
+## Regulation: the predictable tightening path
+
+### Why regulators tighten after growth
+
+Regulators face a tradeoff:
+
+- Financial inclusion and growth vs consumer protection and stability.
+
+When digital lending expands rapidly, regulators typically tighten via:
+
+- Interest rate caps or fee transparency rules;
+- Licensing and capital requirements;
+- Data privacy and consumer protection mandates;
+- Restrictions on aggressive marketing and collection practices.
+
+This pattern is not unique to Southeast Asia—it is global. Investors should treat regulatory tightening as a base case, not a tail risk.
+
+### Platform risk: embedded finance draws scrutiny
+
+Embedded finance can create systemic nodes:
+
+- Large platforms become de facto lenders;
+- Credit becomes tied to e-commerce and payments ecosystems;
+- Consumer harm can scale quickly if practices are abusive.
+
+This increases regulatory attention. The winners will be those who can operate within tighter rules and maintain profitability.
+
+## Where the winners may emerge
+
+### 1) Deposit-funded banks with digital distribution
+
+Banks with:
+
+- Stable deposits,
+- Strong risk management,
+- Improving digital distribution,
+
+can outcompete pure fintech lenders in downcycles. They may grow slower in boom times but often earn more durable returns over full cycles.
+
+### 2) Platform lenders with strong data and repeat engagement
+
+E-commerce and payments ecosystems can lend profitably if they:
+
+- Control distribution;
+- Have high-frequency data;
+- Maintain disciplined underwriting.
+
+But they must manage conflicts: growth incentives vs credit discipline.
+
+### 3) Infrastructure providers: credit bureaus, risk analytics, KYC
+
+As regulation tightens, demand rises for:
+
+- Identity and KYC infrastructure;
+- Fraud prevention tools;
+- Risk analytics and collections technology;
+- Data sharing and reporting systems.
+
+These can become “picks and shovels” exposures to the credit boom.
+
+## A practical investor dashboard
+
+To evaluate a Southeast Asia credit exposure, track:
+
+- Net interest margin vs funding cost;
+- Loss rates and vintage curves;
+- Fraud and collection metrics;
+- Repeat borrowing and cohort retention;
+- Regulatory announcements and licensing changes;
+- FX and policy rate sensitivity (especially for USD-funded structures);
+- Competitive intensity and CAC trends.
+
+The key is to treat the business like a credit portfolio, not like a software product.
+
+## Country heterogeneity: why “SEA credit” is not one market
+
+Southeast Asia is not a single underwriting regime. Credit dynamics differ meaningfully across markets due to:
+
+- Household income volatility and informality;
+- Credit bureau depth and data sharing quality;
+- Regulatory aggressiveness on rates, fees, and collections;
+- Currency stability and the cost of foreign funding.
+
+This matters because many lenders expand regionally and assume playbooks transfer cleanly. In practice, a model that works in one country can break in another as fraud patterns, repayment behavior, and legal enforcement differ. Investors should demand evidence of local underwriting adaptation—not just regional growth ambition.
+
+## Collections and consumer protection: profitability vs durability
+
+In emerging consumer credit markets, collections practices are not merely reputational; they become regulatory catalysts. Aggressive collection can lift short-term recoveries, but it often triggers:
+
+- Public backlash and political pressure;
+- Tighter caps on fees and interest;
+- Licensing constraints and enforcement actions.
+
+Durable lenders tend to invest early in:
+
+- Ethical collections and clear disclosures;
+- Better early-warning signals and restructuring options;
+- Partnerships with regulated funding sources that demand compliance discipline.
+
+Investors should treat consumer protection as a long-run profitability driver. In credit, the best returns often come from institutions that can keep operating through regulatory tightening—not from those that maximize yield in the loosest regime.
+
+Over time, this becomes a competitive advantage: trusted lenders gain access to cheaper funding and better distribution partners, while aggressive lenders become “regulatory targets” and lose scalability.
+
+In a sector defined by cycles, “permission to operate” is a moat. Investors should treat it like one.
+
+For operators, this usually translates into lower long-run funding costs, higher repeat borrowing quality, and fewer “sudden stops” when regulation shifts. In emerging credit, stability is a growth strategy.
+
+And for investors, it is often the difference between a lender that compounds and a lender that periodically resets.
+
+The practical checklist is simple: favor lenders with repeat customers, improving vintage curves, diversified funding, and cooperative regulator relationships. In a boom, everyone can grow; in the normalization phase, only disciplined lenders keep their license, liquidity, and margins.
+
+That discipline is the real compounding engine.
+
+It is also what attracts institutional partners, lowers funding costs, and stabilizes growth when the cycle turns.
+
+## Conclusion
+
+Southeast Asia’s consumer credit expansion is real, driven by demographics, digital distribution, and underpenetrated formal lending. But credit booms always create their own risks, and regulation predictably tightens as the market matures.
+
+The winners will be those with disciplined underwriting, stable funding, and the ability to operate profitably under stricter rules. For investors, the best edge is to model the full credit cycle: growth in good times is easy; survival and compounding through stress is the real differentiator.`,
+    date: formatDate(0),
+    author: 'Xu Meiling',
+    authorAvatar: getAuthorAvatar('Xu Meiling'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Southeast Asia’s Consumer Credit Boom: Fintech, Banks, and Regulatory Risk
+
+## Introduction
+
+Southeast Asia sits at a compelling intersection: young demographics, rising incomes, rapid smartphone adoption, and historically underpenetrated formal credit.`)
+    ),
+    imageUrl: getImage('markets', 1),
+    tags: ['Asia-Pacific', 'Fintech', 'Consumer Credit', 'Banks', 'Regulation'],
+    relatedMarkets: ['stocks', 'currencies'],
+  },
+  {
+    slug: 'japan-governance-reform-buybacks-and-the-new-shareholder-return-regime',
+    title: 'Japan Governance Reform: Buybacks, ROE, and the New Shareholder Return Regime',
+    excerpt:
+      'Japan’s equity story is shifting from cyclical macro to structural governance. This piece explains why balance-sheet reform, buybacks, and ROE discipline are changing the investable opportunity set—beyond the usual “weak yen” narrative.',
+    content: `# Japan Governance Reform: Buybacks, ROE, and the New Shareholder Return Regime
+
+## Introduction
+
+Japan’s equity market has long frustrated global allocators. Periodic rallies—often driven by a weak yen or global cyclicals—were followed by phases of disappointment as corporate behavior remained conservative, cross-shareholdings persisted, and shareholder returns lagged global peers. That narrative is changing.
+
+In recent years, Japanese corporate governance has moved from “soft encouragement” to a more explicit framework of expectations. Exchanges and regulators have pushed companies to:
+
+- Improve capital efficiency and transparency;
+- Address chronically low valuations relative to book value;
+- Reduce cross-shareholdings and idle balance sheets;
+- Return capital through dividends and buybacks.
+
+This is not a one-quarter catalyst. It is a structural re-pricing mechanism that can change how Japan fits into global portfolios. The key is to understand the drivers and limitations—so you can separate durable reform from cyclical hype.
+
+## The old Japan: cash-rich, return-poor
+
+### Why Japanese companies hoarded cash
+
+Japan’s corporate conservatism has roots:
+
+- Banking-centered financing culture;
+- A historical focus on stability and employment;
+- Deflationary decades that rewarded caution;
+- Complex keiretsu relationships and cross-shareholdings.
+
+The result was a market where many companies held large cash balances, maintained low leverage, and prioritized resilience over return on equity. For shareholders, that often meant:
+
+- Low ROE and low payout ratios;
+- Underinvestment in value-creating projects;
+- Persistent valuation discounts.
+
+### The valuation signal: price-to-book as a governance warning
+
+A company trading persistently below book value is often telling you something:
+
+- Capital is not being used productively;
+- The market does not trust management to allocate capital efficiently;
+- Governance structures may protect stakeholders at the expense of shareholders.
+
+Japan’s market had an unusually large share of “sub-1x P/B” companies. That became the focal point for reform efforts.
+
+## What changed: governance pressure became measurable
+
+### Exchange-led discipline
+
+The Tokyo Stock Exchange’s push for companies to “comply or explain” around value creation and capital efficiency is significant because it targets behavior rather than slogans. It nudges boards to answer:
+
+- Why is our ROE low?
+- Why do we trade below book?
+- What is the plan to improve capital efficiency?
+
+Even if enforcement is indirect, the reputational and investor relations pressure can be powerful, especially as foreign ownership rises and index inclusion matters.
+
+### The buyback wave: not just financial engineering
+
+Buybacks are often criticized as short-term financial engineering. In Japan, they can represent something different:
+
+- A break from the tradition of balance-sheet hoarding;
+- A signal that management recognizes valuation discounts;
+- A mechanism to reduce excess equity and improve ROE.
+
+The nuance is important: buybacks are most value-creating when:
+
+- The stock trades at a meaningful discount to intrinsic value;
+- The company has limited high-ROIC reinvestment opportunities;
+- Governance is improving so buybacks are part of a broader capital policy, not a one-off event.
+
+## The capital allocation toolkit in Japan’s reform era
+
+### 1) Reducing cross-shareholdings
+
+Cross-shareholdings can:
+
+- Reduce market discipline (companies become “friendly owners”);
+- Distort incentives (protect relationships over returns);
+- Tie up capital in low-return assets.
+
+As companies unwind cross-holdings, they may:
+
+- Free capital for buybacks or investment;
+- Improve transparency and governance perceptions;
+- Reduce correlation clusters within the market.
+
+This can create second-order effects: improved float, better pricing efficiency, and a more investable market structure.
+
+### 2) Repricing underutilized assets
+
+Many Japanese firms hold valuable assets that are not reflected in earnings:
+
+- Real estate portfolios acquired decades ago;
+- Non-core subsidiaries and stakes;
+- Cash and securities far above operational needs.
+
+Governance reform often triggers a “portfolio clean-up”:
+
+- Divest non-core holdings;
+- Spin off subsidiaries;
+- Monetize real estate.
+
+These actions can change the earnings and valuation profile even if top-line growth remains modest.
+
+### 3) Dividend policy normalization
+
+Buybacks get headlines, but dividends matter for long-term investors. A credible dividend policy:
+
+- Reduces the discount rate investors apply to cash flows;
+- Signals disciplined capital return;
+- Can attract a more stable shareholder base.
+
+In Japan, the transition is often from “flexible, low payout” to “target payout ratio or progressive dividends.”
+
+## The macro overlay: yen, rates, and inflation
+
+### The weak yen narrative is incomplete
+
+A weak yen can help exporters, but the reform story is broader:
+
+- Domestic companies can benefit from asset repricing and governance changes;
+- Margin expansion can come from operational efficiency, not only FX;
+- Improved capital allocation can matter even in flat growth environments.
+
+### Inflation and wage dynamics
+
+Japan’s shift from deflation toward modest inflation changes corporate behavior:
+
+- Pricing power becomes relevant again;
+- Wage pressure increases, forcing efficiency improvements;
+- Holding excessive cash becomes less attractive in real terms.
+
+This macro shift can reinforce governance reform by changing the opportunity cost of inaction.
+
+## How to build an investor framework for Japan now
+
+### Identify “reform leverage”
+
+Not all companies will respond equally. Reform leverage is highest when:
+
+- P/B is low and ROE is structurally weak;
+- Cash is high relative to market cap;
+- Cross-shareholdings are meaningful;
+- Management is signaling change (board reforms, capital policy statements).
+
+But reform leverage must be balanced with business quality: a cheap balance sheet does not automatically mean a good business.
+
+### Look for operating improvements alongside financial actions
+
+The best outcomes occur when governance changes are paired with operational discipline:
+
+- Better portfolio focus;
+- Higher margins through efficiency and product mix;
+- Investment in higher-ROIC growth areas.
+
+Buybacks without operational improvement can create a temporary uplift but not a durable compounding story.
+
+### Beware “one-off reform trades”
+
+The market can quickly price reform headlines. Risks include:
+
+- Companies announcing buybacks but not changing long-term policy;
+- Superficial compliance with disclosure expectations;
+- Cyclical earnings peaks that mask structural weakness.
+
+Investors should track follow-through: does the company repeat actions over multiple years?
+
+## Portfolio construction: where Japan fits
+
+Japan can be positioned as:
+
+- A governance-driven value and quality opportunity set;
+- A diversifier vs US growth-heavy indices;
+- A market with improving shareholder returns and corporate discipline.
+
+A balanced approach can include:
+
+- Core exposure to high-quality exporters and industrial leaders (structural competitiveness);
+- Selective exposure to domestic and mid-cap names with high reform leverage and asset value;
+- Avoiding “cheap for a reason” companies where governance change is unlikely.
+
+## A short list of “reform follow-through” indicators
+
+Because Japan’s governance shift is behavioral, investors should watch whether actions repeat over time. High-signal indicators include:
+
+- **Multi-year capital return cadence:** does management treat buybacks/dividends as policy or as a one-off reaction to pressure?
+- **Board and incentive changes:** are independent directors increasing, and are incentives linked to ROE/cash return rather than scale?
+- **Cross-shareholding unwind pace:** are stakes being reduced consistently, and are proceeds returned or reinvested at high ROIC?
+- **Asset rationalization:** do companies simplify group structures and dispose of non-core assets, or do they maintain complexity?
+- **Communication quality:** is there a clear capital allocation framework (target leverage, payout policy, investment hurdles), or only generic “value creation” language?
+
+These indicators are less noisy than quarterly FX impacts and help distinguish durable reform from cyclical narratives.
+
+A simple way to operationalize this is to score companies on “reform momentum” (high/medium/low) and then track whether scores improve over time. If momentum stalls, the valuation discount often reappears. If momentum accelerates, Japan’s traditional “value trap” segments can turn into genuine compounding stories—especially when operational improvements accompany capital return.
+
+## The underappreciated risk: reform is uneven
+
+Japan’s governance shift is not uniform across the market. There will be:
+
+- Companies that embrace reform early (and set a new shareholder-return baseline);
+- Companies that comply minimally (disclosure without behavior);
+- Companies that resist due to stakeholder structures, legacy culture, or business-model weakness.
+
+This unevenness creates two important portfolio implications:
+
+1. **Index exposure can dilute the reform effect.** If a meaningful share of the index does not improve capital allocation, aggregate ROE and valuation rerating may lag the “headline” reform narrative.
+2. **Stock selection matters more than macro timing.** In past Japan cycles, investors could express a view via FX or global cyclicals. In the reform cycle, the spread between “reform winners” and “reform laggards” can be a primary return driver.
+
+Finally, investors should expect more engagement between shareholders and management teams. As capital allocation becomes a visible scorecard, investor communication quality can evolve into a differentiator—especially for mid-caps that previously had limited foreign coverage.
+
+## Conclusion
+
+## Conclusion
+
+Japan’s equity story is evolving from a purely cyclical macro narrative into a structural governance narrative. Capital efficiency, buybacks, cross-shareholding unwind, and clearer shareholder return policies are changing the investable landscape.
+
+The opportunity is not simply “Japan up.” The opportunity is to identify the subset of companies where governance reform translates into durable improvements in ROE, cash conversion, and capital allocation—and to avoid firms where reform is superficial.
+
+If the reform regime persists, Japan can move from being a periodic tactical trade to a strategic allocation candidate in global equity portfolios.`,
+    date: formatDate(0),
+    author: 'Xu Meiling',
+    authorAvatar: getAuthorAvatar('Xu Meiling'),
+    type: 'longterm',
+    readTime: calculateReadTime(
+      countWords(`# Japan Governance Reform: Buybacks, ROE, and the New Shareholder Return Regime
+
+## Introduction
+
+Japan’s equity market has long frustrated global allocators. Periodic rallies—often driven by a weak yen or global cyclicals—were followed by phases of disappointment as corporate behavior remained conservative.`)
+    ),
+    imageUrl: getImage('longterm', 0),
+    tags: ['Japan', 'Governance', 'Buybacks', 'ROE', 'Asia-Pacific'],
+    relatedMarkets: ['stocks'],
+    relatedCompanies: ['EWJ'],
+  },
+  {
     slug: 'india-equity-markets-domestic-demand-and-reform-driven-growth',
     title: 'India Equity Markets: Domestic Demand and Reform-Driven Growth',
     excerpt:

@@ -26,6 +26,1257 @@ const countWords = (text: string): number => {
 // Lysander Truog - Fixed Income & Bonds (61 articles)
 export const lysanderArticles: AnalyticsArticle[] = [
   {
+    slug: 'corporate-credit-cycles-and-high-yield-strategies-navigating-credit-markets',
+    title: 'Corporate Credit Cycles and High-Yield Strategies: Navigating Credit Markets',
+    excerpt:
+      'How corporate credit cycles drive high-yield bond performance, why credit spreads matter more than interest rates for high-yield investors, and how to construct resilient high-yield portfolios across credit cycles.',
+    content: `# Corporate Credit Cycles and High-Yield Strategies: Navigating Credit Markets
+
+## Introduction
+
+High-yield bonds—also known as junk bonds—occupy a unique place in fixed income markets. They offer higher yields than investment-grade bonds, but they come with significantly higher credit risk. For investors, the key to successful high-yield investing is understanding credit cycles: the periods of credit expansion and contraction that drive default rates, credit spreads, and total returns.
+
+Corporate credit cycles are driven by a combination of economic conditions, financial market conditions, and corporate behavior:
+- **Economic expansion** – strong economic growth supports corporate earnings and reduces defaults.
+- **Credit expansion** – easy credit conditions allow companies to borrow and refinance.
+- **Leverage buildup** – companies increase leverage during good times.
+- **Economic contraction** – weak economic growth reduces earnings and increases defaults.
+- **Credit contraction** – tight credit conditions make refinancing difficult.
+- **Leverage reduction** – companies are forced to deleverage during bad times.
+
+For high-yield investors, credit cycles create both opportunities and risks:
+- **Expansion phases** – low defaults and tight spreads, but lower yields.
+- **Contraction phases** – high defaults and wide spreads, but higher yields and opportunities.
+- **Recovery phases** – improving credit conditions and spread compression create opportunities.
+
+This article explores how corporate credit cycles work, why they matter for high-yield investors, and how to construct resilient high-yield portfolios across different phases of the credit cycle.
+
+## Understanding Corporate Credit Cycles
+
+### The Credit Cycle Framework
+
+Credit cycles can be divided into four phases:
+
+**Expansion Phase:**
+- **Economic conditions** – strong economic growth.
+- **Credit conditions** – easy credit, low spreads.
+- **Corporate behavior** – increasing leverage, M&A activity.
+- **Default rates** – low default rates.
+- **Investor behavior** – strong demand for high-yield bonds.
+
+**Peak Phase:**
+- **Economic conditions** – economic growth slowing.
+- **Credit conditions** – credit tightening, spreads widening.
+- **Corporate behavior** – leverage high, refinancing challenges.
+- **Default rates** – default rates beginning to rise.
+- **Investor behavior** – demand weakening, risk aversion increasing.
+
+**Contraction Phase:**
+- **Economic conditions** – economic recession or slowdown.
+- **Credit conditions** – tight credit, wide spreads.
+- **Corporate behavior** – forced deleveraging, defaults increasing.
+- **Default rates** – high default rates.
+- **Investor behavior** – weak demand, flight to quality.
+
+**Recovery Phase:**
+- **Economic conditions** – economic recovery.
+- **Credit conditions** – credit easing, spreads narrowing.
+- **Corporate behavior** – improving fundamentals, refinancing opportunities.
+- **Default rates** – default rates declining.
+- **Investor behavior** – demand recovering, risk appetite returning.
+
+### Drivers of Credit Cycles
+
+**Economic Factors:**
+- **GDP growth** – economic growth drives corporate earnings.
+- **Unemployment** – unemployment affects consumer spending and corporate revenues.
+- **Inflation** – inflation affects costs and pricing power.
+- **Interest rates** – interest rates affect borrowing costs and refinancing.
+
+**Financial Market Factors:**
+- **Credit availability** – availability of credit affects borrowing.
+- **Credit spreads** – credit spreads reflect credit conditions.
+- **Equity markets** – equity markets affect corporate access to capital.
+- **Liquidity** – market liquidity affects trading and refinancing.
+
+**Corporate Factors:**
+- **Leverage** – corporate leverage affects credit risk.
+- **Earnings** – corporate earnings affect ability to service debt.
+- **Cash flow** – cash flow affects ability to repay debt.
+- **Refinancing needs** – refinancing needs affect credit risk.
+
+### Credit Cycle Indicators
+
+**Leading Indicators:**
+- **Credit spreads** – widening spreads signal credit deterioration.
+- **Leverage metrics** – increasing leverage signals credit risk.
+- **Earnings growth** – slowing earnings growth signals credit deterioration.
+- **Refinancing activity** – declining refinancing activity signals credit tightening.
+
+**Coincident Indicators:**
+- **Default rates** – default rates reflect current credit conditions.
+- **Upgrade/downgrade ratios** – ratios reflect credit quality trends.
+- **Credit availability** – credit availability reflects current conditions.
+- **Spreads** – current spreads reflect credit conditions.
+
+**Lagging Indicators:**
+- **Recovery rates** – recovery rates reflect past defaults.
+- **Bankruptcy filings** – bankruptcy filings reflect past credit problems.
+- **Restructuring activity** – restructuring activity reflects past credit problems.
+
+## High-Yield Bond Market Structure
+
+### Market Size and Composition
+
+The high-yield bond market is large and diverse:
+- **Market size** – estimated at $1.5+ trillion in the U.S., $2+ trillion globally.
+- **Issuers** – thousands of issuers across industries.
+- **Maturities** – wide range of maturities from short-term to long-term.
+- **Credit quality** – range from BB (highest high-yield) to CCC and below.
+
+**Credit Quality Distribution:**
+- **BB** – highest quality high-yield, lowest default risk.
+- **B** – medium quality high-yield, moderate default risk.
+- **CCC and below** – lowest quality high-yield, highest default risk.
+
+### High-Yield Bond Characteristics
+
+**Higher Yields:**
+- **Credit risk premium** – compensation for credit risk.
+- **Liquidity premium** – compensation for lower liquidity.
+- **Yield advantage** – yield advantage over investment-grade bonds.
+
+**Higher Risk:**
+- **Default risk** – risk of issuer default.
+- **Credit spread risk** – risk of spread widening.
+- **Liquidity risk** – risk of lower liquidity.
+- **Interest rate risk** – risk of interest rate changes.
+
+**Lower Correlation:**
+- **Equity-like returns** – returns more correlated with equities than bonds.
+- **Cyclical performance** – performance tied to credit cycles.
+- **Diversification** – provides diversification from investment-grade bonds.
+
+### High-Yield Bond Types
+
+**Senior Secured:**
+- **Collateral** – backed by collateral.
+- **Priority** – senior priority in bankruptcy.
+- **Lower risk** – lower default risk and higher recovery.
+
+**Senior Unsecured:**
+- **No collateral** – not backed by collateral.
+- **Priority** – senior priority but unsecured.
+- **Higher risk** – higher default risk and lower recovery.
+
+**Subordinated:**
+- **Lower priority** – lower priority in bankruptcy.
+- **Higher risk** – higher default risk and lower recovery.
+- **Higher yield** – higher yield to compensate for risk.
+
+**Convertible:**
+- **Conversion option** – option to convert to equity.
+- **Equity upside** – potential equity upside.
+- **Lower yield** – lower yield due to conversion option.
+
+## Credit Cycle Investing Strategies
+
+### Expansion Phase Strategies
+
+**Characteristics:**
+- **Low defaults** – low default rates.
+- **Tight spreads** – tight credit spreads.
+- **Strong demand** – strong investor demand.
+- **Lower yields** – lower yields due to tight spreads.
+
+**Strategies:**
+- **Quality focus** – focus on higher-quality high-yield (BB).
+- **Duration management** – manage duration risk.
+- **Sector selection** – select defensive sectors.
+- **Liquidity** – maintain liquidity for opportunities.
+
+**Risks:**
+- **Spread widening** – risk of spread widening.
+- **Default increase** – risk of default rates increasing.
+- **Valuation** – risk of overvaluation.
+
+### Peak Phase Strategies
+
+**Characteristics:**
+- **Spreads widening** – credit spreads beginning to widen.
+- **Defaults rising** – default rates beginning to rise.
+- **Demand weakening** – investor demand weakening.
+- **Yields rising** – yields rising due to spread widening.
+
+**Strategies:**
+- **Defensive positioning** – defensive positioning in higher quality.
+- **Liquidity** – maintain high liquidity.
+- **Selective opportunities** – selective opportunities in distressed sectors.
+- **Reduced exposure** – reduce high-yield exposure.
+
+**Risks:**
+- **Further deterioration** – risk of further credit deterioration.
+- **Liquidity** – risk of liquidity drying up.
+- **Defaults** – risk of defaults increasing.
+
+### Contraction Phase Strategies
+
+**Characteristics:**
+- **High defaults** – high default rates.
+- **Wide spreads** – wide credit spreads.
+- **Weak demand** – weak investor demand.
+- **High yields** – high yields due to wide spreads.
+
+**Strategies:**
+- **Selective buying** – selective buying of distressed credits.
+- **Quality focus** – focus on highest quality high-yield.
+- **Sector selection** – avoid cyclical sectors.
+- **Patience** – patience for opportunities.
+
+**Risks:**
+- **Further defaults** – risk of further defaults.
+- **Liquidity** – risk of liquidity issues.
+- **Valuation** – risk of further spread widening.
+
+### Recovery Phase Strategies
+
+**Characteristics:**
+- **Defaults declining** – default rates declining.
+- **Spreads narrowing** – credit spreads narrowing.
+- **Demand recovering** – investor demand recovering.
+- **Yields declining** – yields declining due to spread narrowing.
+
+**Strategies:**
+- **Opportunistic buying** – opportunistic buying of recovering credits.
+- **Sector rotation** – rotate into cyclical sectors.
+- **Duration extension** – extend duration to capture spread compression.
+- **Increased exposure** – increase high-yield exposure.
+
+**Risks:**
+- **False recovery** – risk of false recovery.
+- **Valuation** – risk of overvaluation.
+- **Timing** – risk of mistiming recovery.
+
+## Portfolio Construction and Risk Management
+
+### Credit Quality Allocation
+
+**BB Allocation:**
+- **Lower risk** – lower default risk.
+- **Lower yield** – lower yield.
+- **Defensive** – defensive positioning.
+- **Allocation** – 40-60% of portfolio.
+
+**B Allocation:**
+- **Moderate risk** – moderate default risk.
+- **Moderate yield** – moderate yield.
+- **Balanced** – balanced positioning.
+- **Allocation** – 30-50% of portfolio.
+
+**CCC and Below Allocation:**
+- **Higher risk** – higher default risk.
+- **Higher yield** – higher yield.
+- **Opportunistic** – opportunistic positioning.
+- **Allocation** – 0-20% of portfolio.
+
+### Sector Allocation
+
+**Defensive Sectors:**
+- **Healthcare** – defensive healthcare sector.
+- **Consumer staples** – defensive consumer staples.
+- **Utilities** – defensive utilities.
+- **Allocation** – higher allocation in contraction phases.
+
+**Cyclical Sectors:**
+- **Energy** – cyclical energy sector.
+- **Materials** – cyclical materials sector.
+- **Industrials** – cyclical industrials.
+- **Allocation** – higher allocation in expansion phases.
+
+**Avoid Sectors:**
+- **Highly leveraged** – avoid highly leveraged sectors.
+- **Declining** – avoid declining sectors.
+- **Regulatory risk** – avoid sectors with regulatory risk.
+
+### Duration Management
+
+**Short Duration:**
+- **Lower risk** – lower interest rate risk.
+- **Lower yield** – lower yield.
+- **Liquidity** – higher liquidity.
+- **Use** – defensive positioning.
+
+**Medium Duration:**
+- **Balanced risk** – balanced interest rate risk.
+- **Balanced yield** – balanced yield.
+- **Use** – balanced positioning.
+
+**Long Duration:**
+- **Higher risk** – higher interest rate risk.
+- **Higher yield** – higher yield.
+- **Use** – opportunistic positioning in recovery phases.
+
+### Diversification
+
+**Issuer Diversification:**
+- **Number of issuers** – diversify across multiple issuers.
+- **Concentration limits** – limit exposure to single issuers.
+- **Sector limits** – limit exposure to single sectors.
+
+**Geographic Diversification:**
+- **U.S. high-yield** – U.S. high-yield market.
+- **European high-yield** – European high-yield market.
+- **Emerging markets** – emerging market high-yield.
+
+**Maturity Diversification:**
+- **Short-term** – short-term maturities.
+- **Medium-term** – medium-term maturities.
+- **Long-term** – long-term maturities.
+
+## Market Dynamics and Valuation
+
+### Credit Spreads
+
+Credit spreads are the primary driver of high-yield returns:
+- **Spread levels** – current spread levels reflect credit conditions.
+- **Spread changes** – spread changes drive returns.
+- **Spread compression** – spread compression creates opportunities.
+- **Spread widening** – spread widening creates risks.
+
+**Spread Drivers:**
+- **Credit conditions** – credit conditions drive spreads.
+- **Default expectations** – default expectations drive spreads.
+- **Liquidity** – liquidity affects spreads.
+- **Risk appetite** – risk appetite affects spreads.
+
+### Default Rates
+
+Default rates are a key risk for high-yield investors:
+- **Historical averages** – historical average default rates.
+- **Cycle peaks** – default rates peak during contractions.
+- **Recovery rates** – recovery rates affect losses.
+- **Sector differences** – default rates vary by sector.
+
+**Default Drivers:**
+- **Economic conditions** – economic conditions drive defaults.
+- **Credit conditions** – credit conditions drive defaults.
+- **Leverage** – leverage affects default risk.
+- **Refinancing** – refinancing challenges drive defaults.
+
+### Total Returns
+
+High-yield total returns depend on:
+- **Yield** – current yield provides income.
+- **Spread changes** – spread changes drive capital gains/losses.
+- **Defaults** – defaults cause losses.
+- **Interest rates** – interest rate changes affect returns.
+
+**Return Drivers:**
+- **Credit cycles** – credit cycles drive returns.
+- **Economic conditions** – economic conditions drive returns.
+- **Market conditions** – market conditions drive returns.
+
+## Investment Vehicles and Implementation
+
+### Individual Bonds
+
+**Advantages:**
+- **Direct ownership** – direct ownership of bonds.
+- **Customization** – customize portfolio.
+- **Tax efficiency** – potential tax efficiency.
+
+**Disadvantages:**
+- **Transaction costs** – transaction costs.
+- **Liquidity** – lower liquidity.
+- **Research** – requires credit research.
+
+### Mutual Funds
+
+**Advantages:**
+- **Diversification** – instant diversification.
+- **Professional management** – professional credit research.
+- **Liquidity** – daily liquidity.
+
+**Disadvantages:**
+- **Fees** – management fees.
+- **Less control** – less control over holdings.
+- **Tax efficiency** – may be less tax-efficient.
+
+### Exchange-Traded Funds (ETFs)
+
+**Advantages:**
+- **Low costs** – lower fees than mutual funds.
+- **Liquidity** – tradeable throughout the day.
+- **Transparency** – holdings disclosed daily.
+
+**Disadvantages:**
+- **Tracking error** – may not perfectly track index.
+- **Less customization** – less customization.
+- **Tax efficiency** – may be less tax-efficient.
+
+### Separately Managed Accounts (SMAs)
+
+**Advantages:**
+- **Customization** – customize portfolio.
+- **Professional management** – professional credit research.
+- **Tax efficiency** – potential tax efficiency.
+
+**Disadvantages:**
+- **Minimum investment** – higher minimums.
+- **Fees** – management fees.
+- **Less liquidity** – may have limited liquidity.
+
+## Conclusion
+
+Corporate credit cycles drive high-yield bond performance, creating both opportunities and risks for investors. Understanding credit cycles is essential for successful high-yield investing:
+- **Cycle phases** – different phases require different strategies.
+- **Credit spreads** – spreads drive returns more than interest rates.
+- **Default risk** – default risk varies across cycles.
+- **Portfolio construction** – portfolio construction must adapt to cycles.
+
+For high-yield investors, the key is to:
+- **Understand cycles** – understand credit cycle dynamics.
+- **Position defensively** – position defensively during peak and contraction phases.
+- **Be opportunistic** – be opportunistic during contraction and recovery phases.
+- **Diversify** – diversify across credit quality, sectors, and maturities.
+- **Manage risk** – closely monitor credit conditions and adjust positioning.
+
+High-yield bonds can provide attractive risk-adjusted returns when managed properly across credit cycles. Investors who understand credit cycles and construct resilient portfolios will be well-positioned to capture opportunities while managing risks.`,
+    date: formatDate(165),
+    author: 'Lysander Truog',
+    authorAvatar: getAuthorAvatar('Lysander Truog'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Corporate Credit Cycles and High-Yield Strategies: Navigating Credit Markets
+
+## Introduction
+
+High-yield bonds—also known as junk bonds—occupy a unique place in fixed income markets.`),
+    ),
+    imageUrl: getImage('expert', 165),
+    tags: ['High-Yield Bonds', 'Credit Cycles', 'Corporate Credit', 'Fixed Income', 'Credit Risk'],
+  },
+  {
+    slug: 'municipal-bonds-and-tax-exempt-strategies-building-efficient-income-portfolios',
+    title: 'Municipal Bonds and Tax-Exempt Strategies: Building Efficient Income Portfolios',
+    excerpt:
+      'How municipal bonds offer tax-advantaged income for high-net-worth and institutional investors, why credit quality and duration matter more than headline yields, and how to construct efficient muni portfolios across rate cycles.',
+    content: `# Municipal Bonds and Tax-Exempt Strategies: Building Efficient Income Portfolios
+
+## Introduction
+
+For investors in high tax brackets, municipal bonds have long been a cornerstone of tax-efficient income strategies. The tax-exempt status of interest payments on most municipal bonds can turn a modest nominal yield into an attractive after-tax return, especially when compared to taxable alternatives. But muni markets are far from simple. They span tens of thousands of issuers, from small school districts to large states, with credit quality ranging from near-Treasury levels to speculative-grade. They trade in a fragmented, dealer-intermediated market where liquidity can vary dramatically by issue and market conditions.
+
+In the current environment of higher interest rates and elevated volatility, municipal bond investors face several challenges:
+- **Duration risk** – longer-maturity munis are sensitive to rate changes.
+- **Credit risk** – not all munis are created equal, and credit spreads can widen during stress.
+- **Liquidity risk** – individual issues can be illiquid, especially in smaller markets.
+- **Tax risk** – changes in tax policy can affect the relative value of tax-exempt income.
+
+For fixed income allocators, the key is to build muni portfolios that:
+- Maximize after-tax income while managing risk.
+- Balance credit quality, duration, and liquidity.
+- Adapt to changing rate and credit environments.
+- Integrate with broader fixed income allocations.
+
+This article explores how municipal bond markets work, why tax efficiency matters, and how to construct robust muni portfolios across different market conditions.
+
+## The Municipal Bond Market: Structure and Characteristics
+
+### Market Size and Scope
+
+The U.S. municipal bond market is massive:
+- **Outstanding debt** exceeds $4 trillion.
+- **Thousands of issuers** – states, cities, counties, school districts, utilities, hospitals, airports, and other public entities.
+- **Wide range of maturities** – from short-term notes to 30-year bonds.
+- **Diverse credit quality** – from AAA-rated general obligation bonds to below-investment-grade revenue bonds.
+
+### Types of Municipal Bonds
+
+**General Obligation (GO) Bonds:**
+- Backed by the full faith and credit of the issuer.
+- Typically secured by the issuer's taxing power.
+- Generally considered lower risk than revenue bonds.
+- Examples: state GO bonds, city GO bonds.
+
+**Revenue Bonds:**
+- Backed by specific revenue sources (tolls, utility fees, hospital revenues).
+- Credit quality depends on the financial strength of the revenue source.
+- Can range from investment-grade to speculative-grade.
+- Examples: airport bonds, hospital bonds, water and sewer bonds.
+
+**Special Tax Bonds:**
+- Backed by specific taxes (sales taxes, property taxes).
+- Credit quality depends on the stability of the tax base.
+- Examples: sales tax bonds, property tax bonds.
+
+**Pre-Refunded Bonds:**
+- Bonds that have been refunded with escrowed Treasury securities.
+- Effectively backed by U.S. Treasury securities.
+- Typically rated AAA and trade at premium prices.
+
+### Credit Quality and Ratings
+
+Municipal bonds are rated by the major rating agencies (Moody's, S&P, Fitch):
+
+**Investment-Grade:**
+- **AAA/AA** – highest quality, very low default risk.
+- **A** – good quality, low default risk.
+- **BBB** – adequate quality, moderate default risk.
+
+**Below Investment-Grade:**
+- **BB/B** – speculative quality, higher default risk.
+- **CCC and below** – very high default risk.
+
+**Default Rates:**
+- Historical default rates for investment-grade munis are very low.
+- Revenue bonds have higher default rates than GO bonds.
+- Below-investment-grade munis have significantly higher default rates.
+
+### Market Structure and Liquidity
+
+Municipal bond markets are:
+- **Dealer-intermediated** – bonds trade over-the-counter through dealers.
+- **Fragmented** – thousands of individual issues with varying liquidity.
+- **Retail-oriented** – many investors hold bonds to maturity.
+- **Less liquid** than Treasury or corporate bond markets.
+
+Liquidity varies by:
+- **Issue size** – larger issues are more liquid.
+- **Credit quality** – higher-quality bonds are more liquid.
+- **Maturity** – shorter-maturity bonds are more liquid.
+- **Market conditions** – liquidity can dry up during stress.
+
+## Tax Efficiency: The Core Value Proposition
+
+### Federal Tax Exemption
+
+Interest on most municipal bonds is exempt from federal income tax:
+- **Tax-exempt interest** is not included in taxable income.
+- **Effective yield** = nominal yield / (1 - marginal tax rate).
+- Example: A 4% muni yield for a 37% tax bracket investor = 6.35% taxable equivalent yield.
+
+**Tax-Equivalent Yield Calculation:**
+- Tax-equivalent yield = Tax-exempt yield / (1 - Marginal tax rate).
+- For a 4% muni yield and 37% tax bracket: 4% / (1 - 0.37) = 6.35%.
+
+### State and Local Tax Exemption
+
+Many states also exempt interest on bonds issued within the state:
+- **Double tax exemption** – exempt from both federal and state taxes.
+- **Triple tax exemption** – exempt from federal, state, and local taxes (for local residents).
+- **Out-of-state bonds** – may be subject to state taxes.
+
+**State Tax Considerations:**
+- Investors in high-tax states (California, New York) benefit most from in-state bonds.
+- Investors in no-tax states (Texas, Florida) have less incentive for in-state bonds.
+- State tax exemption can add 50-100 basis points to effective yield.
+
+### Alternative Minimum Tax (AMT)
+
+Some municipal bonds are subject to AMT:
+- **Private activity bonds** – bonds that finance private projects.
+- **AMT-subject bonds** – trade at higher yields to compensate for AMT risk.
+- **AMT exposure** – can reduce tax benefits for AMT-payable investors.
+
+### Tax Policy Risk
+
+Changes in tax policy can affect municipal bond values:
+- **Tax rate changes** – lower tax rates reduce the value of tax exemption.
+- **AMT changes** – changes to AMT can affect AMT-subject bonds.
+- **Tax reform** – broader tax reform can impact muni markets.
+
+## Building Efficient Municipal Bond Portfolios
+
+### Portfolio Construction Principles
+
+**Credit Quality:**
+- **Investment-grade focus** – most portfolios should focus on investment-grade bonds.
+- **Credit diversification** – avoid over-concentration in single issuers or sectors.
+- **Credit research** – understand the financial strength of issuers.
+
+**Duration Management:**
+- **Duration matching** – match portfolio duration to investment horizon.
+- **Laddering** – build ladders to manage reinvestment risk.
+- **Barbell strategies** – combine short and long maturities for flexibility.
+
+**Liquidity Considerations:**
+- **Core holdings** – invest in liquid, high-quality issues.
+- **Satellite positions** – smaller positions in less liquid, higher-yielding bonds.
+- **Emergency liquidity** – maintain some liquid holdings for unexpected needs.
+
+**Sector Allocation:**
+- **Diversification** – spread exposure across sectors (GO, utilities, hospitals, airports).
+- **Sector risk** – understand sector-specific risks (e.g., hospital bonds, airport bonds).
+- **Cyclical vs. defensive** – balance cyclical sectors with defensive sectors.
+
+### Yield Curve Strategies
+
+**Laddering:**
+- Build portfolios with bonds maturing in equal increments (e.g., 1, 2, 3, 4, 5 years).
+- Benefits:
+  - Regular cash flow for reinvestment.
+  - Reduces reinvestment risk.
+  - Provides flexibility to adjust to changing rates.
+
+**Barbell Strategies:**
+- Combine short-maturity and long-maturity bonds.
+- Benefits:
+  - Captures yield from long maturities.
+  - Maintains liquidity with short maturities.
+  - Provides flexibility to adjust duration.
+
+**Bullet Strategies:**
+- Concentrate maturities around a target date.
+- Benefits:
+  - Matches specific liability dates.
+  - Simplifies portfolio management.
+  - Reduces reinvestment risk.
+
+### Credit Strategies
+
+**High-Quality Focus:**
+- Invest primarily in AAA and AA-rated bonds.
+- Benefits:
+  - Lower default risk.
+  - Higher liquidity.
+  - Lower volatility.
+- Trade-offs:
+  - Lower yields.
+  - Less diversification.
+
+**Credit Barbell:**
+- Combine high-quality core holdings with higher-yielding credit positions.
+- Benefits:
+  - Captures yield from credit risk.
+  - Maintains safety with high-quality core.
+  - Provides diversification.
+- Trade-offs:
+  - Higher credit risk.
+  - More complex portfolio management.
+
+**Sector Rotation:**
+- Adjust sector allocation based on credit cycle and relative value.
+- Benefits:
+  - Captures sector-specific opportunities.
+  - Manages sector risk.
+- Trade-offs:
+  - Requires active management.
+  - Higher transaction costs.
+
+### Tax-Efficient Strategies
+
+**In-State Focus:**
+- For high-tax state residents, focus on in-state bonds.
+- Benefits:
+  - Double or triple tax exemption.
+  - Higher effective yields.
+- Trade-offs:
+  - Less diversification.
+  - Higher concentration risk.
+
+**AMT Management:**
+- Avoid AMT-subject bonds for AMT-payable investors.
+- Benefits:
+  - Maximizes tax benefits.
+  - Reduces AMT exposure.
+- Trade-offs:
+  - May reduce yield opportunities.
+
+**Tax-Loss Harvesting:**
+- Sell bonds at a loss to offset gains.
+- Benefits:
+  - Reduces tax liability.
+  - Provides flexibility to reposition.
+- Trade-offs:
+  - Transaction costs.
+  - Potential for wash sale rules.
+
+## Market Dynamics and Relative Value
+
+### Yield Spreads
+
+Municipal bond yields are typically compared to Treasury yields:
+- **Muni-Treasury spread** – difference between muni and Treasury yields.
+- **Taxable-equivalent spread** – spread after adjusting for tax exemption.
+- **Credit spreads** – spreads between different credit qualities.
+
+**Factors Affecting Spreads:**
+- **Tax policy** – changes in tax rates affect relative value.
+- **Credit conditions** – credit stress widens spreads.
+- **Liquidity** – liquidity stress widens spreads.
+- **Supply and demand** – imbalances affect spreads.
+
+### Rate Sensitivity
+
+Municipal bonds are sensitive to interest rate changes:
+- **Duration** – measures interest rate sensitivity.
+- **Longer duration** – more sensitive to rate changes.
+- **Shorter duration** – less sensitive to rate changes.
+
+**Duration Management:**
+- **Rate expectations** – adjust duration based on rate outlook.
+- **Risk tolerance** – match duration to risk tolerance.
+- **Investment horizon** – match duration to investment horizon.
+
+### Credit Cycles
+
+Municipal credit conditions vary over time:
+- **Expansion** – strong credit conditions, tight spreads.
+- **Recession** – weak credit conditions, wide spreads.
+- **Recovery** – improving credit conditions, narrowing spreads.
+
+**Credit Cycle Positioning:**
+- **Expansion** – focus on high-quality, defensive sectors.
+- **Recession** – opportunities in distressed sectors.
+- **Recovery** – rotate into cyclical sectors.
+
+## Investment Vehicles and Implementation
+
+### Individual Bonds
+
+**Advantages:**
+- **Direct ownership** – full control over holdings.
+- **Tax efficiency** – maximize tax benefits.
+- **Customization** – tailor portfolio to specific needs.
+
+**Disadvantages:**
+- **Transaction costs** – bid-ask spreads and commissions.
+- **Liquidity** – individual bonds can be illiquid.
+- **Research** – requires credit research and analysis.
+
+### Mutual Funds
+
+**Advantages:**
+- **Diversification** – instant diversification across issuers and sectors.
+- **Liquidity** – daily liquidity.
+- **Professional management** – active management and credit research.
+
+**Disadvantages:**
+- **Fees** – management fees reduce returns.
+- **Tax efficiency** – may be less tax-efficient than individual bonds.
+- **Less control** – limited ability to customize holdings.
+
+### Exchange-Traded Funds (ETFs)
+
+**Advantages:**
+- **Low costs** – lower fees than mutual funds.
+- **Liquidity** – tradeable throughout the day.
+- **Transparency** – holdings are disclosed daily.
+
+**Disadvantages:**
+- **Tax efficiency** – may be less tax-efficient than individual bonds.
+- **Tracking error** – may not perfectly track index.
+- **Less customization** – limited ability to customize holdings.
+
+### Separately Managed Accounts (SMAs)
+
+**Advantages:**
+- **Customization** – tailored to individual needs.
+- **Tax efficiency** – can maximize tax benefits.
+- **Professional management** – active management and credit research.
+
+**Disadvantages:**
+- **Minimum investment** – typically requires higher minimums.
+- **Fees** – management fees reduce returns.
+- **Less liquidity** – may have limited liquidity.
+
+## Risk Management
+
+### Credit Risk
+
+**Credit Analysis:**
+- **Financial metrics** – debt ratios, coverage ratios, liquidity.
+- **Economic factors** – economic base, demographics, employment.
+- **Political factors** – governance, fiscal management, pension obligations.
+
+**Credit Monitoring:**
+- **Regular reviews** – monitor credit quality of holdings.
+- **Rating changes** – track rating agency actions.
+- **News and events** – monitor issuer news and events.
+
+**Credit Diversification:**
+- **Issuer limits** – limit exposure to single issuers.
+- **Sector limits** – limit exposure to single sectors.
+- **Geographic limits** – limit exposure to single regions.
+
+### Interest Rate Risk
+
+**Duration Management:**
+- **Match duration** – match portfolio duration to investment horizon.
+- **Laddering** – use ladders to manage duration risk.
+- **Flexibility** – maintain flexibility to adjust duration.
+
+**Rate Hedging:**
+- **Interest rate swaps** – hedge interest rate risk.
+- **Treasury futures** – hedge duration risk.
+- **Options** – use options to manage rate risk.
+
+### Liquidity Risk
+
+**Liquidity Management:**
+- **Core holdings** – maintain liquid, high-quality core.
+- **Satellite positions** – limit exposure to illiquid bonds.
+- **Emergency liquidity** – maintain some liquid holdings.
+
+**Liquidity Stress Testing:**
+- **Scenario analysis** – test portfolio under liquidity stress.
+- **Contingency planning** – plan for liquidity needs.
+- **Diversification** – diversify across liquid and illiquid holdings.
+
+### Tax Risk
+
+**Tax Policy Monitoring:**
+- **Tax rate changes** – monitor changes in tax rates.
+- **AMT changes** – monitor changes to AMT.
+- **Tax reform** – monitor broader tax reform proposals.
+
+**Tax-Efficient Positioning:**
+- **In-state focus** – maximize state tax benefits.
+- **AMT avoidance** – avoid AMT-subject bonds for AMT-payable investors.
+- **Tax-loss harvesting** – use tax-loss harvesting to manage tax liability.
+
+## Conclusion
+
+Municipal bonds offer tax-advantaged income for high-net-worth and institutional investors, but building efficient muni portfolios requires:
+- **Credit quality focus** – invest primarily in investment-grade bonds.
+- **Duration management** – match duration to investment horizon and risk tolerance.
+- **Liquidity considerations** – balance liquid core holdings with higher-yielding satellite positions.
+- **Tax efficiency** – maximize tax benefits through in-state focus and AMT management.
+- **Diversification** – spread exposure across issuers, sectors, and maturities.
+
+For fixed income allocators, municipal bonds can play a valuable role in:
+- **Tax-efficient income** – generating after-tax income for high-tax-bracket investors.
+- **Portfolio diversification** – adding credit and sector diversification.
+- **Liability matching** – matching specific liability dates and cash flow needs.
+
+The key is to build portfolios that balance:
+- **Yield** – maximizing after-tax income.
+- **Risk** – managing credit, duration, and liquidity risk.
+- **Efficiency** – minimizing costs and maximizing tax benefits.
+
+With careful construction and ongoing management, municipal bond portfolios can provide attractive risk-adjusted returns while meeting specific income and tax objectives.`,
+    date: formatDate(164),
+    author: 'Lysander Truog',
+    authorAvatar: getAuthorAvatar('Lysander Truog'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Municipal Bonds and Tax-Exempt Strategies: Building Efficient Income Portfolios
+
+## Introduction
+
+For investors in high tax brackets, municipal bonds have long been a cornerstone of tax-efficient income strategies.`),
+    ),
+    imageUrl: getImage('expert', 164),
+    tags: ['Municipal Bonds', 'Tax-Exempt', 'Fixed Income', 'Income Strategies', 'Tax Efficiency'],
+  },
+  {
+    slug: 'treasury-market-plumbing-and-the-basis-trade-why-repo-matters',
+    title: 'Treasury Market Plumbing and the Basis Trade: Why Repo Matters',
+    excerpt:
+      'Treasuries look frictionless until they don’t. This deep-dive explains repo, dealer balance sheets, the futures-basis trade, and why “plumbing” can dominate price action in stress regimes.',
+    content: `# Treasury Market Plumbing and the Basis Trade: Why Repo Matters
+
+## Introduction
+
+For many investors, the U.S. Treasury market is the definition of safety and liquidity. It is the benchmark curve for global finance: used to discount cash flows, collateralize derivatives, and price risk across asset classes. But Treasuries are not a physics law. They are a market with participants, constraints, balance sheets, and leverage. When those constraints bind, Treasury prices can move in ways that surprise even experienced allocators.
+
+Over the last decade, a recurring theme has emerged: **“plumbing” matters.** Repo rates spike, dealer balance sheets become constrained, futures basis relationships break, and liquidity disappears when it is needed most. The best way to understand these dynamics is through one lens that connects them: the **Treasury basis trade**—a leveraged strategy that ties cash Treasuries, futures, and repo financing together.
+
+This article provides a practical explanation of:
+
+- How repo works and why it is the lifeblood of Treasury liquidity;
+- What the basis trade is and why it scales;
+- How dealer constraints and regulations shape market depth;
+- What can go wrong in stress regimes—and what investors should monitor.
+
+The goal is not to trade the basis, but to understand why Treasury “microstructure” can become a macro factor.
+
+## The repo market in plain language
+
+### What repo is
+
+Repo (repurchase agreement) is a short-term secured loan:
+
+- One party sells a security (often a Treasury) today;
+- Agrees to repurchase it later at a slightly higher price;
+- The difference implies an interest rate: the repo rate.
+
+From the borrower’s perspective, repo is financing. From the lender’s perspective, repo is a secured investment. Because the collateral is high quality, repo rates are typically close to policy rates—until stress hits.
+
+### Why repo matters for Treasuries
+
+Treasuries are widely used as collateral in:
+
+- Derivatives margining;
+- Dealer inventory financing;
+- Hedge fund leverage;
+- Bank liquidity buffers.
+
+If repo markets are smooth, holders can finance Treasuries cheaply, dealers can make markets, and liquidity remains deep. If repo markets tighten, everything becomes more expensive and fragile.
+
+### Special vs general collateral
+
+Not all Treasuries are financed at the same rate. Two concepts matter:
+
+- **General collateral (GC):** Treasuries as a broad class; repo rate reflects general funding conditions.
+- **Special:** a specific Treasury issue that is in high demand for delivery or hedging; it can trade “special” at a lower repo rate.
+
+Specialness is not just a curiosity. It can drive large profit and loss swings for leveraged strategies that depend on specific issues.
+
+## Treasury futures: why they exist and why they matter
+
+Treasury futures are standardized contracts. They are liquid, margin-efficient, and widely used by:
+
+- Macro funds expressing rate views;
+- Dealers hedging inventories;
+- Asset managers adjusting duration;
+- Hedge funds running relative value.
+
+Futures are central to the basis trade because they provide a highly liquid hedge against cash Treasuries—while requiring less capital than owning cash bonds outright.
+
+## The Treasury basis trade: the core idea
+
+### Cash-and-carry in rates
+
+At its simplest, the basis trade is a cash-and-carry strategy:
+
+- Buy a Treasury bond in the cash market;
+- Short a Treasury futures contract that is economically similar;
+- Finance the cash bond via repo.
+
+If the bond’s “carry” plus the futures basis is attractive, the position can generate relatively low-volatility returns—*as long as financing and liquidity remain stable.*
+
+### Where the return comes from
+
+The return is typically a combination of:
+
+- The yield on the Treasury bond;
+- Minus the repo financing cost;
+- Plus/minus the futures basis (the difference between futures-implied price and cash price adjusted for delivery options).
+
+In calm regimes, the basis is usually small. To make the trade meaningful, investors often use leverage. That leverage is the source of fragility.
+
+## Why the basis trade grows
+
+### Structural demand for Treasuries and for futures
+
+Different participants prefer different instruments:
+
+- Some prefer cash Treasuries (for regulatory or collateral reasons).
+- Others prefer futures (for margin efficiency and liquidity).
+
+When these preferences create a persistent basis, relative value funds step in to arbitrage it—until constraints bind.
+
+### Leverage and “low volatility” temptation
+
+The basis trade can look low-risk because:
+
+- The hedge reduces directional rate exposure;
+- Day-to-day P&L can be stable in normal periods.
+
+That stability encourages leverage. The trade often becomes a balance-sheet and funding trade rather than a pure arbitrage.
+
+## What can go wrong: the stress mechanics
+
+### Repo funding risk
+
+If repo rates rise suddenly, the economics of the trade deteriorate:
+
+- Financing cost increases;
+- Margin requirements can rise;
+- Investors may need to unwind quickly.
+
+In stress, the trade can become self-reinforcing:
+
+- Forced selling of cash Treasuries to reduce leverage;
+- Wider basis due to forced flows;
+- More margin pressure, triggering further selling.
+
+### Margin and liquidity spiral
+
+Futures are margin products. If volatility rises:
+
+- Initial and variation margin increase;
+- Cash demands rise;
+- Leveraged funds sell assets to meet margin calls.
+
+If multiple funds run similar positions, the unwind can be crowded—creating a liquidity spiral even in Treasuries.
+
+### Dealer balance-sheet constraints
+
+Dealers are the intermediaries. Their ability to absorb Treasury inventory depends on:
+
+- Balance sheet capacity;
+- Regulatory capital requirements;
+- Internal risk limits.
+
+During stress, dealer capacity shrinks precisely when it is most needed. This can produce “Treasuries down” episodes that feel paradoxical but are consistent with balance-sheet constraints.
+
+## The role of regulation and structural changes
+
+Post-crisis regulations improved bank resilience but changed market intermediation:
+
+- Balance-sheet costs for dealers increased;
+- Risk-taking capacity became more constrained;
+- Some liquidity provision shifted to non-bank actors.
+
+This does not mean markets are “worse,” but it means liquidity is more conditional. In stress, the marginal buyer may not be a dealer; it may require central bank facilities or policy interventions to stabilize funding.
+
+## Practical monitoring: a dashboard for Treasury plumbing
+
+Investors who want to avoid surprises can monitor a few high-signal indicators:
+
+- **Repo rates vs policy rates:** sudden spikes indicate funding stress.
+- **SOFR and GC measures:** persistent widening suggests tightness.
+- **Treasury bid-ask spreads and depth:** liquidity degradation shows up before headlines.
+- **Futures-cash basis metrics:** widening basis can indicate forced unwinds.
+- **Dealer positioning and auction absorption:** weak demand can amplify volatility.
+- **Volatility measures:** rising rate vol increases margin and leverage constraints.
+
+You do not need to trade these signals to benefit. They provide context for why “risk-free” assets can behave unusually.
+
+## Portfolio implications: why this matters beyond hedge funds
+
+Even if you never touch the basis trade, its presence matters because it can affect:
+
+- The stability of Treasury liquidity in crisis;
+- The behavior of risk-parity and duration-heavy portfolios;
+- The effectiveness of Treasuries as a hedge to equities;
+- The transmission of monetary policy through funding markets.
+
+In modern markets, the “risk-free rate” is intertwined with the financing system. When financing tightens, the risk-free asset can become a source of volatility.
+
+## A historical lens: why “safe” Treasuries can become unstable
+
+If you only look at yield and duration, Treasury stress episodes feel paradoxical. But once you view the market as a financed system, the mechanics are consistent:
+
+- When volatility rises, margin requirements increase.
+- When repo funding tightens, leverage becomes expensive or unavailable.
+- When dealers hit balance-sheet constraints, they stop absorbing inventory.
+
+In those moments, the marginal seller is not a discretionary allocator; it is a leveraged participant meeting cash demands. That’s why liquidity can disappear even in the world’s deepest bond market.
+
+For long-term investors, the key takeaway is not “Treasuries are risky.” It is that **Treasury liquidity is conditional on funding conditions**. If you run strategies that rely on Treasuries as a perfect hedge or as instantaneous liquidity, you should stress-test those assumptions in scenarios where funding markets seize up.
+
+## Policy backstops: why facilities matter for market functioning
+
+The modern Treasury market is implicitly supported by a set of policy tools that stabilize funding when private balance sheets pull back. Investors should understand that these tools exist because the market can become fragile under leverage and balance-sheet constraints. The existence of backstops does not remove risk, but it changes the distribution: it can reduce tail outcomes, while still allowing sharp moves before intervention arrives.
+
+In other words, the basis can widen not because “value disappeared,” but because financing temporarily failed.
+
+## Conclusion
+
+The U.S. Treasury market is deep and critical, but it is not immune to plumbing constraints. Repo is the lifeblood of Treasury liquidity, and leveraged relative value strategies like the basis trade tie cash bonds, futures, and financing into one system.
+
+In calm regimes, that system improves efficiency. In stress regimes, leverage, margin dynamics, and dealer constraints can create feedback loops that overwhelm the usual intuition about “safe assets.”
+
+For investors, the key takeaway is simple: if you want to understand Treasury behavior in crises, you must understand repo. The plumbing is part of the macro.`,
+    date: formatDate(0),
+    author: 'Lysander Truog',
+    authorAvatar: getAuthorAvatar('Lysander Truog'),
+    type: 'technical',
+    readTime: calculateReadTime(
+      countWords(`# Treasury Market Plumbing and the Basis Trade: Why Repo Matters
+
+## Introduction
+
+For many investors, the U.S. Treasury market is the definition of safety and liquidity. It is the benchmark curve for global finance: used to discount cash flows, collateralize derivatives, and price risk across asset classes.`)
+    ),
+    imageUrl: getImage('technical', 1),
+    tags: ['Treasuries', 'Repo', 'Market Structure', 'Basis Trade', 'Rates'],
+    relatedMarkets: ['bonds', 'rates'],
+  },
+  {
+    slug: 'callable-bonds-and-negative-convexity-managing-fixed-income-optionality',
+    title: 'Callable Bonds and Negative Convexity: Managing Fixed-Income Optionality',
+    excerpt:
+      'Callable bonds embed issuer-friendly options that reshape portfolio behavior. This guide explains negative convexity, valuation tools like OAS, and a disciplined framework for managing reinvestment and extension risk.',
+    content: `# Callable Bonds and Negative Convexity: Managing Fixed-Income Optionality
+
+## Introduction
+
+Fixed income is often described as “simple”: you lend money and receive coupons and principal. In practice, many bonds embed options that transfer value between issuer and investor depending on the path of interest rates. **Callable bonds** are the most common example. They grant the issuer the right—but not the obligation—to redeem the bond before maturity, typically at par on specified call dates.
+
+For investors, callability can be attractive because it usually comes with extra yield. But that incremental yield is not free. It compensates you for selling an option to the issuer—an option that tends to be exercised when it is least convenient for the investor. This is the essence of **negative convexity**: when yields fall, the bond’s price appreciation is capped (because the issuer is more likely to call), and when yields rise, the bond’s effective duration can extend as the call becomes unlikely.
+
+This article provides a practical framework for analyzing callable bonds and the negative convexity they introduce. The goal is not to avoid callables entirely, but to understand:
+
+- When you are being paid adequately for embedded optionality;
+- How callables behave across rate regimes;
+- How to manage reinvestment and extension risk;
+- Where callable structures belong in a resilient bond portfolio.
+
+## Callable bonds: mechanics in plain language
+
+### What “callable” actually means
+
+If a bond is callable, the issuer can redeem it early. The call schedule typically specifies:
+
+- **First call date**: the earliest date the bond can be called;
+- **Subsequent call dates**: monthly, quarterly, annually, or continuously (depending on market);
+- **Call price**: often par, sometimes with a premium that declines over time.
+
+From the issuer’s perspective, a call option is a refinancing tool:
+
+- If rates fall, the issuer calls the bond and refinances at a lower coupon.
+- If rates rise, the issuer keeps the bond outstanding at the now-cheap (for them) fixed coupon.
+
+The issuer owns the upside. The investor absorbs the asymmetry.
+
+### The investor’s two embedded risks
+
+Callable bonds introduce two path-dependent risks:
+
+- **Reinvestment risk**: when rates fall and the bond is called, your high-coupon asset disappears and you reinvest at lower yields.
+- **Extension risk**: when rates rise, the bond is unlikely to be called, and its effective duration can extend beyond what a simple maturity label suggests.
+
+These risks are structural. They tend to show up precisely when portfolios are under stress or when investors least want surprises.
+
+## Duration and convexity: why callables behave differently
+
+### Positive convexity in option-free bonds
+
+Most option-free bonds have **positive convexity**: as yields fall, prices rise at an accelerating rate; as yields rise, prices fall at a decelerating rate relative to a linear duration approximation. Positive convexity is generally beneficial because it provides “more upside than a straight line would predict” in rally environments.
+
+### Negative convexity: short an option
+
+Callable bonds often show **negative convexity** because the embedded call option becomes more valuable to the issuer as yields fall. When the bond is “in the money” to call, its price tends to gravitate toward the call price, and additional price appreciation is limited.
+
+The result is an asymmetric profile:
+
+- **Down-rates**: upside is capped by call probability and call price.
+- **Up-rates**: downside persists, and duration can extend because the call fades.
+
+Practically, a callable is like owning a bond plus being short a call option on that bond.
+
+## Valuation tools that matter: yield-to-worst and OAS
+
+### Yield-to-worst (YTW)
+
+Yield-to-worst is the lowest yield you might receive if the issuer exercises the call at the least favorable time for you. It is a basic safeguard: a high yield-to-maturity can be meaningless if the bond is likely to be called.
+
+YTW is useful but incomplete because it does not model the probability of different call outcomes across rate paths.
+
+### Option-adjusted spread (OAS)
+
+Option-adjusted spread is a more robust framework. Conceptually:
+
+- Start with a spread over a benchmark curve;
+- Model interest-rate paths and call probabilities;
+- Remove the value of the embedded option to isolate the spread you earn for credit/liquidity risk.
+
+OAS helps answer the investor’s real question:
+
+**Are you being paid enough for credit risk and for selling the issuer an option?**
+
+OAS is model-dependent, but in callable-heavy markets it is often the least-bad lens for relative value.
+
+## When callable bonds can make sense
+
+### 1) You’re being paid a real premium
+
+Callables should offer a compensation premium for optionality. A healthy approach is to compare:
+
+- OAS on callable structures vs. comparable option-free bonds;
+- Premium stability across cycles;
+- Whether the bond is priced near par or at a premium (premium price near call can be the worst convexity).
+
+The key is to avoid “headline yield traps” where the extra yield is illusory once you account for call probability.
+
+### 2) Portfolio cash-flow needs align with callability
+
+Some investors prefer higher near-term carry and can tolerate uncertain maturity dates. Liability-aware portfolios may accept call risk if it matches their cash flow structure—provided it is sized deliberately and monitored.
+
+### 3) You can diversify the option book
+
+Owning a small amount of call risk may be fine. Owning a portfolio full of callables with similar call dates is a concentrated short-volatility position. Diversification across call schedules and sectors reduces “all at once” outcomes.
+
+## When callable bonds are dangerous
+
+### 1) “Safe yield” narratives
+
+Callable bonds can be marketed as conservative yield enhancement. The hidden problem is that callables can disappoint in both directions:
+
+- If yields fall, the bond is called and reinvestment yields are lower.
+- If yields rise, the bond extends, price declines deepen, and duration drifts longer than expected.
+
+### 2) Rigid duration targets
+
+If your portfolio has strict duration constraints, extension risk is not a footnote—it’s a risk limit problem. A portfolio that looks intermediate today can become long-duration in a selloff, potentially forcing rebalancing at the wrong time.
+
+### 3) Liquidity stress
+
+Callable-heavy segments can become illiquid during stress because pricing is model-driven and sensitive to volatility assumptions. Bid-ask spreads can widen rapidly when dealers pull balance sheet.
+
+## A disciplined framework for managing call risk
+
+### Step 1: classify the exposure
+
+Separate callables by:
+
+- Call schedule (short first call vs. long lockout);
+- Call price (par vs. premium);
+- Coupon and price level (near par vs. premium);
+- Sector and credit profile.
+
+The worst negative convexity often appears in premium-priced bonds near call, where investors pay for upside that may never be realized.
+
+### Step 2: stress-test three regimes
+
+At minimum, model behavior under:
+
+1. **Rates down + volatility up**: higher call probability; reinvestment pain.
+2. **Rates up + volatility up**: extension risk; duration drift.
+3. **Stable rates**: carry regime; callables can look deceptively “smooth.”
+
+If a bond only looks attractive in the carry regime, you likely are not being paid for the full distribution.
+
+### Step 3: balance with positive convexity
+
+Portfolios with meaningful callable exposure benefit from offsets:
+
+- Some allocation to option-free, high-quality duration (within risk limits);
+- Inflation-linked exposure for real-rate diversification;
+- For sophisticated investors, explicit rate hedges can help neutralize extreme convexity outcomes.
+
+The objective is to avoid hidden, one-sided short-volatility exposure.
+
+## Implementation notes: turning the framework into portfolio rules
+
+A framework is only useful if it becomes rules you can execute. In callable-heavy portfolios, three implementation habits matter:
+
+1. **Track effective duration, not stated maturity.** If your risk reports only display maturity buckets, you will miss extension risk. Use effective duration and scenario duration (up and down rate shocks) to see how the book morphs across regimes.
+2. **Budget convexity at the portfolio level.** It is fine to own some negative convexity if you are compensated, but you should decide how much you are willing to be short volatility. If you can’t quantify that, assume you’re short more than you think.
+3. **Stagger call dates to avoid clustered reinvestment events.** A portfolio with a single “first call year” can behave like a single trade: it works in calm regimes and breaks during major rate moves.
+
+One practical way to stress-test callables is to compare them with a “control group” of option-free bonds of similar credit quality. If the callable book offers only a small yield pickup but delivers materially worse outcomes in down-rate rallies (capped upside) and up-rate selloffs (extension), then the option premium is not sufficient.
+
+In other words, treat call risk like any other risk budget: measure it, limit it, and demand to be paid.
+
+## Conclusion
+
+Callable bonds can be useful instruments, but investors must recognize what they truly hold: a bond plus a short option position. The extra yield compensates you for negative convexity, reinvestment risk, extension risk, and liquidity sensitivity.
+
+When evaluated with yield-to-worst and option-adjusted frameworks—and managed with scenario analysis and diversification—callables can contribute to income and spread capture. When treated as “safe yield,” they can become silent drivers of portfolio instability.
+
+In fixed income, optionality is never free. The discipline is to measure it, price it, and size it appropriately.`,
+    date: formatDate(0),
+    author: 'Lysander Truog',
+    authorAvatar: getAuthorAvatar('Lysander Truog'),
+    type: 'technical',
+    readTime: calculateReadTime(
+      countWords(`# Callable Bonds and Negative Convexity: Managing Fixed-Income Optionality
+
+## Introduction
+
+Fixed income is often described as “simple”: you lend money and receive coupons and principal. In practice, many bonds embed options that transfer value between issuer and investor depending on the path of interest rates.`)
+    ),
+    imageUrl: getImage('technical', 0),
+    tags: ['Fixed Income', 'Callable Bonds', 'Convexity', 'Duration', 'Rates'],
+    relatedMarkets: ['bonds', 'rates'],
+  },
+  {
     slug: 'inflation-linked-bonds-and-real-return-strategies',
     title: 'Inflation-Linked Bonds and Real Return Strategies',
     excerpt:

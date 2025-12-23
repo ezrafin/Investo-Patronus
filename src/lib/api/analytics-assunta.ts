@@ -26,6 +26,1287 @@ const countWords = (text: string): number => {
 // Assunta Novak - Cryptocurrency & Blockchain (24 articles)
 export const assuntaArticles: AnalyticsArticle[] = [
   {
+    slug: 'crypto-regulation-and-compliance-infrastructure-the-new-compliance-stack',
+    title: 'Crypto Regulation and Compliance Infrastructure: The New Compliance Stack',
+    excerpt:
+      'How evolving crypto regulations are creating demand for compliance infrastructure, why KYC/AML, transaction monitoring, and regulatory reporting are becoming critical, and which companies are positioned to benefit from the institutionalization of crypto markets.',
+    content: `# Crypto Regulation and Compliance Infrastructure: The New Compliance Stack
+
+## Introduction
+
+For much of crypto's history, regulation was an afterthought. Early adopters operated in a gray area, and many projects explicitly positioned themselves as alternatives to regulated financial systems. But as crypto has grown from a niche interest to a multi-trillion-dollar asset class, regulators worldwide have taken notice. The result is a rapidly evolving regulatory landscape that is reshaping how crypto businesses operate and creating massive demand for compliance infrastructure.
+
+The regulatory shift is happening on multiple fronts:
+- **Securities regulation** – regulators are clarifying which tokens are securities.
+- **Anti-money laundering (AML)** – AML requirements are being extended to crypto.
+- **Know Your Customer (KYC)** – KYC requirements are being applied to crypto businesses.
+- **Tax reporting** – tax authorities are requiring reporting of crypto transactions.
+- **Consumer protection** – consumer protection rules are being applied to crypto.
+
+For crypto businesses, compliance is no longer optional. Exchanges, DeFi protocols, NFT platforms, and other crypto services must navigate complex regulatory requirements across multiple jurisdictions. This has created a new category of infrastructure: **crypto compliance platforms**. These tools help businesses verify customer identities, monitor transactions for suspicious activity, generate regulatory reports, and maintain compliance across jurisdictions.
+
+For investors, crypto compliance infrastructure represents a significant opportunity:
+- **Regulatory tailwind** – regulations are driving demand for compliance tools.
+- **Institutional adoption** – institutions require robust compliance before entering crypto.
+- **Market growth** – growing crypto market increases compliance needs.
+- **High switching costs** – compliance infrastructure creates switching costs.
+
+This article explores how crypto regulation is evolving, what compliance infrastructure is needed, and which companies are positioned to benefit from this shift.
+
+## The Regulatory Landscape: From Gray Area to Clear Rules
+
+### Early Regulatory Approaches
+
+Crypto regulation initially varied widely by jurisdiction:
+
+**Permissive Jurisdictions:**
+- **Switzerland** – early adopter of crypto-friendly regulation.
+- **Singapore** – balanced approach supporting innovation.
+- **Malta** – positioned as "blockchain island."
+- **Characteristics** – clear rules, supportive of innovation.
+
+**Restrictive Jurisdictions:**
+- **China** – banned crypto trading and mining.
+- **India** – uncertain regulatory environment.
+- **Some Middle Eastern countries** – restrictions on crypto.
+- **Characteristics** – bans or heavy restrictions.
+
+**Uncertain Jurisdictions:**
+- **United States** – fragmented regulation across agencies.
+- **European Union** – evolving regulation.
+- **Many others** – unclear or evolving rules.
+- **Characteristics** – regulatory uncertainty.
+
+### The Shift Toward Clarity
+
+Regulatory clarity is increasing:
+
+**United States:**
+- **SEC** – clarifying securities regulation for tokens.
+- **CFTC** – regulating crypto derivatives and commodities.
+- **FinCEN** – AML and KYC requirements for crypto businesses.
+- **IRS** – tax reporting requirements for crypto transactions.
+
+**European Union:**
+- **MiCA** – Markets in Crypto-Assets regulation providing comprehensive framework.
+- **AML Directive** – extending AML requirements to crypto.
+- **Tax reporting** – requiring reporting of crypto transactions.
+
+**Other Jurisdictions:**
+- **United Kingdom** – developing comprehensive crypto regulation.
+- **Japan** – established regulatory framework for crypto exchanges.
+- **South Korea** – implementing crypto regulation.
+- **Many others** – developing or implementing regulation.
+
+### Key Regulatory Requirements
+
+**Securities Regulation:**
+- **Token classification** – determining which tokens are securities.
+- **Registration** – registration requirements for securities offerings.
+- **Disclosure** – disclosure requirements for securities.
+- **Trading** – regulation of securities trading.
+
+**AML/KYC:**
+- **Customer identification** – verifying customer identities.
+- **Transaction monitoring** – monitoring transactions for suspicious activity.
+- **Reporting** – reporting suspicious transactions to authorities.
+- **Record keeping** – maintaining records of transactions and customers.
+
+**Tax Reporting:**
+- **Transaction reporting** – reporting crypto transactions to tax authorities.
+- **Income reporting** – reporting crypto income.
+- **Capital gains** – reporting capital gains from crypto.
+- **Withholding** – withholding taxes on certain transactions.
+
+**Consumer Protection:**
+- **Disclosure** – disclosure requirements for crypto products.
+- **Custody** – requirements for custody of customer assets.
+- **Dispute resolution** – mechanisms for resolving disputes.
+- **Redress** – mechanisms for customer redress.
+
+## Compliance Infrastructure: What's Needed
+
+### KYC/AML Platforms
+
+KYC/AML platforms help crypto businesses verify customer identities and monitor transactions:
+
+**Customer Onboarding:**
+- **Identity verification** – verifying customer identities using documents and biometrics.
+- **Sanctions screening** – screening customers against sanctions lists.
+- **PEP screening** – screening for politically exposed persons.
+- **Adverse media** – checking for adverse media coverage.
+
+**Transaction Monitoring:**
+- **Pattern detection** – detecting suspicious transaction patterns.
+- **Risk scoring** – scoring transactions for risk.
+- **Alert generation** – generating alerts for suspicious activity.
+- **Investigation tools** – tools for investigating suspicious activity.
+
+**Reporting:**
+- **Suspicious activity reports (SARs)** – generating SARs for authorities.
+- **Transaction reports** – generating transaction reports.
+- **Compliance reports** – generating compliance reports.
+- **Audit trails** – maintaining audit trails.
+
+**Key Providers:**
+- **Chainalysis** – blockchain analytics and compliance.
+- **Elliptic** – blockchain analytics and compliance.
+- **CipherTrace** – blockchain analytics and compliance.
+- **Various others** – numerous other providers.
+
+### Transaction Monitoring and Analytics
+
+Transaction monitoring tools analyze blockchain data:
+
+**Blockchain Analytics:**
+- **Address clustering** – clustering addresses to identify entities.
+- **Transaction tracing** – tracing transactions across blockchains.
+- **Risk scoring** – scoring addresses and transactions for risk.
+- **Visualization** – visualizing transaction flows.
+
+**Compliance Features:**
+- **Sanctions screening** – screening addresses against sanctions lists.
+- **AML monitoring** – monitoring for AML violations.
+- **Tax reporting** – generating tax reports.
+- **Regulatory reporting** – generating regulatory reports.
+
+**Key Providers:**
+- **Chainalysis** – leading blockchain analytics provider.
+- **Elliptic** – blockchain analytics provider.
+- **CipherTrace** – blockchain analytics provider.
+- **Various others** – numerous other providers.
+
+### Regulatory Reporting Platforms
+
+Regulatory reporting platforms help businesses generate required reports:
+
+**Report Generation:**
+- **Automated reporting** – automating report generation.
+- **Multi-jurisdiction** – supporting multiple jurisdictions.
+- **Customization** – customizing reports for specific requirements.
+- **Validation** – validating reports before submission.
+
+**Report Types:**
+- **SARs** – suspicious activity reports.
+- **Transaction reports** – transaction reports.
+- **Tax reports** – tax reports.
+- **Compliance reports** – compliance reports.
+
+**Key Providers:**
+- **Various providers** – numerous providers offering reporting solutions.
+- **Integrated platforms** – platforms integrating reporting with other compliance features.
+
+### Identity Verification Platforms
+
+Identity verification platforms verify customer identities:
+
+**Verification Methods:**
+- **Document verification** – verifying identity documents.
+- **Biometric verification** – verifying identities using biometrics.
+- **Liveness detection** – detecting liveness to prevent fraud.
+- **Database checks** – checking against databases.
+
+**Integration:**
+- **API integration** – APIs for integrating verification.
+- **SDK integration** – SDKs for mobile integration.
+- **Workflow integration** – integrating with onboarding workflows.
+
+**Key Providers:**
+- **Onfido** – identity verification provider.
+- **Jumio** – identity verification provider.
+- **Veriff** – identity verification provider.
+- **Various others** – numerous other providers.
+
+## Market Structure and Competitive Dynamics
+
+### Compliance Platform Providers
+
+**Blockchain Analytics:**
+- **Chainalysis** – market leader in blockchain analytics.
+- **Elliptic** – established blockchain analytics provider.
+- **CipherTrace** – blockchain analytics provider (acquired by Mastercard).
+- **Various startups** – numerous startups in blockchain analytics.
+
+**Identity Verification:**
+- **Onfido** – identity verification provider.
+- **Jumio** – identity verification provider.
+- **Veriff** – identity verification provider.
+- **Various others** – numerous other providers.
+
+**Integrated Platforms:**
+- **Compliance platforms** – platforms integrating multiple compliance features.
+- **Exchange platforms** – exchanges building compliance into their platforms.
+- **Custody platforms** – custody platforms integrating compliance.
+
+### Competitive Dynamics
+
+**Market Leadership:**
+- **Chainalysis** – leads in blockchain analytics.
+- **Established players** – established players in identity verification.
+- **Emerging players** – emerging players in integrated platforms.
+
+**Competitive Advantages:**
+- **Data** – access to blockchain data and analytics.
+- **Technology** – advanced technology and algorithms.
+- **Regulatory relationships** – relationships with regulators.
+- **Customer relationships** – relationships with crypto businesses.
+
+**Challenges:**
+- **Regulatory changes** – regulatory changes require platform updates.
+- **Competition** – intense competition from established and emerging players.
+- **Technology** – rapid technology innovation creates challenges.
+- **Scaling** – scaling to handle growing transaction volumes.
+
+## Investment Themes and Opportunities
+
+### Blockchain Analytics Companies
+
+**Market Leaders:**
+- **Chainalysis** – market leader in blockchain analytics.
+- **Elliptic** – established blockchain analytics provider.
+- **CipherTrace** – blockchain analytics provider.
+
+**Investment Drivers:**
+- **Regulatory demand** – regulations driving demand for analytics.
+- **Institutional adoption** – institutions requiring analytics.
+- **Market growth** – growing crypto market increases analytics needs.
+- **Data moat** – access to blockchain data creates moat.
+
+**Risks:**
+- **Competition** – competition from established and emerging players.
+- **Regulatory changes** – regulatory changes may affect demand.
+- **Technology risk** – technology risk from rapid innovation.
+- **Privacy concerns** – privacy concerns may limit adoption.
+
+### Identity Verification Companies
+
+**Market Leaders:**
+- **Onfido** – identity verification provider.
+- **Jumio** – identity verification provider.
+- **Veriff** – identity verification provider.
+
+**Investment Drivers:**
+- **KYC requirements** – KYC requirements driving demand.
+- **Crypto adoption** – growing crypto adoption increases verification needs.
+- **Technology advancement** – advancing technology improving accuracy.
+- **Market expansion** – expansion into crypto from other markets.
+
+**Risks:**
+- **Competition** – intense competition from established and emerging players.
+- **Regulatory changes** – regulatory changes may affect requirements.
+- **Technology risk** – technology risk from rapid innovation.
+- **Fraud** – fraud and identity theft create challenges.
+
+### Integrated Compliance Platforms
+
+**Emerging Platforms:**
+- **Compliance platforms** – platforms integrating multiple compliance features.
+- **Exchange platforms** – exchanges building compliance into platforms.
+- **Custody platforms** – custody platforms integrating compliance.
+
+**Investment Drivers:**
+- **Regulatory complexity** – regulatory complexity driving demand for integrated solutions.
+- **Efficiency** – integrated solutions improve efficiency.
+- **Market growth** – growing crypto market increases compliance needs.
+- **Switching costs** – integrated platforms create switching costs.
+
+**Risks:**
+- **Market development** – markets are still developing.
+- **Competition** – competition from established and emerging players.
+- **Technology risk** – technology risk from rapid innovation.
+- **Regulatory changes** – regulatory changes require platform updates.
+
+## Market Dynamics and Valuation
+
+### Market Size and Growth
+
+The crypto compliance market is large and growing:
+- **Blockchain analytics** – estimated at $1+ billion and growing 30-40% annually.
+- **Identity verification** – estimated at $10+ billion and growing 15-20% annually.
+- **Compliance platforms** – estimated at $5+ billion and growing 25-30% annually.
+
+**Growth Drivers:**
+- **Regulatory requirements** – regulations driving demand for compliance.
+- **Institutional adoption** – institutions requiring compliance before entering crypto.
+- **Market growth** – growing crypto market increases compliance needs.
+- **Technology advancement** – advancing technology improving compliance capabilities.
+
+### Valuation Considerations
+
+Crypto compliance companies are valued on:
+- **Growth potential** – growth potential in compliance markets.
+- **Technology differentiation** – unique technologies and capabilities.
+- **Market position** – market position and competitive advantages.
+- **Regulatory relationships** – relationships with regulators.
+
+**Valuation Challenges:**
+- **Market development** – markets are still developing.
+- **Regulatory risk** – regulatory changes may affect demand.
+- **Competition** – intense competition from established and emerging players.
+- **Technology risk** – technology risk from rapid innovation.
+
+### Risks and Challenges
+
+**Regulatory Risk:**
+- **Regulatory changes** – regulatory changes may affect demand.
+- **Jurisdictional differences** – differences across jurisdictions create complexity.
+- **Enforcement** – regulatory enforcement may be inconsistent.
+
+**Technology Risk:**
+- **Rapid innovation** – rapid technology innovation creates risks.
+- **Privacy concerns** – privacy concerns may limit adoption.
+- **Scaling challenges** – scaling to handle growing transaction volumes.
+
+**Market Risk:**
+- **Crypto market** – crypto market volatility affects compliance demand.
+- **Adoption** – adoption may be slower than expected.
+- **Competition** – intense competition from established and emerging players.
+
+## Portfolio Construction and Implementation
+
+### Sector Allocation
+
+**Core Holdings:**
+- **Blockchain analytics** – established blockchain analytics companies.
+- **Identity verification** – established identity verification companies.
+- **Compliance platforms** – established compliance platform providers.
+
+**Satellite Positions:**
+- **Emerging platforms** – early-stage compliance platforms.
+- **Specialized solutions** – companies focused on specific compliance areas.
+- **Regional players** – companies focused on specific regions.
+
+### Risk Management
+
+**Diversification:**
+- **Sector diversification** – spread exposure across compliance sectors.
+- **Technology diversification** – spread exposure across technologies.
+- **Geographic diversification** – spread exposure across geographies.
+
+**Risk Monitoring:**
+- **Regulatory monitoring** – monitor regulatory developments.
+- **Technology monitoring** – monitor technology developments.
+- **Market monitoring** – monitor crypto market and adoption.
+
+**Position Sizing:**
+- **Core positions** – larger positions in established companies.
+- **Satellite positions** – smaller positions in emerging companies.
+- **Risk limits** – limit exposure to single companies or sectors.
+
+## Conclusion
+
+Crypto regulation and compliance infrastructure represent a significant investment opportunity driven by:
+- **Regulatory requirements** – regulations driving demand for compliance tools.
+- **Institutional adoption** – institutions requiring compliance before entering crypto.
+- **Market growth** – growing crypto market increases compliance needs.
+- **Technology advancement** – advancing technology improving compliance capabilities.
+
+For investors, crypto compliance infrastructure offers:
+- **Regulatory tailwind** – regulations driving demand.
+- **Market growth** – growing markets for compliance solutions.
+- **High switching costs** – compliance infrastructure creates switching costs.
+- **Competitive moats** – data and technology create competitive moats.
+
+But challenges remain:
+- **Regulatory risk** – regulatory changes may affect demand.
+- **Competition** – intense competition from established and emerging players.
+- **Technology risk** – technology risk from rapid innovation.
+- **Market risk** – crypto market volatility affects compliance demand.
+
+The key is to:
+- **Focus on quality** – invest in companies with strong competitive positions.
+- **Manage risks** – closely monitor regulatory, technology, and market risks.
+- **Diversify** – spread exposure across sectors, technologies, and geographies.
+- **Be patient** – crypto compliance market is still developing.
+
+Crypto regulation will continue to evolve, creating winners and losers. Investors who identify the right companies and manage risks effectively will be well-positioned to capture the opportunities in this growing market.`,
+    date: formatDate(103),
+    author: 'Assunta Novak',
+    authorAvatar: getAuthorAvatar('Assunta Novak'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Crypto Regulation and Compliance Infrastructure: The New Compliance Stack
+
+## Introduction
+
+For much of crypto's history, regulation was an afterthought.`),
+    ),
+    imageUrl: getImage('expert', 103),
+    tags: ['Crypto Regulation', 'Compliance', 'KYC/AML', 'Blockchain Analytics', 'Regulatory Technology'],
+  },
+  {
+    slug: 'mev-and-block-builder-economics-the-new-order-flow-market',
+    title: 'MEV and Block Builder Economics: The New Order Flow Market',
+    excerpt:
+      'How maximal extractable value (MEV) has created a new market for block space, why block builders and proposer-builder separation are reshaping Ethereum economics, and what this means for validators, traders, and the long-term structure of crypto markets.',
+    content: `# MEV and Block Builder Economics: The New Order Flow Market
+
+## Introduction
+
+In traditional finance, market makers and exchanges profit from the spread between bid and ask prices. In crypto, a parallel economy has emerged around **maximal extractable value (MEV)**—the profit that can be extracted by reordering, including, or excluding transactions within a block. What started as a niche concern for DeFi power users has become a multi-billion-dollar market that touches every aspect of blockchain economics, from validator rewards to transaction fees to the fundamental question of who controls block production.
+
+The Ethereum merge and the shift to proof-of-stake brought **proposer-builder separation (PBS)** into focus. This architectural change separates the role of proposing blocks (choosing which block to add to the chain) from building blocks (selecting and ordering transactions). The result is a new market where specialized **block builders** compete to construct the most profitable blocks, while **proposers** (validators) auction off the right to propose the next block to the highest bidder.
+
+For investors and market participants, understanding MEV and block builder economics is essential because:
+- **Validator economics** depend on MEV extraction, not just base staking rewards.
+- **Transaction costs** are increasingly driven by MEV competition rather than simple network congestion.
+- **Market structure** is evolving toward centralized block building, raising questions about decentralization.
+- **New business models** are emerging around order flow, private mempools, and MEV protection.
+
+This article explores how MEV markets work, why block builders matter, and what the evolution toward PBS means for the long-term structure of crypto markets.
+
+## What Is MEV and Why Does It Matter?
+
+### The Basics of Maximal Extractable Value
+
+MEV refers to the maximum value that can be extracted from block production by reordering, including, or excluding transactions. The concept was first formalized in the context of Ethereum, but it applies to any blockchain where transactions are ordered within blocks.
+
+**Common MEV Strategies:**
+
+**Arbitrage:**
+- A DEX has ETH priced at $2,000 on Uniswap and $2,010 on SushiSwap.
+- A bot spots this and submits two transactions:
+  1. Buy ETH on Uniswap for $2,000.
+  2. Sell ETH on SushiSwap for $2,010.
+- If both transactions are included in the same block and executed in order, the bot profits $10 minus gas fees.
+- If another bot's transactions execute first and move prices, the opportunity disappears.
+
+**Liquidation:**
+- A lending protocol has a position that becomes liquidatable when ETH drops below $1,950.
+- A liquidator bot monitors the price and, when ETH hits $1,950, submits a liquidation transaction.
+- The first liquidator to get their transaction included earns a liquidation bonus (often 5-10% of the position value).
+- Multiple bots compete to be first, driving up gas prices.
+
+**Sandwich Attacks:**
+- A user submits a large swap that will move the price of a token.
+- A bot sees this transaction in the mempool and:
+  1. Front-runs it (buys before the user's swap).
+  2. Lets the user's swap execute (moving the price).
+  3. Back-runs it (sells after the user's swap at the new price).
+- The bot profits from the price movement, while the user gets a worse price.
+
+**NFT Sniping:**
+- An NFT collection drops at a specific price.
+- Bots monitor for listings and immediately buy undervalued NFTs.
+- The first bot to get their transaction included captures the value.
+
+### The Scale of MEV
+
+MEV extraction has grown into a massive market:
+
+- **Estimated annual MEV** on Ethereum is in the billions of dollars.
+- **MEV-Boost** (a PBS implementation) captures a significant portion of this value.
+- **Specialized firms** (Flashbots, bloXroute, Eden Network) operate block builders and MEV infrastructure.
+
+The value extracted comes from:
+- **DEX arbitrage** – price differences across decentralized exchanges.
+- **Liquidations** – bonuses from liquidating undercollateralized positions.
+- **Sandwich attacks** – front-running and back-running large swaps.
+- **NFT sniping** – capturing undervalued NFTs.
+- **Cross-chain arbitrage** – price differences across different blockchains.
+
+### Why MEV Matters for Users
+
+MEV directly impacts users in several ways:
+
+**Higher Transaction Costs:**
+- Bots compete to have their transactions included first, driving up gas prices.
+- Users pay more for transactions during periods of high MEV activity.
+
+**Worse Execution Prices:**
+- Sandwich attacks and front-running can result in users getting worse prices on swaps.
+- Large trades are particularly vulnerable to MEV extraction.
+
+**Failed Transactions:**
+- If a transaction becomes unprofitable due to MEV (e.g., an arbitrage opportunity disappears), bots may exclude it from blocks.
+- Users' transactions can fail or be delayed.
+
+**Privacy Concerns:**
+- Bots monitor public mempools to identify profitable opportunities.
+- Large transactions are visible before execution, enabling front-running.
+
+## Proposer-Builder Separation: The Architecture Change
+
+### The Problem with Current Block Production
+
+In Ethereum's current model (and most proof-of-stake blockchains), validators both:
+- **Build blocks** – select and order transactions from the mempool.
+- **Propose blocks** – submit blocks to the network for consensus.
+
+This creates several problems:
+
+**MEV Extraction Complexity:**
+- Validators need sophisticated MEV extraction capabilities to maximize rewards.
+- Smaller validators cannot compete with specialized MEV infrastructure.
+- This centralizes block production toward validators with MEV expertise.
+
+**Centralization Pressure:**
+- Validators with better MEV extraction earn more, creating a competitive advantage.
+- This can lead to validator centralization and reduced network decentralization.
+
+**Inefficient Block Building:**
+- Validators may not have the computational resources or expertise to build optimal blocks.
+- Blocks may be suboptimal, leaving MEV on the table.
+
+### Proposer-Builder Separation
+
+PBS separates these roles:
+
+**Block Builders:**
+- Specialized entities that:
+  - Monitor the mempool and private order flow.
+  - Construct blocks with optimal transaction ordering.
+  - Extract MEV through sophisticated strategies.
+  - Submit block bids to proposers.
+
+**Proposers (Validators):**
+- Choose which block to propose based on:
+  - The highest bid (payment from builder).
+  - Block validity and consensus rules.
+- Do not need MEV extraction capabilities.
+
+**Benefits:**
+- **Decentralization** – proposers don't need MEV infrastructure, lowering barriers to entry.
+- **Efficiency** – specialized builders can construct better blocks.
+- **Competition** – multiple builders compete to offer the best blocks.
+- **Transparency** – MEV extraction becomes more visible and auditable.
+
+### MEV-Boost: The Current Implementation
+
+MEV-Boost is a PBS implementation that has been widely adopted on Ethereum:
+
+**How It Works:**
+1. **Builders** construct blocks and submit bids to a relay network.
+2. **Relays** aggregate bids and forward the best ones to proposers.
+3. **Proposers** (validators) use MEV-Boost software to:
+   - Receive block bids from relays.
+   - Select the highest-bidding block.
+   - Propose it to the network.
+
+**Current Market Structure:**
+- **Flashbots** operates the largest relay and builder network.
+- **Other builders** include bloXroute, Eden Network, and Manifold.
+- **Most validators** use MEV-Boost to capture MEV rewards.
+
+**Economics:**
+- Builders extract MEV and share a portion with proposers via bids.
+- Proposers receive additional rewards beyond base staking rewards.
+- Users may pay higher fees due to MEV competition.
+
+## Block Builder Economics and Competition
+
+### The Block Building Market
+
+Block building has become a competitive market with several key players:
+
+**Flashbots:**
+- The dominant builder and relay operator.
+- Processes a significant portion of Ethereum blocks.
+- Operates a public goods model, sharing MEV data and research.
+
+**Commercial Builders:**
+- **bloXroute** – offers private mempool and block building services.
+- **Eden Network** – focuses on NFT and DeFi MEV.
+- **Manifold** – provides builder infrastructure and APIs.
+
+**Validator-Owned Builders:**
+- Some large validators operate their own builders to capture MEV directly.
+- This can reduce reliance on external builders but requires significant investment.
+
+### Builder Revenue Models
+
+Builders generate revenue through:
+
+**MEV Extraction:**
+- The primary revenue source.
+- Builders extract value through arbitrage, liquidations, and other strategies.
+- Revenue varies with market conditions and MEV opportunities.
+
+**Order Flow Payments:**
+- Some builders pay for exclusive access to order flow.
+- This can improve MEV extraction by reducing competition.
+- Raises questions about centralization and user privacy.
+
+**Builder Fees:**
+- Some builders charge fees for including transactions.
+- This is less common but may become more prevalent as the market matures.
+
+### Competition and Market Dynamics
+
+The block building market is competitive, with several dynamics:
+
+**Technical Competition:**
+- Builders compete on:
+  - MEV extraction capabilities.
+  - Block construction speed and efficiency.
+  - Integration with order flow sources.
+  - Reliability and uptime.
+
+**Economic Competition:**
+- Builders compete on:
+  - Bid amounts (how much they pay proposers).
+  - Transaction inclusion policies.
+  - Fee structures.
+
+**Centralization Concerns:**
+- Flashbots dominates the market, raising concerns about centralization.
+- Smaller builders may struggle to compete without significant resources.
+- Validator-owned builders may reduce competition.
+
+**Regulatory Risk:**
+- MEV extraction and order flow payments may face regulatory scrutiny.
+- Front-running and market manipulation concerns could lead to restrictions.
+
+## Order Flow and Private Mempools
+
+### The Order Flow Market
+
+Order flow has become a valuable commodity in crypto markets:
+
+**What Is Order Flow?**
+- The stream of transactions submitted by users.
+- Contains information about:
+  - Transaction size and direction.
+  - Potential price impact.
+  - MEV opportunities.
+
+**Why Order Flow Matters:**
+- Early access to transactions enables MEV extraction.
+- Exclusive order flow reduces competition and increases MEV profits.
+- Builders and validators compete to access valuable order flow.
+
+### Private Mempools
+
+Private mempools are an emerging solution to MEV and front-running:
+
+**How They Work:**
+- Users submit transactions to private mempools instead of public ones.
+- Transactions are not visible to general MEV bots.
+- Builders with access to private mempools can:
+  - Extract MEV without competition.
+  - Offer better execution to users.
+  - Charge fees for access.
+
+**Providers:**
+- **Flashbots Protect** – private transaction submission service.
+- **bloXroute** – private mempool and block building.
+- **Eden Network** – private order flow and MEV protection.
+
+**Trade-offs:**
+- **Privacy** – transactions are not visible to general MEV bots.
+- **Cost** – users may pay fees for private mempool access.
+- **Centralization** – private mempools may centralize order flow.
+- **Efficiency** – private mempools may reduce overall MEV extraction.
+
+### MEV Protection Services
+
+Several services aim to protect users from MEV:
+
+**Transaction Bundling:**
+- Users bundle transactions with MEV extraction to reduce front-running risk.
+- Services like Flashbots Protect bundle user transactions with MEV.
+
+**Commit-Reveal Schemes:**
+- Users commit to transactions without revealing details.
+- Transactions are revealed only when included in blocks.
+- Reduces front-running but adds complexity.
+
+**Encrypted Mempools:**
+- Transactions are encrypted until block inclusion.
+- Prevents MEV bots from seeing transaction details.
+- Still experimental and not widely deployed.
+
+## Investment Implications
+
+### Market Size and Growth
+
+The MEV and block builder market is large and growing:
+
+- **Annual MEV extraction** is estimated in the billions of dollars.
+- **Block builder revenue** is a significant portion of validator rewards.
+- **Order flow market** is emerging as a new revenue stream.
+
+Growth drivers include:
+- **DeFi volume** – more DeFi activity creates more MEV opportunities.
+- **Cross-chain activity** – bridges and cross-chain protocols create new MEV sources.
+- **NFT markets** – NFT trading creates MEV opportunities.
+- **Institutional adoption** – institutions may pay for MEV protection.
+
+### Business Model Characteristics
+
+MEV and block builder businesses have:
+
+**High Revenue Potential:**
+- MEV extraction can generate significant revenue.
+- Order flow payments create recurring revenue streams.
+- Builder fees can add to revenue.
+
+**Technical Moats:**
+- MEV extraction requires sophisticated infrastructure and algorithms.
+- Block building requires low latency and high reliability.
+- Order flow access creates competitive advantages.
+
+**Regulatory Risk:**
+- MEV extraction may face regulatory scrutiny.
+- Front-running and market manipulation concerns could lead to restrictions.
+- Order flow payments may be subject to regulation.
+
+**Centralization Concerns:**
+- Market dominance by a few builders raises decentralization concerns.
+- Validator-owned builders may reduce competition.
+- Private mempools may centralize order flow.
+
+### Key Investment Criteria
+
+For investors evaluating MEV and block builder businesses:
+
+**Technical Capabilities:**
+- **MEV extraction** – sophisticated algorithms and infrastructure.
+- **Block building** – low latency, high reliability, optimal block construction.
+- **Order flow access** – relationships with users, DEXs, and other sources.
+
+**Market Position:**
+- **Market share** – share of blocks built or MEV extracted.
+- **Relay network** – size and reliability of relay infrastructure.
+- **Brand** – recognition and trust in the MEV community.
+
+**Business Model:**
+- **Revenue sources** – MEV extraction, order flow payments, builder fees.
+- **Unit economics** – profitability and scalability.
+- **Competitive moat** – technical differentiation and order flow access.
+
+**Regulatory and Risk:**
+- **Regulatory compliance** – adherence to relevant regulations.
+- **Decentralization** – commitment to network decentralization.
+- **Risk management** – handling of MEV extraction risks and failures.
+
+## Conclusion
+
+MEV and block builder economics represent a fundamental shift in how crypto markets work:
+
+- **MEV extraction** has become a multi-billion-dollar market.
+- **Proposer-builder separation** is reshaping validator economics.
+- **Order flow** has become a valuable commodity.
+- **Private mempools** are emerging to protect users from MEV.
+
+For investors and market participants, understanding these dynamics is essential because:
+- **Validator economics** depend on MEV, not just staking rewards.
+- **Transaction costs** are driven by MEV competition.
+- **Market structure** is evolving toward specialized block building.
+- **New business models** are emerging around order flow and MEV protection.
+
+The long-term implications are still unfolding, but it is clear that MEV and block builder economics will continue to shape crypto markets for years to come. The winners will be those that:
+- Build superior MEV extraction and block building infrastructure.
+- Access valuable order flow sources.
+- Navigate regulatory and decentralization challenges.
+- Create sustainable business models that benefit users and the network.`,
+    date: formatDate(102),
+    author: 'Assunta Novak',
+    authorAvatar: getAuthorAvatar('Assunta Novak'),
+    type: 'technical',
+    readTime: calculateReadTime(
+      countWords(`# MEV and Block Builder Economics: The New Order Flow Market
+
+## Introduction
+
+In traditional finance, market makers and exchanges profit from the spread between bid and ask prices.`),
+    ),
+    imageUrl: getImage('technical', 102),
+    tags: ['MEV', 'Block Builders', 'Ethereum', 'DeFi', 'Market Structure'],
+  },
+  {
+    slug: 'restaking-and-shared-security-yield-slashing-risk-and-the-new-security-budget',
+    title: 'Restaking and Shared Security: Yield, Slashing Risk, and the New Security Budget',
+    excerpt:
+      'Restaking promises a new layer of crypto yield by reusing security across protocols. But shared security changes risk transfer, correlation, and tail behavior. This guide explains the economics, the failure modes, and what to watch.',
+    content: `# Restaking and Shared Security: Yield, Slashing Risk, and the New Security Budget
+
+## Introduction
+
+Crypto markets are cyclical, but one pattern repeats: when prices stabilize and risk appetite returns, the ecosystem searches for yield. In the last cycle, the yield narrative was dominated by DeFi lending and liquidity mining. In the current cycle, a new theme has emerged: **restaking**—the reuse of an existing security budget (typically staked assets) to secure additional services and protocols.
+
+The pitch is attractive:
+
+- Validators or stakers earn incremental yield by providing security to extra networks (“actively validated services”);
+- Protocols bootstrap security without building their own validator sets;
+- The ecosystem becomes more capital-efficient.
+
+The risk is less discussed:
+
+- Shared security can create correlated failure modes;
+- Slashing risk becomes a multi-protocol tail risk;
+- Incentives can become reflexive—high yields attract leverage and concentration, which then increases systemic fragility.
+
+This article provides a practical framework for understanding restaking as a market structure innovation. We focus on:
+
+- What “shared security” means economically;
+- Where yield comes from and what it is compensating you for;
+- The core slashing and correlation risks;
+- How to monitor restaking like a credit analyst monitors leverage.
+
+## What restaking actually is (without the marketing)
+
+### The basic idea: one security budget, multiple obligations
+
+In proof-of-stake systems, stakers lock assets and participate in validation. They earn yield because they provide consensus security and economic deterrence against attacks. Restaking extends this by allowing the same staked assets—or the same validator infrastructure—to provide security to additional services such as data availability, oracles, bridges, sequencers, and middleware.
+
+In finance terms, restaking is comparable to **rehypothecation**: the same collateral is pledged to secure multiple obligations. That can increase returns in good times and amplify losses in stress.
+
+### Two forms of restaking risk
+
+Restaking introduces:
+
+1. **Operational slashing risk**: downtime, misconfiguration, faulty software, compromised keys.
+2. **Economic slashing risk**: incentive failures or coordinated attacks leading to broad slashing events.
+
+Both risks are low-frequency but potentially high-severity.
+
+## Where yield comes from: pricing the security budget
+
+Restaking yield is compensation for taking on extra obligations. It generally comes from:
+
+- Fees paid by services that want security;
+- Inflationary rewards (token emissions);
+- MEV or service-specific revenues.
+
+The key analytical question is: **is the yield paid in real economic value or in temporary emissions?**
+
+### Real fees vs. emissions
+
+- **Fee-based yield** reflects actual usage demand and tends to be more sustainable.
+- **Emission-based yield** can be fragile: it attracts capital quickly, compresses yields, and may pressure token prices if emissions outpace demand.
+
+Restaking ecosystems that rely primarily on emissions risk becoming “yield marketing” rather than durable market infrastructure.
+
+## Shared security changes protocol incentives
+
+### Security is no longer “owned”
+
+When a protocol uses shared security, it gains efficiency but inherits dependency risk:
+
+- Parameter changes in the shared layer can ripple across many services.
+- A security incident can become contagious rather than idiosyncratic.
+
+This is the classic tradeoff of shared infrastructure: efficiency increases, systemic nodes form.
+
+### Moral hazard
+
+If protocols can rent security, they may underinvest in internal security discipline. If losses are socialized through a shared pool, the system can drift toward fragile equilibria. Governance design and enforcement are therefore not “community details”—they are risk controls.
+
+## Slashing risk: the tail that shapes the distribution
+
+### Slashing is a credit event
+
+For an allocator, slashing behaves like a credit event: discrete, potentially irreversible impairment that changes wealth rather than merely marking-to-market. It can also trigger second-order effects:
+
+- Withdrawals from the ecosystem;
+- Increased haircuts in DeFi lending;
+- Liquidity gaps and cascading liquidations.
+
+### Correlation is the real danger
+
+Restaking risks are not independent. Correlation can come from:
+
+- Shared software clients and bugs;
+- Shared operator infrastructure (operator concentration);
+- Shared cloud vendors (single-provider risk);
+- Shared governance (parameter and policy changes).
+
+The most dangerous scenario is not one localized slashing event, but **correlated slashing across services**.
+
+## Validator economics: who captures value
+
+### Operators vs delegators
+
+Shared security ecosystems create a split:
+
+- **Operators** capture fees for running complex infrastructure and managing risk.
+- **Delegators** provide stake and bear much of the tail risk.
+
+Operator quality can become a moat, but concentration is a systemic hazard. Markets often price the yield and ignore the fragility of the operator set—until an incident occurs.
+
+## Market structure implications: leverage and reflexivity
+
+If restaked positions become tokenized and usable as collateral, the system can build leverage loops:
+
+- Restaked token used as collateral → borrow stablecoins → buy more stake → restake again.
+
+This can amplify returns during risk-on regimes and amplify losses during stress. In prior cycles, similar loops produced liquidation cascades. Restaking can create a new version of that mechanism.
+
+## How to evaluate a restaking opportunity (checklist)
+
+### 1) What is being secured?
+
+- Is the service economically critical with real fee demand?
+- Or is it mostly emission-driven and speculative?
+
+### 2) How is slashing defined?
+
+- Objective and automated (clear proofs), or
+- Subjective/governance-driven (higher political risk)?
+
+### 3) How concentrated is the operator set?
+
+Track:
+
+- Top-operator share;
+- Cloud concentration;
+- Client diversity;
+- Operational history and incident handling.
+
+### 4) What is the correlation regime?
+
+Stress-test shared dependencies. If multiple services depend on one client implementation, one cloud, and a handful of operators, your “diversified” yield becomes one bet on operational stability.
+
+### 5) How does yield behave in stress?
+
+Yield that spikes during stress may be compensating you for rising tail risk. Yield that collapses may indicate unstable incentives. Either way, it’s information—and it should affect sizing.
+
+## Portfolio sizing: treat restaking like high yield credit
+
+Restaking exposures should be treated like:
+
+- High-yield credit or structured products;
+- With tail risk and correlation risk;
+- Requiring conservative sizing and explicit diversification rules.
+
+Practical discipline:
+
+- Avoid concentration in one ecosystem or one operator cluster.
+- Prefer curated baskets or diversified exposure when possible.
+- Assume slashing is principal risk—not a small volatility event.
+
+## Implementation: how professionals size and monitor restaking risk
+
+Restaking can be analyzed like a credit portfolio with embedded operational risk. A few practical discipline rules can materially reduce surprise:
+
+### 1) Treat slashing as “principal at risk”
+
+If your mental model is “I’m earning yield and taking some volatility,” you will oversize. A better model is: *I am lending principal against a security promise, and slashing is a loss event.* Size accordingly.
+
+### 2) Demand diversification in three layers
+
+- **Service diversification:** avoid concentrating on one AVS category (bridges, DA, middleware).
+- **Operator diversification:** avoid the same operator cluster across services.
+- **Client/cloud diversification:** avoid shared software and hosting single points of failure.
+
+Restaking that looks diversified on the surface can be correlated underneath.
+
+### 3) Watch “risk-on leverage signals”
+
+The most fragile phases are when yield attracts leverage and concentration. Monitor:
+
+- Rapid TVL growth vs fee growth (is demand real?);
+- Rising use of restaked tokens as collateral;
+- Tight spreads and complacent risk assumptions.
+
+If restaking becomes collateral for more leverage, treat the ecosystem like a leveraged credit market approaching peak cycle.
+
+### 4) Know your exit path
+
+Liquidity and unbonding delays can matter more than model risk. Investors should understand:
+
+- Unstaking timeframes;
+- Liquidity on liquid-staked and restaked wrappers;
+- Market depth during stress.
+
+If you cannot exit in stress, your position is structurally illiquid—price it like one.
+
+## Governance and legal risk: the non-technical tail
+
+One underappreciated risk is that restaking systems often rely on governance to resolve edge cases. In practice, the question is not “can the protocol slash?” but “who decides what counts as slashable and how disputes are handled?”
+
+Investors should be wary when:
+
+- Slashing conditions are ambiguous or involve subjective interpretation;
+- Upgrade powers are concentrated and can change rules quickly;
+- Dispute resolution depends on ad hoc governance votes under time pressure.
+
+In stressed conditions, governance can behave like a courtroom during a bank run: decisions are made quickly, incentives are misaligned, and the system can prioritize survival over fairness. That is not necessarily malicious—it is simply how crisis governance works. But it increases tail risk.
+
+A final practical point: if you cannot clearly explain the slashing rule in one sentence, you probably cannot model it. Complexity is not automatically bad, but in security markets, complexity often becomes fragility.
+
+That fragility is exactly why restaking should be treated as a strategy exposure, not as “free yield.” If you size it like cash, the tail will eventually find you.
+
+## Conclusion
+
+Restaking can be a genuine market structure innovation because it treats security as reusable infrastructure. But shared security is also risk transfer. It can create yield at the cost of correlated tail risks—especially slashing events driven by shared dependencies and concentrated operators.
+
+Investors should analyze restaking like credit: understand what the yield compensates, treat slashing as a default-like event, and manage correlation as the central risk variable. In shared security, efficiency is the upside—but fragility is the price.`,
+    date: formatDate(0),
+    author: 'Assunta Novak',
+    authorAvatar: getAuthorAvatar('Assunta Novak'),
+    type: 'technical',
+    readTime: calculateReadTime(
+      countWords(`# Restaking and Shared Security: Yield, Slashing Risk, and the New Security Budget
+
+## Introduction
+
+Crypto markets are cyclical, but one pattern repeats: when prices stabilize and risk appetite returns, the ecosystem searches for yield.`)
+    ),
+    imageUrl: getImage('technical', 1),
+    tags: ['Crypto', 'Restaking', 'Security', 'DeFi', 'Risk'],
+    relatedMarkets: ['crypto'],
+  },
+  {
+    slug: 'stablecoin-rails-and-the-new-dollar-liquidity-cycle',
+    title: 'Stablecoin Rails and the New Dollar Liquidity Cycle',
+    excerpt:
+      'Stablecoins are evolving from a crypto convenience into global payment rails. Understanding their balance sheets, liquidity feedback loops, and regulatory perimeter is now essential for market participants.',
+    content: `# Stablecoin Rails and the New Dollar Liquidity Cycle
+
+## Introduction
+
+Stablecoins started as a workaround: a way to keep “dollars” on crypto exchanges without touching banks. That origin story is now outdated. In 2025, stablecoins are increasingly **monetary instruments**, used as settlement tokens across centralized and decentralized venues, as collateral in on-chain credit markets, and as payment rails for cross-border commerce.
+
+For investors and traders, stablecoins matter for one reason: **they govern where dollar liquidity lives and how fast it moves.** When stablecoin supply expands, trading liquidity improves, collateral availability increases, and risk appetite often rises. When stablecoin supply contracts or confidence wobbles, the system can seize up quickly—sometimes before spot markets fully reflect the stress.
+
+This article builds a practical framework for understanding stablecoins as a liquidity layer. We will cover:
+
+- How stablecoin “balance sheets” function in practice;
+- Why market structure makes stablecoins a reflexive liquidity driver;
+- How to monitor stablecoin conditions like a macro indicator;
+- Where the regulatory perimeter is moving—and why it will reshape stablecoin winners.
+
+## Stablecoins are not one asset class
+
+The label “stablecoin” hides meaningful differences. From a risk perspective, you should think in terms of **what backs the coin** and **how redemption works**.
+
+### 1) Fiat-backed stablecoins (reserve assets)
+
+These coins aim to maintain value through:
+
+- Cash and cash equivalents (T-bills, repo, money market-like instruments)
+- Operational controls (issuance/redemption via authorized participants)
+- Banking and custody relationships
+
+The investor question is: *How liquid and transparent are the reserves, and how credible is redemption under stress?*
+
+### 2) Crypto-collateralized stablecoins (overcollateralized)
+
+These rely on:
+
+- On-chain collateral (ETH, staked assets, sometimes tokenized treasuries)
+- Overcollateralization and liquidation mechanisms
+- Oracles and risk parameters
+
+They can be robust, but their stability is conditional on:
+
+- Oracle integrity
+- Liquidation efficiency
+- Collateral volatility and correlations during stress
+
+### 3) Algorithmic / endogenous stablecoins (reflexive designs)
+
+These rely on:
+
+- Arbitrage mechanisms
+- Incentives and secondary tokens
+
+History suggests these designs are fragile in a crisis because stability depends on *continued demand* for the reflexive component. For conservative market participants, this segment is less about “stablecoins” and more about **risk assets with a stablecoin wrapper**.
+
+## Stablecoins as settlement rails: why this changes everything
+
+The most important shift is that stablecoins are becoming **a settlement standard** in crypto market plumbing.
+
+### Stablecoins reduce “banking friction”
+
+Traditional market infrastructure relies on:
+
+- Banking hours
+- Slow cross-border settlement
+- Intermediary layers with compliance and reconciliation costs
+
+Stablecoins operate 24/7 and settle quickly. That creates:
+
+- Faster exchange-to-exchange movement of collateral
+- Rapid funding of margin positions
+- Immediate migration of liquidity to venues offering better pricing
+
+In practical terms, stablecoins are the “cash leg” for a global, always-on market.
+
+### Stablecoins standardize collateral
+
+Stablecoins also standardize collateral across DeFi protocols. When a lending market, a derivatives AMM, and a cross‑margin venue all accept the same settlement asset, capital becomes more mobile—and leverage becomes easier to build.
+
+That’s bullish in risk-on regimes, but it also creates a systemic dependency: **stablecoin confidence becomes a shared risk factor across the entire on‑chain financial stack**.
+
+## The stablecoin “balance sheet”: supply is not just a number
+
+Fiat‑backed stablecoins behave like simplified money-market structures:
+
+- **Liabilities**: tokens in circulation.
+- **Assets**: reserve portfolio (cash, bills, repo, short-duration instruments).
+- **Operating layer**: banks, custodians, settlement partners, and compliance rails.
+
+The market tends to focus on the headline “market cap,” but investors should instead track the **quality and liquidity of reserves** and the **credibility of redemption**.
+
+### Reserve composition and the hidden duration question
+
+Even “safe” reserves can become a problem if duration drifts longer than expected or if liquidity is constrained during stress. The practical risk is **liquidity mismatch**:
+
+- Redemptions demand immediate cash.
+- Reserves might be liquid in normal markets but less so during volatility.
+- Operational bottlenecks (banking hours, compliance queues) can amplify stress.
+
+In other words: the question is not whether reserves are good on paper; it’s whether they are good **when everyone wants out at once**.
+
+### Concentration risk matters
+
+Stablecoin reserve and custody structures can concentrate risk in ways that are not always obvious:
+
+- Single-bank or small-bank clusters.
+- Single custodian exposures.
+- Single jurisdiction dependence.
+
+In a global market, concentration can be a bigger risk than credit quality.
+
+## The new dollar liquidity cycle: stablecoins as a macro indicator
+
+In crypto, stablecoins are one of the cleanest measures of system liquidity. A useful mental model:
+
+1. **Stablecoin supply expands** → more “dry powder” → more spot buying and collateral.
+2. **Leverage grows** → perps open interest rises, funding turns persistently positive, basis widens.
+3. **Stress hits** → liquidations rise, redemptions accelerate, collateral haircuts tighten.
+4. **Supply contracts** → liquidity drains, spreads widen, risk-off persists longer than price action alone suggests.
+
+This is reflexive: stablecoins don’t just reflect risk appetite; **they shape it**. More supply makes it easier to take risk. Less supply makes it harder to recover.
+
+### Where stablecoins sit is as important as how many exist
+
+Two supply regimes can have the same “market cap” but very different market impact:
+
+- Stablecoins concentrated on exchanges can fuel fast spot and perp flows.
+- Stablecoins locked in DeFi lending can enable leverage via rehypothecation and looping strategies.
+- Stablecoins sitting idle in wallets may reflect caution and a lack of catalyst.
+
+For market structure, **distribution** is a better indicator than total.
+
+## Monitoring stablecoin conditions like a strategist
+
+You don’t need perfect data to build a usable dashboard. The following metrics are high-signal:
+
+### 1) Net issuance / redemption trend
+
+The slope matters more than the level. A flattening issuance curve can be an early warning that marginal liquidity is drying up.
+
+### 2) Peg quality under volatility
+
+Watch how the coin behaves during sharp market moves:
+
+- Does it hold the peg with tight spreads?
+- Does it show repeated micro-depegs?
+- Is liquidity deep across multiple venues, or only in one pool?
+
+Micro-depegs are often “canaries” for deeper issues: thin liquidity, redemption friction, or confidence drift.
+
+### 3) Stablecoin borrow rates
+
+When borrowing rates spike in DeFi:
+
+- Leverage becomes expensive.
+- Liquidations become more likely.
+- Market makers may reduce inventory and widen spreads.
+
+Borrow rate spikes often precede broader deleveraging.
+
+### 4) Exchange vs. on-chain flows
+
+Large stablecoin inflows to exchanges often signal:
+
+- New risk capital ready to deploy, or
+- Positioning for volatility (margin funding).
+
+Large outflows can signal:
+
+- De-risking and moving to self-custody, or
+- Migration into DeFi yield and collateral loops.
+
+Context matters, but flows are a directional clue.
+
+## De-peg episodes: what they teach (and what they don’t)
+
+De-pegs are frequently misdiagnosed as “stablecoin failure.” In reality, a de-peg often reveals which part of the system is fragile:
+
+- **Reserve questions** (opacity, asset quality, concentration).
+- **Redemption friction** (delays, weekend rails, compliance bottlenecks).
+- **Market microstructure** (thin liquidity on key pools/venues).
+- **Contagion** (risk-off selling of the settlement asset itself).
+
+Even if a de-peg is caused by temporary friction rather than insolvency, it still matters because it changes behavior:
+
+- Higher haircuts in lending protocols.
+- Lower leverage tolerance from market makers.
+- Migration toward “safer” coins and away from long-tail collateral.
+
+The long-run effect is often a more conservative market structure—at least until liquidity rebuilds.
+
+## Regulation: the perimeter tightens around settlement
+
+Stablecoins have become too important to sit outside the regulatory perimeter. Most stablecoin regulation focuses on:
+
+- Reserve quality and transparency.
+- Segregation and bankruptcy remoteness.
+- Redemption rights and timelines.
+- Distribution and compliance (AML/KYC expectations).
+
+From an investor perspective, regulation likely creates a bifurcation:
+
+- **Regulated settlement stablecoins** that capture institutional flows.
+- **Shadow stablecoins** that persist in the long tail but lose the highest-quality liquidity.
+
+This matters because market structure follows the settlement asset. If institutions standardize on a small set of compliant rails, liquidity concentrates—improving execution there and degrading it elsewhere.
+
+## Strategic implications for traders and allocators
+
+### Traders: treat stablecoins as counterparty + liquidity exposure
+
+Stablecoin risk is not only price risk. It is a combined exposure to:
+
+- Redemption credibility;
+- Venue and custody risk;
+- Liquidity depth under stress;
+- Regulatory event risk.
+
+Practical discipline:
+
+- Diversify settlement exposure if your strategy depends on on-chain rails.
+- Reduce leverage when peg quality deteriorates.
+- Treat sudden borrow rate spikes as a “risk-off” signal.
+
+### Allocators: stablecoins are a bridge between TradFi and DeFi
+
+Stablecoins are increasingly used to access:
+
+- Tokenized treasury yield and repo-like products;
+- Collateralized lending and structured yield;
+- Cross-border settlement and payments.
+
+But institutional adoption will be shaped by compliance tooling, custody, and regulatory clarity. In stablecoins, “trust” is operational as much as financial.
+
+## Conclusion
+
+Stablecoins are no longer just a convenience for crypto traders. They are becoming global settlement rails and a key determinant of dollar liquidity in digital asset markets. As they scale, stablecoins increasingly behave like a macro variable: supply growth, redemption confidence, and peg quality shape risk appetite and market functioning.
+
+The opportunity for market participants is to treat stablecoin data the way macro investors treat funding conditions: **a forward-looking indicator of risk and liquidity**. The risk is to treat stablecoins as “cash” without understanding the structure underneath.
+
+In crypto, the new liquidity cycle is increasingly a stablecoin cycle—and the winners will be the systems and participants that can measure it, manage it, and survive its contractions.`,
+    date: formatDate(0),
+    author: 'Assunta Novak',
+    authorAvatar: getAuthorAvatar('Assunta Novak'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Stablecoin Rails and the New Dollar Liquidity Cycle
+
+## Introduction
+
+Stablecoins started as a workaround: a way to keep “dollars” on crypto exchanges without touching banks. That origin story is now outdated. Today, stablecoins are increasingly **monetary instruments** used as settlement tokens across centralized and decentralized venues, as collateral in on‑chain credit markets, and as payment rails for cross‑border commerce.`)
+    ),
+    imageUrl: getImage('markets', 0),
+    tags: ['Stablecoins', 'Liquidity', 'Market Structure', 'DeFi', 'Regulation'],
+    relatedMarkets: ['crypto', 'currencies'],
+  },
+  {
     slug: 'on-chain-derivatives-and-volatility-in-crypto-markets',
     title: 'On-Chain Derivatives and Volatility in Crypto Markets',
     excerpt:
