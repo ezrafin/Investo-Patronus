@@ -26,6 +26,252 @@ const countWords = (text: string): number => {
 // Xu Meiling - Asia-Pacific Markets (47 articles)
 export const xuArticles: AnalyticsArticle[] = [
   {
+    slug: 'india-equity-markets-domestic-demand-and-reform-driven-growth',
+    title: 'India Equity Markets: Domestic Demand and Reform-Driven Growth',
+    excerpt:
+      'Comprehensive look at India’s equity markets, focusing on domestic-demand sectors, structural reforms, and the balance between valuation, earnings growth, and macro risks.',
+    content: `# India Equity Markets: Domestic Demand and Reform-Driven Growth
+
+## Introduction
+
+India has emerged as one of the most closely watched equity markets globally, supported by:
+
+- Strong domestic-demand potential;
+- Ongoing structural reforms and digitalization;
+- A deepening local investor base.
+
+At the same time, investors must navigate:
+
+- Valuations that often embed optimistic growth assumptions;
+- Cyclical and political risks;
+- Execution challenges in translating reforms into sustained earnings growth.
+
+This article examines India’s equity markets through the lens of domestic-demand sectors, reform momentum, and the trade-offs investors face between growth and valuation.
+
+## Macroeconomic and Structural Context
+
+### Growth, Inflation, and Policy
+
+India’s growth profile has been characterized by:
+
+- Robust real GDP growth relative to many peers;
+- Periodic inflation pressures driven by food, fuel, and supply shocks;
+- A gradual evolution of monetary and fiscal frameworks.
+
+The Reserve Bank of India (RBI) operates a flexible inflation‑targeting regime, balancing:
+
+- The need to support growth and credit expansion;
+- The imperative to maintain currency and price stability;
+- The interaction with global rate cycles and capital flows.
+
+For equity investors, the macro backdrop matters because it influences:
+
+- Earnings trajectories across rate‑sensitive sectors (financials, real estate, consumer durables);
+- Valuation multiples through changes in risk‑free rates and risk premia;
+- Capital‑flow dynamics as global allocators adjust EM exposures.
+
+### Demographics and Urbanization
+
+India’s young and growing population:
+
+- Expands the labor force and consumer base;
+- Drives demand for housing, infrastructure, and services;
+- Creates opportunities in education, healthcare, and financial inclusion.
+
+Urbanization and rising incomes support:
+
+- Formalization of the economy;
+- Growth of organized retail and digital platforms;
+- Shifts in consumption patterns toward discretionary goods and services.
+
+These dynamics underpin many of the structural themes in India’s equity story—but also raise questions about job creation, skills, and inclusive growth.
+
+## Domestic-Demand Sectors and Market Structure
+
+### Financials and Banking
+
+Banks and non‑bank financial companies (NBFCs) sit at the core of India’s equity indices. Key drivers include:
+
+- Credit growth to households and SMEs;
+- Asset‑quality trends and non‑performing loan (NPL) cycles;
+- Competition between public‑sector and private‑sector banks;
+- Regulatory changes and capital‑adequacy requirements.
+
+Investors focus on:
+
+- Deposit franchises and funding costs;
+- Risk management and provisioning practices;
+- Ability to leverage digital channels and data for lending and collections.
+
+Well‑managed private banks and select NBFCs have been able to compound earnings and book value over cycles, but valuations often reflect this track record.
+
+### Consumer and Retail
+
+Domestic consumption is a core pillar of India’s growth. Equity exposure spans:
+
+- Staples (food, personal care, household products);
+- Discretionary (autos, two‑wheelers, durables, apparel);
+- Retail formats (organized retail chains, e‑commerce platforms).
+
+Key questions for investors:
+
+- How resilient is volume growth across income segments and regions?
+- How do companies manage input‑cost volatility and pricing power?
+- What is the balance between traditional channels and digital/disruptive models?
+
+Companies with strong brands, distribution, and execution capabilities can convert macro tailwinds into sustained earnings growth.
+
+### Infrastructure, Industrials, and Real Estate
+
+Public and private investment in:
+
+- Roads, ports, rail, and airports;
+- Power generation and distribution;
+- Urban infrastructure and housing,
+
+supports a range of listed companies. Reforms in areas such as:
+
+- Project approval and execution;
+- Bankruptcy and resolution frameworks;
+- Public‑private partnership models,
+
+aim to improve capital efficiency and reduce historical bottlenecks.
+
+For equity investors, the challenge is to distinguish between:
+
+- Companies that convert order books into profitable, cash‑generative projects;
+- Those with weak balance sheets or governance that may struggle in downcycles.
+
+## Reform and Digitalization
+
+### Structural Reforms
+
+Key reforms over the past decade include:
+
+- Implementation of the Goods and Services Tax (GST), aiming to unify the internal market;
+- Insolvency and Bankruptcy Code (IBC), intended to improve resolution of stressed assets;
+- Initiatives to strengthen financial inclusion and formalization (e.g., Jan Dhan accounts, Aadhaar, UPI).
+
+These reforms:
+
+- Support a broader tax base and more efficient logistics;
+- Encourage better credit discipline and asset‑quality transparency;
+- Enable digital delivery of services and payments.
+
+Their impact on equities manifests through:
+
+- Productivity gains and margin improvements for formalized players;
+- Market‑share shifts from informal to organized sectors;
+- Reduced uncertainty around legal and contract enforcement, over time.
+
+### Digital Public Infrastructure and Platforms
+
+India’s digital public infrastructure—particularly UPI for payments and Aadhaar for identity—has:
+
+- Lowered transaction costs and barriers to entry for fintechs and platforms;
+- Enabled rapid adoption of digital payments across income segments;
+- Created new data sets for credit scoring and product design.
+
+Listed beneficiaries include:
+
+- Banks and payment players that leverage these rails;
+- Consumer‑internet and e‑commerce platforms;
+- IT‑services and software exporters building global businesses.
+
+Investors should assess how companies integrate digital capabilities into core business models rather than treating “digital” as a separate narrative.
+
+## Valuation and Risk Considerations
+
+### Premium Valuations and Growth Expectations
+
+Indian equities often trade at a premium to other EMs on metrics such as:
+
+- Price‑to‑earnings (P/E);
+- Price‑to‑book (P/B);
+- Market‑cap‑to‑GDP.
+
+This premium reflects:
+
+- Strong domestic‑demand and reform narratives;
+- Deep and growing local‑investor participation (mutual funds, insurance, retail);
+- A perception of relatively high governance and institutional quality compared with some peers.
+
+However, elevated valuations mean:
+
+- Less room for disappointment on earnings or reform progress;
+- Greater sensitivity to global risk appetite and liquidity conditions;
+- Need for careful stock selection and entry discipline.
+
+### Cyclical, Political, and Policy Risks
+
+Investors must consider:
+
+- Election cycles and policy continuity;
+- Fiscal dynamics and the balance between growth‑supportive spending and consolidation;
+- External vulnerabilities (oil prices, global rates, capital flows).
+
+Sector‑specific risks include:
+
+- Credit cycles and asset‑quality surprises in financials;
++- Regulatory changes in telecom, technology, and consumer sectors;
+- Execution risk in large infrastructure and industrial projects.
+
+Diversification across sectors, position sizing, and scenario analysis help manage these exposures.
+
+## Portfolio Construction and Access Routes
+
+### Direct Equities vs. Funds
+
+Investors can access India via:
+
+- Direct holdings in large‑ and mid‑cap names (subject to market‑access rules);
+- Country funds and ETFs tracking broad or sectoral indices;
+- Regional and EM funds with India overweights.
+
+Direct investing offers:
+
+- Greater control over sector and stock selection;
+- Potential for targeted thematic exposure.
+
+Funds and ETFs provide:
+
+- Diversification and ease of access;
+- Professional management and research in active strategies.
+
+### Role in Global and Regional Portfolios
+
+Within broader allocations, India can:
+
+- Serve as a structural growth anchor within EM Asia sleeves;
+- Complement more export‑ or commodity‑driven markets with domestic‑demand exposure;
+- Provide idiosyncratic drivers tied to reforms and digitalization.
+
+Position size should reflect:
+
+- Risk tolerance for valuation and macro uncertainty;
+- Correlations with other EM and DM holdings;
+- Liquidity needs and investment horizon.
+
+## Conclusion
+
+India’s equity markets offer a compelling blend of domestic‑demand growth, reform momentum, and digital transformation, supported by a deepening local investor base. These strengths justify investor attention—but they also warrant disciplined analysis of valuation, macro and policy risks, and company‑level execution.
+
+For long‑term investors, a balanced approach—focusing on high‑quality franchises with durable competitive advantages, prudent balance sheets, and credible governance—can help harness India’s structural story while managing the inevitable volatility along the way.`,
+    date: formatDate(2),
+    author: 'Xu Meiling',
+    authorAvatar: getAuthorAvatar('Xu Meiling'),
+    type: 'longterm',
+    readTime: calculateReadTime(
+      countWords(`# India Equity Markets: Domestic Demand and Reform-Driven Growth
+
+## Introduction
+
+India has emerged as one of the most closely watched equity markets globally, supported by strong domestic-demand potential, structural reforms, and a deepening local investor base.`)
+    ),
+    imageUrl: getImage('longterm', 2),
+    tags: ['India', 'Equities', 'Domestic Demand', 'Reforms', 'Asia-Pacific'],
+  },
+  {
     slug: 'ai-and-supply-chain-reconfiguration-in-asia-pacific',
     title: 'AI and Supply Chain Reconfiguration in Asia-Pacific',
     excerpt:

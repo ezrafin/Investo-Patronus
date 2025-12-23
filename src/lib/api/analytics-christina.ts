@@ -30,6 +30,163 @@ const countWords = (text: string): number => {
 // Christina Summerbell - Technology & Growth Stocks (94 articles)
 export const christinaArticles: AnalyticsArticle[] = [
   {
+    slug: 'cloud-to-edge-computing-investment-opportunities-in-distributed-infrastructure',
+    title: 'Cloud to Edge: Investment Opportunities in Distributed Computing Infrastructure',
+    excerpt:
+      'Comprehensive analysis of how the shift from centralized cloud to distributed edge architectures is reshaping the technology stack, competitive dynamics, and long-term opportunities across infrastructure and software.',
+    content: `# Cloud to Edge: Investment Opportunities in Distributed Computing Infrastructure
+
+## Introduction
+
+Cloud computing transformed how enterprises build and run applications, abstracting away physical infrastructure in favor of elastic, on‑demand resources. Today, a new wave of architectural change is underway as workloads move closer to users, devices, and data sources. Edge computing—processing data near where it is generated—is becoming essential for low‑latency applications, bandwidth optimization, and resilience.
+
+For investors, the transition from purely centralized cloud models to more distributed cloud‑plus‑edge architectures opens a fresh set of opportunities and risks. It expands the investable universe beyond hyperscale data centers to include:
+
+- Specialized chips and hardware at the edge;
+- Software platforms orchestrating workloads across cloud and edge;
+- Connectivity and observability layers that keep distributed systems coherent and secure.
+
+This article provides a framework for understanding the cloud‑to‑edge transition and identifying where durable value is likely to accrue in the infrastructure and software stack.
+
+## Why Edge Computing Matters
+
+### Latency, Bandwidth, and Data Gravity
+
+Not all workloads benefit from centralized processing. Edge computing addresses three fundamental constraints:
+
+- **Latency** – Applications such as industrial automation, autonomous systems, and interactive gaming require millisecond‑level response times that are difficult to guarantee when traffic must traverse long network paths to distant data centers.
+- **Bandwidth** – Massive data streams from sensors, cameras, and IoT devices can overwhelm networks if raw data is constantly backhauled to the cloud; preprocessing at the edge reduces throughput requirements.
+- **Data gravity and sovereignty** – Regulatory, privacy, or operational constraints may dictate that certain data stay within specific locations or domains.
+
+These constraints are becoming more important as:
+
+- 5G and fiber expand connectivity;
+- AI workloads demand rapid inference close to the point of action;
+- Devices proliferate across industrial, commercial, and consumer settings.
+
+### New Classes of Applications
+
+Edge‑enabled applications span:
+
+- Smart factories and logistics hubs;
+- Connected vehicles and mobility systems;
+- Retail analytics and in‑store personalization;
+- Smart cities, energy systems, and critical infrastructure.
+
+Each domain has distinct requirements for reliability, security, and integration with legacy systems—shaping which vendors and platforms can succeed.
+
+## The Evolving Infrastructure Stack
+
+### Hardware: From Data Center to Edge Nodes
+
+The hardware layer includes:
+
+- Data‑center servers and accelerators (CPUs, GPUs, specialized AI chips);
+- Edge servers and gateways located in factories, cell towers, retail locations, or on vehicles;
+- Specialized devices with embedded compute.
+
+Investment themes include:
+
+- Suppliers of high‑performance, energy‑efficient chips tailored for edge inference;
+- Manufacturers of ruggedized edge hardware for industrial and outdoor environments;
+- Vendors that can standardize and manage fleets of edge devices at scale.
+
+### Software and Orchestration
+
+Distributed architectures require sophisticated software to:
+
+- Orchestrate where workloads run (cloud vs. edge vs. device);
+- Manage deployment, updates, and security policies;
+- Provide observability across heterogeneous environments.
+
+Key segments:
+
+- Container orchestration and Kubernetes‑based platforms extended to the edge;
+- Application‑delivery and API‑management solutions optimized for distributed topologies;
+- Security platforms that enforce zero‑trust principles across endpoints and edge nodes.
+
+Companies that abstract complexity for developers—allowing them to build once and deploy anywhere—can capture strategic positions in the stack.
+
+## Competitive Dynamics and Moats
+
+### Hyperscalers vs. Specialized Providers
+
+Hyperscale cloud providers are extending their reach to the edge via:
+
+- Managed edge services and on‑prem solutions;
+- Partnerships with telecom operators and equipment vendors;
+- Integrated AI services spanning cloud and edge.
+
+At the same time, specialized providers compete by:
+
+- Focusing on specific verticals (industrial, telecom, automotive);
+- Offering hardware‑software bundles tailored to constrained environments;
+- Building ecosystems around open‑source and standards‑based solutions.
+
+Investors must assess:
+
+- Where hyperscalers’ integrated platforms are likely to dominate;
+- Where vertical expertise and local presence create room for specialists;
+- How open‑source communities influence the balance of power.
+
+### Lock-In, Standards, and Interoperability
+
+As with earlier cloud waves, questions of lock‑in and portability loom large. Enterprises will favor architectures that:
+
+- Avoid single‑vendor dependency across cloud and edge;
+- Use open standards and modular components;
+- Allow incremental adoption without wholesale re‑platforming.
+
+Vendors that support interoperability and hybrid deployments may gain trust and share even if that means ceding some short‑term control.
+
+## Investment Considerations
+
+### Identifying Durable Franchises
+
+Investors should look for companies that:
+
+- Have clear line‑of‑sight to recurring revenue from software, platforms, or services;
+- Benefit from data and ecosystem effects as more workloads and partners join their platforms;
+- Demonstrate strong execution in security, reliability, and lifecycle management—non‑negotiable in edge environments.
+
+Hardware‑only plays may face margin pressure over time; integrated hardware‑plus‑software or pure‑software platforms with strong attach rates and high switching costs are more likely to sustain attractive economics.
+
+### Evaluating Risk and Cyclicality
+
+Edge infrastructure is capital‑intensive and often tied to:
+
+- Industrial capex cycles;
+- Telecom investment plans;
+- Large, multi‑year digital‑transformation programs.
+
+This creates:
+
+- Potential for cyclical slowdowns during macro stress;
+- Long sales cycles and concentrated customer exposures;
+- Execution risk in complex, multi‑stakeholder projects.
+
+Investors should stress‑test revenue visibility, customer concentration, and balance‑sheet resilience across scenarios.
+
+## Conclusion
+
+The transition from centralized cloud architectures to a more distributed cloud‑plus‑edge paradigm is still in its early innings. As latency‑sensitive, data‑intensive, and mission‑critical applications proliferate, demand for edge‑enabled infrastructure and software is likely to grow for years.
+
+For long‑term investors, the opportunity lies in identifying which companies will become the essential platforms and providers in this emerging landscape—not just selling hardware, but orchestrating and securing the distributed computing fabric that underpins the next generation of digital services.`,
+    date: formatDate(2),
+    author: 'Christina Summerbell',
+    authorAvatar: getAuthorAvatar('Christina Summerbell'),
+    type: 'longterm',
+    readTime: calculateReadTime(
+      countWords(`# Cloud to Edge: Investment Opportunities in Distributed Computing Infrastructure
+
+## Introduction
+
+Cloud computing transformed how enterprises build and run applications, abstracting away physical infrastructure in favor of elastic, on‑demand resources. Today, a new wave of architectural change is underway as workloads move closer to users, devices, and data sources. Edge computing—processing data near where it is generated—is becoming essential for low‑latency applications, bandwidth optimization, and resilience.`)
+    ),
+    imageUrl: getImage('longterm', 2),
+    tags: ['Cloud', 'Edge Computing', 'Infrastructure', 'Technology', 'Investment'],
+  },
+  {
     slug: 'ai-productivity-boom-and-the-next-wave-of-software-leaders',
     title: 'AI Productivity Boom: The Next Wave of Software Leaders',
     excerpt:

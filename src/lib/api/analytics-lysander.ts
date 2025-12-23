@@ -26,6 +26,197 @@ const countWords = (text: string): number => {
 // Lysander Truog - Fixed Income & Bonds (61 articles)
 export const lysanderArticles: AnalyticsArticle[] = [
   {
+    slug: 'inflation-linked-bonds-and-real-return-strategies',
+    title: 'Inflation-Linked Bonds and Real Return Strategies',
+    excerpt:
+      'Guide to building real-return strategies with inflation-linked bonds, examining valuation, index design, and the role of linkers alongside nominal bonds and other real assets.',
+    content: `# Inflation-Linked Bonds and Real Return Strategies
+
+## Introduction
+
+Inflation‑linked bonds—such as TIPS in the U.S. and index‑linked gilts or OATi in Europe—offer investors a way to protect purchasing power by tying principal and coupons to inflation indices. After years of subdued inflation, these instruments are once again central to asset‑allocation discussions as investors reassess how to structure real‑return portfolios.
+
+This article examines how inflation‑linked bonds work, how to think about their valuation, and how they can be combined with nominal bonds and other real assets to build robust real‑return strategies.
+
+## Mechanics of Inflation-Linked Bonds
+
+### Indexation of Principal and Coupons
+
+Inflation‑linked bonds typically:
+
+- Adjust principal value based on changes in a reference consumer‑price index (CPI or equivalent);
+- Pay coupons on the inflation‑adjusted principal;
+- Repay at least the original principal at maturity in most structures, even if there has been deflation.
+
+This means:
+
+- **Real value protection** – As inflation rises, principal and coupon payments increase in nominal terms, preserving real purchasing power.
+- **Deflation floor** – In many markets, principal does not fall below par, offering a degree of downside protection if prices decline.
+
+Investors must understand indexation lags—there is usually a delay between observed inflation and its reflection in bond cash flows, which can influence short‑term performance.
+
+### Accrued Indexation and Tax Considerations
+
+In some jurisdictions, the inflation accrual on principal:
+
+- May be taxed annually as income, even though cash is only received at maturity;
+- Can create a mismatch between tax liabilities and cash flows.
+
+Portfolio construction should account for:
+
+- After‑tax real returns;
+- The suitability of linkers for taxable vs. tax‑advantaged accounts;
+- Differences in treatment across markets (e.g., U.S. vs. U.K. vs. euro area).
+
+## Real Yields, Breakevens, and Valuation
+
+### Real Yields vs. Nominal Yields
+
+Inflation‑linked bonds trade on **real yields**—the yield investors earn above realized inflation. Nominal yields can be decomposed into:
+
+- Real yield;
+- Expected inflation;
+- Inflation risk premium;
+- Term premium and other factors.
+
+For example:
+
+- A 10‑year nominal government bond yields 4%;
+- A 10‑year inflation‑linked bond yields 1.5% real;
+- The implied breakeven inflation rate is roughly 2.5%.
+
+If realized inflation averages above 2.5% over the life of the bonds, the inflation‑linked security will outperform the nominal; if it is below, the nominal bond will do better, all else equal.
+
+### Interpreting Breakeven Inflation
+
+Breakeven inflation is not a pure forecast; it reflects:
+
+- Market expectations for inflation;
+- Risk premia for inflation uncertainty;
+- Liquidity differences between nominal and linker markets;
+- Technical factors such as supply/demand imbalances.
+
+Investors evaluating breakevens should consider:
+
+- Central‑bank credibility and policy frameworks;
+- Structural drivers of inflation (demographics, deglobalization, energy transition);
+- Historical relationships between breakevens and realized inflation.
+
+Periods of stress can distort breakevens, creating potential opportunities for patient investors.
+
+## Portfolio Roles for Inflation-Linked Bonds
+
+### Core Inflation Hedge
+
+Linkers can serve as a **core hedge** against unexpected inflation in multi‑asset portfolios. They:
+
+- Provide direct linkage to price levels rather than nominal rates;
+- Complement equities, which may not always keep pace with inflation;
+- Offer transparency in how inflation affects cash flows.
+
+However, they are not a perfect hedge for:
+
+- Non‑CPI inflation (e.g., specific baskets like healthcare or education costs);
+- Short‑term inflation shocks when indexation lags matter.
+
+### Real-Return Anchor
+
+Inflation‑linked bonds can anchor real‑return strategies by:
+
+- Providing a baseline real yield from sovereign issuers;
+- Reducing reliance on more volatile real assets (equities, commodities, real estate) to achieve real‑return targets;
+- Offering duration exposure that is more directly tied to real rates than to nominal policy moves.
+
+In environments where central banks fight inflation aggressively, real yields may rise, creating mark‑to‑market volatility but also more attractive entry points for long‑term holders.
+
+## Combining Linkers with Nominal Bonds and Real Assets
+
+### Linkers vs. Nominals in Different Scenarios
+
+Consider three simplified scenarios:
+
+1. **Inflation overshoots expectations** – Real yields are stable, nominal yields rise somewhat. Linkers outperform nominals as indexation boosts cash flows; both may see price volatility.
+2. **Disinflation with credible policy** – Inflation falls back toward target; real yields remain moderate. Nominals may outperform linkers as breakevens compress.
+3. **Stagflation risk** – Growth slows while inflation remains elevated. Linkers can offer valuable protection relative to nominals, while risk assets may struggle.
+
+Allocations should reflect views on these regimes and the cost of protection implied by breakevens.
+
+### Role Alongside Equities, Real Estate, and Commodities
+
+Other real assets—equities, real estate, infrastructure, commodities—can also provide inflation sensitivity via:
+
+- Pricing power and revenue linkage to nominal GDP;
+- Tangible asset backing;
+- Scarcity value.
+
+However, they:
+
+- Carry equity or commodity risk premia and higher volatility;
+- Are influenced by factors beyond inflation (e.g., earnings cycles, policy, supply/demand shocks).
+
+Blending linkers with these assets can:
+
+- Reduce overall portfolio volatility;
+- Provide more predictable real‑return paths;
+- Avoid over‑reliance on any single inflation hedge.
+
+## Practical Considerations for Investors
+
+### Market Liquidity and Instrument Choice
+
+Liquidity in inflation‑linked markets varies by:
+
+- Country and index family;
+- Maturity segment (short vs. long dated);
+- Issuer type (sovereign, quasi‑sovereign, corporate).
+
+Investors can access linkers via:
+
+- Individual bonds;
+- Index funds and ETFs;
+- Active strategies that tilt along curves and across markets.
+
+Vehicle choice should reflect:
+
+- Desired precision of maturity and index exposure;
+- Tolerance for tracking error vs. a benchmark;
+- Trading costs and bid‑ask spreads.
+
+### Duration and Curve Positioning
+
+Real‑yield curves can:
+
+- Steepen or flatten independently of nominal curves;
+- Reflect different inflation‑risk premia at various tenors.
+
+Active managers may:
+
+- Overweight parts of the curve where real yields compensate for duration risk;
+- Use curve trades (e.g., 5s10s, 10s30s) to express views on policy and inflation dynamics;
+- Combine linkers with nominals in barbell or bullet structures.
+
+Long‑dated linkers can be particularly sensitive to shifts in long‑term inflation expectations and real‑rate regimes, offering both opportunities and risks.
+
+## Conclusion
+
+Inflation‑linked bonds are a powerful tool for investors seeking to protect and grow purchasing power across cycles. They provide direct exposure to realized inflation, offer insights into market expectations via breakevens, and serve as key building blocks in real‑return portfolios.
+
+By understanding their mechanics, valuation, and interactions with nominal bonds and other real assets, investors can design strategies that are robust to a range of inflation scenarios—whether the future holds persistent price pressures, a return to stability, or renewed volatility in the inflation outlook.`,
+    date: formatDate(2),
+    author: 'Lysander Truog',
+    authorAvatar: getAuthorAvatar('Lysander Truog'),
+    type: 'technical',
+    readTime: calculateReadTime(
+      countWords(`# Inflation-Linked Bonds and Real Return Strategies
+
+## Introduction
+
+Inflation‑linked bonds—such as TIPS in the U.S. and index‑linked gilts or OATi in Europe—offer investors a way to protect purchasing power by tying principal and coupons to inflation indices. After years of subdued inflation, these instruments are once again central to asset‑allocation discussions as investors reassess how to structure real‑return portfolios.`)
+    ),
+    imageUrl: getImage('technical', 2),
+    tags: ['Inflation-Linked Bonds', 'Real Returns', 'Fixed Income', 'TIPS', 'Portfolio Construction'],
+  },
+  {
     slug: 'building-a-resilient-multi-sector-bond-portfolio-with-ai-and-analytics',
     title: 'Building a Resilient Multi-Sector Bond Portfolio with AI and Advanced Analytics',
     excerpt:

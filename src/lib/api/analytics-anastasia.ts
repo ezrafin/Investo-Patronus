@@ -26,6 +26,233 @@ const countWords = (text: string): number => {
 // Anastasia Petrova - Eastern Europe & Emerging Markets (40 articles)
 export const anastasiaArticles: AnalyticsArticle[] = [
   {
+    slug: 'frontier-africa-debt-markets-opportunities-and-risks',
+    title: 'Frontier Africa Debt Markets: Opportunities and Risks',
+    excerpt:
+      'Analysis of frontier African debt markets, focusing on sovereign credit dynamics, currency risk, and the role of multilaterals and private investors in financing growth.',
+    content: `# Frontier Africa Debt Markets: Opportunities and Risks
+
+## Introduction
+
+Frontier African economies occupy a distinctive space within emerging markets. They offer:
+
+- Young and growing populations;
+- Significant infrastructure and development needs;
+- Underpenetrated financial systems.
+
+At the same time, they present:
+
+- Higher macro and political volatility;
+- Limited market depth and liquidity;
+- Elevated sensitivity to global financial conditions.
+
+This article examines frontier Africa debt markets through the lens of sovereign credit, currency risk, and the evolving role of multilaterals and private investors.
+
+## Sovereign Credit Dynamics
+
+### Growth, Fiscal Space, and Debt Sustainability
+
+Many frontier African sovereigns:
+
+- Depend heavily on commodity exports for foreign exchange;
+- Face infrastructure and social‑spending needs that exceed domestic revenue capacity;
+- Have limited access to long‑tenor local‑currency funding.
+
+Debt sustainability hinges on:
+
+- The relationship between growth, interest rates, and primary balances;
+- The currency composition and maturity profile of debt;
+- The credibility of fiscal and monetary institutions.
+
+Sustained real growth can support higher debt burdens, but:
+
+- External shocks (commodity prices, weather events, global rates) can quickly erode buffers;
+- Weak tax bases constrain counter‑cyclical policy;
+- Political cycles can complicate consolidation efforts.
+
+### External vs. Domestic Debt
+
+Frontier African debt structures vary along:
+
+- **External vs. local‑currency mix** – Some countries rely heavily on Eurobonds and multilateral loans; others are building local markets.
+- **Official vs. private creditors** – The balance between multilateral, bilateral, and commercial creditors affects restructuring dynamics.
+
+High external‑debt reliance:
+
+- Increases vulnerability to global rate cycles and dollar strength;
+- Exposes countries to rollover risk if market access deteriorates;
+- Makes coordination among creditors more complex in distress.
+
+Local‑currency markets:
+
+- Can reduce FX mismatch and deepen domestic investor bases;
+- Often remain shallow, with limited tenors and participation;
+- Require robust monetary frameworks and regulatory support.
+
+## Currency Risk and Balance of Payments
+
+### Exchange-Rate Regimes and Shock Absorption
+
+Frontier African countries operate under diverse exchange‑rate regimes:
+
+- Hard or soft pegs;
+- Managed floats;
+- More flexible arrangements.
+
+Pegged or tightly managed regimes can:
+
+- Support price stability and anchor expectations;
+- Become fragile when reserves are limited and external shocks persistent.
+
+More flexible regimes can:
+
+- Absorb terms‑of‑trade shocks through depreciation;
+- Risk feeding inflation and undermining debt sustainability if FX debt is high.
+
+Investors must assess:
+
+- Reserve adequacy;
+- Policy frameworks and central‑bank independence;
+- The credibility of commitment to the chosen regime.
+
+### Current Accounts, Capital Flows, and Remittances
+
+Balance‑of‑payments dynamics are shaped by:
+
+- Export concentration (commodities vs. diversified goods and services);
+- Import needs (fuel, food, capital goods);
+- Remittances and tourism receipts;
+- FDI and portfolio flows.
+
+Persistent current‑account deficits financed by volatile capital flows heighten vulnerability. Conversely, countries that:
+
+- Diversify exports;
+- Attract stable FDI;
+- Tap concessional financing effectively,
+
+are better positioned to manage external shocks and currency risk.
+
+## Market Structure and Liquidity
+
+### Eurobond Markets
+
+Over the past decade, several frontier African sovereigns:
+
+- Issued Eurobonds to diversify funding away from official creditors;
+- Created benchmarks that improved transparency and market access;
+- Accumulated sizable external‑debt stocks at relatively short maturities.
+
+The global tightening cycle exposed vulnerabilities:
+
+- Higher refinancing costs as bonds approach maturity;
+- Investor reassessment of risk premia amid rising defaults and restructurings;
+- Increased reliance on multilateral support.
+
+Eurobond investors must:
+
+- Analyze maturity walls and gross‑financing needs;
+- Distinguish between liquidity crises and solvency problems;
+- Understand evolving restructuring frameworks, including the role of new creditor coalitions.
+
+### Local Bond Markets
+
+Local markets vary widely in depth and sophistication:
+
+- Some countries maintain regular auction calendars and growing investor bases;
+- Others rely on captive demand from local banks and pension funds;
+- Secondary liquidity is often limited, especially for longer tenors.
+
+Developing local markets can:
+
+- Improve policy transmission;
+- Provide alternative funding channels;
+- Support financial‑sector development.
+
+But progress is gradual and contingent on macro stability and institutional quality.
+
+## Role of Multilaterals and Official Creditors
+
+### Crisis Response and Debt Restructuring
+
+Multilateral institutions (IMF, World Bank, regional development banks) play central roles in:
+
+- Providing balance‑of‑payments support during crises;
+- Anchoring macro‑adjustment programs;
+- Facilitating debt‑restructuring discussions.
+
+Initiatives such as:
+
+- The G20 Common Framework;
+- Debt‑service‑suspension initiatives during COVID;
+- New lending facilities for climate and resilience,
+
+illustrate evolving approaches to official support. Execution challenges remain, particularly around:
+
+- Coordination between traditional bilateral and newer creditors;
+- Balancing debt relief with future market access;
+- Safeguarding social and development spending.
+
+### Blended Finance and Thematic Issuance
+
+Beyond crisis response, multilaterals and DFIs:
+
+- Support project and program financing via guarantees, co‑lending, and technical assistance;
+- Catalyze private capital into infrastructure, energy, and social sectors;
+- Experiment with thematic instruments (green, social, sustainability‑linked bonds).
+
+For investors, these structures can:
+
+- Improve risk/return profiles via credit enhancement;
+- Offer exposure to development themes with partial downside protection;
+- Require careful analysis of covenants, triggers, and political‑risk dimensions.
+
+## Opportunities and Risks for Investors
+
+### Return Potential
+
+Frontier Africa debt can offer:
+
+- High nominal and real yields;
+- Diversification relative to larger EM and DM markets;
+- Potential for spread compression when reforms and external conditions align.
+
+Active management can add value through:
+
+- Country selection based on fundamentals and policy trajectories;
+- Relative‑value trades across maturities and instruments;
+- Tactical positioning around IMF programs, elections, and commodity cycles.
+
+### Key Risks
+
+Investors must contend with:
+
+- **Credit risk** – Default and restructuring probabilities are higher than in core EM;
+- **Liquidity risk** – Wide bid‑ask spreads and limited secondary turnover;
+- **Political and governance risk** – Policy reversals, social unrest, and institutional fragility;
+- **Legal risk** – Enforcement challenges and potential for non‑standard restructuring terms.
+
+Position sizing, diversification, and time horizon are critical. Frontier exposure is best viewed as a satellite allocation within a broader EM or global fixed‑income strategy, not as a core holding.
+
+## Conclusion
+
+Frontier Africa debt markets sit at the intersection of development needs, macro volatility, and evolving global financial architecture. They can offer compelling return potential for investors willing to do the work on country fundamentals, debt structures, and policy frameworks—but they also demand a high tolerance for complexity and drawdowns.
+
+For long‑term investors, a disciplined approach that combines sovereign‑credit analysis, currency and liquidity risk management, and an understanding of multilateral dynamics is essential. In doing so, they can participate selectively in financing Africa’s growth story while respecting the constraints and risks inherent in frontier markets.`,
+    date: formatDate(2),
+    author: 'Anastasia Petrova',
+    authorAvatar: getAuthorAvatar('Anastasia Petrova'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Frontier Africa Debt Markets: Opportunities and Risks
+
+## Introduction
+
+Frontier African economies occupy a distinctive space within emerging markets. They offer young and growing populations, significant infrastructure and development needs, and underpenetrated financial systems—but also higher macro volatility and more limited market depth.`)
+    ),
+    imageUrl: getImage('markets', 2),
+    tags: ['Africa', 'Frontier Markets', 'Sovereign Debt', 'Currency Risk', 'Emerging Markets'],
+  },
+  {
     slug: 'ai-and-data-infrastructure-in-emerging-markets-opportunity-and-friction',
     title: 'AI and Data Infrastructure in Emerging Markets: Opportunity and Friction',
     excerpt:

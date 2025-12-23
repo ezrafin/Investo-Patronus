@@ -26,6 +26,200 @@ const countWords = (text: string): number => {
 // Elias Wolfenstein - European Markets (16 articles)
 export const eliasArticles: AnalyticsArticle[] = [
   {
+    slug: 'european-small-and-mid-caps-finding-compounders-beyond-the-blue-chips',
+    title: 'European Small and Mid Caps: Finding Compounders Beyond the Blue Chips',
+    excerpt:
+      'Overview of European small and mid-cap equities, focusing on business models, liquidity, and governance characteristics that support long-term compounding beyond headline indices.',
+    content: `# European Small and Mid Caps: Finding Compounders Beyond the Blue Chips
+
+## Introduction
+
+European equity markets are often viewed through the lens of large, benchmark constituents—global champions in sectors such as luxury, industrials, pharmaceuticals, and financials. Yet beneath the surface lies a diverse universe of small and mid‑cap companies that can offer:
+
+- Exposure to niche growth segments;
+- Regional champions with pricing power;
+- Entrepreneurial cultures and faster decision‑making.
+
+This article explores how investors can approach European small and mid caps, what makes a high‑quality compounder in this space, and how to manage liquidity and governance considerations.
+
+## The European Small and Mid-Cap Landscape
+
+### Sector and Geographic Diversity
+
+The small and mid‑cap universe spans:
+
+- Industrial technology and automation specialists;
+- Software and IT services providers;
+- Healthcare and med‑tech innovators;
+- Consumer brands and specialty retailers;
+- Business‑services and outsourcing firms.
+
+Geographically, opportunities exist across:
+
+- The DACH region (Germany, Austria, Switzerland);
+- The Nordics;
+- France, Benelux, and Southern Europe;
+- The U.K. and Ireland, despite separate index frameworks.
+
+Each region has distinct sectoral strengths and corporate cultures, but many companies share:
+
+- High insider ownership;
+- Long‑tenured management teams;
+- Ties to local or regional ecosystems.
+
+### Index Coverage and Research Gaps
+
+While some small and mid caps are included in established indices, many:
+
+- Sit at the periphery of benchmark allocations;
+- Receive limited sell‑side coverage;
+- Have lower foreign ownership than large caps.
+
+This can create:
+
+- Pricing inefficiencies when fundamentals evolve faster than coverage;
+- Opportunities for long‑term investors willing to do primary research;
+- Liquidity constraints that must be actively managed.
+
+## Characteristics of Compounding Businesses
+
+### Economic Moats and Niche Leadership
+
+High‑quality European small and mid caps often:
+
+- Dominate narrow niches in larger value chains;
+- Provide mission‑critical products or services;
+- Compete more on specialization than on scale alone.
+
+Examples include:
+
+- Component suppliers with deep engineering expertise;
+- Vertical‑market software vendors embedded in specific industries;
+- Specialized industrials with high switching costs for customers.
+
+These businesses can:
+
+- Maintain pricing power through differentiation;
+- Reinvest cash flows into product development and selective M&A;
+- Expand addressable markets over time without diluting economics.
+
+### Capital Allocation and Governance
+
+Compounding requires not just a good business, but disciplined capital allocation. Key signals include:
+
+- Reinvestment in high‑return organic opportunities;
+- Thoughtful, accretive M&A strategies;
+- Balanced shareholder‑return policies (dividends, buybacks) aligned with growth stage.
+
+Governance structures matter:
+
+- Family or founder control can support long‑term orientation, but may also entrench management;
+- Independent boards and transparent reporting help balance interests;
+- Incentive plans should align management with sustainable value creation, not just short‑term metrics.
+
+## Liquidity, Volatility, and Risk Management
+
+### Trading Liquidity and Position Sizing
+
+By definition, small and mid caps:
+
+- Trade with lower daily volumes than large caps;
+- Can experience wider bid‑ask spreads, especially in stress periods;
+- May be more sensitive to index flows and single‑stock news.
+
+Investors should:
+
+- Calibrate position sizes to typical daily liquidity and fund size;
+- Use trading strategies that respect market depth (e.g., limit orders, VWAP participation);
+- Be prepared for longer entry and exit windows, particularly in volatile markets.
+
+### Volatility and Drawdowns
+
+Although high‑quality small caps can outperform over long horizons, they often experience:
+
+- Greater price volatility than large caps;
+- Deeper drawdowns during risk‑off phases;
+- Prolonged periods of underperformance if sentiment turns against a sector or country.
+
+Risk management tools include:
+
+- Diversification across sectors and geographies;
+- Avoiding excessive leverage at the company and portfolio level;
+- Stress‑testing exposures under different macro and liquidity scenarios.
+
+## Approaches to Investing in European Small and Mid Caps
+
+### Bottom-Up Stock Selection
+
+Given the heterogeneity of the space, bottom‑up research is essential. Key elements:
+
+- Detailed analysis of business models, competitive positioning, and customer relationships;
+- Assessment of management quality and succession planning;
+- Understanding of industry structure, regulatory context, and technological disruption.
+
+Site visits, management meetings, and conversations with suppliers and customers can provide valuable context beyond financial statements.
+
+### Thematic and Quality-Focused Strategies
+
+Investors may overlay thematic or factor lenses, such as:
+
+- Structural growth themes (automation, digitalization, health care innovation);
+- Quality characteristics (high ROIC, strong balance sheets, consistent margins);
+- ESG considerations, including governance standards and environmental exposures.
+
+Quality‑biased approaches seek:
+
+- Companies that can compound earnings through cycles;
+- Lower probability of permanent capital impairment;
+- More predictable cash flows, even if near‑term growth is moderate.
+
+## Valuation Frameworks
+
+### Multiples and Growth Assumptions
+
+Small and mid caps often trade at:
+
+- Premium multiples when growth visibility is high and liquidity is adequate;
+- Discounts when sentiment is weak or coverage is limited.
+
+Valuation should balance:
+
+- Near‑term earnings and cash‑flow trajectories;
+- Long‑term reinvestment opportunities and runway;
+- Peer comparisons within and across regions.
+
+Overpaying for growth can erode returns, especially when sentiment shifts or execution falters. Discipline around entry multiples and position scaling is critical.
+
+### Private-Market and M&A Lenses
+
+Given ongoing corporate activity, private‑market and M&A valuations can inform:
+
+- Floor values for high‑quality assets that may attract strategic buyers;
+- Fair acquisition premiums for synergistic deals;
+- Risks of shareholder dilution if growth relies heavily on equity issuance.
+
+Understanding likely acquirers, integration risks, and regulatory scrutiny helps contextualize upside and downside scenarios.
+
+## Conclusion
+
+European small and mid caps offer a rich hunting ground for investors seeking long‑term compounders beyond headline indices. They combine niche leadership, entrepreneurial cultures, and exposure to structural growth themes—but require careful navigation of liquidity, governance, and valuation risks.
+
+Investors who commit to deep, bottom‑up research and disciplined risk management can use this universe to complement large‑cap holdings, enhancing portfolio diversification and return potential over full market cycles.`,
+    date: formatDate(2),
+    author: 'Elias Wolfenstein',
+    authorAvatar: getAuthorAvatar('Elias Wolfenstein'),
+    type: 'longterm',
+    readTime: calculateReadTime(
+      countWords(`# European Small and Mid Caps: Finding Compounders Beyond the Blue Chips
+
+## Introduction
+
+European equity markets are often viewed through the lens of large, benchmark constituents—global champions in sectors such as luxury, industrials, pharmaceuticals, and financials. Yet beneath the surface lies a diverse universe of small and mid‑cap companies that can offer differentiated growth and compounding potential.`)
+    ),
+    imageUrl: getImage('longterm', 2),
+    tags: ['Europe', 'Small Caps', 'Mid Caps', 'Equities', 'Compounding'],
+  },
+  {
     slug: 'ai-automation-and-europes-industrial-competitiveness',
     title: 'AI, Automation, and Europe’s Industrial Competitiveness',
     excerpt:

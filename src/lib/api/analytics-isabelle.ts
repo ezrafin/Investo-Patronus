@@ -26,6 +26,222 @@ const countWords = (text: string): number => {
 // Isabelle Dubois - ESG & Sustainable Finance (113 articles)
 export const isabelleArticles: AnalyticsArticle[] = [
   {
+    slug: 'biodiversity-finance-investing-beyond-carbon',
+    title: 'Biodiversity Finance: Investing Beyond Carbon',
+    excerpt:
+      'Exploration of biodiversity as a financial risk and opportunity, from nature-related disclosures and metrics to emerging instruments such as sustainability-linked loans and nature bonds.',
+    content: `# Biodiversity Finance: Investing Beyond Carbon
+
+## Introduction
+
+Climate has dominated the sustainable‑finance agenda for more than a decade. While this focus is justified, it has sometimes obscured another critical dimension of planetary health: biodiversity and ecosystem services. From pollination and water purification to soil fertility and coastal protection, nature underpins economic activity in ways that markets have historically underpriced or ignored.
+
+As scientific understanding, regulation, and investor awareness evolve, biodiversity is emerging as a distinct lens for risk management and capital allocation. This article explores how biodiversity considerations are entering financial decision‑making and what tools investors can use to act beyond carbon.
+
+## Why Biodiversity Matters for Finance
+
+### Ecosystem Services and Economic Dependencies
+
+Companies and economies rely on:
+
+- Provisioning services (food, timber, fresh water);
+- Regulating services (climate regulation, flood control, pollination);
+- Cultural and supporting services (recreation, soil formation, nutrient cycling).
+
+When ecosystems degrade:
+
+- Input costs can rise (e.g., water, raw materials);
+- Operational risks can increase (e.g., flood and storm damage);
+- Social and regulatory pressures can intensify.
+
+Ignoring these dependencies can lead to:
+
+- Mispriced assets;
+- Underestimated tail risks;
+- Stranded‑asset scenarios beyond the climate context.
+
+### Emerging Regulatory and Market Signals
+
+Policymakers and standard‑setters are:
+
+- Developing nature‑related disclosure frameworks (e.g., TNFD);
+- Integrating biodiversity into sustainable‑finance taxonomies;
+- Considering incentives and regulations around land use, deforestation, and ecosystem protection.
+
+At the same time:
+
+- Consumer and NGO scrutiny is rising;
+- Supply‑chain due‑diligence requirements are expanding;
+- Corporate strategies increasingly reference “nature‑positive” goals.
+
+These shifts create both risks for laggards and opportunities for leaders in nature‑related solutions.
+
+## Data and Metrics: From Concepts to Practice
+
+### Challenges in Measuring Biodiversity
+
+Unlike carbon, which can be expressed in a common unit (CO₂‑equivalent), biodiversity:
+
+- Is location‑specific and context‑dependent;
+- Involves multiple dimensions (species, habitats, ecosystem integrity);
+- Lacks a single, universally accepted metric.
+
+Investors must navigate:
+
+- Patchy and incomplete data sets;
+- Differences in methodology across providers;
+- Trade‑offs between precision and practicality.
+
+### Emerging Tools and Frameworks
+
+New tools aim to translate complex ecology into decision‑useful metrics:
+
+- Location‑based risk assessments that overlay company assets and supply chains with biodiversity‑sensitive areas;
+- Footprint metrics estimating pressure on land, water, and species;
+- Scenario analyses modeling how nature depletion could affect sectors and business models.
+
+Frameworks such as:
+
+- The Taskforce on Nature-related Financial Disclosures (TNFD);
+- Science‑based targets for nature;
+- Regional taxonomies and guidance,
+
+provide structure for integrating biodiversity into governance, strategy, risk management, and metrics and targets.
+
+## Instruments and Strategies for Biodiversity Finance
+
+### Use-of-Proceeds and Thematic Bonds
+
+Green and sustainability bonds can finance:
+
+- Conservation and restoration projects (e.g., wetlands, forests, mangroves);
+- Sustainable agriculture and forestry initiatives;
+- Water‑management and pollution‑reduction investments.
+
+Nature‑ or biodiversity‑focused bonds:
+
+- Tie proceeds explicitly to projects with measurable biodiversity outcomes;
+- Often rely on third‑party verification and impact reporting;
+- May be issued by sovereigns, development banks, corporates, or utilities.
+
+Investors should:
+
+- Assess the credibility of project selection and impact metrics;
+- Understand how biodiversity co‑benefits interact with climate and social goals;
+- Evaluate the issuer’s broader strategy, not just labelled instruments.
+
+### Sustainability-Linked Instruments
+
+Sustainability‑linked loans and bonds can:
+
+- Embed nature‑related performance indicators (e.g., deforestation‑free supply chains, restoration targets);
+- Adjust pricing based on achieving or missing targets;
+- Provide flexibility in use of proceeds while aligning incentives.
+
+Key diligence questions:
+
+- Are KPIs material, ambitious, and science‑based?
+- Are penalties and incentives meaningful relative to financing costs?
+- How robust is verification and disclosure around performance?
+
+### Private Markets and Real Assets
+
+Private‑market strategies can:
+
+- Invest directly in conservation, restoration, and sustainable land management;
+- Support regenerative agriculture, sustainable forestry, and eco‑tourism;
+- Structure revenue streams around ecosystem services (e.g., water credits, nature‑based tourism).
+
+These opportunities:
+
+- Often require patient, long‑term capital;
+- Depend on strong local partnerships and governance;
+- Benefit from blended‑finance structures that share risk among public and private stakeholders.
+
+## Integration into Mainstream Portfolios
+
+### Sector and Company Analysis
+
+Nature‑related risks and opportunities vary across sectors:
+
+- High‑impact sectors (agriculture, forestry, fisheries, mining, construction) directly affect ecosystems;
+- Downstream sectors (food and beverage, apparel, retail) depend on nature‑intensive supply chains;
+- Financials and insurers are exposed through lending, underwriting, and investment portfolios.
+
+Investors can integrate biodiversity by:
+
+- Identifying sector‑specific risk drivers and key performance indicators;
+- Engaging with companies on nature‑related strategy, governance, and targets;
+- Tilting portfolios toward issuers with credible, transparent plans.
+
+### Portfolio-Level Approaches
+
+At the portfolio level, investors can:
+
+- Map exposures to high‑risk geographies and value chains;
+- Set exclusion or minimum‑standard policies for severe biodiversity harm;
+- Allocate dedicated capital to nature‑positive solutions.
+
+Over time, nature‑related metrics may be incorporated into:
+
+- Strategic asset‑allocation decisions;
+- Risk‑budgeting frameworks;
+- Impact and sustainability reporting to clients and beneficiaries.
+
+## Governance, Engagement, and Policy Dialogue
+
+### Stewardship and Active Ownership
+
+Effective biodiversity finance includes:
+
+- Clear engagement priorities and expectations for high‑risk sectors and issuers;
+- Voting policies that support robust nature‑related disclosure and strategy;
+- Collaboration with other investors to increase leverage and share insights.
+
+Engagement topics may include:
+
+- Land‑use practices and deforestation policies;
+- Supply‑chain transparency and traceability;
+- Integration of biodiversity into capital‑allocation and risk‑management processes.
+
+### Working with Public and Civil-Society Stakeholders
+
+Investors do not operate in isolation. Constructive dialogue with:
+
+- Policymakers and regulators;
+- Multilateral institutions and development banks;
+- NGOs and local communities,
+
+can help:
+
+- Shape effective and implementable regulations;
+- Align financial flows with national and regional biodiversity strategies;
+- Ensure that investments respect local rights and knowledge.
+
+## Conclusion
+
+Biodiversity finance is moving from concept to practice as investors recognize that nature loss is not only an ethical concern but also a material financial risk and a source of new opportunities. Integrating biodiversity into investment decisions requires:
+
+- Better data and metrics;
+- Suitable instruments and strategies;
+- Strong governance and engagement.
+
+While the field is still maturing, early movers can help shape standards and direct capital toward nature‑positive outcomes, enhancing the resilience of both portfolios and the real economies they support.`,
+    date: formatDate(2),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Biodiversity Finance: Investing Beyond Carbon
+
+## Introduction
+
+Climate has dominated the sustainable‑finance agenda for more than a decade, but biodiversity and ecosystem services are increasingly recognized as financially material dimensions of nature-related risk and opportunity.`)
+    ),
+    imageUrl: getImage('markets', 2),
+    tags: ['Biodiversity', 'Nature Risk', 'Sustainable Finance', 'ESG', 'Transition'],
+  },
+  {
     slug: 'ai-climate-data-and-the-next-generation-of-esg-analytics',
     title: 'AI, Climate Data, and the Next Generation of ESG Analytics',
     excerpt:

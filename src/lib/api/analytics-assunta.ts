@@ -26,6 +26,215 @@ const countWords = (text: string): number => {
 // Assunta Novak - Cryptocurrency & Blockchain (24 articles)
 export const assuntaArticles: AnalyticsArticle[] = [
   {
+    slug: 'on-chain-derivatives-and-volatility-in-crypto-markets',
+    title: 'On-Chain Derivatives and Volatility in Crypto Markets',
+    excerpt:
+      'Analysis of how on-chain derivatives are reshaping volatility surfaces, liquidity, and risk transfer in crypto markets, and what this means for traders and long-term investors.',
+    content: `# On-Chain Derivatives and Volatility in Crypto Markets
+
+## Introduction
+
+Derivatives have long been central to price discovery, hedging, and speculation in traditional markets. Crypto is no exception: perpetual swaps, options, and structured products now drive a large share of trading volumes and open interest. Increasingly, these instruments are not only listed on centralized exchanges but are also being built directly on-chain, with smart contracts handling margining, settlement, and risk parameters.
+
+On-chain derivatives change how volatility is expressed and traded in digital assets. They introduce new dynamics in:
+
+- Funding and basis relationships;
+- Volatility surfaces and skew;
+- Liquidity concentration and reflexivity.
+
+This article explores the evolution of on-chain derivatives, their impact on crypto volatility, and the implications for participants across the spectrum—from hedgers and speculators to longer‑term allocators.
+
+## From Centralized to On-Chain Derivatives
+
+### The Rise of Perpetual Swaps
+
+Perpetual swaps became the dominant instrument for leveraged crypto exposure because they:
+
+- Track spot prices closely through funding mechanisms;
+- Trade 24/7 with deep liquidity on major venues;
+- Allow flexible position sizing and leverage.
+
+On centralized exchanges, funding rates adjust periodically to align perp prices with spot. When:
+
+- Perps trade above spot, longs pay shorts;
+- Perps trade below spot, shorts pay longs.
+
+This mechanism ties derivatives to the underlying market and embeds a **carry signal** that reflects positioning and sentiment. On-chain perpetuals replicate this design but implement funding, margining, and liquidations through smart contracts rather than centralized risk engines.
+
+### On-Chain Options and Structured Products
+
+On-chain options protocols take several forms:
+
+- Order-book based systems mirroring centralized microstructure;
+- AMM-style pools that quote implied vols along pre-defined curves;
+- Vault strategies that systematically sell options to generate yield.
+
+These designs shift:
+
+- How volatility is discovered (via pool states or order books);
+- How risk is warehoused (LPs vs. takers vs. vault depositors);
+- How capital is rehypothecated in the broader DeFi ecosystem.
+
+As these protocols scale, they increasingly influence realized and implied volatility regimes, not just reflect them.
+
+## Volatility Surfaces and Market Microstructure
+
+### Implied vs. Realized Volatility in Crypto
+
+Crypto assets typically exhibit:
+
+- High realized volatility relative to traditional FX or equities;
+- Persistent volatility risk premia, as hedging demand exceeds natural sellers;
+- Skew patterns that evolve with market regimes (e.g., downside put demand in bear markets, upside call demand in strong bull phases).
+
+On-chain options protocols reveal these dynamics through their pricing curves and pool utilization. When:
+
+- Demand for downside protection spikes, implied vols and put skew steepen;
+- Speculative upside demand dominates, call skew and far‑out‑of‑the‑money vols can overshoot.
+
+Comparing implied vols from centralized and on-chain venues can highlight:
+
+- Relative mispricings;
+- Fragmentation and arbitrage opportunities;
+- Shifts in where sophisticated players choose to trade risk.
+
+### Reflexivity and Liquidity Feedback Loops
+
+On-chain derivatives introduce new feedback channels:
+
+- AMM pools hedge or rebalance based on delta and vega exposures;
+- Vaults roll option positions on fixed schedules;
+- Liquidation cascades can be triggered by oracle updates and on-chain price moves.
+
+These mechanisms can amplify volatility when:
+
+- Liquidity is thin and large rebalances move prices;
+- Oracles lag fast spot moves, causing delayed but concentrated liquidations;
+- Leveraged positions cluster around similar strikes or funding triggers.
+
+For risk‑aware investors, understanding protocol mechanics is as important as analyzing price charts.
+
+## Funding, Basis, and Carry in On-Chain Markets
+
+### Funding Rates as a Sentiment Indicator
+
+Funding rates on on-chain perps reflect:
+
+- The balance of long vs. short demand;
+- The cost of leverage for directional trades;
+- Market expectations around near‑term price moves.
+
+Persistently positive funding implies:
+
+- Longs pay to hold exposure;
+- Shorting can be profitable for basis traders if risk is controlled.
+
+Conversely, negative funding indicates:
+
+- Short‑side crowding;
+- Potential opportunities for contrarian longs or hedged carry strategies.
+
+### Cash-and-Carry and Basis Trades On-Chain
+
+Classic cash‑and‑carry trades involve:
+
+- Buying spot and shorting perps or futures when they trade at a premium;
+- Earning the funding or basis differential as carry.
+
+On-chain implementations introduce:
+
+- Smart‑contract risk and oracle risk;
+- Gas costs and MEV considerations;
+- Potential composability benefits when collateral can be rehypothecated across protocols.
+
+When designing on-chain basis strategies, investors must:
+
+- Model worst‑case liquidation and oracle scenarios;
+- Account for slippage and liquidity under stress;
+- Diversify across venues to avoid idiosyncratic protocol risk.
+
+## Risk Management in On-Chain Derivatives
+
+### Smart-Contract and Oracle Risk
+
+On-chain derivatives replace operational risk at centralized venues with:
+
+- Smart‑contract vulnerabilities (logic bugs, upgrade risks);
+- Oracle manipulation and latency;
+- Governance risks around parameter changes.
+
+Risk-conscious users should:
+
+- Favor audited, battle‑tested protocols with transparent governance;
+- Monitor oracle designs (medianizers, time‑weighted feeds, failsafes);
+- Understand emergency‑pause and circuit‑breaker mechanisms.
+
+### Collateral, Liquidations, and Systemic Stability
+
+Collateral design is central to on-chain risk management:
+
+- Overcollateralization buffers against price shocks;
+- Diversified collateral baskets can reduce concentration risk;
+- Liquidation incentives must balance speed with market impact.
+
+Under stress, poorly calibrated systems can:
+
+- Trigger cascading liquidations that exacerbate price moves;
+- Create bad‑debt holes if liquidations fail;
+- Force governance interventions that undermine confidence.
+
+Protocols that simulate extreme scenarios and adapt parameters proactively are more likely to survive full market cycles.
+
+## Implications for Different Market Participants
+
+### Traders and Market Makers
+
+Active participants can use on-chain derivatives to:
+
+- Express directional and volatility views;
+- Arbitrage price discrepancies across venues and instruments;
+- Provide liquidity in exchange for fees and, in some cases, token incentives.
+
+However, they must manage:
+
+- Inventory risk across spot, perps, and options;
+- Technology and latency risk in interacting with smart contracts;
+- Regulatory uncertainty around derivatives activity in different jurisdictions.
+
+### Long-Term Allocators
+
+Longer‑horizon investors may:
+
+- Use on-chain options for tail‑risk hedging or yield enhancement;
+- Allocate selectively to protocols that share revenue or governance rights;
+- Treat on-chain derivatives exposure as part of a broader digital‑asset strategy.
+
+They should:
+
+- Size positions conservatively relative to overall portfolios;
+- Focus on protocol robustness and alignment of incentives;
+- Consider liquidity needs and lock‑up terms, especially for governance or LP tokens.
+
+## Conclusion
+
+On-chain derivatives are becoming integral to how crypto volatility is generated, transferred, and priced. They bring derivatives infrastructure closer to the underlying assets, enabling new forms of transparency and composability—but also introducing unique risks tied to smart contracts, oracles, and protocol design.
+
+Investors and traders who understand both traditional derivatives concepts and on-chain microstructure are best positioned to navigate this evolving landscape. For them, on-chain derivatives are not just instruments of speculation, but building blocks for more sophisticated, risk‑aware participation in crypto markets over the long term.`,
+    date: formatDate(2),
+    author: 'Assunta Novak',
+    authorAvatar: getAuthorAvatar('Assunta Novak'),
+    type: 'technical',
+    readTime: calculateReadTime(
+      countWords(`# On-Chain Derivatives and Volatility in Crypto Markets
+
+## Introduction
+
+Derivatives have long been central to price discovery, hedging, and speculation in traditional markets. Crypto is no exception: perpetual swaps, options, and structured products now drive a large share of trading volumes and open interest. Increasingly, these instruments are not only listed on centralized exchanges but are also being built directly on-chain, with smart contracts handling margining, settlement, and risk parameters.`)
+    ),
+    imageUrl: getImage('technical', 2),
+    tags: ['Crypto', 'Derivatives', 'Volatility', 'DeFi', 'Risk Management'],
+  },
+  {
     slug: 'tokenized-real-world-assets-and-on-chain-yield-structures',
     title: 'Tokenized Real-World Assets and the Future of On-Chain Yield',
     excerpt:
