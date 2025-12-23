@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark, Users, Moon, Trophy } from 'lucide-react';
+import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark, Users, Moon, Trophy, Sun, Circle } from 'lucide-react';
 import { logger } from '@/lib/logger';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { supabase } from '@/integrations/supabase/client';
@@ -157,6 +157,21 @@ export function Header() {
     
     await updatePreferences({ theme: nextTheme });
   };
+
+  const getThemeIcon = () => {
+    const currentTheme = preferences.theme || 'dark';
+    switch (currentTheme) {
+      case 'light':
+        return Sun;
+      case 'dark':
+        return Moon;
+      case 'desert':
+        return Circle;
+      default:
+        return Moon;
+    }
+  };
+
   return <header role="banner" className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border/50' : 'bg-transparent'}`}>
       <nav className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -245,7 +260,10 @@ export function Header() {
                     {t('buttons.bookmarks')}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={cycleTheme}>
-                    <Moon className="mr-2 h-4 w-4" />
+                    {(() => {
+                      const ThemeIcon = getThemeIcon();
+                      return <ThemeIcon className="mr-2 h-4 w-4" />;
+                    })()}
                     Theme
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/settings')}>
@@ -340,7 +358,10 @@ export function Header() {
                       }}
                       className="flex items-center gap-2 w-full px-4 py-3 text-sm font-medium border border-border rounded-lg"
                     >
-                      <Moon className="h-4 w-4" />
+                      {(() => {
+                        const ThemeIcon = getThemeIcon();
+                        return <ThemeIcon className="h-4 w-4" />;
+                      })()}
                       Theme
                     </button>
                     <Link to="/settings" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium border border-border rounded-lg">
