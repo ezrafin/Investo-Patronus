@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark, Users, Moon } from 'lucide-react';
+import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark, Users, Moon, Trophy } from 'lucide-react';
 import { logger } from '@/lib/logger';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { supabase } from '@/integrations/supabase/client';
@@ -301,6 +301,10 @@ export function Header() {
         duration: 0.3
       }} className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border max-h-[80vh] overflow-y-auto">
             <div className="container-wide py-4 space-y-1">
+              {/* Mobile Search */}
+              <div className="px-4 mb-4">
+                <GlobalSearch />
+              </div>
               {navigation.map(item => item.children ? <div key={item.name} className="space-y-1">
                     <div className="px-4 py-2 text-sm font-medium text-foreground">
                       {item.name}
@@ -317,8 +321,31 @@ export function Header() {
               <div className="pt-4 px-4 space-y-2">
                 {user ? (
                   <>
-                    <Link to="/profile" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 text-sm font-medium border border-border rounded-lg">
+                    <Link to="/profile" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium border border-border rounded-lg">
+                      <User className="h-4 w-4" />
                       {t('buttons.profile')}
+                    </Link>
+                    <Link to="/watchlists" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium border border-border rounded-lg">
+                      <TrendingUp className="h-4 w-4" />
+                      {t('buttons.watchlists')}
+                    </Link>
+                    <Link to="/bookmarks" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium border border-border rounded-lg">
+                      <BookOpen className="h-4 w-4" />
+                      {t('buttons.bookmarks')}
+                    </Link>
+                    <button
+                      onClick={() => {
+                        cycleTheme();
+                        setMobileMenuOpen(false);
+                      }}
+                      className="flex items-center gap-2 w-full px-4 py-3 text-sm font-medium border border-border rounded-lg"
+                    >
+                      <Moon className="h-4 w-4" />
+                      Theme
+                    </button>
+                    <Link to="/settings" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium border border-border rounded-lg">
+                      <Settings className="h-4 w-4" />
+                      {t('buttons.settings')}
                     </Link>
                     <button
                       onClick={async () => {
@@ -326,8 +353,9 @@ export function Header() {
                         setMobileMenuOpen(false);
                         navigate('/');
                       }}
-                      className="block w-full text-center px-4 py-3 text-sm font-medium text-destructive border border-destructive/50 rounded-lg"
+                      className="flex items-center gap-2 w-full px-4 py-3 text-sm font-medium text-destructive border border-destructive/50 rounded-lg"
                     >
+                      <LogOut className="h-4 w-4" />
                       {t('buttons.signOut')}
                     </button>
                   </>

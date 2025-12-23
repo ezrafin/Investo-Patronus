@@ -82,7 +82,7 @@ export function Footer() {
       <div className="container-wide py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10 items-start">
           {/* Brand */}
-          <div className="lg:col-span-1 flex flex-col items-center lg:items-start">
+          <div className="lg:col-span-1 flex flex-col items-center">
             <Link to="/" className="flex justify-center mb-4">
               <img 
                 src="/favicon.png" 
@@ -90,16 +90,16 @@ export function Footer() {
                 className="h-12 md:h-16 lg:h-20"
               />
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-center lg:text-left max-w-xs">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-center max-w-xs">
               Your Guardian in Global Markets. Professional analytics and real-time financial data.
             </p>
           </div>
           
           {/* Navigation sections in a single row on desktop */}
           <div className="lg:col-span-3">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center lg:justify-items-start">
               {/* Content */}
-              <div>
+              <div className="text-center lg:text-left">
                 <h3 className="text-sm font-semibold mb-4">{t('navigation.content')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.content.map(link => <li key={link.href}>
@@ -111,11 +111,11 @@ export function Footer() {
               </div>
 
               {/* Markets */}
-              <div>
+              <div className="text-center lg:text-left">
                 <h3 className="text-sm font-semibold mb-4">{t('navigation.markets')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.markets.map(link => <li key={link.href}>
-                      <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                      <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 justify-center lg:justify-start">
                         <link.icon className="h-3.5 w-3.5" />
                         {link.name}
                       </Link>
@@ -124,11 +124,11 @@ export function Footer() {
               </div>
 
               {/* Education */}
-              <div>
+              <div className="text-center lg:text-left">
                 <h3 className="text-sm font-semibold mb-4">{t('navigation.education')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.education.map(link => <li key={link.href}>
-                      <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                      <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 justify-center lg:justify-start">
                         <link.icon className="h-3.5 w-3.5" />
                         {link.name}
                       </Link>
@@ -137,7 +137,7 @@ export function Footer() {
               </div>
 
               {/* Community */}
-              <div>
+              <div className="text-center lg:text-left">
                 <h3 className="text-sm font-semibold mb-4">{t('navigation.community')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.community.map(link => <li key={link.href}>
@@ -149,7 +149,7 @@ export function Footer() {
               </div>
 
               {/* Legal */}
-              <div>
+              <div className="text-center lg:text-left">
                 <h3 className="text-sm font-semibold mb-4">{t('navigation.legal')}</h3>
                 <ul className="space-y-2.5">
                   {footerLinks.legal.map(link => <li key={link.href}>
