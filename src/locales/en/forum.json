@@ -83,7 +83,12 @@
   },
   "validation": {
     "titleMin": "Title must be at least 10 characters",
-    "contentMin": "Content must be at least 50 characters"
+    "contentMin": "Content must be at least 50 characters",
+    "profanity": "Your message contains inappropriate language. Please revise your content.",
+    "phoneNumber": "Phone numbers are not allowed in forum posts. Please remove any phone numbers.",
+    "offensive": "Your message contains offensive content. Please be respectful.",
+    "generic": "Your message violates our community guidelines. Please review and revise.",
+    "multipleViolations": "Your message contains multiple violations. Please review and revise your content."
   },
   "achievements": {
     "dialogTitle": "Achievements",

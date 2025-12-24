@@ -83,7 +83,12 @@
   },
   "validation": {
     "titleMin": "标题至少需要10个字符",
-    "contentMin": "内容至少需要50个字符"
+    "contentMin": "内容至少需要50个字符",
+    "profanity": "您的消息包含不当语言。请修改您的内容。",
+    "phoneNumber": "论坛帖子中不允许使用电话号码。请删除所有电话号码。",
+    "offensive": "您的消息包含冒犯性内容。请保持尊重。",
+    "generic": "您的消息违反了我们的社区准则。请检查并修改。",
+    "multipleViolations": "您的消息包含多项违规。请检查并修改您的内容。"
   },
   "achievements": {
     "dialogTitle": "成就",

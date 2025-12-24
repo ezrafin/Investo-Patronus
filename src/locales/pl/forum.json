@@ -83,7 +83,12 @@
   },
   "validation": {
     "titleMin": "Tytuł musi mieć co najmniej 10 znaków",
-    "contentMin": "Treść musi mieć co najmniej 50 znaków"
+    "contentMin": "Treść musi mieć co najmniej 50 znaków",
+    "profanity": "Twoja wiadomość zawiera nieodpowiedni język. Proszę przejrzeć treść.",
+    "phoneNumber": "Numery telefonów nie są dozwolone w postach na forum. Proszę usunąć wszystkie numery telefonów.",
+    "offensive": "Twoja wiadomość zawiera obraźliwą treść. Proszę być uprzejmym.",
+    "generic": "Twoja wiadomość narusza nasze wytyczne społeczności. Proszę przejrzeć i poprawić.",
+    "multipleViolations": "Twoja wiadomość zawiera wiele naruszeń. Proszę przejrzeć i poprawić treść."
   },
   "achievements": {
     "dialogTitle": "Osiągnięcia",

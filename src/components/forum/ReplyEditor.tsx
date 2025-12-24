@@ -1,9 +1,11 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Bold, Italic, Code, Link as LinkIcon, Send, Strikethrough, Quote, List, ListOrdered, FileCode, Heading2 } from 'lucide-react';
+import { Bold, Italic, Code, Link as LinkIcon, Send, Strikethrough, Quote, List, ListOrdered, FileCode, Heading2, AlertCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
+import { validateReplyContent, getValidationErrorMessageKey } from '@/lib/validation/contentValidator';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface ReplyEditorProps {
   onSubmit: (content: string) => Promise<void>;
@@ -22,8 +24,12 @@ export function ReplyEditor({
   isSubmitting = false,
   className,
 }: ReplyEditorProps) {
+  const { t } = useTranslation({ namespace: 'forum' });
   const [content, setContent] = useState(initialValue);
+  const [validationErrors, setValidationErrors] = useState<string[]>([]);
+  const [isValidating, setIsValidating] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const validationTimeoutRef = useRef<NodeJS.Timeout>();
 
   // Update content when initialValue changes
   useEffect(() => {
@@ -31,6 +37,45 @@ export function ReplyEditor({
       setContent(initialValue);
     }
   }, [initialValue]);
+
+  // Debounced validation
+  const validateContent = useCallback((text: string) => {
+    if (validationTimeoutRef.current) {
+      clearTimeout(validationTimeoutRef.current);
+    }
+
+    // Clear errors immediately if content is empty
+    if (!text.trim()) {
+      setValidationErrors([]);
+      setIsValidating(false);
+      return;
+    }
+
+    setIsValidating(true);
+    validationTimeoutRef.current = setTimeout(() => {
+      const validation = validateReplyContent(text);
+      if (!validation.isValid) {
+        const errorMessages = validation.errors.map(error => {
+          const key = getValidationErrorMessageKey(error);
+          return t(key);
+        });
+        setValidationErrors(errorMessages);
+      } else {
+        setValidationErrors([]);
+      }
+      setIsValidating(false);
+    }, 500);
+  }, [t]);
+
+  // Validate on content change
+  useEffect(() => {
+    validateContent(content);
+    return () => {
+      if (validationTimeoutRef.current) {
+        clearTimeout(validationTimeoutRef.current);
+      }
+    };
+  }, [content, validateContent]);
 
   const insertMarkdown = (before: string, after: string = '', newLine: boolean = false) => {
     const textarea = textareaRef.current;
@@ -67,9 +112,21 @@ export function ReplyEditor({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!content.trim() || isSubmitting) return;
+
+    // Final validation before submit
+    const validation = validateReplyContent(content);
+    if (!validation.isValid) {
+      const errorMessages = validation.errors.map(error => {
+        const key = getValidationErrorMessageKey(error);
+        return t(key);
+      });
+      setValidationErrors(errorMessages);
+      return;
+    }
     
     await onSubmit(content);
     setContent('');
+    setValidationErrors([]);
   };
 
   return (
@@ -199,11 +256,33 @@ export function ReplyEditor({
           onChange={(e) => setContent(e.target.value)}
           placeholder={placeholder}
           rows={6}
-          className="resize-none font-mono text-sm"
+          className={cn(
+            "resize-none font-mono text-sm",
+            validationErrors.length > 0 && "border-destructive focus-visible:ring-destructive"
+          )}
         />
-        <p className="text-xs text-muted-foreground">
-          Markdown is supported. Use the toolbar above for formatting.
-        </p>
+        {validationErrors.length > 0 && (
+          <div className="flex items-start gap-2 p-2 rounded-md bg-destructive/10 border border-destructive/20">
+            <AlertCircle className="h-4 w-4 text-destructive mt-0.5 flex-shrink-0" />
+            <div className="flex-1 space-y-1">
+              {validationErrors.map((error, index) => (
+                <p key={index} className="text-xs text-destructive">
+                  {error}
+                </p>
+              ))}
+            </div>
+          </div>
+        )}
+        {validationErrors.length === 0 && !isValidating && (
+          <p className="text-xs text-muted-foreground">
+            Markdown is supported. Use the toolbar above for formatting.
+          </p>
+        )}
+        {isValidating && (
+          <p className="text-xs text-muted-foreground">
+            Validating content...
+          </p>
+        )}
       </div>
 
       {/* Actions */}
@@ -217,7 +296,10 @@ export function ReplyEditor({
               Cancel
             </Button>
           )}
-          <Button type="submit" disabled={!content.trim() || isSubmitting}>
+          <Button 
+            type="submit" 
+            disabled={!content.trim() || isSubmitting || validationErrors.length > 0}
+          >
             <Send className="mr-2 h-4 w-4" />
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </Button>

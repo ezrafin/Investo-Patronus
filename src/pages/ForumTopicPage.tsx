@@ -25,6 +25,8 @@ import { AssetBadge } from '@/components/forum/AssetBadge';
 import { checkRateLimit } from '@/lib/api/rateLimit';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { useCollectibleBills } from '@/hooks/useCollectibleBills';
+import { useTranslation } from '@/hooks/useTranslation';
+import { getValidationErrorMessageKey } from '@/lib/validation/contentValidator';
 
 const userLevels = [
   { min: 0, name: 'Newbie', color: 'bg-muted text-muted-foreground' },
@@ -111,6 +113,8 @@ export default function ForumTopicPage() {
     }
   };
 
+  const { t } = useTranslation({ namespace: 'forum' });
+
   const handleReplySubmit = async (content: string) => {
     if (!user || !topicId) {
       toast.error('Please sign in to reply');
@@ -126,6 +130,39 @@ export default function ForumTopicPage() {
 
     setSubmittingReply(true);
     try {
+      // Server-side validation
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        toast.error('Session expired. Please sign in again.');
+        setSubmittingReply(false);
+        return;
+      }
+
+      const { data: validationData, error: validationError } = await supabase.functions.invoke(
+        'validate-reply-content',
+        {
+          body: { content },
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+          },
+        }
+      );
+
+      if (validationError) {
+        throw new Error('Validation service error');
+      }
+
+      if (!validationData?.isValid) {
+        const errorMessages = validationData?.errors?.map((error: string) => {
+          const key = getValidationErrorMessageKey(error);
+          return t(key);
+        }) || ['Your message violates our community guidelines. Please review and revise.'];
+        
+        toast.error(errorMessages.length > 1 ? t('validation.multipleViolations') : errorMessages[0]);
+        setSubmittingReply(false);
+        return;
+      }
+
       const { error } = await supabase
         .from('forum_replies')
         .insert({

@@ -23,3 +23,6 @@ verify_jwt = false
 
 [functions.fetch-asset-price]
 verify_jwt = false
+
+[functions.validate-reply-content]
+verify_jwt = true
