@@ -66,10 +66,10 @@ export default defineConfig(({ mode }) => ({
             }
           }
         },
-        // Optimize chunk size
-        chunkSizeWarningLimit: 1000, // Warn if chunk exceeds 1MB
       },
     },
+    // Warn if chunk exceeds 1MB
+    chunkSizeWarningLimit: 1000,
     // Optimize asset handling
     assetsInlineLimit: 4096, // Inline assets smaller than 4kb
     // Enable source maps in production for debugging (optional)
