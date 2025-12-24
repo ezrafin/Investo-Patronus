@@ -81,13 +81,17 @@ export default function UserProfilePage() {
     try {
       const { data, error } = await (supabase
         .from('profiles' as any)
-        .select('*')
+        .select('id, username, display_name, bio, avatar_url, reputation_score, posts_count, joined_at, created_at')
         .eq('id', userId)
         .maybeSingle() as any);
 
-      if (error) throw error;
+      if (error) {
+        console.error('Error loading profile:', error);
+        throw error;
+      }
 
       if (data) {
+        console.log('Profile data loaded:', data);
         setProfile({
           id: data.id,
           username: data.username || null,
@@ -99,9 +103,13 @@ export default function UserProfilePage() {
           comment_count: 0,
           privacy_level: 'public',
         });
-        setJoinedAt(data.joined_at || data.created_at);
+        // Use joined_at if available, otherwise fallback to created_at
+        const joinDate = data.joined_at || data.created_at;
+        console.log('Join date:', joinDate);
+        setJoinedAt(joinDate);
         await loadFollowStats(data.id);
       } else {
+        console.warn('Profile not found for userId:', userId);
         // User not found in profiles
         setProfile({
           id: userId,
@@ -114,6 +122,7 @@ export default function UserProfilePage() {
           comment_count: 0,
           privacy_level: 'public',
         });
+        setJoinedAt(null);
       }
       await loadFollowStats(userId);
     } catch (error) {
@@ -129,17 +138,31 @@ export default function UserProfilePage() {
         comment_count: 0,
         privacy_level: 'public',
       });
+      setJoinedAt(null);
     } finally {
       setLoading(false);
     }
   };
 
   const formatJoinedDate = (date: string | null): string => {
-    if (!date) return 'Unknown';
-    return new Date(date).toLocaleDateString('en-US', {
-      month: 'long',
-      year: 'numeric',
-    });
+    if (!date) {
+      console.warn('No join date available');
+      return 'Unknown';
+    }
+    try {
+      const dateObj = new Date(date);
+      if (isNaN(dateObj.getTime())) {
+        console.warn('Invalid date:', date);
+        return 'Unknown';
+      }
+      return dateObj.toLocaleDateString('en-US', {
+        month: 'long',
+        year: 'numeric',
+      });
+    } catch (error) {
+      console.error('Error formatting date:', error, date);
+      return 'Unknown';
+    }
   };
 
   if (loading) {
@@ -185,7 +208,7 @@ export default function UserProfilePage() {
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
                     <h1 className="heading-md mb-2">
-                      {profile.display_name || 'Anonymous'}
+                      {profile.display_name || profile.username || 'Anonymous'}
                     </h1>
                     <p className="text-muted-foreground flex items-center gap-2">
                       <Calendar className="h-4 w-4" />

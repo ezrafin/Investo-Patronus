@@ -207,7 +207,6 @@ export default function LearningPage() {
                 </div>
 
                 <span className="text-sm text-muted-foreground">
-                  {filteredArticles.length}{' '}
                   {filteredArticles.length === 1
                     ? t('learningHub.articlesCountSingle', { count: filteredArticles.length })
                     : t('learningHub.articlesCount', { count: filteredArticles.length })}

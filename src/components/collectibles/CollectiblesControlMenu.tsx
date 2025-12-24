@@ -52,7 +52,7 @@ export function CollectiblesControlMenu() {
           <SheetTrigger asChild>
             <motion.button
               className={cn(
-                'relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full border-2 shadow-lg overflow-hidden',
+                'relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border-2 shadow-lg overflow-visible',
                 'bg-gradient-to-br from-green-50 to-green-100 border-green-400 text-green-900',
                 'dark:from-green-900/30 dark:to-green-800/30 dark:border-green-500 dark:text-green-200',
                 'hover:scale-110 transition-all duration-300 cursor-pointer',
@@ -111,11 +111,14 @@ export function CollectiblesControlMenu() {
 
               {/* Progress Badge */}
               <motion.div
-                className="absolute -top-1 -right-1 flex items-center justify-center min-w-[24px] h-6 px-1.5 rounded-full text-xs font-bold bg-primary text-primary-foreground border-2 border-background z-20"
+                className="absolute top-0 right-0 flex items-center justify-center min-w-[32px] h-7 px-2 rounded-full text-[10px] md:text-xs font-bold bg-primary text-primary-foreground border-2 border-background z-20 shadow-lg whitespace-nowrap"
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                 whileHover={{ scale: 1.1 }}
+                style={{ 
+                  transform: 'translate(30%, -30%)',
+                }}
               >
                 {collectedCount}/{totalCount}
               </motion.div>
@@ -165,7 +168,7 @@ export function CollectiblesControlMenu() {
                     Bill Collection
                   </h2>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Collect all 31 $100 bills!
+                    Collect all 42 $100 bills!
                   </p>
                 </div>
               </div>
@@ -275,7 +278,7 @@ export function CollectiblesControlMenu() {
                           )}
                           {isLegendaryLocked && (
                             <div className="text-xs text-muted-foreground mt-0.5">
-                              Collect all 30 regular bills first
+                              Collect all 41 regular bills first
                             </div>
                           )}
                         </div>
