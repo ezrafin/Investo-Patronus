@@ -11,13 +11,36 @@ export const MarketDataSection = memo(function MarketDataSection() {
   const { indices, stocks, crypto, commodities, currencies, loading: marketLoading } = useAllMarkets();
   const { t } = useTranslation({ namespace: 'ui' });
 
+  // Helper function to sort by market cap and get top 40
+  const getTop40ByMarketCap = useMemo(() => {
+    return (data: typeof indices.data) => {
+      if (!data || data.length === 0) return [];
+      
+      // Calculate market cap for each item
+      const withMarketCap = data.map(item => {
+        let marketCap = item.price;
+        if (item.volume) {
+          const volumeNum = parseFloat(item.volume.replace(/[^0-9.]/g, '') || '0');
+          marketCap = item.price * volumeNum;
+        }
+        return { ...item, marketCap };
+      });
+      
+      // Sort by market cap descending and take top 40
+      return withMarketCap
+        .sort((a, b) => b.marketCap - a.marketCap)
+        .slice(0, 40)
+        .map(({ marketCap, ...rest }) => rest); // Remove marketCap from result
+    };
+  }, []);
+
   const marketBlocks = useMemo(() => [
-    { title: t('marketsPage.indicesTitle'), data: indices.data, href: '/markets/indices', icon: TrendingUp },
-    { title: t('marketsPage.stocksTitle'), data: stocks.data, href: '/markets/stocks', icon: BarChart3 },
-    { title: t('marketsPage.commoditiesTitle'), data: commodities.data, href: '/markets/commodities', icon: Coins },
-    { title: t('marketsPage.cryptoTitle'), data: crypto.data, href: '/markets/crypto', icon: Bitcoin },
-    { title: t('marketsPage.currenciesTitle'), data: currencies.data, href: '/markets/currencies', icon: DollarSign },
-  ], [indices.data, stocks.data, commodities.data, crypto.data, currencies.data, t]);
+    { title: t('marketsPage.indicesTitle'), data: getTop40ByMarketCap(indices.data), href: '/markets/indices', icon: TrendingUp },
+    { title: t('marketsPage.stocksTitle'), data: getTop40ByMarketCap(stocks.data), href: '/markets/stocks', icon: BarChart3 },
+    { title: t('marketsPage.commoditiesTitle'), data: getTop40ByMarketCap(commodities.data), href: '/markets/commodities', icon: Coins },
+    { title: t('marketsPage.cryptoTitle'), data: getTop40ByMarketCap(crypto.data), href: '/markets/crypto', icon: Bitcoin },
+    { title: t('marketsPage.currenciesTitle'), data: getTop40ByMarketCap(currencies.data), href: '/markets/currencies', icon: DollarSign },
+  ], [indices.data, stocks.data, commodities.data, crypto.data, currencies.data, t, getTop40ByMarketCap]);
 
   return (
     <section className="section-spacing-sm section-gradient">

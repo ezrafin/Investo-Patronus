@@ -93,8 +93,8 @@ export default function MarketsPage() {
     return data.map(item => ({ ...item, marketType }));
   }, [shouldLoadAll, data, marketType]);
 
-  // Get top 20 by market cap (default view) - memoize with pre-computed market caps
-  const top50Data = useMemo(() => {
+  // Get top 40 by market cap (default view) - memoize with pre-computed market caps
+  const top40Data = useMemo(() => {
     if (data.length === 0) return [];
     
     // Pre-compute market caps to avoid recalculating during sort
@@ -104,7 +104,7 @@ export default function MarketsPage() {
     }));
     
     const sorted = dataWithMarketCap.sort((a, b) => b.marketCap - a.marketCap);
-    return sorted.slice(0, 20);
+    return sorted.slice(0, 40);
   }, [data, getMarketCap]);
 
   // Filter data based on search
@@ -122,10 +122,10 @@ export default function MarketsPage() {
       .slice(0, 100); // Limit search results to 100
   }, [searchQuery, allAssets]);
 
-  // Display data: search results if searching, otherwise top 50
+  // Display data: search results if searching, otherwise top 40
   const displayData = searchQuery.trim() && filteredData.length > 0 
     ? filteredData 
-    : top50Data;
+    : top40Data;
 
   return (
     <Layout>
@@ -189,11 +189,6 @@ export default function MarketsPage() {
                     })
                   : t('marketsPage.searchNoResults', { query: searchQuery })
                 }
-              </p>
-            )}
-            {!searchQuery && (
-              <p className="mt-2 text-sm text-muted-foreground">
-                {t('marketsPage.showingTop')}
               </p>
             )}
           </div>
