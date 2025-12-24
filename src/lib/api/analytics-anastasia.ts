@@ -26,6 +26,393 @@ const countWords = (text: string): number => {
 // Anastasia Petrova - Eastern Europe & Emerging Markets (40 articles)
 export const anastasiaArticles: AnalyticsArticle[] = [
   {
+    slug: 'latin-america-equity-markets-reform-cycles-and-investment-opportunities',
+    title: 'Latin America Equity Markets: Reform Cycles and Investment Opportunities',
+    excerpt:
+      'How Latin American equity markets are evolving, why reform cycles drive market performance, and how to identify investment opportunities across Latin American markets and sectors.',
+    content: `# Latin America Equity Markets: Reform Cycles and Investment Opportunities
+
+## Introduction
+
+Latin America has long been a challenging region for equity investors. Political volatility, economic instability, currency fluctuations, and governance issues have created a reputation for high risk and unpredictable returns. But Latin America is also a region of significant opportunity: large populations, abundant natural resources, growing middle classes, and periodic reform cycles that can drive strong market performance. Understanding these dynamics is crucial for investors seeking exposure to Latin American equity markets.
+
+Latin American equity markets are characterized by:
+- **Cyclicality** – strong cyclical patterns driven by commodity prices and reform cycles.
+- **Volatility** – high volatility from political and economic factors.
+- **Currency risk** – significant currency risk.
+- **Reform cycles** – periodic reform cycles driving market performance.
+
+For investors, Latin America offers:
+- **Growth exposure** – exposure to long-term economic growth.
+- **Commodity exposure** – exposure to commodity markets.
+- **Reform opportunities** – opportunities from reform cycles.
+- **Diversification** – diversification from developed markets.
+
+But risks remain:
+- **Political risk** – political volatility and policy uncertainty.
+- **Economic risk** – economic instability and currency risk.
+- **Governance risk** – corporate governance issues.
+- **Liquidity risk** – liquidity risk in some markets.
+
+This article explores Latin American equity markets, reform cycles, and how to identify investment opportunities.
+
+## Latin American Market Structure
+
+### Major Markets
+
+**Brazil:**
+- **Largest market** – largest Latin American equity market.
+- **Commodities** – significant commodity exposure.
+- **Financials** – large financial sector.
+- **Cyclicality** – strong cyclical patterns.
+
+**Mexico:**
+- **Second largest** – second-largest Latin American market.
+- **Manufacturing** – manufacturing and export focus.
+- **U.S. exposure** – exposure to U.S. economy.
+- **Stability** – relative stability.
+
+**Chile:**
+- **Commodities** – commodity-focused market.
+- **Stability** – relative political and economic stability.
+- **Pensions** – strong pension system.
+- **Size** – smaller market size.
+
+**Colombia:**
+- **Commodities** – commodity exposure.
+- **Reforms** – ongoing reform efforts.
+- **Growth** – economic growth potential.
+- **Size** – smaller market size.
+
+**Argentina:**
+- **Volatility** – high volatility.
+- **Reforms** – reform cycles.
+- **Commodities** – commodity exposure.
+- **Challenges** – economic and political challenges.
+
+**Peru:**
+- **Mining** – mining-focused market.
+- **Stability** – relative stability.
+- **Growth** – growth potential.
+- **Size** – smaller market size.
+
+### Market Characteristics
+
+**Sector Composition:**
+- **Commodities** – significant commodity exposure.
+- **Financials** – large financial sectors.
+- **Consumer** – growing consumer sectors.
+- **Technology** – emerging technology sectors.
+
+**Market Size:**
+- **Brazil** – largest market ($1+ trillion).
+- **Mexico** – second largest ($500+ billion).
+- **Others** – smaller markets.
+- **Liquidity** – liquidity varies by market.
+
+**Investor Base:**
+- **Local** – significant local investor base.
+- **International** – growing international investor base.
+- **Institutional** – institutional investor participation.
+- **Retail** – retail investor participation.
+
+## Reform Cycles
+
+### Reform Drivers
+
+**Economic Crises:**
+- **Crises** – economic crises drive reform.
+- **Pressure** – pressure for economic reform.
+- **Opportunities** – reform opportunities.
+- **Timing** – timing of reform cycles.
+
+**Political Changes:**
+- **Elections** – elections can drive reform.
+- **Policy changes** – policy changes drive reform.
+- **Support** – political support for reform.
+- **Implementation** – reform implementation.
+
+**External Pressure:**
+- **IMF** – IMF programs drive reform.
+- **Markets** – market pressure for reform.
+- **International** – international pressure.
+- **Standards** – international standards.
+
+### Reform Types
+
+**Fiscal Reform:**
+- **Tax reform** – tax system reform.
+- **Spending** – government spending reform.
+- **Debt** – debt management.
+- **Impact** – impact on markets.
+
+**Structural Reform:**
+- **Labor** – labor market reform.
+- **Pensions** – pension system reform.
+- **Privatization** – privatization of state assets.
+- **Deregulation** – deregulation.
+
+**Market Reform:**
+- **Financial** – financial market reform.
+- **Capital markets** – capital market development.
+- **Governance** – corporate governance reform.
+- **Transparency** – transparency improvements.
+
+### Reform Impact
+
+**Market Performance:**
+- **Reform cycles** – reform cycles drive market performance.
+- **Valuations** – reform can drive valuation improvements.
+- **Investor sentiment** – reform improves investor sentiment.
+- **Capital flows** – reform attracts capital flows.
+
+**Sector Impact:**
+- **Sector winners** – sectors that benefit from reform.
+- **Sector losers** – sectors that are hurt by reform.
+- **Opportunities** – investment opportunities from reform.
+- **Risks** – risks from reform.
+
+## Investment Themes
+
+### Commodity Exposure
+
+**Commodity Markets:**
+- **Oil** – oil exposure (Mexico, Colombia, Brazil).
+- **Mining** – mining exposure (Chile, Peru, Brazil).
+- **Agriculture** – agriculture exposure (Brazil, Argentina).
+- **Commodity cycles** – commodity price cycles.
+
+**Investment Opportunities:**
+- **Commodity companies** – commodity-producing companies.
+- **Commodity cycles** – timing commodity cycles.
+- **Diversification** – commodity diversification.
+
+**Commodity Market Dynamics:**
+- **Price cycles** – commodity price cycles drive equity performance.
+- **Supply and demand** – supply and demand dynamics.
+- **Global factors** – global economic factors affect commodity prices.
+- **Currency** – commodity prices often denominated in USD.
+
+**Commodity Investment Strategies:**
+- **Direct exposure** – direct exposure to commodity companies.
+- **Diversification** – diversify across commodity types.
+- **Cyclical positioning** – position for commodity cycles.
+- **Quality focus** – focus on quality commodity producers.
+
+### Consumer Growth
+
+**Middle Class Growth:**
+- **Growing middle class** – growing middle classes.
+- **Consumer spending** – increasing consumer spending.
+- **Retail** – retail sector growth.
+- **Services** – service sector growth.
+
+**Investment Opportunities:**
+- **Consumer companies** – consumer goods and services companies.
+- **Retail** – retail companies.
+- **Financial services** – financial services for consumers.
+
+**Consumer Market Characteristics:**
+- **Income growth** – growing disposable income.
+- **Urbanization** – urbanization driving consumer spending.
+- **Brand preferences** – evolving brand preferences.
+- **E-commerce** – growing e-commerce adoption.
+
+**Consumer Investment Themes:**
+- **Premiumization** – premium product trends.
+- **Convenience** – convenience-focused products and services.
+- **Health and wellness** – health and wellness trends.
+- **Digital adoption** – digital adoption in consumer sectors.
+
+### Financial Services
+
+**Banking:**
+- **Large banks** – large banking sectors.
+- **Growth** – banking sector growth.
+- **Profitability** – banking profitability.
+- **Regulation** – banking regulation.
+
+**Investment Opportunities:**
+- **Banks** – banking companies.
+- **Financial services** – financial services companies.
+- **Credit growth** – exposure to credit growth.
+
+**Financial Services Growth Drivers:**
+- **Financial inclusion** – financial inclusion driving growth.
+- **Credit expansion** – credit expansion in growing economies.
+- **Wealth creation** – wealth creation driving demand.
+- **Digitalization** – digitalization of financial services.
+
+**Banking Sector Characteristics:**
+- **Market concentration** – often concentrated banking sectors.
+- **Profitability** – banking profitability varies by country.
+- **Credit cycles** – sensitivity to credit cycles.
+- **Regulation** – banking regulation affects operations.
+
+### Technology and Digital
+
+**Digital Economy:**
+- **E-commerce** – growing e-commerce.
+- **Fintech** – fintech development.
+- **Digital services** – digital services growth.
+- **Technology** – technology adoption.
+
+**Investment Opportunities:**
+- **E-commerce** – e-commerce companies.
+- **Fintech** – fintech companies.
+- **Technology** – technology companies.
+
+**Digital Economy Growth:**
+- **Internet penetration** – growing internet penetration.
+- **Mobile adoption** – high mobile phone adoption.
+- **Digital services** – growing digital services adoption.
+- **E-commerce** – rapid e-commerce growth.
+
+**Technology Investment Themes:**
+- **E-commerce platforms** – e-commerce platform companies.
+- **Fintech** – fintech and digital payments.
+- **Software** – software and technology services.
+- **Digital infrastructure** – digital infrastructure companies.
+
+## Market Dynamics
+
+### Currency Risk
+
+**Currency Volatility:**
+- **Volatility** – high currency volatility.
+- **Depreciation** – currency depreciation risk.
+- **Impact** – impact on equity returns.
+- **Hedging** – currency hedging options.
+
+**Currency Factors:**
+- **Commodity prices** – commodity prices affect currencies.
+- **Interest rates** – interest rates affect currencies.
+- **Political** – political factors affect currencies.
+- **Economic** – economic factors affect currencies.
+
+### Political Risk
+
+**Political Volatility:**
+- **Elections** – elections create volatility.
+- **Policy changes** – policy changes create risk.
+- **Populism** – populist policies create risk.
+- **Stability** – political stability varies.
+
+**Mitigation:**
+- **Diversification** – diversify across countries.
+- **Monitoring** – monitor political developments.
+- **Risk management** – manage political risk.
+
+**Political Risk Factors:**
+- **Election cycles** – election cycles create volatility.
+- **Policy changes** – policy changes affect markets.
+- **Populism** – populist policies create uncertainty.
+- **Institutional strength** – institutional strength varies.
+
+**Country-Specific Political Risk:**
+- **Brazil** – political volatility and policy uncertainty.
+- **Mexico** – relative stability but policy changes.
+- **Argentina** – high political volatility.
+- **Chile** – relative political stability.
+
+### Economic Cycles
+
+**Economic Volatility:**
+- **Cycles** – strong economic cycles.
+- **Commodities** – commodity-driven cycles.
+- **Reforms** – reform-driven cycles.
+- **Global** – global economic cycles.
+
+**Impact:**
+- **Market performance** – economic cycles affect markets.
+- **Sector performance** – cycles affect sectors differently.
+- **Opportunities** – cycles create opportunities.
+
+## Investment Strategies
+
+### Country Selection
+
+**Core Markets:**
+- **Brazil** – largest and most liquid market.
+- **Mexico** – second largest, relative stability.
+- **Chile** – stability and commodity exposure.
+
+**Satellite Markets:**
+- **Colombia** – reform opportunities.
+- **Peru** – mining exposure.
+- **Argentina** – high risk, high reward.
+
+**Allocation:**
+- **Core allocation** – 60-80% in core markets.
+- **Satellite allocation** – 20-40% in satellite markets.
+- **Diversification** – diversify across countries.
+
+### Sector Allocation
+
+**Commodity Sectors:**
+- **Oil and gas** – oil and gas companies.
+- **Mining** – mining companies.
+- **Agriculture** – agriculture companies.
+- **Allocation** – allocation based on commodity cycles.
+
+**Consumer Sectors:**
+- **Consumer goods** – consumer goods companies.
+- **Retail** – retail companies.
+- **Services** – service companies.
+- **Allocation** – allocation based on growth.
+
+**Financial Sectors:**
+- **Banks** – banking companies.
+- **Financial services** – financial services companies.
+- **Allocation** – allocation based on credit cycles.
+
+### Risk Management
+
+**Currency Management:**
+- **Hedging** – currency hedging strategies.
+- **Diversification** – currency diversification.
+- **Monitoring** – monitor currency developments.
+
+**Political Risk Management:**
+- **Diversification** – country diversification.
+- **Monitoring** – monitor political developments.
+- **Risk limits** – limit exposure to high-risk countries.
+
+**Economic Risk Management:**
+- **Cyclical positioning** – position for economic cycles.
+- **Diversification** – sector diversification.
+- **Monitoring** – monitor economic developments.
+
+## Conclusion
+
+Latin American equity markets offer attractive investment opportunities driven by reform cycles, commodity exposure, and economic growth. Understanding Latin American markets requires:
+- **Market structure** – understanding market structure and characteristics.
+- **Reform cycles** – understanding reform cycles and impact.
+- **Investment themes** – identifying investment themes.
+- **Risk management** – managing currency, political, and economic risks.
+
+For investors, the key is to:
+- **Understand cycles** – understand reform and economic cycles.
+- **Diversify** – diversify across countries and sectors.
+- **Manage risks** – carefully manage currency, political, and economic risks.
+- **Be patient** – Latin American investment requires patience.
+
+Latin American equity markets can provide attractive risk-adjusted returns when managed properly. Investors who understand Latin American markets and construct well-diversified portfolios will be well-positioned to benefit from reform cycles and economic growth while managing risks effectively.`,
+    date: formatDate(267),
+    author: 'Anastasia Petrova',
+    authorAvatar: getAuthorAvatar('Anastasia Petrova'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Latin America Equity Markets: Reform Cycles and Investment Opportunities
+
+## Introduction
+
+Latin America has long been a challenging region for equity investors.`),
+    ),
+    imageUrl: getImage('markets', 267),
+    tags: ['Latin America', 'Equity Markets', 'Emerging Markets', 'Reform Cycles', 'Commodities'],
+  },
+  {
     slug: 'southeast-asia-infrastructure-investment-themes-and-opportunities',
     title: 'Southeast Asia Infrastructure Investment: Themes and Opportunities',
     excerpt:

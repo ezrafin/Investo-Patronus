@@ -26,6 +26,356 @@ const countWords = (text: string): number => {
 // Luca Montefiore - Italian & Mediterranean Markets (25 articles)
 export const lucaArticles: AnalyticsArticle[] = [
   {
+    slug: 'mediterranean-tourism-and-hospitality-recovery-and-transformation',
+    title: 'Mediterranean Tourism and Hospitality: Recovery and Transformation',
+    excerpt:
+      'How Mediterranean tourism is recovering from the pandemic, why sustainability and digital transformation matter, and how to identify investment opportunities in Mediterranean tourism and hospitality sectors.',
+    content: `# Mediterranean Tourism and Hospitality: Recovery and Transformation
+
+## Introduction
+
+The Mediterranean has long been one of the world's premier tourism destinations. Countries like Italy, Spain, Greece, Turkey, and Croatia attract millions of visitors annually, drawn by beautiful coastlines, rich history, cultural attractions, and Mediterranean cuisine. But the COVID-19 pandemic devastated Mediterranean tourism, with travel restrictions and health concerns causing visitor numbers to collapse. As the industry recovers, it is also transforming: sustainability concerns, digitalization, and changing consumer preferences are reshaping how tourism operates.
+
+Mediterranean tourism is characterized by:
+- **Seasonality** – strong seasonal patterns.
+- **Coastal focus** – focus on coastal destinations.
+- **Cultural heritage** – rich cultural heritage.
+- **Diversity** – diverse destinations and experiences.
+
+For investors, Mediterranean tourism offers:
+- **Recovery potential** – recovery from pandemic.
+- **Growth exposure** – exposure to long-term tourism growth.
+- **Transformation** – opportunities from industry transformation.
+- **Diversification** – diversification within tourism sector.
+
+But challenges remain:
+- **Seasonality** – seasonal revenue patterns.
+- **Climate risk** – climate change risks.
+- **Competition** – competition between destinations.
+- **Economic sensitivity** – sensitivity to economic conditions.
+
+This article explores Mediterranean tourism recovery, transformation themes, and investment opportunities.
+
+## Mediterranean Tourism Market
+
+### Major Destinations
+
+**Italy:**
+- **Cultural heritage** – rich cultural heritage.
+- **Coastal** – beautiful coastlines.
+- **Cities** – major cities (Rome, Florence, Venice).
+- **Diversity** – diverse tourism offerings.
+
+**Spain:**
+- **Coastal** – popular coastal destinations.
+- **Cities** – major cities (Barcelona, Madrid).
+- **Islands** – Balearic and Canary Islands.
+- **Volume** – high tourist volumes.
+
+**Greece:**
+- **Islands** – popular Greek islands.
+- **History** – historical sites.
+- **Coastal** – beautiful coastlines.
+- **Recovery** – strong recovery from crisis.
+
+**Turkey:**
+- **Coastal** – Mediterranean and Aegean coasts.
+- **Culture** – rich cultural heritage.
+- **Value** – good value for money.
+- **Growth** – growing tourism.
+
+**Croatia:**
+- **Coastal** – Adriatic coast.
+- **Islands** – beautiful islands.
+- **Growth** – growing tourism.
+- **Value** – good value.
+
+### Market Characteristics
+
+**Visitor Patterns:**
+- **Seasonality** – strong summer seasonality.
+- **Origins** – visitors from Europe, North America, Asia.
+- **Duration** – varying stay durations.
+- **Preferences** – diverse preferences.
+
+**Accommodation:**
+- **Hotels** – hotel accommodation.
+- **Resorts** – resort accommodation.
+- **Alternative** – alternative accommodation (Airbnb).
+- **Capacity** – accommodation capacity.
+
+**Spending:**
+- **Accommodation** – accommodation spending.
+- **Food and beverage** – food and beverage spending.
+- **Activities** – activities and experiences.
+- **Shopping** – shopping spending.
+
+## Recovery from Pandemic
+
+### Recovery Trends
+
+**Visitor Recovery:**
+- **2020 collapse** – visitor numbers collapsed in 2020.
+- **2021 recovery** – partial recovery in 2021.
+- **2022-2023** – stronger recovery in 2022-2023.
+- **2024+** – continued recovery expected.
+
+**Factors Driving Recovery:**
+- **Vaccination** – vaccination enabling travel.
+- **Travel restrictions** – easing travel restrictions.
+- **Pent-up demand** – pent-up travel demand.
+- **Confidence** – returning travel confidence.
+
+**Recovery Variations:**
+- **Destination differences** – recovery varies by destination.
+- **Segment differences** – recovery varies by segment.
+- **Timing** – recovery timing varies.
+
+### Sector Recovery
+
+**Accommodation:**
+- **Hotels** – hotel recovery.
+- **Resorts** – resort recovery.
+- **Alternative** – alternative accommodation recovery.
+- **Occupancy** – occupancy rate recovery.
+
+**Food and Beverage:**
+- **Restaurants** – restaurant recovery.
+- **Bars** – bar and nightlife recovery.
+- **Spending** – food and beverage spending recovery.
+
+**Activities:**
+- **Tours** – tour and activity recovery.
+- **Attractions** – attraction recovery.
+- **Experiences** – experience recovery.
+
+## Transformation Themes
+
+### Sustainability
+
+**Environmental Concerns:**
+- **Climate change** – climate change affecting destinations.
+- **Overtourism** – overtourism concerns.
+- **Environmental impact** – environmental impact of tourism.
+- **Sustainability** – need for sustainable tourism.
+
+**Sustainable Practices:**
+- **Eco-friendly** – eco-friendly practices.
+- **Local** – supporting local communities.
+- **Conservation** – conservation efforts.
+- **Certification** – sustainability certification.
+
+**Investment Opportunities:**
+- **Sustainable hotels** – sustainable hotel development.
+- **Eco-tourism** – eco-tourism projects.
+- **Renewable energy** – renewable energy for tourism.
+- **Waste management** – waste management solutions.
+
+### Digital Transformation
+
+**Technology Adoption:**
+- **Online booking** – online booking platforms.
+- **Mobile** – mobile technology.
+- **Digital experiences** – digital experiences.
+- **Data analytics** – data analytics for tourism.
+
+**Digital Opportunities:**
+- **Platforms** – online travel platforms.
+- **Technology** – tourism technology.
+- **Digital marketing** – digital marketing.
+- **Customer experience** – digital customer experience.
+
+**Investment Opportunities:**
+- **Technology companies** – tourism technology companies.
+- **Platforms** – online travel platforms.
+- **Digital services** – digital services for tourism.
+
+### Changing Consumer Preferences
+
+**Experience Focus:**
+- **Experiences** – focus on experiences over things.
+- **Authenticity** – demand for authentic experiences.
+- **Local** – interest in local culture.
+- **Personalization** – demand for personalized experiences.
+
+**Wellness and Health:**
+- **Wellness** – wellness tourism.
+- **Health** – health-focused travel.
+- **Spas** – spa and wellness facilities.
+- **Activities** – wellness activities.
+
+**Investment Opportunities:**
+- **Experience providers** – experience providers.
+- **Wellness** – wellness tourism projects.
+- **Local experiences** – local experience providers.
+
+## Investment Opportunities
+
+### Accommodation
+
+**Hotels:**
+- **Recovery** – hotel recovery from pandemic.
+- **Renovation** – hotel renovation opportunities.
+- **New development** – new hotel development.
+- **Brands** – hotel brand opportunities.
+
+**Resorts:**
+- **Resort development** – resort development.
+- **Luxury** – luxury resort opportunities.
+- **Sustainability** – sustainable resort development.
+
+**Alternative Accommodation:**
+- **Platforms** – alternative accommodation platforms.
+- **Properties** – alternative accommodation properties.
+- **Management** – property management.
+
+### Food and Beverage
+
+**Restaurants:**
+- **Recovery** – restaurant recovery.
+- **Concepts** – new restaurant concepts.
+- **Local** – local restaurant opportunities.
+- **Chains** – restaurant chain opportunities.
+
+**Bars and Nightlife:**
+- **Recovery** – bar and nightlife recovery.
+- **Concepts** – new bar concepts.
+- **Entertainment** – entertainment venues.
+
+### Activities and Experiences
+
+**Tours and Activities:**
+- **Tour operators** – tour operator opportunities.
+- **Activities** – activity providers.
+- **Experiences** – experience providers.
+- **Technology** – technology for tours.
+
+**Attractions:**
+- **Museums** – museum opportunities.
+- **Cultural sites** – cultural site management.
+- **Entertainment** – entertainment venues.
+
+## Risk Management
+
+### Seasonality Risk
+
+**Seasonal Patterns:**
+- **Summer peak** – strong summer season.
+- **Off-season** – weak off-season.
+- **Revenue** – seasonal revenue patterns.
+- **Cash flow** – seasonal cash flow.
+
+**Mitigation:**
+- **Diversification** – diversify across seasons.
+- **Year-round** – develop year-round offerings.
+- **Reserves** – maintain cash reserves.
+- **Planning** – careful financial planning.
+
+**Seasonality Management Strategies:**
+- **Diversified offerings** – offer both seasonal and year-round experiences.
+- **Marketing** – marketing to extend seasons.
+- **Pricing** – dynamic pricing to manage demand.
+- **Partnerships** – partnerships to extend seasons.
+
+**Off-Season Opportunities:**
+- **Business travel** – target business travel in off-season.
+- **Events** – host events and conferences.
+- **Maintenance** – use off-season for maintenance and upgrades.
+- **Local market** – focus on local market in off-season.
+
+### Climate Risk
+
+**Climate Change:**
+- **Temperature** – rising temperatures.
+- **Weather** – extreme weather events.
+- **Sea level** – sea level rise.
+- **Impact** – impact on destinations.
+
+**Mitigation:**
+- **Adaptation** – climate adaptation measures.
+- **Sustainability** – sustainable practices.
+- **Diversification** – diversify destinations.
+- **Insurance** – climate risk insurance.
+
+**Climate Adaptation Measures:**
+- **Infrastructure** – climate-resilient infrastructure.
+- **Water management** – water management for drought.
+- **Cooling** – cooling systems for extreme heat.
+- **Planning** – climate risk planning.
+
+**Sustainability Practices:**
+- **Energy efficiency** – energy-efficient operations.
+- **Renewable energy** – renewable energy adoption.
+- **Waste reduction** – waste reduction and recycling.
+- **Water conservation** – water conservation measures.
+
+### Economic Sensitivity
+
+**Economic Cycles:**
+- **Recessions** – sensitivity to recessions.
+- **Disposable income** – sensitivity to disposable income.
+- **Currency** – currency fluctuations.
+- **Impact** – impact on tourism.
+
+**Mitigation:**
+- **Diversification** – diversify across markets.
+- **Value** – focus on value offerings.
+- **Resilience** – build resilient business models.
+
+**Economic Resilience Strategies:**
+- **Market diversification** – diversify across source markets.
+- **Value positioning** – position for value-conscious travelers.
+- **Flexible pricing** – flexible pricing strategies.
+- **Cost management** – efficient cost management.
+
+**Crisis Management:**
+- **Contingency planning** – contingency planning for crises.
+- **Liquidity** – maintain adequate liquidity.
+- **Flexibility** – flexible operations and cost structure.
+- **Communication** – effective crisis communication.
+
+**Operational Resilience:**
+- **Supply chain** – resilient supply chains for tourism operations.
+- **Staffing** – flexible staffing models for seasonality.
+- **Technology** – technology infrastructure for operations.
+- **Partnerships** – strategic partnerships for resilience.
+
+**Investment Considerations:**
+- **Recovery timing** – timing of recovery varies by destination and segment.
+- **Transformation** – transformation creates both opportunities and risks.
+- **Sustainability** – sustainability is becoming a competitive advantage.
+- **Digitalization** – digitalization is essential for competitiveness.
+
+## Conclusion
+
+Mediterranean tourism is recovering from the pandemic while transforming through sustainability, digitalization, and changing consumer preferences. Understanding Mediterranean tourism requires:
+- **Market structure** – understanding market structure and destinations.
+- **Recovery** – understanding recovery trends.
+- **Transformation** – understanding transformation themes.
+- **Risk management** – managing seasonality, climate, and economic risks.
+
+For investors, the key is to:
+- **Understand recovery** – understand recovery trends and timing.
+- **Identify transformation** – identify transformation opportunities.
+- **Diversify** – diversify across destinations, sectors, and seasons.
+- **Manage risks** – carefully manage seasonality, climate, and economic risks.
+
+Mediterranean tourism can provide attractive investment opportunities when managed properly. Investors who understand Mediterranean tourism markets and identify transformation opportunities will be well-positioned to benefit from recovery and transformation while managing risks effectively.`,
+    date: formatDate(307),
+    author: 'Luca Montefiore',
+    authorAvatar: getAuthorAvatar('Luca Montefiore'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Mediterranean Tourism and Hospitality: Recovery and Transformation
+
+## Introduction
+
+The Mediterranean has long been one of the world's premier tourism destinations.`),
+    ),
+    imageUrl: getImage('markets', 307),
+    tags: ['Mediterranean', 'Tourism', 'Hospitality', 'Recovery', 'European Markets'],
+  },
+  {
     slug: 'italian-energy-transition-and-green-infrastructure-investment-opportunities',
     title: 'Italian Energy Transition and Green Infrastructure: Investment Opportunities',
     excerpt:

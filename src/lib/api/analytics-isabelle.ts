@@ -26,6 +26,343 @@ const countWords = (text: string): number => {
 // Isabelle Dubois - ESG & Sustainable Finance (113 articles)
 export const isabelleArticles: AnalyticsArticle[] = [
   {
+    slug: 'water-infrastructure-and-resource-management-investment-opportunities',
+    title: 'Water Infrastructure and Resource Management: Investment Opportunities',
+    excerpt:
+      'How water scarcity and infrastructure needs are creating investment opportunities, why water management matters for sustainability, and how to identify opportunities in water infrastructure and resource management.',
+    content: `# Water Infrastructure and Resource Management: Investment Opportunities
+
+## Introduction
+
+Water is essential for life, agriculture, industry, and economic development. But water scarcity is becoming an increasingly urgent global challenge. Climate change, population growth, urbanization, and pollution are straining water resources worldwide. At the same time, aging water infrastructure in many developed countries needs significant investment, while developing countries require new infrastructure to provide clean water and sanitation. These challenges are creating massive investment opportunities in water infrastructure, treatment, efficiency, and resource management.
+
+Water infrastructure investment is driven by several factors:
+- **Scarcity** – growing water scarcity globally.
+- **Infrastructure needs** – aging and inadequate water infrastructure.
+- **Regulation** – water quality and environmental regulations.
+- **Technology** – advancing water treatment and efficiency technologies.
+
+For investors, water infrastructure offers:
+- **Growth opportunities** – growing markets for water solutions.
+- **Stable income** – water infrastructure can provide stable income.
+- **ESG alignment** – alignment with ESG objectives.
+- **Resilience** – building resilience to water scarcity.
+
+But challenges remain:
+- **Regulatory complexity** – complex regulatory frameworks.
+- **Long investment cycles** – long investment and payback cycles.
+- **Technology risk** – technology risk for new solutions.
+- **Political risk** – political risk in some markets.
+
+This article explores water infrastructure investment opportunities, market dynamics, and how to identify opportunities in water infrastructure and resource management.
+
+## Water Challenges
+
+### Water Scarcity
+
+**Global Scarcity:**
+- **Growing scarcity** – growing water scarcity globally.
+- **Climate change** – climate change affecting water availability.
+- **Population growth** – population growth increasing demand.
+- **Urbanization** – urbanization concentrating demand.
+
+**Regional Variations:**
+- **Arid regions** – severe scarcity in arid regions.
+- **Seasonal** – seasonal scarcity in many regions.
+- **Quality** – water quality issues in many regions.
+- **Access** – lack of access to clean water in many regions.
+
+### Infrastructure Needs
+
+**Aging Infrastructure:**
+- **Developed countries** – aging water infrastructure in developed countries.
+- **Leakage** – significant water leakage from aging pipes.
+- **Replacement** – need for infrastructure replacement.
+- **Investment** – massive investment required.
+
+**New Infrastructure:**
+- **Developing countries** – need for new water infrastructure.
+- **Access** – providing access to clean water and sanitation.
+- **Investment** – massive investment required.
+- **Financing** – financing challenges.
+
+### Water Quality
+
+**Pollution:**
+- **Industrial** – industrial water pollution.
+- **Agricultural** – agricultural runoff pollution.
+- **Municipal** – municipal wastewater pollution.
+- **Treatment** – need for water treatment.
+
+**Regulation:**
+- **Quality standards** – water quality standards.
+- **Environmental** – environmental regulations.
+- **Compliance** – compliance requirements.
+- **Enforcement** – regulatory enforcement.
+
+## Investment Opportunities
+
+### Water Treatment
+
+**Water Treatment Plants:**
+- **Municipal** – municipal water treatment plants.
+- **Industrial** – industrial water treatment.
+- **Wastewater** – wastewater treatment plants.
+- **Desalination** – desalination plants.
+
+**Treatment Technologies:**
+- **Filtration** – water filtration technologies.
+- **Membranes** – membrane technologies.
+- **Chemical** – chemical treatment.
+- **Biological** – biological treatment.
+
+**Investment Opportunities:**
+- **Treatment companies** – water treatment companies.
+- **Technology** – water treatment technology companies.
+- **Projects** – water treatment projects.
+
+### Water Infrastructure
+
+**Distribution Networks:**
+- **Pipes** – water distribution pipes.
+- **Networks** – water distribution networks.
+- **Leakage** – reducing water leakage.
+- **Smart systems** – smart water systems.
+
+**Storage:**
+- **Reservoirs** – water reservoirs.
+- **Tanks** – water storage tanks.
+- **Infrastructure** – storage infrastructure.
+
+**Investment Opportunities:**
+- **Infrastructure companies** – water infrastructure companies.
+- **Construction** – water infrastructure construction.
+- **Technology** – water infrastructure technology.
+
+### Water Efficiency
+
+**Efficiency Technologies:**
+- **Smart meters** – smart water meters.
+- **Leak detection** – leak detection technologies.
+- **Efficiency** – water efficiency technologies.
+- **Monitoring** – water monitoring systems.
+
+**Agricultural Efficiency:**
+- **Irrigation** – efficient irrigation systems.
+- **Precision** – precision agriculture for water.
+- **Technology** – water efficiency technology.
+
+**Investment Opportunities:**
+- **Technology companies** – water efficiency technology companies.
+- **Services** – water efficiency services.
+- **Projects** – water efficiency projects.
+
+### Water Resource Management
+
+**Water Management:**
+- **Resource management** – water resource management.
+- **Planning** – water planning and management.
+- **Technology** – water management technology.
+- **Services** – water management services.
+
+**Water Rights:**
+- **Trading** – water rights trading.
+- **Markets** – water markets.
+- **Allocation** – water allocation systems.
+
+**Investment Opportunities:**
+- **Management companies** – water management companies.
+- **Technology** – water management technology.
+- **Services** – water management services.
+
+**Water Management Services:**
+- **Consulting** – water management consulting services.
+- **Operations** – water system operations and management.
+- **Maintenance** – water infrastructure maintenance.
+- **Planning** – water resource planning services.
+
+**Water Rights and Markets:**
+- **Water trading** – water rights trading systems.
+- **Markets** – water markets for allocation.
+- **Pricing** – water pricing mechanisms.
+- **Investment** – investment in water rights and markets.
+
+## Market Dynamics
+
+### Market Size and Growth
+
+**Market Size:**
+- **Global market** – estimated at $500+ billion.
+- **Infrastructure** – water infrastructure market.
+- **Treatment** – water treatment market.
+- **Efficiency** – water efficiency market.
+
+**Growth Drivers:**
+- **Scarcity** – growing water scarcity.
+- **Infrastructure needs** – infrastructure investment needs.
+- **Regulation** – regulatory requirements.
+- **Technology** – advancing technology.
+
+### Regulatory Environment
+
+**Water Regulations:**
+- **Quality standards** – water quality standards.
+- **Environmental** – environmental regulations.
+- **Infrastructure** – infrastructure regulations.
+- **Compliance** – compliance requirements.
+
+**Regulatory Impact:**
+- **Investment** – regulations drive investment.
+- **Standards** – standards drive technology adoption.
+- **Compliance** – compliance creates opportunities.
+
+### Technology Trends
+
+**Advancing Technology:**
+- **Treatment** – advancing treatment technologies.
+- **Efficiency** – advancing efficiency technologies.
+- **Monitoring** – advancing monitoring technologies.
+- **Smart systems** – smart water systems.
+
+**Technology Adoption:**
+- **Adoption** – technology adoption in water sector.
+- **Innovation** – innovation in water technology.
+- **Investment** – investment in water technology.
+
+**Technology Innovation Areas:**
+- **Smart water** – smart water systems and IoT.
+- **Advanced treatment** – advanced water treatment technologies.
+- **Leak detection** – advanced leak detection technologies.
+- **Water quality monitoring** – real-time water quality monitoring.
+
+**Technology Investment Drivers:**
+- **Efficiency** – demand for water efficiency.
+- **Quality** – demand for water quality.
+- **Cost reduction** – cost reduction from technology.
+- **Regulation** – regulatory requirements driving adoption.
+
+## Investment Themes
+
+### Water Treatment
+
+**Treatment Companies:**
+- **Municipal** – municipal water treatment companies.
+- **Industrial** – industrial water treatment companies.
+- **Technology** – water treatment technology companies.
+
+**Investment Drivers:**
+- **Regulation** – regulatory requirements.
+- **Quality** – water quality needs.
+- **Technology** – advancing technology.
+- **Market growth** – growing treatment market.
+
+### Water Infrastructure
+
+**Infrastructure Companies:**
+- **Construction** – water infrastructure construction companies.
+- **Equipment** – water infrastructure equipment companies.
+- **Services** – water infrastructure services.
+
+**Investment Drivers:**
+- **Infrastructure needs** – infrastructure investment needs.
+- **Replacement** – infrastructure replacement needs.
+- **New development** – new infrastructure development.
+- **Market growth** – growing infrastructure market.
+
+### Water Efficiency
+
+**Efficiency Companies:**
+- **Technology** – water efficiency technology companies.
+- **Services** – water efficiency services.
+- **Monitoring** – water monitoring companies.
+
+**Investment Drivers:**
+- **Scarcity** – water scarcity driving efficiency.
+- **Cost** – cost savings from efficiency.
+- **Technology** – advancing efficiency technology.
+- **Market growth** – growing efficiency market.
+
+**Efficiency Market Segments:**
+- **Residential** – residential water efficiency.
+- **Commercial** – commercial water efficiency.
+- **Industrial** – industrial water efficiency.
+- **Agricultural** – agricultural water efficiency.
+
+**Efficiency Technologies:**
+- **Smart meters** – smart water metering systems.
+- **Leak detection** – advanced leak detection systems.
+- **Efficient fixtures** – water-efficient fixtures and appliances.
+- **Irrigation** – efficient irrigation systems.
+
+## Risk Management
+
+### Regulatory Risk
+
+**Regulatory Changes:**
+- **Standards** – changes in water quality standards.
+- **Regulations** – changes in regulations.
+- **Compliance** – compliance requirements.
+- **Impact** – impact on investments.
+
+**Mitigation:**
+- **Regulatory monitoring** – monitor regulatory developments.
+- **Compliance** – ensure compliance.
+- **Diversification** – diversify across markets.
+
+### Technology Risk
+
+**Technology Development:**
+- **Technology risk** – risk of technology not developing as expected.
+- **Adoption** – risk of slow technology adoption.
+- **Competition** – competition from new technologies.
+
+**Mitigation:**
+- **Technology monitoring** – monitor technology developments.
+- **Diversification** – diversify across technologies.
+- **Partnerships** – partner with technology leaders.
+
+### Market Risk
+
+**Market Development:**
+- **Adoption** – risk of slow market adoption.
+- **Competition** – competition in water markets.
+- **Economic** – economic sensitivity.
+
+**Mitigation:**
+- **Market analysis** – thorough market analysis.
+- **Diversification** – diversify across markets.
+- **Risk management** – careful risk management.
+
+## Conclusion
+
+Water infrastructure and resource management represent significant investment opportunities driven by water scarcity, infrastructure needs, and regulatory requirements. Understanding water infrastructure requires:
+- **Challenges** – understanding water challenges.
+- **Opportunities** – identifying investment opportunities.
+- **Market dynamics** – understanding market dynamics.
+- **Risk management** – managing regulatory, technology, and market risks.
+
+For investors, the key is to:
+- **Focus on quality** – focus on quality companies and projects.
+- **Understand risks** – understand regulatory, technology, and market risks.
+- **Diversify** – diversify across sectors, technologies, and geographies.
+- **Be patient** – water infrastructure investment requires patience.
+
+Water infrastructure can provide attractive risk-adjusted returns when managed properly. Investors who understand water markets and identify quality opportunities will be well-positioned to benefit from water infrastructure investment while managing risks effectively.`,
+    date: formatDate(332),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'longterm',
+    readTime: calculateReadTime(
+      countWords(`# Water Infrastructure and Resource Management: Investment Opportunities
+
+## Introduction
+
+Water is essential for life, agriculture, industry, and economic development.`),
+    ),
+    imageUrl: getImage('longterm', 332),
+    tags: ['Water Infrastructure', 'Resource Management', 'ESG', 'Sustainability', 'Infrastructure Investing'],
+  },
+  {
     slug: 'sustainable-agriculture-and-food-systems-investing-in-resilient-food-production',
     title: 'Sustainable Agriculture and Food Systems: Investing in Resilient Food Production',
     excerpt:

@@ -26,6 +26,287 @@ const countWords = (text: string): number => {
 // Assunta Novak - Cryptocurrency & Blockchain (24 articles)
 export const assuntaArticles: AnalyticsArticle[] = [
   {
+    slug: 'defi-lending-and-borrowing-the-new-credit-markets',
+    title: 'DeFi Lending and Borrowing: The New Credit Markets',
+    excerpt:
+      'How decentralized finance (DeFi) lending protocols are creating new credit markets, why overcollateralization and algorithmic interest rates matter, and what this means for borrowers, lenders, and the future of credit.',
+    content: `# DeFi Lending and Borrowing: The New Credit Markets
+
+## Introduction
+
+Traditional credit markets rely on intermediaries—banks, credit unions, and other financial institutions—to assess creditworthiness, set interest rates, and manage risk. Decentralized finance (DeFi) lending protocols are challenging this model by creating permissionless, algorithmic credit markets where anyone can lend or borrow without traditional credit checks or intermediaries. Instead of credit scores and loan officers, DeFi uses overcollateralization, smart contracts, and algorithmic interest rates to create new forms of credit.
+
+DeFi lending has grown from a niche experiment to a multi-billion-dollar market. Protocols like Aave, Compound, and MakerDAO have facilitated hundreds of billions of dollars in lending and borrowing. But DeFi lending is fundamentally different from traditional credit:
+- **Overcollateralization** – borrowers must post collateral worth more than the loan.
+- **No credit checks** – no traditional credit assessment or KYC requirements.
+- **Algorithmic rates** – interest rates determined by supply and demand algorithms.
+- **24/7 availability** – lending and borrowing available 24/7 without intermediaries.
+
+For investors and market participants, DeFi lending offers:
+- **Yield opportunities** – attractive yields for lenders.
+- **Liquidity** – access to liquidity for borrowers.
+- **Transparency** – transparent, on-chain lending and borrowing.
+- **Innovation** – innovation in credit markets.
+
+But risks remain:
+- **Smart contract risk** – risk of smart contract bugs and exploits.
+- **Liquidity risk** – risk of liquidity issues.
+- **Collateral risk** – risk of collateral value declines.
+- **Regulatory risk** – regulatory uncertainty.
+
+This article explores how DeFi lending works, why it matters, and what it means for the future of credit markets.
+
+## How DeFi Lending Works
+
+### Core Mechanisms
+
+**Overcollateralization:**
+- **Collateral requirement** – borrowers must post collateral worth more than the loan.
+- **Collateral ratio** – typical collateral ratios of 150-200% or higher.
+- **Liquidation** – if collateral value falls below threshold, position is liquidated.
+- **Safety** – overcollateralization provides safety for lenders.
+
+**Algorithmic Interest Rates:**
+- **Supply and demand** – interest rates determined by supply and demand.
+- **Utilization** – rates adjust based on utilization of lending pools.
+- **Transparency** – rates are transparent and on-chain.
+- **Real-time** – rates adjust in real-time.
+
+**Smart Contracts:**
+- **Automation** – lending and borrowing automated through smart contracts.
+- **No intermediaries** – no traditional intermediaries required.
+- **Transparency** – all transactions on-chain and transparent.
+- **Programmability** – programmable lending and borrowing.
+
+### Major DeFi Lending Protocols
+
+**Aave:**
+- **Market leader** – one of the largest DeFi lending protocols.
+- **Features** – variable and stable interest rates, flash loans.
+- **Assets** – supports multiple crypto assets.
+- **Governance** – decentralized governance with AAVE token.
+
+**Compound:**
+- **Pioneer** – early DeFi lending protocol.
+- **Features** – algorithmic interest rates, cTokens.
+- **Assets** – supports multiple crypto assets.
+- **Governance** – decentralized governance with COMP token.
+
+**MakerDAO:**
+- **Stablecoin focus** – focuses on DAI stablecoin generation.
+- **Features** – CDP (Collateralized Debt Position) system.
+- **Collateral** – accepts multiple collateral types.
+- **Governance** – decentralized governance with MKR token.
+
+**Other Protocols:**
+- **Various protocols** – numerous other DeFi lending protocols.
+- **Specialization** – some protocols specialize in specific assets or use cases.
+- **Innovation** – continuous innovation in DeFi lending.
+
+## DeFi Lending Use Cases
+
+### Lending (Supplying Liquidity)
+
+**Yield Generation:**
+- **Interest income** – earn interest on supplied assets.
+- **Yields** – yields vary by asset and protocol.
+- **Compounding** – interest compounds over time.
+- **Flexibility** – can withdraw assets at any time (subject to liquidity).
+
+**Liquidity Provision:**
+- **Liquidity pools** – provide liquidity to lending pools.
+- **Utilization** – higher utilization typically means higher yields.
+- **Risk** – risk of smart contract bugs and protocol failures.
+- **Rewards** – some protocols offer additional token rewards.
+
+### Borrowing
+
+**Leverage:**
+- **Leveraged positions** – borrow to create leveraged positions.
+- **Trading** – borrow to fund trading strategies.
+- **Yield farming** – borrow to participate in yield farming.
+- **Risk** – leverage increases risk.
+
+**Liquidity Access:**
+- **Access funds** – access funds without selling assets.
+- **Tax efficiency** – potentially more tax-efficient than selling.
+- **Flexibility** – flexible borrowing terms.
+- **Cost** – borrowing costs (interest rates).
+
+**Arbitrage:**
+- **Price differences** – borrow to exploit price differences.
+- **Flash loans** – flash loans for arbitrage opportunities.
+- **Risk** – arbitrage risks.
+- **Returns** – potential returns from arbitrage.
+
+## Market Dynamics
+
+### Interest Rate Mechanisms
+
+**Supply and Demand:**
+- **Utilization** – interest rates adjust based on utilization.
+- **High utilization** – high utilization leads to higher rates.
+- **Low utilization** – low utilization leads to lower rates.
+- **Equilibrium** – rates move toward equilibrium.
+
+**Stable vs Variable Rates:**
+- **Variable rates** – rates that adjust with utilization.
+- **Stable rates** – rates that are more stable.
+- **Trade-offs** – trade-offs between stability and yield.
+- **Protocol differences** – different protocols offer different rate structures.
+
+### Liquidation Mechanisms
+
+**Liquidation Triggers:**
+- **Collateral ratio** – liquidation when collateral ratio falls below threshold.
+- **Health factor** – health factor determines liquidation risk.
+- **Automated** – liquidations are automated through smart contracts.
+- **Liquidation penalties** – liquidation penalties for borrowers.
+
+**Liquidation Process:**
+- **Liquidators** – liquidators can liquidate undercollateralized positions.
+- **Incentives** – liquidators receive incentives (discounts on collateral).
+- **Efficiency** – efficient liquidation process.
+- **Risk** – risk of liquidation for borrowers.
+
+### Risk Management
+
+**Smart Contract Risk:**
+- **Bugs** – risk of smart contract bugs.
+- **Exploits** – risk of exploits and hacks.
+- **Audits** – protocol audits reduce but don't eliminate risk.
+- **Insurance** – some protocols offer insurance.
+
+**Liquidity Risk:**
+- **Withdrawal** – risk of inability to withdraw assets.
+- **Pool liquidity** – pool liquidity affects withdrawal ability.
+- **Market conditions** – market conditions affect liquidity.
+- **Protocol design** – protocol design affects liquidity.
+
+**Collateral Risk:**
+- **Value decline** – risk of collateral value decline.
+- **Volatility** – crypto asset volatility creates risk.
+- **Liquidation** – risk of liquidation.
+- **Diversification** – diversification reduces risk.
+
+## Investment Implications
+
+### Yield Opportunities
+
+**Lending Yields:**
+- **Attractive yields** – DeFi lending can offer attractive yields.
+- **Variability** – yields vary by asset and protocol.
+- **Risk-adjusted** – consider risk-adjusted yields.
+- **Comparison** – compare to traditional yield opportunities.
+
+**Yield Farming:**
+- **Token rewards** – some protocols offer token rewards.
+- **APY** – high APY from combined interest and rewards.
+- **Risk** – higher risk for higher yields.
+- **Sustainability** – consider sustainability of yields.
+
+### Borrowing Strategies
+
+**Leverage Strategies:**
+- **Leveraged positions** – use borrowing for leveraged positions.
+- **Risk** – leverage increases risk.
+- **Returns** – potential for higher returns.
+- **Management** – careful risk management required.
+
+**Liquidity Strategies:**
+- **Access funds** – borrow to access funds without selling.
+- **Tax efficiency** – potential tax efficiency.
+- **Cost** – consider borrowing costs.
+- **Alternatives** – compare to alternatives.
+
+### Protocol Investment
+
+**Protocol Tokens:**
+- **Governance** – protocol tokens provide governance rights.
+- **Value accrual** – potential value accrual from protocol growth.
+- **Risk** – protocol token risk.
+- **Diversification** – diversify across protocols.
+
+**Protocol Analysis:**
+- **Technology** – analyze protocol technology and security.
+- **Economics** – analyze protocol economics.
+- **Governance** – analyze protocol governance.
+- **Competitive position** – analyze competitive position.
+
+## Risks and Challenges
+
+### Smart Contract Risk
+
+**Bugs and Exploits:**
+- **Code bugs** – risk of code bugs.
+- **Exploits** – risk of exploits and hacks.
+- **Audits** – audits reduce but don't eliminate risk.
+- **Insurance** – consider protocol insurance.
+
+**Mitigation:**
+- **Audits** – use audited protocols.
+- **Insurance** – consider protocol insurance.
+- **Diversification** – diversify across protocols.
+- **Monitoring** – monitor protocol security.
+
+### Regulatory Risk
+
+**Regulatory Uncertainty:**
+- **Evolving regulations** – regulations are evolving.
+- **Compliance** – compliance requirements may change.
+- **Restrictions** – potential restrictions on DeFi.
+- **Impact** – regulatory changes may affect DeFi.
+
+**Mitigation:**
+- **Monitoring** – monitor regulatory developments.
+- **Compliance** – ensure compliance where possible.
+- **Diversification** – geographic diversification.
+- **Risk management** – manage regulatory risk.
+
+### Market Risk
+
+**Crypto Volatility:**
+- **Asset volatility** – crypto asset volatility creates risk.
+- **Collateral risk** – collateral value can decline rapidly.
+- **Liquidation** – risk of liquidation.
+- **Market conditions** – market conditions affect DeFi.
+
+**Mitigation:**
+- **Risk management** – careful risk management.
+- **Diversification** – diversify across assets.
+- **Monitoring** – monitor positions and market conditions.
+- **Liquidation management** – manage liquidation risk.
+
+## Conclusion
+
+DeFi lending and borrowing are creating new credit markets that operate differently from traditional credit. Understanding DeFi lending requires:
+- **Mechanisms** – understanding how DeFi lending works.
+- **Protocols** – understanding different DeFi lending protocols.
+- **Risks** – understanding risks including smart contract, liquidity, and collateral risks.
+- **Opportunities** – understanding yield and borrowing opportunities.
+
+For investors and market participants, the key is to:
+- **Understand risks** – thoroughly understand risks before participating.
+- **Start small** – start with small positions to learn.
+- **Diversify** – diversify across protocols and assets.
+- **Monitor** – closely monitor positions and market conditions.
+
+DeFi lending will continue to evolve, creating new opportunities and risks. Participants who understand DeFi lending mechanisms and manage risks effectively will be well-positioned to benefit from this innovation, but they must be prepared for the unique risks of decentralized, algorithmic credit markets.`,
+    date: formatDate(104),
+    author: 'Assunta Novak',
+    authorAvatar: getAuthorAvatar('Assunta Novak'),
+    type: 'technical',
+    readTime: calculateReadTime(
+      countWords(`# DeFi Lending and Borrowing: The New Credit Markets
+
+## Introduction
+
+Traditional credit markets rely on intermediaries—banks, credit unions, and other financial institutions—to assess creditworthiness.`),
+    ),
+    imageUrl: getImage('technical', 104),
+    tags: ['DeFi', 'Lending', 'Credit Markets', 'Cryptocurrency', 'Blockchain'],
+  },
+  {
     slug: 'crypto-regulation-and-compliance-infrastructure-the-new-compliance-stack',
     title: 'Crypto Regulation and Compliance Infrastructure: The New Compliance Stack',
     excerpt:

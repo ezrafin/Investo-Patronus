@@ -18,7 +18,7 @@ import { LANGUAGE_NAMES, type SupportedLanguage } from '@/lib/i18n';
 export default function SettingsPage() {
   const { user } = useUser();
   const { preferences, loading, updatePreferences } = useUserPreferences();
-  const { t } = useTranslation();
+  const { t } = useTranslation({ namespace: 'ui' });
   const { changeLanguage } = useI18n();
   const [saving, setSaving] = useState(false);
   const [localPrefs, setLocalPrefs] = useState(preferences);

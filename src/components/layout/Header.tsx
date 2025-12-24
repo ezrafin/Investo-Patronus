@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark, Users, Moon, Trophy, Sun, Circle } from 'lucide-react';
+import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark, Users, Moon, Trophy, Sun, Circle, Globe } from 'lucide-react';
 import { logger } from '@/lib/logger';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { supabase } from '@/integrations/supabase/client';
@@ -10,6 +10,8 @@ import { UserAvatar } from '@/components/user/UserAvatar';
 import { EDUCATION_BASE_PATH, educationRoutes } from '@/lib/educationRoutes';
 import { useTranslation } from '@/hooks/useTranslation';
 import { GlobalSearch } from '@/components/GlobalSearch';
+import { useI18n } from '@/context/I18nContext';
+import { LANGUAGE_NAMES, type SupportedLanguage } from '@/lib/i18n';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,6 +29,7 @@ export function Header() {
   const { user, profile, signOut } = useUser();
   const navigate = useNavigate();
   const { preferences, updatePreferences } = useUserPreferences();
+  const { changeLanguage, language } = useI18n();
 
   const navigation = useMemo(() => [{
     name: t('navigation.content'),
@@ -259,6 +262,28 @@ export function Header() {
                     <BookOpen className="mr-2 h-4 w-4" />
                     {t('buttons.bookmarks')}
                   </DropdownMenuItem>
+                  
+                  {/* Language Selector */}
+                  <DropdownMenuSeparator />
+                  <DropdownMenuLabel className="text-xs text-muted-foreground">
+                    Language
+                  </DropdownMenuLabel>
+                  {Object.entries(LANGUAGE_NAMES).map(([code, name]) => (
+                    <DropdownMenuItem
+                      key={code}
+                      onClick={async () => {
+                        await changeLanguage(code as SupportedLanguage);
+                        await updatePreferences({ language: code as SupportedLanguage });
+                      }}
+                      className={language === code ? 'bg-secondary' : ''}
+                    >
+                      <Globe className="mr-2 h-4 w-4" />
+                      {name}
+                      {language === code && <span className="ml-auto">✓</span>}
+                    </DropdownMenuItem>
+                  ))}
+                  
+                  <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={cycleTheme}>
                     {(() => {
                       const ThemeIcon = getThemeIcon();
@@ -351,6 +376,33 @@ export function Header() {
                       <BookOpen className="h-4 w-4" />
                       {t('buttons.bookmarks')}
                     </Link>
+                    
+                    {/* Language Selector */}
+                    <div className="px-4 py-2">
+                      <div className="text-xs text-muted-foreground mb-2">Language</div>
+                      <div className="space-y-1">
+                        {Object.entries(LANGUAGE_NAMES).map(([code, name]) => (
+                          <button
+                            key={code}
+                            onClick={async () => {
+                              await changeLanguage(code as SupportedLanguage);
+                              await updatePreferences({ language: code as SupportedLanguage });
+                              setMobileMenuOpen(false);
+                            }}
+                            className={`flex items-center gap-2 w-full px-4 py-2 text-sm rounded-lg border transition-colors ${
+                              language === code
+                                ? 'bg-secondary border-border'
+                                : 'border-border hover:bg-secondary/30'
+                            }`}
+                          >
+                            <Globe className="h-4 w-4" />
+                            {name}
+                            {language === code && <span className="ml-auto">✓</span>}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    
                     <button
                       onClick={() => {
                         cycleTheme();

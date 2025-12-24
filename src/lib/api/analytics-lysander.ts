@@ -26,6 +26,319 @@ const countWords = (text: string): number => {
 // Lysander Truog - Fixed Income & Bonds (61 articles)
 export const lysanderArticles: AnalyticsArticle[] = [
   {
+    slug: 'structured-credit-products-and-clo-markets-collateralized-loan-obligations',
+    title: 'Structured Credit Products and CLO Markets: Collateralized Loan Obligations',
+    excerpt:
+      'How collateralized loan obligations (CLOs) structure credit risk, why CLOs offer attractive risk-adjusted returns, and how to analyze and invest in CLO tranches across credit cycles.',
+    content: `# Structured Credit Products and CLO Markets: Collateralized Loan Obligations
+
+## Introduction
+
+Collateralized loan obligations (CLOs) are structured credit products that pool leveraged loans and issue multiple tranches of securities with different risk and return profiles. CLOs have grown from a niche product to a $1+ trillion market, providing institutional investors with exposure to corporate credit through structured vehicles. For fixed income investors, CLOs offer attractive risk-adjusted returns, but they require deep understanding of structured credit mechanics, credit analysis, and market dynamics.
+
+CLOs work by:
+- **Pooling loans** – pooling hundreds of leveraged loans.
+- **Tranching** – issuing multiple tranches with different seniority.
+- **Credit enhancement** – subordination provides credit enhancement for senior tranches.
+- **Active management** – CLO managers actively manage portfolios.
+
+For investors, CLOs offer:
+- **Attractive yields** – attractive yields relative to risk.
+- **Diversification** – diversification across many loans.
+- **Credit enhancement** – subordination provides credit protection.
+- **Liquidity** – CLOs provide liquidity for leveraged loans.
+
+But CLOs also have risks:
+- **Credit risk** – credit risk from underlying loans.
+- **Complexity** – complexity of structured products.
+- **Liquidity risk** – liquidity risk in stressed markets.
+- **Manager risk** – risk from CLO manager decisions.
+
+This article explores how CLOs work, why they matter for fixed income investors, and how to analyze and invest in CLO tranches.
+
+## CLO Structure and Mechanics
+
+### Basic CLO Structure
+
+**Collateral Pool:**
+- **Leveraged loans** – pool of leveraged loans (typically 150-250 loans).
+- **Diversification** – diversification across industries and borrowers.
+- **Quality** – loans typically rated B or BB.
+- **Floating rate** – loans typically have floating interest rates.
+
+**Tranche Structure:**
+- **Senior tranches** – AAA and AA rated tranches with lowest risk.
+- **Mezzanine tranches** – A, BBB, and BB rated tranches with moderate risk.
+- **Equity tranche** – unrated equity tranche with highest risk and return.
+- **Subordination** – subordination provides credit enhancement.
+
+**Cash Flow Waterfall:**
+- **Interest payments** – interest payments flow to tranches in order of seniority.
+- **Principal payments** – principal payments flow to tranches in order of seniority.
+- **Coverage tests** – coverage tests protect senior tranches.
+- **Reinvestment** – reinvestment periods allow portfolio management.
+
+### CLO Lifecycle
+
+**Ramp-Up Period:**
+- **Loan acquisition** – CLO manager acquires loans.
+- **Diversification** – building diversified portfolio.
+- **Timing** – typically 6-12 months.
+
+**Reinvestment Period:**
+- **Active management** – CLO manager actively manages portfolio.
+- **Trading** – buying and selling loans.
+- **Duration** – typically 4-5 years.
+
+**Amortization Period:**
+- **Principal repayment** – principal repaid to tranches.
+- **Wind-down** – CLO winds down.
+- **Timing** – timing depends on loan repayments.
+
+## CLO Investment Analysis
+
+### Tranche Analysis
+
+**Senior Tranches (AAA/AA):**
+- **Low risk** – lowest credit risk.
+- **Low yield** – lower yields.
+- **Protection** – significant subordination protection.
+- **Liquidity** – better liquidity than junior tranches.
+
+**Mezzanine Tranches (A/BBB/BB):**
+- **Moderate risk** – moderate credit risk.
+- **Moderate yield** – moderate yields.
+- **Protection** – some subordination protection.
+- **Liquidity** – moderate liquidity.
+
+**Equity Tranche:**
+- **High risk** – highest credit risk.
+- **High return** – highest potential returns.
+- **No protection** – no subordination protection.
+- **Liquidity** – limited liquidity.
+
+### Credit Analysis
+
+**Portfolio Quality:**
+- **Loan quality** – quality of underlying loans.
+- **Diversification** – diversification across industries and borrowers.
+- **Concentration** – concentration risks.
+- **Credit metrics** – portfolio credit metrics.
+
+**Coverage Tests:**
+- **Overcollateralization** – overcollateralization tests.
+- **Interest coverage** – interest coverage tests.
+- **Compliance** – compliance with coverage tests.
+- **Breaches** – consequences of test breaches.
+
+**Manager Analysis:**
+- **Track record** – CLO manager track record.
+- **Strategy** – investment strategy.
+- **Resources** – resources and capabilities.
+- **Alignment** – alignment with investors.
+
+### Market Analysis
+
+**CLO Market Conditions:**
+- **Spreads** – CLO tranche spreads.
+- **New issue** – new issue market conditions.
+- **Secondary** – secondary market liquidity.
+- **Performance** – CLO performance trends.
+
+**Leveraged Loan Market:**
+- **Loan market** – leveraged loan market conditions.
+- **Default rates** – default rates in leveraged loans.
+- **Recovery rates** – recovery rates on defaults.
+- **Market trends** – market trends affecting loans.
+
+## Investment Strategies
+
+### Tranche Selection
+
+**Risk-Return Profile:**
+- **Risk tolerance** – match tranche to risk tolerance.
+- **Return objectives** – match tranche to return objectives.
+- **Diversification** – diversify across tranches.
+- **Market conditions** – adjust for market conditions.
+
+**Senior Tranche Strategy:**
+- **Low risk** – focus on low-risk senior tranches.
+- **Stability** – prioritize stability and credit protection.
+- **Liquidity** – prioritize liquidity.
+- **Yield** – accept lower yields for safety.
+
+**Mezzanine Strategy:**
+- **Balance** – balance risk and return.
+- **Diversification** – diversify across mezzanine tranches.
+- **Credit analysis** – thorough credit analysis.
+- **Market timing** – consider market timing.
+
+**Equity Strategy:**
+- **High return** – focus on high-return equity tranches.
+- **Risk management** – careful risk management.
+- **Diversification** – diversify across equity tranches.
+- **Long-term** – long-term investment horizon.
+
+### Portfolio Construction
+
+**Tranche Diversification:**
+- **Multiple tranches** – invest in multiple tranches.
+- **Risk distribution** – distribute risk across tranches.
+- **Return optimization** – optimize risk-adjusted returns.
+- **Market conditions** – adjust for market conditions.
+
+**CLO Diversification:**
+- **Multiple CLOs** – invest in multiple CLOs.
+- **Manager diversification** – diversify across CLO managers.
+- **Vintage diversification** – diversify across vintages.
+- **Sector diversification** – consider sector exposure.
+
+**Asset Class Integration:**
+- **Fixed income** – integrate CLOs into fixed income portfolios.
+- **Alternatives** – consider CLOs as alternative investments.
+- **Correlation** – understand correlations with other assets.
+- **Allocation** – determine appropriate allocation.
+
+## Market Dynamics
+
+### CLO Market Size and Growth
+
+**Market Size:**
+- **Outstanding** – $1+ trillion in outstanding CLOs.
+- **New issuance** – $100+ billion in new issuance annually.
+- **Growth** – market has grown significantly over past decade.
+- **Institutional** – primarily institutional market.
+
+**Growth Drivers:**
+- **Leveraged loan market** – growth in leveraged loan market.
+- **Investor demand** – investor demand for yield.
+- **Structuring** – structuring provides risk-return profiles.
+- **Liquidity** – CLOs provide liquidity for loans.
+
+### Market Participants
+
+**Issuers:**
+- **CLO managers** – CLO managers issue CLOs.
+- **Banks** – banks structure and issue CLOs.
+- **Asset managers** – asset managers issue CLOs.
+
+**Investors:**
+- **Institutional** – primarily institutional investors.
+- **Insurance** – insurance companies.
+- **Pension funds** – pension funds.
+- **Asset managers** – asset managers.
+
+**Intermediaries:**
+- **Rating agencies** – rating agencies rate CLO tranches.
+- **Servicers** – CLO servicers manage CLOs.
+- **Trustees** – trustees oversee CLOs.
+
+### Market Cycles
+
+**Expansion:**
+- **High issuance** – high CLO issuance.
+- **Tight spreads** – tight CLO spreads.
+- **Strong demand** – strong investor demand.
+- **Low defaults** – low default rates.
+
+**Contraction:**
+- **Low issuance** – low CLO issuance.
+- **Wide spreads** – wide CLO spreads.
+- **Weak demand** – weak investor demand.
+- **High defaults** – high default rates.
+
+**Recovery:**
+- **Issuance recovery** – CLO issuance recovers.
+- **Spread compression** – spreads compress.
+- **Demand recovery** – investor demand recovers.
+- **Default decline** – defaults decline.
+
+## Risks and Risk Management
+
+### Credit Risk
+
+**Loan Defaults:**
+- **Default rates** – default rates in leveraged loans.
+- **Recovery rates** – recovery rates on defaults.
+- **Impact** – impact on CLO tranches.
+- **Protection** – subordination provides protection.
+
+**Portfolio Risk:**
+- **Concentration** – concentration risks.
+- **Sector risk** – sector-specific risks.
+- **Geographic risk** – geographic risks.
+- **Credit quality** – credit quality deterioration.
+
+**Mitigation:**
+- **Diversification** – portfolio diversification.
+- **Credit analysis** – thorough credit analysis.
+- **Coverage tests** – coverage test protection.
+- **Monitoring** – continuous monitoring.
+
+### Market Risk
+
+**Spread Risk:**
+- **Spread widening** – risk of spread widening.
+- **Market conditions** – market conditions affect spreads.
+- **Liquidity** – liquidity affects spreads.
+- **Impact** – impact on CLO values.
+
+**Liquidity Risk:**
+- **Secondary market** – secondary market liquidity.
+- **Stressed markets** – liquidity in stressed markets.
+- **Tranche differences** – liquidity varies by tranche.
+- **Impact** – impact on ability to trade.
+
+**Mitigation:**
+- **Liquidity management** – manage liquidity needs.
+- **Diversification** – diversify across liquid tranches.
+- **Market monitoring** – monitor market conditions.
+- **Stress testing** – stress test liquidity.
+
+### Structural Risk
+
+**Coverage Test Breaches:**
+- **Test breaches** – risk of coverage test breaches.
+- **Consequences** – consequences of breaches.
+- **Protection** – protection for senior tranches.
+- **Impact** – impact on cash flows.
+
+**Manager Risk:**
+- **Manager decisions** – risk from manager decisions.
+- **Performance** – manager performance risk.
+- **Alignment** – alignment with investors.
+- **Mitigation** – manager selection and monitoring.
+
+## Conclusion
+
+CLOs offer fixed income investors exposure to leveraged loans through structured vehicles with attractive risk-adjusted returns. Understanding CLOs requires:
+- **Structure** – understanding CLO structure and mechanics.
+- **Analysis** – credit and market analysis.
+- **Risks** – understanding credit, market, and structural risks.
+- **Strategies** – investment strategies for CLO tranches.
+
+For investors, the key is to:
+- **Understand structure** – thoroughly understand CLO structure.
+- **Analyze credit** – conduct thorough credit analysis.
+- **Manage risks** – carefully manage credit, market, and structural risks.
+- **Diversify** – diversify across tranches, CLOs, and managers.
+
+CLOs can provide attractive risk-adjusted returns when analyzed and managed properly. Investors who understand CLO mechanics and construct well-diversified portfolios will be well-positioned to benefit from CLO investments while managing risks effectively.`,
+    date: formatDate(166),
+    author: 'Lysander Truog',
+    authorAvatar: getAuthorAvatar('Lysander Truog'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Structured Credit Products and CLO Markets: Collateralized Loan Obligations
+
+## Introduction
+
+Collateralized loan obligations (CLOs) are structured credit products that pool leveraged loans.`),
+    ),
+    imageUrl: getImage('expert', 166),
+    tags: ['CLOs', 'Structured Credit', 'Leveraged Loans', 'Fixed Income', 'Credit Risk'],
+  },
+  {
     slug: 'corporate-credit-cycles-and-high-yield-strategies-navigating-credit-markets',
     title: 'Corporate Credit Cycles and High-Yield Strategies: Navigating Credit Markets',
     excerpt:
