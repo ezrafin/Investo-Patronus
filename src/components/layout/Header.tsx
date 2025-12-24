@@ -256,11 +256,13 @@ export function Header() {
                     onMouseLeave={() => setLanguageMenuOpen(false)}
                   >
                     <DropdownMenuItem 
-                      onClick={(e) => {
+                      onSelect={(e) => {
+                        e.preventDefault();
+                      }}
+                      onPointerDown={(e) => {
                         e.preventDefault();
                         setLanguageMenuOpen(!languageMenuOpen);
                       }}
-                      onMouseEnter={(e) => e.preventDefault()}
                       className="cursor-pointer"
                     >
                       <Globe className="mr-2 h-4 w-4" />
@@ -271,17 +273,21 @@ export function Header() {
                     <AnimatePresence>
                       {languageMenuOpen && (
                         <motion.div
-                          initial={prefersReducedMotion() ? { opacity: 0 } : { opacity: 0, y: 10, scale: 0.95 }}
+                          initial={prefersReducedMotion() ? { opacity: 0 } : { opacity: 0, y: -10, scale: 0.95 }}
                           animate={prefersReducedMotion() ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
-                          exit={prefersReducedMotion() ? { opacity: 0 } : { opacity: 0, y: 10, scale: 0.95 }}
+                          exit={prefersReducedMotion() ? { opacity: 0 } : { opacity: 0, y: -10, scale: 0.95 }}
                           transition={transitions.fast}
-                          className="absolute left-full top-0 ml-2 w-48 py-2 bg-card/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl z-50"
+                          onMouseEnter={() => setLanguageMenuOpen(true)}
+                          onMouseLeave={() => setLanguageMenuOpen(false)}
+                          className="absolute left-full top-0 ml-1 w-48 py-2 bg-card/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl z-[100]"
+                          style={{ pointerEvents: 'auto' }}
                         >
                           {Object.entries(LANGUAGE_NAMES).map(([code, name]) => (
                             <button
                               key={code}
                               onClick={async (e) => {
                                 e.preventDefault();
+                                e.stopPropagation();
                                 await changeLanguage(code as SupportedLanguage);
                                 await updatePreferences({ language: code as SupportedLanguage });
                                 setLanguageMenuOpen(false);
@@ -314,11 +320,13 @@ export function Header() {
                     onMouseLeave={() => setThemeMenuOpen(false)}
                   >
                     <DropdownMenuItem 
-                      onClick={(e) => {
+                      onSelect={(e) => {
+                        e.preventDefault();
+                      }}
+                      onPointerDown={(e) => {
                         e.preventDefault();
                         setThemeMenuOpen(!themeMenuOpen);
                       }}
-                      onMouseEnter={(e) => e.preventDefault()}
                       className="cursor-pointer"
                     >
                       {(() => {
@@ -338,11 +346,14 @@ export function Header() {
                     <AnimatePresence>
                       {themeMenuOpen && (
                         <motion.div
-                          initial={prefersReducedMotion() ? { opacity: 0 } : { opacity: 0, y: 10, scale: 0.95 }}
+                          initial={prefersReducedMotion() ? { opacity: 0 } : { opacity: 0, y: -10, scale: 0.95 }}
                           animate={prefersReducedMotion() ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
-                          exit={prefersReducedMotion() ? { opacity: 0 } : { opacity: 0, y: 10, scale: 0.95 }}
+                          exit={prefersReducedMotion() ? { opacity: 0 } : { opacity: 0, y: -10, scale: 0.95 }}
                           transition={transitions.fast}
-                          className="absolute left-full top-0 ml-2 w-52 py-2 bg-card/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl z-50 max-h-80 overflow-y-auto"
+                          onMouseEnter={() => setThemeMenuOpen(true)}
+                          onMouseLeave={() => setThemeMenuOpen(false)}
+                          className="absolute left-full top-0 ml-1 w-52 py-2 bg-card/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl z-[100] max-h-80 overflow-y-auto"
+                          style={{ pointerEvents: 'auto' }}
                         >
                           {themes.map((theme) => {
                             const Icon = theme.icon;
@@ -352,6 +363,7 @@ export function Header() {
                                 key={theme.value}
                                 onClick={async (e) => {
                                   e.preventDefault();
+                                  e.stopPropagation();
                                   await handleThemeChange(theme.value);
                                 }}
                                 className={`w-full flex items-center gap-3 px-4 py-2.5 hover:bg-secondary/50 transition-colors text-left ${
