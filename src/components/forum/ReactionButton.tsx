@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { useCollectibleBills } from '@/hooks/useCollectibleBills';
 import { motion, AnimatePresence } from 'framer-motion';
 import { checkmarkAnimation, shakeAnimation, prefersReducedMotion, transitions } from '@/lib/animations';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface ReactionButtonProps {
   contentType: 'discussion' | 'reply';
@@ -40,6 +41,7 @@ export function ReactionButton({
   const [isReacted, setIsReacted] = useState(false);
   const [reactionCount, setReactionCount] = useState(count);
   const { collectBill } = useCollectibleBills();
+  const { t } = useTranslation({ namespace: 'forum' });
 
   // Sync count from props when it changes
   useEffect(() => {
@@ -74,7 +76,7 @@ export function ReactionButton({
   // Optimistic mutation for reactions
   const reactionMutation = useMutation({
     mutationFn: async (action: 'add' | 'remove'): Promise<'add' | 'remove'> => {
-      if (!user) throw new Error('Please sign in to react');
+      if (!user) throw new Error(t('toast.pleaseSignInToReact'));
 
       if (action === 'remove') {
         const { error } = await supabase
@@ -129,7 +131,7 @@ export function ReactionButton({
         setIsReacted(context.previousIsReacted);
         setReactionCount(context.previousCount);
       }
-      toast.error(error instanceof Error ? error.message : 'Failed to update reaction');
+      toast.error(error instanceof Error ? error.message : t('toast.failedToUpdateReaction'));
     },
     onSuccess: async (action) => {
       // Invalidate reaction counts cache
@@ -156,7 +158,7 @@ export function ReactionButton({
 
   const handleReaction = () => {
     if (!user) {
-      toast.error('Please sign in to react');
+      toast.error(t('toast.pleaseSignInToReact'));
       return;
     }
 

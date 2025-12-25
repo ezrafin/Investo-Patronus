@@ -15,6 +15,7 @@ import {
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface ReportButtonProps {
   contentType: 'discussion' | 'reply';
@@ -22,26 +23,27 @@ interface ReportButtonProps {
   className?: string;
 }
 
-const reportReasons = [
-  { value: 'spam', label: 'Spam' },
-  { value: 'harassment', label: 'Harassment or Bullying' },
-  { value: 'misinformation', label: 'Misinformation' },
-  { value: 'inappropriate', label: 'Inappropriate Content' },
-  { value: 'copyright', label: 'Copyright Violation' },
-  { value: 'other', label: 'Other' },
-];
-
 export function ReportButton({ contentType, contentId, className }: ReportButtonProps) {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'forum' });
   const [open, setOpen] = useState(false);
   const [reason, setReason] = useState('');
   const [details, setDetails] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
+  const reportReasons = [
+    { value: 'spam', label: t('report.reasons.spam') },
+    { value: 'harassment', label: t('report.reasons.harassment') },
+    { value: 'misinformation', label: t('report.reasons.misinformation') },
+    { value: 'inappropriate', label: t('report.reasons.inappropriate') },
+    { value: 'copyright', label: t('report.reasons.copyright') },
+    { value: 'other', label: t('report.reasons.other') },
+  ];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!user || !reason) {
-      toast.error('Please select a reason');
+      toast.error(t('report.pleaseSelectReason'));
       return;
     }
 
@@ -59,12 +61,12 @@ export function ReportButton({ contentType, contentId, className }: ReportButton
 
       if (error) throw error;
 
-      toast.success('Report submitted. Thank you for helping keep our community safe.');
+      toast.success(t('report.submitted'));
       setOpen(false);
       setReason('');
       setDetails('');
     } catch (error: any) {
-      toast.error(error.message || 'Failed to submit report');
+      toast.error(error.message || t('report.failedToSubmit'));
     } finally {
       setSubmitting(false);
     }
@@ -79,22 +81,22 @@ export function ReportButton({ contentType, contentId, className }: ReportButton
       <DialogTrigger asChild>
         <Button variant="ghost" size="sm" className={className}>
           <Flag className="h-4 w-4 mr-2" />
-          Report
+          {t('actions.report')}
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Report Content</DialogTitle>
+          <DialogTitle>{t('report.title')}</DialogTitle>
           <DialogDescription>
-            Help us maintain a safe and respectful community by reporting inappropriate content.
+            {t('report.description')}
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="reason">Reason for reporting</Label>
+            <Label htmlFor="reason">{t('report.reasonLabel')}</Label>
             <Select value={reason} onValueChange={setReason}>
               <SelectTrigger id="reason">
-                <SelectValue placeholder="Select a reason" />
+                <SelectValue placeholder={t('report.reasonPlaceholder')} />
               </SelectTrigger>
               <SelectContent>
                 {reportReasons.map((r) => (
@@ -107,22 +109,22 @@ export function ReportButton({ contentType, contentId, className }: ReportButton
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="details">Additional details (optional)</Label>
+            <Label htmlFor="details">{t('report.detailsLabel')}</Label>
             <Textarea
               id="details"
               value={details}
               onChange={(e) => setDetails(e.target.value)}
-              placeholder="Provide any additional context..."
+              placeholder={t('report.detailsPlaceholder')}
               rows={4}
             />
           </div>
 
           <div className="flex justify-end gap-2">
             <Button type="button" variant="outline" onClick={() => setOpen(false)}>
-              Cancel
+              {t('report.cancel')}
             </Button>
             <Button type="submit" disabled={!reason || submitting}>
-              {submitting ? 'Submitting...' : 'Submit Report'}
+              {submitting ? t('report.submitting') : t('report.submit')}
             </Button>
           </div>
         </form>

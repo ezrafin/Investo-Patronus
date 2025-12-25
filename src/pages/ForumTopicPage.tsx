@@ -108,27 +108,28 @@ export default function ForumTopicPage() {
 
   const loading = topicLoading || commentsLoading;
 
+  const { t } = useTranslation({ namespace: 'forum' });
+  const { t: tUi } = useTranslation({ namespace: 'ui' });
+
   const handleShare = async () => {
     try {
       await navigator.clipboard.writeText(window.location.href);
-      toast.success('Link copied to clipboard');
+      toast.success(t('toast.linkCopied'));
     } catch {
-      toast.error('Failed to copy link');
+      toast.error(t('toast.linkCopyFailed'));
     }
   };
 
-  const { t } = useTranslation({ namespace: 'forum' });
-
   const handleReplySubmit = async (content: string) => {
     if (!user || !topicId) {
-      toast.error('Please sign in to reply');
+      toast.error(t('toast.pleaseSignInToReply'));
       return;
     }
 
     // Check rate limit
     const rateLimitCheck = await checkRateLimit('create_reply', 20, 60);
     if (!rateLimitCheck.allowed) {
-      toast.error(rateLimitCheck.message || 'Rate limit exceeded. Please wait before posting another reply.');
+      toast.error(rateLimitCheck.message || t('toast.rateLimitExceeded'));
       return;
     }
 
@@ -137,7 +138,7 @@ export default function ForumTopicPage() {
       // Server-side validation
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
-        toast.error('Session expired. Please sign in again.');
+        toast.error(t('toast.sessionExpired'));
         setSubmittingReply(false);
         return;
       }
@@ -153,14 +154,14 @@ export default function ForumTopicPage() {
       );
 
       if (validationError) {
-        throw new Error('Validation service error');
+        throw new Error(t('toast.validationServiceError'));
       }
 
       if (!validationData?.isValid) {
         const errorMessages = validationData?.errors?.map((error: string) => {
           const key = getValidationErrorMessageKey(error);
           return t(key);
-        }) || ['Your message violates our community guidelines. Please review and revise.'];
+        }) || [t('validation.generic')];
         
         toast.error(errorMessages.length > 1 ? t('validation.multipleViolations') : errorMessages[0]);
         setSubmittingReply(false);
@@ -189,7 +190,7 @@ export default function ForumTopicPage() {
         action: 'post_reply',
       });
       
-      toast.success('Reply posted');
+      toast.success(t('toast.replyPosted'));
       
       // Scroll to reply editor and focus it after a short delay to allow DOM update
       setTimeout(() => {
@@ -201,7 +202,7 @@ export default function ForumTopicPage() {
         }
       }, 100);
     } catch (error: any) {
-      toast.error(error.message || 'Failed to post reply');
+      toast.error(error.message || t('toast.failedToPostReply'));
     } finally {
       setSubmittingReply(false);
     }
@@ -233,9 +234,9 @@ export default function ForumTopicPage() {
     return (
       <Layout>
         <div className="container-narrow section-spacing text-center">
-          <h1 className="heading-lg mb-4">Topic not found</h1>
+          <h1 className="heading-lg mb-4">{t('topicPage.topicNotFound')}</h1>
           <Link to="/forum" className="text-primary hover:underline">
-            Back to forum
+            {t('topicPage.backToForum')}
           </Link>
         </div>
       </Layout>
@@ -275,30 +276,30 @@ export default function ForumTopicPage() {
                 size="sm"
                 onClick={handleBookmark}
                 disabled={bookmarkLoading}
-                aria-label={isBookmarked ? 'Remove bookmark from discussion' : 'Bookmark this discussion'}
+                aria-label={isBookmarked ? t('actions.bookmarked') : t('actions.bookmark')}
                 className={cn(isBookmarked && 'bg-primary/10')}
               >
                 <Bookmark className={cn('h-4 w-4 mr-2', isBookmarked && 'fill-current')} />
-                {bookmarkLoading ? 'Saving…' : isBookmarked ? 'Bookmarked' : 'Bookmark'}
+                {bookmarkLoading ? t('actions.saving') : isBookmarked ? t('actions.bookmarked') : t('actions.bookmark')}
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handleFollow}
                 disabled={followLoading}
-                aria-label={isFollowing ? 'Unfollow discussion' : 'Follow discussion'}
+                aria-label={isFollowing ? t('actions.unfollow') : t('actions.follow')}
                 className={cn(isFollowing && 'bg-primary/10')}
               >
-                {followLoading ? 'Saving…' : isFollowing ? 'Following' : 'Follow'}
+                {followLoading ? t('actions.saving') : isFollowing ? t('actions.following') : t('actions.follow')}
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handleShare}
-                aria-label="Share discussion link"
+                aria-label={t('actions.share')}
               >
                 <Share2 className="h-4 w-4 mr-2" />
-                Share
+                {t('actions.share')}
               </Button>
               <ReportButton
                 contentType="discussion"
@@ -309,7 +310,7 @@ export default function ForumTopicPage() {
 
           <div className="mt-2">
             <Button size="sm" onClick={handleScrollToReply}>
-              Post reply
+              {t('actions.postReply')}
             </Button>
           </div>
           
@@ -328,7 +329,7 @@ export default function ForumTopicPage() {
             </span>
             <span className="flex items-center gap-1.5">
               <MessageCircle className="h-4 w-4" />
-              {topic.replies} replies
+              {topic.replies} {t('topicPage.replies')}
             </span>
           </div>
         </div>
@@ -469,18 +470,18 @@ export default function ForumTopicPage() {
               ref={replyEditorRef}
               className="mt-8 md:mt-12 p-6 md:p-8 rounded-xl border border-border/60 bg-card"
             >
-              <h3 className="font-heading font-medium text-lg mb-4">Write a Reply</h3>
+              <h3 className="font-heading font-medium text-lg mb-4">{t('editor.writeReplyTitle')}</h3>
               <ReplyEditor
                 onSubmit={handleReplySubmit}
                 isSubmitting={submittingReply}
-                placeholder="Share your thoughts... (Markdown supported)"
+                placeholder={t('editor.writeReply')}
               />
             </div>
           ) : (
             <div className="mt-8 md:mt-12 p-6 md:p-8 rounded-xl border border-border/60 bg-card text-center">
-              <p className="text-muted-foreground mb-4">Please sign in to reply to this discussion</p>
+              <p className="text-muted-foreground mb-4">{t('topicPage.pleaseSignInToReply')}</p>
               <Link to="/auth/login">
-                <Button>Sign in</Button>
+                <Button>{t('topicPage.signIn')}</Button>
               </Link>
             </div>
           )}

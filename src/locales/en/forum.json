@@ -124,5 +124,83 @@
     "newFollowerBody": "{{author}} started following you",
     "genericTitle": "New notification",
     "genericBody": "You have a new notification"
+  },
+  "actions": {
+    "bookmark": "Bookmark",
+    "bookmarked": "Bookmarked",
+    "saving": "Saving…",
+    "follow": "Follow",
+    "following": "Following",
+    "share": "Share",
+    "report": "Report",
+    "postReply": "Post reply"
+  },
+  "toast": {
+    "linkCopied": "Link copied to clipboard",
+    "linkCopyFailed": "Failed to copy link",
+    "pleaseSignInToReply": "Please sign in to reply",
+    "pleaseSignInToReact": "Please sign in to react",
+    "rateLimitExceeded": "Rate limit exceeded. Please wait before posting another reply.",
+    "sessionExpired": "Session expired. Please sign in again.",
+    "validationServiceError": "Validation service error",
+    "replyPosted": "Reply posted",
+    "failedToPostReply": "Failed to post reply",
+    "failedToUpdateReaction": "Failed to update reaction"
+  },
+  "editor": {
+    "writeReply": "Write your reply...",
+    "writeReplyTitle": "Write a Reply",
+    "markdownSupported": "Markdown is supported. Use the toolbar above for formatting.",
+    "validatingContent": "Validating content...",
+    "characters": "characters",
+    "cancel": "Cancel",
+    "submitting": "Submitting...",
+    "submit": "Submit",
+    "hidePreview": "Hide Preview",
+    "showPreview": "Show Preview",
+    "emptyPreview": "Preview will appear here when you start typing"
+  },
+  "report": {
+    "title": "Report Content",
+    "description": "Help us maintain a safe and respectful community by reporting inappropriate content.",
+    "reasonLabel": "Reason for reporting",
+    "reasonPlaceholder": "Select a reason",
+    "detailsLabel": "Additional details (optional)",
+    "detailsPlaceholder": "Provide any additional context...",
+    "cancel": "Cancel",
+    "submitting": "Submitting...",
+    "submit": "Submit Report",
+    "pleaseSelectReason": "Please select a reason",
+    "submitted": "Report submitted. Thank you for helping keep our community safe.",
+    "failedToSubmit": "Failed to submit report",
+    "reasons": {
+      "spam": "Spam",
+      "harassment": "Harassment or Bullying",
+      "misinformation": "Misinformation",
+      "inappropriate": "Inappropriate Content",
+      "copyright": "Copyright Violation",
+      "other": "Other"
+    }
+  },
+  "topicPage": {
+    "topicNotFound": "Topic not found",
+    "backToForum": "Back to forum",
+    "pleaseSignInToReply": "Please sign in to reply to this discussion",
+    "signIn": "Sign in",
+    "replies": "replies",
+    "views": "views",
+    "likes": "likes"
+  },
+  "categories": {
+    "clearFilter": "Clear filter",
+    "trendingTopics": "Trending Discussions",
+    "viewAllTrending": "View all trending →",
+    "noTrendingTopics": "No trending topics at the moment"
+  },
+  "featured": {
+    "title": "Featured",
+    "new": "New",
+    "hot": "Hot",
+    "trending": "Trending"
   }
 }

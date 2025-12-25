@@ -67,7 +67,7 @@ export default function LoginPage() {
       setError(message);
       toast.error(message);
     } else {
-      toast.success('Signed in successfully');
+      toast.success(t('toast.signedInSuccess', { ns: 'ui' }));
       navigate('/');
     }
 

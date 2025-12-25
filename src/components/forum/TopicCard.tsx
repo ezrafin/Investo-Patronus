@@ -5,6 +5,7 @@ import { ForumTopic } from '@/lib/api/index';
 import { AssetBadge } from './AssetBadge';
 import { TopicStatusBadge } from './TopicStatusBadge';
 import { formatRelativeTime } from '@/lib/utils/date';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface TopicCardProps {
   topic: ForumTopic;
@@ -15,6 +16,7 @@ interface TopicCardProps {
 }
 
 export function TopicCard({ topic, categoryName, index = 0, language = 'en', showExcerpt = true }: TopicCardProps) {
+  const { t } = useTranslation({ namespace: 'forum' });
   const isNew = new Date(topic.date).getTime() > Date.now() - 24 * 60 * 60 * 1000;
   const isHot = topic.replies > 10 || topic.views > 100;
   const excerpt = topic.content ? topic.content.substring(0, 100).trim() + (topic.content.length > 100 ? '...' : '') : '';
@@ -104,14 +106,14 @@ export function TopicCard({ topic, categoryName, index = 0, language = 'en', sho
             <MessageCircle className="h-4 w-4" />
             <span className="tabular-nums font-medium">{topic.replies}</span>
           </div>
-          <span className="text-[10px]">replies</span>
+          <span className="text-[10px]">{t('topicPage.replies')}</span>
         </div>
         <div className="flex flex-col items-center gap-1 min-w-[60px]">
           <div className="flex items-center gap-1.5">
             <Eye className="h-4 w-4" />
             <span className="tabular-nums font-medium">{topic.views}</span>
           </div>
-          <span className="text-[10px]">views</span>
+          <span className="text-[10px]">{t('topicPage.views')}</span>
         </div>
         {topic.like_count !== undefined && topic.like_count > 0 && (
           <div className="flex flex-col items-center gap-1 min-w-[60px]">
@@ -119,7 +121,7 @@ export function TopicCard({ topic, categoryName, index = 0, language = 'en', sho
               <ThumbsUp className="h-4 w-4" />
               <span className="tabular-nums font-medium">{topic.like_count}</span>
             </div>
-            <span className="text-[10px]">likes</span>
+            <span className="text-[10px]">{t('topicPage.likes')}</span>
           </div>
         )}
       </div>

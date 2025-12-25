@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { LegendaryBillSpawn } from '@/components/collectibles/LegendaryBillSpawn';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const marketLabels: Record<string, string> = {
   indices: 'Indices',
@@ -107,9 +108,9 @@ export default function NewsDetailPage() {
           // Fallback to clipboard if share fails
           try {
             await navigator.clipboard.writeText(articleUrl);
-            toast.success('Link copied to clipboard');
+            toast.success(t('toast.linkCopied', { ns: 'ui' }));
           } catch (clipboardError) {
-            toast.error('Failed to copy link');
+            toast.error(t('toast.linkCopyFailed', { ns: 'ui' }));
           }
         }
       }
@@ -117,9 +118,9 @@ export default function NewsDetailPage() {
       // Fallback to clipboard
       try {
         await navigator.clipboard.writeText(articleUrl);
-        toast.success('Link copied to clipboard');
+        toast.success(t('toast.linkCopied', { ns: 'ui' }));
       } catch (error) {
-        toast.error('Failed to copy link');
+        toast.error(t('toast.linkCopyFailed', { ns: 'ui' }));
       }
     }
   };

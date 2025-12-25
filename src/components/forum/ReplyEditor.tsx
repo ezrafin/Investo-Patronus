@@ -20,12 +20,13 @@ interface ReplyEditorProps {
 export function ReplyEditor({
   onSubmit,
   onCancel,
-  placeholder = 'Write your reply...',
+  placeholder,
   initialValue = '',
   isSubmitting = false,
   className,
 }: ReplyEditorProps) {
   const { t } = useTranslation({ namespace: 'forum' });
+  const defaultPlaceholder = placeholder || t('editor.writeReply');
   const [content, setContent] = useState(initialValue);
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
   const [isValidating, setIsValidating] = useState(false);
@@ -258,7 +259,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => setShowPreview(!showPreview)}
           className="h-8 w-8 p-0"
-          title={showPreview ? "Hide Preview" : "Show Preview"}
+          title={showPreview ? t('editor.hidePreview') : t('editor.showPreview')}
         >
           {showPreview ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
         </Button>
@@ -271,7 +272,7 @@ export function ReplyEditor({
             {content.trim() ? (
               <MarkdownContent content={content} className="text-foreground leading-relaxed" />
             ) : (
-              <p className="text-muted-foreground italic">Preview will appear here...</p>
+              <p className="text-muted-foreground italic">{t('editor.emptyPreview')}</p>
             )}
           </div>
         ) : (
@@ -279,7 +280,7 @@ export function ReplyEditor({
             ref={textareaRef}
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder={placeholder}
+            placeholder={defaultPlaceholder}
             rows={6}
             className={cn(
               "resize-none font-mono text-sm min-h-[44px]",
@@ -302,12 +303,12 @@ export function ReplyEditor({
         )}
         {validationErrors.length === 0 && !isValidating && (
           <p className="text-xs text-muted-foreground">
-            Markdown is supported. Use the toolbar above for formatting.
+            {t('editor.markdownSupported')}
           </p>
         )}
         {isValidating && (
           <p className="text-xs text-muted-foreground">
-            Validating content...
+            {t('editor.validatingContent')}
           </p>
         )}
       </div>
@@ -315,12 +316,12 @@ export function ReplyEditor({
       {/* Actions */}
       <div className="flex items-center justify-between">
         <div className="text-xs text-muted-foreground">
-          {content.length} characters
+          {content.length} {t('editor.characters')}
         </div>
         <div className="flex items-center gap-2">
           {onCancel && (
             <Button type="button" variant="outline" onClick={onCancel} disabled={isSubmitting}>
-              Cancel
+              {t('editor.cancel')}
             </Button>
           )}
           <Button 
@@ -328,7 +329,7 @@ export function ReplyEditor({
             disabled={!content.trim() || isSubmitting || validationErrors.length > 0}
           >
             <Send className="mr-2 h-4 w-4" />
-            {isSubmitting ? 'Submitting...' : 'Submit'}
+            {isSubmitting ? t('editor.submitting') : t('editor.submit')}
           </Button>
         </div>
       </div>

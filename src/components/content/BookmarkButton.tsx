@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 import { useCollectibleBills } from '@/hooks/useCollectibleBills';
 import { motion, AnimatePresence } from 'framer-motion';
 import { checkmarkAnimation, prefersReducedMotion, transitions } from '@/lib/animations';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface BookmarkButtonProps {
   contentType: 'article' | 'forum' | 'video' | 'analytics';
@@ -17,6 +18,7 @@ interface BookmarkButtonProps {
 
 export function BookmarkButton({ contentType, contentId, className }: BookmarkButtonProps) {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [loading, setLoading] = useState(false);
   const { collectBill } = useCollectibleBills();
@@ -47,7 +49,7 @@ export function BookmarkButton({ contentType, contentId, className }: BookmarkBu
 
   const toggleBookmark = async () => {
     if (!user) {
-      toast.error('Please sign in to bookmark content');
+      toast.error(t('toast.pleaseSignInToBookmark', { ns: 'ui' }));
       return;
     }
 
@@ -64,7 +66,7 @@ export function BookmarkButton({ contentType, contentId, className }: BookmarkBu
         if (error) throw error;
 
         setIsBookmarked(false);
-        toast.success('Removed from bookmarks');
+        toast.success(t('toast.removedFromBookmarks', { ns: 'ui' }));
       } else {
         const { error } = await (supabase
           .from('user_bookmarks' as any)
@@ -77,7 +79,7 @@ export function BookmarkButton({ contentType, contentId, className }: BookmarkBu
         if (error) throw error;
 
         setIsBookmarked(true);
-        toast.success('Added to bookmarks');
+        toast.success(t('toast.addedToBookmarks', { ns: 'ui' }));
         
         // Trigger bill collection for creating bookmark
         await collectBill('bookmark_create', {
@@ -90,7 +92,7 @@ export function BookmarkButton({ contentType, contentId, className }: BookmarkBu
         // Already bookmarked
         setIsBookmarked(true);
       } else {
-        toast.error('Failed to update bookmark');
+        toast.error(t('toast.failedToUpdateBookmark', { ns: 'ui' }));
       }
     } finally {
       setLoading(false);

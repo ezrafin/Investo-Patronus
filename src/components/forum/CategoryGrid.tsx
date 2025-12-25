@@ -66,6 +66,7 @@ const categoryColors: Record<string, { bg: string; border: string; icon: string 
 };
 
 export function CategoryGrid({ categories, selectedCategoryId, onCategoryClick }: CategoryGridProps) {
+  const { t } = useTranslation({ namespace: 'ui' });
   if (categories.length === 0) return null;
 
   const handleClick = (categoryId: string) => {
@@ -121,7 +122,7 @@ export function CategoryGrid({ categories, selectedCategoryId, onCategoryClick }
                   </h3>
                   {category.topic_count !== undefined && (
                     <p className="text-xs text-muted-foreground">
-                      {category.topic_count} {category.topic_count === 1 ? 'topic' : 'topics'}
+                      {category.topic_count} {category.topic_count === 1 ? t('labels.topic', { ns: 'ui' }) : t('labels.topics', { ns: 'ui' })}
                     </p>
                   )}
                 </div>
