@@ -20,13 +20,15 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // React core
-          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router')) {
-            return 'react-vendor';
-          }
-          // UI libraries
-          if (id.includes('node_modules/framer-motion') || id.includes('node_modules/@radix-ui')) {
-            return 'ui-vendor';
+          // React core and UI libraries together - ensures React is available for @radix-ui
+          if (
+            id.includes('node_modules/react') || 
+            id.includes('node_modules/react-dom') ||
+            id.includes('node_modules/react-router') ||
+            id.includes('node_modules/framer-motion') || 
+            id.includes('node_modules/@radix-ui')
+          ) {
+            return 'react-ui-vendor';
           }
           // Query library
           if (id.includes('node_modules/@tanstack/react-query')) {
