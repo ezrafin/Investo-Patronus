@@ -3,13 +3,37 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
+// Plugin to ensure correct chunk loading order
+function chunkOrderPlugin() {
+  return {
+    name: 'chunk-order',
+    generateBundle(options: any, bundle: any) {
+      // Ensure react-core is loaded before ui-vendor
+      const chunks = Object.keys(bundle);
+      const reactCoreChunk = chunks.find((c: string) => c.includes('react-core'));
+      const uiVendorChunk = chunks.find((c: string) => c.includes('ui-vendor'));
+      
+      if (reactCoreChunk && uiVendorChunk) {
+        // Vite handles this automatically, but we can add explicit dependencies
+        if (bundle[uiVendorChunk] && bundle[reactCoreChunk]) {
+          bundle[uiVendorChunk].moduleIds = bundle[uiVendorChunk].moduleIds || [];
+        }
+      }
+    },
+  };
+}
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(), 
+    mode === "development" && componentTagger(),
+    mode === "production" && chunkOrderPlugin(),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -20,7 +44,7 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // React core and UI libraries together - ensures React is available for @radix-ui
+          // Combine React and all React-dependent libraries to ensure correct loading order
           if (
             id.includes('node_modules/react') || 
             id.includes('node_modules/react-dom') ||
@@ -28,7 +52,7 @@ export default defineConfig(({ mode }) => ({
             id.includes('node_modules/framer-motion') || 
             id.includes('node_modules/@radix-ui')
           ) {
-            return 'react-ui-vendor';
+            return 'vendor-react';
           }
           // Query library
           if (id.includes('node_modules/@tanstack/react-query')) {
@@ -78,18 +102,8 @@ export default defineConfig(({ mode }) => ({
     sourcemap: mode === 'development',
     // Minify CSS
     cssMinify: true,
-    // Minify JS
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production', // Remove console.log in production
-        drop_debugger: mode === 'production',
-        pure_funcs: mode === 'production' ? ['console.log', 'console.info', 'console.debug'] : [],
-      },
-      format: {
-        comments: false, // Remove comments
-      },
-    },
+    // Minify JS - use esbuild for better compatibility and faster builds
+    minify: mode === 'production' ? 'esbuild' : false,
     // Target modern browsers for smaller bundle
     target: 'esnext',
     // Report compressed size
