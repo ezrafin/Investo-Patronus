@@ -143,7 +143,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('**', '**')}
           className="h-8 w-8 p-0"
-          title="Bold (Ctrl+B)"
+          title={t('bold', { ns: 'ui' }) + ' (Ctrl+B)'}
         >
           <Bold className="h-4 w-4" />
         </Button>
@@ -153,7 +153,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('*', '*')}
           className="h-8 w-8 p-0"
-          title="Italic (Ctrl+I)"
+          title={t('italic', { ns: 'ui' }) + ' (Ctrl+I)'}
         >
           <Italic className="h-4 w-4" />
         </Button>
@@ -163,7 +163,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('~~', '~~')}
           className="h-8 w-8 p-0"
-          title="Strikethrough"
+          title={t('strikethrough', { ns: 'ui' })}
         >
           <Strikethrough className="h-4 w-4" />
         </Button>
@@ -177,7 +177,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('> ', '', true)}
           className="h-8 w-8 p-0"
-          title="Quote"
+          title={t('quote', { ns: 'ui' })}
         >
           <Quote className="h-4 w-4" />
         </Button>
@@ -187,7 +187,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('`', '`')}
           className="h-8 w-8 p-0"
-          title="Inline Code"
+          title={t('inlineCode', { ns: 'ui' })}
         >
           <Code className="h-4 w-4" />
         </Button>
@@ -197,7 +197,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('```\n', '\n```', true)}
           className="h-8 w-8 p-0"
-          title="Code Block"
+          title={t('codeBlock', { ns: 'ui' })}
         >
           <FileCode className="h-4 w-4" />
         </Button>
@@ -211,7 +211,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('- ', '', true)}
           className="h-8 w-8 p-0"
-          title="Bullet List"
+          title={t('bulletList', { ns: 'ui' })}
         >
           <List className="h-4 w-4" />
         </Button>
@@ -221,7 +221,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('1. ', '', true)}
           className="h-8 w-8 p-0"
-          title="Numbered List"
+          title={t('numberedList', { ns: 'ui' })}
         >
           <ListOrdered className="h-4 w-4" />
         </Button>
@@ -235,7 +235,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('[', '](url)')}
           className="h-8 w-8 p-0"
-          title="Insert Link"
+          title={t('insertLink', { ns: 'ui' })}
         >
           <LinkIcon className="h-4 w-4" />
         </Button>
@@ -245,7 +245,7 @@ export function ReplyEditor({
           size="sm"
           onClick={() => insertMarkdown('## ', '', true)}
           className="h-8 w-8 p-0"
-          title="Heading"
+          title={t('heading', { ns: 'ui' })}
         >
           <Heading2 className="h-4 w-4" />
         </Button>

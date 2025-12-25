@@ -124,5 +124,83 @@
     "newFollowerBody": "{{author}} te ha seguido",
     "genericTitle": "Nueva notificación",
     "genericBody": "Tienes una nueva notificación"
+  },
+  "actions": {
+    "bookmark": "Favorito",
+    "bookmarked": "Guardado",
+    "saving": "Guardando…",
+    "follow": "Seguir",
+    "following": "Siguiendo",
+    "share": "Compartir",
+    "report": "Reportar",
+    "postReply": "Publicar respuesta"
+  },
+  "toast": {
+    "linkCopied": "Enlace copiado al portapapeles",
+    "linkCopyFailed": "Error al copiar el enlace",
+    "pleaseSignInToReply": "Por favor, inicia sesión para responder",
+    "pleaseSignInToReact": "Por favor, inicia sesión para reaccionar",
+    "rateLimitExceeded": "Límite de velocidad excedido. Por favor, espera antes de publicar otra respuesta.",
+    "sessionExpired": "Sesión expirada. Por favor, inicia sesión nuevamente.",
+    "validationServiceError": "Error del servicio de validación",
+    "replyPosted": "Respuesta publicada",
+    "failedToPostReply": "Error al publicar respuesta",
+    "failedToUpdateReaction": "Error al actualizar reacción"
+  },
+  "editor": {
+    "writeReply": "Escribe tu respuesta...",
+    "writeReplyTitle": "Escribir una respuesta",
+    "markdownSupported": "Markdown es compatible. Usa la barra de herramientas de arriba para formatear.",
+    "validatingContent": "Validando contenido...",
+    "characters": "caracteres",
+    "cancel": "Cancelar",
+    "submitting": "Enviando...",
+    "submit": "Enviar",
+    "hidePreview": "Ocultar vista previa",
+    "showPreview": "Mostrar vista previa",
+    "emptyPreview": "La vista previa aparecerá aquí cuando comiences a escribir"
+  },
+  "report": {
+    "title": "Reportar contenido",
+    "description": "Ayúdanos a mantener una comunidad segura y respetuosa reportando contenido inapropiado.",
+    "reasonLabel": "Razón del reporte",
+    "reasonPlaceholder": "Selecciona una razón",
+    "detailsLabel": "Detalles adicionales (opcional)",
+    "detailsPlaceholder": "Proporciona información adicional...",
+    "cancel": "Cancelar",
+    "submitting": "Enviando...",
+    "submit": "Enviar reporte",
+    "pleaseSelectReason": "Por favor, selecciona una razón",
+    "submitted": "Reporte enviado. Gracias por ayudarnos a mantener nuestra comunidad segura.",
+    "failedToSubmit": "Error al enviar reporte",
+    "reasons": {
+      "spam": "Spam",
+      "harassment": "Acoso o intimidación",
+      "misinformation": "Desinformación",
+      "inappropriate": "Contenido inapropiado",
+      "copyright": "Violación de derechos de autor",
+      "other": "Otro"
+    }
+  },
+  "topicPage": {
+    "topicNotFound": "Tema no encontrado",
+    "backToForum": "Volver al foro",
+    "pleaseSignInToReply": "Por favor, inicia sesión para responder a esta discusión",
+    "signIn": "Iniciar sesión",
+    "replies": "respuestas",
+    "views": "vistas",
+    "likes": "me gusta"
+  },
+  "categories": {
+    "clearFilter": "Limpiar filtro",
+    "trendingTopics": "Discusiones populares",
+    "viewAllTrending": "Ver todas las populares →",
+    "noTrendingTopics": "No hay temas populares en este momento"
+  },
+  "featured": {
+    "title": "Destacado",
+    "new": "Nuevo",
+    "hot": "Popular",
+    "trending": "Tendencia"
   }
 }

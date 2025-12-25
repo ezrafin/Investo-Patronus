@@ -124,5 +124,83 @@
     "newFollowerBody": "{{author}} vous suit maintenant",
     "genericTitle": "Nouvelle notification",
     "genericBody": "Vous avez une nouvelle notification"
+  },
+  "actions": {
+    "bookmark": "Favori",
+    "bookmarked": "Enregistré",
+    "saving": "Enregistrement…",
+    "follow": "Suivre",
+    "following": "Suivre",
+    "share": "Partager",
+    "report": "Signaler",
+    "postReply": "Publier une réponse"
+  },
+  "toast": {
+    "linkCopied": "Lien copié dans le presse-papiers",
+    "linkCopyFailed": "Échec de la copie du lien",
+    "pleaseSignInToReply": "Veuillez vous connecter pour répondre",
+    "pleaseSignInToReact": "Veuillez vous connecter pour réagir",
+    "rateLimitExceeded": "Limite de débit dépassée. Veuillez patienter avant de publier une autre réponse.",
+    "sessionExpired": "Session expirée. Veuillez vous reconnecter.",
+    "validationServiceError": "Erreur du service de validation",
+    "replyPosted": "Réponse publiée",
+    "failedToPostReply": "Échec de la publication de la réponse",
+    "failedToUpdateReaction": "Échec de la mise à jour de la réaction"
+  },
+  "editor": {
+    "writeReply": "Écrivez votre réponse...",
+    "writeReplyTitle": "Écrire une réponse",
+    "markdownSupported": "Markdown est pris en charge. Utilisez la barre d'outils ci-dessus pour le formatage.",
+    "validatingContent": "Validation du contenu...",
+    "characters": "caractères",
+    "cancel": "Annuler",
+    "submitting": "Envoi en cours...",
+    "submit": "Envoyer",
+    "hidePreview": "Masquer l'aperçu",
+    "showPreview": "Afficher l'aperçu",
+    "emptyPreview": "L'aperçu apparaîtra ici lorsque vous commencerez à taper"
+  },
+  "report": {
+    "title": "Signaler le contenu",
+    "description": "Aidez-nous à maintenir une communauté sûre et respectueuse en signalant un contenu inapproprié.",
+    "reasonLabel": "Raison du signalement",
+    "reasonPlaceholder": "Sélectionnez une raison",
+    "detailsLabel": "Détails supplémentaires (optionnel)",
+    "detailsPlaceholder": "Fournissez des informations supplémentaires...",
+    "cancel": "Annuler",
+    "submitting": "Envoi en cours...",
+    "submit": "Envoyer le signalement",
+    "pleaseSelectReason": "Veuillez sélectionner une raison",
+    "submitted": "Signalement envoyé. Merci de nous aider à garder notre communauté sûre.",
+    "failedToSubmit": "Échec de l'envoi du signalement",
+    "reasons": {
+      "spam": "Spam",
+      "harassment": "Harcèlement ou intimidation",
+      "misinformation": "Désinformation",
+      "inappropriate": "Contenu inapproprié",
+      "copyright": "Violation du droit d'auteur",
+      "other": "Autre"
+    }
+  },
+  "topicPage": {
+    "topicNotFound": "Sujet introuvable",
+    "backToForum": "Retour au forum",
+    "pleaseSignInToReply": "Veuillez vous connecter pour répondre à cette discussion",
+    "signIn": "Se connecter",
+    "replies": "réponses",
+    "views": "vues",
+    "likes": "j'aime"
+  },
+  "categories": {
+    "clearFilter": "Effacer le filtre",
+    "trendingTopics": "Discussions tendances",
+    "viewAllTrending": "Voir toutes les tendances →",
+    "noTrendingTopics": "Aucun sujet tendance pour le moment"
+  },
+  "featured": {
+    "title": "Recommandé",
+    "new": "Nouveau",
+    "hot": "Populaire",
+    "trending": "Tendance"
   }
 }

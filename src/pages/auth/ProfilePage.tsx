@@ -15,11 +15,13 @@ import { AvatarSelector } from '@/components/user/AvatarSelector';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { supabase } from '@/integrations/supabase/client';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function ProfilePage() {
   // Bill collection: profile_own_visit
   usePageBillCollection({ billId: 'profile_own_visit' });
   const { user, profile, loading: authLoading, updateProfile } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [displayName, setDisplayName] = useState('');
   const [bio, setBio] = useState('');
   const [privacyLevel, setPrivacyLevel] = useState<'public' | 'private' | 'friends'>('public');
@@ -110,9 +112,9 @@ export default function ProfilePage() {
     setAvatarUrl(url);
     const { error } = await updateProfile({ avatar_url: url });
     if (error) {
-      toast.error('Failed to update avatar');
+      toast.error(t('toast.failedToUpdateAvatar'));
     } else {
-      toast.success('Avatar updated successfully');
+      toast.success(t('toast.avatarUpdatedSuccess'));
     }
   };
 
@@ -125,23 +127,23 @@ export default function ProfilePage() {
     });
 
     if (error) {
-      toast.error('Failed to update profile');
+      toast.error(t('toast.failedToUpdateProfile'));
     } else {
-      toast.success('Profile updated successfully');
+      toast.success(t('toast.profileUpdatedSuccess'));
     }
     setSaving(false);
   };
 
   const handleEmailChange = async () => {
     if (!newEmail || newEmail === user.email) {
-      toast.error('Please enter a different email address');
+      toast.error(t('toast.pleaseEnterDifferentEmail'));
       return;
     }
 
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(newEmail)) {
-      toast.error('Please enter a valid email address');
+      toast.error(t('toast.pleaseEnterValidEmail'));
       return;
     }
 
@@ -150,13 +152,13 @@ export default function ProfilePage() {
       const { error } = await supabase.auth.updateUser({ email: newEmail });
       
       if (error) {
-        toast.error(error.message || 'Failed to update email');
+        toast.error(error.message || t('errors.failedToUpdate'));
       } else {
-        toast.success('Confirmation email sent! Please check both your old and new email addresses to confirm the change.');
+        toast.success(t('toast.confirmationEmailSent'));
         setNewEmail('');
       }
     } catch (error) {
-      toast.error('An unexpected error occurred');
+      toast.error(t('toast.unexpectedError'));
     } finally {
       setChangingEmail(false);
     }
@@ -239,17 +241,17 @@ export default function ProfilePage() {
                       type="text"
                       value={displayName}
                       onChange={(e) => setDisplayName(e.target.value)}
-                      placeholder="John Doe"
+                      placeholder={t('labels.displayNamePlaceholder')}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="bio">Bio</Label>
+                    <Label htmlFor="bio">{t('labels.bio')}</Label>
                     <Textarea
                       id="bio"
                       value={bio}
                       onChange={(e) => setBio(e.target.value)}
-                      placeholder="Tell us about yourself..."
+                      placeholder={t('labels.bioPlaceholder')}
                       rows={4}
                     />
                   </div>
@@ -282,7 +284,7 @@ export default function ProfilePage() {
                       type="email"
                       value={newEmail}
                       onChange={(e) => setNewEmail(e.target.value)}
-                      placeholder="Enter new email address"
+                      placeholder={t('auth.emailPlaceholderExample')}
                     />
                     <p className="text-xs text-muted-foreground">
                       You'll need to confirm the change from both your old and new email addresses.

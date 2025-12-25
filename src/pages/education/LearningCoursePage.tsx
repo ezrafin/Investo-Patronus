@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { toast } from 'sonner';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const courseModules = [
   { title: 'Introduction to Financial Markets', lessons: 8, duration: '2 hours' },
@@ -77,12 +78,13 @@ const testimonials = [
 
 
 export default function LearningCoursePage() {
+  const { t } = useTranslation({ namespace: 'ui' });
   const [email, setEmail] = useState('');
 
   const handleNotify = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast.success('You will be notified when the course launches!');
+      toast.success(t('toast.courseNotification'));
       setEmail('');
     }
   };
@@ -109,7 +111,7 @@ export default function LearningCoursePage() {
             <form onSubmit={handleNotify} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t('auth.emailPlaceholder')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -117,7 +119,7 @@ export default function LearningCoursePage() {
               />
               <Button type="submit">
                 <Bell className="h-4 w-4 mr-2" />
-                Notify Me
+                {t('toast.notifyMe')}
               </Button>
             </form>
           </div>
@@ -267,14 +269,14 @@ export default function LearningCoursePage() {
             <form onSubmit={handleNotify} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t('auth.emailPlaceholder')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="flex-1"
               />
               <Button type="submit" size="lg">
-                Join Waitlist
+                {t('toast.joinWaitlist')}
               </Button>
             </form>
           </div>

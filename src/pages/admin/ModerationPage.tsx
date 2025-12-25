@@ -9,6 +9,7 @@ import { Shield, Trash2, Lock, Pin, CheckCircle, XCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface Report {
   id: string;
@@ -23,6 +24,7 @@ interface Report {
 
 export default function ModerationPage() {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [reports, setReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'pending' | 'all'>('pending');
@@ -54,7 +56,7 @@ export default function ModerationPage() {
       setReports((data || []) as Report[]);
     } catch (error) {
       console.error('Error loading reports:', error);
-      toast.error('Failed to load reports');
+      toast.error(t('toast.failedToLoadReports'));
     } finally {
       setLoading(false);
     }
@@ -94,7 +96,7 @@ export default function ModerationPage() {
             .eq('id', contentId);
           if (error) throw error;
         }
-        toast.success('Content hidden');
+        toast.success(t('toast.contentHidden'));
       } else if (action === 'unhide') {
         if (contentType === 'discussion') {
           const { error } = await supabase
@@ -104,21 +106,21 @@ export default function ModerationPage() {
           if (error) throw error;
         } else {
           // Cannot unhide replies without original content
-          toast.error('Cannot restore hidden reply content');
+          toast.error(t('toast.cannotRestoreHiddenReply'));
           return;
         }
-        toast.success('Content unhidden');
-        toast.success('Content deleted');
+        toast.success(t('toast.contentUnhidden'));
+        toast.success(t('toast.contentDeleted'));
       } else if (action === 'pin') {
         const { error } = await supabase
           .from('forum_discussions')
           .update({ is_pinned: true })
           .eq('id', contentId);
         if (error) throw error;
-        toast.success('Discussion pinned');
+        toast.success(t('toast.discussionPinned'));
       }
     } catch (error: any) {
-      toast.error(error.message || 'Failed to perform action');
+      toast.error(error.message || t('errors.failedToUpdate'));
     }
   };
 
@@ -273,10 +275,10 @@ export default function ModerationPage() {
                                 .eq('id', report.id);
 
                               if (error) throw error;
-                              toast.success('Report marked as resolved');
+                              toast.success(t('toast.reportMarkedResolved'));
                               loadReports();
                             } catch (error: any) {
-                              toast.error(error.message || 'Failed to resolve report');
+                              toast.error(error.message || t('errors.failedToUpdate'));
                             }
                           }}
                         >

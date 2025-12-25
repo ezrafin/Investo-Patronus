@@ -3,9 +3,11 @@ import { supabase } from '@/integrations/supabase/client';
 import { useUser } from '@/context/UserContext';
 import { toast } from 'sonner';
 import { useCollectibleBills } from './useCollectibleBills';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export function useUserFollow(targetUserId?: string) {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [isFollowing, setIsFollowing] = useState(false);
   const [loading, setLoading] = useState(false);
   const { collectBill } = useCollectibleBills();
@@ -34,7 +36,7 @@ export function useUserFollow(targetUserId?: string) {
 
   const toggleFollow = useCallback(async () => {
     if (!user) {
-      toast.error('Please sign in to follow users');
+      toast.error(t('toast.pleaseSignInToFollow'));
       return;
     }
 
@@ -53,7 +55,7 @@ export function useUserFollow(targetUserId?: string) {
           followed_id: targetUserId,
         });
         if (error) throw error;
-        toast.success('Following user');
+        toast.success(t('toast.followingUser'));
         
         // Trigger bill collection for following user
         await collectBill('user_follow', {
@@ -67,15 +69,15 @@ export function useUserFollow(targetUserId?: string) {
           .eq('follower_id', user.id)
           .eq('followed_id', targetUserId);
         if (error) throw error;
-        toast.success('Unfollowed user');
+        toast.success(t('toast.unfollowedUser'));
       }
     } catch (error: any) {
       setIsFollowing(!next);
-      toast.error(error.message || 'Failed to update follow status');
+      toast.error(error.message || t('errors.failedToUpdate'));
     } finally {
       setLoading(false);
     }
-  }, [user, targetUserId, isFollowing]);
+  }, [user, targetUserId, isFollowing, t, collectBill]);
 
   return { isFollowing, loading, toggleFollow };
 }

@@ -124,5 +124,83 @@
     "newFollowerBody": "{{author}} 关注了您",
     "genericTitle": "新通知",
     "genericBody": "您有一条新通知"
+  },
+  "actions": {
+    "bookmark": "书签",
+    "bookmarked": "已收藏",
+    "saving": "保存中…",
+    "follow": "关注",
+    "following": "正在关注",
+    "share": "分享",
+    "report": "举报",
+    "postReply": "发布回复"
+  },
+  "toast": {
+    "linkCopied": "链接已复制到剪贴板",
+    "linkCopyFailed": "复制链接失败",
+    "pleaseSignInToReply": "请登录以回复",
+    "pleaseSignInToReact": "请登录以反应",
+    "rateLimitExceeded": "请求速率超限。请稍后再发布回复。",
+    "sessionExpired": "会话已过期。请重新登录。",
+    "validationServiceError": "验证服务错误",
+    "replyPosted": "回复已发布",
+    "failedToPostReply": "发布回复失败",
+    "failedToUpdateReaction": "更新反应失败"
+  },
+  "editor": {
+    "writeReply": "写下您的回复...",
+    "writeReplyTitle": "写回复",
+    "markdownSupported": "支持 Markdown。使用上方工具栏进行格式化。",
+    "validatingContent": "正在验证内容...",
+    "characters": "字符",
+    "cancel": "取消",
+    "submitting": "提交中...",
+    "submit": "提交",
+    "hidePreview": "隐藏预览",
+    "showPreview": "显示预览",
+    "emptyPreview": "当您开始输入时，预览将显示在这里"
+  },
+  "report": {
+    "title": "举报内容",
+    "description": "通过举报不当内容，帮助我们维护安全、尊重的社区。",
+    "reasonLabel": "举报原因",
+    "reasonPlaceholder": "选择原因",
+    "detailsLabel": "其他详情（可选）",
+    "detailsPlaceholder": "提供任何其他信息...",
+    "cancel": "取消",
+    "submitting": "提交中...",
+    "submit": "提交举报",
+    "pleaseSelectReason": "请选择原因",
+    "submitted": "举报已提交。感谢您帮助我们保持社区安全。",
+    "failedToSubmit": "提交举报失败",
+    "reasons": {
+      "spam": "垃圾信息",
+      "harassment": "骚扰或欺凌",
+      "misinformation": "虚假信息",
+      "inappropriate": "不当内容",
+      "copyright": "版权侵犯",
+      "other": "其他"
+    }
+  },
+  "topicPage": {
+    "topicNotFound": "未找到主题",
+    "backToForum": "返回论坛",
+    "pleaseSignInToReply": "请登录以回复此讨论",
+    "signIn": "登录",
+    "replies": "回复",
+    "views": "浏览",
+    "likes": "点赞"
+  },
+  "categories": {
+    "clearFilter": "清除筛选",
+    "trendingTopics": "热门讨论",
+    "viewAllTrending": "查看所有热门 →",
+    "noTrendingTopics": "目前没有热门主题"
+  },
+  "featured": {
+    "title": "精选",
+    "new": "新",
+    "hot": "热门",
+    "trending": "趋势"
   }
 }

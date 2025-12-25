@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface WatchlistButtonProps {
   symbol: string;
@@ -20,6 +21,7 @@ interface WatchlistButtonProps {
 
 export function WatchlistButton({ symbol, marketType }: WatchlistButtonProps) {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [watchlists, setWatchlists] = useState<Array<{ id: string; name: string }>>([]);
   const [isInWatchlist, setIsInWatchlist] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -80,7 +82,7 @@ export function WatchlistButton({ symbol, marketType }: WatchlistButtonProps) {
 
   const addToWatchlist = async (watchlistId: string) => {
     if (!user) {
-      toast.error('Please sign in to add to watchlist');
+      toast.error(t('toast.pleaseSignInToWatchlist'));
       return;
     }
 
@@ -94,13 +96,13 @@ export function WatchlistButton({ symbol, marketType }: WatchlistButtonProps) {
 
       if (error) throw error;
 
-      toast.success('Added to watchlist');
+      toast.success(t('toast.addedToWatchlist'));
       checkIfInWatchlist();
     } catch (error: any) {
       if (error.code === '23505') {
-        toast.error('Already in watchlist');
+        toast.error(t('toast.alreadyInWatchlist'));
       } else {
-        toast.error('Failed to add to watchlist');
+        toast.error(t('toast.failedToAddToWatchlist'));
       }
     } finally {
       setLoading(false);

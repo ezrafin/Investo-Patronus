@@ -7,8 +7,10 @@ import { Label } from '@/components/ui/label';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { ArrowLeft, Mail, CheckCircle } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function ForgotPasswordPage() {
+  const { t } = useTranslation({ namespace: 'ui' });
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
@@ -17,7 +19,7 @@ export default function ForgotPasswordPage() {
     e.preventDefault();
     
     if (!email.trim()) {
-      toast.error('Please enter your email address');
+      toast.error(t('toast.pleaseEnterEmail'));
       return;
     }
 
@@ -28,7 +30,7 @@ export default function ForgotPasswordPage() {
     });
 
     if (error) {
-      toast.error(error.message || 'Failed to send reset email');
+      toast.error(error.message || t('errors.failedToCreate'));
     } else {
       setEmailSent(true);
     }

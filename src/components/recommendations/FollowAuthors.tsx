@@ -8,6 +8,7 @@ import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { authors as allAuthors, type AuthorProfile } from '@/data/authors';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface Author {
   id: string;
@@ -35,6 +36,7 @@ const mapAuthor = (profile: AuthorProfile): Author => ({
 
 export function FollowAuthors({ className, limit = 5 }: { className?: string; limit?: number }) {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [authors, setAuthors] = useState<Author[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,7 +51,7 @@ export function FollowAuthors({ className, limit = 5 }: { className?: string; li
 
   const toggleFollow = async (authorId: string, currentStatus: boolean) => {
     if (!user) {
-      toast.error('Please sign in to follow authors');
+      toast.error(t('toast.pleaseSignInToFollowAuthors'));
       return;
     }
 
@@ -60,7 +62,7 @@ export function FollowAuthors({ className, limit = 5 }: { className?: string; li
       )
     );
 
-    toast.success(currentStatus ? 'Unfollowed' : 'Following');
+    toast.success(currentStatus ? t('toast.unfollowed') : t('toast.following'));
   };
 
   if (!user) {

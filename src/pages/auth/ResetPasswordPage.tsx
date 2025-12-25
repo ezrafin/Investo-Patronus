@@ -8,6 +8,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Lock, CheckCircle, Eye, EyeOff } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface PasswordRequirement {
   label: string;
@@ -21,6 +22,7 @@ const passwordRequirements: PasswordRequirement[] = [
 ];
 
 export default function ResetPasswordPage() {
+  const { t } = useTranslation({ namespace: 'ui' });
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -32,10 +34,10 @@ export default function ResetPasswordPage() {
     // Check if user came from email link
     const hashParams = new URLSearchParams(window.location.hash.substring(1));
     if (!hashParams.get('access_token')) {
-      toast.error('Invalid or expired reset link');
+      toast.error(t('toast.invalidResetLink'));
       navigate('/auth/forgot-password');
     }
-  }, [navigate]);
+  }, [navigate, t]);
 
   const allRequirementsMet = passwordRequirements.every((req) => req.test(password));
   const passwordsMatch = password === confirmPassword && password.length > 0;
@@ -44,12 +46,12 @@ export default function ResetPasswordPage() {
     e.preventDefault();
 
     if (!allRequirementsMet) {
-      toast.error('Please meet all password requirements');
+      toast.error(t('auth.meetAllRequirements'));
       return;
     }
 
     if (!passwordsMatch) {
-      toast.error('Passwords do not match');
+      toast.error(t('toast.passwordsDoNotMatch'));
       return;
     }
 
@@ -58,9 +60,9 @@ export default function ResetPasswordPage() {
     const { error } = await supabase.auth.updateUser({ password });
 
     if (error) {
-      toast.error(error.message || 'Failed to reset password');
+      toast.error(error.message || t('settings.passwordChangeError'));
     } else {
-      toast.success('Password reset successfully!');
+      toast.success(t('toast.passwordResetSuccess'));
       navigate('/auth/login');
     }
 

@@ -124,5 +124,83 @@
     "newFollowerBody": "{{author}} folgt Ihnen jetzt",
     "genericTitle": "Neue Benachrichtigung",
     "genericBody": "Sie haben eine neue Benachrichtigung"
+  },
+  "actions": {
+    "bookmark": "Lesezeichen",
+    "bookmarked": "Gespeichert",
+    "saving": "Speichern…",
+    "follow": "Folgen",
+    "following": "Folgen",
+    "share": "Teilen",
+    "report": "Melden",
+    "postReply": "Antwort veröffentlichen"
+  },
+  "toast": {
+    "linkCopied": "Link in Zwischenablage kopiert",
+    "linkCopyFailed": "Link konnte nicht kopiert werden",
+    "pleaseSignInToReply": "Bitte melden Sie sich an, um zu antworten",
+    "pleaseSignInToReact": "Bitte melden Sie sich an, um zu reagieren",
+    "rateLimitExceeded": "Rate-Limit überschritten. Bitte warten Sie, bevor Sie eine weitere Antwort veröffentlichen.",
+    "sessionExpired": "Sitzung abgelaufen. Bitte melden Sie sich erneut an.",
+    "validationServiceError": "Validierungsdienstfehler",
+    "replyPosted": "Antwort veröffentlicht",
+    "failedToPostReply": "Antwort konnte nicht veröffentlicht werden",
+    "failedToUpdateReaction": "Reaktion konnte nicht aktualisiert werden"
+  },
+  "editor": {
+    "writeReply": "Schreiben Sie Ihre Antwort...",
+    "writeReplyTitle": "Antwort schreiben",
+    "markdownSupported": "Markdown wird unterstützt. Verwenden Sie die Symbolleiste oben für die Formatierung.",
+    "validatingContent": "Inhalt wird überprüft...",
+    "characters": "Zeichen",
+    "cancel": "Abbrechen",
+    "submitting": "Wird gesendet...",
+    "submit": "Absenden",
+    "hidePreview": "Vorschau ausblenden",
+    "showPreview": "Vorschau anzeigen",
+    "emptyPreview": "Vorschau erscheint hier, wenn Sie zu tippen beginnen"
+  },
+  "report": {
+    "title": "Inhalt melden",
+    "description": "Helfen Sie uns, eine sichere und respektvolle Community zu erhalten, indem Sie unangemessene Inhalte melden.",
+    "reasonLabel": "Grund für die Meldung",
+    "reasonPlaceholder": "Wählen Sie einen Grund",
+    "detailsLabel": "Zusätzliche Details (optional)",
+    "detailsPlaceholder": "Geben Sie zusätzliche Informationen an...",
+    "cancel": "Abbrechen",
+    "submitting": "Wird gesendet...",
+    "submit": "Meldung absenden",
+    "pleaseSelectReason": "Bitte wählen Sie einen Grund aus",
+    "submitted": "Meldung gesendet. Vielen Dank, dass Sie uns helfen, unsere Community sicher zu halten.",
+    "failedToSubmit": "Meldung konnte nicht gesendet werden",
+    "reasons": {
+      "spam": "Spam",
+      "harassment": "Belästigung oder Mobbing",
+      "misinformation": "Fehlinformationen",
+      "inappropriate": "Unangemessener Inhalt",
+      "copyright": "Urheberrechtsverletzung",
+      "other": "Sonstiges"
+    }
+  },
+  "topicPage": {
+    "topicNotFound": "Thema nicht gefunden",
+    "backToForum": "Zurück zum Forum",
+    "pleaseSignInToReply": "Bitte melden Sie sich an, um auf diese Diskussion zu antworten",
+    "signIn": "Anmelden",
+    "replies": "Antworten",
+    "views": "Aufrufe",
+    "likes": "Likes"
+  },
+  "categories": {
+    "clearFilter": "Filter löschen",
+    "trendingTopics": "Trending Diskussionen",
+    "viewAllTrending": "Alle Trending anzeigen →",
+    "noTrendingTopics": "Derzeit keine Trending-Themen"
+  },
+  "featured": {
+    "title": "Empfohlen",
+    "new": "Neu",
+    "hot": "Heiß",
+    "trending": "Trending"
   }
 }

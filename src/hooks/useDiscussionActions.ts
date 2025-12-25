@@ -2,9 +2,11 @@ import { useCallback, useEffect, useState } from 'react';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export function useDiscussionActions(topicId?: string) {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isFollowing, setIsFollowing] = useState(false);
   const [bookmarkLoading, setBookmarkLoading] = useState(false);
@@ -39,7 +41,7 @@ export function useDiscussionActions(topicId?: string) {
 
   const toggleBookmark = useCallback(async () => {
     if (!user || !topicId) {
-      toast.error('Please sign in to bookmark discussions');
+      toast.error(t('toast.pleaseSignInToBookmarkDiscussions'));
       return;
     }
 
@@ -54,7 +56,7 @@ export function useDiscussionActions(topicId?: string) {
           content_type: 'discussion',
           content_id: topicId,
         });
-        toast.success('Added to bookmarks');
+        toast.success(t('toast.addedToBookmarks'));
       } else {
         await supabase
           .from('user_bookmarks')
@@ -62,19 +64,19 @@ export function useDiscussionActions(topicId?: string) {
           .eq('user_id', user.id)
           .eq('content_type', 'discussion')
           .eq('content_id', topicId);
-        toast.success('Removed from bookmarks');
+        toast.success(t('toast.removedFromBookmarks'));
       }
     } catch (error: any) {
       setIsBookmarked(!next);
-      toast.error(error.message || 'Failed to update bookmark');
+      toast.error(error.message || t('toast.failedToUpdateBookmark'));
     } finally {
       setBookmarkLoading(false);
     }
-  }, [user, topicId, isBookmarked]);
+  }, [user, topicId, isBookmarked, t]);
 
   const toggleFollow = useCallback(async () => {
     if (!user || !topicId) {
-      toast.error('Please sign in to follow discussions');
+      toast.error(t('toast.pleaseSignInToFollowDiscussions'));
       return;
     }
 
@@ -88,22 +90,22 @@ export function useDiscussionActions(topicId?: string) {
           user_id: user.id,
           discussion_id: topicId,
         });
-        toast.success('Following discussion');
+        toast.success(t('toast.followingDiscussion'));
       } else {
         await (supabase as any)
           .from('forum_follows')
           .delete()
           .eq('user_id', user.id)
           .eq('discussion_id', topicId);
-        toast.success('Unfollowed discussion');
+        toast.success(t('toast.unfollowedDiscussion'));
       }
     } catch (error: any) {
       setIsFollowing(!next);
-      toast.error(error.message || 'Failed to update follow status');
+      toast.error(error.message || t('errors.failedToUpdate'));
     } finally {
       setFollowLoading(false);
     }
-  }, [user, topicId, isFollowing]);
+  }, [user, topicId, isFollowing, t]);
 
   return {
     isBookmarked,

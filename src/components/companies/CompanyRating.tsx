@@ -10,6 +10,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface CompanyRatingProps {
   companySlug: string;
@@ -30,6 +31,7 @@ interface Evaluation {
 
 export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const [evaluations, setEvaluations] = useState<Evaluation[]>([]);
   const [userRating, setUserRating] = useState<number>(0);
   const [userComment, setUserComment] = useState('');
@@ -99,12 +101,12 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
 
   const handleSubmit = async () => {
     if (!user) {
-      toast.error('Please sign in to rate companies');
+      toast.error(t('toast.pleaseSignInToRate', { ns: 'ui' }));
       return;
     }
 
     if (userRating === 0) {
-      toast.error('Please select a rating');
+      toast.error(t('toast.pleaseSelectRating', { ns: 'ui' }));
       return;
     }
 
@@ -121,7 +123,7 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
           .eq('id', existingEvaluation.id);
 
         if (error) throw error;
-        toast.success('Your evaluation has been updated');
+        toast.success(t('toast.evaluationUpdated', { ns: 'ui' }));
       } else {
         // Create new evaluation
         const { error } = await supabase
@@ -134,13 +136,13 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
           });
 
         if (error) throw error;
-        toast.success('Thank you for your evaluation!');
+        toast.success(t('toast.thankYouForEvaluation', { ns: 'ui' }));
       }
 
       setShowCommentForm(false);
       loadEvaluations();
     } catch (error: any) {
-      toast.error(error.message || 'Failed to submit evaluation');
+      toast.error(error.message || t('errors.failedToPost'));
     } finally {
       setSubmitting(false);
     }
@@ -190,7 +192,7 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
       {user ? (
         <div className="p-4 rounded-lg border border-border bg-secondary/30">
           <p className="text-sm text-muted-foreground mb-3">
-            {existingEvaluation ? 'Update your rating:' : 'Rate this organization:'}
+            {existingEvaluation ? t('toast.updateRating') : t('toast.rateOrganization')}
           </p>
           <div className="space-y-4 mb-3">
             <div className="space-y-2">
@@ -238,14 +240,14 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
               size="sm"
               onClick={() => setShowCommentForm(true)}
             >
-              {existingEvaluation ? 'Update Comment' : 'Add Comment'}
+              {existingEvaluation ? t('toast.updateComment') : t('toast.addComment')}
             </Button>
           )}
 
           {showCommentForm && (
             <div className="space-y-3 mt-3">
               <Textarea
-                placeholder="Share your experience with this organization (optional)..."
+                placeholder={t('toast.shareExperience')}
                 value={userComment}
                 onChange={(e) => setUserComment(e.target.value)}
                 rows={3}
@@ -256,14 +258,14 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
                   onClick={handleSubmit}
                   disabled={submitting || userRating === 0}
                 >
-                  {submitting ? 'Submitting...' : existingEvaluation ? 'Update' : 'Submit'}
+                  {submitting ? t('editor.submitting', { ns: 'forum' }) : existingEvaluation ? t('buttons.update', { ns: 'ui' }) : t('editor.submit', { ns: 'forum' })}
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setShowCommentForm(false)}
                 >
-                  Cancel
+                  {t('editor.cancel', { ns: 'forum' })}
                 </Button>
               </div>
             </div>
@@ -276,7 +278,7 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
               onClick={handleSubmit}
               disabled={submitting}
             >
-              {submitting ? 'Submitting...' : 'Submit Rating'}
+              {submitting ? t('editor.submitting', { ns: 'forum' }) : t('toast.submitRating')}
             </Button>
           )}
         </div>

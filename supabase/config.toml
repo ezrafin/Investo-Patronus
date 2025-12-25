@@ -26,3 +26,6 @@ verify_jwt = false
 
 [functions.validate-reply-content]
 verify_jwt = true
+
+[functions.validate-avatar]
+verify_jwt = true

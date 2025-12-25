@@ -134,7 +134,7 @@ export function ForumFilters({
               <button
                 onClick={() => onSearchChange('')}
                 className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 hover:bg-secondary rounded transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
-                aria-label="Clear search"
+                      aria-label={t('clearSearch', { ns: 'ui' })}
               >
                 <X className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
               </button>
