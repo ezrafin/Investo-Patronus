@@ -15,13 +15,13 @@ export default function CourseListingPage() {
           {/* Header */}
           <div className="max-w-3xl mx-auto text-center mb-12">
             <span className="badge-primary mb-4">
-              {t('courses.badge', 'Courses')}
+              {t('courses.badge')}
             </span>
             <h1 className="heading-xl mb-4">
-              {t('courses.title', 'Financial Education Courses')}
+              {t('courses.title')}
             </h1>
             <p className="body-xl">
-              {t('courses.subtitle', 'Comprehensive courses covering everything from investment fundamentals to advanced trading strategies. Learn at your own pace with structured modules and practical lessons.')}
+              {t('courses.subtitle')}
             </p>
           </div>
 
@@ -36,10 +36,10 @@ export default function CourseListingPage() {
           <div className="mt-12 glass-card p-8 text-center">
             <BookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
             <h2 className="heading-sm mb-4">
-              {t('courses.infoTitle', 'How Our Courses Work')}
+              {t('courses.infoTitle')}
             </h2>
             <p className="body-md mb-6 max-w-2xl mx-auto">
-              {t('courses.infoDescription', 'Each course is divided into modules with multiple lessons. Complete lessons at your own pace, take quizzes to test your knowledge, and pass the final exam to demonstrate mastery. Track your progress and return anytime to review materials.')}
+              {t('courses.infoDescription')}
             </p>
           </div>
         </section>

@@ -114,6 +114,32 @@
     "lessThanHour": "Moins d'1 heure",
     "outOf": "sur",
     "correct": "correctes"
+  },
+  "course": {
+    "investment-fundamentals": {
+      "title": "Fondamentaux de l'Investissement",
+      "description": "Maîtrisez les bases des marchés financiers, des classes d'actifs, des rendements réels et de la construction de portefeuille"
+    },
+    "portfolio-management": {
+      "title": "Gestion de Portefeuille Personnel",
+      "description": "Apprenez à construire, gérer et optimiser votre portefeuille d'investissement personnel avec des stratégies professionnelles"
+    },
+    "technical-analysis": {
+      "title": "Maîtrise de l'Analyse Technique",
+      "description": "Maîtrisez les modèles de graphiques, les indicateurs et les signaux de trading pour chronométrer vos entrées et sorties du marché"
+    },
+    "fundamental-analysis": {
+      "title": "Analyse Fondamentale Approfondie",
+      "description": "Maîtrisez l'évaluation des entreprises, l'analyse des états financiers et les techniques de sélection d'actions"
+    },
+    "risk-management": {
+      "title": "Gestion des Risques et Psychologie",
+      "description": "Maîtrisez l'évaluation des risques, le dimensionnement des positions et surmontez les biais psychologiques dans l'investissement"
+    },
+    "advanced-trading": {
+      "title": "Stratégies de Trading Avancées",
+      "description": "Maîtrisez les options, les dérivés, les approches quantitatives et les concepts de trading algorithmique"
+    }
   }
 }
 

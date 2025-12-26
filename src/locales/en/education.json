@@ -114,5 +114,31 @@
     "lessThanHour": "Less than 1 hour",
     "outOf": "out of",
     "correct": "correct"
+  },
+  "course": {
+    "investment-fundamentals": {
+      "title": "Investment Fundamentals",
+      "description": "Master the basics of financial markets, asset classes, real returns, and portfolio construction"
+    },
+    "portfolio-management": {
+      "title": "Personal Portfolio Management",
+      "description": "Learn to build, manage, and optimize your personal investment portfolio with professional strategies"
+    },
+    "technical-analysis": {
+      "title": "Technical Analysis Mastery",
+      "description": "Master chart patterns, indicators, and trading signals to time your market entries and exits"
+    },
+    "fundamental-analysis": {
+      "title": "Fundamental Analysis Deep Dive",
+      "description": "Master company valuation, financial statements analysis, and stock selection techniques"
+    },
+    "risk-management": {
+      "title": "Risk Management & Psychology",
+      "description": "Master risk assessment, position sizing, and overcome psychological biases in investing"
+    },
+    "advanced-trading": {
+      "title": "Advanced Trading Strategies",
+      "description": "Master options, derivatives, quantitative approaches, and algorithmic trading concepts"
+    }
   }
 }

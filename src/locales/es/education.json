@@ -114,6 +114,32 @@
     "lessThanHour": "Menos de 1 hora",
     "outOf": "de",
     "correct": "correctas"
+  },
+  "course": {
+    "investment-fundamentals": {
+      "title": "Fundamentos de Inversión",
+      "description": "Domina los conceptos básicos de los mercados financieros, clases de activos, rendimientos reales y construcción de carteras"
+    },
+    "portfolio-management": {
+      "title": "Gestión de Cartera Personal",
+      "description": "Aprende a construir, gestionar y optimizar tu cartera de inversión personal con estrategias profesionales"
+    },
+    "technical-analysis": {
+      "title": "Maestría en Análisis Técnico",
+      "description": "Domina los patrones de gráficos, indicadores y señales de trading para cronometrar tus entradas y salidas del mercado"
+    },
+    "fundamental-analysis": {
+      "title": "Análisis Fundamental Profundo",
+      "description": "Domina la valoración de empresas, análisis de estados financieros y técnicas de selección de acciones"
+    },
+    "risk-management": {
+      "title": "Gestión de Riesgos y Psicología",
+      "description": "Domina la evaluación de riesgos, el dimensionamiento de posiciones y supera los sesgos psicológicos en la inversión"
+    },
+    "advanced-trading": {
+      "title": "Estrategias Avanzadas de Trading",
+      "description": "Domina opciones, derivados, enfoques cuantitativos y conceptos de trading algorítmico"
+    }
   }
 }
 

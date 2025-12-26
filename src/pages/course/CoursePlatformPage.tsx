@@ -72,12 +72,12 @@ export default function CoursePlatformPage() {
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-3 transition-colors"
               >
                 <ArrowLeft className="h-4 w-4 flex-shrink-0" />
-                <span>{t('courses.backToCourses', 'Back to Courses')}</span>
+                <span>{t('courses.backToCourses')}</span>
               </Link>
-              <h2 className="font-semibold">{course.title}</h2>
+              <h2 className="font-semibold">{t(`course.${course.id}.title`, course.title)}</h2>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-sm mb-1">
-                  <span className="text-muted-foreground">{t('courses.progress', 'Progress')}</span>
+                  <span className="text-muted-foreground">{t('courses.progress')}</span>
                   <span className="font-medium">{Math.round(progressPercent)}%</span>
                 </div>
                 <Progress value={progressPercent} className="h-2" />
@@ -98,7 +98,9 @@ export default function CoursePlatformPage() {
                     )}
                     <div className="flex-1 min-w-0 flex flex-col">
                       <span className="text-xs text-muted-foreground leading-tight">Module {moduleIndex + 1}</span>
-                      <p className="text-sm font-medium truncate leading-tight">{module.title}</p>
+                      <p className="text-sm font-medium truncate leading-tight">
+                        {t(`course.${course.id}.module.${module.id}.title`, module.title)}
+                      </p>
                     </div>
                   </button>
 
@@ -119,12 +121,14 @@ export default function CoursePlatformPage() {
                           ) : (
                             <Play className="h-4 w-4 flex-shrink-0" />
                           )}
-                          <span className="truncate flex-1">{lesson.title}</span>
+                          <span className="truncate flex-1">
+                            {t(`course.${course.id}.module.${module.id}.lesson.${lesson.id}.title`, lesson.title)}
+                          </span>
                         </button>
                       ))}
                       <button className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm text-muted-foreground hover:bg-secondary/50">
                         <Award className="h-4 w-4 flex-shrink-0" />
-                        <span className="truncate">{t('courses.moduleTest', 'Module Test')}</span>
+                        <span className="truncate">{t('courses.moduleTest')}</span>
                       </button>
                     </div>
                   )}
@@ -137,7 +141,7 @@ export default function CoursePlatformPage() {
                   className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm font-medium hover:bg-secondary/50"
                 >
                   <Award className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="flex-1 truncate">{t('courses.finalExam', 'Final Exam')}</span>
+                  <span className="flex-1 truncate">{t('courses.finalExam')}</span>
                   {totalLessons === completedLessons.length ? (
                     <CheckCircle className="h-4 w-4 flex-shrink-0 text-green-500" />
                   ) : (
@@ -159,7 +163,7 @@ export default function CoursePlatformPage() {
                       <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center mx-auto mb-3 cursor-pointer hover:scale-110 transition-transform">
                         <Play className="h-6 w-6 text-primary-foreground ml-1" />
                       </div>
-                      <p className="text-sm text-muted-foreground">{t('courses.lessonVideo', 'Lesson Video')}</p>
+                      <p className="text-sm text-muted-foreground">{t('courses.lessonVideo')}</p>
                     </div>
                   </div>
                 </div>
@@ -167,7 +171,9 @@ export default function CoursePlatformPage() {
                 {/* Lesson Info */}
                 <div className="flex items-center justify-between">
                   <div>
-                    <h1 className="heading-md">{selectedLesson.title}</h1>
+                    <h1 className="heading-md">
+                      {selectedLesson && t(`course.${course.id}.module.${course.modules.find(m => m.lessons.some(l => l.id === selectedLesson.id))?.id}.lesson.${selectedLesson.id}.title`, selectedLesson.title)}
+                    </h1>
                     <span className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
                       <Clock className="h-4 w-4 flex-shrink-0" />
                       {selectedLesson.duration}
@@ -177,10 +183,10 @@ export default function CoursePlatformPage() {
                     {completedLessons.includes(selectedLesson.id) ? (
                       <>
                         <CheckCircle className="h-4 w-4" />
-                        {t('courses.completed', 'Completed')}
+                        {t('courses.completed')}
                       </>
                     ) : (
-                      <>{t('courses.markAsCompleted', 'Mark as Completed')}</>
+                      <>{t('courses.markAsCompleted')}</>
                     )}
                   </Button>
                 </div>
@@ -189,7 +195,7 @@ export default function CoursePlatformPage() {
                 <div className="glass-card p-6">
                   <h2 className="heading-sm mb-4 flex items-center gap-2">
                     <BookOpen className="h-5 w-5 text-primary" />
-                    {t('courses.lessonNotes', 'Lesson Notes')}
+                    {t('courses.lessonNotes')}
                   </h2>
                   <div className="prose prose-sm prose-invert max-w-none">
                     <MarkdownContent content={selectedLesson.notes} />
@@ -200,7 +206,7 @@ export default function CoursePlatformPage() {
                 <div className="glass-card p-6 border-l-4 border-yellow-500">
                   <h2 className="heading-sm mb-4 flex items-center gap-2">
                     <Lightbulb className="h-5 w-5 text-yellow-500" />
-                    {t('courses.keyPoints', 'Key Points to Remember')}
+                    {t('courses.keyPoints')}
                   </h2>
                   <ul className="space-y-2">
                     {selectedLesson.importantPoints.map((point, index) => (
@@ -215,7 +221,7 @@ export default function CoursePlatformPage() {
                 {/* Quiz Button */}
                 {selectedLesson.quiz.length > 0 && (
                   <Button onClick={() => setShowQuiz(true)} className="w-full" size="lg">
-                    {t('courses.takeQuiz', 'Take Mini-Quiz')}
+                    {t('courses.takeQuiz')}
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 )}
@@ -226,9 +232,9 @@ export default function CoursePlatformPage() {
             {showQuiz && selectedLesson && !showFinalExam && (
               <div className="max-w-2xl mx-auto space-y-6">
                 <div className="flex items-center justify-between">
-                  <h2 className="heading-md">{t('courses.miniQuiz', 'Mini-Quiz')}</h2>
+                  <h2 className="heading-md">{t('courses.miniQuiz')}</h2>
                   <Button variant="outline" onClick={() => setShowQuiz(false)}>
-                    {t('courses.backToLesson', 'Back to Lesson')}
+                    {t('courses.backToLesson')}
                   </Button>
                 </div>
 
@@ -267,13 +273,13 @@ export default function CoursePlatformPage() {
               <div className="max-w-2xl mx-auto space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="heading-md">{t('courses.finalExam', 'Final Exam')}</h2>
+                    <h2 className="heading-md">{t('courses.finalExam')}</h2>
                     <p className="text-sm text-muted-foreground mt-1">
-                      {t('courses.passRate', 'Pass rate')}: {course.finalExamPassRate}% • {t('courses.questions', '{{count}} questions', { count: course.finalExam.length })}
+                      {t('courses.passRate')}: {course.finalExamPassRate}% • {t('courses.questions', { count: course.finalExam.length })}
                     </p>
                   </div>
                   <Button variant="outline" onClick={() => setShowFinalExam(false)}>
-                    {t('courses.backToCourse', 'Back to Course')}
+                    {t('courses.backToCourse')}
                   </Button>
                 </div>
 
@@ -308,7 +314,7 @@ export default function CoursePlatformPage() {
                 {/* Exam Results */}
                 {Object.keys(finalExamAnswers).length === course.finalExam.length && (
                   <div className="glass-card p-6 border-l-4 border-primary">
-                    <h3 className="heading-sm mb-4">{t('courses.examResults', 'Exam Results')}</h3>
+                    <h3 className="heading-sm mb-4">{t('courses.examResults')}</h3>
                     {(() => {
                       const correct = course.finalExam.filter(
                         q => finalExamAnswers[q.id] === q.correctAnswer
@@ -320,12 +326,12 @@ export default function CoursePlatformPage() {
                           <div className="text-center">
                             <div className="text-3xl font-bold mb-2">{percentage}%</div>
                             <div className="text-sm text-muted-foreground">
-                              {correct} {t('courses.outOf', 'out of')} {course.finalExam.length} {t('courses.correct', 'correct')}
+                              {correct} {t('courses.outOf')} {course.finalExam.length} {t('courses.correct')}
                             </div>
                           </div>
                           <div className={`text-center p-4 rounded-lg ${passed ? 'bg-green-500/10 border border-green-500/20' : 'bg-red-500/10 border border-red-500/20'}`}>
                             <p className={`font-semibold ${passed ? 'text-green-400' : 'text-red-400'}`}>
-                              {passed ? t('courses.congratulations', 'Congratulations! You passed!') : t('courses.needToPass', 'You need {{rate}}% to pass. Try again!', { rate: course.finalExamPassRate })}
+                              {passed ? t('courses.congratulations') : t('courses.needToPass', { rate: course.finalExamPassRate })}
                             </p>
                           </div>
                         </div>

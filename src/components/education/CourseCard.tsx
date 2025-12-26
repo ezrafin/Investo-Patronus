@@ -17,8 +17,8 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
   // Estimate total duration (rough calculation: average 15 min per lesson)
   const estimatedHours = Math.round((totalLessons * 15) / 60);
   const estimatedDuration = estimatedHours > 0 
-    ? t('courses.hours', '{{count}}+ hours', { count: estimatedHours })
-    : t('courses.lessThanHour', 'Less than 1 hour');
+    ? t('courses.hours', { count: estimatedHours })
+    : t('courses.lessThanHour');
 
   return (
     <Link
@@ -29,10 +29,10 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
           <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-            {course.title}
+            {t(`course.${course.id}.title`, course.title)}
           </h3>
           <p className="text-sm text-muted-foreground line-clamp-2">
-            {course.description}
+            {t(`course.${course.id}.description`, course.description)}
           </p>
         </div>
       </div>
@@ -41,7 +41,7 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
       <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
         <div className="flex items-center gap-1.5">
           <BookOpen className="h-4 w-4 flex-shrink-0" />
-          <span>{t('courses.modules', '{{count}} modules', { count: totalModules })}</span>
+          <span>{t('courses.modules', { count: totalModules })}</span>
         </div>
         <div className="flex items-center gap-1.5">
           <Clock className="h-4 w-4 flex-shrink-0" />
@@ -49,13 +49,13 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
         </div>
         <div className="flex items-center gap-1.5">
           <Award className="h-4 w-4 flex-shrink-0" />
-          <span>{t('courses.lessons', '{{count}} lessons', { count: totalLessons })}</span>
+          <span>{t('courses.lessons', { count: totalLessons })}</span>
         </div>
       </div>
 
       {/* Footer */}
       <div className="mt-auto pt-4 border-t border-border/50 flex items-center justify-between">
-        <span className="text-sm font-medium text-primary">{t('courses.startCourse', 'Start Course')}</span>
+        <span className="text-sm font-medium text-primary">{t('courses.startCourse')}</span>
         <ArrowRight className="h-4 w-4 text-primary flex-shrink-0 group-hover:translate-x-1 transition-transform" />
       </div>
     </Link>

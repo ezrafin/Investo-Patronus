@@ -114,6 +114,32 @@
     "lessThanHour": "Weniger als 1 Stunde",
     "outOf": "von",
     "correct": "richtig"
+  },
+  "course": {
+    "investment-fundamentals": {
+      "title": "Investment-Grundlagen",
+      "description": "Meistere die Grundlagen der Finanzmärkte, Anlageklassen, realen Renditen und Portfoliokonstruktion"
+    },
+    "portfolio-management": {
+      "title": "Persönliches Portfoliomanagement",
+      "description": "Lerne, dein persönliches Investmentportfolio mit professionellen Strategien aufzubauen, zu verwalten und zu optimieren"
+    },
+    "technical-analysis": {
+      "title": "Technische Analyse meistern",
+      "description": "Meistere Chartmuster, Indikatoren und Handelssignale, um deine Markteinstiege und -ausstiege zu timen"
+    },
+    "fundamental-analysis": {
+      "title": "Fundamentalanalyse vertiefen",
+      "description": "Meistere Unternehmensbewertung, Analyse von Finanzberichten und Aktienauswahltechniken"
+    },
+    "risk-management": {
+      "title": "Risikomanagement & Psychologie",
+      "description": "Meistere Risikobewertung, Positionsgrößenbestimmung und überwinde psychologische Vorurteile beim Investieren"
+    },
+    "advanced-trading": {
+      "title": "Fortgeschrittene Handelsstrategien",
+      "description": "Meistere Optionen, Derivate, quantitative Ansätze und algorithmische Handelskonzepte"
+    }
   }
 }
 

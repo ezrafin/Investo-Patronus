@@ -114,6 +114,32 @@
     "lessThanHour": "Mniej niż 1 godzina",
     "outOf": "z",
     "correct": "poprawnych"
+  },
+  "course": {
+    "investment-fundamentals": {
+      "title": "Podstawy Inwestowania",
+      "description": "Opanuj podstawy rynków finansowych, klas aktywów, realnych zwrotów i konstrukcji portfela"
+    },
+    "portfolio-management": {
+      "title": "Zarządzanie Portfelem Osobistym",
+      "description": "Naucz się budować, zarządzać i optymalizować swój osobisty portfel inwestycyjny za pomocą profesjonalnych strategii"
+    },
+    "technical-analysis": {
+      "title": "Mistrzostwo w Analizie Technicznej",
+      "description": "Opanuj wzorce wykresów, wskaźniki i sygnały handlowe, aby określić czas wejścia i wyjścia z rynku"
+    },
+    "fundamental-analysis": {
+      "title": "Dogłębna Analiza Fundamentalna",
+      "description": "Opanuj wycenę firm, analizę sprawozdań finansowych i techniki selekcji akcji"
+    },
+    "risk-management": {
+      "title": "Zarządzanie Ryzykiem i Psychologia",
+      "description": "Opanuj ocenę ryzyka, określanie rozmiaru pozycji i przezwyciężaj psychologiczne uprzedzenia w inwestowaniu"
+    },
+    "advanced-trading": {
+      "title": "Zaawansowane Strategie Handlowe",
+      "description": "Opanuj opcje, instrumenty pochodne, podejścia ilościowe i koncepcje handlu algorytmicznego"
+    }
   }
 }
 

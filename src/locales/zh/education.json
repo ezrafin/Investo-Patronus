@@ -114,6 +114,32 @@
     "lessThanHour": "少于 1 小时",
     "outOf": "共",
     "correct": "正确"
+  },
+  "course": {
+    "investment-fundamentals": {
+      "title": "投资基础",
+      "description": "掌握金融市场、资产类别、实际回报和投资组合构建的基础知识"
+    },
+    "portfolio-management": {
+      "title": "个人投资组合管理",
+      "description": "学习使用专业策略构建、管理和优化您的个人投资组合"
+    },
+    "technical-analysis": {
+      "title": "技术分析精通",
+      "description": "掌握图表模式、指标和交易信号，以把握市场进出时机"
+    },
+    "fundamental-analysis": {
+      "title": "基本面分析深入",
+      "description": "掌握公司估值、财务报表分析和股票选择技巧"
+    },
+    "risk-management": {
+      "title": "风险管理与心理学",
+      "description": "掌握风险评估、仓位管理和克服投资中的心理偏见"
+    },
+    "advanced-trading": {
+      "title": "高级交易策略",
+      "description": "掌握期权、衍生品、量化方法和算法交易概念"
+    }
   }
 }
 
