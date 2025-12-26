@@ -45,9 +45,9 @@ export default defineConfig(({ mode }) => ({
             if (id.includes('node_modules/@supabase')) {
               return 'vendor-supabase';
             }
-            // Charts
+            // Charts - объединяем с vendor-react для избежания проблем с инициализацией
             if (id.includes('node_modules/recharts') || id.includes('node_modules/d3')) {
-              return 'vendor-charts';
+              return 'vendor-react';
             }
           }
           // Let Vite handle app code splitting automatically
@@ -71,6 +71,20 @@ export default defineConfig(({ mode }) => ({
   },
   // Optimize dependencies
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom', 
+      'framer-motion',
+      'recharts',
+      'd3-scale',
+      'd3-shape',
+      'd3-time',
+      'd3-time-format',
+    ],
+    // Force pre-bundling of recharts dependencies
+    esbuildOptions: {
+      target: 'esnext',
+    },
   },
 }));
