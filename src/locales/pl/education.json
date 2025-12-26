@@ -138,7 +138,72 @@
     },
     "advanced-trading": {
       "title": "Zaawansowane Strategie Handlowe",
-      "description": "Opanuj opcje, instrumenty pochodne, podejścia ilościowe i koncepcje handlu algorytmicznego"
+      "description": "Opanuj opcje, instrumenty pochodne, podejścia ilościowe i koncepcje handlu algorytmicznego",
+      "module": {
+        "at-module-1": { "title": "Podstawy Opcji", "lesson": { "at-lesson-1-1": { "title": "Wprowadzenie do Opcji" }, "at-lesson-1-2": { "title": "Wycenianie Opcji" }, "at-lesson-1-3": { "title": "Podstawowe Strategie Opcyjne" }, "at-lesson-1-4": { "title": "Zaawansowane Strategie Opcyjne" } } },
+        "at-module-2": { "title": "Instrumenty Pochodne", "lesson": { "at-lesson-2-1": { "title": "Kontrakty Terminowe" }, "at-lesson-2-2": { "title": "Swapy" }, "at-lesson-2-3": { "title": "Produkty Strukturyzowane" }, "at-lesson-2-4": { "title": "Zarządzanie Ryzykiem Instrumentów Pochodnych" } } },
+        "at-module-3": { "title": "Metody Ilościowe", "lesson": { "at-lesson-3-1": { "title": "Podstawy Analizy Ilościowej" }, "at-lesson-3-2": { "title": "Modele Czynnikowe" }, "at-lesson-3-3": { "title": "Backtesting Strategii" } } },
+        "at-module-4": { "title": "Handel Algorytmiczny", "lesson": { "at-lesson-4-1": { "title": "Wprowadzenie do Handlu Algorytmicznego" }, "at-lesson-4-2": { "title": "Algorytmy Wykonawcze" }, "at-lesson-4-3": { "title": "Handel Wysokiej Częstotliwości" }, "at-lesson-4-4": { "title": "Strategie Systematyczne" } } },
+        "at-module-5": { "title": "Zaawansowane Strategie", "lesson": { "at-lesson-5-1": { "title": "Handel Parami" }, "at-lesson-5-2": { "title": "Arbitraż Statystyczny" }, "at-lesson-5-3": { "title": "Strategie Neutralne Rynkowo" } } },
+        "at-module-6": { "title": "Optymalizacja Portfela", "lesson": { "at-lesson-6-1": { "title": "Współczesna Teoria Portfela" }, "at-lesson-6-2": { "title": "Parytet Ryzyka" }, "at-lesson-6-3": { "title": "Portfele Czynnikowe" } } }
+      }
+    },
+    "investment-fundamentals": {
+      "title": "Podstawy Inwestowania",
+      "description": "Opanuj podstawy rynków finansowych, klas aktywów, realnych zwrotów i konstrukcji portfela",
+      "module": {
+        "module-1": { "title": "Wprowadzenie do Rynków Finansowych", "lesson": { "lesson-1-1": { "title": "Czym są Rynki Finansowe" }, "lesson-1-2": { "title": "Klasy Aktywów: Akcje, Obligacje, Surowce" }, "lesson-1-3": { "title": "Zwroty Nominalne vs Realne" } } },
+        "module-2": { "title": "Rozumienie Zwrotów Realnych", "lesson": { "lesson-2-1": { "title": "Inflacja: Cichy Wróg Oszczędności" }, "lesson-2-2": { "title": "Porównanie: Lokaty vs Instrumenty Inwestycyjne" } } },
+        "module-3": { "title": "Budowanie Portfela Inwestycyjnego", "lesson": { "lesson-3-1": { "title": "Zasady Dywersyfikacji" }, "lesson-3-2": { "title": "Alokacja Aktywów według Wieku i Celów" } } },
+        "module-4": { "title": "Praktyczne Instrumenty", "lesson": { "lesson-4-1": { "title": "ETF: Prosty Sposób Inwestowania" }, "lesson-4-2": { "title": "Jak Otworzyć Konto Maklerskie" } } },
+        "module-5": { "title": "Rozpoczęcie z ETF", "lesson": { "lesson-5-1": { "title": "Rozumienie Struktury ETF" }, "lesson-5-2": { "title": "Wybór Pierwszych ETF" }, "lesson-5-3": { "title": "Pierwsza Inwestycja" } } }
+      }
+    },
+    "portfolio-management": {
+      "title": "Zarządzanie Portfelem Osobistym",
+      "description": "Naucz się budować, zarządzać i optymalizować swój osobisty portfel inwestycyjny za pomocą profesjonalnych strategii",
+      "module": {
+        "pm-module-1": { "title": "Planowanie Portfela i Cele", "lesson": { "pm-lesson-1-1": { "title": "Definiowanie Celów Inwestycyjnych" }, "pm-lesson-1-2": { "title": "Ocena Tolerancji Ryzyka" }, "pm-lesson-1-3": { "title": "Znaczenie Horyzontu Czasowego" } } },
+        "pm-module-2": { "title": "Strategie Alokacji Aktywów", "lesson": { "pm-lesson-2-1": { "title": "Współczesna Teoria Portfela" }, "pm-lesson-2-2": { "title": "Alokacja Aktywów według Wieku" }, "pm-lesson-2-3": { "title": "Dywersyfikacja Geograficzna" }, "pm-lesson-2-4": { "title": "Dywersyfikacja Sektorowa" } } },
+        "pm-module-3": { "title": "Konstrukcja Portfela", "lesson": { "pm-lesson-3-1": { "title": "Wybór Właściwych ETF" }, "pm-lesson-3-2": { "title": "Budowanie Portfela Centralnego" }, "pm-lesson-3-3": { "title": "Strategie Satelitarne" }, "pm-lesson-3-4": { "title": "Strategie Rebalansowania" } } },
+        "pm-module-4": { "title": "Zarządzanie Portfelem", "lesson": { "pm-lesson-4-1": { "title": "Regularne Rebalansowanie" }, "pm-lesson-4-2": { "title": "Optymalizacja Podatkowa" }, "pm-lesson-4-3": { "title": "Zarządzanie Kosztami" } } },
+        "pm-module-5": { "title": "Monitorowanie i Korygowanie", "lesson": { "pm-lesson-5-1": { "title": "Śledzenie Wyników Portfela" }, "pm-lesson-5-2": { "title": "Kiedy Korygować Portfel" }, "pm-lesson-5-3": { "title": "Unikanie Typowych Błędów" } } },
+        "pm-module-6": { "title": "Zaawansowane Strategie", "lesson": { "pm-lesson-6-1": { "title": "Inwestowanie Czynnikowe" }, "pm-lesson-6-2": { "title": "Inwestowanie ESG" }, "pm-lesson-6-3": { "title": "Tax-Loss Harvesting" } } }
+      }
+    },
+    "technical-analysis": {
+      "title": "Mistrzostwo w Analizie Technicznej",
+      "description": "Opanuj wzorce wykresów, wskaźniki i sygnały handlowe, aby określić czas wejścia i wyjścia z rynku",
+      "module": {
+        "ta-module-1": { "title": "Podstawy Wykresów i Wzorców", "lesson": { "ta-lesson-1-1": { "title": "Czytanie Wykresów Cenowych" }, "ta-lesson-1-2": { "title": "Poziomy Wsparcia i Oporu" }, "ta-lesson-1-3": { "title": "Typowe Wzorce Wykresów" }, "ta-lesson-1-4": { "title": "Identyfikacja Trendu" } } },
+        "ta-module-2": { "title": "Wskaźniki Techniczne", "lesson": { "ta-lesson-2-1": { "title": "Średnie Kroczące" }, "ta-lesson-2-2": { "title": "RSI (Indeks Siły Względnej)" }, "ta-lesson-2-3": { "title": "MACD (Zbieżność-Rozbieżność Średnich Kroczących)" }, "ta-lesson-2-4": { "title": "Wstęgi Bollingera" } } },
+        "ta-module-3": { "title": "Wsparcie i Opór", "lesson": { "ta-lesson-3-1": { "title": "Identyfikacja Kluczowych Poziomów" }, "ta-lesson-3-2": { "title": "Handel Wsparciem i Oporem" }, "ta-lesson-3-3": { "title": "Dynamiczne Wsparcie i Opór" } } },
+        "ta-module-4": { "title": "Analiza Trendu", "lesson": { "ta-lesson-4-1": { "title": "Typy i Charakterystyka Trendów" }, "ta-lesson-4-2": { "title": "Strategie Podążania za Trendem" }, "ta-lesson-4-3": { "title": "Sygnały Odwrócenia Trendu" }, "ta-lesson-4-4": { "title": "Analiza Wieloramowa" } } },
+        "ta-module-5": { "title": "Sygnały Handlowe i Punkty Wejścia", "lesson": { "ta-lesson-5-1": { "title": "Zbieżność Sygnałów" }, "ta-lesson-5-2": { "title": "Techniki Wejścia" }, "ta-lesson-5-3": { "title": "Zarządzanie Ryzykiem w Handlu" }, "ta-lesson-5-4": { "title": "Strategie Wyjścia" } } }
+      }
+    },
+    "fundamental-analysis": {
+      "title": "Dogłębna Analiza Fundamentalna",
+      "description": "Opanuj wycenę firm, analizę sprawozdań finansowych i techniki selekcji akcji",
+      "module": {
+        "fa-module-1": { "title": "Podstawy Sprawozdań Finansowych", "lesson": { "fa-lesson-1-1": { "title": "Bilans" }, "fa-lesson-1-2": { "title": "Rachunek Zysków i Strat" }, "fa-lesson-1-3": { "title": "Rachunek Przepływów Pieniężnych" }, "fa-lesson-1-4": { "title": "Analiza Sprawozdań Finansowych" } } },
+        "fa-module-2": { "title": "Analiza Wskaźników Finansowych", "lesson": { "fa-lesson-2-1": { "title": "Wskaźniki Rentowności" }, "fa-lesson-2-2": { "title": "Wskaźniki Płynności" }, "fa-lesson-2-3": { "title": "Wskaźniki Dźwigni" }, "fa-lesson-2-4": { "title": "Wskaźniki Efektywności" } } },
+        "fa-module-3": { "title": "Wycenianie Firmy", "lesson": { "fa-lesson-3-1": { "title": "Przegląd Metod Wyceny" }, "fa-lesson-3-2": { "title": "Analiza Wskaźnika P/E" }, "fa-lesson-3-3": { "title": "Analiza Wskaźnika P/B" }, "fa-lesson-3-4": { "title": "Zdyskontowany Przepływ Pieniężny (DCF)" } } },
+        "fa-module-4": { "title": "Analiza Branżowa", "lesson": { "fa-lesson-4-1": { "title": "Cykl Życia Branży" }, "fa-lesson-4-2": { "title": "Analiza Konkurencyjna" }, "fa-lesson-4-3": { "title": "Porównanie Branż" } } },
+        "fa-module-5": { "title": "Selekcja Akcji", "lesson": { "fa-lesson-5-1": { "title": "Podejście Inwestowania Wartościowego" }, "fa-lesson-5-2": { "title": "Podejście Inwestowania Wzrostowego" }, "fa-lesson-5-3": { "title": "Filtrowanie Jakościowe" } } },
+        "fa-module-6": { "title": "Analiza Zaawansowana", "lesson": { "fa-lesson-6-1": { "title": "Jakość Zysków" }, "fa-lesson-6-2": { "title": "Analiza Zarządzania" }, "fa-lesson-6-3": { "title": "Kompleksowa Wycena" } } }
+      }
+    },
+    "risk-management": {
+      "title": "Zarządzanie Ryzykiem i Psychologia",
+      "description": "Opanuj ocenę ryzyka, określanie rozmiaru pozycji i przezwyciężaj psychologiczne uprzedzenia w inwestowaniu",
+      "module": {
+        "rm-module-1": { "title": "Rozumienie Ryzyka Inwestycyjnego", "lesson": { "rm-lesson-1-1": { "title": "Typy Ryzyka Inwestycyjnego" }, "rm-lesson-1-2": { "title": "Pomiar Ryzyka" }, "rm-lesson-1-3": { "title": "Kompromis Ryzyko-Zwrot" }, "rm-lesson-1-4": { "title": "Tolerancja Ryzyka" } } },
+        "rm-module-2": { "title": "Określanie Rozmiaru Pozycji", "lesson": { "rm-lesson-2-1": { "title": "Zasady Określania Rozmiaru Pozycji" }, "rm-lesson-2-2": { "title": "Kryterium Kelly'ego" }, "rm-lesson-2-3": { "title": "Metoda Stałego Ryzyka" }, "rm-lesson-2-4": { "title": "Korekta Zmienności" } } },
+        "rm-module-3": { "title": "Strategie Stop Loss", "lesson": { "rm-lesson-3-1": { "title": "Znaczenie Stop Loss" }, "rm-lesson-3-2": { "title": "Typy Stop Loss" }, "rm-lesson-3-3": { "title": "Umieszczanie Stop Loss" }, "rm-lesson-3-4": { "title": "Trailing Stop" } } },
+        "rm-module-4": { "title": "Psychologia Inwestowania", "lesson": { "rm-lesson-4-1": { "title": "Typowe Uprzedzenia Psychologiczne" }, "rm-lesson-4-2": { "title": "Pokonywanie Strachu i Chciwości" }, "rm-lesson-4-3": { "title": "Emocjonalny Handel" }, "rm-lesson-4-4": { "title": "Budowanie Dyscypliny" } } },
+        "rm-module-5": { "title": "Praktyka Zarządzania Ryzykiem", "lesson": { "rm-lesson-5-1": { "title": "Ryzyko Portfela" }, "rm-lesson-5-2": { "title": "Zarządzanie Korelacją" }, "rm-lesson-5-3": { "title": "Testy Stresowe" } } }
+      }
     }
   }
 }

@@ -74,7 +74,7 @@ export default function CoursePlatformPage() {
                 <ArrowLeft className="h-4 w-4 flex-shrink-0" />
                 <span>{t('courses.backToCourses')}</span>
               </Link>
-              <h2 className="font-semibold">{t(`course.${course.id}.title`, course.title)}</h2>
+              <h2 className="font-semibold">{t(`course.${course.id}.title`) || course.title}</h2>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-sm mb-1">
                   <span className="text-muted-foreground">{t('courses.progress')}</span>
@@ -99,7 +99,7 @@ export default function CoursePlatformPage() {
                     <div className="flex-1 min-w-0 flex flex-col">
                       <span className="text-xs text-muted-foreground leading-tight">Module {moduleIndex + 1}</span>
                       <p className="text-sm font-medium truncate leading-tight">
-                        {t(`course.${course.id}.module.${module.id}.title`, module.title)}
+                        {t(`course.${course.id}.module.${module.id}.title`) || module.title}
                       </p>
                     </div>
                   </button>
@@ -122,7 +122,7 @@ export default function CoursePlatformPage() {
                             <Play className="h-4 w-4 flex-shrink-0" />
                           )}
                           <span className="truncate flex-1">
-                            {t(`course.${course.id}.module.${module.id}.lesson.${lesson.id}.title`, lesson.title)}
+                            {t(`course.${course.id}.module.${module.id}.lesson.${lesson.id}.title`) || lesson.title}
                           </span>
                         </button>
                       ))}
@@ -172,7 +172,10 @@ export default function CoursePlatformPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <h1 className="heading-md">
-                      {selectedLesson && t(`course.${course.id}.module.${course.modules.find(m => m.lessons.some(l => l.id === selectedLesson.id))?.id}.lesson.${selectedLesson.id}.title`, selectedLesson.title)}
+                      {selectedLesson && (() => {
+                        const module = course.modules.find(m => m.lessons.some(l => l.id === selectedLesson.id));
+                        return t(`course.${course.id}.module.${module?.id}.lesson.${selectedLesson.id}.title`) || selectedLesson.title;
+                      })()}
                     </h1>
                     <span className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
                       <Clock className="h-4 w-4 flex-shrink-0" />

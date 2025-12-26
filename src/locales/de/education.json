@@ -138,7 +138,72 @@
     },
     "advanced-trading": {
       "title": "Fortgeschrittene Handelsstrategien",
-      "description": "Meistere Optionen, Derivate, quantitative Ansätze und algorithmische Handelskonzepte"
+      "description": "Meistere Optionen, Derivate, quantitative Ansätze und algorithmische Handelskonzepte",
+      "module": {
+        "at-module-1": { "title": "Options-Grundlagen", "lesson": { "at-lesson-1-1": { "title": "Einführung in Optionen" }, "at-lesson-1-2": { "title": "Optionspreisbildung" }, "at-lesson-1-3": { "title": "Grundlegende Optionsstrategien" }, "at-lesson-1-4": { "title": "Fortgeschrittene Optionsstrategien" } } },
+        "at-module-2": { "title": "Derivate", "lesson": { "at-lesson-2-1": { "title": "Futures-Kontrakte" }, "at-lesson-2-2": { "title": "Swaps" }, "at-lesson-2-3": { "title": "Strukturierte Produkte" }, "at-lesson-2-4": { "title": "Derivate-Risikomanagement" } } },
+        "at-module-3": { "title": "Quantitative Methoden", "lesson": { "at-lesson-3-1": { "title": "Grundlagen der quantitativen Analyse" }, "at-lesson-3-2": { "title": "Faktormodelle" }, "at-lesson-3-3": { "title": "Backtesting-Strategien" } } },
+        "at-module-4": { "title": "Algorithmischer Handel", "lesson": { "at-lesson-4-1": { "title": "Einführung in den algorithmischen Handel" }, "at-lesson-4-2": { "title": "Ausführungsalgorithmen" }, "at-lesson-4-3": { "title": "Hochfrequenzhandel" }, "at-lesson-4-4": { "title": "Systematische Strategien" } } },
+        "at-module-5": { "title": "Fortgeschrittene Strategien", "lesson": { "at-lesson-5-1": { "title": "Pairs Trading" }, "at-lesson-5-2": { "title": "Statistische Arbitrage" }, "at-lesson-5-3": { "title": "Marktneutrale Strategien" } } },
+        "at-module-6": { "title": "Portfolio-Optimierung", "lesson": { "at-lesson-6-1": { "title": "Moderne Portfoliotheorie" }, "at-lesson-6-2": { "title": "Risikoparität" }, "at-lesson-6-3": { "title": "Faktorportfolios" } } }
+      }
+    },
+    "investment-fundamentals": {
+      "title": "Investment-Grundlagen",
+      "description": "Meistere die Grundlagen der Finanzmärkte, Anlageklassen, realen Renditen und Portfoliokonstruktion",
+      "module": {
+        "module-1": { "title": "Einführung in Finanzmärkte", "lesson": { "lesson-1-1": { "title": "Was sind Finanzmärkte" }, "lesson-1-2": { "title": "Anlageklassen: Aktien, Anleihen, Rohstoffe" }, "lesson-1-3": { "title": "Nominal- vs. Realrenditen" } } },
+        "module-2": { "title": "Reale Renditen verstehen", "lesson": { "lesson-2-1": { "title": "Inflation: Der stille Feind der Ersparnisse" }, "lesson-2-2": { "title": "Vergleich: Einlagen vs. Anlageinstrumente" } } },
+        "module-3": { "title": "Aufbau eines Anlageportfolios", "lesson": { "lesson-3-1": { "title": "Diversifizierungsprinzipien" }, "lesson-3-2": { "title": "Vermögensallokation nach Alter und Zielen" } } },
+        "module-4": { "title": "Praktische Instrumente", "lesson": { "lesson-4-1": { "title": "ETF: Ein einfacher Weg zu investieren" }, "lesson-4-2": { "title": "Wie man ein Brokerkonto eröffnet" } } },
+        "module-5": { "title": "Erste Schritte mit ETFs", "lesson": { "lesson-5-1": { "title": "ETF-Struktur verstehen" }, "lesson-5-2": { "title": "Deine ersten ETFs auswählen" }, "lesson-5-3": { "title": "Deine erste Investition tätigen" } } }
+      }
+    },
+    "portfolio-management": {
+      "title": "Persönliches Portfoliomanagement",
+      "description": "Lerne, dein persönliches Investmentportfolio mit professionellen Strategien aufzubauen, zu verwalten und zu optimieren",
+      "module": {
+        "pm-module-1": { "title": "Portfolio-Planung & Ziele", "lesson": { "pm-lesson-1-1": { "title": "Deine Anlageziele definieren" }, "pm-lesson-1-2": { "title": "Risikotoleranz-Bewertung" }, "pm-lesson-1-3": { "title": "Bedeutung des Zeithorizonts" } } },
+        "pm-module-2": { "title": "Vermögensallokationsstrategien", "lesson": { "pm-lesson-2-1": { "title": "Moderne Portfoliotheorie" }, "pm-lesson-2-2": { "title": "Altersbasierte Vermögensallokation" }, "pm-lesson-2-3": { "title": "Geografische Diversifizierung" }, "pm-lesson-2-4": { "title": "Sektordiversifizierung" } } },
+        "pm-module-3": { "title": "Portfolio-Konstruktion", "lesson": { "pm-lesson-3-1": { "title": "Die richtigen ETFs auswählen" }, "pm-lesson-3-2": { "title": "Kernportfolio aufbauen" }, "pm-lesson-3-3": { "title": "Satellitenstrategien" }, "pm-lesson-3-4": { "title": "Rebalancing-Strategien" } } },
+        "pm-module-4": { "title": "Portfolio-Management", "lesson": { "pm-lesson-4-1": { "title": "Regelmäßiges Rebalancing" }, "pm-lesson-4-2": { "title": "Steueroptimierung" }, "pm-lesson-4-3": { "title": "Kostenmanagement" } } },
+        "pm-module-5": { "title": "Überwachung & Anpassungen", "lesson": { "pm-lesson-5-1": { "title": "Portfolio-Performance verfolgen" }, "pm-lesson-5-2": { "title": "Wann Portfolio anpassen" }, "pm-lesson-5-3": { "title": "Häufige Fehler vermeiden" } } },
+        "pm-module-6": { "title": "Fortgeschrittene Strategien", "lesson": { "pm-lesson-6-1": { "title": "Faktorinvesting" }, "pm-lesson-6-2": { "title": "ESG-Investing" }, "pm-lesson-6-3": { "title": "Tax-Loss Harvesting" } } }
+      }
+    },
+    "technical-analysis": {
+      "title": "Technische Analyse meistern",
+      "description": "Meistere Chartmuster, Indikatoren und Handelssignale, um deine Markteinstiege und -ausstiege zu timen",
+      "module": {
+        "ta-module-1": { "title": "Chart-Grundlagen & Muster", "lesson": { "ta-lesson-1-1": { "title": "Preisdiagramme lesen" }, "ta-lesson-1-2": { "title": "Support- und Widerstandsniveaus" }, "ta-lesson-1-3": { "title": "Häufige Chartmuster" }, "ta-lesson-1-4": { "title": "Trendidentifikation" } } },
+        "ta-module-2": { "title": "Technische Indikatoren", "lesson": { "ta-lesson-2-1": { "title": "Gleitende Durchschnitte" }, "ta-lesson-2-2": { "title": "RSI (Relativer Stärkeindex)" }, "ta-lesson-2-3": { "title": "MACD (Konvergenz-Divergenz gleitender Durchschnitte)" }, "ta-lesson-2-4": { "title": "Bollinger-Bänder" } } },
+        "ta-module-3": { "title": "Support & Widerstand", "lesson": { "ta-lesson-3-1": { "title": "Schlüsselniveaus identifizieren" }, "ta-lesson-3-2": { "title": "Support und Widerstand handeln" }, "ta-lesson-3-3": { "title": "Dynamischer Support und Widerstand" } } },
+        "ta-module-4": { "title": "Trendanalyse", "lesson": { "ta-lesson-4-1": { "title": "Trendtypen und -merkmale" }, "ta-lesson-4-2": { "title": "Trendfolge-Strategien" }, "ta-lesson-4-3": { "title": "Trendumkehrsignale" }, "ta-lesson-4-4": { "title": "Multi-Timeframe-Analyse" } } },
+        "ta-module-5": { "title": "Handelssignale & Einstiegspunkte", "lesson": { "ta-lesson-5-1": { "title": "Signalkonfluenz" }, "ta-lesson-5-2": { "title": "Einstiegstechniken" }, "ta-lesson-5-3": { "title": "Risikomanagement im Handel" }, "ta-lesson-5-4": { "title": "Ausstiegsstrategien" } } }
+      }
+    },
+    "fundamental-analysis": {
+      "title": "Fundamentalanalyse vertiefen",
+      "description": "Meistere Unternehmensbewertung, Analyse von Finanzberichten und Aktienauswahltechniken",
+      "module": {
+        "fa-module-1": { "title": "Grundlagen der Finanzberichte", "lesson": { "fa-lesson-1-1": { "title": "Die Bilanz" }, "fa-lesson-1-2": { "title": "Die Gewinn- und Verlustrechnung" }, "fa-lesson-1-3": { "title": "Die Kapitalflussrechnung" }, "fa-lesson-1-4": { "title": "Analyse der Finanzberichte" } } },
+        "fa-module-2": { "title": "Finanzkennzahlenanalyse", "lesson": { "fa-lesson-2-1": { "title": "Rentabilitätskennzahlen" }, "fa-lesson-2-2": { "title": "Liquiditätskennzahlen" }, "fa-lesson-2-3": { "title": "Verschuldungskennzahlen" }, "fa-lesson-2-4": { "title": "Effizienzkennzahlen" } } },
+        "fa-module-3": { "title": "Unternehmensbewertung", "lesson": { "fa-lesson-3-1": { "title": "Überblick über Bewertungsmethoden" }, "fa-lesson-3-2": { "title": "KGV-Analyse" }, "fa-lesson-3-3": { "title": "KBV-Analyse" }, "fa-lesson-3-4": { "title": "Diskontierter Cashflow (DCF)" } } },
+        "fa-module-4": { "title": "Branchenanalyse", "lesson": { "fa-lesson-4-1": { "title": "Branchenlebenszyklus" }, "fa-lesson-4-2": { "title": "Wettbewerbsanalyse" }, "fa-lesson-4-3": { "title": "Branchenvergleich" } } },
+        "fa-module-5": { "title": "Aktienauswahl", "lesson": { "fa-lesson-5-1": { "title": "Value-Investing-Ansatz" }, "fa-lesson-5-2": { "title": "Growth-Investing-Ansatz" }, "fa-lesson-5-3": { "title": "Qualitätsscreening" } } },
+        "fa-module-6": { "title": "Fortgeschrittene Analyse", "lesson": { "fa-lesson-6-1": { "title": "Ergebnisqualität" }, "fa-lesson-6-2": { "title": "Managementanalyse" }, "fa-lesson-6-3": { "title": "Umfassende Bewertung" } } }
+      }
+    },
+    "risk-management": {
+      "title": "Risikomanagement & Psychologie",
+      "description": "Meistere Risikobewertung, Positionsgrößenbestimmung und überwinde psychologische Vorurteile beim Investieren",
+      "module": {
+        "rm-module-1": { "title": "Anlagerisiken verstehen", "lesson": { "rm-lesson-1-1": { "title": "Arten von Anlagerisiken" }, "rm-lesson-1-2": { "title": "Risiken messen" }, "rm-lesson-1-3": { "title": "Risiko-Rendite-Abwägung" }, "rm-lesson-1-4": { "title": "Risikotoleranz" } } },
+        "rm-module-2": { "title": "Positionsgrößenbestimmung", "lesson": { "rm-lesson-2-1": { "title": "Grundsätze der Positionsgrößenbestimmung" }, "rm-lesson-2-2": { "title": "Kelly-Kriterium" }, "rm-lesson-2-3": { "title": "Methode mit festem Risiko" }, "rm-lesson-2-4": { "title": "Volatilitätsanpassung" } } },
+        "rm-module-3": { "title": "Stop-Loss-Strategien", "lesson": { "rm-lesson-3-1": { "title": "Bedeutung von Stop-Losses" }, "rm-lesson-3-2": { "title": "Arten von Stop-Losses" }, "rm-lesson-3-3": { "title": "Stop-Loss-Platzierung" }, "rm-lesson-3-4": { "title": "Trailing Stops" } } },
+        "rm-module-4": { "title": "Anlagepsychologie", "lesson": { "rm-lesson-4-1": { "title": "Häufige psychologische Vorurteile" }, "rm-lesson-4-2": { "title": "Angst und Gier überwinden" }, "rm-lesson-4-3": { "title": "Emotionales Trading" }, "rm-lesson-4-4": { "title": "Disziplin aufbauen" } } },
+        "rm-module-5": { "title": "Risikomanagement-Praxis", "lesson": { "rm-lesson-5-1": { "title": "Portfoliorisiko" }, "rm-lesson-5-2": { "title": "Korrelationsmanagement" }, "rm-lesson-5-3": { "title": "Stresstests" } } }
+      }
     }
   }
 }

@@ -124,21 +124,356 @@
       "title": "个人投资组合管理",
       "description": "学习使用专业策略构建、管理和优化您的个人投资组合"
     },
+    "investment-fundamentals": {
+      "title": "投资基础",
+      "description": "掌握金融市场、资产类别、实际回报和投资组合构建的基础知识",
+      "module": {
+        "module-1": {
+          "title": "金融市场导论",
+          "lesson": {
+            "lesson-1-1": { "title": "什么是金融市场" },
+            "lesson-1-2": { "title": "资产类别：股票、债券、大宗商品" },
+            "lesson-1-3": { "title": "名义回报与实际回报" }
+          }
+        },
+        "module-2": {
+          "title": "理解实际回报",
+          "lesson": {
+            "lesson-2-1": { "title": "通胀：储蓄的隐形敌人" },
+            "lesson-2-2": { "title": "比较：存款与投资工具" }
+          }
+        },
+        "module-3": {
+          "title": "构建投资组合",
+          "lesson": {
+            "lesson-3-1": { "title": "分散投资原则" },
+            "lesson-3-2": { "title": "按年龄和目标分配资产" }
+          }
+        },
+        "module-4": {
+          "title": "实用工具",
+          "lesson": {
+            "lesson-4-1": { "title": "ETF：简单的投资方式" },
+            "lesson-4-2": { "title": "如何开立经纪账户" }
+          }
+        },
+        "module-5": {
+          "title": "ETF入门",
+          "lesson": {
+            "lesson-5-1": { "title": "理解ETF结构" },
+            "lesson-5-2": { "title": "选择你的第一批ETF" },
+            "lesson-5-3": { "title": "进行首次投资" }
+          }
+        }
+      }
+    },
+    "portfolio-management": {
+      "title": "个人投资组合管理",
+      "description": "学习使用专业策略构建、管理和优化您的个人投资组合",
+      "module": {
+        "pm-module-1": {
+          "title": "投资组合规划与目标",
+          "lesson": {
+            "pm-lesson-1-1": { "title": "定义你的投资目标" },
+            "pm-lesson-1-2": { "title": "风险承受能力评估" },
+            "pm-lesson-1-3": { "title": "时间范围的重要性" }
+          }
+        },
+        "pm-module-2": {
+          "title": "资产配置策略",
+          "lesson": {
+            "pm-lesson-2-1": { "title": "现代投资组合理论" },
+            "pm-lesson-2-2": { "title": "按年龄分配资产" },
+            "pm-lesson-2-3": { "title": "地理分散投资" },
+            "pm-lesson-2-4": { "title": "行业分散投资" }
+          }
+        },
+        "pm-module-3": {
+          "title": "投资组合构建",
+          "lesson": {
+            "pm-lesson-3-1": { "title": "选择正确的ETF" },
+            "pm-lesson-3-2": { "title": "构建核心投资组合" },
+            "pm-lesson-3-3": { "title": "卫星策略" },
+            "pm-lesson-3-4": { "title": "再平衡策略" }
+          }
+        },
+        "pm-module-4": {
+          "title": "投资组合管理",
+          "lesson": {
+            "pm-lesson-4-1": { "title": "定期再平衡" },
+            "pm-lesson-4-2": { "title": "税收优化" },
+            "pm-lesson-4-3": { "title": "成本管理" }
+          }
+        },
+        "pm-module-5": {
+          "title": "监控与调整",
+          "lesson": {
+            "pm-lesson-5-1": { "title": "跟踪投资组合表现" },
+            "pm-lesson-5-2": { "title": "何时调整投资组合" },
+            "pm-lesson-5-3": { "title": "避免常见错误" }
+          }
+        },
+        "pm-module-6": {
+          "title": "高级策略",
+          "lesson": {
+            "pm-lesson-6-1": { "title": "因子投资" },
+            "pm-lesson-6-2": { "title": "ESG投资" },
+            "pm-lesson-6-3": { "title": "税收损失收获" }
+          }
+        }
+      }
+    },
     "technical-analysis": {
       "title": "技术分析精通",
-      "description": "掌握图表模式、指标和交易信号，以把握市场进出时机"
+      "description": "掌握图表模式、指标和交易信号，以把握市场进出时机",
+      "module": {
+        "ta-module-1": {
+          "title": "图表基础与模式",
+          "lesson": {
+            "ta-lesson-1-1": {
+              "title": "阅读价格图表"
+            },
+            "ta-lesson-1-2": {
+              "title": "支撑位和阻力位"
+            },
+            "ta-lesson-1-3": {
+              "title": "常见图表模式"
+            },
+            "ta-lesson-1-4": {
+              "title": "趋势识别"
+            }
+          }
+        },
+        "ta-module-2": {
+          "title": "技术指标",
+          "lesson": {
+            "ta-lesson-2-1": {
+              "title": "移动平均线"
+            },
+            "ta-lesson-2-2": {
+              "title": "RSI（相对强弱指数）"
+            },
+            "ta-lesson-2-3": {
+              "title": "MACD（移动平均收敛散度）"
+            },
+            "ta-lesson-2-4": {
+              "title": "布林带"
+            }
+          }
+        },
+        "ta-module-3": {
+          "title": "支撑与阻力",
+          "lesson": {
+            "ta-lesson-3-1": {
+              "title": "识别关键水平"
+            },
+            "ta-lesson-3-2": {
+              "title": "交易支撑和阻力"
+            },
+            "ta-lesson-3-3": {
+              "title": "动态支撑和阻力"
+            }
+          }
+        },
+        "ta-module-4": {
+          "title": "趋势分析",
+          "lesson": {
+            "ta-lesson-4-1": {
+              "title": "趋势类型与特征"
+            },
+            "ta-lesson-4-2": {
+              "title": "趋势跟踪策略"
+            },
+            "ta-lesson-4-3": {
+              "title": "趋势反转信号"
+            },
+            "ta-lesson-4-4": {
+              "title": "多时间框架分析"
+            }
+          }
+        },
+        "ta-module-5": {
+          "title": "交易信号与入场点",
+          "lesson": {
+            "ta-lesson-5-1": {
+              "title": "信号汇合"
+            },
+            "ta-lesson-5-2": {
+              "title": "入场技巧"
+            },
+            "ta-lesson-5-3": {
+              "title": "交易中的风险管理"
+            },
+            "ta-lesson-5-4": {
+              "title": "退出策略"
+            }
+          }
+        }
+      }
     },
     "fundamental-analysis": {
       "title": "基本面分析深入",
-      "description": "掌握公司估值、财务报表分析和股票选择技巧"
+      "description": "掌握公司估值、财务报表分析和股票选择技巧",
+      "module": {
+        "fa-module-1": {
+          "title": "财务报表基础",
+          "lesson": {
+            "fa-lesson-1-1": { "title": "资产负债表" },
+            "fa-lesson-1-2": { "title": "利润表" },
+            "fa-lesson-1-3": { "title": "现金流量表" },
+            "fa-lesson-1-4": { "title": "财务报表分析" }
+          }
+        },
+        "fa-module-2": {
+          "title": "财务比率分析",
+          "lesson": {
+            "fa-lesson-2-1": { "title": "盈利能力比率" },
+            "fa-lesson-2-2": { "title": "流动性比率" },
+            "fa-lesson-2-3": { "title": "杠杆比率" },
+            "fa-lesson-2-4": { "title": "效率比率" }
+          }
+        },
+        "fa-module-3": {
+          "title": "公司估值",
+          "lesson": {
+            "fa-lesson-3-1": { "title": "估值方法概述" },
+            "fa-lesson-3-2": { "title": "市盈率（P/E）分析" },
+            "fa-lesson-3-3": { "title": "市净率（P/B）分析" },
+            "fa-lesson-3-4": { "title": "现金流折现（DCF）" }
+          }
+        },
+        "fa-module-4": {
+          "title": "行业分析",
+          "lesson": {
+            "fa-lesson-4-1": { "title": "行业生命周期" },
+            "fa-lesson-4-2": { "title": "竞争分析" },
+            "fa-lesson-4-3": { "title": "行业比较" }
+          }
+        },
+        "fa-module-5": {
+          "title": "股票选择",
+          "lesson": {
+            "fa-lesson-5-1": { "title": "价值投资方法" },
+            "fa-lesson-5-2": { "title": "成长投资方法" },
+            "fa-lesson-5-3": { "title": "质量筛选" }
+          }
+        },
+        "fa-module-6": {
+          "title": "高级分析",
+          "lesson": {
+            "fa-lesson-6-1": { "title": "收益质量" },
+            "fa-lesson-6-2": { "title": "管理层分析" },
+            "fa-lesson-6-3": { "title": "综合估值" }
+          }
+        }
+      }
     },
     "risk-management": {
       "title": "风险管理与心理学",
-      "description": "掌握风险评估、仓位管理和克服投资中的心理偏见"
+      "description": "掌握风险评估、仓位管理和克服投资中的心理偏见",
+      "module": {
+        "rm-module-1": {
+          "title": "理解投资风险",
+          "lesson": {
+            "rm-lesson-1-1": { "title": "投资风险类型" },
+            "rm-lesson-1-2": { "title": "风险衡量" },
+            "rm-lesson-1-3": { "title": "风险回报权衡" },
+            "rm-lesson-1-4": { "title": "风险承受能力" }
+          }
+        },
+        "rm-module-2": {
+          "title": "仓位管理",
+          "lesson": {
+            "rm-lesson-2-1": { "title": "仓位规模原则" },
+            "rm-lesson-2-2": { "title": "凯利公式" },
+            "rm-lesson-2-3": { "title": "固定风险方法" },
+            "rm-lesson-2-4": { "title": "波动性调整" }
+          }
+        },
+        "rm-module-3": {
+          "title": "止损策略",
+          "lesson": {
+            "rm-lesson-3-1": { "title": "止损的重要性" },
+            "rm-lesson-3-2": { "title": "止损类型" },
+            "rm-lesson-3-3": { "title": "止损放置" },
+            "rm-lesson-3-4": { "title": "追踪止损" }
+          }
+        },
+        "rm-module-4": {
+          "title": "投资心理学",
+          "lesson": {
+            "rm-lesson-4-1": { "title": "常见心理偏见" },
+            "rm-lesson-4-2": { "title": "克服恐惧和贪婪" },
+            "rm-lesson-4-3": { "title": "情绪化交易" },
+            "rm-lesson-4-4": { "title": "建立纪律" }
+          }
+        },
+        "rm-module-5": {
+          "title": "风险管理实践",
+          "lesson": {
+            "rm-lesson-5-1": { "title": "投资组合风险" },
+            "rm-lesson-5-2": { "title": "相关性管理" },
+            "rm-lesson-5-3": { "title": "压力测试" }
+          }
+        }
+      }
     },
     "advanced-trading": {
       "title": "高级交易策略",
-      "description": "掌握期权、衍生品、量化方法和算法交易概念"
+      "description": "掌握期权、衍生品、量化方法和算法交易概念",
+      "module": {
+        "at-module-1": {
+          "title": "期权基础",
+          "lesson": {
+            "at-lesson-1-1": { "title": "期权介绍" },
+            "at-lesson-1-2": { "title": "期权定价" },
+            "at-lesson-1-3": { "title": "基本期权策略" },
+            "at-lesson-1-4": { "title": "高级期权策略" }
+          }
+        },
+        "at-module-2": {
+          "title": "衍生品",
+          "lesson": {
+            "at-lesson-2-1": { "title": "期货合约" },
+            "at-lesson-2-2": { "title": "掉期" },
+            "at-lesson-2-3": { "title": "结构化产品" },
+            "at-lesson-2-4": { "title": "衍生品风险管理" }
+          }
+        },
+        "at-module-3": {
+          "title": "量化方法",
+          "lesson": {
+            "at-lesson-3-1": { "title": "量化分析基础" },
+            "at-lesson-3-2": { "title": "因子模型" },
+            "at-lesson-3-3": { "title": "回测策略" }
+          }
+        },
+        "at-module-4": {
+          "title": "算法交易",
+          "lesson": {
+            "at-lesson-4-1": { "title": "算法交易介绍" },
+            "at-lesson-4-2": { "title": "执行算法" },
+            "at-lesson-4-3": { "title": "高频交易" },
+            "at-lesson-4-4": { "title": "系统化策略" }
+          }
+        },
+        "at-module-5": {
+          "title": "高级策略",
+          "lesson": {
+            "at-lesson-5-1": { "title": "配对交易" },
+            "at-lesson-5-2": { "title": "统计套利" },
+            "at-lesson-5-3": { "title": "市场中性策略" }
+          }
+        },
+        "at-module-6": {
+          "title": "投资组合优化",
+          "lesson": {
+            "at-lesson-6-1": { "title": "现代投资组合理论" },
+            "at-lesson-6-2": { "title": "风险平价" },
+            "at-lesson-6-3": { "title": "因子投资组合" }
+          }
+        }
+      }
     }
   }
 }

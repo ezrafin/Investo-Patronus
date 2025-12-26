@@ -138,7 +138,72 @@
     },
     "advanced-trading": {
       "title": "Stratégies de Trading Avancées",
-      "description": "Maîtrisez les options, les dérivés, les approches quantitatives et les concepts de trading algorithmique"
+      "description": "Maîtrisez les options, les dérivés, les approches quantitatives et les concepts de trading algorithmique",
+      "module": {
+        "at-module-1": { "title": "Bases des Options", "lesson": { "at-lesson-1-1": { "title": "Introduction aux Options" }, "at-lesson-1-2": { "title": "Prix des Options" }, "at-lesson-1-3": { "title": "Stratégies d'Options de Base" }, "at-lesson-1-4": { "title": "Stratégies d'Options Avancées" } } },
+        "at-module-2": { "title": "Dérivés", "lesson": { "at-lesson-2-1": { "title": "Contrats à Terme" }, "at-lesson-2-2": { "title": "Swaps" }, "at-lesson-2-3": { "title": "Produits Structurés" }, "at-lesson-2-4": { "title": "Gestion des Risques des Dérivés" } } },
+        "at-module-3": { "title": "Méthodes Quantitatives", "lesson": { "at-lesson-3-1": { "title": "Bases de l'Analyse Quantitative" }, "at-lesson-3-2": { "title": "Modèles Factoriels" }, "at-lesson-3-3": { "title": "Backtesting de Stratégies" } } },
+        "at-module-4": { "title": "Trading Algorithmique", "lesson": { "at-lesson-4-1": { "title": "Introduction au Trading Algorithmique" }, "at-lesson-4-2": { "title": "Algorithmes d'Exécution" }, "at-lesson-4-3": { "title": "Trading Haute Fréquence" }, "at-lesson-4-4": { "title": "Stratégies Systématiques" } } },
+        "at-module-5": { "title": "Stratégies Avancées", "lesson": { "at-lesson-5-1": { "title": "Trading de Paires" }, "at-lesson-5-2": { "title": "Arbitrage Statistique" }, "at-lesson-5-3": { "title": "Stratégies Neutres au Marché" } } },
+        "at-module-6": { "title": "Optimisation de Portefeuille", "lesson": { "at-lesson-6-1": { "title": "Théorie Moderne du Portefeuille" }, "at-lesson-6-2": { "title": "Parité des Risques" }, "at-lesson-6-3": { "title": "Portefeuilles Factoriels" } } }
+      }
+    },
+    "investment-fundamentals": {
+      "title": "Fondamentaux de l'Investissement",
+      "description": "Maîtrisez les bases des marchés financiers, des classes d'actifs, des rendements réels et de la construction de portefeuille",
+      "module": {
+        "module-1": { "title": "Introduction aux Marchés Financiers", "lesson": { "lesson-1-1": { "title": "Qu'est-ce que les Marchés Financiers" }, "lesson-1-2": { "title": "Classes d'Actifs : Actions, Obligations, Matières Premières" }, "lesson-1-3": { "title": "Rendements Nominaux vs Réels" } } },
+        "module-2": { "title": "Comprendre les Rendements Réels", "lesson": { "lesson-2-1": { "title": "Inflation : L'Ennemi Silencieux de l'Épargne" }, "lesson-2-2": { "title": "Comparaison : Dépôts vs Instruments d'Investissement" } } },
+        "module-3": { "title": "Construction d'un Portefeuille d'Investissement", "lesson": { "lesson-3-1": { "title": "Principes de Diversification" }, "lesson-3-2": { "title": "Allocation d'Actifs par Âge et Objectifs" } } },
+        "module-4": { "title": "Instruments Pratiques", "lesson": { "lesson-4-1": { "title": "ETF : Une Façon Simple d'Investir" }, "lesson-4-2": { "title": "Comment Ouvrir un Compte de Courtage" } } },
+        "module-5": { "title": "Débuter avec les ETF", "lesson": { "lesson-5-1": { "title": "Comprendre la Structure des ETF" }, "lesson-5-2": { "title": "Choisir vos Premiers ETF" }, "lesson-5-3": { "title": "Faire votre Premier Investissement" } } }
+      }
+    },
+    "portfolio-management": {
+      "title": "Gestion de Portefeuille Personnel",
+      "description": "Apprenez à construire, gérer et optimiser votre portefeuille d'investissement personnel avec des stratégies professionnelles",
+      "module": {
+        "pm-module-1": { "title": "Planification et Objectifs du Portefeuille", "lesson": { "pm-lesson-1-1": { "title": "Définir vos Objectifs d'Investissement" }, "pm-lesson-1-2": { "title": "Évaluation de la Tolérance au Risque" }, "pm-lesson-1-3": { "title": "Importance de l'Horizon Temporel" } } },
+        "pm-module-2": { "title": "Stratégies d'Allocation d'Actifs", "lesson": { "pm-lesson-2-1": { "title": "Théorie Moderne du Portefeuille" }, "pm-lesson-2-2": { "title": "Allocation d'Actifs par Âge" }, "pm-lesson-2-3": { "title": "Diversification Géographique" }, "pm-lesson-2-4": { "title": "Diversification Sectorielle" } } },
+        "pm-module-3": { "title": "Construction de Portefeuille", "lesson": { "pm-lesson-3-1": { "title": "Choisir les Bons ETF" }, "pm-lesson-3-2": { "title": "Construire le Portefeuille Central" }, "pm-lesson-3-3": { "title": "Stratégies Satellite" }, "pm-lesson-3-4": { "title": "Stratégies de Rééquilibrage" } } },
+        "pm-module-4": { "title": "Gestion de Portefeuille", "lesson": { "pm-lesson-4-1": { "title": "Rééquilibrage Régulier" }, "pm-lesson-4-2": { "title": "Optimisation Fiscale" }, "pm-lesson-4-3": { "title": "Gestion des Coûts" } } },
+        "pm-module-5": { "title": "Surveillance et Ajustements", "lesson": { "pm-lesson-5-1": { "title": "Suivi de la Performance du Portefeuille" }, "pm-lesson-5-2": { "title": "Quand Ajuster le Portefeuille" }, "pm-lesson-5-3": { "title": "Éviter les Erreurs Courantes" } } },
+        "pm-module-6": { "title": "Stratégies Avancées", "lesson": { "pm-lesson-6-1": { "title": "Investissement Factoriel" }, "pm-lesson-6-2": { "title": "Investissement ESG" }, "pm-lesson-6-3": { "title": "Tax-Loss Harvesting" } } }
+      }
+    },
+    "technical-analysis": {
+      "title": "Maîtrise de l'Analyse Technique",
+      "description": "Maîtrisez les modèles de graphiques, les indicateurs et les signaux de trading pour chronométrer vos entrées et sorties du marché",
+      "module": {
+        "ta-module-1": { "title": "Bases et Modèles de Graphiques", "lesson": { "ta-lesson-1-1": { "title": "Lire les Graphiques de Prix" }, "ta-lesson-1-2": { "title": "Niveaux de Support et Résistance" }, "ta-lesson-1-3": { "title": "Modèles de Graphiques Courants" }, "ta-lesson-1-4": { "title": "Identification de Tendance" } } },
+        "ta-module-2": { "title": "Indicateurs Techniques", "lesson": { "ta-lesson-2-1": { "title": "Moyennes Mobiles" }, "ta-lesson-2-2": { "title": "RSI (Indice de Force Relative)" }, "ta-lesson-2-3": { "title": "MACD (Convergence et Divergence des Moyennes Mobiles)" }, "ta-lesson-2-4": { "title": "Bandes de Bollinger" } } },
+        "ta-module-3": { "title": "Support et Résistance", "lesson": { "ta-lesson-3-1": { "title": "Identifier les Niveaux Clés" }, "ta-lesson-3-2": { "title": "Trader le Support et la Résistance" }, "ta-lesson-3-3": { "title": "Support et Résistance Dynamiques" } } },
+        "ta-module-4": { "title": "Analyse de Tendance", "lesson": { "ta-lesson-4-1": { "title": "Types et Caractéristiques de Tendance" }, "ta-lesson-4-2": { "title": "Stratégies de Suivi de Tendance" }, "ta-lesson-4-3": { "title": "Signaux de Renversement de Tendance" }, "ta-lesson-4-4": { "title": "Analyse Multi-Timeframes" } } },
+        "ta-module-5": { "title": "Signaux de Trading et Points d'Entrée", "lesson": { "ta-lesson-5-1": { "title": "Confluence de Signaux" }, "ta-lesson-5-2": { "title": "Techniques d'Entrée" }, "ta-lesson-5-3": { "title": "Gestion des Risques en Trading" }, "ta-lesson-5-4": { "title": "Stratégies de Sortie" } } }
+      }
+    },
+    "fundamental-analysis": {
+      "title": "Analyse Fondamentale Approfondie",
+      "description": "Maîtrisez l'évaluation des entreprises, l'analyse des états financiers et les techniques de sélection d'actions",
+      "module": {
+        "fa-module-1": { "title": "Bases des États Financiers", "lesson": { "fa-lesson-1-1": { "title": "Le Bilan" }, "fa-lesson-1-2": { "title": "Le Compte de Résultat" }, "fa-lesson-1-3": { "title": "Le Tableau des Flux de Trésorerie" }, "fa-lesson-1-4": { "title": "Analyse des États Financiers" } } },
+        "fa-module-2": { "title": "Analyse des Ratios Financiers", "lesson": { "fa-lesson-2-1": { "title": "Ratios de Rentabilité" }, "fa-lesson-2-2": { "title": "Ratios de Liquidité" }, "fa-lesson-2-3": { "title": "Ratios d'Effet de Levier" }, "fa-lesson-2-4": { "title": "Ratios d'Efficacité" } } },
+        "fa-module-3": { "title": "Évaluation d'Entreprise", "lesson": { "fa-lesson-3-1": { "title": "Vue d'Ensemble des Méthodes d'Évaluation" }, "fa-lesson-3-2": { "title": "Analyse du Ratio P/E" }, "fa-lesson-3-3": { "title": "Analyse du Ratio P/B" }, "fa-lesson-3-4": { "title": "Flux de Trésorerie Actualisés (DCF)" } } },
+        "fa-module-4": { "title": "Analyse Sectorielle", "lesson": { "fa-lesson-4-1": { "title": "Cycle de Vie du Secteur" }, "fa-lesson-4-2": { "title": "Analyse Concurrentielle" }, "fa-lesson-4-3": { "title": "Comparaison Sectorielle" } } },
+        "fa-module-5": { "title": "Sélection d'Actions", "lesson": { "fa-lesson-5-1": { "title": "Approche d'Investissement en Valeur" }, "fa-lesson-5-2": { "title": "Approche d'Investissement en Croissance" }, "fa-lesson-5-3": { "title": "Filtrage par Qualité" } } },
+        "fa-module-6": { "title": "Analyse Avancée", "lesson": { "fa-lesson-6-1": { "title": "Qualité des Bénéfices" }, "fa-lesson-6-2": { "title": "Analyse de la Direction" }, "fa-lesson-6-3": { "title": "Évaluation Complète" } } }
+      }
+    },
+    "risk-management": {
+      "title": "Gestion des Risques et Psychologie",
+      "description": "Maîtrisez l'évaluation des risques, le dimensionnement des positions et surmontez les biais psychologiques dans l'investissement",
+      "module": {
+        "rm-module-1": { "title": "Comprendre le Risque d'Investissement", "lesson": { "rm-lesson-1-1": { "title": "Types de Risque d'Investissement" }, "rm-lesson-1-2": { "title": "Mesurer le Risque" }, "rm-lesson-1-3": { "title": "Compromis Risque-Rendement" }, "rm-lesson-1-4": { "title": "Tolérance au Risque" } } },
+        "rm-module-2": { "title": "Dimensionnement des Positions", "lesson": { "rm-lesson-2-1": { "title": "Principes de Dimensionnement des Positions" }, "rm-lesson-2-2": { "title": "Critère de Kelly" }, "rm-lesson-2-3": { "title": "Méthode de Risque Fixe" }, "rm-lesson-2-4": { "title": "Ajustement de Volatilité" } } },
+        "rm-module-3": { "title": "Stratégies de Stop Loss", "lesson": { "rm-lesson-3-1": { "title": "Importance des Stop Loss" }, "rm-lesson-3-2": { "title": "Types de Stop Loss" }, "rm-lesson-3-3": { "title": "Placement des Stop Loss" }, "rm-lesson-3-4": { "title": "Stop Loss Trailing" } } },
+        "rm-module-4": { "title": "Psychologie de l'Investissement", "lesson": { "rm-lesson-4-1": { "title": "Biais Psychologiques Courants" }, "rm-lesson-4-2": { "title": "Surmonter la Peur et l'Avarice" }, "rm-lesson-4-3": { "title": "Trading Émotionnel" }, "rm-lesson-4-4": { "title": "Développer la Discipline" } } },
+        "rm-module-5": { "title": "Pratique de Gestion des Risques", "lesson": { "rm-lesson-5-1": { "title": "Risque de Portefeuille" }, "rm-lesson-5-2": { "title": "Gestion de Corrélation" }, "rm-lesson-5-3": { "title": "Tests de Stress" } } }
+      }
     }
   }
 }

@@ -138,7 +138,316 @@
     },
     "advanced-trading": {
       "title": "Advanced Trading Strategies",
-      "description": "Master options, derivatives, quantitative approaches, and algorithmic trading concepts"
+      "description": "Master options, derivatives, quantitative approaches, and algorithmic trading concepts",
+      "module": {
+        "at-module-1": {
+          "title": "Options Basics",
+          "lesson": {
+            "at-lesson-1-1": { "title": "Introduction to Options" },
+            "at-lesson-1-2": { "title": "Option Pricing" },
+            "at-lesson-1-3": { "title": "Basic Option Strategies" },
+            "at-lesson-1-4": { "title": "Advanced Option Strategies" }
+          }
+        },
+        "at-module-2": {
+          "title": "Derivatives",
+          "lesson": {
+            "at-lesson-2-1": { "title": "Futures Contracts" },
+            "at-lesson-2-2": { "title": "Swaps" },
+            "at-lesson-2-3": { "title": "Structured Products" },
+            "at-lesson-2-4": { "title": "Derivatives Risk Management" }
+          }
+        },
+        "at-module-3": {
+          "title": "Quantitative Methods",
+          "lesson": {
+            "at-lesson-3-1": { "title": "Quantitative Analysis Basics" },
+            "at-lesson-3-2": { "title": "Factor Models" },
+            "at-lesson-3-3": { "title": "Backtesting Strategies" }
+          }
+        },
+        "at-module-4": {
+          "title": "Algorithmic Trading",
+          "lesson": {
+            "at-lesson-4-1": { "title": "Introduction to Algorithmic Trading" },
+            "at-lesson-4-2": { "title": "Execution Algorithms" },
+            "at-lesson-4-3": { "title": "High-Frequency Trading" },
+            "at-lesson-4-4": { "title": "Systematic Strategies" }
+          }
+        },
+        "at-module-5": {
+          "title": "Advanced Strategies",
+          "lesson": {
+            "at-lesson-5-1": { "title": "Pairs Trading" },
+            "at-lesson-5-2": { "title": "Statistical Arbitrage" },
+            "at-lesson-5-3": { "title": "Market Neutral Strategies" }
+          }
+        },
+        "at-module-6": {
+          "title": "Portfolio Optimization",
+          "lesson": {
+            "at-lesson-6-1": { "title": "Modern Portfolio Theory" },
+            "at-lesson-6-2": { "title": "Risk Parity" },
+            "at-lesson-6-3": { "title": "Factor Portfolios" }
+          }
+        }
+      }
+    },
+    "investment-fundamentals": {
+      "title": "Investment Fundamentals",
+      "description": "Master the basics of financial markets, asset classes, real returns, and portfolio construction",
+      "module": {
+        "module-1": {
+          "title": "Introduction to Financial Markets",
+          "lesson": {
+            "lesson-1-1": { "title": "What Are Financial Markets" },
+            "lesson-1-2": { "title": "Asset Classes: Stocks, Bonds, Commodities" },
+            "lesson-1-3": { "title": "Nominal vs Real Returns" }
+          }
+        },
+        "module-2": {
+          "title": "Understanding Real Returns",
+          "lesson": {
+            "lesson-2-1": { "title": "Inflation: The Silent Enemy of Savings" },
+            "lesson-2-2": { "title": "Comparison: Deposits vs Investment Instruments" }
+          }
+        },
+        "module-3": {
+          "title": "Building an Investment Portfolio",
+          "lesson": {
+            "lesson-3-1": { "title": "Diversification Principles" },
+            "lesson-3-2": { "title": "Asset Allocation by Age and Goals" }
+          }
+        },
+        "module-4": {
+          "title": "Practical Instruments",
+          "lesson": {
+            "lesson-4-1": { "title": "ETF: A Simple Way to Invest" },
+            "lesson-4-2": { "title": "How to Open a Brokerage Account" }
+          }
+        },
+        "module-5": {
+          "title": "Getting Started with ETFs",
+          "lesson": {
+            "lesson-5-1": { "title": "Understanding ETF Structure" },
+            "lesson-5-2": { "title": "Choosing Your First ETFs" },
+            "lesson-5-3": { "title": "Making Your First Investment" }
+          }
+        }
+      }
+    },
+    "portfolio-management": {
+      "title": "Personal Portfolio Management",
+      "description": "Learn to build, manage, and optimize your personal investment portfolio with professional strategies",
+      "module": {
+        "pm-module-1": {
+          "title": "Portfolio Planning & Goals",
+          "lesson": {
+            "pm-lesson-1-1": { "title": "Defining Your Investment Goals" },
+            "pm-lesson-1-2": { "title": "Risk Tolerance Assessment" },
+            "pm-lesson-1-3": { "title": "Time Horizon Importance" }
+          }
+        },
+        "pm-module-2": {
+          "title": "Asset Allocation Strategies",
+          "lesson": {
+            "pm-lesson-2-1": { "title": "Modern Portfolio Theory" },
+            "pm-lesson-2-2": { "title": "Age-Based Asset Allocation" },
+            "pm-lesson-2-3": { "title": "Geographic Diversification" },
+            "pm-lesson-2-4": { "title": "Sector Diversification" }
+          }
+        },
+        "pm-module-3": {
+          "title": "Portfolio Construction",
+          "lesson": {
+            "pm-lesson-3-1": { "title": "Choosing the Right ETFs" },
+            "pm-lesson-3-2": { "title": "Building Core Portfolio" },
+            "pm-lesson-3-3": { "title": "Satellite Strategies" },
+            "pm-lesson-3-4": { "title": "Rebalancing Strategies" }
+          }
+        },
+        "pm-module-4": {
+          "title": "Portfolio Management",
+          "lesson": {
+            "pm-lesson-4-1": { "title": "Regular Rebalancing" },
+            "pm-lesson-4-2": { "title": "Tax Optimization" },
+            "pm-lesson-4-3": { "title": "Cost Management" }
+          }
+        },
+        "pm-module-5": {
+          "title": "Monitoring & Adjustments",
+          "lesson": {
+            "pm-lesson-5-1": { "title": "Tracking Portfolio Performance" },
+            "pm-lesson-5-2": { "title": "When to Adjust Portfolio" },
+            "pm-lesson-5-3": { "title": "Avoiding Common Mistakes" }
+          }
+        },
+        "pm-module-6": {
+          "title": "Advanced Strategies",
+          "lesson": {
+            "pm-lesson-6-1": { "title": "Factor Investing" },
+            "pm-lesson-6-2": { "title": "ESG Investing" },
+            "pm-lesson-6-3": { "title": "Tax-Loss Harvesting" }
+          }
+        }
+      }
+    },
+    "technical-analysis": {
+      "title": "Technical Analysis Mastery",
+      "description": "Master chart patterns, indicators, and trading signals to time your market entries and exits",
+      "module": {
+        "ta-module-1": {
+          "title": "Chart Basics & Patterns",
+          "lesson": {
+            "ta-lesson-1-1": { "title": "Reading Price Charts" },
+            "ta-lesson-1-2": { "title": "Support and Resistance Levels" },
+            "ta-lesson-1-3": { "title": "Common Chart Patterns" },
+            "ta-lesson-1-4": { "title": "Trend Identification" }
+          }
+        },
+        "ta-module-2": {
+          "title": "Technical Indicators",
+          "lesson": {
+            "ta-lesson-2-1": { "title": "Moving Averages" },
+            "ta-lesson-2-2": { "title": "RSI (Relative Strength Index)" },
+            "ta-lesson-2-3": { "title": "MACD (Moving Average Convergence Divergence)" },
+            "ta-lesson-2-4": { "title": "Bollinger Bands" }
+          }
+        },
+        "ta-module-3": {
+          "title": "Support & Resistance",
+          "lesson": {
+            "ta-lesson-3-1": { "title": "Identifying Key Levels" },
+            "ta-lesson-3-2": { "title": "Trading Support and Resistance" },
+            "ta-lesson-3-3": { "title": "Dynamic Support and Resistance" }
+          }
+        },
+        "ta-module-4": {
+          "title": "Trend Analysis",
+          "lesson": {
+            "ta-lesson-4-1": { "title": "Trend Types and Characteristics" },
+            "ta-lesson-4-2": { "title": "Trend Following Strategies" },
+            "ta-lesson-4-3": { "title": "Trend Reversal Signals" },
+            "ta-lesson-4-4": { "title": "Multiple Timeframe Analysis" }
+          }
+        },
+        "ta-module-5": {
+          "title": "Trading Signals & Entry Points",
+          "lesson": {
+            "ta-lesson-5-1": { "title": "Signal Confluence" },
+            "ta-lesson-5-2": { "title": "Entry Techniques" },
+            "ta-lesson-5-3": { "title": "Risk Management in Trading" },
+            "ta-lesson-5-4": { "title": "Exit Strategies" }
+          }
+        }
+      }
+    },
+    "fundamental-analysis": {
+      "title": "Fundamental Analysis Deep Dive",
+      "description": "Master company valuation, financial statements analysis, and stock selection techniques",
+      "module": {
+        "fa-module-1": {
+          "title": "Financial Statements Basics",
+          "lesson": {
+            "fa-lesson-1-1": { "title": "The Balance Sheet" },
+            "fa-lesson-1-2": { "title": "The Income Statement" },
+            "fa-lesson-1-3": { "title": "The Cash Flow Statement" },
+            "fa-lesson-1-4": { "title": "Financial Statements Analysis" }
+          }
+        },
+        "fa-module-2": {
+          "title": "Financial Ratio Analysis",
+          "lesson": {
+            "fa-lesson-2-1": { "title": "Profitability Ratios" },
+            "fa-lesson-2-2": { "title": "Liquidity Ratios" },
+            "fa-lesson-2-3": { "title": "Leverage Ratios" },
+            "fa-lesson-2-4": { "title": "Efficiency Ratios" }
+          }
+        },
+        "fa-module-3": {
+          "title": "Company Valuation",
+          "lesson": {
+            "fa-lesson-3-1": { "title": "Valuation Methods Overview" },
+            "fa-lesson-3-2": { "title": "P/E Ratio Analysis" },
+            "fa-lesson-3-3": { "title": "P/B Ratio Analysis" },
+            "fa-lesson-3-4": { "title": "Discounted Cash Flow (DCF)" }
+          }
+        },
+        "fa-module-4": {
+          "title": "Industry Analysis",
+          "lesson": {
+            "fa-lesson-4-1": { "title": "Industry Lifecycle" },
+            "fa-lesson-4-2": { "title": "Competitive Analysis" },
+            "fa-lesson-4-3": { "title": "Industry Comparison" }
+          }
+        },
+        "fa-module-5": {
+          "title": "Stock Selection",
+          "lesson": {
+            "fa-lesson-5-1": { "title": "Value Investing Approach" },
+            "fa-lesson-5-2": { "title": "Growth Investing Approach" },
+            "fa-lesson-5-3": { "title": "Quality Screening" }
+          }
+        },
+        "fa-module-6": {
+          "title": "Advanced Analysis",
+          "lesson": {
+            "fa-lesson-6-1": { "title": "Earnings Quality" },
+            "fa-lesson-6-2": { "title": "Management Analysis" },
+            "fa-lesson-6-3": { "title": "Comprehensive Valuation" }
+          }
+        }
+      }
+    },
+    "risk-management": {
+      "title": "Risk Management & Psychology",
+      "description": "Master risk assessment, position sizing, and overcome psychological biases in investing",
+      "module": {
+        "rm-module-1": {
+          "title": "Understanding Investment Risk",
+          "lesson": {
+            "rm-lesson-1-1": { "title": "Types of Investment Risk" },
+            "rm-lesson-1-2": { "title": "Measuring Risk" },
+            "rm-lesson-1-3": { "title": "Risk-Return Tradeoff" },
+            "rm-lesson-1-4": { "title": "Risk Tolerance" }
+          }
+        },
+        "rm-module-2": {
+          "title": "Position Sizing",
+          "lesson": {
+            "rm-lesson-2-1": { "title": "Position Sizing Principles" },
+            "rm-lesson-2-2": { "title": "Kelly Criterion" },
+            "rm-lesson-2-3": { "title": "Fixed Risk Method" },
+            "rm-lesson-2-4": { "title": "Volatility Adjustment" }
+          }
+        },
+        "rm-module-3": {
+          "title": "Stop Loss Strategies",
+          "lesson": {
+            "rm-lesson-3-1": { "title": "Importance of Stop Losses" },
+            "rm-lesson-3-2": { "title": "Types of Stop Losses" },
+            "rm-lesson-3-3": { "title": "Stop Loss Placement" },
+            "rm-lesson-3-4": { "title": "Trailing Stops" }
+          }
+        },
+        "rm-module-4": {
+          "title": "Investment Psychology",
+          "lesson": {
+            "rm-lesson-4-1": { "title": "Common Psychological Biases" },
+            "rm-lesson-4-2": { "title": "Overcoming Fear and Greed" },
+            "rm-lesson-4-3": { "title": "Emotional Trading" },
+            "rm-lesson-4-4": { "title": "Building Discipline" }
+          }
+        },
+        "rm-module-5": {
+          "title": "Risk Management Practice",
+          "lesson": {
+            "rm-lesson-5-1": { "title": "Portfolio Risk" },
+            "rm-lesson-5-2": { "title": "Correlation Management" },
+            "rm-lesson-5-3": { "title": "Stress Testing" }
+          }
+        }
+      }
     }
   }
 }

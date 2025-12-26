@@ -29,10 +29,10 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
           <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-            {t(`course.${course.id}.title`, course.title)}
+            {t(`course.${course.id}.title`) || course.title}
           </h3>
           <p className="text-sm text-muted-foreground line-clamp-2">
-            {t(`course.${course.id}.description`, course.description)}
+            {t(`course.${course.id}.description`) || course.description}
           </p>
         </div>
       </div>
