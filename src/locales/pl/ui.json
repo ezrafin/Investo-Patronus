@@ -754,7 +754,13 @@
     "backToLibrary": "Powrót do Biblioteki Wideo",
     "videoNotFound": "Nie Znaleziono Filmu",
     "showFilters": "Pokaż Filtry",
-    "hideFilters": "Ukryj Filtry"
+    "hideFilters": "Ukryj Filtry",
+    "recommendationTitle": "Rekomendacja",
+    "recommendationText": "Zacznij od sekcji \"Banki vs Inwestycje\", aby zrozumieć, jakie rzeczywiste zwroty zapewniają różne instrumenty finansowe."
+  },
+  "pagination": {
+    "previous": "Poprzedni",
+    "next": "Dalej"
   },
   "careersPage": {
     "fullTime": "Pełny Etat",

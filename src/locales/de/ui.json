@@ -754,7 +754,13 @@
     "backToLibrary": "Zurück zur Videobibliothek",
     "videoNotFound": "Video Nicht Gefunden",
     "showFilters": "Filter Anzeigen",
-    "hideFilters": "Filter Ausblenden"
+    "hideFilters": "Filter Ausblenden",
+    "recommendationTitle": "Empfehlung",
+    "recommendationText": "Beginnen Sie mit dem Abschnitt \"Banken vs Investitionen\", um zu verstehen, welche realen Renditen verschiedene Finanzinstrumente bieten."
+  },
+  "pagination": {
+    "previous": "Zurück",
+    "next": "Weiter"
   },
   "careersPage": {
     "fullTime": "Vollzeit",

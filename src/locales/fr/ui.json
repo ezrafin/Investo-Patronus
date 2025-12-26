@@ -754,7 +754,13 @@
     "backToLibrary": "Retour à la Bibliothèque Vidéo",
     "videoNotFound": "Vidéo Non Trouvée",
     "showFilters": "Afficher les Filtres",
-    "hideFilters": "Masquer les Filtres"
+    "hideFilters": "Masquer les Filtres",
+    "recommendationTitle": "Recommandation",
+    "recommendationText": "Commencez par la section \"Banques vs Investissements\" pour comprendre quels rendements réels offrent divers instruments financiers."
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant"
   },
   "careersPage": {
     "fullTime": "Temps Plein",

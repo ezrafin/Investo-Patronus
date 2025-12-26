@@ -755,7 +755,13 @@
     "backToLibrary": "Вернуться к видеотеке",
     "videoNotFound": "Видео не найдено",
     "showFilters": "Показать фильтры",
-    "hideFilters": "Скрыть фильтры"
+    "hideFilters": "Скрыть фильтры",
+    "recommendationTitle": "Рекомендация",
+    "recommendationText": "Начните с раздела \"Банки vs Инвестиции\", чтобы понять, какую реальную доходность предоставляют различные финансовые инструменты."
+  },
+  "pagination": {
+    "previous": "Назад",
+    "next": "Далее"
   },
   "careersPage": {
     "fullTime": "Полная занятость",

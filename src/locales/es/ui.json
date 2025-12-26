@@ -754,7 +754,13 @@
     "backToLibrary": "Volver a la Biblioteca de Videos",
     "videoNotFound": "Video No Encontrado",
     "showFilters": "Mostrar Filtros",
-    "hideFilters": "Ocultar Filtros"
+    "hideFilters": "Ocultar Filtros",
+    "recommendationTitle": "Recomendación",
+    "recommendationText": "Comienza con la sección \"Bancos vs Inversiones\" para entender qué rendimientos reales proporcionan varios instrumentos financieros."
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente"
   },
   "careersPage": {
     "fullTime": "Tiempo Completo",

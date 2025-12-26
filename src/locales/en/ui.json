@@ -733,13 +733,19 @@
     "backToLibrary": "Back to Video Library",
     "videoNotFound": "Video Not Found",
     "showFilters": "Show Filters",
-    "hideFilters": "Hide Filters"
+    "hideFilters": "Hide Filters",
+    "recommendationTitle": "Recommendation",
+    "recommendationText": "Start with the \"Banks vs Investments\" section to understand what real returns various financial instruments provide."
   },
   "careersPage": {
     "fullTime": "Full-time",
     "partTime": "Part-time",
     "contract": "Contract",
     "internship": "Internship"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
   },
   "billCollection": {
     "title": "Bill Collection",

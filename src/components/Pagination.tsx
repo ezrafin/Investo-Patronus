@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface PaginationProps {
   currentPage: number;
@@ -8,6 +9,7 @@ interface PaginationProps {
 }
 
 export function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
+  const { t } = useTranslation({ namespace: 'ui' });
   const getPageNumbers = () => {
     const pages: (number | string)[] = [];
     const showEllipsisStart = currentPage > 3;
@@ -57,7 +59,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         className="gap-1"
       >
         <ChevronLeft className="h-4 w-4" />
-        Previous
+        {t('pagination.previous')}
       </Button>
 
       <div className="flex items-center gap-1">
@@ -87,7 +89,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         disabled={currentPage === totalPages}
         className="gap-1"
       >
-        Next
+        {t('pagination.next')}
         <ChevronRight className="h-4 w-4" />
       </Button>
     </div>

@@ -93,10 +93,9 @@ export default function VideoLibraryPage() {
 
                 {/* Hint Box */}
                 <div className="glass-card p-4 mt-6 border-l-4 border-primary">
-                  <h4 className="font-medium text-sm mb-2">💡 Recommendation</h4>
+                  <h4 className="font-medium text-sm mb-2">💡 {t('videoLibrary.recommendationTitle')}</h4>
                   <p className="text-xs text-muted-foreground">
-                    Start with the "Banks vs Investments" section to understand 
-                    what real returns various financial instruments provide.
+                    {t('videoLibrary.recommendationText')}
                   </p>
                 </div>
               </div>
