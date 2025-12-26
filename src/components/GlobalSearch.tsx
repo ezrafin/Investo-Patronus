@@ -364,7 +364,13 @@ export function GlobalSearch() {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent 
-          className="overflow-hidden p-0 shadow-lg max-w-2xl max-h-[80vh] flex flex-col relative [&>button]:hidden !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2"
+          className="overflow-hidden p-0 shadow-lg max-w-2xl max-h-[80vh] flex flex-col relative [&>button]:hidden"
+          style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
           aria-label="Global search dialog"
           aria-describedby="search-description"
         >
