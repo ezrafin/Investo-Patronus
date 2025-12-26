@@ -8,19 +8,11 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useUser } from '@/context/UserContext';
+import { useTranslation } from '@/hooks/useTranslation';
 interface OrganizationCardProps {
   organization: Organization;
   index?: number;
 }
-
-const typeLabels: Record<OrganizationType, string> = {
-  broker: 'Broker',
-  hedge_fund: 'Hedge Fund',
-  bank: 'Bank',
-  asset_manager: 'Asset Manager',
-  pension_fund: 'Pension Fund',
-  wealth_manager: 'Wealth Manager',
-};
 
 const typeColors: Record<OrganizationType, string> = {
   broker: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
@@ -46,10 +38,21 @@ function getTrustBgColor(score: number): string {
 }
 
 export function OrganizationCard({ organization, index = 0 }: OrganizationCardProps) {
+  const { t } = useTranslation({ namespace: 'ui' });
   const { user } = useUser();
   const combinedTrust = Math.round((organization.communityTrust + organization.expertTrust) / 2);
   const [ratingCount, setRatingCount] = useState<number | null>(null);
   const [userRating, setUserRating] = useState<number | null>(null);
+
+  const getTypeLabel = (type: OrganizationType): string => {
+    const labelKey = type === 'broker' ? 'organizationCard.broker'
+      : type === 'hedge_fund' ? 'organizationCard.hedgeFund'
+      : type === 'bank' ? 'organizationCard.bank'
+      : type === 'asset_manager' ? 'organizationCard.assetManager'
+      : type === 'pension_fund' ? 'organizationCard.pensionFund'
+      : 'organizationCard.wealthManager';
+    return t(labelKey);
+  };
 
   useEffect(() => {
     async function loadRatingData() {
@@ -131,7 +134,7 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
                     <ShieldCheck className="h-4 w-4 text-green-500 flex-shrink-0" />
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Regulated by: {organization.regulators?.join(', ')}</p>
+                    <p>{t('organizationCard.regulatedBy', { regulators: organization.regulators?.join(', ') || '' })}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
@@ -139,10 +142,10 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
           </div>
           <div className="flex items-center gap-2">
             <Badge variant="outline" className={`text-xs ${typeColors[organization.type]}`}>
-              {typeLabels[organization.type]}
+              {getTypeLabel(organization.type)}
             </Badge>
             {organization.aum && (
-              <span className="text-xs text-muted-foreground">AUM: {organization.aum}</span>
+              <span className="text-xs text-muted-foreground">{t('organizationCard.aum')}: {organization.aum}</span>
             )}
           </div>
         </div>
@@ -165,10 +168,10 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
             <Tooltip>
               <TooltipTrigger className="flex items-center gap-1.5 min-w-[100px]">
                 <Users className="h-3.5 w-3.5 text-muted-foreground" />
-                <span className="text-xs text-muted-foreground">Community</span>
+                <span className="text-xs text-muted-foreground">{t('organizationCard.community')}</span>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Based on user reviews and community feedback</p>
+                <p>{t('organizationCard.communityTooltip')}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -183,10 +186,10 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
             <Tooltip>
               <TooltipTrigger className="flex items-center gap-1.5 min-w-[100px]">
                 <Award className="h-3.5 w-3.5 text-muted-foreground" />
-                <span className="text-xs text-muted-foreground">Expert</span>
+                <span className="text-xs text-muted-foreground">{t('organizationCard.expert')}</span>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Based on expert analysis and ratings</p>
+                <p>{t('organizationCard.expertTooltip')}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -200,13 +203,13 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
       {/* Footer */}
       <div className="flex items-center justify-between pt-3 border-t border-border/50 text-xs text-muted-foreground">
         <div className="flex items-center gap-3">
-          <span>Est. {organization.founded}</span>
+          <span>{t('organizationCard.established')} {organization.founded}</span>
           <span>·</span>
           <span>{organization.headquarters}</span>
           {ratingCount !== null && ratingCount > 0 && (
             <>
               <span>·</span>
-              <span className="text-[10px]">Rated by {ratingCount} {ratingCount === 1 ? 'user' : 'users'}</span>
+              <span className="text-[10px]">{t('organizationCard.ratedBy', { count: ratingCount, user: ratingCount === 1 ? t('organizationCard.user') : t('organizationCard.users') })}</span>
             </>
           )}
           {userRating !== null && (
@@ -221,7 +224,7 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
                     </span>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Your rating for this company</p>
+                    <p>{t('organizationCard.yourRating')}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>

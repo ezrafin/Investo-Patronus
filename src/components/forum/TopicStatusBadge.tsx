@@ -1,5 +1,6 @@
 import { Pin, Star, Flame, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface TopicStatusBadgeProps {
   isPinned?: boolean;
@@ -18,11 +19,12 @@ export function TopicStatusBadge({
   isTrending,
   className,
 }: TopicStatusBadgeProps) {
+  const { t } = useTranslation({ namespace: 'ui' });
   const badges: Array<{ label: string; icon: typeof Pin; className: string }> = [];
 
   if (isPinned) {
     badges.push({
-      label: 'Pinned',
+      label: t('topicStatus.pinned'),
       icon: Pin,
       className: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
     });
@@ -30,7 +32,7 @@ export function TopicStatusBadge({
 
   if (isFeatured) {
     badges.push({
-      label: 'Featured',
+      label: t('topicStatus.featured'),
       icon: Star,
       className: 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20',
     });
@@ -38,7 +40,7 @@ export function TopicStatusBadge({
 
   if (isTrending) {
     badges.push({
-      label: 'Trending',
+      label: t('topicStatus.trending'),
       icon: Sparkles,
       className: 'bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20',
     });
@@ -46,7 +48,7 @@ export function TopicStatusBadge({
 
   if (isHot) {
     badges.push({
-      label: 'Hot',
+      label: t('topicStatus.hot'),
       icon: Flame,
       className: 'bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20',
     });
@@ -54,7 +56,7 @@ export function TopicStatusBadge({
 
   if (isNew) {
     badges.push({
-      label: 'New',
+      label: t('topicStatus.new'),
       icon: Sparkles,
       className: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
     });

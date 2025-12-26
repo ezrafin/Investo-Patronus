@@ -658,6 +658,10 @@
     "resourcesAndLinks": "Resources & Links"
   },
   "companiesPage": {
+    "title": "Financial Organizations",
+    "description": "Over {{count}} brokers, hedge funds, banks, and exchanges from around the world, ranked by community and expert trust scores",
+    "organizations": "Organizations",
+    "regulated": "Regulated",
     "searchPlaceholder": "Search by name, description, or location...",
     "regionPlaceholder": "Region",
     "sortByPlaceholder": "Sort by",
@@ -665,7 +669,42 @@
     "communityTrust": "Community Trust",
     "expertTrust": "Expert Trust",
     "avgCommunityTrust": "Avg Community Trust",
-    "avgExpertTrust": "Avg Expert Trust"
+    "avgExpertTrust": "Avg Expert Trust",
+    "showingResults": "Showing {{current}} of {{total}} organizations",
+    "noOrganizationsFound": "No organizations found for this filter.",
+    "allTypes": "All Types",
+    "brokers": "Brokers",
+    "hedgeFunds": "Hedge Funds",
+    "assetManagers": "Asset Managers",
+    "banks": "Banks",
+    "wealthManagers": "Wealth Managers",
+    "pensionFunds": "Pension Funds",
+    "allRegions": "All Regions",
+    "northAmerica": "North America",
+    "europe": "Europe",
+    "asiaPacific": "Asia Pacific",
+    "middleEastAfrica": "Middle East & Africa",
+    "latinAmerica": "Latin America",
+    "global": "Global"
+  },
+  "organizationCard": {
+    "broker": "Broker",
+    "hedgeFund": "Hedge Fund",
+    "bank": "Bank",
+    "assetManager": "Asset Manager",
+    "pensionFund": "Pension Fund",
+    "wealthManager": "Wealth Manager",
+    "aum": "AUM",
+    "community": "Community",
+    "expert": "Expert",
+    "communityTooltip": "Based on user reviews and community feedback",
+    "expertTooltip": "Based on expert analysis and ratings",
+    "established": "Est.",
+    "ratedBy": "Rated by {{count}} {{user}}",
+    "user": "user",
+    "users": "users",
+    "yourRating": "Your rating for this company",
+    "regulatedBy": "Regulated by: {{regulators}}"
   },
   "videoFilters": {
     "searchPlaceholder": "Search videos...",
@@ -674,6 +713,54 @@
     "levelLabel": "Level",
     "tagsLabel": "Tags",
     "clearFilters": "Clear Filters"
+  },
+  "globalSearch": {
+    "searchPlaceholder": "Search..."
+  },
+  "analyticsPage": {
+    "filterByAuthor": "Filter by author:",
+    "allAuthors": "All Authors"
+  },
+  "marketWidget": {
+    "live": "Live"
+  },
+  "lastUpdated": {
+    "updated": "Updated"
+  },
+  "videoLibrary": {
+    "title": "Video Library",
+    "description": "Educational videos on investing, market analysis, and financial literacy. Learn at your own pace.",
+    "backToLibrary": "Back to Video Library",
+    "videoNotFound": "Video Not Found",
+    "showFilters": "Show Filters",
+    "hideFilters": "Hide Filters"
+  },
+  "careersPage": {
+    "fullTime": "Full-time",
+    "partTime": "Part-time",
+    "contract": "Contract",
+    "internship": "Internship"
+  },
+  "billCollection": {
+    "title": "Bill Collection",
+    "description": "Collect all 42 $100 bills!",
+    "subtitle": "Collect all 42 $100 bills by exploring the platform. Track your progress and view collected bills.",
+    "progress": "Progress",
+    "complete": "complete",
+    "allBills": "All Bills",
+    "collected": "Collected",
+    "legendary": "Legendary",
+    "collectAllRegularFirst": "Collect all 41 regular bills first",
+    "billCollected": "Bill Collected!",
+    "legendaryBillCollected": "🎉 Legendary Bill Collected!",
+    "progressLabel": "Progress:"
+  },
+  "topicStatus": {
+    "pinned": "Pinned",
+    "featured": "Featured",
+    "hot": "Hot",
+    "trending": "Trending",
+    "new": "New"
   },
   "cookieBanner": {
     "title": "We use cookies",

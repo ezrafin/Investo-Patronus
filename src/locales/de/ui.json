@@ -658,6 +658,10 @@
     "resourcesAndLinks": "Ressourcen & Links"
   },
   "companiesPage": {
+    "title": "Finanzorganisationen",
+    "description": "Über {{count}} Broker, Hedgefonds, Banken und Börsen aus aller Welt, bewertet nach Community- und Experten-Vertrauenswerten",
+    "organizations": "Organisationen",
+    "regulated": "Reguliert",
     "searchPlaceholder": "Suche nach Name, Beschreibung oder Standort...",
     "regionPlaceholder": "Region",
     "sortByPlaceholder": "Sortieren nach",
@@ -665,7 +669,42 @@
     "communityTrust": "Community-Vertrauen",
     "expertTrust": "Experten-Vertrauen",
     "avgCommunityTrust": "Durchschn. Community-Vertrauen",
-    "avgExpertTrust": "Durchschn. Experten-Vertrauen"
+    "avgExpertTrust": "Durchschn. Experten-Vertrauen",
+    "showingResults": "Zeige {{current}} von {{total}} Organisationen",
+    "noOrganizationsFound": "Keine Organisationen für diesen Filter gefunden.",
+    "allTypes": "Alle Typen",
+    "brokers": "Broker",
+    "hedgeFunds": "Hedgefonds",
+    "assetManagers": "Vermögensverwalter",
+    "banks": "Banken",
+    "wealthManagers": "Vermögensverwalter",
+    "pensionFunds": "Pensionsfonds",
+    "allRegions": "Alle Regionen",
+    "northAmerica": "Nordamerika",
+    "europe": "Europa",
+    "asiaPacific": "Asien-Pazifik",
+    "middleEastAfrica": "Naher Osten & Afrika",
+    "latinAmerica": "Lateinamerika",
+    "global": "Global"
+  },
+  "organizationCard": {
+    "broker": "Broker",
+    "hedgeFund": "Hedgefonds",
+    "bank": "Bank",
+    "assetManager": "Vermögensverwalter",
+    "pensionFund": "Pensionsfonds",
+    "wealthManager": "Vermögensverwalter",
+    "aum": "AUM",
+    "community": "Community",
+    "expert": "Experte",
+    "communityTooltip": "Basierend auf Benutzerbewertungen und Community-Feedback",
+    "expertTooltip": "Basierend auf Expertenanalyse und Bewertungen",
+    "established": "Gegr.",
+    "ratedBy": "Bewertet von {{count}} {{user}}",
+    "user": "Benutzer",
+    "users": "Benutzern",
+    "yourRating": "Ihre Bewertung für dieses Unternehmen",
+    "regulatedBy": "Reguliert von: {{regulators}}"
   },
   "videoFilters": {
     "searchPlaceholder": "Videos suchen...",
@@ -674,6 +713,54 @@
     "levelLabel": "Niveau",
     "tagsLabel": "Tags",
     "clearFilters": "Filter zurücksetzen"
+  },
+  "globalSearch": {
+    "searchPlaceholder": "Suchen..."
+  },
+  "analyticsPage": {
+    "filterByAuthor": "Nach Autor filtern:",
+    "allAuthors": "Alle Autoren"
+  },
+  "marketWidget": {
+    "live": "Live"
+  },
+  "billCollection": {
+    "title": "Geldschein-Sammlung",
+    "description": "Sammle alle 42 $100-Scheine!",
+    "subtitle": "Sammle alle 42 $100-Scheine, indem du die Plattform erkundest. Verfolge deinen Fortschritt und sieh dir gesammelte Scheine an.",
+    "progress": "Fortschritt",
+    "complete": "abgeschlossen",
+    "allBills": "Alle Scheine",
+    "collected": "Gesammelt",
+    "legendary": "Legendär",
+    "collectAllRegularFirst": "Sammle zuerst alle 41 regulären Scheine",
+    "billCollected": "Schein gesammelt!",
+    "legendaryBillCollected": "🎉 Legendärer Schein gesammelt!",
+    "progressLabel": "Fortschritt:"
+  },
+  "topicStatus": {
+    "pinned": "Angepinnt",
+    "featured": "Hervorgehoben",
+    "hot": "Heiß",
+    "trending": "Trending",
+    "new": "Neu"
+  },
+  "lastUpdated": {
+    "updated": "Aktualisiert"
+  },
+  "videoLibrary": {
+    "title": "Videobibliothek",
+    "description": "Bildungsvideos zu Investitionen, Marktanalyse und Finanzkompetenz. Lernen Sie in Ihrem eigenen Tempo.",
+    "backToLibrary": "Zurück zur Videobibliothek",
+    "videoNotFound": "Video Nicht Gefunden",
+    "showFilters": "Filter Anzeigen",
+    "hideFilters": "Filter Ausblenden"
+  },
+  "careersPage": {
+    "fullTime": "Vollzeit",
+    "partTime": "Teilzeit",
+    "contract": "Vertrag",
+    "internship": "Praktikum"
   },
   "cookieBanner": {
     "title": "Wir verwenden Cookies",

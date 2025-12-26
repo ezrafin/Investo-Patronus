@@ -34,9 +34,9 @@ export default function VideoDetailPage() {
     return (
       <Layout>
         <div className="pt-24 pb-16 container-wide text-center">
-          <h1 className="heading-lg mb-4">Video Not Found</h1>
+          <h1 className="heading-lg mb-4">{t('videoLibrary.videoNotFound')}</h1>
           <Link to="/video" className="btn-primary">
-            Back to Video Library
+            {t('videoLibrary.backToLibrary')}
           </Link>
         </div>
       </Layout>

@@ -17,6 +17,7 @@ export default function AnalyticsPage() {
   // Bill collection: analytics_page_visit
   usePageBillCollection({ billId: 'analytics_page_visit' });
   const { t } = useTranslation({ namespace: 'analytics' });
+  const { t: tUi } = useTranslation({ namespace: 'ui' });
   const [activeFilter, setActiveFilter] = useState('all');
   const [activeAuthor, setActiveAuthor] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -122,7 +123,7 @@ export default function AnalyticsPage() {
 
           {/* Author Filters */}
           <div className="mb-10">
-            <p className="text-sm text-muted-foreground mb-3">Filter by author:</p>
+            <p className="text-sm text-muted-foreground mb-3">{tUi('analyticsPage.filterByAuthor')}</p>
             <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1 sm:flex-wrap sm:overflow-visible">
               <Button
                 variant={activeAuthor === null ? 'default' : 'outline'}
@@ -133,7 +134,7 @@ export default function AnalyticsPage() {
                   activeAuthor === null && 'bg-primary text-primary-foreground'
                 )}
               >
-                All Authors
+                {tUi('analyticsPage.allAuthors')}
               </Button>
               {authors.map((author) => (
                 <Button

@@ -658,6 +658,10 @@
     "resourcesAndLinks": "Recursos y enlaces"
   },
   "companiesPage": {
+    "title": "Organizaciones Financieras",
+    "description": "Más de {{count}} corredores, fondos de cobertura, bancos y bolsas de todo el mundo, clasificados por puntuaciones de confianza de la comunidad y expertos",
+    "organizations": "Organizaciones",
+    "regulated": "Reguladas",
     "searchPlaceholder": "Buscar por nombre, descripción o ubicación...",
     "regionPlaceholder": "Región",
     "sortByPlaceholder": "Ordenar por",
@@ -665,7 +669,42 @@
     "communityTrust": "Confianza de la Comunidad",
     "expertTrust": "Confianza de Expertos",
     "avgCommunityTrust": "Confianza Promedio de la Comunidad",
-    "avgExpertTrust": "Confianza Promedio de Expertos"
+    "avgExpertTrust": "Confianza Promedio de Expertos",
+    "showingResults": "Mostrando {{current}} de {{total}} organizaciones",
+    "noOrganizationsFound": "No se encontraron organizaciones para este filtro.",
+    "allTypes": "Todos los Tipos",
+    "brokers": "Corredores",
+    "hedgeFunds": "Fondos de Cobertura",
+    "assetManagers": "Gestores de Activos",
+    "banks": "Bancos",
+    "wealthManagers": "Gestores de Patrimonio",
+    "pensionFunds": "Fondos de Pensiones",
+    "allRegions": "Todas las Regiones",
+    "northAmerica": "América del Norte",
+    "europe": "Europa",
+    "asiaPacific": "Asia Pacífico",
+    "middleEastAfrica": "Medio Oriente y África",
+    "latinAmerica": "América Latina",
+    "global": "Global"
+  },
+  "organizationCard": {
+    "broker": "Corredor",
+    "hedgeFund": "Fondo de Cobertura",
+    "bank": "Banco",
+    "assetManager": "Gestor de Activos",
+    "pensionFund": "Fondo de Pensiones",
+    "wealthManager": "Gestor de Patrimonio",
+    "aum": "AUM",
+    "community": "Comunidad",
+    "expert": "Experto",
+    "communityTooltip": "Basado en reseñas de usuarios y comentarios de la comunidad",
+    "expertTooltip": "Basado en análisis y calificaciones de expertos",
+    "established": "Est.",
+    "ratedBy": "Calificado por {{count}} {{user}}",
+    "user": "usuario",
+    "users": "usuarios",
+    "yourRating": "Tu calificación para esta empresa",
+    "regulatedBy": "Regulado por: {{regulators}}"
   },
   "videoFilters": {
     "searchPlaceholder": "Buscar videos...",
@@ -674,6 +713,54 @@
     "levelLabel": "Nivel",
     "tagsLabel": "Etiquetas",
     "clearFilters": "Limpiar filtros"
+  },
+  "globalSearch": {
+    "searchPlaceholder": "Buscar..."
+  },
+  "analyticsPage": {
+    "filterByAuthor": "Filtrar por autor:",
+    "allAuthors": "Todos los Autores"
+  },
+  "marketWidget": {
+    "live": "En vivo"
+  },
+  "billCollection": {
+    "title": "Colección de Billetes",
+    "description": "¡Recolecta los 42 billetes de $100!",
+    "subtitle": "Recolecta los 42 billetes de $100 explorando la plataforma. Rastrea tu progreso y visualiza los billetes recolectados.",
+    "progress": "Progreso",
+    "complete": "completado",
+    "allBills": "Todos los Billetes",
+    "collected": "Recolectado",
+    "legendary": "Legendario",
+    "collectAllRegularFirst": "Recolecta primero los 41 billetes regulares",
+    "billCollected": "¡Billete Recolectado!",
+    "legendaryBillCollected": "🎉 ¡Billete Legendario Recolectado!",
+    "progressLabel": "Progreso:"
+  },
+  "topicStatus": {
+    "pinned": "Fijado",
+    "featured": "Destacado",
+    "hot": "Popular",
+    "trending": "Tendencia",
+    "new": "Nuevo"
+  },
+  "lastUpdated": {
+    "updated": "Actualizado"
+  },
+  "videoLibrary": {
+    "title": "Biblioteca de Videos",
+    "description": "Videos educativos sobre inversión, análisis de mercado y educación financiera. Aprende a tu propio ritmo.",
+    "backToLibrary": "Volver a la Biblioteca de Videos",
+    "videoNotFound": "Video No Encontrado",
+    "showFilters": "Mostrar Filtros",
+    "hideFilters": "Ocultar Filtros"
+  },
+  "careersPage": {
+    "fullTime": "Tiempo Completo",
+    "partTime": "Medio Tiempo",
+    "contract": "Contrato",
+    "internship": "Prácticas"
   },
   "cookieBanner": {
     "title": "Usamos cookies",

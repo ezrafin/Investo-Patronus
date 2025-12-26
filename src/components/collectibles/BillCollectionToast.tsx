@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
+import { getTranslation } from '@/lib/i18n';
+import { useI18n } from '@/context/I18nContext';
 
 interface BillCollectionToastProps {
   billName: string;
@@ -18,9 +20,12 @@ export function BillCollectionToast({
   progress,
   show,
 }: BillCollectionToastProps) {
+  const { language } = useI18n();
+  
   useEffect(() => {
     if (show) {
       const isLegendary = rarity === 'legendary';
+      const t = (key: string) => getTranslation(language, 'ui', key) || key;
       
       toast.success(
         <div className="flex items-center gap-3">
@@ -46,14 +51,14 @@ export function BillCollectionToast({
           </motion.div>
           <div className="flex-1">
             <div className="font-semibold text-base">
-              {isLegendary ? '🎉 Legendary Bill Collected!' : 'Bill Collected!'}
+              {isLegendary ? `🎉 ${t('billCollection.legendaryBillCollected')}` : t('billCollection.billCollected')}
             </div>
             <div className="text-sm text-muted-foreground mt-0.5">
               {billName}
             </div>
             {progress && (
               <div className="text-xs text-muted-foreground mt-1">
-                Progress: {progress.collected}/{progress.total}
+                {t('billCollection.progressLabel')} {progress.collected}/{progress.total}
               </div>
             )}
           </div>
@@ -64,18 +69,21 @@ export function BillCollectionToast({
         }
       );
     }
-  }, [show, billName, rarity, progress]);
+  }, [show, billName, rarity, progress, language]);
 
   return null; // This component doesn't render anything itself
 }
 
 // Helper function to show collection toast
-export function showBillCollectionToast(
+export async function showBillCollectionToast(
   billName: string,
   rarity: 'regular' | 'legendary',
   progress?: { collected: number; total: number }
 ) {
   const isLegendary = rarity === 'legendary';
+  // Get current language from localStorage or default to 'en'
+  const language = (localStorage.getItem('language') as any) || 'en';
+  const t = (key: string) => getTranslation(language, 'ui', key) || key;
   
   toast.success(
     <div className="flex items-center gap-3">
@@ -96,14 +104,14 @@ export function showBillCollectionToast(
       </div>
       <div className="flex-1">
         <div className="font-semibold text-base">
-          {isLegendary ? '🎉 Legendary Bill Collected!' : 'Bill Collected!'}
+          {isLegendary ? `🎉 ${t('billCollection.legendaryBillCollected')}` : t('billCollection.billCollected')}
         </div>
         <div className="text-sm text-muted-foreground mt-0.5">
           {billName}
         </div>
         {progress && (
           <div className="text-xs text-muted-foreground mt-1">
-            Progress: {progress.collected}/{progress.total}
+            {t('billCollection.progressLabel')} {progress.collected}/{progress.total}
           </div>
         )}
       </div>

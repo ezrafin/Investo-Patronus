@@ -5,9 +5,12 @@ import { VideoFilters } from '@/components/video/VideoFilters';
 import { videos, videoCategories } from '@/data/videoLibrary';
 import { Video, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/hooks/useTranslation';
+import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 
 export default function VideoLibraryPage() {
+  const { t } = useTranslation({ namespace: 'ui' });
   // Bill collection: video_library_visit
   usePageBillCollection({ billId: 'video_library_visit' });
   const [searchQuery, setSearchQuery] = useState('');
@@ -54,11 +57,10 @@ export default function VideoLibraryPage() {
         <section className="container-wide section-spacing-sm">
           {/* Header */}
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <span className="badge-primary mb-4">Video Library</span>
-            <h1 className="heading-xl mb-6">Video Library</h1>
+            <span className="badge-primary mb-4">{t('videoLibrary.title')}</span>
+            <h1 className="heading-xl mb-6">{t('videoLibrary.title')}</h1>
             <p className="body-xl">
-              Educational videos on investing, market analysis, and financial literacy. 
-              Learn at your own pace.
+              {t('videoLibrary.description')}
             </p>
           </div>
 
@@ -70,7 +72,7 @@ export default function VideoLibraryPage() {
               onClick={() => setShowFilters(!showFilters)}
             >
               <Filter className="h-4 w-4 mr-2" />
-              {showFilters ? 'Hide Filters' : 'Show Filters'}
+              {showFilters ? t('videoLibrary.hideFilters') : t('videoLibrary.showFilters')}
             </Button>
           </div>
 

@@ -658,6 +658,10 @@
     "resourcesAndLinks": "Zasoby i linki"
   },
   "companiesPage": {
+    "title": "Organizacje Finansowe",
+    "description": "Ponad {{count}} brokerów, funduszy hedgingowych, banków i giełd z całego świata, ocenionych według wyników zaufania społeczności i ekspertów",
+    "organizations": "Organizacje",
+    "regulated": "Regulowane",
     "searchPlaceholder": "Szukaj według nazwy, opisu lub lokalizacji...",
     "regionPlaceholder": "Region",
     "sortByPlaceholder": "Sortuj według",
@@ -665,7 +669,42 @@
     "communityTrust": "Zaufanie Społeczności",
     "expertTrust": "Zaufanie Ekspertów",
     "avgCommunityTrust": "Śr. Zaufanie Społeczności",
-    "avgExpertTrust": "Śr. Zaufanie Ekspertów"
+    "avgExpertTrust": "Śr. Zaufanie Ekspertów",
+    "showingResults": "Wyświetlanie {{current}} z {{total}} organizacji",
+    "noOrganizationsFound": "Nie znaleziono organizacji dla tego filtra.",
+    "allTypes": "Wszystkie Typy",
+    "brokers": "Brokerzy",
+    "hedgeFunds": "Fundusze Hedgingowe",
+    "assetManagers": "Zarządzający Aktywami",
+    "banks": "Banki",
+    "wealthManagers": "Zarządzający Majątkiem",
+    "pensionFunds": "Fundusze Emerytalne",
+    "allRegions": "Wszystkie Regiony",
+    "northAmerica": "Ameryka Północna",
+    "europe": "Europa",
+    "asiaPacific": "Azja i Pacyfik",
+    "middleEastAfrica": "Bliski Wschód i Afryka",
+    "latinAmerica": "Ameryka Łacińska",
+    "global": "Globalnie"
+  },
+  "organizationCard": {
+    "broker": "Broker",
+    "hedgeFund": "Fundusz Hedgingowy",
+    "bank": "Bank",
+    "assetManager": "Zarządzający Aktywami",
+    "pensionFund": "Fundusz Emerytalny",
+    "wealthManager": "Zarządzający Majątkiem",
+    "aum": "AUM",
+    "community": "Społeczność",
+    "expert": "Ekspert",
+    "communityTooltip": "Na podstawie recenzji użytkowników i opinii społeczności",
+    "expertTooltip": "Na podstawie analizy ekspertów i ocen",
+    "established": "Założ.",
+    "ratedBy": "Ocenione przez {{count}} {{user}}",
+    "user": "użytkownika",
+    "users": "użytkowników",
+    "yourRating": "Twoja ocena tej firmy",
+    "regulatedBy": "Regulowane przez: {{regulators}}"
   },
   "videoFilters": {
     "searchPlaceholder": "Szukaj filmów...",
@@ -674,6 +713,54 @@
     "levelLabel": "Poziom",
     "tagsLabel": "Tagi",
     "clearFilters": "Wyczyść filtry"
+  },
+  "globalSearch": {
+    "searchPlaceholder": "Szukaj..."
+  },
+  "analyticsPage": {
+    "filterByAuthor": "Filtruj według autora:",
+    "allAuthors": "Wszyscy Autorzy"
+  },
+  "marketWidget": {
+    "live": "Na żywo"
+  },
+  "billCollection": {
+    "title": "Kolekcja Banknotów",
+    "description": "Zbierz wszystkie 42 banknoty po 100 $!",
+    "subtitle": "Zbierz wszystkie 42 banknoty po 100 $, eksplorując platformę. Śledź swój postęp i przeglądaj zebrane banknoty.",
+    "progress": "Postęp",
+    "complete": "ukończono",
+    "allBills": "Wszystkie Banknoty",
+    "collected": "Zebrane",
+    "legendary": "Legendarny",
+    "collectAllRegularFirst": "Najpierw zbierz wszystkie 41 zwykłych banknotów",
+    "billCollected": "Banknot Zebrany!",
+    "legendaryBillCollected": "🎉 Legendarny Banknot Zebrany!",
+    "progressLabel": "Postęp:"
+  },
+  "topicStatus": {
+    "pinned": "Przypięte",
+    "featured": "Wyróżnione",
+    "hot": "Gorące",
+    "trending": "Trending",
+    "new": "Nowe"
+  },
+  "lastUpdated": {
+    "updated": "Zaktualizowano"
+  },
+  "videoLibrary": {
+    "title": "Biblioteka Wideo",
+    "description": "Filmy edukacyjne o inwestowaniu, analizie rynku i edukacji finansowej. Ucz się we własnym tempie.",
+    "backToLibrary": "Powrót do Biblioteki Wideo",
+    "videoNotFound": "Nie Znaleziono Filmu",
+    "showFilters": "Pokaż Filtry",
+    "hideFilters": "Ukryj Filtry"
+  },
+  "careersPage": {
+    "fullTime": "Pełny Etat",
+    "partTime": "Część Etatu",
+    "contract": "Umowa",
+    "internship": "Staż"
   },
   "cookieBanner": {
     "title": "Używamy plików cookie",

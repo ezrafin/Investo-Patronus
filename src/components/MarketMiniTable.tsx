@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, TrendingUp, TrendingDown, LucideIcon } from 'lucide-react';
 import { MarketData } from '@/lib/api/types';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface MarketMiniTableProps {
   title: string;
@@ -11,6 +12,7 @@ interface MarketMiniTableProps {
 }
 
 export function MarketMiniTable({ title, data, href, icon: Icon }: MarketMiniTableProps) {
+  const { t } = useTranslation({ namespace: 'ui' });
   const formatPrice = (price: number) => {
     if (price >= 1000) {
       return price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -35,7 +37,7 @@ export function MarketMiniTable({ title, data, href, icon: Icon }: MarketMiniTab
           </div>
           <div className="flex items-center gap-1.5">
             <span className="live-dot" />
-            <span className="text-xs text-muted-foreground">Live</span>
+            <span className="text-xs text-muted-foreground">{t('marketWidget.live')}</span>
           </div>
         </div>
 

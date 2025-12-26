@@ -238,7 +238,7 @@ export default function ForumPage() {
                 onClick={() => setSortBy('trending')}
                 className="text-sm text-primary hover:underline touch-target"
               >
-                View all trending →
+                {t('categories.viewAllTrending')}
               </button>
             </div>
             <div className="rounded-xl border border-border/60 bg-card overflow-hidden">

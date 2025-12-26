@@ -63,7 +63,7 @@ export default function CareersPage() {
                     </div>
                     <div className="inline-flex items-center gap-1">
                       <Clock className="h-4 w-4" />
-                      <span>{role.type}</span>
+                      <span>{t(`careersPage.${role.type.toLowerCase().replace('-', '')}` as any) || role.type}</span>
                     </div>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ export default function CareersPage() {
                 </p>
                 <div className="inline-flex items-center gap-2 text-primary text-sm font-medium">
                   <Briefcase className="h-4 w-4" />
-                  {t('careersPage.typeLabel')}: {role.type}
+                  {t('careersPage.typeLabel')}: {t(`careersPage.${role.type.toLowerCase().replace('-', '')}` as any) || role.type}
                 </div>
               </div>
             ))}

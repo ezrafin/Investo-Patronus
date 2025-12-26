@@ -358,7 +358,7 @@ export function GlobalSearch() {
         aria-haspopup="dialog"
       >
         <Search className="h-4 w-4" />
-        <span className="hidden sm:inline">Search...</span>
+        <span className="hidden sm:inline">{t('globalSearch.searchPlaceholder')}</span>
         <kbd className="hidden md:inline-flex h-5 select-none items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
           <span className="text-xs">⌘</span>K
         </kbd>

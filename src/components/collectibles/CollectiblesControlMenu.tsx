@@ -6,8 +6,10 @@ import { useUser } from '@/context/UserContext';
 import { X, Trophy, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export function CollectiblesControlMenu() {
+  const { t } = useTranslation({ namespace: 'ui' });
   const { user } = useUser();
   const { progress, collectedBills, legendarySpawn, hasAllRegularBills, loading } = useCollectibleBills();
   const [open, setOpen] = useState(false);
@@ -115,9 +117,9 @@ export function CollectiblesControlMenu() {
             className="w-full sm:w-[400px] md:w-[500px] overflow-y-auto"
           >
             {/* Добавляем SheetTitle и SheetDescription для доступности */}
-            <SheetTitle className="sr-only">Bill Collection</SheetTitle>
+            <SheetTitle className="sr-only">{t('billCollection.title')}</SheetTitle>
             <SheetDescription className="sr-only">
-              Collect all 42 $100 bills by exploring the platform. Track your progress and view collected bills.
+              {t('billCollection.subtitle')}
             </SheetDescription>
 
             <div className="flex flex-col h-full">
@@ -126,10 +128,10 @@ export function CollectiblesControlMenu() {
                 <div>
                   <h2 className="text-2xl font-bold flex items-center gap-2">
                     <Trophy className="h-6 w-6 text-primary" />
-                    Bill Collection
+                    {t('billCollection.title')}
                   </h2>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Collect all 42 $100 bills!
+                    {t('billCollection.description')}
                   </p>
                 </div>
               </div>
@@ -137,7 +139,7 @@ export function CollectiblesControlMenu() {
               {/* Progress Overview */}
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium">Progress</span>
+                  <span className="text-sm font-medium">{t('billCollection.progress')}</span>
                   <span className="text-sm text-muted-foreground">
                     {collectedCount} / {totalCount}
                   </span>
@@ -151,7 +153,7 @@ export function CollectiblesControlMenu() {
                   />
                 </div>
                 <div className="mt-2 text-xs text-muted-foreground">
-                  {Math.round(progressPercent)}% complete
+                  {Math.round(progressPercent)}% {t('billCollection.complete')}
                 </div>
               </div>
 
@@ -179,7 +181,7 @@ export function CollectiblesControlMenu() {
 
               {/* Bills List */}
               <div className="flex-1 overflow-y-auto">
-                <h3 className="text-lg font-semibold mb-4">All Bills</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('billCollection.allBills')}</h3>
                 <div className="space-y-2">
                   {allBills.map((bill) => {
                     const isCollected = collectedBills.includes(bill.bill_id);
@@ -229,17 +231,17 @@ export function CollectiblesControlMenu() {
                           >
                             {bill.name}
                             {isLegendary && (
-                              <span className="ml-2 text-xs text-amber-500">⭐ Legendary</span>
+                              <span className="ml-2 text-xs text-amber-500">⭐ {t('billCollection.legendary')}</span>
                             )}
                           </div>
                           {isCollected && (
                             <div className="text-xs text-green-600 dark:text-green-400 mt-0.5">
-                              ✓ Collected
+                              ✓ {t('billCollection.collected')}
                             </div>
                           )}
                           {isLegendaryLocked && (
                             <div className="text-xs text-muted-foreground mt-0.5">
-                              Collect all 41 regular bills first
+                              {t('billCollection.collectAllRegularFirst')}
                             </div>
                           )}
                         </div>

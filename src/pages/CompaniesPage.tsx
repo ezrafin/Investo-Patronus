@@ -84,9 +84,9 @@ export default function CompaniesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="heading-lg mb-4">Financial Organizations</h1>
+              <h1 className="heading-lg mb-4">{t('companiesPage.title')}</h1>
               <p className="body-md text-muted-foreground max-w-2xl">
-                Over {organizations.length} brokers, hedge funds, banks, and exchanges from around the world, ranked by community and expert trust scores
+                {t('companiesPage.description', { count: organizations.length })}
               </p>
             </motion.div>
           </div>
@@ -101,12 +101,12 @@ export default function CompaniesPage() {
             <div className="premium-card p-4 text-center">
               <Building2 className="h-5 w-5 text-primary mx-auto mb-2" />
               <div className="text-2xl font-bold">{stats.total}</div>
-              <div className="text-xs text-muted-foreground">Organizations</div>
+              <div className="text-xs text-muted-foreground">{t('companiesPage.organizations')}</div>
             </div>
             <div className="premium-card p-4 text-center">
               <TrendingUp className="h-5 w-5 text-green-500 mx-auto mb-2" />
               <div className="text-2xl font-bold">{stats.regulated}</div>
-              <div className="text-xs text-muted-foreground">Regulated</div>
+              <div className="text-xs text-muted-foreground">{t('companiesPage.regulated')}</div>
             </div>
             <div className="premium-card p-4 text-center">
               <Users className="h-5 w-5 text-blue-500 mx-auto mb-2" />
@@ -145,17 +145,27 @@ export default function CompaniesPage() {
             <div className="flex flex-col gap-4">
               {/* Type Filter Buttons */}
               <div className="flex flex-wrap gap-2">
-                {organizationTypes.map((type) => (
-                  <Button
-                    key={type.value}
-                    variant={selectedType === type.value ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => handleTypeChange(type.value)}
-                    className="text-sm whitespace-nowrap"
-                  >
-                    {type.label}
-                  </Button>
-                ))}
+                {organizationTypes.map((type) => {
+                  const labelKey = type.value === 'all' 
+                    ? 'companiesPage.allTypes'
+                    : type.value === 'broker' ? 'companiesPage.brokers'
+                    : type.value === 'hedge_fund' ? 'companiesPage.hedgeFunds'
+                    : type.value === 'asset_manager' ? 'companiesPage.assetManagers'
+                    : type.value === 'bank' ? 'companiesPage.banks'
+                    : type.value === 'wealth_manager' ? 'companiesPage.wealthManagers'
+                    : 'companiesPage.pensionFunds';
+                  return (
+                    <Button
+                      key={type.value}
+                      variant={selectedType === type.value ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => handleTypeChange(type.value)}
+                      className="text-sm whitespace-nowrap"
+                    >
+                      {t(labelKey)}
+                    </Button>
+                  );
+                })}
               </div>
 
               <div className="flex flex-wrap items-center gap-3">
@@ -167,11 +177,21 @@ export default function CompaniesPage() {
                       <SelectValue placeholder={t('companiesPage.regionPlaceholder')} />
                     </SelectTrigger>
                     <SelectContent align="end">
-                      {regions.map((region) => (
-                        <SelectItem key={region.value} value={region.value}>
-                          {region.label}
-                        </SelectItem>
-                      ))}
+                      {regions.map((region) => {
+                        const labelKey = region.value === 'all' 
+                          ? 'companiesPage.allRegions'
+                          : region.value === 'north_america' ? 'companiesPage.northAmerica'
+                          : region.value === 'europe' ? 'companiesPage.europe'
+                          : region.value === 'asia_pacific' ? 'companiesPage.asiaPacific'
+                          : region.value === 'middle_east_africa' ? 'companiesPage.middleEastAfrica'
+                          : region.value === 'latin_america' ? 'companiesPage.latinAmerica'
+                          : 'companiesPage.global';
+                        return (
+                          <SelectItem key={region.value} value={region.value}>
+                            {t(labelKey)}
+                          </SelectItem>
+                        );
+                      })}
                     </SelectContent>
                   </Select>
                 </div>
@@ -196,7 +216,7 @@ export default function CompaniesPage() {
 
           {/* Results count */}
           <div className="mb-6 text-sm text-muted-foreground">
-            Showing {paginatedOrganizations.length} of {filteredOrganizations.length} organizations
+            {t('companiesPage.showingResults', { current: paginatedOrganizations.length, total: filteredOrganizations.length })}
           </div>
 
           {/* Organizations Grid */}
@@ -208,7 +228,7 @@ export default function CompaniesPage() {
 
           {filteredOrganizations.length === 0 && (
             <div className="text-center py-12 text-muted-foreground">
-              No organizations found for this filter.
+              {t('companiesPage.noOrganizationsFound')}
             </div>
           )}
 

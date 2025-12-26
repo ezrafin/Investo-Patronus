@@ -658,6 +658,10 @@
     "resourcesAndLinks": "资源与链接"
   },
   "companiesPage": {
+    "title": "金融机构",
+    "description": "来自世界各地的超过{{count}}家经纪商、对冲基金、银行和交易所，按社区和专家信任度排名",
+    "organizations": "机构",
+    "regulated": "受监管",
     "searchPlaceholder": "按名称、描述或位置搜索...",
     "regionPlaceholder": "地区",
     "sortByPlaceholder": "排序方式",
@@ -665,7 +669,42 @@
     "communityTrust": "社区信任度",
     "expertTrust": "专家信任度",
     "avgCommunityTrust": "平均社区信任度",
-    "avgExpertTrust": "平均专家信任度"
+    "avgExpertTrust": "平均专家信任度",
+    "showingResults": "显示 {{current}} / {{total}} 个机构",
+    "noOrganizationsFound": "未找到符合此筛选条件的机构。",
+    "allTypes": "所有类型",
+    "brokers": "经纪商",
+    "hedgeFunds": "对冲基金",
+    "assetManagers": "资产管理公司",
+    "banks": "银行",
+    "wealthManagers": "财富管理公司",
+    "pensionFunds": "养老基金",
+    "allRegions": "所有地区",
+    "northAmerica": "北美",
+    "europe": "欧洲",
+    "asiaPacific": "亚太",
+    "middleEastAfrica": "中东和非洲",
+    "latinAmerica": "拉丁美洲",
+    "global": "全球"
+  },
+  "organizationCard": {
+    "broker": "经纪商",
+    "hedgeFund": "对冲基金",
+    "bank": "银行",
+    "assetManager": "资产管理公司",
+    "pensionFund": "养老基金",
+    "wealthManager": "财富管理公司",
+    "aum": "管理资产",
+    "community": "社区",
+    "expert": "专家",
+    "communityTooltip": "基于用户评论和社区反馈",
+    "expertTooltip": "基于专家分析和评级",
+    "established": "成立",
+    "ratedBy": "{{count}} 位{{user}}评分",
+    "user": "用户",
+    "users": "用户",
+    "yourRating": "您对此公司的评分",
+    "regulatedBy": "监管机构：{{regulators}}"
   },
   "videoFilters": {
     "searchPlaceholder": "搜索视频...",
@@ -674,6 +713,54 @@
     "levelLabel": "级别",
     "tagsLabel": "标签",
     "clearFilters": "清除筛选"
+  },
+  "globalSearch": {
+    "searchPlaceholder": "搜索..."
+  },
+  "analyticsPage": {
+    "filterByAuthor": "按作者筛选：",
+    "allAuthors": "所有作者"
+  },
+  "marketWidget": {
+    "live": "实时"
+  },
+  "billCollection": {
+    "title": "票据收集",
+    "description": "收集全部 42 张 $100 票据！",
+    "subtitle": "通过探索平台收集全部 42 张 $100 票据。跟踪您的进度并查看已收集的票据。",
+    "progress": "进度",
+    "complete": "完成",
+    "allBills": "所有票据",
+    "collected": "已收集",
+    "legendary": "传奇",
+    "collectAllRegularFirst": "请先收集全部 41 张普通票据",
+    "billCollected": "票据已收集！",
+    "legendaryBillCollected": "🎉 传奇票据已收集！",
+    "progressLabel": "进度："
+  },
+  "topicStatus": {
+    "pinned": "置顶",
+    "featured": "精选",
+    "hot": "热门",
+    "trending": "趋势",
+    "new": "新"
+  },
+  "lastUpdated": {
+    "updated": "更新于"
+  },
+  "videoLibrary": {
+    "title": "视频库",
+    "description": "关于投资、市场分析和金融知识的教育视频。按自己的节奏学习。",
+    "backToLibrary": "返回视频库",
+    "videoNotFound": "未找到视频",
+    "showFilters": "显示筛选",
+    "hideFilters": "隐藏筛选"
+  },
+  "careersPage": {
+    "fullTime": "全职",
+    "partTime": "兼职",
+    "contract": "合同",
+    "internship": "实习"
   },
   "cookieBanner": {
     "title": "我们使用 Cookie",

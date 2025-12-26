@@ -658,6 +658,10 @@
     "resourcesAndLinks": "Ressources et liens"
   },
   "companiesPage": {
+    "title": "Organisations Financières",
+    "description": "Plus de {{count}} courtiers, fonds spéculatifs, banques et bourses du monde entier, classés par scores de confiance communautaire et d'experts",
+    "organizations": "Organisations",
+    "regulated": "Régulées",
     "searchPlaceholder": "Rechercher par nom, description ou localisation...",
     "regionPlaceholder": "Région",
     "sortByPlaceholder": "Trier par",
@@ -665,7 +669,42 @@
     "communityTrust": "Confiance de la Communauté",
     "expertTrust": "Confiance des Experts",
     "avgCommunityTrust": "Confiance Moyenne de la Communauté",
-    "avgExpertTrust": "Confiance Moyenne des Experts"
+    "avgExpertTrust": "Confiance Moyenne des Experts",
+    "showingResults": "Affichage de {{current}} sur {{total}} organisations",
+    "noOrganizationsFound": "Aucune organisation trouvée pour ce filtre.",
+    "allTypes": "Tous les Types",
+    "brokers": "Courtiers",
+    "hedgeFunds": "Fonds Spéculatifs",
+    "assetManagers": "Gestionnaires d'Actifs",
+    "banks": "Banques",
+    "wealthManagers": "Gestionnaires de Patrimoine",
+    "pensionFunds": "Fonds de Pension",
+    "allRegions": "Toutes les Régions",
+    "northAmerica": "Amérique du Nord",
+    "europe": "Europe",
+    "asiaPacific": "Asie-Pacifique",
+    "middleEastAfrica": "Moyen-Orient et Afrique",
+    "latinAmerica": "Amérique Latine",
+    "global": "Mondial"
+  },
+  "organizationCard": {
+    "broker": "Courtier",
+    "hedgeFund": "Fonds Spéculatif",
+    "bank": "Banque",
+    "assetManager": "Gestionnaire d'Actifs",
+    "pensionFund": "Fonds de Pension",
+    "wealthManager": "Gestionnaire de Patrimoine",
+    "aum": "AUM",
+    "community": "Communauté",
+    "expert": "Expert",
+    "communityTooltip": "Basé sur les avis des utilisateurs et les commentaires de la communauté",
+    "expertTooltip": "Basé sur l'analyse et les évaluations d'experts",
+    "established": "Fondé",
+    "ratedBy": "Noté par {{count}} {{user}}",
+    "user": "utilisateur",
+    "users": "utilisateurs",
+    "yourRating": "Votre note pour cette entreprise",
+    "regulatedBy": "Régulé par : {{regulators}}"
   },
   "videoFilters": {
     "searchPlaceholder": "Rechercher des vidéos...",
@@ -674,6 +713,54 @@
     "levelLabel": "Niveau",
     "tagsLabel": "Tags",
     "clearFilters": "Effacer les filtres"
+  },
+  "globalSearch": {
+    "searchPlaceholder": "Rechercher..."
+  },
+  "analyticsPage": {
+    "filterByAuthor": "Filtrer par auteur :",
+    "allAuthors": "Tous les Auteurs"
+  },
+  "marketWidget": {
+    "live": "En direct"
+  },
+  "billCollection": {
+    "title": "Collection de Billets",
+    "description": "Collectez les 42 billets de 100 $ !",
+    "subtitle": "Collectez les 42 billets de 100 $ en explorant la plateforme. Suivez votre progression et consultez les billets collectés.",
+    "progress": "Progression",
+    "complete": "terminé",
+    "allBills": "Tous les Billets",
+    "collected": "Collecté",
+    "legendary": "Légendaire",
+    "collectAllRegularFirst": "Collectez d'abord les 41 billets réguliers",
+    "billCollected": "Billet Collecté !",
+    "legendaryBillCollected": "🎉 Billet Légendaire Collecté !",
+    "progressLabel": "Progression :"
+  },
+  "topicStatus": {
+    "pinned": "Épinglé",
+    "featured": "En vedette",
+    "hot": "Populaire",
+    "trending": "Tendance",
+    "new": "Nouveau"
+  },
+  "lastUpdated": {
+    "updated": "Mis à jour"
+  },
+  "videoLibrary": {
+    "title": "Bibliothèque Vidéo",
+    "description": "Vidéos éducatives sur l'investissement, l'analyse de marché et la littératie financière. Apprenez à votre rythme.",
+    "backToLibrary": "Retour à la Bibliothèque Vidéo",
+    "videoNotFound": "Vidéo Non Trouvée",
+    "showFilters": "Afficher les Filtres",
+    "hideFilters": "Masquer les Filtres"
+  },
+  "careersPage": {
+    "fullTime": "Temps Plein",
+    "partTime": "Temps Partiel",
+    "contract": "Contrat",
+    "internship": "Stage"
   },
   "cookieBanner": {
     "title": "Nous utilisons des cookies",
