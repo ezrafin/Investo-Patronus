@@ -364,10 +364,19 @@ export function GlobalSearch() {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent 
-          className="overflow-hidden p-0 shadow-lg max-w-2xl max-h-[80vh] flex flex-col"
+          className="overflow-hidden p-0 shadow-lg max-w-2xl max-h-[80vh] flex flex-col relative [&>button]:hidden"
           aria-label="Global search dialog"
           aria-describedby="search-description"
         >
+          {/* Кастомная кнопка закрытия с правильным позиционированием */}
+          <button
+            onClick={() => setOpen(false)}
+            className="absolute right-3 top-3 z-50 flex items-center justify-center rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none h-8 w-8"
+            aria-label="Close search"
+          >
+            <X className="h-4 w-4" />
+          </button>
+
           <Command 
             className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5"
             role="search"
