@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
-import { getTranslation } from '@/lib/i18n';
-import { useI18n } from '@/context/I18nContext';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface BillCollectionToastProps {
   billName: string;
@@ -20,12 +19,11 @@ export function BillCollectionToast({
   progress,
   show,
 }: BillCollectionToastProps) {
-  const { language } = useI18n();
+  const { t } = useTranslation({ namespace: 'ui' });
   
   useEffect(() => {
     if (show) {
       const isLegendary = rarity === 'legendary';
-      const t = (key: string) => getTranslation(language, 'ui', key) || key;
       
       toast.success(
         <div className="flex items-center gap-3">
@@ -69,7 +67,7 @@ export function BillCollectionToast({
         }
       );
     }
-  }, [show, billName, rarity, progress, language]);
+  }, [show, billName, rarity, progress, t]);
 
   return null; // This component doesn't render anything itself
 }
@@ -81,9 +79,16 @@ export async function showBillCollectionToast(
   progress?: { collected: number; total: number }
 ) {
   const isLegendary = rarity === 'legendary';
-  // Get current language from localStorage or default to 'en'
-  const language = (localStorage.getItem('language') as any) || 'en';
-  const t = (key: string) => getTranslation(language, 'ui', key) || key;
+  
+  // Simple translation function that returns fallback labels
+  const getLabel = (key: string): string => {
+    const labels: Record<string, string> = {
+      'billCollection.legendaryBillCollected': 'Legendary Bill Collected!',
+      'billCollection.billCollected': 'Bill Collected!',
+      'billCollection.progressLabel': 'Progress:'
+    };
+    return labels[key] || key;
+  };
   
   toast.success(
     <div className="flex items-center gap-3">
@@ -104,14 +109,14 @@ export async function showBillCollectionToast(
       </div>
       <div className="flex-1">
         <div className="font-semibold text-base">
-          {isLegendary ? `🎉 ${t('billCollection.legendaryBillCollected')}` : t('billCollection.billCollected')}
+          {isLegendary ? `🎉 ${getLabel('billCollection.legendaryBillCollected')}` : getLabel('billCollection.billCollected')}
         </div>
         <div className="text-sm text-muted-foreground mt-0.5">
           {billName}
         </div>
         {progress && (
           <div className="text-xs text-muted-foreground mt-1">
-            {t('billCollection.progressLabel')} {progress.collected}/{progress.total}
+            {getLabel('billCollection.progressLabel')} {progress.collected}/{progress.total}
           </div>
         )}
       </div>

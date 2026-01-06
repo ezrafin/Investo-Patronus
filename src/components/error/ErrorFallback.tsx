@@ -69,11 +69,13 @@ export function ErrorFallback({
               <RefreshCw className="h-4 w-4" />
               Reload Page
             </Button>
-            <Button asChild variant="outline" className="flex items-center gap-2">
-              <Link to="/">
-                <Home className="h-4 w-4 mr-2" />
-                Go Home
-              </Link>
+            <Button 
+              variant="outline" 
+              className="flex items-center gap-2"
+              onClick={() => window.location.href = '/'}
+            >
+              <Home className="h-4 w-4" />
+              Go Home
             </Button>
           </div>
 
