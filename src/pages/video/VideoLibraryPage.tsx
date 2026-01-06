@@ -7,7 +7,6 @@ import { Video, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/useTranslation';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
-import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 
 export default function VideoLibraryPage() {
   const { t } = useTranslation({ namespace: 'ui' });
