@@ -36,8 +36,8 @@ export default function AnalyticsDetailPage() {
   const [relatedCompanies, setRelatedCompanies] = useState<any[]>([]);
   const { addToHistory } = useReadingHistory();
   
-  // Bill collection: analytics_article_read
-  usePageBillCollection({ billId: 'analytics_article_read' });
+  // Bill collection: analytics_read
+  usePageBillCollection({ billId: 'analytics_read' });
   
   // Fetch related content based on article type/category
   const { relatedItems } = useRelatedContent({
