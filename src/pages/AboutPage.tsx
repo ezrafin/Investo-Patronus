@@ -59,7 +59,7 @@ export default function AboutPage() {
             <div className="glass-card p-8 lg:p-12">
               <div className="grid grid-cols-2 gap-8">
                 <div className="text-center">
-                  <div className="heading-xl text-primary mb-2">50K+</div>
+                  <div className="heading-xl text-primary mb-2">30K+</div>
                   <div className="text-sm text-muted-foreground">{t('aboutPage.statsActiveUsers')}</div>
                 </div>
                 <div className="text-center">
@@ -71,7 +71,7 @@ export default function AboutPage() {
                   <div className="text-sm text-muted-foreground">{t('aboutPage.statsRealTime')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="heading-xl text-primary mb-2">15+</div>
+                  <div className="heading-xl text-primary mb-2">5+</div>
                   <div className="text-sm text-muted-foreground">{t('aboutPage.statsYearsExperience')}</div>
                 </div>
               </div>
