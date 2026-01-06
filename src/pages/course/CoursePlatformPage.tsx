@@ -24,7 +24,7 @@ export default function CoursePlatformPage() {
   }
 
   const [expandedModules, setExpandedModules] = useState<string[]>([course.modules[0]?.id]);
-  const [selectedLesson, setSelectedLesson] = useState(course.modules[0]?.lessons[0]);
+  const [selectedLesson, setSelectedLesson] = useState<typeof course.modules[0]['lessons'][0] | undefined>(course.modules[0]?.lessons[0]);
 
   // Reset state when course changes
   useEffect(() => {
@@ -137,7 +137,7 @@ export default function CoursePlatformPage() {
 
               <div className="mt-4 p-3 border-t border-border">
                 <button 
-                  onClick={() => { setShowFinalExam(true); setShowQuiz(false); setSelectedLesson(null); }}
+                  onClick={() => { setShowFinalExam(true); setShowQuiz(false); setSelectedLesson(undefined); }}
                   className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm font-medium hover:bg-secondary/50"
                 >
                   <Award className="h-5 w-5 text-primary flex-shrink-0" />
