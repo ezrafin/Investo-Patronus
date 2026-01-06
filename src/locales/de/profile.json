@@ -1,0 +1,31 @@
+{
+  "page": {
+    "title": "Benutzerprofil",
+    "notFound": "Benutzer nicht gefunden",
+    "backToForum": "Zurück zum Forum"
+  },
+  "header": {
+    "memberSince": "Mitglied seit",
+    "unknown": "Unbekannt",
+    "anonymous": "Anonym"
+  },
+  "stats": {
+    "reputation": "Reputation",
+    "posts": "Beiträge",
+    "comments": "Kommentare",
+    "followers": "Follower",
+    "following": "Folgt"
+  },
+  "tabs": {
+    "activity": "Aktivität",
+    "achievements": "Erfolge"
+  },
+  "sections": {
+    "recentActivity": "Neueste Aktivität",
+    "achievements": "Erfolge"
+  },
+  "messages": {
+    "signInToViewAchievements": "Melden Sie sich an, um Erfolge anzuzeigen",
+    "profileNotAvailable": "Dieses Benutzerprofil ist nicht verfügbar"
+  }
+}

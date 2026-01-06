@@ -1,0 +1,31 @@
+{
+  "page": {
+    "title": "Профиль пользователя",
+    "notFound": "Пользователь не найден",
+    "backToForum": "Вернуться на форум"
+  },
+  "header": {
+    "memberSince": "Участник с",
+    "unknown": "Неизвестно",
+    "anonymous": "Аноним"
+  },
+  "stats": {
+    "reputation": "Репутация",
+    "posts": "Публикации",
+    "comments": "Комментарии",
+    "followers": "Подписчики",
+    "following": "Подписки"
+  },
+  "tabs": {
+    "activity": "Активность",
+    "achievements": "Достижения"
+  },
+  "sections": {
+    "recentActivity": "Последняя активность",
+    "achievements": "Достижения"
+  },
+  "messages": {
+    "signInToViewAchievements": "Войдите, чтобы увидеть достижения",
+    "profileNotAvailable": "Этот профиль пользователя недоступен"
+  }
+}

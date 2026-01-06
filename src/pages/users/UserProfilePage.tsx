@@ -15,8 +15,10 @@ import { supabase } from '@/integrations/supabase/client';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { useCollectibleBills } from '@/hooks/useCollectibleBills';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function UserProfilePage() {
+  const { t, language } = useTranslation({ namespace: 'profile' });
   const { userId } = useParams();
   const { user: currentUser, profile: currentProfile } = useUser();
   const [profile, setProfile] = useState<UserProfile | null>(null);
@@ -170,8 +172,8 @@ export default function UserProfilePage() {
       setProfile({
         id: userId,
         username: null,
-        display_name: 'Unknown User',
-        bio: 'This user profile is not available',
+        display_name: t('header.unknown'),
+        bio: t('messages.profileNotAvailable'),
         avatar_url: null,
         reputation: 0,
         post_count: 0,
@@ -187,21 +189,32 @@ export default function UserProfilePage() {
   const formatJoinedDate = (date: string | null): string => {
     if (!date) {
       console.warn('No join date available');
-      return 'Unknown';
+      return t('header.unknown');
     }
     try {
       const dateObj = new Date(date);
       if (isNaN(dateObj.getTime())) {
         console.warn('Invalid date:', date);
-        return 'Unknown';
+        return t('header.unknown');
       }
-      return dateObj.toLocaleDateString('en-US', {
+      // Map language to locale code
+      const localeMap: Record<string, string> = {
+        en: 'en-US',
+        de: 'de-DE',
+        fr: 'fr-FR',
+        es: 'es-ES',
+        ru: 'ru-RU',
+        pl: 'pl-PL',
+        zh: 'zh-CN',
+      };
+      const locale = localeMap[language] || 'en-US';
+      return dateObj.toLocaleDateString(locale, {
         month: 'long',
         year: 'numeric',
       });
     } catch (error) {
       console.error('Error formatting date:', error, date);
-      return 'Unknown';
+      return t('header.unknown');
     }
   };
 
@@ -222,9 +235,9 @@ export default function UserProfilePage() {
       <Layout>
         <div className="section-spacing">
           <div className="container-wide max-w-4xl text-center">
-            <h1 className="heading-lg mb-4">User not found</h1>
+            <h1 className="heading-lg mb-4">{t('page.notFound')}</h1>
             <Link to="/forum" className="text-primary hover:underline">
-              Back to forum
+              {t('page.backToForum')}
             </Link>
           </div>
         </div>
@@ -238,7 +251,7 @@ export default function UserProfilePage() {
     <Layout>
       <div className="section-spacing">
         <div className="container-wide max-w-4xl">
-          <Breadcrumbs pageTitle={profile.display_name || profile.username || 'User profile'} />
+          <Breadcrumbs pageTitle={profile.display_name || profile.username || t('page.title')} />
           {/* Profile Header */}
           <div className="premium-card p-6 md:p-8 mb-6">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
@@ -248,11 +261,11 @@ export default function UserProfilePage() {
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
                     <h1 className="heading-md mb-2">
-                      {profile.display_name || profile.username || 'Anonymous'}
+                      {profile.display_name || profile.username || t('header.anonymous')}
                     </h1>
                     <p className="text-muted-foreground flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
-                      Member since {formatJoinedDate(joinedAt)}
+                      {t('header.memberSince')} {formatJoinedDate(joinedAt)}
                     </p>
                   </div>
                   {!isOwnProfile && (
@@ -268,25 +281,25 @@ export default function UserProfilePage() {
                   <div className="flex items-center gap-2">
                     <TrendingUp className="h-4 w-4 text-primary" />
                     <span className="font-medium">{profile.reputation}</span>
-                    <span className="text-muted-foreground">Reputation</span>
+                    <span className="text-muted-foreground">{t('stats.reputation')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MessageSquare className="h-4 w-4 text-primary" />
                     <span className="font-medium">{profile.post_count}</span>
-                    <span className="text-muted-foreground">Posts</span>
+                    <span className="text-muted-foreground">{t('stats.posts')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <BookOpen className="h-4 w-4 text-primary" />
                     <span className="font-medium">{profile.comment_count}</span>
-                    <span className="text-muted-foreground">Comments</span>
+                    <span className="text-muted-foreground">{t('stats.comments')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="font-medium">{followerCount}</span>
-                    <span className="text-muted-foreground">Followers</span>
+                    <span className="text-muted-foreground">{t('stats.followers')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="font-medium">{followingCount}</span>
-                    <span className="text-muted-foreground">Following</span>
+                    <span className="text-muted-foreground">{t('stats.following')}</span>
                   </div>
                 </div>
 
@@ -300,25 +313,25 @@ export default function UserProfilePage() {
           {/* Tabs */}
           <Tabs defaultValue="activity" className="w-full">
             <TabsList className="mb-6">
-              <TabsTrigger value="activity">Activity</TabsTrigger>
-              <TabsTrigger value="achievements">Achievements</TabsTrigger>
+              <TabsTrigger value="activity">{t('tabs.activity')}</TabsTrigger>
+              <TabsTrigger value="achievements">{t('tabs.achievements')}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="activity">
               <div className="premium-card p-6">
-                <h2 className="font-heading font-semibold text-lg mb-6">Recent Activity</h2>
+                <h2 className="font-heading font-semibold text-lg mb-6">{t('sections.recentActivity')}</h2>
                 <UserActivity userId={userId!} />
               </div>
             </TabsContent>
 
             <TabsContent value="achievements">
               <div className="premium-card p-6">
-                <h2 className="font-heading font-semibold text-lg mb-6">Achievements</h2>
+                <h2 className="font-heading font-semibold text-lg mb-6">{t('sections.achievements')}</h2>
                 {isOwnProfile ? (
                   <AchievementSystem />
                 ) : (
                   <div className="text-center py-8 text-muted-foreground">
-                    <p>Sign in to view achievements</p>
+                    <p>{t('messages.signInToViewAchievements')}</p>
                   </div>
                 )}
               </div>

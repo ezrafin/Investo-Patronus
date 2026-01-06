@@ -1,0 +1,31 @@
+{
+  "page": {
+    "title": "用户资料",
+    "notFound": "未找到用户",
+    "backToForum": "返回论坛"
+  },
+  "header": {
+    "memberSince": "注册于",
+    "unknown": "未知",
+    "anonymous": "匿名"
+  },
+  "stats": {
+    "reputation": "声望",
+    "posts": "帖子",
+    "comments": "评论",
+    "followers": "粉丝",
+    "following": "关注"
+  },
+  "tabs": {
+    "activity": "活动",
+    "achievements": "成就"
+  },
+  "sections": {
+    "recentActivity": "最近活动",
+    "achievements": "成就"
+  },
+  "messages": {
+    "signInToViewAchievements": "登录查看成就",
+    "profileNotAvailable": "该用户资料不可用"
+  }
+}
