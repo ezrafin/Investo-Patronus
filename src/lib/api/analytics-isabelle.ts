@@ -26,6 +26,749 @@ const countWords = (text: string): number => {
 // Isabelle Dubois - ESG & Sustainable Finance (113 articles)
 export const isabelleArticles: AnalyticsArticle[] = [
   {
+    slug: 'blue-economy-and-ocean-finance-investing-in-sustainable-ocean-resources',
+    title: 'Blue Economy and Ocean Finance: Investing in Sustainable Ocean Resources',
+    excerpt:
+      'How the blue economy is creating investment opportunities in sustainable fisheries, marine renewable energy, ocean conservation, and coastal resilience, why ocean health matters for climate and biodiversity, and how investors can identify credible blue-economy investments.',
+    content: `# Blue Economy and Ocean Finance: Investing in Sustainable Ocean Resources
+
+## Introduction
+
+The ocean covers more than 70% of the Earth's surface and plays a crucial role in climate regulation, food security, and economic activity. But ocean ecosystems are under severe pressure from overfishing, pollution, climate change, and habitat destruction. The blue economy—economic activities that are sustainable and equitable—offers a framework for balancing economic development with ocean health.
+
+As of early 2026, blue-economy finance is gaining momentum. Governments, development banks, and private investors are increasingly recognizing that healthy oceans are essential for long-term prosperity. Investment opportunities span sustainable fisheries, marine renewable energy, ocean conservation, coastal infrastructure, and blue carbon projects.
+
+For sustainable finance allocators, the blue economy represents a nascent but growing theme that intersects with climate action, biodiversity protection, and food security. The challenge is identifying investments that genuinely contribute to ocean health while delivering competitive risk-adjusted returns.
+
+## The Blue Economy Framework
+
+### Defining Sustainable Ocean Activities
+
+The blue economy encompasses activities that:
+
+- **Use ocean resources sustainably** – fisheries, aquaculture, and marine biotechnology.
+- **Generate renewable energy** – offshore wind, wave, and tidal power.
+- **Protect and restore ecosystems** – marine protected areas, restoration projects, and blue carbon.
+- **Build coastal resilience** – infrastructure that adapts to sea-level rise and extreme weather.
+- **Enable sustainable transport** – shipping efficiency and port infrastructure.
+
+Key principles include:
+
+- **Sustainability** – activities that maintain or improve ocean health.
+- **Equity** – benefits shared with coastal communities and developing countries.
+- **Resilience** – building capacity to adapt to climate change.
+- **Innovation** – developing new technologies and business models.
+
+### Market Size and Growth
+
+As of early 2026, the blue economy is estimated to contribute:
+
+- Over $2.5 trillion annually to global GDP.
+- Employment for hundreds of millions of people, primarily in developing countries.
+- Critical ecosystem services valued in the trillions.
+
+Growth drivers include:
+
+- **Policy support** – national blue-economy strategies and international frameworks.
+- **Technology advances** – improving the economics of marine renewables and sustainable aquaculture.
+- **Investor demand** – growing interest in ocean-themed impact investments.
+- **Risk management** – recognition that ocean degradation threatens coastal economies.
+
+## Investment Opportunities
+
+### Sustainable Fisheries and Aquaculture
+
+Sustainable fisheries and aquaculture represent the largest segment of the blue economy:
+
+- **Wild-capture fisheries** managed with science-based quotas and ecosystem approaches.
+- **Aquaculture** using sustainable feed, low-impact systems, and responsible practices.
+- **Seafood processing and distribution** with traceability and certification.
+
+Investment angles include:
+
+- Companies with credible sustainability certifications (MSC, ASC).
+- Technology providers for monitoring, traceability, and feed innovation.
+- Aquaculture operators with strong environmental and social practices.
+
+Key risks:
+
+- Overfishing and stock collapse.
+- Disease outbreaks in aquaculture.
+- Regulatory changes affecting access and quotas.
+
+### Marine Renewable Energy
+
+Marine renewable energy is expanding rapidly:
+
+- **Offshore wind** – now cost-competitive in many markets.
+- **Wave and tidal power** – still in earlier stages but with significant potential.
+- **Floating solar** – emerging applications in coastal and inland waters.
+
+Investment opportunities:
+
+- Offshore wind developers and operators.
+- Technology providers for turbines, foundations, and grid connections.
+- Supply chain companies (cables, vessels, installation services).
+
+Challenges:
+
+- High upfront capital requirements.
+- Environmental and social impacts (marine life, fishing, coastal communities).
+- Grid integration and transmission infrastructure.
+
+### Ocean Conservation and Blue Carbon
+
+Ocean conservation projects can generate returns through:
+
+- **Blue carbon credits** – carbon stored in mangroves, seagrasses, and salt marshes.
+- **Biodiversity credits** – emerging markets for nature-based offsets.
+- **Ecotourism** – sustainable tourism that funds conservation.
+
+Investment structures:
+
+- Conservation finance funds blending public and private capital.
+- Project developers with long-term offtake agreements.
+- Technology providers for monitoring and verification.
+
+Critical considerations:
+
+- Additionality and permanence of carbon storage.
+- Community rights and benefit-sharing.
+- Measurement and verification challenges.
+
+### Coastal Resilience and Infrastructure
+
+Coastal infrastructure investments can:
+
+- **Protect communities** from sea-level rise and extreme weather.
+- **Restore natural defenses** – mangroves, coral reefs, and dunes.
+- **Enable adaptation** – elevated roads, flood barriers, and managed retreat.
+
+Investment opportunities:
+
+- Infrastructure developers with climate-resilient designs.
+- Nature-based solutions providers.
+- Engineering and construction firms specializing in coastal projects.
+
+Risk factors:
+
+- Climate uncertainty affecting design assumptions.
+- Regulatory and permitting complexity.
+- Long payback periods.
+
+## Portfolio Implementation
+
+### Thematic and Impact Strategies
+
+Blue-economy exposure can be accessed through:
+
+- **Thematic ESG funds** focused on ocean health and sustainability.
+- **Impact investments** targeting measurable environmental and social outcomes.
+- **Blended finance vehicles** combining public, philanthropic, and private capital.
+
+Portfolio construction considerations:
+
+- Diversification across sectors, geographies, and risk profiles.
+- Alignment with broader climate and biodiversity objectives.
+- Integration with traditional allocations (utilities, industrials, consumer).
+
+### Stewardship and Engagement
+
+Effective stewardship in blue-economy investments requires:
+
+- **Engaging with companies** on ocean-related risks and opportunities.
+- **Supporting policy** that promotes sustainable ocean management.
+- **Collaborating with stakeholders** – governments, NGOs, and communities.
+
+Key engagement topics:
+
+- Sustainable fishing and aquaculture practices.
+- Reducing plastic pollution and marine debris.
+- Supporting ocean-based climate solutions.
+
+## Conclusion
+
+The blue economy represents a critical frontier for sustainable finance, combining climate action, biodiversity protection, and economic development. As of early 2026, investment opportunities are expanding across fisheries, marine renewables, conservation, and coastal resilience.
+
+For institutional allocators, the blue economy offers a way to align portfolios with ocean health while accessing growing markets. Success requires careful due diligence, strong partnerships, and a long-term perspective that recognizes both the urgency of ocean challenges and the complexity of ocean systems.
+
+Investors who approach blue-economy finance with rigor—demanding credible impact, transparent reporting, and genuine sustainability—will be well-positioned to contribute to ocean health while capturing the economic opportunities that healthy oceans provide.`,
+    date: formatDate(-7),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'longterm',
+    readTime: calculateReadTime(
+      countWords(`# Blue Economy and Ocean Finance: Investing in Sustainable Ocean Resources
+
+## Introduction
+
+The ocean covers more than 70% of the Earth's surface and plays a crucial role in climate regulation, food security, and economic activity.`),
+    ),
+    imageUrl: getImage('longterm', 364),
+    tags: ['Blue Economy', 'Ocean Finance', 'Marine Conservation', 'ESG', 'Sustainable Finance'],
+  },
+  {
+    slug: 'just-transition-finance-supporting-workers-and-communities-in-the-energy-transition',
+    title: 'Just Transition Finance: Supporting Workers and Communities in the Energy Transition',
+    excerpt:
+      'How just-transition finance addresses the social dimensions of climate action, why supporting workers and communities matters for transition success, and how investors can identify and structure investments that advance both climate and social objectives.',
+    content: `# Just Transition Finance: Supporting Workers and Communities in the Energy Transition
+
+## Introduction
+
+The transition to a net-zero economy is not just a technological and financial challenge—it is also a social one. Millions of workers in fossil-fuel industries, carbon-intensive manufacturing, and related supply chains face job losses and economic disruption. Communities dependent on these industries risk being left behind, creating political resistance and social instability that can derail climate action.
+
+Just transition finance addresses this challenge by ensuring that the shift to a sustainable economy is fair, inclusive, and supportive of affected workers and communities. As of early 2026, just transition has moved from a peripheral concern to a central pillar of climate finance, with governments, development banks, and private investors increasingly recognizing that social equity is essential for transition success.
+
+This article examines how just-transition finance works, why it matters for investors, and how to identify investment opportunities that advance both climate and social objectives.
+
+## Understanding Just Transition
+
+### Core Principles
+
+Just transition is built on several principles:
+
+- **Worker protection** – supporting workers through retraining, job placement, and income support.
+- **Community investment** – investing in economic diversification and infrastructure in affected regions.
+- **Stakeholder engagement** – involving workers, communities, and unions in transition planning.
+- **Social dialogue** – ensuring that transition decisions are made through inclusive processes.
+
+The goal is to ensure that:
+
+- No one is left behind in the transition.
+- Affected workers have pathways to new employment.
+- Communities can thrive in a post-carbon economy.
+- Social cohesion is maintained during rapid economic change.
+
+### Why Just Transition Matters
+
+Just transition is critical for several reasons:
+
+- **Political sustainability** – transitions that ignore social impacts face political backlash.
+- **Economic efficiency** – supporting workers and communities can reduce transition costs and accelerate deployment.
+- **Social stability** – managing transition fairly reduces social conflict and supports long-term stability.
+- **Moral imperative** – workers and communities should not bear the costs of a global transition alone.
+
+## Investment Opportunities
+
+### Worker Retraining and Skills Development
+
+Investments in education and training can:
+
+- **Reskill workers** for jobs in renewable energy, energy efficiency, and green manufacturing.
+- **Support apprenticeships** and on-the-job training programs.
+- **Create training infrastructure** – vocational schools, training centers, and online platforms.
+
+Investment structures:
+
+- Education and training providers with government or corporate contracts.
+- Workforce development funds with outcome-based financing.
+- Technology platforms for skills matching and career transitions.
+
+Key success factors:
+
+- Alignment with local job markets and employer needs.
+- Support services (childcare, transportation, income support) that enable participation.
+- Measurable outcomes (job placement, wage gains, retention).
+
+### Economic Diversification
+
+Investments that help communities diversify include:
+
+- **Renewable energy projects** that create local jobs and revenue.
+- **Manufacturing facilities** for clean technologies and components.
+- **Tourism and recreation** in regions transitioning from extractive industries.
+- **Agriculture and forestry** projects that support rural economies.
+
+Investment opportunities:
+
+- Infrastructure developers with strong local hiring and procurement commitments.
+- Companies locating facilities in transition regions.
+- Community development funds that blend public and private capital.
+
+Critical considerations:
+
+- Long-term economic viability beyond initial subsidies.
+- Community ownership and benefit-sharing structures.
+- Environmental and social safeguards.
+
+### Social Infrastructure
+
+Social infrastructure investments can:
+
+- **Support communities** during transition periods.
+- **Provide essential services** – healthcare, education, housing.
+- **Build community capacity** for long-term resilience.
+
+Investment angles:
+
+- Affordable housing developers in transition regions.
+- Healthcare and education providers serving affected communities.
+- Community facilities and public spaces.
+
+### Transition Bonds and Blended Finance
+
+Just-transition bonds and blended finance structures can:
+
+- **Mobilize capital** for transition-related projects.
+- **Blend public and private capital** to improve risk-return profiles.
+- **Provide outcome-based returns** linked to social and environmental metrics.
+
+Key features:
+
+- Use-of-proceeds dedicated to just-transition activities.
+- Reporting on social outcomes (jobs created, workers trained, communities supported).
+- Alignment with just-transition frameworks and standards.
+
+## Portfolio Implementation
+
+### Integration with Climate Strategies
+
+Just-transition finance should be integrated with broader climate allocations:
+
+- **Complement decarbonization** investments with social support.
+- **Engage portfolio companies** on just-transition planning.
+- **Advocate for policy** that supports both climate and social objectives.
+
+Portfolio construction:
+
+- Allocate a portion of climate-themed strategies to just-transition activities.
+- Screen investments for just-transition alignment and social impact.
+- Measure and report on social outcomes alongside environmental metrics.
+
+### Stewardship and Engagement
+
+Effective stewardship requires:
+
+- **Engaging with companies** on transition planning and worker support.
+- **Supporting policy** that promotes just transition.
+- **Collaborating with stakeholders** – unions, communities, governments.
+
+Key engagement topics:
+
+- Company transition plans and worker support programs.
+- Community investment and economic diversification strategies.
+- Transparency and accountability in transition processes.
+
+## Conclusion
+
+Just transition finance is essential for ensuring that the shift to a net-zero economy is fair, inclusive, and politically sustainable. As of early 2026, investment opportunities are expanding across worker retraining, economic diversification, and social infrastructure.
+
+For sustainable finance allocators, just transition offers a way to advance both climate and social objectives while managing transition risks. Success requires understanding local contexts, engaging with stakeholders, and structuring investments that deliver measurable social and environmental outcomes.
+
+Investors who integrate just-transition considerations into climate strategies will be better positioned to support successful transitions while managing political, social, and reputational risks. The transition to a sustainable economy must be just, or it may not happen at all.`,
+    date: formatDate(-14),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Just Transition Finance: Supporting Workers and Communities in the Energy Transition
+
+## Introduction
+
+The transition to a net-zero economy is not just a technological and financial challenge—it is also a social one.`),
+    ),
+    imageUrl: getImage('expert', 365),
+    tags: ['Just Transition', 'Social Finance', 'Energy Transition', 'ESG', 'Workforce Development'],
+  },
+  {
+    slug: 'esg-data-ratings-and-analytics-navigating-the-landscape-of-sustainability-information',
+    title: 'ESG Data, Ratings, and Analytics: Navigating the Landscape of Sustainability Information',
+    excerpt:
+      'How ESG data and ratings have evolved, why data quality and methodology matter for investment decisions, and how investors can effectively use ESG information while avoiding common pitfalls and greenwashing risks.',
+    content: `# ESG Data, Ratings, and Analytics: Navigating the Landscape of Sustainability Information
+
+## Introduction
+
+ESG investing has grown from a niche practice to a mainstream approach, with trillions of dollars allocated based on environmental, social, and governance criteria. But this growth has exposed a fundamental challenge: the quality, consistency, and reliability of ESG data and ratings vary dramatically across providers, methodologies, and time periods.
+
+As of early 2026, the ESG data landscape is both more sophisticated and more fragmented than ever. Multiple rating agencies, data providers, and analytics platforms compete to provide insights into corporate sustainability performance. Regulators are stepping in with disclosure requirements, but standardization remains limited, and investors must navigate a complex ecosystem of information sources.
+
+This article examines the ESG data and ratings landscape, explains why methodology matters, and provides guidance on how investors can effectively use ESG information while avoiding common pitfalls.
+
+## The ESG Data Ecosystem
+
+### Data Sources
+
+ESG data comes from multiple sources:
+
+- **Company disclosures** – sustainability reports, regulatory filings, and voluntary disclosures.
+- **Third-party research** – NGO reports, media coverage, and stakeholder feedback.
+- **Alternative data** – satellite imagery, social media, and supply chain mapping.
+- **Proprietary assessments** – direct company engagement and site visits.
+
+Key challenges:
+
+- **Incomplete disclosure** – many companies still provide limited ESG information.
+- **Inconsistent reporting** – different frameworks, metrics, and time periods.
+- **Verification gaps** – limited independent verification of company claims.
+- **Timeliness** – data can be outdated by the time it reaches investors.
+
+### Rating Agencies and Methodologies
+
+Major ESG rating providers include:
+
+- **MSCI, Sustainalytics, Refinitiv** – large-scale providers with broad coverage.
+- **ISS, Moody's ESG** – integrated with traditional credit and governance analysis.
+- **Specialized providers** – focused on specific themes (climate, human rights, biodiversity).
+
+Methodological differences:
+
+- **Weighting schemes** – how different ESG factors are combined.
+- **Materiality frameworks** – which issues matter most for which industries.
+- **Scoring approaches** – absolute vs. relative, peer comparisons.
+- **Update frequency** – how often ratings are revised.
+
+These differences mean that:
+
+- The same company can receive very different ratings from different providers.
+- Ratings can change significantly when methodologies are updated.
+- Investors must understand methodology to interpret ratings correctly.
+
+## Key Challenges and Pitfalls
+
+### Greenwashing and Data Quality
+
+ESG data is vulnerable to greenwashing:
+
+- **Selective disclosure** – companies highlighting positive metrics while omitting negatives.
+- **Vague commitments** – ambitious targets without credible implementation plans.
+- **Methodology shopping** – choosing frameworks that make performance look better.
+
+Investors should:
+
+- **Verify claims** through independent sources and third-party verification.
+- **Look beyond ratings** to underlying data and company disclosures.
+- **Engage with companies** to understand implementation and progress.
+
+### Correlation and Divergence
+
+ESG ratings from different providers often diverge significantly:
+
+- **Low correlation** – ratings can be weakly correlated across providers.
+- **Methodological differences** – explain much of the divergence.
+- **Data gaps** – missing or incomplete data affects ratings differently.
+
+Implications:
+
+- Investors should not rely on a single rating provider.
+- Understanding methodology is essential for interpretation.
+- Combining multiple sources can provide more robust insights.
+
+### Materiality and Industry Context
+
+ESG issues vary in importance across industries:
+
+- **Climate** – critical for energy, utilities, and heavy industry.
+- **Labor rights** – essential for manufacturing and retail.
+- **Data privacy** – crucial for technology and financial services.
+
+Investors should:
+
+- **Use industry-specific frameworks** to assess materiality.
+- **Focus on financially material issues** that affect company value.
+- **Consider transition risks** and opportunities specific to each sector.
+
+## Best Practices for Using ESG Data
+
+### Multi-Source Approach
+
+Effective ESG analysis requires:
+
+- **Combining multiple data sources** – ratings, disclosures, alternative data.
+- **Understanding methodologies** – how ratings are constructed and what they measure.
+- **Engaging with companies** – direct dialogue to clarify and verify information.
+
+Portfolio construction:
+
+- Use ESG ratings as one input among many.
+- Supplement with proprietary research and engagement.
+- Focus on material issues for each industry and company.
+
+### Forward-Looking Analysis
+
+ESG data is often backward-looking, but investors need forward-looking insights:
+
+- **Trend analysis** – how ESG performance is changing over time.
+- **Transition planning** – company strategies for addressing ESG risks.
+- **Scenario analysis** – how different ESG outcomes could affect value.
+
+Key questions:
+
+- Is the company improving or deteriorating on material ESG issues?
+- Does the company have credible plans to address ESG risks?
+- How resilient is the company to ESG-related disruptions?
+
+### Integration with Financial Analysis
+
+ESG should be integrated with traditional financial analysis:
+
+- **Materiality assessment** – focus on ESG issues that affect financial performance.
+- **Risk-return trade-offs** – how ESG factors influence risk and return.
+- **Valuation impact** – how ESG performance affects company value.
+
+Integration approaches:
+
+- ESG-adjusted financial models.
+- Risk premiums and discount rates that reflect ESG factors.
+- Engagement strategies that address both ESG and financial objectives.
+
+## Regulatory Developments
+
+### Disclosure Requirements
+
+Regulators are mandating more ESG disclosure:
+
+- **EU CSRD** – comprehensive sustainability reporting requirements.
+- **SEC climate disclosure** – proposed rules for climate-related information.
+- **ISSB standards** – global baseline for sustainability reporting.
+
+Implications:
+
+- More standardized data will become available.
+- Companies will face greater scrutiny and verification requirements.
+- Investors will need to adapt to new reporting frameworks.
+
+### Rating Agency Oversight
+
+Regulators are also examining ESG rating agencies:
+
+- **Transparency requirements** – disclosure of methodologies and conflicts.
+- **Quality standards** – ensuring ratings are based on robust data and analysis.
+- **Competition** – promoting diversity and preventing market concentration.
+
+## Conclusion
+
+ESG data and ratings are essential tools for sustainable investing, but they must be used with care. As of early 2026, the landscape is evolving rapidly, with new providers, methodologies, and regulatory requirements emerging regularly.
+
+For institutional investors, success requires:
+
+- **Understanding methodologies** and what ratings actually measure.
+- **Using multiple sources** to build robust insights.
+- **Integrating ESG with financial analysis** to identify material risks and opportunities.
+- **Engaging with companies** to verify information and drive improvement.
+
+Investors who approach ESG data with rigor, skepticism, and a focus on materiality will be better positioned to make informed decisions that advance both financial and sustainability objectives. The ESG data landscape will continue to evolve, but the principles of careful analysis, multiple sources, and integration with fundamental research will remain essential.`,
+    date: formatDate(-21),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# ESG Data, Ratings, and Analytics: Navigating the Landscape of Sustainability Information
+
+## Introduction
+
+ESG investing has grown from a niche practice to a mainstream approach, with trillions of dollars allocated based on environmental, social, and governance criteria.`),
+    ),
+    imageUrl: getImage('markets', 366),
+    tags: ['ESG Data', 'Ratings', 'Sustainability Analytics', 'ESG', 'Investment Research'],
+  },
+  {
+    slug: 'sustainable-supply-chain-finance-managing-risks-and-opportunities-in-global-value-chains',
+    title: 'Sustainable Supply Chain Finance: Managing Risks and Opportunities in Global Value Chains',
+    excerpt:
+      'How sustainable supply chain finance addresses environmental and social risks in global value chains, why supply chain transparency matters for investors, and how to structure financing that incentivizes better practices throughout supply chains.',
+    content: `# Sustainable Supply Chain Finance: Managing Risks and Opportunities in Global Value Chains
+
+## Introduction
+
+Global supply chains are the backbone of the modern economy, connecting producers, manufacturers, and consumers across continents. But these complex networks also create significant environmental and social risks—from deforestation and water pollution to labor rights violations and human trafficking. As investors and companies face growing pressure to address these risks, sustainable supply chain finance has emerged as a critical tool for managing ESG exposure and incentivizing better practices.
+
+As of early 2026, supply chain finance is evolving from a narrow focus on working capital optimization to a broader approach that integrates sustainability criteria, transparency requirements, and impact measurement. Financial institutions, corporates, and investors are developing new products and structures that link financing terms to ESG performance, creating incentives for suppliers to improve their environmental and social practices.
+
+This article examines how sustainable supply chain finance works, why it matters for investors, and how to structure financing that advances both financial and sustainability objectives.
+
+## Understanding Supply Chain Risks
+
+### Environmental Risks
+
+Supply chains can create significant environmental impacts:
+
+- **Deforestation** – linked to agriculture, timber, and palm oil production.
+- **Water pollution** – from manufacturing, mining, and agriculture.
+- **Greenhouse gas emissions** – from transportation, energy use, and land-use change.
+- **Waste and pollution** – plastic, chemicals, and other pollutants.
+
+These risks can:
+
+- **Damage brand reputation** – when supply chain issues become public.
+- **Create regulatory exposure** – as governments tighten environmental rules.
+- **Disrupt operations** – through climate impacts, resource scarcity, or enforcement actions.
+- **Affect financial performance** – through fines, litigation, or lost revenue.
+
+### Social Risks
+
+Social risks in supply chains include:
+
+- **Labor rights violations** – forced labor, child labor, unsafe working conditions.
+- **Human rights abuses** – particularly in conflict-affected regions.
+- **Community impacts** – displacement, pollution, and resource conflicts.
+- **Inequality** – low wages and poor working conditions in developing countries.
+
+These risks can:
+
+- **Trigger consumer boycotts** and reputational damage.
+- **Lead to legal liability** under modern slavery and human rights laws.
+- **Disrupt supply** through strikes, protests, or regulatory action.
+- **Create financial losses** through fines, settlements, and lost business.
+
+### Governance and Transparency Gaps
+
+Many supply chains suffer from:
+
+- **Limited visibility** – companies often lack full visibility into their supply chains.
+- **Weak oversight** – insufficient monitoring and enforcement of standards.
+- **Fragmented responsibility** – unclear accountability for ESG performance.
+- **Inadequate disclosure** – limited reporting on supply chain risks and impacts.
+
+## Sustainable Supply Chain Finance Solutions
+
+### Supplier Finance with ESG Criteria
+
+Traditional supplier finance programs can be enhanced with ESG criteria:
+
+- **Preferential rates** for suppliers that meet sustainability standards.
+- **Capacity building** support to help suppliers improve their practices.
+- **Performance monitoring** to track ESG metrics and compliance.
+
+Key features:
+
+- **ESG scoring** of suppliers based on environmental and social performance.
+- **Dynamic pricing** that adjusts based on ESG metrics.
+- **Technical assistance** to help suppliers meet standards.
+
+Benefits:
+
+- **Incentivizes improvement** by linking financing costs to ESG performance.
+- **Reduces risk** by supporting better practices throughout the supply chain.
+- **Creates value** through improved efficiency and reduced reputational exposure.
+
+### Sustainability-Linked Supply Chain Finance
+
+Sustainability-linked structures tie financing terms to ESG outcomes:
+
+- **Margin adjustments** based on supplier ESG performance.
+- **Volume commitments** linked to sustainability improvements.
+- **Outcome-based payments** for achieving specific ESG targets.
+
+Structures can include:
+
+- **Revolving credit facilities** with ESG-linked pricing.
+- **Trade finance** programs with sustainability criteria.
+- **Working capital solutions** that reward ESG performance.
+
+Key success factors:
+
+- **Clear metrics** that are measurable and verifiable.
+- **Credible baselines** and improvement targets.
+- **Independent verification** of ESG performance.
+- **Transparent reporting** on outcomes and impact.
+
+### Supply Chain Transparency and Traceability
+
+Technology solutions can improve supply chain visibility:
+
+- **Blockchain and distributed ledgers** for tracking products and materials.
+- **Satellite monitoring** for deforestation and land-use change.
+- **IoT sensors** for tracking environmental conditions and compliance.
+- **Data platforms** that aggregate and analyze supply chain information.
+
+Investment opportunities:
+
+- **Technology providers** developing traceability and monitoring solutions.
+- **Data and analytics platforms** that help companies understand supply chain risks.
+- **Verification services** that audit and certify supply chain practices.
+
+## Portfolio Implementation
+
+### Integration with Corporate Engagement
+
+Sustainable supply chain finance should be integrated with broader corporate engagement:
+
+- **Engaging with companies** on supply chain policies and practices.
+- **Supporting transparency** through disclosure requirements and reporting.
+- **Advocating for standards** that promote better practices.
+
+Key engagement topics:
+
+- Supply chain mapping and risk assessment.
+- Supplier codes of conduct and enforcement.
+- Transparency and disclosure on supply chain risks.
+- Remediation and improvement programs.
+
+### Risk Management
+
+Investors should:
+
+- **Assess supply chain exposure** across portfolios.
+- **Screen investments** for supply chain risks.
+- **Engage with companies** to improve practices.
+- **Monitor and report** on supply chain performance.
+
+Risk management approaches:
+
+- **Sector-specific analysis** of supply chain risks.
+- **Geographic mapping** of exposure to high-risk regions.
+- **Scenario analysis** of potential supply chain disruptions.
+- **Diversification** to reduce concentration risk.
+
+## Conclusion
+
+Sustainable supply chain finance represents a critical frontier for managing ESG risks and creating positive impact. As of early 2026, the field is evolving rapidly, with new products, technologies, and standards emerging to address the complex challenges of global value chains.
+
+For institutional investors, sustainable supply chain finance offers opportunities to:
+
+- **Reduce portfolio risk** by addressing ESG exposure in supply chains.
+- **Create positive impact** by incentivizing better practices.
+- **Enhance returns** through improved efficiency and reduced reputational exposure.
+
+Success requires:
+
+- **Understanding supply chain risks** and their financial implications.
+- **Structuring financing** that creates real incentives for improvement.
+- **Supporting transparency** and verification to ensure credibility.
+- **Engaging with companies** to drive systemic change.
+
+Investors who integrate sustainable supply chain finance into their strategies will be better positioned to manage ESG risks, create positive impact, and build more resilient portfolios. The complexity of global supply chains demands sophisticated solutions, but the potential for both risk reduction and positive change makes this an essential area for sustainable finance.`,
+    date: formatDate(-28),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Sustainable Supply Chain Finance: Managing Risks and Opportunities in Global Value Chains
+
+## Introduction
+
+Global supply chains are the backbone of the modern economy, connecting producers, manufacturers, and consumers across continents.`),
+    ),
+    imageUrl: getImage('expert', 367),
+    tags: ['Supply Chain Finance', 'ESG', 'Sustainable Finance', 'Risk Management', 'Transparency'],
+  },
+  {
+    slug: 'circular-economy-business-models-and-investment-opportunities',
+    title: 'Circular Economy Business Models: From Waste to Value in Listed Markets',
+    excerpt:
+      'How circular-economy business models are reshaping value chains in packaging, textiles, electronics, and industrials, which financial metrics reveal real circularity rather than marketing, and where investors can find scalable, listed exposure.',
+    content: `# Circular Economy Business Models: From Waste to Value in Listed Markets
+
+## Introduction
+
+The circular economy has evolved from a niche sustainability concept to a strategic priority for corporates, regulators, and investors. Instead of the traditional “take–make–dispose” linear model, circular approaches aim to keep materials and products in use for as long as possible through reuse, repair, refurbishment, remanufacturing, and recycling.\n\nAs of late 2024, EU regulation (such as the Circular Economy Action Plan, extended producer-responsibility schemes, and packaging rules) is accelerating the shift in Europe, while global consumer brands face mounting pressure to reduce waste footprints and demonstrate credible circular strategies. For investors, the critical question is how to distinguish between companies genuinely redesigning business models and those layering “circular” language onto fundamentally linear economics.\n\nThis article focuses on listed opportunities in packaging, textiles, electronics, and industrials, examining what good circular models look like and which financial and operational indicators signal durable value creation rather than temporary compliance.\n\n## Where Circular Models Are Emerging\n\n### Packaging and Materials\n\nIn packaging, circularity centres on:\n\n- **Design for recyclability and reuse** (mono-materials, standardised formats).\n- **Collection and sorting infrastructure** that actually recaptures materials.\n- **Recycled-content commitments** and contracts with brand owners.\n\nInvestable angles include:\n\n- Producers of high-quality recycled materials (paper, plastics, metals, glass).\n- Equipment and technology providers for sorting, washing, and reprocessing.\n- Packaging converters with credible roadmaps to higher recyclability and recycled content.\n\nKey questions:\n\n- Are recycled-content targets backed by capex and long-term offtake agreements?\n- How are margins affected by recycled-input volatility and regulatory shifts?\n\n### Textiles and Apparel\n\nIn textiles, circular models are more nascent but growing:\n\n- Take-back and resale programmes.\n- Fibre-to-fibre recycling technologies for cotton, polyester, and blended fabrics.\n- Rental and subscription models in specific categories.\n\nFor listed investors, most exposure is indirect via:\n\n- Brands experimenting with circular capsules.\n- Fibre and chemical companies developing recycling solutions.\n\nThe challenge is assessing whether pilots can scale and whether economics hold once subsidies and marketing budgets are stripped out.\n\n### Electronics and Industrial Equipment\n\nElectronics and industrial firms are advancing:\n\n- **Modular design** for repair and upgrade.\n- **Service-based models** (“product-as-a-service”) where manufacturers retain ownership of assets.\n- **Refurbishment and remanufacturing** at scale.\n\nThis can improve:\n\n- Lifetime margins via service contracts.\n- Resource productivity and emissions intensity.\n\nInvestors should examine:\n\n- The share of revenue from services versus one-off sales.\n- Asset-turnover trends and working-capital dynamics.\n\n## Financial and ESG Indicators of Real Circularity\n\n### Revenue and Margin Mix\n\nCircular leaders tend to show:\n\n- Increasing share of revenue from services, refurbishment, and secondary markets.\n- Stable or improving margins as circular lines scale (rather than perpetual pilot losses).\n\nWatch out for:\n\n- High-profile announcements with minimal revenue contribution.\n- Circular initiatives that depend heavily on subsidies or one-off grants.\n\n### Capex, R&D, and Partnerships\n\nSignals of seriousness include:\n\n- Dedicated capex for recycling facilities, repair hubs, and digital tracking systems.\n- R&D focused on material science and reverse logistics.\n- Partnerships across the value chain (suppliers, customers, municipalities).\n\n## Portfolio Implementation\n\n### Thematic and Core Integration\n\nInvestors can access circular themes via:\n\n- **Thematic ESG strategies** focused on resource efficiency and waste.\n- **Core allocations** into industrials, materials, and consumer names with strong circular roadmaps.\n\nPortfolio construction questions:\n\n- How concentrated is circular exposure in a few names or sectors?\n- How do circular holdings interact with other ESG themes (climate, biodiversity)?\n\n### Stewardship and Engagement\n\nBecause circular transitions cut across value chains, engagement is critical:\n\n- Encouraging adoption of science-based targets on resource use and waste.\n- Pushing for transparent reporting on circular metrics (recycled content, repair rates, product lifetimes).\n\n## Conclusion\n\nCircular economy business models are moving from concept to implementation in listed markets, particularly in packaging, textiles, electronics, and industrial equipment. The opportunity for investors lies in identifying companies where circularity is embedded in strategy, capex, and revenue, not just in marketing.\n\nFor sustainable allocators, combining financial analysis with targeted engagement and clear circular KPIs can turn circular economy from a buzzword into a differentiated, long-term equity and credit theme.`,
+    date: formatDate(354),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Circular Economy Business Models: From Waste to Value in Listed Markets
+
+## Introduction
+
+The circular economy has evolved from a niche sustainability concept to a strategic priority for corporates, regulators, and investors.`),
+    ),
+    imageUrl: getImage('expert', 354),
+    tags: ['Circular Economy', 'Resource Efficiency', 'ESG', 'Sustainable Finance', 'Equities'],
+  },
+  {
     slug: 'water-infrastructure-and-resource-management-investment-opportunities',
     title: 'Water Infrastructure and Resource Management: Investment Opportunities',
     excerpt:
@@ -3507,5 +4250,107 @@ Impact investing in public markets raises hard questions about what investors ca
     ),
     imageUrl: getImage('longterm', 329),
     tags: ['Impact Investing', 'Additionality', 'ESG', 'Public Markets', 'Sustainable Finance'],
+  },
+  {
+    slug: 'biodiversity-credits-and-nature-markets-opportunities-and-pitfalls',
+    title: 'Biodiversity Credits and Nature Markets: Opportunities and Pitfalls',
+    excerpt:
+      'How emerging biodiversity-credit and nature-market frameworks aim to channel capital into ecosystem protection, what differentiates them from carbon markets, and which design flaws and integrity risks investors must address before scaling exposure.',
+    content: `# Biodiversity Credits and Nature Markets: Opportunities and Pitfalls
+
+## Introduction
+
+If climate finance was the first wave of sustainable finance, biodiversity is rapidly becoming the second. Governments, NGOs, and private actors are experimenting with biodiversity credits, nature certificates, and habitat banking schemes designed to mobilise capital for ecosystem protection and restoration. The logic is intuitive: assign a price to nature's services—pollination, water filtration, habitat provision—and markets will help allocate resources toward conservation.\n\nAs of late 2024, these markets remain nascent and fragmented. Pilot projects exist in Europe, Latin America, and parts of Asia-Pacific, but common standards, governance structures, and buyer pools are still evolving. For investors, biodiversity credits offer the promise of new asset classes aligned with nature-positive outcomes, but also the risk of repeating early mistakes from voluntary carbon markets: weak baselines, double counting, and questionable additionality.\n\nThis article examines how biodiversity credits are being designed, how they differ from carbon markets, and what institutional allocators should look for before committing capital.\n\n## From Carbon to Biodiversity: Similar but Not the Same\n\n### Key Differences from Carbon Markets\n\nCarbon markets ultimately trade a single metric: tonnes of CO₂-equivalent. Biodiversity is multidimensional:\n\n- Species richness and abundance.\n- Habitat quality and connectivity.\n- Ecosystem functions and resilience.\n\nAttempts to collapse this complexity into a single biodiversity unit can:\n\n- Oversimplify ecological realities.\n- Create incentives to optimise the metric rather than the underlying ecosystem health.\n\nInvestors should be sceptical of schemes that:\n\n- Promise simple, fungible biodiversity units without transparent methodologies.\n- Ignore local context and the rights of Indigenous peoples and local communities.\n\n### Regulatory Drivers\n\nUnlike carbon, which is anchored by global frameworks, biodiversity credits are emerging from:\n\n- National regulations (e.g. “no net loss” or “net gain” requirements for developers).\n- Voluntary corporate commitments under TNFD-aligned disclosure frameworks.\n- Conservation-focused NGOs seeking diversified funding sources.\n\nThis creates a patchwork of:\n\n- Jurisdictions, rules, and enforcement approaches.\n- Credit types and registries.\n- Legal rights attached to credits.\n\n## Design Principles for High-Integrity Biodiversity Credits\n\n### Baselines, Additionality, and Permanence\n\nRobust nature credits require:\n\n- **Credible baselines:** transparent assessment of pre-project biodiversity status.\n- **Additionality:** clear evidence that measured improvements would not have occurred without the project.\n- **Permanence:** long-term safeguards against reversal (e.g. land-use changes, climate impacts).\n\nChallenges include:\n\n- Dynamic ecosystems that naturally fluctuate.\n- Climate change altering habitats regardless of project actions.\n- Land-tenure and governance issues affecting long-term protection.\n\n### Measurement, Verification, and Local Context\n\nMeasurement frameworks need to:\n\n- Combine quantitative indicators (species counts, habitat indices) with qualitative ecological expertise.\n- Be tailored to specific biomes rather than pursuing one-size-fits-all metrics.\n\nVerification should involve:\n\n- Independent ecological experts and auditors.\n- Community consultation and benefit-sharing mechanisms.\n\n## Investor Use Cases and Structures\n\n### Developers and Corporate Offsets\n\nEarly demand is likely to come from:\n\n- Real-estate and infrastructure developers required to offset biodiversity impacts.\n- Corporates with nature-positive or net-gain commitments.\n\nRisk for investors:\n\n- Overreliance on offsetting narratives instead of impact reduction at source.\n- Potential backlash if credits are perceived as “greenwashing habitats.”\n\n### Nature-Focused Funds and Blended Finance\n\nInstitutional capital may access biodiversity via:\n\n- Nature funds combining grants, concessional capital, and commercial tranches.\n- Public–private partnerships where governments underwrite part of the risk.\n\nKey questions:\n\n- How are returns generated—purely via credits, or alongside land value, sustainable agriculture, or eco-tourism?\n- How are benefits shared with local communities and rights holders?\n\n## Risks and Governance Challenges\n\n### Integrity and Reputational Risk\n\nEarly scandals in carbon markets show the cost of weak governance. Biodiversity markets face similar risks:\n\n- Overstated impact claims.\n- Projects that displace communities or undermine local rights.\n- Credits issued for low-ambition or business-as-usual activities.\n\nInvestors should demand:\n\n- Alignment with emerging science-based frameworks (e.g. SBTN for nature).\n- Robust grievance mechanisms and community engagement.\n- Transparent, independent oversight of registries and methodologies.\n\n### Market Fragmentation and Liquidity\n\nWith multiple registries and few standardised products, liquidity is likely to be:\n\n- Thin and project-specific.\n- Highly sensitive to regulatory signals and corporate demand.\n\nAs a result, biodiversity credits may be better suited to:\n\n- Impact strategies with long horizons.\n- Blended-finance vehicles where public or philanthropic capital absorbs first-loss risk.\n\n## Conclusion\n\nBiodiversity credits and nature markets could eventually become important tools in the sustainable-finance toolkit, but they are not ready for broad, commoditised exposure. For now, they are best approached as:\n\n- Targeted, high-engagement investments with strong partners on the ground.\n- Complementary to, not substitutes for, robust nature-related risk management across portfolios.\n\nInvestors who prioritise integrity—clear baselines, additionality, community rights, and conservative claims—will be better positioned to support genuinely nature-positive outcomes while avoiding the reputational risks that accompany hype-driven, weakly governed schemes.`,
+    date: formatDate(335),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Biodiversity Credits and Nature Markets: Opportunities and Pitfalls
+
+## Introduction
+
+If climate finance was the first wave of sustainable finance, biodiversity is rapidly becoming the second.`),
+    ),
+    imageUrl: getImage('expert', 335),
+    tags: ['Biodiversity', 'Nature Markets', 'ESG', 'Sustainable Finance', 'Impact'],
+  },
+  {
+    slug: 'social-impact-bonds-and-outcomes-based-finance',
+    title: 'Social Impact Bonds and Outcomes-Based Finance: Lessons from a Decade of Experimentation',
+    excerpt:
+      'What social impact bonds and outcomes-based contracts are, how they shift risk between governments, investors, and service providers, and what a decade of global experience says about when these structures work—and when they do not.',
+    content: `# Social Impact Bonds and Outcomes-Based Finance: Lessons from a Decade of Experimentation
+
+## Introduction
+
+Social impact bonds (SIBs) and broader outcomes-based contracts were heralded as innovations that could modernise public-service delivery: private investors would fund interventions up front and receive returns only if agreed social outcomes were achieved. Over the past decade, dozens of SIBs have been launched worldwide, targeting recidivism, homelessness, education, healthcare, and employment.\n\nAs of late 2024, the verdict is nuanced. Some projects have delivered measurable improvements and attractive risk-adjusted returns; others have struggled with design complexity, data limitations, or misaligned incentives. For sustainable-finance allocators considering exposure to outcomes-based structures, the key is to treat them as specialised instruments with context-specific strengths—not as a universal solution for all social challenges.\n\n## How Social Impact Bonds Work\n\n### Basic Structure\n\nA typical SIB involves:\n\n- **Government or commissioner:** defines target outcomes and agrees to pay if they are met.\n- **Service providers:** deliver interventions to target populations.\n- **Investors:** provide upfront capital, assuming performance risk.\n- **Intermediary and evaluator:** structure the deal and measure outcomes.\n\nCash flows depend on:\n\n- Achievement of pre-defined outcome metrics (e.g. reduced reoffending, improved employment).\n- Independent verification of results.\n\n### Risk Transfer and Incentives\n\nIn theory:\n\n- Governments shift implementation risk to investors.\n- Investors demand robust evidence and monitoring.\n- Service providers are incentivised to innovate and adapt.\n\nIn practice:\n\n- Contract design can overcomplicate incentives.\n- Small project sizes can make transaction costs heavy relative to capital at risk.\n\n## Lessons from Implemented SIBs\n\n### When They Work Best\n\nSuccessful projects tend to share features:\n\n- Clearly defined, measurable outcomes with credible baselines.\n- Existing evidence that the intervention can work.\n- Strong, mission-aligned service providers.\n- Reasonable time horizons for change to manifest.\n\nSectors with more success include:\n\n- Recidivism reduction.\n- Support for at-risk youth.\n- Certain preventive health interventions.\n\n### Common Pitfalls\n\nFrequent challenges include:\n\n- Overly complex contracts with many indicators.\n- Data limitations that undermine evaluation.\n- Political changes that affect commissioner commitment.\n\nFor investors, these pitfalls translate into:\n\n- Higher structuring and legal costs.\n- Greater uncertainty around timelines and payout profiles.\n\n## Portfolio Role and Structuring Options\n\n### Impact and Return Profiles\n\nSIBs sit at the intersection of:\n\n- Fixed income (contractual payments if outcomes achieved).\n- Private equity/venture (execution and scaling risk).\n- Philanthropy (in some cases, below-market or capital-protection tranches).\n\nReturn expectations should:\n\n- Reflect project risk, size, and evidence base.\n- Recognise that some structures are designed more for catalytic impact than for yield maximisation.\n\n### Blended Finance and Capital Stacks\n\nTo attract institutional capital:\n\n- Blended structures can use philanthropic or public capital to absorb first losses.\n- Senior tranches can then target risk/return profiles closer to traditional credit.\n\nCritical governance questions:\n\n- Who bears which risks (implementation, political, data)?\n- How are conflicts between social outcomes and financial returns resolved?\n\n## Conclusion\n\nSocial impact bonds and outcomes-based finance have demonstrated that it is possible to pay for social value, not just activity. But they are not universally applicable, and poorly designed contracts can waste time and resources.\n\nFor sustainable investors, the opportunity lies in carefully selected, well-structured projects where outcomes are measurable, partners are credible, and capital structures align incentives. In those cases, SIBs can complement broader ESG and impact allocations by directly linking financial returns to verified social improvements.`,
+    date: formatDate(341),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Social Impact Bonds and Outcomes-Based Finance: Lessons from a Decade of Experimentation
+
+## Introduction
+
+Social impact bonds and outcomes-based contracts were heralded as innovations that could modernise public-service delivery.`),
+    ),
+    imageUrl: getImage('expert', 341),
+    tags: ['Social Impact Bonds', 'Outcomes-Based Finance', 'Impact Investing', 'ESG', 'Public Policy'],
+  },
+  {
+    slug: 'green-bonds-market-evolution-taxonomy-and-impact-reporting',
+    title: 'Green Bonds: Market Evolution, Taxonomy Alignment, and Impact Reporting',
+    excerpt:
+      'How the green-bond market has evolved from niche to mainstream, why EU taxonomy and ICMA principles matter for credibility, and what investors should demand in terms of use-of-proceeds, KPIs, and impact reporting to avoid greenwashing.',
+    content: `# Green Bonds: Market Evolution, Taxonomy Alignment, and Impact Reporting
+
+## Introduction
+
+Green bonds have moved from the margins of fixed income to its core. What began as a handful of supranational issues in the late 2000s has, by late 2024, become a market measured in trillions of euros globally, spanning sovereigns, supranationals, agencies, corporates, and financial institutions. Green bonds promise something deceptively simple: standard fixed income exposure with earmarked proceeds dedicated to environmentally beneficial projects.\n\nThe challenge is that “green” is not a self-defining term. Without robust definitions, verification, and reporting, green bonds risk becoming just another marketing label. Over the past decade, market-led standards such as the ICMA Green Bond Principles have converged with regulatory frameworks like the EU taxonomy and the EU Green Bond Standard, raising the bar for what counts as a credible green bond.\n\nThis article reviews the evolution of the green-bond market, explains how regulatory and voluntary frameworks interact as of late 2024, and outlines what institutional investors should require in terms of structure and reporting to ensure that allocations deliver both financial and environmental value. 
+
+## From Niche to Mainstream: Market Development
+
+### Issuer and Instrument Diversity
+
+The green-bond market now encompasses:\n\n- **Sovereigns:** issuing benchmark lines to finance climate and environmental programmes.\n- **Supranationals and agencies:** long-standing anchors of the market.\n- **Corporates and financials:** increasingly active across utilities, real estate, transport, and banks.\n\nInstrument types include:\n\n- Senior unsecured green bonds.\n- Covered and secured structures.\n- Securitisations referencing green assets (e.g. mortgages for energy-efficient buildings).\n\nFor portfolio managers, this breadth means that:\n\n- Green allocations can now be built without extreme concentration.\n- Benchmark-aware strategies can integrate green bonds without dramatically changing duration or credit profiles.\n\n### Performance and Liquidity\n\nEmpirical studies up to late 2024 suggest that:\n\n- Green bonds of similar issuer and seniority trade at spreads comparable to or slightly richer than conventional bonds (“greenium”).\n- Liquidity is generally adequate in benchmark issues, though smaller, label-heavy lines can trade less frequently.\n\nFor investors, the key question is:\n\n- When does a modest greenium represent a reasonable price for enhanced disclosure and impact alignment, and when does it signal over-demand for a limited supply of credible paper?\n\n## Standards, Taxonomies, and Market Integrity\n\n### ICMA Green Bond Principles and Market Practice\n\nThe ICMA Green Bond Principles (GBP) provide a voluntary framework around four core components:\n\n1. **Use of proceeds** dedicated to green projects.\n2. **Process for project evaluation and selection.**\n3. **Management of proceeds.**\n4. **Reporting** on allocation and, increasingly, impact.\n\nAs of 2024, market best practice also includes:\n\n- External reviews (second-party opinions, verifications) from recognised providers.\n- Increasing use of impact KPIs (e.g. tonnes of CO₂e avoided, renewable capacity installed).\n\n### EU Taxonomy and the EU Green Bond Standard\n\nIn Europe, regulatory frameworks are reshaping expectations:\n\n- The **EU taxonomy** defines which economic activities can be considered environmentally sustainable.\n- The **EU Green Bond Standard (EUGBS)** sets a high bar for taxonomy alignment, transparency, and external assurance.\n\nIssuers aligning with EUGBS commit to:\n\n- Use-of-proceeds primarily funding taxonomy-aligned activities.\n- Detailed pre- and post-issuance reporting.\n- External verification of alignment.\n\nFor investors:\n\n- EUGBS and similar regimes can serve as a quality filter.\n- However, taxonomy alignment is not yet universal, and credible non-EU frameworks still exist in parallel.\n\n## What Investors Should Demand\n\n### Use-of-Proceeds and Project Selection\n\nKey investor questions include:\n\n- Are eligible project categories clearly defined and aligned with recognised taxonomies or standards?\n- Is there a **material share** of proceeds allocated to truly additional, transition-enabling investments versus routine capex?\n- How are controversial sectors treated (e.g. gas, nuclear under specific conditions)?\n\n### Allocation and Impact Reporting\n\nHigh-quality green bonds provide:\n\n- **Allocation reports:** detailing how proceeds have been deployed, by category, geography, and timeframe.\n- **Impact reports:** quantifying environmental outcomes using clear KPIs and methodologies.\n\nInvestors should assess:\n\n- Whether impact metrics are relevant, comparable, and transparently calculated.\n- How uncertainties and limitations are disclosed.\n\n## Portfolio Construction and Risk Management\n\n### Integrating Green Bonds into Fixed Income Portfolios\n\nGreen bonds can be used to:\n\n- Align core fixed income allocations with climate or net-zero policies.\n- Tilt exposure toward issuers with robust transition strategies.\n- Provide credible eligible assets for green or Article 9-labelled funds.\n\nHowever, investors must still manage:\n\n- Interest-rate and credit risk as in any bond portfolio.\n- Concentration risk in sectors that dominate issuance (utilities, financials, sovereigns).\n\n### Avoiding Greenwashing\n\nSignals of weaker integrity include:\n\n- Vague or overly broad use-of-proceeds categories.\n- Minimal or boilerplate reporting.\n- Lack of external verification or alignment with any recognised framework.\n\nWhere concerns arise, investors can:\n\n- Engage with issuers to improve frameworks and disclosure.\n- Reallocate toward more credible names or standards-aligned issuance.\n\n## Conclusion\n\nGreen bonds are now central to the sustainable fixed income toolkit, but their value depends on structure and substance, not just labels.\n\nFor institutional allocators, robust frameworks—anchored in ICMA principles, EU taxonomy, and emerging global standards—combined with demanding expectations on reporting and impact are essential to ensure that green-bond allocations deliver real-world environmental benefits alongside competitive risk-adjusted returns.`,
+    date: formatDate(347),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'markets',
+    readTime: calculateReadTime(
+      countWords(`# Green Bonds: Market Evolution, Taxonomy Alignment, and Impact Reporting
+
+## Introduction
+
+Green bonds have moved from the margins of fixed income to its core, but their value depends on structure and substance, not labels.`),
+    ),
+    imageUrl: getImage('markets', 347),
+    tags: ['Green Bonds', 'EU Taxonomy', 'Sustainable Finance', 'ESG', 'Fixed Income'],
+  },
+  {
+    slug: 'carbon-capture-and-storage-investment-frameworks-and-risks',
+    title: 'Carbon Capture and Storage: Investment Frameworks, Revenue Models, and Technology Risks',
+    excerpt:
+      'How carbon capture and storage (CCS) fits into net-zero pathways, which business models and policy tools underpin investable CCS projects, and where technology, policy, and social licence risks remain elevated.',
+    content: `# Carbon Capture and Storage: Investment Frameworks, Revenue Models, and Technology Risks
+
+## Introduction
+
+Carbon capture and storage (CCS) has long been a controversial element of climate strategy. Proponents argue that CCS is essential for decarbonising hard-to-abate sectors and delivering negative emissions via bioenergy with CCS (BECCS) or direct air capture. Critics warn of moral hazard, lock-in of fossil infrastructure, and unproven economics at scale.\n\nBy late 2024, the picture is mixed. A growing pipeline of CCS projects in Europe, North America, and parts of Asia is moving beyond pilot stage, supported by tax credits, contracts for difference, and carbon pricing. At the same time, project cancellations and cost overruns highlight the technology, policy, and execution risks still present.\n\nFor sustainable investors, CCS is neither a panacea nor a pariah; it is a specialised tool whose investability depends on project structure, policy durability, and the quality of counterparties.\n\n## Where CCS Fits in Net-Zero Strategies\n\n### Hard-to-Abate Sectors\n\nCCS is most relevant in sectors where:\n\n- Process emissions are difficult to eliminate (cement, steel, chemicals).\n- Concentrated CO₂ streams make capture technically feasible.\n- Alternatives (full electrification, green hydrogen) are not yet cost-competitive.\n\nInvestors should evaluate:\n\n- Whether CCS is part of a transition pathway toward deeper decarbonisation or a permanent crutch.\n- How capture rates and lifecycle emissions are modelled.\n\n### Negative Emissions\n\nProjects aiming at negative emissions (BECCS, DACCS) raise further questions:\n\n- Land-use and biodiversity impacts for biomass feedstocks.\n- Energy requirements and cost curves for direct air capture.\n- Credibility and governance of carbon-credit issuance for negative emissions.\n\n## Business Models and Policy Support\n\n### Revenue Stacks\n\nCCS projects typically rely on combinations of:\n\n- **Policy incentives:** tax credits (e.g. 45Q-style regimes), grants, or investment subsidies.\n- **Carbon pricing:** revenues from avoiding compliance-market costs.\n- **Offtake agreements:** long-term contracts with emitters or offtakers of stored CO₂.\n\nKey investment questions:\n\n- What share of revenue is policy-dependent?\n- How long are support mechanisms guaranteed?\n- Who bears volume and performance risk if capture rates fall short?\n\n### Transport and Storage Infrastructure\n\nIn many cases, CCS requires shared infrastructure:\n\n- CO₂ pipelines or shipping solutions.\n- Storage hubs (saline aquifers, depleted reservoirs).\n\nThese assets resemble regulated infrastructure if:\n\n- Tariffs are set or overseen by regulators.\n- Long-term ship-or-pay contracts underpin financing.\n\n## Risk Landscape\n\n### Technology and Execution Risk\n\nAlthough capture technologies are maturing, risks remain:\n\n- Scale-up from demonstration to full commercial scale.\n- Integration into existing industrial sites.\n- Long-term storage integrity and monitoring.\n\nInvestors should:\n\n- Distinguish between proven post-combustion capture at scale and more experimental pathways.\n- Require conservative assumptions on uptime, capture rates, and capex.\n\n### Policy and Social Licence Risks\n\nCCS is highly exposed to:\n\n- Shifts in climate policy priorities and subsidy regimes.\n- Public acceptance of storage sites and pipelines.\n- Scrutiny from civil society on whether projects genuinely reduce emissions or prolong fossil use.\n\nThese risks argue for:\n\n- Diversification across jurisdictions and policy frameworks.\n- Preference for projects tightly linked to clear net-zero pathways rather than marginal efficiency gains.\n\n## Conclusion\n\nCCS can play a targeted role in credible net-zero strategies, particularly for hard-to-abate sectors, but it is not a generic solution for all emissions.\n\nFor sustainable finance allocators, CCS exposure should focus on well-structured projects with robust policy support, high-quality sponsors, and clear contributions to transition plans. Conservative underwriting of technology, policy, and social licence risks is essential to avoid stranded or contentious assets.`,
+    date: formatDate(353),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Carbon Capture and Storage: Investment Frameworks, Revenue Models, and Technology Risks
+
+## Introduction
+
+Carbon capture and storage has long been a controversial element of climate strategy, but by late 2024 a growing pipeline of projects is moving beyond pilots.`),
+    ),
+    imageUrl: getImage('expert', 353),
+    tags: ['CCS', 'Carbon Capture', 'Climate Transition', 'Sustainable Finance', 'Infrastructure'],
   },
 ];
