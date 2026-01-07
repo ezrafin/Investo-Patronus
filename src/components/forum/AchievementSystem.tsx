@@ -151,12 +151,54 @@ function AchievementGrid({
   unlocked: string[];
 }) {
   const { t } = useTranslation({ namespace: 'forum' });
+  const { t: tUi } = useTranslation({ namespace: 'ui' });
+  
+  const getAchievementName = (achievement: Achievement): string => {
+    const keyMap: Record<string, string> = {
+      'first_post': 'achievements.items.firstSteps.name',
+      'first_reply': 'achievements.items.contributor.name',
+      'helpful_answer': 'achievements.items.helpful.name',
+      'insightful_post': 'achievements.items.insightful.name',
+      'hundred_likes': 'achievements.items.popular.name',
+      'expert_analyst': 'achievements.items.expertAnalyst.name',
+      'top_contributor': 'achievements.items.topContributor.name',
+      'guru': 'achievements.items.guru.name',
+      'week_streak': 'achievements.items.dedicated.name',
+      'month_streak': 'achievements.items.committed.name',
+      'bookworm': 'achievements.items.bookworm.name',
+      'watchlist_master': 'achievements.items.watchlistMaster.name',
+    };
+    return tUi(keyMap[achievement.id] || achievement.name);
+  };
+  
+  const getAchievementDescription = (achievement: Achievement): string => {
+    const keyMap: Record<string, string> = {
+      'first_post': 'achievements.items.firstSteps.description',
+      'first_reply': 'achievements.items.contributor.description',
+      'helpful_answer': 'achievements.items.helpful.description',
+      'insightful_post': 'achievements.items.insightful.description',
+      'hundred_likes': 'achievements.items.popular.description',
+      'expert_analyst': 'achievements.items.expertAnalyst.description',
+      'top_contributor': 'achievements.items.topContributor.description',
+      'guru': 'achievements.items.guru.description',
+      'week_streak': 'achievements.items.dedicated.description',
+      'month_streak': 'achievements.items.committed.description',
+      'bookworm': 'achievements.items.bookworm.description',
+      'watchlist_master': 'achievements.items.watchlistMaster.description',
+    };
+    return tUi(keyMap[achievement.id] || achievement.description);
+  };
+  
+  const getRarityLabel = (rarity: string): string => {
+    return tUi(`achievements.rarity.${rarity}` as any);
+  };
+
   if (achievements.length === 0) {
     return (
       <div className="text-center py-12 text-muted-foreground">
         <Trophy className="h-12 w-12 mx-auto mb-4 opacity-50" />
         <p className="font-medium mb-2">
-          {tForum('achievements.emptyCategory')}
+          {t('achievements.emptyCategory')}
         </p>
       </div>
     );
@@ -170,10 +212,10 @@ function AchievementGrid({
         <div className="text-center py-8 mb-4 text-muted-foreground border border-border/50 rounded-lg bg-muted/30">
           <Lock className="h-10 w-10 mx-auto mb-3 opacity-50" />
           <p className="font-medium mb-1">
-            {tForum('achievements.noneUnlockedTitle')}
+            {t('achievements.noneUnlockedTitle')}
           </p>
           <p className="text-sm">
-            {tForum('achievements.noneUnlockedDescription')}
+            {t('achievements.noneUnlockedDescription')}
           </p>
         </div>
       )}

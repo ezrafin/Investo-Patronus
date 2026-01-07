@@ -54,58 +54,19 @@ export default function CoursePlatformPage() {
     );
   };
 
-  // Load progress from database or localStorage
+  // Load progress from localStorage (database table not yet created)
   useEffect(() => {
     const loadProgress = async () => {
       setLoadingProgress(true);
       const storageKey = `course_progress_${course.id}`;
       
-      if (user) {
-        // Load from Supabase for authenticated users
+      // Load from localStorage
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
         try {
-          const { data, error } = await supabase
-            .from('course_progress')
-            .select('completed_lessons')
-            .eq('user_id', user.id)
-            .eq('course_id', course.id)
-            .single();
-
-          if (!error && data) {
-            setCompletedLessons(data.completed_lessons || []);
-          } else if (error && error.code !== 'PGRST116') {
-            // PGRST116 = no rows returned, which is fine
-            console.error('Error loading progress:', error);
-            // Fallback to localStorage
-            const saved = localStorage.getItem(storageKey);
-            if (saved) {
-              try {
-                setCompletedLessons(JSON.parse(saved));
-              } catch (e) {
-                console.error('Error parsing localStorage progress:', e);
-              }
-            }
-          }
-        } catch (err) {
-          console.error('Error loading progress:', err);
-          // Fallback to localStorage
-          const saved = localStorage.getItem(storageKey);
-          if (saved) {
-            try {
-              setCompletedLessons(JSON.parse(saved));
-            } catch (e) {
-              console.error('Error parsing localStorage progress:', e);
-            }
-          }
-        }
-      } else {
-        // Load from localStorage for unauthenticated users
-        const saved = localStorage.getItem(storageKey);
-        if (saved) {
-          try {
-            setCompletedLessons(JSON.parse(saved));
-          } catch (e) {
-            console.error('Error parsing localStorage progress:', e);
-          }
+          setCompletedLessons(JSON.parse(saved));
+        } catch (e) {
+          console.error('Error parsing localStorage progress:', e);
         }
       }
       setLoadingProgress(false);
@@ -123,35 +84,7 @@ export default function CoursePlatformPage() {
       setCompletedLessons(updatedLessons);
 
       const storageKey = `course_progress_${course.id}`;
-      
-      if (user) {
-        // Save to Supabase for authenticated users
-        try {
-          const { error } = await supabase
-            .from('course_progress')
-            .upsert({
-              user_id: user.id,
-              course_id: course.id,
-              completed_lessons: updatedLessons,
-              updated_at: new Date().toISOString(),
-            }, {
-              onConflict: 'user_id,course_id'
-            });
-
-          if (error) {
-            console.error('Error saving progress:', error);
-            // Fallback to localStorage
-            localStorage.setItem(storageKey, JSON.stringify(updatedLessons));
-          }
-        } catch (err) {
-          console.error('Error saving progress:', err);
-          // Fallback to localStorage
-          localStorage.setItem(storageKey, JSON.stringify(updatedLessons));
-        }
-      } else {
-        // Save to localStorage for unauthenticated users
-        localStorage.setItem(storageKey, JSON.stringify(updatedLessons));
-      }
+      localStorage.setItem(storageKey, JSON.stringify(updatedLessons));
     }
   };
 
