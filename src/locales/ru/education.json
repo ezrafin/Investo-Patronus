@@ -113,7 +113,10 @@
     "needToPass": "Вам нужно {{rate}}% для прохождения. Попробуйте снова!",
     "lessThanHour": "Меньше 1 часа",
     "outOf": "из",
-    "correct": "правильных"
+    "correct": "правильных",
+    "moduleTestResults": "Результаты теста модуля",
+    "moduleTestPassed": "Тест модуля пройден!",
+    "moduleTestReview": "Повторите материал и попробуйте снова"
   },
   "course": {
     "investment-fundamentals": {

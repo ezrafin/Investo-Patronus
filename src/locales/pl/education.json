@@ -113,7 +113,10 @@
     "needToPass": "Potrzebujesz {{rate}}% do zaliczenia. Spróbuj ponownie!",
     "lessThanHour": "Mniej niż 1 godzina",
     "outOf": "z",
-    "correct": "poprawnych"
+    "correct": "poprawnych",
+    "moduleTestResults": "Wyniki Testu Modułu",
+    "moduleTestPassed": "Test Modułu Zdany!",
+    "moduleTestReview": "Przejrzyj materiał i spróbuj ponownie"
   },
   "course": {
     "investment-fundamentals": {

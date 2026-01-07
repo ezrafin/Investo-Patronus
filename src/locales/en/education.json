@@ -113,6 +113,10 @@
     "needToPass": "You need {{rate}}% to pass. Try again!",
     "lessThanHour": "Less than 1 hour",
     "outOf": "out of",
+    "correct": "correct",
+    "moduleTestResults": "Module Test Results",
+    "moduleTestPassed": "Module Test Passed!",
+    "moduleTestReview": "Review the material and try again",
     "correct": "correct"
   },
   "course": {

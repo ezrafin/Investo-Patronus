@@ -113,7 +113,10 @@
     "needToPass": "Vous avez besoin de {{rate}}% pour réussir. Réessayez !",
     "lessThanHour": "Moins d'1 heure",
     "outOf": "sur",
-    "correct": "correctes"
+    "correct": "correctes",
+    "moduleTestResults": "Résultats du Test du Module",
+    "moduleTestPassed": "Test du Module Réussi !",
+    "moduleTestReview": "Révisez le matériel et réessayez"
   },
   "course": {
     "investment-fundamentals": {

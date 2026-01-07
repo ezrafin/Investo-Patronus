@@ -113,7 +113,10 @@
     "needToPass": "你需要 {{rate}}% 才能通过。再试一次！",
     "lessThanHour": "少于 1 小时",
     "outOf": "共",
-    "correct": "正确"
+    "correct": "正确",
+    "moduleTestResults": "模块测试结果",
+    "moduleTestPassed": "模块测试通过！",
+    "moduleTestReview": "复习材料后再试一次"
   },
   "course": {
     "investment-fundamentals": {

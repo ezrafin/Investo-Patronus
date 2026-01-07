@@ -4,6 +4,8 @@ import { Layout } from '@/components/layout/Layout';
 import { getCourseById, getAllCourses } from '@/data/courseData';
 import { MarkdownContent } from '@/components/content/MarkdownContent';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useUser } from '@/context/UserContext';
+import { supabase } from '@/integrations/supabase/client';
 import { 
   ChevronDown, ChevronRight, Play, CheckCircle, Clock, 
   BookOpen, Award, Lightbulb, ArrowRight, Lock, ArrowLeft
@@ -15,6 +17,7 @@ import { Progress } from '@/components/ui/progress';
 
 export default function CoursePlatformPage() {
   const { t } = useTranslation({ namespace: 'education' });
+  const { user } = useUser();
   const { courseId } = useParams<{ courseId: string }>();
   const course = courseId ? getCourseById(courseId) : getAllCourses()[0];
   
@@ -34,10 +37,14 @@ export default function CoursePlatformPage() {
     }
   }, [course.id]);
   const [completedLessons, setCompletedLessons] = useState<string[]>([]);
+  const [loadingProgress, setLoadingProgress] = useState(true);
   const [showQuiz, setShowQuiz] = useState(false);
   const [showFinalExam, setShowFinalExam] = useState(false);
+  const [showModuleTest, setShowModuleTest] = useState(false);
+  const [selectedModule, setSelectedModule] = useState<typeof course.modules[0] | undefined>(undefined);
   const [quizAnswers, setQuizAnswers] = useState<Record<string, number>>({});
   const [finalExamAnswers, setFinalExamAnswers] = useState<Record<string, number>>({});
+  const [moduleTestAnswers, setModuleTestAnswers] = useState<Record<string, number>>({});
 
   const toggleModule = (moduleId: string) => {
     setExpandedModules(prev => 
@@ -47,12 +54,104 @@ export default function CoursePlatformPage() {
     );
   };
 
-  const totalLessons = course.modules.reduce((acc, m) => acc + m.lessons.length, 0);
-  const progressPercent = (completedLessons.length / totalLessons) * 100;
+  // Load progress from database or localStorage
+  useEffect(() => {
+    const loadProgress = async () => {
+      setLoadingProgress(true);
+      const storageKey = `course_progress_${course.id}`;
+      
+      if (user) {
+        // Load from Supabase for authenticated users
+        try {
+          const { data, error } = await supabase
+            .from('course_progress')
+            .select('completed_lessons')
+            .eq('user_id', user.id)
+            .eq('course_id', course.id)
+            .single();
 
-  const markComplete = () => {
+          if (!error && data) {
+            setCompletedLessons(data.completed_lessons || []);
+          } else if (error && error.code !== 'PGRST116') {
+            // PGRST116 = no rows returned, which is fine
+            console.error('Error loading progress:', error);
+            // Fallback to localStorage
+            const saved = localStorage.getItem(storageKey);
+            if (saved) {
+              try {
+                setCompletedLessons(JSON.parse(saved));
+              } catch (e) {
+                console.error('Error parsing localStorage progress:', e);
+              }
+            }
+          }
+        } catch (err) {
+          console.error('Error loading progress:', err);
+          // Fallback to localStorage
+          const saved = localStorage.getItem(storageKey);
+          if (saved) {
+            try {
+              setCompletedLessons(JSON.parse(saved));
+            } catch (e) {
+              console.error('Error parsing localStorage progress:', e);
+            }
+          }
+        }
+      } else {
+        // Load from localStorage for unauthenticated users
+        const saved = localStorage.getItem(storageKey);
+        if (saved) {
+          try {
+            setCompletedLessons(JSON.parse(saved));
+          } catch (e) {
+            console.error('Error parsing localStorage progress:', e);
+          }
+        }
+      }
+      setLoadingProgress(false);
+    };
+
+    loadProgress();
+  }, [course.id, user]);
+
+  const totalLessons = course.modules.reduce((acc, m) => acc + m.lessons.length, 0);
+  const progressPercent = totalLessons > 0 ? (completedLessons.length / totalLessons) * 100 : 0;
+
+  const markComplete = async () => {
     if (selectedLesson && !completedLessons.includes(selectedLesson.id)) {
-      setCompletedLessons([...completedLessons, selectedLesson.id]);
+      const updatedLessons = [...completedLessons, selectedLesson.id];
+      setCompletedLessons(updatedLessons);
+
+      const storageKey = `course_progress_${course.id}`;
+      
+      if (user) {
+        // Save to Supabase for authenticated users
+        try {
+          const { error } = await supabase
+            .from('course_progress')
+            .upsert({
+              user_id: user.id,
+              course_id: course.id,
+              completed_lessons: updatedLessons,
+              updated_at: new Date().toISOString(),
+            }, {
+              onConflict: 'user_id,course_id'
+            });
+
+          if (error) {
+            console.error('Error saving progress:', error);
+            // Fallback to localStorage
+            localStorage.setItem(storageKey, JSON.stringify(updatedLessons));
+          }
+        } catch (err) {
+          console.error('Error saving progress:', err);
+          // Fallback to localStorage
+          localStorage.setItem(storageKey, JSON.stringify(updatedLessons));
+        }
+      } else {
+        // Save to localStorage for unauthenticated users
+        localStorage.setItem(storageKey, JSON.stringify(updatedLessons));
+      }
     }
   };
 
@@ -60,9 +159,127 @@ export default function CoursePlatformPage() {
     setQuizAnswers({ ...quizAnswers, [questionId]: answerIndex });
   };
 
+  const handleModuleTestClick = (module: typeof course.modules[0]) => {
+    setSelectedModule(module);
+    setShowModuleTest(true);
+    setShowQuiz(false);
+    setShowFinalExam(false);
+    setSelectedLesson(undefined);
+    setModuleTestAnswers({});
+  };
+
+  const handleModuleTestAnswer = (questionId: string, answerIndex: number) => {
+    setModuleTestAnswers({ ...moduleTestAnswers, [questionId]: answerIndex });
+  };
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <Layout>
       <div className="pt-20 pb-8 min-h-screen">
+        {/* Mobile Navigation */}
+        <div className="lg:hidden mb-4 px-4">
+          <div className="glass-card p-4">
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="font-semibold text-sm">{t(`course.${course.id}.title`) || course.title}</h2>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? t('buttons.close', { defaultValue: 'Close' }) : t('buttons.menu', { defaultValue: 'Menu' })}
+              </Button>
+            </div>
+            {mobileMenuOpen && (
+              <div className="space-y-2 max-h-[60vh] overflow-y-auto">
+                {course.modules.map((module, moduleIndex) => (
+                  <div key={module.id} className="space-y-1">
+                    <button
+                      onClick={() => toggleModule(module.id)}
+                      className="w-full flex items-center gap-2 p-2 rounded-lg hover:bg-secondary/50 transition-colors text-left text-sm"
+                    >
+                      {expandedModules.includes(module.id) ? (
+                        <ChevronDown className="h-4 w-4 flex-shrink-0" />
+                      ) : (
+                        <ChevronRight className="h-4 w-4 flex-shrink-0" />
+                      )}
+                      <span className="text-xs text-muted-foreground">Module {moduleIndex + 1}</span>
+                      <span className="truncate flex-1">
+                        {t(`course.${course.id}.module.${module.id}.title`) || module.title}
+                      </span>
+                    </button>
+                    {expandedModules.includes(module.id) && (
+                      <div className="ml-6 space-y-1">
+                        {module.lessons.map((lesson) => (
+                          <button
+                            key={lesson.id}
+                            onClick={() => {
+                              setSelectedLesson(lesson);
+                              setShowQuiz(false);
+                              setShowFinalExam(false);
+                              setShowModuleTest(false);
+                              setMobileMenuOpen(false);
+                            }}
+                            className={`w-full flex items-center gap-2 p-2 rounded-lg text-left text-xs transition-colors ${
+                              selectedLesson?.id === lesson.id
+                                ? 'bg-primary text-primary-foreground'
+                                : 'hover:bg-secondary/50'
+                            }`}
+                          >
+                            {completedLessons.includes(lesson.id) ? (
+                              <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" />
+                            ) : (
+                              <Play className="h-3 w-3 flex-shrink-0" />
+                            )}
+                            <span className="truncate flex-1">
+                              {t(`course.${course.id}.module.${module.id}.lesson.${lesson.id}.title`) || lesson.title}
+                            </span>
+                          </button>
+                        ))}
+                        <button
+                          onClick={() => {
+                            handleModuleTestClick(module);
+                            setMobileMenuOpen(false);
+                          }}
+                          className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-xs text-muted-foreground hover:bg-secondary/50"
+                        >
+                          <Award className="h-3 w-3 flex-shrink-0" />
+                          <span className="truncate">{t('courses.moduleTest')}</span>
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                ))}
+                <button
+                  onClick={() => {
+                    setShowFinalExam(true);
+                    setShowQuiz(false);
+                    setShowModuleTest(false);
+                    setSelectedLesson(undefined);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm font-medium hover:bg-secondary/50 mt-2"
+                >
+                  <Award className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="flex-1 truncate">{t('courses.finalExam')}</span>
+                  {totalLessons === completedLessons.length ? (
+                    <CheckCircle className="h-3 w-3 flex-shrink-0 text-green-500" />
+                  ) : (
+                    <Lock className="h-3 w-3 flex-shrink-0 text-muted-foreground" />
+                  )}
+                </button>
+              </div>
+            )}
+            <div className="mt-3 pt-3 border-t border-border/50">
+              <div className="flex items-center justify-between text-xs mb-1">
+                <span className="text-muted-foreground">{t('courses.progress')}</span>
+                <span className="font-medium">{Math.round(progressPercent)}%</span>
+              </div>
+              <Progress value={progressPercent} className="h-1.5" />
+            </div>
+          </div>
+        </div>
+
         <div className="flex">
           {/* Sidebar */}
           <aside className="w-80 border-r border-border bg-card/50 min-h-[calc(100vh-5rem)] overflow-y-auto hidden lg:block">
@@ -109,14 +326,14 @@ export default function CoursePlatformPage() {
                       {module.lessons.map((lesson, lessonIndex) => (
                         <button
                           key={lesson.id}
-                          onClick={() => { setSelectedLesson(lesson); setShowQuiz(false); setShowFinalExam(false); }}
+                          onClick={() => { setSelectedLesson(lesson); setShowQuiz(false); setShowFinalExam(false); setShowModuleTest(false); }}
                           className={`w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm transition-colors ${
                             selectedLesson?.id === lesson.id 
                               ? 'bg-primary text-primary-foreground' 
                               : 'hover:bg-secondary/50'
                           }`}
                         >
-                              {completedLessons.includes(lesson.id) ? (
+                          {completedLessons.includes(lesson.id) ? (
                             <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                           ) : (
                             <Play className="h-4 w-4 flex-shrink-0" />
@@ -126,7 +343,10 @@ export default function CoursePlatformPage() {
                           </span>
                         </button>
                       ))}
-                      <button className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm text-muted-foreground hover:bg-secondary/50">
+                      <button 
+                        onClick={() => handleModuleTestClick(module)}
+                        className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm text-muted-foreground hover:bg-secondary/50 transition-colors"
+                      >
                         <Award className="h-4 w-4 flex-shrink-0" />
                         <span className="truncate">{t('courses.moduleTest')}</span>
                       </button>
@@ -137,7 +357,7 @@ export default function CoursePlatformPage() {
 
               <div className="mt-4 p-3 border-t border-border">
                 <button 
-                  onClick={() => { setShowFinalExam(true); setShowQuiz(false); setSelectedLesson(undefined); }}
+                  onClick={() => { setShowFinalExam(true); setShowQuiz(false); setShowModuleTest(false); setSelectedLesson(undefined); }}
                   className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm font-medium hover:bg-secondary/50"
                 >
                   <Award className="h-5 w-5 text-primary flex-shrink-0" />
@@ -154,7 +374,7 @@ export default function CoursePlatformPage() {
 
           {/* Main Content */}
           <main className="flex-1 p-6 lg:p-8 overflow-y-auto">
-            {selectedLesson && !showQuiz && !showFinalExam && (
+            {selectedLesson && !showQuiz && !showFinalExam && !showModuleTest && (
               <div className="max-w-4xl mx-auto space-y-6">
                 {/* Video Placeholder */}
                 <div className="glass-card overflow-hidden">
@@ -231,8 +451,82 @@ export default function CoursePlatformPage() {
               </div>
             )}
 
+            {/* Module Test View */}
+            {showModuleTest && selectedModule && !showQuiz && !showFinalExam && (
+              <div className="max-w-2xl mx-auto space-y-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="heading-md">{t('courses.moduleTest')}</h2>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {t(`course.${course.id}.module.${selectedModule.id}.title`) || selectedModule.title}
+                    </p>
+                  </div>
+                  <Button variant="outline" onClick={() => { setShowModuleTest(false); setSelectedModule(undefined); }}>
+                    {t('courses.backToCourse')}
+                  </Button>
+                </div>
+
+                {selectedModule.moduleTest.map((question, qIndex) => (
+                  <div key={question.id} className="glass-card p-6">
+                    <p className="font-medium mb-4">{qIndex + 1}. {question.question}</p>
+                    <div className="space-y-2">
+                      {question.options.map((option, oIndex) => (
+                        <button
+                          key={oIndex}
+                          onClick={() => handleModuleTestAnswer(question.id, oIndex)}
+                          className={`w-full text-left p-3 rounded-lg border transition-colors ${
+                            moduleTestAnswers[question.id] === oIndex
+                              ? moduleTestAnswers[question.id] === question.correctAnswer
+                                ? 'border-green-500 bg-green-500/10'
+                                : 'border-red-500 bg-red-500/10'
+                              : 'border-border hover:border-primary/50'
+                          }`}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                    {moduleTestAnswers[question.id] !== undefined && question.explanation && (
+                      <p className="mt-4 text-sm text-muted-foreground p-3 bg-secondary/50 rounded-lg">
+                        {question.explanation}
+                      </p>
+                    )}
+                  </div>
+                ))}
+
+                {/* Module Test Results */}
+                {Object.keys(moduleTestAnswers).length === selectedModule.moduleTest.length && (
+                  <div className="glass-card p-6 border-l-4 border-primary">
+                    <h3 className="heading-sm mb-4">{t('courses.moduleTestResults', { defaultValue: 'Module Test Results' })}</h3>
+                    {(() => {
+                      const correct = selectedModule.moduleTest.filter(
+                        q => moduleTestAnswers[q.id] === q.correctAnswer
+                      ).length;
+                      const percentage = Math.round((correct / selectedModule.moduleTest.length) * 100);
+                      const passed = percentage >= 70; // 70% pass rate for module tests
+                      return (
+                        <div className="space-y-4">
+                          <div className="text-center">
+                            <div className="text-3xl font-bold mb-2">{percentage}%</div>
+                            <div className="text-sm text-muted-foreground">
+                              {correct} {t('courses.outOf')} {selectedModule.moduleTest.length} {t('courses.correct')}
+                            </div>
+                          </div>
+                          <div className={`text-center p-4 rounded-lg ${passed ? 'bg-green-500/10 border border-green-500/20' : 'bg-yellow-500/10 border border-yellow-500/20'}`}>
+                            <p className={`font-semibold ${passed ? 'text-green-400' : 'text-yellow-400'}`}>
+                              {passed ? t('courses.moduleTestPassed', { defaultValue: 'Module Test Passed!' }) : t('courses.moduleTestReview', { defaultValue: 'Review the material and try again' })}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })()}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Quiz View */}
-            {showQuiz && selectedLesson && !showFinalExam && (
+            {showQuiz && selectedLesson && !showFinalExam && !showModuleTest && (
               <div className="max-w-2xl mx-auto space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="heading-md">{t('courses.miniQuiz')}</h2>
@@ -272,7 +566,7 @@ export default function CoursePlatformPage() {
             )}
 
             {/* Final Exam View */}
-            {showFinalExam && (
+            {showFinalExam && !showModuleTest && (
               <div className="max-w-2xl mx-auto space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
