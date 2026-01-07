@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Clock, BookOpen, Award, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Course } from '@/data/courseData';
 import { getCoursePath } from '@/lib/educationRoutes';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -39,18 +39,9 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
 
       {/* Stats */}
       <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
-        <div className="flex items-center gap-1.5">
-          <BookOpen className="h-4 w-4 flex-shrink-0" />
-          <span>{t('courses.modules', { count: totalModules })}</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <Clock className="h-4 w-4 flex-shrink-0" />
-          <span>{estimatedDuration}</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <Award className="h-4 w-4 flex-shrink-0" />
-          <span>{t('courses.lessons', { count: totalLessons })}</span>
-        </div>
+        <span>{t('courses.modules', { count: totalModules })}</span>
+        <span>{estimatedDuration}</span>
+        <span>{t('courses.lessons', { count: totalLessons })}</span>
       </div>
 
       {/* Footer */}
