@@ -38,6 +38,56 @@ const COMMODITY_SYMBOL_MAP: Record<string, { yahoo: string; finnhub?: string }> 
   'KC': { yahoo: 'KC=F', finnhub: 'JO' },
 };
 
+async function fetchFinnhubPrice(symbol: string, marketType: string): Promise<PriceData | null> {
+  const apiKey = Deno.env.get('FINNHUB_API_KEY');
+  if (!apiKey) {
+    console.log('No Finnhub API key found');
+    return null;
+  }
+
+  try {
+    let finnhubSymbol = symbol;
+    
+    // Map symbols for indices and commodities
+    if (marketType === 'indices' && INDEX_SYMBOL_MAP[symbol]) {
+      finnhubSymbol = INDEX_SYMBOL_MAP[symbol].finnhub || symbol;
+    } else if (marketType === 'commodities' && COMMODITY_SYMBOL_MAP[symbol]) {
+      finnhubSymbol = COMMODITY_SYMBOL_MAP[symbol].finnhub || symbol;
+    }
+    
+    const response = await fetch(
+      `https://finnhub.io/api/v1/quote?symbol=${finnhubSymbol}&token=${apiKey}`
+    );
+    
+    if (!response.ok) {
+      console.log(`Finnhub returned ${response.status} for ${symbol}`);
+      return null;
+    }
+    
+    const data = await response.json();
+    
+    // Check if we have valid data (c = current price)
+    if (data && data.c && data.c > 0) {
+      const prevClose = data.pc || data.c;
+      const change = data.c - prevClose;
+      const changePercent = prevClose > 0 ? (change / prevClose) * 100 : 0;
+      
+      return {
+        symbol,
+        price: data.c,
+        change: change,
+        changePercent: changePercent,
+      };
+    }
+    
+    console.log(`Finnhub returned no price data for ${symbol}`);
+    return null;
+  } catch (error) {
+    console.error(`Finnhub error for ${symbol}:`, error);
+    return null;
+  }
+}
+
 async function fetchYahooFinancePrice(symbol: string, marketType: string): Promise<PriceData | null> {
   try {
     let yahooSymbol = symbol;
@@ -66,6 +116,7 @@ async function fetchYahooFinancePrice(symbol: string, marketType: string): Promi
     );
     
     if (!response.ok) {
+      console.log(`Yahoo Finance returned ${response.status} for ${symbol}`);
       return null;
     }
     
@@ -81,6 +132,7 @@ async function fetchYahooFinancePrice(symbol: string, marketType: string): Promi
       };
     }
     
+    console.log(`Yahoo Finance returned no data for ${symbol}`);
     return null;
   } catch (error) {
     console.error(`Yahoo Finance error for ${symbol}:`, error);
@@ -246,6 +298,11 @@ serve(async (req) => {
     // For crypto, try CoinGecko first (free, no key needed)
     if (marketType === 'crypto') {
       priceData = await fetchCoinGeckoPrice(symbol);
+    }
+
+    // Try Finnhub first for stocks (more reliable than Alpha Vantage free tier)
+    if (!priceData && (marketType === 'stocks' || marketType === 'indices')) {
+      priceData = await fetchFinnhubPrice(symbol, marketType);
     }
 
     // Try Alpha Vantage (but skip indices as it doesn't support them well)
