@@ -453,13 +453,19 @@
   "careersPage": {
     "badge": "Careers",
     "heroTitle": "Join Our Team",
-    "heroSubtitle": "Help us democratize access to professional-grade financial data. We are building the future of investment analytics.",
+    "heroSubtitle": "Build the future of financial education and market analysis",
     "positionsTitle": "Open Positions",
-    "ctaTitle": "Do you interested in our mission?",
-    "ctaSubtitle": "We are always looking for talented people in IT and Finance. Send us your resume and we will keep you in mind for future opportunities.",
-    "ctaButton": "Send Your Resume",
+    "posDesigner": "We're looking for a talented Product Designer to join our team in Lugano. You'll work on designing intuitive user experiences for our financial platform.",
     "typeLabel": "Type",
-    "posDesigner": "Design intuitive user experiences for our investment tools.",
+    "fullTime": "Full-time",
+    "fulltime": "Full-time",
+    "partTime": "Part-time",
+    "parttime": "Part-time",
+    "contract": "Contract",
+    "internship": "Internship",
+    "ctaTitle": "Don't see a role that fits?",
+    "ctaSubtitle": "We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.",
+    "ctaButton": "Apply Now",
     "form": {
       "title": "Job Application",
       "fullName": "Full Name",
@@ -618,6 +624,7 @@
   },
   "globalSearch": {
     "placeholder": "Search companies, news, forum, tickers, authors...",
+    "searchPlaceholder": "Search...",
     "searching": "Searching...",
     "noResults": "No results found.",
     "typeToSearch": "Type to search companies, news, forum, tickers, and authors...",
@@ -716,9 +723,6 @@
     "tagsLabel": "Tags",
     "clearFilters": "Clear Filters"
   },
-  "globalSearch": {
-    "searchPlaceholder": "Search..."
-  },
   "analyticsPage": {
     "filterByAuthor": "Filter by author:",
     "allAuthors": "All Authors"
@@ -738,12 +742,6 @@
     "hideFilters": "Hide Filters",
     "recommendationTitle": "Recommendation",
     "recommendationText": "Start with the \"Banks vs Investments\" section to understand what real returns various financial instruments provide."
-  },
-  "careersPage": {
-    "fullTime": "Full-time",
-    "partTime": "Part-time",
-    "contract": "Contract",
-    "internship": "Internship"
   },
   "pagination": {
     "previous": "Previous",
@@ -800,6 +798,106 @@
     "cancel": "Cancel",
     "save": "Save Preferences",
     "privacyLinkText": "Privacy Policy"
+  },
+  "achievements": {
+    "title": "Achievements",
+    "loading": "Loading achievements...",
+    "rarity": {
+      "common": "COMMON",
+      "rare": "RARE",
+      "epic": "EPIC",
+      "legendary": "LEGENDARY"
+    },
+    "points": "pts",
+    "items": {
+      "firstSteps": {
+        "name": "First Steps",
+        "description": "Created your first forum discussion"
+      },
+      "contributor": {
+        "name": "Contributor",
+        "description": "Posted your first reply"
+      },
+      "helpful": {
+        "name": "Helpful",
+        "description": "Received 10 helpful reactions"
+      },
+      "insightful": {
+        "name": "Insightful",
+        "description": "Received 10 insightful reactions"
+      },
+      "popular": {
+        "name": "Popular",
+        "description": "Received 100 likes on your posts"
+      },
+      "expertAnalyst": {
+        "name": "Expert Analyst",
+        "description": "Reached 500 reputation points"
+      },
+      "topContributor": {
+        "name": "Top Contributor",
+        "description": "Made 100 posts or replies"
+      },
+      "guru": {
+        "name": "Guru",
+        "description": "Reached 1000 reputation points"
+      },
+      "dedicated": {
+        "name": "Dedicated",
+        "description": "7-day activity streak"
+      },
+      "committed": {
+        "name": "Committed",
+        "description": "30-day activity streak"
+      },
+      "bookworm": {
+        "name": "Bookworm",
+        "description": "Read 50 articles"
+      },
+      "watchlistMaster": {
+        "name": "Watchlist Master",
+        "description": "Created 5 watchlists"
+      }
+    }
+  },
+  "profilePage": {
+    "title": "Profile Settings",
+    "clickAvatarToChange": "Click avatar to change",
+    "reputation": "Reputation",
+    "posts": "Posts",
+    "comments": "Comments",
+    "basicInformation": "Basic Information",
+    "emailSettings": "Email Settings",
+    "privacySettings": "Privacy Settings",
+    "currentEmail": "Current Email",
+    "newEmailAddress": "New Email Address",
+    "emailChangeNote": "You'll need to confirm the change from both your old and new email addresses.",
+    "changeEmail": "Change Email",
+    "sendingConfirmation": "Saving...",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "profileVisibility": "Profile Visibility",
+    "visibilityPublic": "Public - Anyone can view",
+    "visibilityFriends": "Friends - Only followed users",
+    "visibilityPrivate": "Private - Only you"
+  },
+  "careersPage": {
+    "badge": "Careers",
+    "heroTitle": "Join Our Team",
+    "heroSubtitle": "Build the future of financial education and market analysis",
+    "positionsTitle": "Open Positions",
+    "posDesigner": "We're looking for a talented Product Designer to join our team in Lugano. You'll work on designing intuitive user experiences for our financial platform.",
+    "typeLabel": "Type",
+    "fulltime": "Full-time",
+    "parttime": "Part-time",
+    "contract": "Contract",
+    "internship": "Internship",
+    "ctaTitle": "Don't see a role that fits?",
+    "ctaSubtitle": "We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.",
+    "ctaButton": "Apply Now",
+    "form": {
+      "title": "Job Application"
+    }
   }
 }
 

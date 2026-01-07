@@ -618,6 +618,7 @@
   },
   "globalSearch": {
     "placeholder": "Unternehmen, Nachrichten, Forum, Ticker, Autoren suchen...",
+    "searchPlaceholder": "Suchen...",
     "searching": "Suche...",
     "noResults": "Keine Ergebnisse gefunden.",
     "typeToSearch": "Tippen Sie, um Unternehmen, Nachrichten, Forum, Ticker und Autoren zu suchen...",
@@ -716,9 +717,6 @@
     "tagsLabel": "Tags",
     "clearFilters": "Filter zurücksetzen"
   },
-  "globalSearch": {
-    "searchPlaceholder": "Suchen..."
-  },
   "analyticsPage": {
     "filterByAuthor": "Nach Autor filtern:",
     "allAuthors": "Alle Autoren"
@@ -800,5 +798,107 @@
     "cancel": "Abbrechen",
     "save": "Einstellungen speichern",
     "privacyLinkText": "Datenschutzrichtlinie"
+  },
+  "achievements": {
+    "title": "Erfolge",
+    "loading": "Erfolge werden geladen...",
+    "rarity": {
+      "common": "GEWÖHNLICH",
+      "rare": "SELTEN",
+      "epic": "EPISCH",
+      "legendary": "LEGENDÄR"
+    },
+    "points": "Pkt",
+    "items": {
+      "firstSteps": {
+        "name": "Erste Schritte",
+        "description": "Erstellt deine erste Forumsdiskussion"
+      },
+      "contributor": {
+        "name": "Mitwirkender",
+        "description": "Veröffentlicht deine erste Antwort"
+      },
+      "helpful": {
+        "name": "Hilfreich",
+        "description": "Erhalten 10 hilfreiche Reaktionen"
+      },
+      "insightful": {
+        "name": "Einsichtsvoll",
+        "description": "Erhalten 10 einsichtsvolle Reaktionen"
+      },
+      "popular": {
+        "name": "Beliebt",
+        "description": "Erhalten 100 Likes auf deinen Beiträgen"
+      },
+      "expertAnalyst": {
+        "name": "Experten-Analyst",
+        "description": "Erreicht 500 Reputationspunkte"
+      },
+      "topContributor": {
+        "name": "Top-Mitwirkender",
+        "description": "100 Beiträge oder Antworten erstellt"
+      },
+      "guru": {
+        "name": "Guru",
+        "description": "Erreicht 1000 Reputationspunkte"
+      },
+      "dedicated": {
+        "name": "Hingebungsvoll",
+        "description": "7-Tage-Aktivitätsstreak"
+      },
+      "committed": {
+        "name": "Engagiert",
+        "description": "30-Tage-Aktivitätsstreak"
+      },
+      "bookworm": {
+        "name": "Bücherwurm",
+        "description": "50 Artikel gelesen"
+      },
+      "watchlistMaster": {
+        "name": "Watchlist-Meister",
+        "description": "5 Watchlists erstellt"
+      }
+    }
+  },
+  "profilePage": {
+    "title": "Profil-Einstellungen",
+    "clickAvatarToChange": "Avatar anklicken zum Ändern",
+    "reputation": "Reputation",
+    "posts": "Beiträge",
+    "comments": "Kommentare",
+    "basicInformation": "Grundinformationen",
+    "emailSettings": "E-Mail-Einstellungen",
+    "privacySettings": "Datenschutz-Einstellungen",
+    "currentEmail": "Aktuelle E-Mail",
+    "newEmailAddress": "Neue E-Mail-Adresse",
+    "emailChangeNote": "Du musst die Änderung von deiner alten und neuen E-Mail-Adresse bestätigen.",
+    "changeEmail": "E-Mail ändern",
+    "sendingConfirmation": "Speichern...",
+    "saveChanges": "Änderungen speichern",
+    "saving": "Speichern...",
+    "profileVisibility": "Profil-Sichtbarkeit",
+    "visibilityPublic": "Öffentlich - Jeder kann ansehen",
+    "visibilityFriends": "Freunde - Nur gefolgte Benutzer",
+    "visibilityPrivate": "Privat - Nur du"
+  },
+  "careersPage": {
+    "badge": "Karriere",
+    "heroTitle": "Unserem Team beitreten",
+    "heroSubtitle": "Baue die Zukunft der Finanzbildung und Marktanalyse",
+    "positionsTitle": "Offene Stellen",
+    "posDesigner": "Wir suchen einen talentierten Produktdesigner für unser Team in Lugano. Du wirst an der Gestaltung intuitiver Benutzererfahrungen für unsere Finanzplattform arbeiten.",
+    "typeLabel": "Typ",
+    "fullTime": "Vollzeit",
+    "fulltime": "Vollzeit",
+    "partTime": "Teilzeit",
+    "parttime": "Teilzeit",
+    "contract": "Vertrag",
+    "internship": "Praktikum",
+    "ctaTitle": "Keine passende Rolle gefunden?",
+    "ctaSubtitle": "Wir suchen immer talentierte Menschen. Sende uns deinen Lebenslauf und wir werden dich für zukünftige Möglichkeiten im Hinterkopf behalten.",
+    "ctaButton": "Jetzt bewerben",
+    "form": {
+      "title": "Bewerbung"
+    }
   }
 }

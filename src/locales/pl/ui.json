@@ -618,6 +618,7 @@
   },
   "globalSearch": {
     "placeholder": "Szukaj firm, wiadomości, forum, tickerów, autorów...",
+    "searchPlaceholder": "Szukaj...",
     "searching": "Wyszukiwanie...",
     "noResults": "Nie znaleziono wyników.",
     "typeToSearch": "Wpisz, aby szukać firm, wiadomości, forum, tickerów i autorów...",
@@ -716,9 +717,6 @@
     "tagsLabel": "Tagi",
     "clearFilters": "Wyczyść filtry"
   },
-  "globalSearch": {
-    "searchPlaceholder": "Szukaj..."
-  },
   "analyticsPage": {
     "filterByAuthor": "Filtruj według autora:",
     "allAuthors": "Wszyscy Autorzy"
@@ -800,5 +798,107 @@
     "cancel": "Anuluj",
     "save": "Zapisz preferencje",
     "privacyLinkText": "Polityka prywatności"
+  },
+  "achievements": {
+    "title": "Osiągnięcia",
+    "loading": "Ładowanie osiągnięć...",
+    "rarity": {
+      "common": "POWSZECHNE",
+      "rare": "RZADKIE",
+      "epic": "EPICKIE",
+      "legendary": "LEGENDARNE"
+    },
+    "points": "pkt",
+    "items": {
+      "firstSteps": {
+        "name": "Pierwsze Kroki",
+        "description": "Utworzyłeś swoją pierwszą dyskusję na forum"
+      },
+      "contributor": {
+        "name": "Współautor",
+        "description": "Opublikowałeś swoją pierwszą odpowiedź"
+      },
+      "helpful": {
+        "name": "Pomocny",
+        "description": "Otrzymałeś 10 pomocnych reakcji"
+      },
+      "insightful": {
+        "name": "Wnikliwy",
+        "description": "Otrzymałeś 10 wnikliwych reakcji"
+      },
+      "popular": {
+        "name": "Popularny",
+        "description": "Otrzymałeś 100 polubień na swoich postach"
+      },
+      "expertAnalyst": {
+        "name": "Ekspert Analityk",
+        "description": "Osiągnąłeś 500 punktów reputacji"
+      },
+      "topContributor": {
+        "name": "Top Współautor",
+        "description": "Utworzyłeś 100 postów lub odpowiedzi"
+      },
+      "guru": {
+        "name": "Guru",
+        "description": "Osiągnąłeś 1000 punktów reputacji"
+      },
+      "dedicated": {
+        "name": "Oddany",
+        "description": "7-dniowa seria aktywności"
+      },
+      "committed": {
+        "name": "Zaangażowany",
+        "description": "30-dniowa seria aktywności"
+      },
+      "bookworm": {
+        "name": "Mól książkowy",
+        "description": "Przeczytałeś 50 artykułów"
+      },
+      "watchlistMaster": {
+        "name": "Mistrz List",
+        "description": "Utworzyłeś 5 list obserwowanych"
+      }
+    }
+  },
+  "profilePage": {
+    "title": "Ustawienia Profilu",
+    "clickAvatarToChange": "Kliknij avatar, aby zmienić",
+    "reputation": "Reputacja",
+    "posts": "Posty",
+    "comments": "Komentarze",
+    "basicInformation": "Podstawowe Informacje",
+    "emailSettings": "Ustawienia Email",
+    "privacySettings": "Ustawienia Prywatności",
+    "currentEmail": "Aktualny Email",
+    "newEmailAddress": "Nowy Adres Email",
+    "emailChangeNote": "Musisz potwierdzić zmianę z obu swoich starych i nowych adresów email.",
+    "changeEmail": "Zmień Email",
+    "sendingConfirmation": "Zapisywanie...",
+    "saveChanges": "Zapisz Zmiany",
+    "saving": "Zapisywanie...",
+    "profileVisibility": "Widoczność Profilu",
+    "visibilityPublic": "Publiczny - Każdy może zobaczyć",
+    "visibilityFriends": "Przyjaciele - Tylko obserwowani użytkownicy",
+    "visibilityPrivate": "Prywatny - Tylko ty"
+  },
+  "careersPage": {
+    "badge": "Kariera",
+    "heroTitle": "Dołącz do Naszego Zespołu",
+    "heroSubtitle": "Buduj przyszłość edukacji finansowej i analizy rynku",
+    "positionsTitle": "Otwarte Stanowiska",
+    "posDesigner": "Szukamy utalentowanego projektanta produktów do naszego zespołu w Lugano. Będziesz pracować nad projektowaniem intuicyjnych doświadczeń użytkownika dla naszej platformy finansowej.",
+    "typeLabel": "Typ",
+    "fullTime": "Pełny etat",
+    "fulltime": "Pełny etat",
+    "partTime": "Niepełny etat",
+    "parttime": "Niepełny etat",
+    "contract": "Umowa",
+    "internship": "Staż",
+    "ctaTitle": "Nie widzisz odpowiedniej roli?",
+    "ctaSubtitle": "Zawsze szukamy utalentowanych osób. Wyślij nam swoje CV, a będziemy pamiętać o tobie przy przyszłych możliwościach.",
+    "ctaButton": "Złóż Podanie",
+    "form": {
+      "title": "Podanie o Pracę"
+    }
   }
 }

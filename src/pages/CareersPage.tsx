@@ -11,7 +11,7 @@ const positions = [
   {
     title: 'Product Designer',
     location: 'Lugano',
-    type: 'Full-time',
+    type: 'fulltime',
     descriptionKey: 'careersPage.posDesigner',
   },
 ];

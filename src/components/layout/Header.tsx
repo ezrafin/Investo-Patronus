@@ -262,7 +262,7 @@ export function Header() {
                       className="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none w-full hover:bg-accent hover:text-accent-foreground"
                     >
                       <Globe className="mr-2 h-4 w-4" />
-                      Language
+                      {t('common.language')}
                       <ChevronDown className={`ml-auto h-4 w-4 transition-transform duration-200 ${languageMenuOpen ? 'rotate-180' : ''}`} />
                     </button>
                     
@@ -327,7 +327,7 @@ export function Header() {
                           </>
                         );
                       })()}
-                      Theme
+                      {t('common.theme')}
                       <ChevronDown className={`ml-auto h-4 w-4 transition-transform duration-200 ${themeMenuOpen ? 'rotate-180' : ''}`} />
                     </button>
                     

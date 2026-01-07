@@ -17,7 +17,48 @@ export function AchievementSystem({
   onOpenChange,
   trigger
 }: AchievementSystemProps = {}) {
-  const { t } = useTranslation({ namespace: 'forum' });
+  const { t: tForum } = useTranslation({ namespace: 'forum' });
+  const { t } = useTranslation({ namespace: 'ui' });
+  
+  const getAchievementName = (achievement: Achievement): string => {
+    const keyMap: Record<string, string> = {
+      'first_post': 'achievements.items.firstSteps.name',
+      'first_reply': 'achievements.items.contributor.name',
+      'helpful_answer': 'achievements.items.helpful.name',
+      'insightful_post': 'achievements.items.insightful.name',
+      'hundred_likes': 'achievements.items.popular.name',
+      'expert_analyst': 'achievements.items.expertAnalyst.name',
+      'top_contributor': 'achievements.items.topContributor.name',
+      'guru': 'achievements.items.guru.name',
+      'week_streak': 'achievements.items.dedicated.name',
+      'month_streak': 'achievements.items.committed.name',
+      'bookworm': 'achievements.items.bookworm.name',
+      'watchlist_master': 'achievements.items.watchlistMaster.name',
+    };
+    return t(keyMap[achievement.id] || achievement.name);
+  };
+  
+  const getAchievementDescription = (achievement: Achievement): string => {
+    const keyMap: Record<string, string> = {
+      'first_post': 'achievements.items.firstSteps.description',
+      'first_reply': 'achievements.items.contributor.description',
+      'helpful_answer': 'achievements.items.helpful.description',
+      'insightful_post': 'achievements.items.insightful.description',
+      'hundred_likes': 'achievements.items.popular.description',
+      'expert_analyst': 'achievements.items.expertAnalyst.description',
+      'top_contributor': 'achievements.items.topContributor.description',
+      'guru': 'achievements.items.guru.description',
+      'week_streak': 'achievements.items.dedicated.description',
+      'month_streak': 'achievements.items.committed.description',
+      'bookworm': 'achievements.items.bookworm.description',
+      'watchlist_master': 'achievements.items.watchlistMaster.description',
+    };
+    return t(keyMap[achievement.id] || achievement.description);
+  };
+  
+  const getRarityLabel = (rarity: string): string => {
+    return t(`achievements.rarity.${rarity}` as any);
+  };
   const {
     user
   } = useUser();
@@ -71,24 +112,24 @@ export function AchievementSystem({
         </DialogTrigger>}
       <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>{t('achievements.dialogTitle')}</DialogTitle>
+          <DialogTitle>{tForum('achievements.dialogTitle')}</DialogTitle>
           <DialogDescription>
-            {t('achievements.dialogDescription')}
+            {tForum('achievements.dialogDescription')}
           </DialogDescription>
         </DialogHeader>
 
         {loading ? <div className="text-center py-8">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
             <p className="text-muted-foreground">
-              {t('achievements.loading')}
+              {tForum('achievements.loading')}
             </p>
           </div> : <Tabs defaultValue="all" className="w-full">
             <TabsList className="grid w-full grid-cols-5">
-              <TabsTrigger value="all">{t('achievements.tabsAll')}</TabsTrigger>
-              <TabsTrigger value="forum">{t('achievements.tabsForum')}</TabsTrigger>
-              <TabsTrigger value="content">{t('achievements.tabsContent')}</TabsTrigger>
-              <TabsTrigger value="social">{t('achievements.tabsSocial')}</TabsTrigger>
-              <TabsTrigger value="milestone">{t('achievements.tabsMilestone')}</TabsTrigger>
+              <TabsTrigger value="all">{tForum('achievements.tabsAll')}</TabsTrigger>
+              <TabsTrigger value="forum">{tForum('achievements.tabsForum')}</TabsTrigger>
+              <TabsTrigger value="content">{tForum('achievements.tabsContent')}</TabsTrigger>
+              <TabsTrigger value="social">{tForum('achievements.tabsSocial')}</TabsTrigger>
+              <TabsTrigger value="milestone">{tForum('achievements.tabsMilestone')}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="all" className="mt-4">
@@ -115,7 +156,7 @@ function AchievementGrid({
       <div className="text-center py-12 text-muted-foreground">
         <Trophy className="h-12 w-12 mx-auto mb-4 opacity-50" />
         <p className="font-medium mb-2">
-          {t('achievements.emptyCategory')}
+          {tForum('achievements.emptyCategory')}
         </p>
       </div>
     );
@@ -129,10 +170,10 @@ function AchievementGrid({
         <div className="text-center py-8 mb-4 text-muted-foreground border border-border/50 rounded-lg bg-muted/30">
           <Lock className="h-10 w-10 mx-auto mb-3 opacity-50" />
           <p className="font-medium mb-1">
-            {t('achievements.noneUnlockedTitle')}
+            {tForum('achievements.noneUnlockedTitle')}
           </p>
           <p className="text-sm">
-            {t('achievements.noneUnlockedDescription')}
+            {tForum('achievements.noneUnlockedDescription')}
           </p>
         </div>
       )}
@@ -147,18 +188,18 @@ function AchievementGrid({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
                   <h4 className={cn('font-semibold', isUnlocked ? 'text-foreground' : 'text-muted-foreground')}>
-                    {achievement.name}
+                    {getAchievementName(achievement)}
                   </h4>
                   {!isUnlocked && <Lock className="h-4 w-4 text-muted-foreground" />}
                 </div>
-                <p className="text-sm text-muted-foreground mb-2">{achievement.description}</p>
+                <p className="text-sm text-muted-foreground mb-2">{getAchievementDescription(achievement)}</p>
                 <div className="flex items-center gap-2">
                   <span className={cn('text-xs font-medium', getRarityColor(achievement.rarity))}>
-                    {achievement.rarity.toUpperCase()}
+                    {getRarityLabel(achievement.rarity)}
                   </span>
                   <span className="text-xs text-muted-foreground">•</span>
                   <span className="text-xs text-muted-foreground">
-                    {achievement.points} {t('achievements.pointsSuffix')}
+                    {achievement.points} {t('achievements.points')}
                   </span>
                 </div>
               </div>

@@ -618,6 +618,7 @@
   },
   "globalSearch": {
     "placeholder": "搜索公司、新闻、论坛、代码、作者...",
+    "searchPlaceholder": "搜索...",
     "searching": "搜索中...",
     "noResults": "未找到结果。",
     "typeToSearch": "输入以搜索公司、新闻、论坛、代码和作者...",
@@ -716,9 +717,6 @@
     "tagsLabel": "标签",
     "clearFilters": "清除筛选"
   },
-  "globalSearch": {
-    "searchPlaceholder": "搜索..."
-  },
   "analyticsPage": {
     "filterByAuthor": "按作者筛选：",
     "allAuthors": "所有作者"
@@ -800,5 +798,107 @@
     "cancel": "取消",
     "save": "保存偏好",
     "privacyLinkText": "隐私政策"
+  },
+  "achievements": {
+    "title": "成就",
+    "loading": "加载成就中...",
+    "rarity": {
+      "common": "普通",
+      "rare": "稀有",
+      "epic": "史诗",
+      "legendary": "传奇"
+    },
+    "points": "分",
+    "items": {
+      "firstSteps": {
+        "name": "第一步",
+        "description": "创建了你的第一个论坛讨论"
+      },
+      "contributor": {
+        "name": "贡献者",
+        "description": "发布了你的第一条回复"
+      },
+      "helpful": {
+        "name": "乐于助人",
+        "description": "收到了10个有用反应"
+      },
+      "insightful": {
+        "name": "有见地",
+        "description": "收到了10个有见地反应"
+      },
+      "popular": {
+        "name": "受欢迎",
+        "description": "你的帖子收到了100个赞"
+      },
+      "expertAnalyst": {
+        "name": "专家分析师",
+        "description": "达到500声望点"
+      },
+      "topContributor": {
+        "name": "顶级贡献者",
+        "description": "发布了100个帖子或回复"
+      },
+      "guru": {
+        "name": "大师",
+        "description": "达到1000声望点"
+      },
+      "dedicated": {
+        "name": "专注",
+        "description": "7天活动连续"
+      },
+      "committed": {
+        "name": "投入",
+        "description": "30天活动连续"
+      },
+      "bookworm": {
+        "name": "书虫",
+        "description": "阅读了50篇文章"
+      },
+      "watchlistMaster": {
+        "name": "观察列表大师",
+        "description": "创建了5个观察列表"
+      }
+    }
+  },
+  "profilePage": {
+    "title": "个人资料设置",
+    "clickAvatarToChange": "点击头像更改",
+    "reputation": "声望",
+    "posts": "帖子",
+    "comments": "评论",
+    "basicInformation": "基本信息",
+    "emailSettings": "电子邮件设置",
+    "privacySettings": "隐私设置",
+    "currentEmail": "当前电子邮件",
+    "newEmailAddress": "新电子邮件地址",
+    "emailChangeNote": "你需要从旧的和新的电子邮件地址确认更改。",
+    "changeEmail": "更改电子邮件",
+    "sendingConfirmation": "保存中...",
+    "saveChanges": "保存更改",
+    "saving": "保存中...",
+    "profileVisibility": "个人资料可见性",
+    "visibilityPublic": "公开 - 任何人都可以查看",
+    "visibilityFriends": "朋友 - 仅关注用户",
+    "visibilityPrivate": "私密 - 仅你自己"
+  },
+  "careersPage": {
+    "badge": "职业",
+    "heroTitle": "加入我们的团队",
+    "heroSubtitle": "构建金融教育和市场分析的未来",
+    "positionsTitle": "开放职位",
+    "posDesigner": "我们正在寻找一位有才华的产品设计师加入我们在卢加诺的团队。你将致力于为我们的金融平台设计直观的用户体验。",
+    "typeLabel": "类型",
+    "fullTime": "全职",
+    "fulltime": "全职",
+    "partTime": "兼职",
+    "parttime": "兼职",
+    "contract": "合同",
+    "internship": "实习",
+    "ctaTitle": "没有看到合适的职位？",
+    "ctaSubtitle": "我们一直在寻找有才华的人才。发送你的简历，我们会为未来的机会记住你。",
+    "ctaButton": "立即申请",
+    "form": {
+      "title": "工作申请"
+    }
   }
 }

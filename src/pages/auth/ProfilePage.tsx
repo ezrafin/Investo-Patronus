@@ -168,7 +168,7 @@ export default function ProfilePage() {
     <Layout>
       <div className="section-spacing">
         <div className="container-wide max-w-4xl">
-          <h1 className="heading-lg mb-8">Profile Settings</h1>
+          <h1 className="heading-lg mb-8">{t('profilePage.title')}</h1>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Sidebar Stats */}
@@ -191,7 +191,7 @@ export default function ProfilePage() {
                   </button>
                   <div className="text-center">
                     <h3 className="font-semibold">{profile?.display_name || 'User'}</h3>
-                    <p className="text-xs text-muted-foreground mt-1">Click avatar to change</p>
+                    <p className="text-xs text-muted-foreground mt-1">{t('profilePage.clickAvatarToChange')}</p>
                   </div>
                 </div>
 
@@ -199,21 +199,21 @@ export default function ProfilePage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <TrendingUp className="h-4 w-4" />
-                      <span>Reputation</span>
+                      <span>{t('profilePage.reputation')}</span>
                     </div>
                     <span className="font-semibold">{profile?.reputation || 0}</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <MessageSquare className="h-4 w-4" />
-                      <span>Posts</span>
+                      <span>{t('profilePage.posts')}</span>
                     </div>
                     <span className="font-semibold">{profile?.post_count || 0}</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <BookOpen className="h-4 w-4" />
-                      <span>Comments</span>
+                      <span>{t('profilePage.comments')}</span>
                     </div>
                     <span className="font-semibold">{profile?.comment_count || 0}</span>
                   </div>
@@ -230,7 +230,7 @@ export default function ProfilePage() {
               <div className="premium-card p-6">
                 <h2 className="font-heading font-semibold text-lg mb-6 flex items-center gap-2">
                   <User className="h-5 w-5" />
-                  Basic Information
+                  {t('profilePage.basicInformation')}
                 </h2>
 
                 <div className="space-y-4">
@@ -262,12 +262,12 @@ export default function ProfilePage() {
               <div className="premium-card p-6">
                 <h2 className="font-heading font-semibold text-lg mb-6 flex items-center gap-2">
                   <Mail className="h-5 w-5" />
-                  Email Settings
+                  {t('profilePage.emailSettings')}
                 </h2>
 
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="currentEmail">Current Email</Label>
+                    <Label htmlFor="currentEmail">{t('profilePage.currentEmail')}</Label>
                     <Input
                       id="currentEmail"
                       type="email"
@@ -278,7 +278,7 @@ export default function ProfilePage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="newEmail">New Email Address</Label>
+                    <Label htmlFor="newEmail">{t('profilePage.newEmailAddress')}</Label>
                     <Input
                       id="newEmail"
                       type="email"
@@ -287,7 +287,7 @@ export default function ProfilePage() {
                       placeholder={t('auth.emailPlaceholderExample')}
                     />
                     <p className="text-xs text-muted-foreground">
-                      You'll need to confirm the change from both your old and new email addresses.
+                      {t('profilePage.emailChangeNote')}
                     </p>
                   </div>
 
@@ -296,7 +296,7 @@ export default function ProfilePage() {
                     disabled={changingEmail || !newEmail}
                     variant="outline"
                   >
-                    {changingEmail ? 'Sending confirmation...' : 'Change Email'}
+                    {changingEmail ? t('profilePage.sendingConfirmation') : t('profilePage.changeEmail')}
                   </Button>
                 </div>
               </div>
@@ -305,20 +305,20 @@ export default function ProfilePage() {
               <div className="premium-card p-6">
                 <h2 className="font-heading font-semibold text-lg mb-6 flex items-center gap-2">
                   <Shield className="h-5 w-5" />
-                  Privacy Settings
+                  {t('profilePage.privacySettings')}
                 </h2>
 
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="privacy">Profile Visibility</Label>
+                    <Label htmlFor="privacy">{t('profilePage.profileVisibility')}</Label>
                     <Select value={privacyLevel} onValueChange={(value: 'public' | 'private' | 'friends') => setPrivacyLevel(value)}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="public">Public - Anyone can view</SelectItem>
-                        <SelectItem value="friends">Friends - Only followed users</SelectItem>
-                        <SelectItem value="private">Private - Only you</SelectItem>
+                        <SelectItem value="public">{t('profilePage.visibilityPublic')}</SelectItem>
+                        <SelectItem value="friends">{t('profilePage.visibilityFriends')}</SelectItem>
+                        <SelectItem value="private">{t('profilePage.visibilityPrivate')}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -327,7 +327,7 @@ export default function ProfilePage() {
 
               <Button onClick={handleSave} disabled={saving} className="w-full md:w-auto">
                 <Save className="mr-2 h-4 w-4" />
-                {saving ? 'Saving...' : 'Save Changes'}
+                {saving ? t('profilePage.saving') : t('profilePage.saveChanges')}
               </Button>
             </div>
 
@@ -337,7 +337,7 @@ export default function ProfilePage() {
           <div className="mt-8 premium-card p-6">
             <h2 className="font-heading font-semibold text-lg mb-6 flex items-center gap-2">
               <Trophy className="h-5 w-5" />
-              Achievements
+              {t('achievements.title')}
             </h2>
             <AchievementList />
           </div>

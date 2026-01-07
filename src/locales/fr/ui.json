@@ -618,6 +618,7 @@
   },
   "globalSearch": {
     "placeholder": "Rechercher entreprises, actualités, forum, tickers, auteurs...",
+    "searchPlaceholder": "Rechercher...",
     "searching": "Recherche...",
     "noResults": "Aucun résultat trouvé.",
     "typeToSearch": "Tapez pour rechercher entreprises, actualités, forum, tickers et auteurs...",
@@ -716,9 +717,6 @@
     "tagsLabel": "Tags",
     "clearFilters": "Effacer les filtres"
   },
-  "globalSearch": {
-    "searchPlaceholder": "Rechercher..."
-  },
   "analyticsPage": {
     "filterByAuthor": "Filtrer par auteur :",
     "allAuthors": "Tous les Auteurs"
@@ -800,5 +798,107 @@
     "cancel": "Annuler",
     "save": "Enregistrer",
     "privacyLinkText": "Politique de confidentialité"
+  },
+  "achievements": {
+    "title": "Succès",
+    "loading": "Chargement des succès...",
+    "rarity": {
+      "common": "COMMUN",
+      "rare": "RARE",
+      "epic": "ÉPIQUE",
+      "legendary": "LÉGENDAIRE"
+    },
+    "points": "pts",
+    "items": {
+      "firstSteps": {
+        "name": "Premiers Pas",
+        "description": "Créé ta première discussion sur le forum"
+      },
+      "contributor": {
+        "name": "Contributeur",
+        "description": "Publié ta première réponse"
+      },
+      "helpful": {
+        "name": "Utile",
+        "description": "Reçu 10 réactions utiles"
+      },
+      "insightful": {
+        "name": "Perspicace",
+        "description": "Reçu 10 réactions perspicaces"
+      },
+      "popular": {
+        "name": "Populaire",
+        "description": "Reçu 100 j'aime sur tes publications"
+      },
+      "expertAnalyst": {
+        "name": "Analyste Expert",
+        "description": "Atteint 500 points de réputation"
+      },
+      "topContributor": {
+        "name": "Top Contributeur",
+        "description": "Fait 100 publications ou réponses"
+      },
+      "guru": {
+        "name": "Gourou",
+        "description": "Atteint 1000 points de réputation"
+      },
+      "dedicated": {
+        "name": "Dévoué",
+        "description": "Série d'activité de 7 jours"
+      },
+      "committed": {
+        "name": "Engagé",
+        "description": "Série d'activité de 30 jours"
+      },
+      "bookworm": {
+        "name": "Rat de bibliothèque",
+        "description": "Lu 50 articles"
+      },
+      "watchlistMaster": {
+        "name": "Maître des Listes",
+        "description": "Créé 5 listes de suivi"
+      }
+    }
+  },
+  "profilePage": {
+    "title": "Paramètres du Profil",
+    "clickAvatarToChange": "Cliquer sur l'avatar pour changer",
+    "reputation": "Réputation",
+    "posts": "Publications",
+    "comments": "Commentaires",
+    "basicInformation": "Informations de Base",
+    "emailSettings": "Paramètres Email",
+    "privacySettings": "Paramètres de Confidentialité",
+    "currentEmail": "Email Actuel",
+    "newEmailAddress": "Nouvelle Adresse Email",
+    "emailChangeNote": "Tu devras confirmer le changement depuis tes anciennes et nouvelles adresses email.",
+    "changeEmail": "Changer l'Email",
+    "sendingConfirmation": "Enregistrement...",
+    "saveChanges": "Enregistrer les Modifications",
+    "saving": "Enregistrement...",
+    "profileVisibility": "Visibilité du Profil",
+    "visibilityPublic": "Public - N'importe qui peut voir",
+    "visibilityFriends": "Amis - Seulement les utilisateurs suivis",
+    "visibilityPrivate": "Privé - Seulement toi"
+  },
+  "careersPage": {
+    "badge": "Carrières",
+    "heroTitle": "Rejoins Notre Équipe",
+    "heroSubtitle": "Construis l'avenir de l'éducation financière et de l'analyse de marché",
+    "positionsTitle": "Postes Ouverts",
+    "posDesigner": "Nous recherchons un designer de produits talentueux pour rejoindre notre équipe à Lugano. Tu travailleras sur la conception d'expériences utilisateur intuitives pour notre plateforme financière.",
+    "typeLabel": "Type",
+    "fullTime": "Temps plein",
+    "fulltime": "Temps plein",
+    "partTime": "Temps partiel",
+    "parttime": "Temps partiel",
+    "contract": "Contrat",
+    "internship": "Stage",
+    "ctaTitle": "Tu ne vois pas de rôle qui te convient ?",
+    "ctaSubtitle": "Nous recherchons toujours des personnes talentueuses. Envoie-nous ton CV et nous te garderons à l'esprit pour de futures opportunités.",
+    "ctaButton": "Postuler Maintenant",
+    "form": {
+      "title": "Candidature"
+    }
   }
 }

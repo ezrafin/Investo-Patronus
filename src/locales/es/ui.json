@@ -618,6 +618,7 @@
   },
   "globalSearch": {
     "placeholder": "Buscar empresas, noticias, foro, tickers, autores...",
+    "searchPlaceholder": "Buscar...",
     "searching": "Buscando...",
     "noResults": "No se encontraron resultados.",
     "typeToSearch": "Escribe para buscar empresas, noticias, foro, tickers y autores...",
@@ -716,9 +717,6 @@
     "tagsLabel": "Etiquetas",
     "clearFilters": "Limpiar filtros"
   },
-  "globalSearch": {
-    "searchPlaceholder": "Buscar..."
-  },
   "analyticsPage": {
     "filterByAuthor": "Filtrar por autor:",
     "allAuthors": "Todos los Autores"
@@ -800,5 +798,107 @@
     "cancel": "Cancelar",
     "save": "Guardar preferencias",
     "privacyLinkText": "Política de privacidad"
+  },
+  "achievements": {
+    "title": "Logros",
+    "loading": "Cargando logros...",
+    "rarity": {
+      "common": "COMÚN",
+      "rare": "RARO",
+      "epic": "ÉPICO",
+      "legendary": "LEGENDARIO"
+    },
+    "points": "pts",
+    "items": {
+      "firstSteps": {
+        "name": "Primeros Pasos",
+        "description": "Creaste tu primera discusión en el foro"
+      },
+      "contributor": {
+        "name": "Contribuidor",
+        "description": "Publicaste tu primera respuesta"
+      },
+      "helpful": {
+        "name": "Útil",
+        "description": "Recibiste 10 reacciones útiles"
+      },
+      "insightful": {
+        "name": "Perspicaz",
+        "description": "Recibiste 10 reacciones perspicaces"
+      },
+      "popular": {
+        "name": "Popular",
+        "description": "Recibiste 100 me gusta en tus publicaciones"
+      },
+      "expertAnalyst": {
+        "name": "Analista Experto",
+        "description": "Alcanzaste 500 puntos de reputación"
+      },
+      "topContributor": {
+        "name": "Top Contribuidor",
+        "description": "Hiciste 100 publicaciones o respuestas"
+      },
+      "guru": {
+        "name": "Gurú",
+        "description": "Alcanzaste 1000 puntos de reputación"
+      },
+      "dedicated": {
+        "name": "Dedicado",
+        "description": "Racha de actividad de 7 días"
+      },
+      "committed": {
+        "name": "Comprometido",
+        "description": "Racha de actividad de 30 días"
+      },
+      "bookworm": {
+        "name": "Ratón de biblioteca",
+        "description": "Leíste 50 artículos"
+      },
+      "watchlistMaster": {
+        "name": "Maestro de Listas",
+        "description": "Creaste 5 listas de seguimiento"
+      }
+    }
+  },
+  "profilePage": {
+    "title": "Configuración de Perfil",
+    "clickAvatarToChange": "Haz clic en el avatar para cambiar",
+    "reputation": "Reputación",
+    "posts": "Publicaciones",
+    "comments": "Comentarios",
+    "basicInformation": "Información Básica",
+    "emailSettings": "Configuración de Correo",
+    "privacySettings": "Configuración de Privacidad",
+    "currentEmail": "Correo Actual",
+    "newEmailAddress": "Nueva Dirección de Correo",
+    "emailChangeNote": "Necesitarás confirmar el cambio desde tus direcciones de correo antiguas y nuevas.",
+    "changeEmail": "Cambiar Correo",
+    "sendingConfirmation": "Guardando...",
+    "saveChanges": "Guardar Cambios",
+    "saving": "Guardando...",
+    "profileVisibility": "Visibilidad del Perfil",
+    "visibilityPublic": "Público - Cualquiera puede ver",
+    "visibilityFriends": "Amigos - Solo usuarios seguidos",
+    "visibilityPrivate": "Privado - Solo tú"
+  },
+  "careersPage": {
+    "badge": "Carreras",
+    "heroTitle": "Únete a Nuestro Equipo",
+    "heroSubtitle": "Construye el futuro de la educación financiera y el análisis de mercados",
+    "positionsTitle": "Posiciones Abiertas",
+    "posDesigner": "Buscamos un diseñador de productos talentoso para unirse a nuestro equipo en Lugano. Trabajarás diseñando experiencias de usuario intuitivas para nuestra plataforma financiera.",
+    "typeLabel": "Tipo",
+    "fullTime": "Tiempo completo",
+    "fulltime": "Tiempo completo",
+    "partTime": "Medio tiempo",
+    "parttime": "Medio tiempo",
+    "contract": "Contrato",
+    "internship": "Prácticas",
+    "ctaTitle": "¿No ves un rol que se ajuste?",
+    "ctaSubtitle": "Siempre estamos buscando personas talentosas. Envíanos tu currículum y te tendremos en cuenta para futuras oportunidades.",
+    "ctaButton": "Aplicar Ahora",
+    "form": {
+      "title": "Solicitud de Trabajo"
+    }
   }
 }
