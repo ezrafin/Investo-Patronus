@@ -66,8 +66,8 @@ export function Breadcrumbs({ pageTitle, items, className }: BreadcrumbsProps) {
         <Breadcrumb>
           <motion.ol
             className={className 
-              ? `flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-muted-foreground sm:gap-x-2.5 overflow-hidden min-h-[24px] ${className}` 
-              : "flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-muted-foreground sm:gap-x-2.5 overflow-hidden min-h-[24px]"
+              ? `flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-muted-foreground sm:gap-x-2.5 overflow-hidden ${className}` 
+              : "flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-muted-foreground sm:gap-x-2.5 overflow-hidden"
             }
             initial={fadeInVariant.initial}
             animate={fadeInVariant.animate}
@@ -92,7 +92,7 @@ export function Breadcrumbs({ pageTitle, items, className }: BreadcrumbsProps) {
                       }}
                       className="inline-flex items-center max-w-full"
                     >
-                      <BreadcrumbPage className="truncate leading-tight">{item.name}</BreadcrumbPage>
+                      <BreadcrumbPage className="truncate">{item.name}</BreadcrumbPage>
                     </motion.li>
                   ) : (
                     <>
@@ -108,7 +108,7 @@ export function Breadcrumbs({ pageTitle, items, className }: BreadcrumbsProps) {
                         <BreadcrumbLink asChild>
                           <Link 
                             to={path} 
-                            className="transition-colors hover:text-primary whitespace-nowrap leading-tight"
+                            className="transition-colors hover:text-primary whitespace-nowrap"
                           >
                             {item.name}
                           </Link>
@@ -123,9 +123,9 @@ export function Breadcrumbs({ pageTitle, items, className }: BreadcrumbsProps) {
                         }}
                         role="presentation"
                         aria-hidden="true"
-                        className="inline-flex items-center justify-center flex-shrink-0 [&>svg]:size-3 sm:[&>svg]:size-4 [&>svg]:flex-shrink-0"
+                        className="inline-flex items-center justify-center flex-shrink-0"
                       >
-                        <ChevronRight className="flex-shrink-0" />
+                        <ChevronRight className="size-3 sm:size-4 flex-shrink-0" />
                       </motion.li>
                     </>
                   )}
