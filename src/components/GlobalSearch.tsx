@@ -268,9 +268,9 @@ export function GlobalSearch() {
     setLoading(false);
     
     // Trigger bill collection for using global search (only once per session)
-    if (searchQuery.trim().length >= 2 && !hasCollectedSearchBill.current && !isCollected('global_search_use')) {
+    if (searchQuery.trim().length >= 2 && !hasCollectedSearchBill.current && !isCollected('forum_search')) {
       hasCollectedSearchBill.current = true;
-      collectBill('global_search_use', {
+      collectBill('forum_search', {
         action: 'global_search',
         metadata: { query: searchQuery },
       });
