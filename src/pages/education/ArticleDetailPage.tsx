@@ -6,6 +6,7 @@ import { getEducationLearningPath, getEducationBasicArticlesPath, getEducationAd
 import { useTranslation } from '@/hooks/useTranslation';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { LegendaryBillSpawn } from '@/components/collectibles/LegendaryBillSpawn';
+import { MarkdownContent } from '@/components/content/MarkdownContent';
 
 export default function ArticleDetailPage() {
   const { t } = useTranslation({ namespace: 'education' });
@@ -103,44 +104,52 @@ export default function ArticleDetailPage() {
               </div>
             </header>
 
-            {/* Content placeholder */}
-            <div className="glass-card p-8 mb-8">
-              <div className="prose prose-invert max-w-none">
-                <p className="text-muted-foreground">
-                  {t('articleDetail.placeholderIntro')}
-                </p>
-                
-                <h2 className="text-xl font-semibold mt-6 mb-4">
-                  {t('articleDetail.keyTakeawaysTitle')}
-                </h2>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>
-                    • {t('articleDetail.keyTakeawaysItem1', {
-                      topic: article.title.toLowerCase(),
-                    })}
-                  </li>
-                  <li>• {t('articleDetail.keyTakeawaysItem2')}</li>
-                  <li>• {t('articleDetail.keyTakeawaysItem3')}</li>
-                  <li>• {t('articleDetail.keyTakeawaysItem4')}</li>
-                </ul>
-
-                <h2 className="text-xl font-semibold mt-6 mb-4">
-                  {t('articleDetail.whatYoullLearnTitle')}
-                </h2>
-                <p className="text-muted-foreground">
-                  {article.description}{' '}
-                  {t('articleDetail.whatYoullLearnDescriptionPrefix')}{' '}
-                  {article.difficulty === 'Beginner'
-                    ? t('articleDetail.audienceBeginner')
-                    : article.difficulty === 'Intermediate'
-                    ? t('articleDetail.audienceIntermediate')
-                    : article.difficulty === 'Advanced'
-                    ? t('articleDetail.audienceAdvanced')
-                    : t('articleDetail.audienceExpert')}
-                  .
-                </p>
+            {/* Article Content */}
+            {article.content ? (
+              <div className="glass-card p-8 mb-8">
+                <div className="prose prose-invert max-w-none">
+                  <MarkdownContent content={article.content} />
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="glass-card p-8 mb-8">
+                <div className="prose prose-invert max-w-none">
+                  <p className="text-muted-foreground">
+                    {t('articleDetail.placeholderIntro')}
+                  </p>
+                  
+                  <h2 className="text-xl font-semibold mt-6 mb-4">
+                    {t('articleDetail.keyTakeawaysTitle')}
+                  </h2>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>
+                      • {t('articleDetail.keyTakeawaysItem1', {
+                        topic: article.title.toLowerCase(),
+                      })}
+                    </li>
+                    <li>• {t('articleDetail.keyTakeawaysItem2')}</li>
+                    <li>• {t('articleDetail.keyTakeawaysItem3')}</li>
+                    <li>• {t('articleDetail.keyTakeawaysItem4')}</li>
+                  </ul>
+
+                  <h2 className="text-xl font-semibold mt-6 mb-4">
+                    {t('articleDetail.whatYoullLearnTitle')}
+                  </h2>
+                  <p className="text-muted-foreground">
+                    {article.description}{' '}
+                    {t('articleDetail.whatYoullLearnDescriptionPrefix')}{' '}
+                    {article.difficulty === 'Beginner'
+                      ? t('articleDetail.audienceBeginner')
+                      : article.difficulty === 'Intermediate'
+                      ? t('articleDetail.audienceIntermediate')
+                      : article.difficulty === 'Advanced'
+                      ? t('articleDetail.audienceAdvanced')
+                      : t('articleDetail.audienceExpert')}
+                    .
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* CTA */}
             <div className="glass-card p-6 text-center">
