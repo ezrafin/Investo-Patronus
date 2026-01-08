@@ -449,8 +449,11 @@ export function filterOrganizations(type?: OrganizationType | 'all', region?: Re
   return filtered;
 }
 
-export function sortByTrust(orgs: Organization[], sortBy: 'combined' | 'community' | 'expert' = 'combined'): Organization[] {
+export function sortByTrust(orgs: Organization[], sortBy: 'alphabetical' | 'combined' | 'community' | 'expert' = 'combined'): Organization[] {
   return [...orgs].sort((a, b) => {
+    if (sortBy === 'alphabetical') {
+      return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+    }
     if (sortBy === 'community') return b.communityTrust - a.communityTrust;
     if (sortBy === 'expert') return b.expertTrust - a.expertTrust;
     const aScore = (a.communityTrust + a.expertTrust) / 2;

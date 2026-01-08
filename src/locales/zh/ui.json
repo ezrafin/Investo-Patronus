@@ -672,6 +672,7 @@
     "searchPlaceholder": "按名称、描述或位置搜索...",
     "regionPlaceholder": "地区",
     "sortByPlaceholder": "排序方式",
+    "alphabetical": "按字母顺序",
     "combinedTrust": "综合信任度",
     "communityTrust": "社区信任度",
     "expertTrust": "专家信任度",

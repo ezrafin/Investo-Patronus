@@ -11,7 +11,7 @@ import { Building2, TrendingUp, Users, Award, ArrowUpDown, Globe, Search } from 
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { useTranslation } from '@/hooks/useTranslation';
 
-type SortOption = 'combined' | 'community' | 'expert';
+type SortOption = 'alphabetical' | 'combined' | 'community' | 'expert';
 const ITEMS_PER_PAGE = 15;
 
 export default function CompaniesPage() {
@@ -20,7 +20,7 @@ export default function CompaniesPage() {
   const { CoinComponent } = usePageBillCollection({ billId: 'companies_page_visit' });
   const [selectedType, setSelectedType] = useState<OrganizationType | 'all'>('all');
   const [selectedRegion, setSelectedRegion] = useState<Region | 'all'>('all');
-  const [sortBy, setSortBy] = useState<SortOption>('combined');
+  const [sortBy, setSortBy] = useState<SortOption>('alphabetical');
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const sectionRef = useRef<HTMLElement>(null);
@@ -204,6 +204,7 @@ export default function CompaniesPage() {
                       <SelectValue placeholder={t('companiesPage.sortByPlaceholder')} />
                     </SelectTrigger>
                     <SelectContent align="end">
+                      <SelectItem value="alphabetical">{t('companiesPage.alphabetical')}</SelectItem>
                       <SelectItem value="combined">{t('companiesPage.combinedTrust')}</SelectItem>
                       <SelectItem value="community">{t('companiesPage.communityTrust')}</SelectItem>
                       <SelectItem value="expert">{t('companiesPage.expertTrust')}</SelectItem>
