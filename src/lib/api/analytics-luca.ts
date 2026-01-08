@@ -3189,19 +3189,21 @@ While my focus is often Italy and the broader Mediterranean, Iberia—Spain and 
 
 ## Introduction
 
-Greece has traveled a long road from the depths of the euro‑area sovereign crisis. For years, Greek equities were viewed almost exclusively through the lens of:
+Greece has traveled a long road from the depths of the euro‑area sovereign crisis. The country's journey from near-default and economic collapse to gradual recovery and normalization represents one of the most dramatic transformations in European markets. For years, Greek equities were viewed almost exclusively through the lens of:
 
-- Fiscal stress and default risk.
-- Banking‑sector recapitalizations.
-- Political volatility and EU conditionality.
+- Fiscal stress and default risk that threatened eurozone stability
+- Banking‑sector recapitalizations requiring massive capital injections
+- Political volatility and EU conditionality creating uncertainty
 
-Today, while risks remain, the landscape has changed:
+The crisis years (2010-2018) saw Greek GDP contract by over 25%, unemployment reach 27%, and the banking system require multiple recapitalizations. Capital controls were imposed, and the country came close to exiting the eurozone. These experiences fundamentally reshaped the Greek economy and equity market.
 
-- Tourism has rebounded strongly.
-- Banks have made significant progress on non‑performing loans.
-- Privatization and investment programs are reshaping key sectors.
+Today, while risks remain, the landscape has changed significantly:
 
-For investors focused on Mediterranean and European markets, Greece offers a small but increasingly relevant set of opportunities—provided that liquidity, governance, and political risk are carefully managed.
+- Tourism has rebounded strongly, reaching record levels and driving economic growth
+- Banks have made significant progress on non‑performing loans, reducing NPL ratios from over 40% to single digits
+- Privatization and investment programs are reshaping key sectors, attracting foreign capital and improving efficiency
+
+For investors focused on Mediterranean and European markets, Greece offers a small but increasingly relevant set of opportunities—provided that liquidity, governance, and political risk are carefully managed. The market's small size and volatility require careful position sizing, but the recovery story and structural improvements create attractive opportunities for selective investors.
 
 ## Macro and Policy Context
 
@@ -3209,177 +3211,305 @@ For investors focused on Mediterranean and European markets, Greece offers a sma
 
 During the sovereign‑debt crisis, Greece experienced:
 
-- Deep recessions.
-- Sharp fiscal tightening.
-- Bank recapitalizations and capital controls.
+**Economic Collapse:**
+- Deep recessions with GDP declining by over 25% from peak to trough
+- Sharp fiscal tightening required by bailout programs
+- Bank recapitalizations totaling tens of billions of euros
+- Capital controls limiting financial flows
 
-Since then:
+**Social and Political Impact:**
+- Unemployment reaching 27% at peak
+- Widespread social unrest and political instability
+- Multiple elections and government changes
+- Austerity measures affecting living standards
 
+**Since then, significant progress has been made:**
+
+**Fiscal Improvement:**
 - The fiscal position has improved, with:
-  - Primary balances moving toward or into surplus at times.
+  - Primary balances moving toward or into surplus at times
+  - Debt restructuring reducing interest burden
+  - Improved tax collection and fiscal management
+- Greece has gradually:
+  - Rebuilt market access with successful bond issuances
+  - Benefited from lower funding costs in the euro‑area environment
+  - Regained investment-grade credit ratings
+
+**Banking System Recovery:**
 - The banking system has:
   - Reduced non‑performing exposures through:
-    - Securitizations.
-    - Sales to investors.
-- Greece has gradually:
-  - Rebuilt market access.
-  - Benefited from lower funding costs in the euro‑area environment.
+    - Securitizations transferring NPLs to specialized vehicles
+    - Sales to investors including distressed debt funds
+    - Workout programs and restructuring
+  - Strengthened capital positions through recapitalizations
+  - Improved funding profiles as deposits returned
 
-However, public debt remains high and:
-
-- Policy discipline and reform momentum are key to sustaining confidence.
+**However, challenges remain:**
+- Public debt remains high at over 160% of GDP, though sustainable given low interest rates
+- Policy discipline and reform momentum are key to sustaining confidence
+- Structural reforms need to continue to improve competitiveness
+- Political stability remains important for maintaining market access
 
 ### EU Funds and Investment Agenda
 
 Greece is a:
 
-- Significant beneficiary of EU structural and recovery funds.
+- Significant beneficiary of EU structural and recovery funds totaling tens of billions of euros
+- Recipient of Next Generation EU funds supporting recovery and transformation
 
-These funds are being directed toward:
+**These funds are being directed toward:**
 
-- Infrastructure and energy projects.
-- Digitalization and modernization of public services.
-- Green transition and climate‑resilience investments.
+**Infrastructure and Energy:**
+- Infrastructure and energy projects including ports, airports, and energy infrastructure
+- Renewable energy development and grid modernization
+- Transport and logistics improvements
 
-For equities, this creates:
+**Digitalization:**
+- Digitalization and modernization of public services
+- Technology infrastructure and connectivity
+- Digital economy development
 
+**Green Transition:**
+- Green transition and climate‑resilience investments
+- Energy efficiency and sustainability projects
+- Environmental protection and restoration
+
+**For equities, this creates:**
 - Tailwinds for:
-  - Construction and engineering.
-  - Energy and utilities.
-  - Industrials and selected service providers.
+  - Construction and engineering companies benefiting from infrastructure investment
+  - Energy and utilities companies involved in renewable energy and grid projects
+  - Industrials and selected service providers supporting infrastructure development
 
-Execution, absorption capacity, and governance remain important variables.
+**Execution, absorption capacity, and governance remain important variables** affecting the effectiveness of EU fund utilization and economic impact.
 
 ## Sector Focus: Tourism and Hospitality
 
 ### Tourism as a Structural Pillar
 
-Tourism is one of Greece’s most important economic engines:
+Tourism is one of Greece's most important economic engines:
 
+**Economic Contribution:**
 - Contributing significantly to:
-  - GDP.
-  - Employment.
-  - External balances.
+  - GDP with tourism accounting for over 20% of economic output
+  - Employment supporting hundreds of thousands of jobs
+  - External balances through foreign exchange earnings
+  - Regional development in island and coastal areas
 
-Greek tourism benefits from:
+**Competitive Advantages:**
+- Greek tourism benefits from:
+  - Natural and cultural assets:
+    - Islands and beaches with Mediterranean climate
+    - Historical sites and archaeological treasures
+    - Diverse landscapes and experiences
+  - Strong brand recognition in:
+    - European markets with established demand
+    - Increasingly, global demand from Asia and Americas
+    - Quality and value positioning
 
-- Natural and cultural assets:
-  - Islands and beaches.
-  - Historical sites.
-- Strong brand recognition in:
-  - European markets.
-  - Increasingly, global demand.
+**Market Characteristics:**
+- Seasonality with peak demand in summer months
+- Geographic diversity across mainland and islands
+- Mix of mass tourism and premium segments
+- Growing luxury and experiential tourism
 
-Equity‑market exposures include:
-
-- Hotel groups.
-- Travel and transport providers.
-- Ancillary services and real estate.
+**Equity‑market exposures include:**
+- Hotel groups operating across Greece and internationally
+- Travel and transport providers including airlines and ferries
+- Ancillary services and real estate including resorts and marinas
+- Food and beverage companies serving tourism sector
 
 ### Investment Considerations
 
-Investors should differentiate between:
+**Quality Differentiation:**
+- Investors should differentiate between:
+  - High‑quality, well‑located assets with:
+    - Strong brands and market positioning
+    - Diversified demand across seasons and geographies
+    - Premium positioning and pricing power
+    - Modern facilities and service quality
+  - More cyclical or leveraged plays reliant on:
+    - Low‑cost mass tourism with price sensitivity
+    - Aggressive development assumptions requiring execution
+    - Single-season or single-location concentration
 
-- High‑quality, well‑located assets with:
-  - Strong brands.
-  - Diversified demand across seasons and geographies.
-- More cyclical or leveraged plays reliant on:
-  - Low‑cost mass tourism.
-  - Aggressive development assumptions.
-
-Key questions:
-
+**Key questions:**
 - How resilient are earnings under:
-  - Weaker European demand.
-  - Shifts in travel patterns.
+  - Weaker European demand affecting visitor numbers
+  - Shifts in travel patterns and preferences
+  - Economic downturns reducing discretionary spending
+  - Climate change affecting weather patterns
 - Are balance sheets robust enough to:
-  - Withstand shocks.
-  - Fund necessary capex and upgrades?
+  - Withstand shocks and seasonal volatility
+  - Fund necessary capex and upgrades
+  - Support expansion and development
+  - Maintain competitive positioning
+
+**Investment Themes:**
+- Premium and luxury segment growth
+- Sustainability and eco-tourism
+- Year-round tourism development
+- Digitalization and technology adoption
+- Infrastructure improvements
 
 ## Sector Focus: Banks and Financials
 
 ### Cleaning Up Legacy Issues
 
-Greek banks were at the center of the crisis. Since then, they have:
+Greek banks were at the center of the crisis. Since then, they have made significant progress:
 
-- Reduced NPL ratios significantly.
-- Strengthened capital positions.
+**NPL Reduction:**
+- Reduced NPL ratios significantly from over 40% to single digits
+- Strengthened capital positions through recapitalizations and retained earnings
 - Improved funding profiles as:
-  - Deposits returned.
-  - Reliance on emergency liquidity declined.
+  - Deposits returned to the banking system
+  - Reliance on emergency liquidity declined
+  - Market funding access improved
 
-They now operate in:
+**Current Operating Environment:**
+- They now operate in:
+  - A higher‑rate euro‑area environment that:
+    - Supports net interest margins and profitability
+    - Must be balanced against borrower resilience and credit quality
+  - Improved regulatory and supervisory framework
+  - More stable economic and political environment
 
-- A higher‑rate euro‑area environment that:
-  - Supports net interest margins.
-  - Must be balanced against borrower resilience.
+**Remaining Challenges:**
+- Legacy NPLs still being worked out
+- Capital efficiency and returns improvement needed
+- Competitive pressures and digitalization requirements
+- Economic sensitivity and credit risk management
 
 ### Key Risk and Return Drivers
 
-Investors evaluating Greek banks should examine:
+**Investors evaluating Greek banks should examine:**
 
-- Asset quality and remaining NPL stock.
-- Coverage ratios and provisioning policies.
-- Capital buffers versus regulatory minima.
+**Asset Quality:**
+- Asset quality and remaining NPL stock affecting credit costs
+- Coverage ratios and provisioning policies ensuring adequate reserves
+- Credit underwriting standards and risk management
+- Portfolio composition and concentration risks
+
+**Capital and Liquidity:**
+- Capital buffers versus regulatory minima providing safety margins
+- Liquidity positions and funding stability
+- Capital efficiency and return on equity
+- Dividend and capital return capacity
+
+**Sensitivity Analysis:**
 - Sensitivity to:
-  - Domestic macro conditions.
-  - Real estate and SME exposures.
+  - Domestic macro conditions affecting credit quality
+  - Real estate and SME exposures with higher risk
+  - Interest rate changes affecting margins
+  - Economic cycles and stress scenarios
 
-Potential positives:
-
+**Potential positives:**
 - Improved profitability from:
-  - Higher rates.
-  - Lower credit‑cost normalization.
+  - Higher rates supporting net interest income
+  - Lower credit‑cost normalization as NPLs decline
+  - Operating efficiency improvements
 - Prospects for:
-  - Dividends.
-  - Capital returns, if regulators permit.
+  - Dividends as profitability improves
+  - Capital returns, if regulators permit
+  - Valuation re-rating as fundamentals improve
 
-Risks:
-
-- Renewed macro volatility.
-- Political or regulatory interventions.
+**Risks:**
+- Renewed macro volatility affecting credit quality
+- Political or regulatory interventions
+- Competition and margin pressure
+- Technology disruption and digitalization
 
 ## Sector Focus: Privatization and Infrastructure
 
 ### Privatization Agenda
 
-Greece’s privatization program includes:
+Greece's privatization program includes:
 
+**Asset Sales:**
 - Stakes in:
-  - Infrastructure assets (ports, airports, utilities).
-  - Real estate portfolios.
+  - Infrastructure assets (ports, airports, utilities) attracting strategic investors
+  - Real estate portfolios including prime locations
+  - State-owned enterprises and assets
 - Concession agreements for:
-  - Transport.
-  - Energy projects.
+  - Transport infrastructure including ports and airports
+  - Energy projects and utilities
+  - Other infrastructure assets
 
-Privatizations can:
+**Privatization Benefits:**
+- Privatizations can:
+  - Improve efficiency and governance through private sector management
+  - Attract:
+    - Strategic investors bringing expertise and capital
+    - Long‑term capital supporting development
+  - Reduce government debt and fiscal burden
+  - Improve service quality and investment
 
-- Improve efficiency and governance.
-- Attract:
-  - Strategic investors.
-  - Long‑term capital.
-
-For listed equities, this creates:
-
+**For listed equities, this creates:**
 - Opportunities in:
-  - Newly listed entities.
-  - Existing companies that acquire or operate privatized assets.
+  - Newly listed entities from privatization programs
+  - Existing companies that acquire or operate privatized assets
+  - Companies providing services to privatized infrastructure
+  - Real estate and development companies
+
+**Investment Themes:**
+- Infrastructure development and modernization
+- Port and logistics operations
+- Energy and utilities
+- Real estate development
 
 ### Infrastructure and Energy Transition
 
-Greece is investing in:
+Greece is investing significantly in:
 
-- Renewable energy (solar, wind).
-- Grid modernization and interconnections.
-- Transport and logistics infrastructure.
+**Renewable Energy:**
+- Renewable energy (solar, wind) with abundant resources
+- Grid modernization and interconnections supporting energy transition
+- Energy storage and smart grid technologies
 
-Investment theses may center on:
+**Transport Infrastructure:**
+- Transport and logistics infrastructure improving connectivity
+- Port development supporting trade and tourism
+- Airport expansion and modernization
 
+**Investment theses may center on:**
+
+**Regulated Utilities:**
 - Regulated utilities with:
-  - Transparent frameworks.
-  - Capex linked to transition.
+  - Transparent frameworks providing predictable returns
+  - Capex linked to transition creating growth opportunities
+  - Stable cash flows and dividend potential
+
+**Logistics and Transport:**
 - Logistics and transport operators leveraged to:
-  - Trade and tourism flows.
+  - Trade and tourism flows supporting revenue growth
+  - Infrastructure improvements enhancing efficiency
+  - Regional connectivity and hub development
+
+**Energy Companies:**
+- Renewable energy developers and operators
+- Energy infrastructure and grid companies
+- Energy services and technology providers
+
+## Market Structure and Liquidity
+
+### Market Characteristics
+
+**Market Size:**
+- Small market capitalization relative to European peers
+- Limited number of liquid stocks
+- Concentration in few sectors and companies
+- Limited analyst coverage and research
+
+**Liquidity Considerations:**
+- Trading volumes can be low for many stocks
+- Bid-ask spreads wider than developed markets
+- Market impact from larger trades
+- Need for patient capital and careful execution
+
+**Index Composition:**
+- Dominated by banks, tourism, and utilities
+- Limited sector diversification
+- High concentration in top holdings
+- Active management can add value
 
 ## Portfolio Construction: Greece Within a Mediterranean Allocation
 
@@ -3387,55 +3517,119 @@ Investment theses may center on:
 
 Given its size and volatility, Greece is typically:
 
+**Portfolio Role:**
 - A **satellite allocation** within:
-  - European.
-  - Mediterranean.
-  - EM EMEA portfolios.
+  - European portfolios for diversification
+  - Mediterranean portfolios for regional exposure
+  - EM EMEA portfolios for emerging market exposure
 
-Position sizing should reflect:
+**Position Sizing:**
+- Position sizing should reflect:
+  - Liquidity in key names limiting position sizes
+  - Correlation with other Southern European exposures (Italy, Spain, Portugal)
+  - Risk budget for:
+    - Political shocks affecting market sentiment
+    - Macro volatility creating drawdowns
+  - Overall portfolio risk limits
 
-- Liquidity in key names.
-- Correlation with other Southern European exposures (Italy, Spain, Portugal).
-- Risk budget for:
-  - Political shocks.
-  - Macro volatility.
+**Risk Management:**
+- Careful position sizing relative to liquidity
+- Diversification across sectors and companies
+- Monitoring of macro and political developments
+- Active risk management and position adjustment
 
 ### Stock Selection and Governance
 
-Governance standards have improved but remain:
+**Governance Considerations:**
+- Governance standards have improved but remain:
+  - Uneven across companies and sectors
+  - Evolving with market development
+  - Requiring careful assessment
 
-- Uneven across companies and sectors.
-
-Investors should focus on:
-
+**Investors should focus on:**
 - Companies with:
-  - Clear strategies.
-  - Transparent financials.
-  - Alignment with minority shareholders.
+  - Clear strategies and execution capability
+  - Transparent financials and reporting
+  - Alignment with minority shareholders
+  - Strong management and corporate culture
 - Track records of:
-  - Sensible capital allocation.
-  - Risk management through past cycles.
+  - Sensible capital allocation and returns
+  - Risk management through past cycles
+  - Operational excellence and efficiency
+  - Stakeholder management
+
+**Due Diligence:**
+- Thorough analysis of governance structures
+- Assessment of management quality and track record
+- Evaluation of competitive positions and business models
+- Understanding of regulatory and political risks
+
+## Risks and Challenges
+
+### Macroeconomic Risks
+
+**Economic Sensitivity:**
+- High sensitivity to European and global economic conditions
+- Tourism dependence creating cyclical exposure
+- Export competitiveness affected by currency and costs
+- Structural challenges requiring continued reform
+
+**Fiscal and Debt Risks:**
+- High public debt levels requiring fiscal discipline
+- EU relationship and conditionality
+- Market access and funding costs
+- Policy credibility and implementation
+
+### Political and Regulatory Risks
+
+**Political Stability:**
+- Political developments affecting market sentiment
+- Policy changes and reform reversals
+- EU relations and conditionality
+- Social and labor issues
+
+**Regulatory Environment:**
+- Regulatory changes affecting sectors
+- EU regulations and directives
+- Competition and antitrust policy
+- Environmental and sustainability regulations
+
+### Market-Specific Risks
+
+**Liquidity Risk:**
+- Limited liquidity in many stocks
+- Market impact from trades
+- Exit challenges during stress
+- Concentration risks
+
+**Currency Risk:**
+- Euro exposure for foreign investors
+- Regional currency dynamics
+- Safe-haven flows during stress
 
 ## Conclusion
 
 Greek equities have moved from being:
 
-- Purely crisis‑driven trades
+- Purely crisis‑driven trades with high risk and volatility
 
 to:
 
 - A more nuanced opportunity set combining:
-  - Tourism and services.
-  - Repaired banks.
-  - Privatizations and infrastructure plays.
+  - Tourism and services with strong recovery and growth potential
+  - Repaired banks with improving fundamentals and returns
+  - Privatizations and infrastructure plays offering long-term value
 
-Risks remain elevated compared with core Europe, but for investors willing to:
+**Risks remain elevated compared with core Europe**, but for investors willing to:
 
-- Manage liquidity and position sizes carefully.
-- Prioritize quality balance sheets and governance.
-- Integrate macro and EU‑policy views into their process.
+- Manage liquidity and position sizes carefully respecting market constraints
+- Prioritize quality balance sheets and governance in stock selection
+- Integrate macro and EU‑policy views into their investment process
+- Maintain patience and long-term perspective
 
-Greece can provide differentiated exposure within a broader Mediterranean equity strategy—adding both return potential and thematic breadth around tourism and European recovery.`,
+**Greece can provide differentiated exposure within a broader Mediterranean equity strategy**—adding both return potential and thematic breadth around tourism and European recovery. The market's transformation from crisis to recovery creates opportunities for selective investors who can navigate the complexities and risks while capturing the benefits of Greece's economic normalization and structural improvements.
+
+Success requires understanding the unique characteristics of the Greek market, careful risk management, and focus on quality companies with strong fundamentals and improving governance. Investors who approach Greece with appropriate expectations and risk management can find attractive opportunities in this evolving market.`,
     date: formatDate(304),
     author: 'Luca Montefiore',
     authorAvatar: getAuthorAvatar('Luca Montefiore'),

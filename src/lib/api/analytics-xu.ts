@@ -474,9 +474,11 @@ Southeast Asia's digital economy is one of the world's fastest-growing, driven b
 
 ## Introduction
 
-Japan has long been a global leader in semiconductors, advanced manufacturing, and industrial technology. While the country's dominance in some areas has been challenged by competition from South Korea, Taiwan, and China, Japan retains significant strengths in materials, equipment, and specialized components that are essential for modern electronics and advanced manufacturing.
+Japan has long been a global leader in semiconductors, advanced manufacturing, and industrial technology. The country's technological prowess emerged in the post-war era, with Japanese companies becoming dominant forces in electronics, automotive, and industrial equipment. During the 1980s and 1990s, Japan's semiconductor industry reached its peak, with Japanese companies controlling significant market share in memory chips and logic devices.
 
-As of early 2026, Japan is making strategic investments to rebuild its semiconductor industry, strengthen supply chain resilience, and maintain leadership in advanced manufacturing technologies. Government support, corporate investment, and international partnerships are creating opportunities for investors in Japanese technology companies.
+While the country's dominance in some areas has been challenged by competition from South Korea, Taiwan, and China, Japan retains significant strengths in materials, equipment, and specialized components that are essential for modern electronics and advanced manufacturing. These capabilities, often overlooked, form the foundation of global semiconductor supply chains and advanced manufacturing systems.
+
+As of early 2026, Japan is making strategic investments to rebuild its semiconductor industry, strengthen supply chain resilience, and maintain leadership in advanced manufacturing technologies. Government support, corporate investment, and international partnerships are creating opportunities for investors in Japanese technology companies. The convergence of geopolitical concerns about supply chain security, technological advances, and strategic industrial policy is reshaping Japan's role in global technology supply chains.
 
 This article examines Japan's semiconductor and advanced manufacturing sectors, investment themes, and how to identify opportunities in Japan's high-tech industrial base.
 
@@ -484,161 +486,324 @@ This article examines Japan's semiconductor and advanced manufacturing sectors, 
 
 ### Historical Context
 
-Japan's semiconductor industry:
+Japan's semiconductor industry has undergone significant transformation:
 
-- **Peak dominance** in the 1980s and 1990s with companies like NEC, Toshiba, and Hitachi.
-- **Market share decline** as South Korean and Taiwanese companies gained ground.
-- **Retained strengths** in materials, equipment, and specialized components.
+**Peak Dominance (1980s-1990s):**
+- Peak dominance in the 1980s and 1990s with companies like NEC, Toshiba, and Hitachi leading global markets
+- Japanese companies controlled over 50% of global DRAM market at peak
+- Strong position in logic devices and microprocessors
+- Vertical integration from materials to finished products
 
-Current position:
+**Market Share Decline:**
+- Market share decline as South Korean and Taiwanese companies gained ground through aggressive investment
+- Shift away from commodity memory chips where cost competition was intense
+- Restructuring and consolidation of Japanese semiconductor operations
+- Focus shifted to higher-value, specialized segments
 
-- **Materials** – Japan remains a leader in semiconductor materials (photoresists, wafers, chemicals).
-- **Equipment** – strong position in semiconductor manufacturing equipment.
-- **Memory** – limited presence in commodity memory, but expertise in specialized memory.
-- **Logic** – reduced presence in advanced logic, but partnerships and investments increasing.
+**Retained Strengths:**
+- Retained strengths in materials, equipment, and specialized components
+- Deep expertise in semiconductor manufacturing processes
+- Strong relationships with global semiconductor manufacturers
+- Innovation in next-generation technologies
+
+**Current Position:**
+- **Materials** – Japan remains a leader in semiconductor materials (photoresists, wafers, chemicals) with companies like Shin-Etsu Chemical, Sumitomo Chemical, and JSR Corporation
+- **Equipment** – strong position in semiconductor manufacturing equipment with companies like Tokyo Electron and Screen Holdings
+- **Memory** – limited presence in commodity memory, but expertise in specialized memory and storage technologies
+- **Logic** – reduced presence in advanced logic, but partnerships and investments increasing, including TSMC's investment in Japan
 
 ### Strategic Initiatives
 
-Japan is pursuing several strategies:
+Japan is pursuing several strategies to rebuild and strengthen its semiconductor industry:
 
 **Government Support:**
-- Subsidies for semiconductor manufacturing and R&D.
-- Support for TSMC and other foreign investments in Japan.
-- Strategic focus on advanced logic and memory technologies.
+- Subsidies for semiconductor manufacturing and R&D totaling billions of dollars
+- Support for TSMC and other foreign investments in Japan through financial incentives and infrastructure
+- Strategic focus on advanced logic and memory technologies
+- National semiconductor strategy emphasizing supply chain security
 
 **Corporate Investment:**
-- Major Japanese companies investing in semiconductor capacity.
-- Partnerships with international leaders (TSMC, Samsung, Intel).
-- Focus on specialized and high-value segments.
+- Major Japanese companies investing in semiconductor capacity and R&D
+- Partnerships with international leaders (TSMC, Samsung, Intel) to access advanced technologies
+- Focus on specialized and high-value segments where Japan has competitive advantages
+- Joint ventures and technology transfer agreements
 
 **Supply Chain Resilience:**
-- Reducing dependence on single suppliers or regions.
-- Building domestic capacity in critical components.
-- Strengthening partnerships with allies.
+- Reducing dependence on single suppliers or regions, particularly China
+- Building domestic capacity in critical components and materials
+- Strengthening partnerships with allies and like-minded countries
+- Diversification of supply chains across multiple regions
+
+**Key Projects:**
+- TSMC's investment in Kumamoto for advanced logic manufacturing
+- Rapidus initiative for next-generation logic chips
+- Memory technology development programs
+- Materials and equipment R&D initiatives
 
 ### Investment Opportunities
 
-For investors, opportunities include:
+For investors, opportunities include several categories:
 
 **Materials Companies:**
-- Suppliers of semiconductor materials with strong market positions.
-- Companies benefiting from increased semiconductor manufacturing.
-- R&D leaders in next-generation materials.
+- Suppliers of semiconductor materials with strong market positions and pricing power
+- Companies benefiting from increased semiconductor manufacturing activity globally
+- R&D leaders in next-generation materials for advanced nodes
+- Companies with proprietary technologies and strong customer relationships
 
 **Equipment Manufacturers:**
-- Companies producing semiconductor manufacturing equipment.
-- Providers of testing and inspection systems.
-- Suppliers of critical components and subsystems.
+- Companies producing semiconductor manufacturing equipment with market-leading positions
+- Providers of testing and inspection systems critical for quality control
+- Suppliers of critical components and subsystems for manufacturing equipment
+- Companies with strong service and support capabilities
 
 **Integrated Device Manufacturers:**
-- Japanese companies with semiconductor operations.
-- Companies with partnerships or joint ventures.
-- Specialized semiconductor companies in niche markets.
+- Japanese companies with semiconductor operations in specialized segments
+- Companies with partnerships or joint ventures with global leaders
+- Specialized semiconductor companies in niche markets with high barriers to entry
+- Companies transitioning to new business models and technologies
 
 ## Advanced Manufacturing
 
 ### Industrial Technology
 
-Japan excels in advanced manufacturing technologies:
+Japan excels in advanced manufacturing technologies that are essential for modern industrial production:
 
 **Robotics and Automation:**
-- Industrial robots and automation systems.
-- Factory automation and smart manufacturing.
-- Robotics for logistics and services.
+- Industrial robots and automation systems with companies like Fanuc, Yaskawa Electric, and Kawasaki Heavy Industries
+- Factory automation and smart manufacturing solutions integrating AI and IoT
+- Robotics for logistics and services expanding beyond manufacturing
+- Human-robot collaboration and advanced control systems
 
 **Precision Manufacturing:**
-- High-precision components and systems.
-- Advanced materials and processing.
-- Quality control and measurement systems.
+- High-precision components and systems for aerospace, medical, and electronics applications
+- Advanced materials and processing technologies
+- Quality control and measurement systems ensuring precision and reliability
+- Miniaturization and micro-manufacturing capabilities
 
 **Industrial Equipment:**
-- Machine tools and manufacturing equipment.
-- Production systems and solutions.
-- Maintenance and service capabilities.
+- Machine tools and manufacturing equipment with companies like DMG Mori and Makino
+- Production systems and solutions integrating multiple technologies
+- Maintenance and service capabilities supporting long-term customer relationships
+- Energy-efficient and sustainable manufacturing solutions
 
 ### Key Sectors
 
 **Automotive:**
-- Advanced automotive components and systems.
-- Electric vehicle technologies and batteries.
-- Autonomous driving and connectivity.
+- Advanced automotive components and systems with companies like Denso, Aisin, and Toyota
+- Electric vehicle technologies and batteries with investments in battery technology
+- Autonomous driving and connectivity systems and sensors
+- Lightweight materials and advanced manufacturing processes
 
 **Electronics:**
-- Consumer electronics components.
-- Industrial electronics and control systems.
-- Advanced displays and sensors.
+- Consumer electronics components with companies like Murata Manufacturing and TDK
+- Industrial electronics and control systems
+- Advanced displays and sensors for various applications
+- Power electronics and energy management systems
 
 **Industrial Machinery:**
-- Construction and mining equipment.
-- Factory automation systems.
-- Energy and power equipment.
+- Construction and mining equipment with companies like Komatsu and Hitachi Construction Machinery
+- Factory automation systems and solutions
+- Energy and power equipment including generators and transformers
+- Medical equipment and precision instruments
 
 ## Investment Themes
 
 ### Technology Leadership
 
-Companies with:
+Companies with strong technology positions offer attractive investment opportunities:
 
-- **Strong R&D** capabilities and intellectual property.
-- **Market leadership** in specialized segments.
-- **Innovation** in next-generation technologies.
+**Strong R&D Capabilities:**
+- Significant R&D investment relative to revenue
+- Intellectual property portfolios protecting competitive advantages
+- Innovation in next-generation technologies
+- Long-term technology roadmaps
+
+**Market Leadership:**
+- Market leadership in specialized segments with high barriers to entry
+- Pricing power and strong customer relationships
+- Brand recognition and reputation for quality
+- Sustainable competitive advantages
+
+**Innovation:**
+- Innovation in next-generation technologies addressing future needs
+- Early adoption of new technologies and processes
+- Collaboration with customers and partners on innovation
+- Continuous improvement and technology development
 
 ### Supply Chain Positioning
 
-Companies positioned to benefit from:
+Companies positioned to benefit from supply chain reconfiguration:
 
-- **Supply chain diversification** and resilience initiatives.
-- **Strategic partnerships** with global leaders.
-- **Critical components** in high-value supply chains.
+**Supply Chain Diversification:**
+- Supply chain diversification and resilience initiatives creating new opportunities
+- Reduced dependence on single regions or suppliers
+- Multiple sourcing and geographic diversification
+- Strategic positioning in critical supply chains
+
+**Strategic Partnerships:**
+- Strategic partnerships with global leaders providing access to technologies and markets
+- Joint ventures and technology transfer agreements
+- Long-term customer relationships and contracts
+- Collaboration on next-generation technologies
+
+**Critical Components:**
+- Critical components in high-value supply chains with limited alternatives
+- Essential materials, equipment, or services
+- High switching costs for customers
+- Strategic importance to end products
 
 ### Government Support
 
-Companies receiving:
+Companies receiving government support benefit from favorable policy environments:
 
-- **Subsidies and incentives** for strategic investments.
-- **Policy support** for key technologies.
-- **Infrastructure** and regulatory advantages.
+**Subsidies and Incentives:**
+- Subsidies and incentives for strategic investments reducing capital requirements
+- Tax benefits and regulatory support
+- Infrastructure development supporting operations
+- Research and development funding
+
+**Policy Support:**
+- Policy support for key technologies and industries
+- Trade policies protecting domestic industries
+- Regulatory frameworks supporting innovation
+- Strategic industry policies
+
+**Infrastructure:**
+- Infrastructure and regulatory advantages supporting operations
+- Access to utilities, transportation, and logistics
+- Regulatory clarity and stability
+- Support for workforce development
+
+## Market Dynamics and Trends
+
+### Technology Trends
+
+**Advanced Nodes:**
+- Transition to smaller process nodes requiring advanced materials and equipment
+- 3D packaging and advanced packaging technologies
+- New materials and processes for next-generation chips
+- Integration of different technologies and materials
+
+**AI and Machine Learning:**
+- AI and machine learning applications in manufacturing and design
+- Predictive maintenance and quality control
+- Optimization of manufacturing processes
+- New chip architectures for AI workloads
+
+**Sustainability:**
+- Sustainability initiatives reducing environmental impact
+- Energy-efficient manufacturing processes
+- Recycling and circular economy approaches
+- Carbon reduction and environmental compliance
+
+### Geopolitical Factors
+
+**Supply Chain Security:**
+- Geopolitical concerns driving supply chain diversification
+- Strategic importance of semiconductor and advanced manufacturing
+- National security considerations affecting investment
+- Trade policies and restrictions
+
+**Regional Dynamics:**
+- Competition and cooperation in Asia-Pacific
+- US-Japan cooperation on technology and security
+- China's role in supply chains and technology
+- Regional trade agreements and partnerships
 
 ## Portfolio Implementation
 
 ### Accessing Japanese Technology
 
-International investors can access through:
+International investors can access Japanese technology companies through several channels:
 
-- **Listed companies** – Japanese technology companies with public listings.
-- **ETFs and funds** – technology-focused Japanese equity funds.
-- **Direct investments** – strategic investments in private companies.
+**Listed Companies:**
+- Listed companies – Japanese technology companies with public listings on Tokyo Stock Exchange
+- ADRs and GDRs for some companies
+- Direct investment in Japanese equities
+- Research and analysis of Japanese companies
+
+**ETFs and Funds:**
+- ETFs and funds – technology-focused Japanese equity funds
+- Sector-specific funds targeting semiconductors or manufacturing
+- Active management funds with technology expertise
+- Index funds providing broad exposure
+
+**Direct Investments:**
+- Direct investments – strategic investments in private companies
+- Venture capital and private equity opportunities
+- Joint ventures and partnerships
+- M&A opportunities
 
 ### Risk Considerations
 
-Key risks include:
+Key risks include several categories:
 
-- **Competition** – intense competition from Asian and global competitors.
-- **Currency exposure** – JPY volatility affecting returns.
-- **Cyclicality** – semiconductor and manufacturing cycles.
-- **Technology disruption** – risk of technological obsolescence.
+**Competition:**
+- Competition – intense competition from Asian and global competitors
+- Technology disruption from new entrants
+- Price competition in commodity segments
+- Market share loss to competitors
+
+**Currency Exposure:**
+- Currency exposure – JPY volatility affecting returns for international investors
+- Currency hedging considerations
+- Impact of currency movements on competitiveness
+- Translation and transaction exposure
+
+**Cyclicality:**
+- Cyclicality – semiconductor and manufacturing cycles affecting demand and pricing
+- Economic cycles impacting capital spending
+- Inventory cycles and demand volatility
+- Recovery timing and magnitude
+
+**Technology Disruption:**
+- Technology disruption – risk of technological obsolescence
+- New technologies replacing existing solutions
+- Changes in customer requirements
+- Innovation by competitors
 
 ### Due Diligence
 
-Important factors:
+Important factors for investment analysis:
 
-- **Technology position** – assessing competitive advantages and IP.
-- **Market dynamics** – understanding industry cycles and trends.
-- **Management quality** – leadership and strategic execution.
-- **Financial strength** – balance sheet and cash flow generation.
+**Technology Position:**
+- Technology position – assessing competitive advantages and IP
+- R&D capabilities and innovation track record
+- Technology roadmaps and future positioning
+- Barriers to entry and competitive moats
+
+**Market Dynamics:**
+- Market dynamics – understanding industry cycles and trends
+- Customer relationships and market position
+- Competitive landscape and market share
+- Growth drivers and market opportunities
+
+**Management Quality:**
+- Management quality – leadership and strategic execution
+- Corporate governance and shareholder alignment
+- Strategic vision and execution capability
+- Capital allocation and investment decisions
+
+**Financial Strength:**
+- Financial strength – balance sheet and cash flow generation
+- Profitability and margin trends
+- Capital structure and financial flexibility
+- Dividend policy and capital return
 
 ## Conclusion
 
-Japan's semiconductor and advanced manufacturing sectors represent important investment opportunities in technology leadership, supply chain resilience, and industrial innovation. As of early 2026, strategic initiatives and corporate investments are creating new opportunities while building on Japan's historical strengths.
+Japan's semiconductor and advanced manufacturing sectors represent important investment opportunities in technology leadership, supply chain resilience, and industrial innovation. As of early 2026, strategic initiatives and corporate investments are creating new opportunities while building on Japan's historical strengths in materials, equipment, and precision manufacturing.
+
+The convergence of geopolitical factors, technological advances, and strategic industrial policy is reshaping Japan's role in global technology supply chains. Companies that can leverage Japan's strengths while adapting to changing market dynamics are well-positioned for growth.
 
 For investors, success requires:
 
-- **Understanding technology positions** and competitive dynamics.
-- **Assessing strategic initiatives** and government support.
-- **Evaluating supply chain roles** and partnership structures.
-- **Managing risks** across competition, currency, and cyclicality.
+- **Understanding technology positions** and competitive dynamics in specialized segments
+- **Assessing strategic initiatives** and government support creating favorable conditions
+- **Evaluating supply chain roles** and partnership structures providing competitive advantages
+- **Managing risks** across competition, currency, and cyclicality affecting returns
 
-Japan's technology sector is evolving, and investors who engage thoughtfully with these changes will be well-positioned to capture opportunities in semiconductors, advanced manufacturing, and industrial technology.`,
+Japan's technology sector is evolving, and investors who engage thoughtfully with these changes will be well-positioned to capture opportunities in semiconductors, advanced manufacturing, and industrial technology. The combination of Japan's historical strengths, strategic initiatives, and evolving market dynamics creates a compelling investment opportunity for those willing to understand the complexities of these sectors.`,
     date: formatDate(-49),
     author: 'Xu Meiling',
     authorAvatar: getAuthorAvatar('Xu Meiling'),
@@ -4696,146 +4861,216 @@ For years, Japan was viewed as the archetype of a value trap: low growth, low in
 
 ## Introduction
 
-South Korea is a core market in Asia‑Pacific equity portfolios. It combines:
+South Korea is a core market in Asia‑Pacific equity portfolios. The country has transformed from a developing economy to a global technology and manufacturing powerhouse over the past several decades, creating world-class companies in semiconductors, autos, and electronics. It combines:
 
-- World‑class positions in semiconductors, autos, and electronics.
-- Deep integration into global trade and technology supply chains.
-- A long‑standing debate around the **“Korea discount”**—why valuations remain lower than many developed‑market peers.
+- World‑class positions in semiconductors, autos, and electronics with global market leadership
+- Deep integration into global trade and technology supply chains making it sensitive to global cycles
+- A long‑standing debate around the **"Korea discount"**—why valuations remain lower than many developed‑market peers despite strong fundamentals
+
+The Korea discount has persisted for decades, with Korean equities trading at lower multiples than their global peers despite strong earnings growth, technological leadership, and competitive advantages. This discount reflects a complex mix of governance concerns, cyclical exposures, and structural factors.
 
 At the center of this debate are:
 
-- Corporate governance and chaebol ownership structures.
-- Export cyclicality and earnings volatility.
-- Evolving shareholder‑return policies.
+- Corporate governance and chaebol ownership structures that have historically favored controlling families over minority shareholders
+- Export cyclicality and earnings volatility that create uncertainty for investors
+- Evolving shareholder‑return policies that may signal improving governance practices
 
 This article offers a framework for thinking about Korea equities, with a focus on how governance reforms intersect with sector cycles in semis, autos, and internet.
 
-## Market Structure and the “Korea Discount”
+## Market Structure and the "Korea Discount"
 
 ### Sector Composition
 
-Korea’s equity indices are heavily weighted toward:
+Korea's equity indices are heavily weighted toward a few key sectors:
 
-- **Semiconductors and technology hardware**
-  - Memory chips.
-  - Display panels.
-- **Autos and auto components**
-  - Global OEMs and suppliers.
-- **Internet and e‑commerce platforms**
-  - Domestic champions with strong local scale.
+**Semiconductors and Technology Hardware:**
+- Memory chips (DRAM, NAND) with global market leadership
+- Display panels and components
+- Technology hardware and components
+- Companies like Samsung Electronics and SK Hynix
 
-This composition means:
+**Autos and Auto Components:**
+- Global OEMs and suppliers with strong export presence
+- Hyundai Motor, Kia, and auto parts suppliers
+- Strong position in value segments and emerging markets
 
-- High sensitivity to global electronics and auto cycles.
+**Internet and E‑commerce Platforms:**
+- Domestic champions with strong local scale
+- Kakao, Naver, and e-commerce platforms
+- Digital services and platform businesses
+
+**This composition means:**
+- High sensitivity to global electronics and auto cycles affecting earnings volatility
 - Meaningful exposure to:
-  - Capex trends in data centers and devices.
-  - Consumer demand for vehicles and digital services.
+  - Capex trends in data centers and devices driving semiconductor demand
+  - Consumer demand for vehicles and digital services affecting multiple sectors
+- Concentration risk in few sectors and companies
+
+### The Korea Discount Explained
+
+**Valuation Gap:**
+- Korean equities trade at significant discounts to global peers
+- P/E multiples typically 30-50% lower than comparable companies
+- Discount persists despite strong fundamentals and growth
+
+**Contributing Factors:**
+- Governance concerns affecting minority shareholder rights
+- Cyclical earnings volatility creating uncertainty
+- Currency volatility affecting foreign investor returns
+- Limited shareholder returns historically
+- Complex ownership structures
+
+**Historical Context:**
+- Discount has persisted for decades
+- Multiple reform attempts have had limited impact
+- Structural factors are deeply embedded
+- Recent reforms may be changing dynamics
 
 ### Governance and Ownership Structures
 
-Chaebols—family‑controlled conglomerates—remain central:
+Chaebols—family‑controlled conglomerates—remain central to Korean corporate structure:
 
-- Complex cross‑shareholdings.
+**Ownership Characteristics:**
+- Complex cross‑shareholdings creating control with limited economic ownership
 - Controlling families with:
-  - Significant influence over strategy.
-  - Limited economic ownership in some cases.
+  - Significant influence over strategy and capital allocation
+  - Limited economic ownership in some cases through circular holdings
+  - Ability to maintain control with minority stakes
 
-Historically, concerns have included:
+**Historical Concerns:**
+- Related‑party transactions and tunneling benefiting controlling families
+- Unequal treatment of minority shareholders in restructurings and M&A
+- Limited transparency in decision-making
+- Capital allocation favoring family interests over shareholders
 
-- Related‑party transactions and tunneling.
-- Unequal treatment of minority shareholders in restructurings.
-
-These factors have contributed to:
-
+**These factors have contributed to:**
 - Lower valuation multiples relative to:
-  - Underlying asset quality.
-  - Earnings power.
+  - Underlying asset quality and competitive positions
+  - Earnings power and cash flow generation
+  - Global peers with better governance
+
+**Recent Changes:**
+- Some chaebols simplifying structures
+- Increased focus on shareholder value
+- Regulatory pressure for improvements
+- Market pressure from foreign investors
 
 ## Governance Reforms and Shareholder Returns
 
 ### Policy and Regulatory Initiatives
 
-Recent years have seen:
+Recent years have seen significant governance reform efforts:
 
+**Reform Initiatives:**
 - Reforms aimed at:
-  - Improving transparency.
-  - Simplifying ownership structures.
-  - Strengthening shareholder rights.
+  - Improving transparency in ownership and transactions
+  - Simplifying ownership structures and cross-shareholdings
+  - Strengthening shareholder rights and protections
 - Discussion of initiatives akin to:
-  - Corporate‑value enhancement programs.
+  - Corporate‑value enhancement programs similar to Japan's
+  - Mandatory disclosure and transparency requirements
+  - Stricter enforcement of shareholder rights
 
-Effects include:
-
+**Effects include:**
 - Increased:
-  - Focus on capital efficiency.
-  - Scrutiny of persistently low valuations.
+  - Focus on capital efficiency and ROE improvement
+  - Scrutiny of persistently low valuations by management and boards
+  - Pressure from foreign investors and proxy advisors
 
-However, implementation is uneven and:
+**However, implementation is uneven and:**
+- Some reforms remain voluntary or subject to interpretation
+- Progress varies significantly by company and chaebol
+- Cultural and structural barriers remain
+- Enforcement and follow-through are inconsistent
 
-- Some reforms remain voluntary or subject to interpretation.
+**Market Response:**
+- Some companies have seen re-rating on governance improvements
+- Foreign ownership increasing in companies with better governance
+- Activist investors becoming more active
+- Market rewarding governance improvements
 
 ### Dividends, Buybacks, and Capital Allocation
 
-Many Korean companies have:
+Many Korean companies have responded to pressure with capital return initiatives:
 
-- Raised dividend payouts.
+**Capital Return Actions:**
+- Raised dividend payouts significantly in recent years
 - Initiated:
-  - Share‑buyback programs.
-  - Cancellations of treasury stock.
+  - Share‑buyback programs returning capital to shareholders
+  - Cancellations of treasury stock improving per-share metrics
+  - Dividend yield improvements
 
-Key questions for investors:
-
+**Key questions for investors:**
 - Are these actions:
-  - Tactical responses to pressure?
+  - Tactical responses to pressure that may reverse?
   - Or signs of deeper cultural and governance change?
 - How consistent are:
   - Payout and buyback policies through cycles?
+  - Capital allocation decisions over time?
 
-Companies that:
-
+**Companies that:**
 - Combine strong core businesses with:
-  - Clear capital‑return frameworks.
-  - Improving governance practices.
+  - Clear capital‑return frameworks and commitments
+  - Improving governance practices and transparency
+  - Sustainable dividend and buyback policies
 
-are better candidates for a sustained re‑rating.
+**are better candidates for a sustained re‑rating** as they demonstrate commitment to shareholder value creation.
+
+**Investment Implications:**
+- Focus on companies with credible capital return commitments
+- Assess sustainability of policies through cycles
+- Evaluate governance improvements alongside capital returns
+- Consider both yield and growth in total return expectations
 
 ## Semiconductors: Cycles and Structural Drivers
 
 ### Memory-Centric Exposure
 
-Korea’s semiconductor sector is:
+Korea's semiconductor sector is:
 
-- Dominated by memory (DRAM, NAND).
+**Market Position:**
+- Dominated by memory (DRAM, NAND) with global market leadership
+- Samsung Electronics and SK Hynix control significant market share
 - Highly cyclical, driven by:
-  - Capacity additions.
-  - Demand for PCs, smartphones, and servers.
+  - Capacity additions and supply-demand dynamics
+  - Demand for PCs, smartphones, and servers
+  - Technology transitions and product cycles
 
-Structural trends:
+**Structural Trends:**
+- Growing memory content per device supporting long-term demand
+- AI and data‑center workloads increasing memory demand significantly
+- New applications requiring more memory capacity
+- Technology transitions to advanced nodes
 
-- Growing memory content per device.
-- AI and data‑center workloads increasing memory demand.
-
-But investors must navigate:
-
-- Investment booms and supply gluts.
-- Pricing waves that can rapidly swing margins.
+**But investors must navigate:**
+- Investment booms and supply gluts creating pricing volatility
+- Pricing waves that can rapidly swing margins from high to negative
+- Capacity cycles affecting profitability
+- Technology competition and innovation requirements
 
 ### Capital Discipline and Consolidation
 
-Key considerations:
-
-- Capacity plans and capex discipline.
+**Key considerations:**
+- Capacity plans and capex discipline affecting supply-demand balance
 - Balance between:
-  - Defending market share.
-  - Prioritizing profitability.
+  - Defending market share through capacity investment
+  - Prioritizing profitability and returns
+- Industry structure and competitive dynamics
+- Technology leadership and R&D investment
 
-For long‑term investors:
-
+**For long‑term investors:**
 - Evaluating whether leading players are:
-  - Shifting toward more rational industry structures.
-  - Using cycles to strengthen competitive positions.
+  - Shifting toward more rational industry structures
+  - Using cycles to strengthen competitive positions
+  - Improving capital allocation and returns
 
-is central to assessing return potential beyond short‑term pricing moves.
+**is central to assessing return potential beyond short‑term pricing moves.**
+
+**Investment Themes:**
+- AI-driven demand growth for memory
+- Industry consolidation and rationalization
+- Technology leadership and innovation
+- Capital discipline and returns improvement
 
 ## Autos and Mobility
 
@@ -4843,54 +5078,119 @@ is central to assessing return potential beyond short‑term pricing moves.
 
 Korean auto OEMs and suppliers have:
 
-- Improved brand perceptions.
+**Market Position:**
+- Improved brand perceptions globally, particularly in value segments
 - Expanded:
-  - EV offerings.
-  - Presence in key export markets.
+  - EV offerings competing with global leaders
+  - Presence in key export markets including US, Europe, and emerging markets
+- Strong manufacturing capabilities and quality
 
-Opportunities:
-
+**Opportunities:**
 - Electrification and:
-  - Growth in EV exports.
-  - Demand for value‑oriented vehicles in emerging markets.
+  - Growth in EV exports as global EV adoption accelerates
+  - Demand for value‑oriented vehicles in emerging markets
+  - Technology partnerships and development
+- Market share gains in key regions
+- Premium positioning in some segments
 
-Risks:
-
+**Risks:**
 - Competition from:
-  - Global incumbents.
-  - Chinese EV manufacturers.
-- Trade policy and tariffs.
+  - Global incumbents with strong brands and technology
+  - Chinese EV manufacturers with cost advantages
+  - New entrants in electric vehicles
+- Trade policy and tariffs affecting competitiveness
+- Technology disruption and autonomous driving
+- Supply chain and input cost pressures
 
-Investors should:
-
+**Investors should:**
 - Evaluate:
-  - Product mix and technological capabilities.
-  - Geographic diversification.
-  - Margin resilience under pricing pressure.
+  - Product mix and technological capabilities in EVs
+  - Geographic diversification and market exposure
+  - Margin resilience under pricing pressure
+  - Capital allocation and investment in new technologies
+
+### EV Transition and Technology
+
+**EV Strategy:**
+- Significant investment in EV development and production
+- Partnerships with technology companies
+- Battery technology and supply chain development
+- Manufacturing capacity expansion
+
+**Competitive Position:**
+- Strong manufacturing capabilities
+- Value positioning in global markets
+- Technology development and innovation
+- Challenges from Chinese and other competitors
 
 ## Internet and Domestic Demand
 
 ### Platform Economics and Regulation
 
-Korea’s internet and e‑commerce companies:
+Korea's internet and e‑commerce companies:
 
+**Market Characteristics:**
 - Operate in a:
-  - Highly digitalized consumer market.
+  - Highly digitalized consumer market with high internet penetration
   - Competitive ecosystem with both:
-    - Domestic players.
-    - Global platforms.
+    - Domestic players with local advantages
+    - Global platforms competing for market share
+- Strong local market position but limited global expansion
 
-Regulatory focus areas:
+**Regulatory Focus Areas:**
+- Platform dominance and competition policy
+- Consumer protection and data privacy
+- Fair competition and market access
+- Content and media regulation
 
-- Platform dominance and competition.
-- Consumer protection and data privacy.
-
-For investors:
-
+**For investors:**
 - Key issues include:
-  - Monetization strategies.
-  - Investment in logistics and ecosystem services.
-  - Balance between growth and profitability.
+  - Monetization strategies and revenue diversification
+  - Investment in logistics and ecosystem services
+  - Balance between growth and profitability
+  - Regulatory compliance and risk management
+  - Competition from global platforms
+
+**Sector Dynamics:**
+- Mature domestic market with limited growth
+- Competition intensifying
+- Regulatory pressure increasing
+- Need for new growth drivers
+
+## Macroeconomic and Currency Factors
+
+### Economic Structure
+
+**Export Dependence:**
+- High dependence on exports making economy sensitive to global demand
+- Trade relationships with major economies
+- Supply chain integration with global manufacturing
+
+**Currency Dynamics:**
+- KRW volatility affecting foreign investor returns
+- Export competitiveness affected by currency strength
+- Safe-haven flows during stress
+- Central bank policy affecting currency
+
+**Macroeconomic Factors:**
+- GDP growth and economic cycles
+- Inflation and monetary policy
+- Fiscal policy and government spending
+- Demographics and structural trends
+
+### Geopolitical Considerations
+
+**US-China Tensions:**
+- Technology export controls affecting semiconductor companies
+- Supply chain diversification pressures
+- Trade policy and tariffs
+- Strategic technology competition
+
+**Regional Dynamics:**
+- North Korea relations and security concerns
+- Regional trade relationships
+- Regional integration and cooperation
+- Strategic positioning
 
 ## Portfolio Construction: Korea in Asia-Pacific Context
 
@@ -4898,57 +5198,104 @@ For investors:
 
 Within Asia‑Pacific and EM allocations, Korea can provide:
 
+**Exposure Benefits:**
 - Leveraged exposure to:
-  - Global tech and auto cycles.
-  - AI and data‑center capex (through semis).
+  - Global tech and auto cycles through sector concentration
+  - AI and data‑center capex (through semis) as structural growth driver
 - A governance‑reform story with:
-  - Potential for multiple expansion.
+  - Potential for multiple expansion if reforms succeed
+  - Valuation normalization opportunities
 
-Positioning should:
-
+**Positioning should:**
 - Balance:
-  - Cyclical sensitivities (semis, autos).
-  - Structural growth and reform themes.
+  - Cyclical sensitivities (semis, autos) requiring cycle awareness
+  - Structural growth and reform themes offering long-term opportunities
+- Consider:
+  - Currency exposure and hedging
+  - Concentration risks
+  - Governance quality
 
 ### Key Risks
 
 Risks to monitor:
 
-- Global macro conditions:
-  - Demand for electronics and autos.
-- US‑China tech tensions and export controls.
-- Domestic policy shifts on:
-  - Corporate governance.
-  - Labor and social issues.
+**Global Macro Conditions:**
+- Demand for electronics and autos affecting earnings
+- Economic cycles and growth trends
+- Trade and supply chain disruptions
 
-Scenario analysis can help:
+**Technology and Trade:**
+- US‑China tech tensions and export controls affecting semiconductor companies
+- Trade policy changes and tariffs
+- Supply chain reconfiguration
 
+**Domestic Policy:**
+- Policy shifts on:
+  - Corporate governance and reform pace
+  - Labor and social issues affecting costs
+  - Economic and industrial policy
+
+**Scenario analysis can help:**
 - Map equity outcomes under:
-  - Different global‑cycle and policy paths.
+  - Different global‑cycle and policy paths
+  - Various governance reform scenarios
+  - Different sector cycle positions
+
+## Investment Strategies
+
+### Quality and Governance Focus
+
+**Investment Approach:**
+- Focus on companies with improving governance
+- Strong capital return commitments
+- Quality businesses with competitive advantages
+- Sustainable competitive positions
+
+**Selection Criteria:**
+- Governance quality and improvement trajectory
+- Capital allocation and shareholder returns
+- Business quality and competitive position
+- Valuation relative to fundamentals
+
+### Sector Rotation and Cycle Management
+
+**Cyclical Positioning:**
+- Semiconductor cycle positioning
+- Auto cycle management
+- Sector rotation strategies
+- Timing considerations
+
+**Structural Themes:**
+- AI and data center growth
+- EV transition
+- Digital transformation
+- Governance reform
 
 ## Conclusion
 
-Korea’s equity market reflects a tension between:
+Korea's equity market reflects a tension between:
 
-- Global leadership in key industries.
-- Domestic governance and policy challenges.
+- Global leadership in key industries with strong competitive positions
+- Domestic governance and policy challenges affecting valuations
 
 The **Korea discount** is not immutable. As:
 
-- Governance practices evolve.
-- Shareholder returns become more consistent.
-- Sector leaders adapt to new global cycles.
+- Governance practices evolve with reforms and market pressure
+- Shareholder returns become more consistent and sustainable
+- Sector leaders adapt to new global cycles and technologies
 
 there is scope for both:
 
-- Earnings growth.
-- Valuation normalization in select names.
+- Earnings growth from structural trends and competitive advantages
+- Valuation normalization in select names with governance improvements
 
-For Asia‑Pacific investors, Korea remains a high‑beta but potentially rewarding component of regional portfolios, provided that:
+**For Asia‑Pacific investors, Korea remains a high‑beta but potentially rewarding component of regional portfolios**, provided that:
 
-- Governance progress is monitored closely.
-- Sector exposures are aligned with macro and cycle views.
-- Position sizes respect the market’s volatility profile.`,
+- Governance progress is monitored closely to identify improvement opportunities
+- Sector exposures are aligned with macro and cycle views for appropriate timing
+- Position sizes respect the market's volatility profile and risk characteristics
+
+Success requires understanding the complex interaction between governance reforms, sector cycles, and global macroeconomic factors. Investors who can navigate these dynamics while maintaining focus on quality and governance improvement will be best positioned to capture the opportunities in Korean equities.`,
     date: formatDate(375),
     author: 'Xu Meiling',
     authorAvatar: getAuthorAvatar('Xu Meiling'),

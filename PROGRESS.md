@@ -58,10 +58,17 @@
 54. ✅ Расширена analytics статья "CEE Equity Markets and Privatization Themes: Sizing Opportunities in a Shallow but Evolving Landscape" (691 → 1500+ слов)
 55. ✅ Расширена analytics статья "AI and Supply Chain Reconfiguration in Asia-Pacific" (701 → 1500+ слов)
 56. ✅ Расширена analytics статья "Cross-Border Tax Optimization for European Equity Investors" (710 → 1500+ слов)
+57. ✅ Расширена analytics статья "Japan Semiconductors and Advanced Manufacturing: Investment Themes in Technology Leadership" (716 → 1500+ слов)
+58. ✅ Расширена analytics статья "Biodiversity Credits and Nature Markets: Opportunities and Pitfalls" (731 → 1500+ слов)
+59. ✅ Расширена analytics статья "Swiss Equities: Defensives, Currency Strength, and Valuation Discipline" (745 → 1500+ слов)
+60. ✅ Расширена analytics статья "Korea Equities and the Chaebol Reform Debate: Discount, Governance, and Global Cycles" (757 → 1500+ слов)
+61. ✅ Расширена analytics статья "Greek Equities: Tourism, Banks, and Privatization in a Post-Crisis Market" (764 → 1500+ слов)
+62. ✅ Расширена analytics статья "Transition Finance: Funding the Hard-to-Abate Path to Net Zero" (768 → 1500+ слов)
+63. ✅ Расширена analytics статья "Social Factors in ESG: Labor Rights, Human Capital, and the Economics of "S"" (772 → 1500+ слов)
 
 ## Результат
 
-- **Word count issues**: 179 → 152 статей (улучшение на 27 статей)
+- **Word count issues**: 179 → 145 статей (улучшение на 34 статьи)
 - **Structure issues**: 13 → 10 статей (улучшение на 3 статьи)
 - **Placeholder issues**: 28 статей (добавлен контент для 27 education статей, осталось 0 education + 1 analytics - возможно ложное срабатывание)
 
