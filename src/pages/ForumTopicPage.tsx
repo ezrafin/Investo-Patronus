@@ -185,7 +185,7 @@ export default function ForumTopicPage() {
       await queryClient.invalidateQueries({ queryKey: ['forumTopics'] });
       
       // Trigger bill collection for posting reply
-      await collectBill('forum_post_reply', {
+      await collectBill('reply_create', {
         page: `/forum/${topicId}`,
         action: 'post_reply',
       });
