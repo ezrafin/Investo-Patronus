@@ -49,22 +49,35 @@ export default function AnalyticsDetailPage() {
 
   useEffect(() => {
     async function loadArticle() {
+      // Reset loading state when slug changes
+      setLoading(true);
+      
       if (slug) {
-        const data = await fetchAnalyticsBySlug(slug);
-        setArticle(data);
-        setLoading(false);
-        
-        // Add to reading history
-        if (data) {
-          addToHistory('analytics', slug);
+        try {
+          const data = await fetchAnalyticsBySlug(slug);
+          setArticle(data);
           
-          // Load related companies if specified
-          if (data.relatedCompanies && data.relatedCompanies.length > 0) {
-            const companies = await fetchCompanies();
-            const filtered = companies.filter(c => data.relatedCompanies?.includes(c.slug));
-            setRelatedCompanies(filtered);
+          // Add to reading history
+          if (data) {
+            addToHistory('analytics', slug);
+            
+            // Load related companies if specified
+            if (data.relatedCompanies && data.relatedCompanies.length > 0) {
+              const companies = await fetchCompanies();
+              const filtered = companies.filter(c => data.relatedCompanies?.includes(c.slug));
+              setRelatedCompanies(filtered);
+            }
           }
+        } catch (error) {
+          console.error('Error loading article:', error);
+          setArticle(null);
+        } finally {
+          setLoading(false);
         }
+      } else {
+        // If no slug, stop loading and show not found
+        setArticle(null);
+        setLoading(false);
       }
     }
 
