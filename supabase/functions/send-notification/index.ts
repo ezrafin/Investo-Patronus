@@ -1,10 +1,13 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { Resend } from "https://esm.sh/resend@2.0.0";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+
+const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 interface NotificationRequest {
   userId: string;
@@ -51,30 +54,45 @@ serve(async (req) => {
       .eq('id', notification.userId)
       .single();
 
-    // For email notifications, we would use a service like SendGrid, Resend, or Supabase's built-in email
-    // For now, we'll just log it. In production, integrate with email service
-    if (userPrefs?.email_notifications) {
-      console.log(`Would send email to ${preferences.email}:`, {
-        subject: notification.title,
-        body: notification.body,
-        url: notification.url,
-      });
-      
-      // TODO: Integrate with email service (SendGrid, Resend, etc.)
-      // Example with Resend:
-      // await fetch('https://api.resend.com/emails', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Authorization': `Bearer ${RESEND_API_KEY}`,
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     from: 'notifications@investopatronus.com',
-      //     to: preferences.email,
-      //     subject: notification.title,
-      //     html: `<p>${notification.body}</p><a href="${notification.url}">View</a>`,
-      //   }),
-      // });
+    // Send email notification if enabled
+    if (userPrefs?.email_notifications && preferences.email) {
+      try {
+        const emailHtml = `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #333;">${notification.title}</h2>
+            <p style="color: #666; line-height: 1.6;">${notification.body}</p>
+            ${notification.url ? `
+              <div style="margin-top: 20px;">
+                <a href="${notification.url}" 
+                   style="display: inline-block; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;">
+                  View Details
+                </a>
+              </div>
+            ` : ''}
+            <hr style="margin-top: 30px; border: none; border-top: 1px solid #eee;">
+            <p style="color: #999; font-size: 12px; margin-top: 20px;">
+              This is an automated notification from Investo Patronus.
+            </p>
+          </div>
+        `;
+
+        const emailResponse = await resend.emails.send({
+          from: "Investo Patronus <info@investopatronus.com>",
+          to: [preferences.email],
+          subject: notification.title,
+          html: emailHtml,
+        });
+
+        if (emailResponse.error) {
+          console.error('Resend error:', emailResponse.error);
+          // Don't throw - notification can still be stored in DB
+        } else {
+          console.log(`Email notification sent to ${preferences.email}:`, emailResponse);
+        }
+      } catch (emailError) {
+        console.error('Error sending email notification:', emailError);
+        // Don't throw - notification can still be stored in DB
+      }
     }
 
     // Store notification in database for history

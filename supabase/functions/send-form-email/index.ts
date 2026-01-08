@@ -79,11 +79,15 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const emailResponse = await resend.emails.send({
-      from: "Investo Patronus <onboarding@resend.dev>",
+      from: "Investo Patronus <info@investopatronus.com>",
       to: ["support@investopatronus.com"],
       subject,
       html: htmlContent,
     });
+
+    if (emailResponse.error) {
+      throw new Error(emailResponse.error.message || 'Failed to send email');
+    }
 
     console.log("Email sent successfully:", emailResponse);
 
