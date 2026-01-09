@@ -31,9 +31,10 @@ interface PendingDiscussion {
   tags: string[] | null;
   symbol: string | null;
   asset_type: string | null;
-  status: string;
   created_at: string;
   user_id: string | null;
+  is_featured: boolean;
+  is_pinned: boolean;
 }
 
 export default function ModerationPage() {
@@ -85,14 +86,15 @@ export default function ModerationPage() {
   const loadPendingDiscussions = async () => {
     setLoadingDiscussions(true);
     try {
+      // Load discussions that are not featured (pending moderation)
       const { data, error } = await supabase
         .from('forum_discussions')
         .select('*')
-        .eq('status', 'pending')
+        .eq('is_featured', false)
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setPendingDiscussions((data || []) as PendingDiscussion[]);
+      setPendingDiscussions((data || []) as unknown as PendingDiscussion[]);
     } catch (error) {
       console.error('Error loading pending discussions:', error);
       toast.error('Failed to load pending discussions');
@@ -103,21 +105,24 @@ export default function ModerationPage() {
 
   const handleDiscussionModeration = async (discussionId: string, action: 'approve' | 'reject') => {
     try {
-      const newStatus = action === 'approve' ? 'approved' : 'rejected';
-      const { error } = await supabase
-        .from('forum_discussions')
-        .update({ status: newStatus })
-        .eq('id', discussionId);
-
-      if (error) throw error;
-
-      toast.success(action === 'approve' ? 'Discussion approved' : 'Discussion rejected');
-      loadPendingDiscussions();
-      
-      // Invalidate queries to refresh forum
       if (action === 'approve') {
-        // Discussion will now appear on forum
+        // Mark as featured (approved)
+        const { error } = await supabase
+          .from('forum_discussions')
+          .update({ is_featured: true })
+          .eq('id', discussionId);
+        if (error) throw error;
+        toast.success('Discussion approved');
+      } else {
+        // Delete rejected discussion
+        const { error } = await supabase
+          .from('forum_discussions')
+          .delete()
+          .eq('id', discussionId);
+        if (error) throw error;
+        toast.success('Discussion rejected and deleted');
       }
+      loadPendingDiscussions();
     } catch (error: any) {
       toast.error(error.message || 'Failed to update discussion');
     }
@@ -412,7 +417,6 @@ export default function ModerationPage() {
                   ))}
                 </div>
               )}
-            </TabsContent>
             </TabsContent>
           </Tabs>
         </div>
