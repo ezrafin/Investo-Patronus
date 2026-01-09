@@ -3092,6 +3092,62 @@ Evaluating performance correctly prevents bad decisions and keeps you on track.
     { id: 'at-fe-9', question: 'What does optimization find?', options: ['Highest return', 'Optimal risk/return', 'Lowest risk', 'Random'], correctAnswer: 1 },
     { id: 'at-fe-10', question: 'What does risk parity equalize?', options: ['Capital', 'Risk', 'Returns', 'Dividends'], correctAnswer: 1 }
   ]
+},
+{
+  id: 'macroeconomics',
+  title: 'Macroeconomics',
+  description: 'Comprehensive study of macroeconomic principles, policies, and their impact on global economies',
+  finalExamPassRate: 75,
+  modules: Array.from({ length: 8 }, (_, i) => ({
+    id: `module-${i + 1}`,
+    title: `Module ${i + 1}`,
+    description: '',
+    lessons: [],
+    moduleTest: []
+  })),
+  finalExam: []
+},
+{
+  id: 'microeconomics',
+  title: 'Microeconomics',
+  description: 'In-depth exploration of individual economic units, market structures, and consumer behavior',
+  finalExamPassRate: 75,
+  modules: Array.from({ length: 9 }, (_, i) => ({
+    id: `module-${i + 1}`,
+    title: `Module ${i + 1}`,
+    description: '',
+    lessons: [],
+    moduleTest: []
+  })),
+  finalExam: []
+},
+{
+  id: 'finance-markets',
+  title: 'Finance & Markets',
+  description: 'Advanced understanding of financial markets, instruments, and trading strategies',
+  finalExamPassRate: 75,
+  modules: Array.from({ length: 10 }, (_, i) => ({
+    id: `module-${i + 1}`,
+    title: `Module ${i + 1}`,
+    description: '',
+    lessons: [],
+    moduleTest: []
+  })),
+  finalExam: []
+},
+{
+  id: 'economics-personal-finance',
+  title: 'Economics & Personal Finance',
+  description: 'Practical application of economic principles to personal financial planning and decision-making',
+  finalExamPassRate: 75,
+  modules: Array.from({ length: 21 }, (_, i) => ({
+    id: `module-${i + 1}`,
+    title: `Module ${i + 1}`,
+    description: '',
+    lessons: [],
+    moduleTest: []
+  })),
+  finalExam: []
 }
 ];
 

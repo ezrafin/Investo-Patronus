@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, Video, BookOpen, Award, Rocket, GraduationCap } from 'lucide-react';
+import { TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, Video, BookOpen, Award, Rocket, GraduationCap, Users } from 'lucide-react';
 import { educationRoutes } from '@/lib/educationRoutes';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useMemo } from 'react';
@@ -39,9 +39,13 @@ export function Footer() {
       href: educationRoutes.video,
       icon: GraduationCap
     }, {
-      name: t('navigation.investorCourse'),
-      href: educationRoutes.course,
+      name: t('navigation.academy'),
+      href: '/academy',
       icon: Rocket
+    }, {
+      name: t('navigation.mentorEducation'),
+      href: educationRoutes.course,
+      icon: Users
     }],
     content: [{
       name: t('navigation.news'),

@@ -24,7 +24,7 @@ export default function CoursePlatformPage() {
   
   // Redirect to first course if courseId is invalid
   if (!course) {
-    return <Navigate to="/course" replace />;
+    return <Navigate to="/academy" replace />;
   }
 
   const [expandedModules, setExpandedModules] = useState<string[]>([course.modules[0]?.id]);

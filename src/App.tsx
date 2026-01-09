@@ -170,8 +170,8 @@ const App = () => {
                 <Route path={educationRoutes.advancedArticles} element={<AdvancedArticlesPage />} />
                 <Route path={educationRoutes.article} element={<ArticleDetailPage />} />
                 {/* Course Platform */}
-                <Route path="/course" element={<CourseListingPage />} />
-                <Route path="/course/:courseId" element={<CoursePlatformPage />} />
+                <Route path="/academy" element={<CourseListingPage />} />
+                <Route path="/academy/:courseId" element={<CoursePlatformPage />} />
                 {/* Auth Routes */}
                 <Route path="/auth/login" element={<LoginPage />} />
                 <Route path="/auth/register" element={<RegisterPage />} />

@@ -115,10 +115,15 @@ export function Header() {
       icon: GraduationCap,
       description: t('descriptions.videoLibrary')
     }, {
-      name: t('navigation.investorCourse'),
-      href: '/course',
+      name: t('navigation.academy'),
+      href: '/academy',
       icon: Rocket,
-      description: t('descriptions.investorCourse')
+      description: t('descriptions.academy')
+    }, {
+      name: t('navigation.mentorEducation'),
+      href: educationRoutes.course,
+      icon: Users,
+      description: t('descriptions.mentorEducation')
     }]
   }, {
     name: t('navigation.community'),

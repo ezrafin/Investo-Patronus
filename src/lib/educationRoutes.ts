@@ -38,12 +38,13 @@ export function getEducationArticlePath(articleId: string) {
   return `${EDUCATION_BASE_PATH}/article/${articleId}`;
 }
 
-// Course paths (using /course instead of /education/course)
+// Course paths (using /academy for Academy courses)
+// Note: /education/course is used for Mentor Education
 export function getCourseListingPath() {
-  return '/course';
+  return '/academy';
 }
 
 export function getCoursePath(courseId: string) {
-  return `/course/${courseId}`;
+  return `/academy/${courseId}`;
 }
 
