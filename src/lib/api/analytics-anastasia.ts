@@ -1886,42 +1886,63 @@ Frontier African economies occupy a distinctive space within emerging markets. T
 
 ## Introduction
 
-Artificial intelligence depends on three pillars: compute, data, and talent. Emerging markets are increasingly active in all three. From data‑center build‑outs and fiber networks to fintech, e‑commerce, and digital public infrastructure, many EM economies are investing in the foundations of an AI‑enabled future.
+Artificial intelligence depends on three pillars: compute, data, and talent. Emerging markets are increasingly active in all three, creating significant investment opportunities but also facing unique challenges. From data‑center build‑outs and fiber networks to fintech, e‑commerce, and digital public infrastructure, many EM economies are investing in the foundations of an AI‑enabled future.
 
-Yet these efforts unfold in a complex environment:
+The global AI revolution is not limited to developed markets. Emerging markets are playing an increasingly important role, both as consumers and producers of AI technology. Countries like India, China, Brazil, and others are building AI capabilities and infrastructure, creating opportunities for investors and challenges for policymakers.
 
-- Limited fiscal space and higher cost of capital;
-- Regulatory and data‑sovereignty debates;
-- Geopolitical competition over critical technologies and cloud providers.
+Yet these efforts unfold in a complex environment with significant frictions:
 
-This article explores how AI and data infrastructure are evolving in emerging markets, the opportunities this creates for investors, and the frictions that must be managed along the way.
+- **Limited fiscal space and higher cost of capital**: Many emerging markets face fiscal constraints and higher borrowing costs, making it difficult to finance large infrastructure investments. This creates challenges for governments and companies seeking to build AI infrastructure, requiring creative financing solutions and partnerships.
+
+- **Regulatory and data‑sovereignty debates**: Governments are increasingly concerned about data sovereignty, privacy, and national security, leading to complex regulatory frameworks. These debates create uncertainty and can fragment markets, affecting investment opportunities and business models.
+
+- **Geopolitical competition over critical technologies and cloud providers**: Emerging markets are often arenas for geopolitical competition, as major powers compete for influence over critical technologies and infrastructure. This competition can affect technology choices, market access, and investment flows.
+
+This article explores how AI and data infrastructure are evolving in emerging markets, the opportunities this creates for investors, and the frictions that must be managed along the way. Understanding these dynamics is crucial for investors seeking to participate in the AI revolution in emerging markets.
 
 ## Building Blocks of AI-Ready Infrastructure
 
 ### Connectivity and Cloud
 
-Before AI workloads can scale, basic digital infrastructure must be in place:
+Before AI workloads can scale, basic digital infrastructure must be in place. This infrastructure provides the foundation for AI development and deployment, creating investment opportunities but also requiring significant capital and expertise.
 
-- High‑quality mobile and fixed broadband networks;
-- Regional and local data centers with adequate power and cooling;
-- Cloud platforms that support modern development and deployment models.
+Essential infrastructure components include:
 
-Emerging markets vary widely:
+- **High‑quality mobile and fixed broadband networks**: Reliable, high-speed connectivity is essential for AI applications, which often require significant data transfer and low latency. Mobile networks (4G/5G) and fixed broadband (fiber) are both important, with different use cases and requirements.
 
-- Some, particularly in Eastern Europe and parts of Asia, already have robust connectivity and growing cloud adoption;
-- Others are still addressing coverage gaps, last‑mile connectivity, and affordability.
+- **Regional and local data centers with adequate power and cooling**: Data centers are critical for AI workloads, which require significant computing power and storage. Emerging markets need data centers that can support AI training and inference, requiring adequate power, cooling, and connectivity.
 
-Investments in tower companies, fiber networks, and regional data centers are critical enablers and represent attractive opportunities where regulatory frameworks are supportive and demand is clear.
+- **Cloud platforms that support modern development and deployment models**: Cloud platforms provide the infrastructure and services needed for AI development and deployment. Emerging markets need access to cloud platforms that support modern AI tools and frameworks, though data sovereignty concerns may require local or regional cloud solutions.
+
+Emerging markets vary widely in their infrastructure development:
+
+- **Some, particularly in Eastern Europe and parts of Asia, already have robust connectivity and growing cloud adoption**: Countries like Poland, Czech Republic, and parts of Asia (like Singapore, South Korea) have well-developed digital infrastructure and are actively adopting cloud and AI technologies. These markets offer more mature investment opportunities with lower infrastructure risk.
+
+- **Others are still addressing coverage gaps, last‑mile connectivity, and affordability**: Many emerging markets, particularly in Africa, Latin America, and parts of Asia, still face significant infrastructure gaps. Coverage gaps (areas without connectivity), last-mile connectivity (connecting users to networks), and affordability (making services accessible to low-income users) are key challenges.
+
+Investments in tower companies, fiber networks, and regional data centers are critical enablers and represent attractive opportunities where regulatory frameworks are supportive and demand is clear. These investments can provide stable, long-term returns while supporting AI development, but they require careful analysis of regulatory frameworks, demand dynamics, and competitive positions.
 
 ### Data Generation and Digital Public Infrastructure
 
-Digital public infrastructure—such as e‑ID systems, payment rails, and public data platforms—plays a growing role in enabling AI use‑cases. When designed well, these systems:
+Digital public infrastructure—such as e‑ID systems, payment rails, and public data platforms—plays a growing role in enabling AI use‑cases. This infrastructure provides the data and platforms needed for AI applications, creating opportunities for both public and private sectors.
 
-- Generate high‑quality, standardized data;
-- Reduce transaction frictions for citizens and businesses;
-- Enable private innovation on top of shared rails.
+When designed well, these systems provide several benefits:
 
-Examples range from digital identity schemes to instant‑payment systems and open‑banking frameworks. Emerging markets that invest early and thoughtfully in these layers may leapfrog legacy models.
+- **Generate high‑quality, standardized data**: Digital public infrastructure can generate large amounts of high-quality, standardized data that is valuable for AI training and applications. For example, digital identity systems generate data about identity verification, while payment systems generate transaction data.
+
+- **Reduce transaction frictions for citizens and businesses**: Well-designed digital infrastructure can reduce frictions in transactions, making it easier for citizens and businesses to interact with government and each other. This creates value and supports economic activity.
+
+- **Enable private innovation on top of shared rails**: Digital public infrastructure can serve as a platform for private innovation, allowing companies to build services on top of government-provided infrastructure. This creates opportunities for fintech, e-commerce, and other digital services.
+
+Examples of digital public infrastructure include:
+
+- **Digital identity schemes**: Systems like India's Aadhaar or Estonia's e-ID provide digital identity verification, enabling a wide range of services and generating valuable data for AI applications.
+
+- **Instant‑payment systems**: Systems like India's UPI or Brazil's Pix enable instant payments, reducing transaction costs and creating transaction data that can be used for AI applications like fraud detection or credit scoring.
+
+- **Open‑banking frameworks**: Frameworks that allow third parties to access banking data (with consent) enable innovation in financial services and create data for AI applications.
+
+Emerging markets that invest early and thoughtfully in these layers may leapfrog legacy models, avoiding the costs and constraints of older systems. This leapfrogging can create competitive advantages and support faster AI adoption, though it requires careful design and execution.
 
 ## Sector Opportunities in EM AI Adoption
 
@@ -1961,77 +1982,107 @@ These applications depend on both connectivity and context‑specific data, ofte
 
 ### Higher Cost of Capital and Project Economics
 
-In a higher‑rate global environment, AI and data‑infrastructure projects in EM must clear higher hurdle rates. This can:
+In a higher‑rate global environment, AI and data‑infrastructure projects in EM must clear higher hurdle rates, making it more difficult to justify investments and affecting project economics. This creates challenges for both governments and private investors.
 
-- Slow deployment where business models are unproven;
-- Increase reliance on concessional finance or blended‑finance structures;
-- Favor projects with clear, near‑term cash‑flow visibility (e.g., co‑location data centers) over more speculative plays.
+Higher rates can affect projects in several ways:
 
-Investors should scrutinize:
+- **Slow deployment where business models are unproven**: Projects with unproven business models or uncertain revenue streams become less attractive when hurdle rates are higher, as the risk-adjusted returns may not justify the investment. This can slow deployment of innovative but risky projects.
 
-- Counterparty risks and long‑term contracts;
-- Currency mismatches between funding and revenue;
-- Regulatory stability affecting tariffs and pricing.
+- **Increase reliance on concessional finance or blended‑finance structures**: Higher rates make it more difficult to finance projects with commercial debt, increasing reliance on concessional finance (from development banks) or blended-finance structures (combining commercial and concessional capital). This can limit project scale and create dependency on development finance.
+
+- **Favor projects with clear, near‑term cash‑flow visibility**: Projects with clear, near-term cash flows (like co-location data centers with long-term contracts) become more attractive relative to more speculative projects (like early-stage AI startups). This can bias investment toward more mature, lower-risk projects.
+
+Investors should scrutinize several factors:
+
+- **Counterparty risks and long‑term contracts**: Projects often depend on long-term contracts with counterparties (like cloud providers, enterprises, or governments). Understanding counterparty creditworthiness and contract terms is crucial for assessing project risk and returns.
+
+- **Currency mismatches between funding and revenue**: Many projects are funded in foreign currency (dollars or euros) but generate revenue in local currency, creating currency risk. Currency depreciation can significantly affect project economics, requiring careful hedging or structuring.
+
+- **Regulatory stability affecting tariffs and pricing**: Regulatory changes can affect tariffs, pricing, and project economics. Understanding regulatory frameworks and their stability is crucial for assessing project risk, particularly for infrastructure projects with long payback periods.
 
 ### Data Sovereignty and Regulatory Complexity
 
+Governments are increasingly concerned about data sovereignty, privacy, and national security, leading to complex regulatory frameworks that affect AI and data infrastructure investments. Understanding these concerns and their implications is crucial for investors.
+
 Governments are increasingly concerned about:
 
-- Where data is stored and processed;
-- Who controls critical infrastructure and algorithms;
-- How to protect privacy and national security.
+- **Where data is stored and processed**: Many governments require that certain types of data (particularly personal or sensitive data) be stored and processed within their borders, creating data localization requirements. This affects cloud providers, data centers, and AI companies.
+
+- **Who controls critical infrastructure and algorithms**: Governments are concerned about foreign control of critical infrastructure (like data centers or telecom networks) and algorithms (particularly for sensitive applications like defense or finance). This can lead to restrictions on foreign ownership or technology use.
+
+- **How to protect privacy and national security**: Governments must balance privacy protection, national security, and economic development, creating complex regulatory frameworks. These frameworks can affect data collection, processing, and sharing, affecting AI development and deployment.
 
 This can lead to:
 
-- Data‑localization requirements;
-- Restrictions on foreign ownership of critical infrastructure;
-- Complex licensing regimes for cloud and AI providers.
+- **Data‑localization requirements**: Requirements that data be stored and processed locally can increase costs (as companies must build local infrastructure) and fragment markets (as companies must operate differently in different countries). This creates challenges for global companies but opportunities for local providers.
 
-While these measures aim to protect citizens and sovereignty, they can also increase costs and fragment markets. Investors must factor regulatory risk into valuations and structure deals with flexibility.
+- **Restrictions on foreign ownership of critical infrastructure**: Restrictions on foreign ownership can limit investment and technology transfer, but they can also protect national security and support local companies. This creates both challenges and opportunities for investors.
+
+- **Complex licensing regimes for cloud and AI providers**: Complex licensing requirements can create barriers to entry and increase compliance costs, affecting market structure and competition. Understanding these requirements is crucial for assessing market opportunities and risks.
+
+While these measures aim to protect citizens and sovereignty, they can also increase costs and fragment markets. Investors must factor regulatory risk into valuations and structure deals with flexibility to adapt to changing regulations. This requires careful analysis of regulatory frameworks, political dynamics, and potential changes.
 
 ### Geopolitical Competition and Technology Choices
 
+Emerging markets are often arenas for geopolitical competition, as major powers compete for influence over critical technologies and infrastructure. This competition affects technology choices, market access, and investment flows, creating both opportunities and risks.
+
 Emerging markets are often arenas for geopolitical competition over technology standards and vendors. Choices about:
 
-- Cloud providers and hardware vendors;
-- Telecom and equipment suppliers;
-- Cybersecurity partnerships,
+- **Cloud providers and hardware vendors**: Choices between US providers (like AWS, Microsoft, Google), Chinese providers (like Alibaba Cloud, Tencent Cloud), or others can have strategic implications. These choices can affect access to technology, financing, and markets.
 
-can carry strategic implications. Alignments may influence access to financing, technology transfers, and market access.
+- **Telecom and equipment suppliers**: Choices between US/European suppliers (like Ericsson, Nokia) and Chinese suppliers (like Huawei, ZTE) can have strategic implications, particularly for 5G and other critical infrastructure. These choices can affect security, technology transfer, and market access.
 
-For investors, this adds a layer of political‑risk analysis to what might otherwise appear as purely commercial infrastructure projects.
+- **Cybersecurity partnerships**: Choices about cybersecurity partnerships and standards can have strategic implications, affecting security, technology transfer, and market access. These choices can create dependencies and affect national security.
+
+can carry strategic implications. Alignments may influence access to financing, technology transfers, and market access. Countries that align with one power may gain access to financing and technology but may face restrictions from others. This creates complex trade-offs and risks.
+
+For investors, this adds a layer of political‑risk analysis to what might otherwise appear as purely commercial infrastructure projects. Understanding geopolitical dynamics, technology choices, and their implications is crucial for assessing investment opportunities and risks. This requires careful analysis of political relationships, technology dependencies, and potential changes.
 
 ## Investment Framework
 
 ### Differentiating by Country and Sector
 
-EM AI and data‑infrastructure opportunities are not homogeneous. A structured approach considers:
+EM AI and data‑infrastructure opportunities are not homogeneous, requiring careful analysis and differentiation. A structured approach helps investors identify the best opportunities while managing risks.
 
-- **Country factors** – governance quality, macro stability, regulatory frameworks, geopolitical alignment;
-- **Sector dynamics** – competitive intensity, pricing power, barriers to entry;
-- **Project quality** – counterparties, contractual terms, technical robustness.
+A structured approach considers:
 
-Blended portfolios may combine listed equities, local‑currency bonds, and private infrastructure exposures, depending on investor mandate and liquidity needs.
+- **Country factors**: Governance quality, macro stability, regulatory frameworks, and geopolitical alignment all affect investment opportunities and risks. Countries with strong governance, stable macro conditions, supportive regulatory frameworks, and favorable geopolitical positions offer better opportunities than countries with weak governance, volatile macro conditions, restrictive regulations, or unfavorable geopolitical positions.
+
+- **Sector dynamics**: Competitive intensity, pricing power, and barriers to entry vary by sector, affecting investment opportunities. Sectors with high barriers to entry, strong pricing power, and limited competition offer better opportunities than sectors with low barriers, weak pricing power, and intense competition.
+
+- **Project quality**: Counterparties, contractual terms, and technical robustness affect project risk and returns. Projects with strong counterparties, favorable contract terms, and robust technical design offer better risk-adjusted returns than projects with weak counterparties, unfavorable terms, or technical weaknesses.
+
+Blended portfolios may combine listed equities, local‑currency bonds, and private infrastructure exposures, depending on investor mandate and liquidity needs. Listed equities provide liquidity and transparency but may have limited exposure to infrastructure. Local-currency bonds provide income and exposure to country risk but may have limited exposure to AI and data infrastructure. Private infrastructure provides direct exposure but requires illiquidity and higher risk tolerance.
 
 ### Role of Development Finance and Partnerships
 
+Multilateral development banks and development finance institutions (DFIs) play a meaningful role in supporting AI and data infrastructure in emerging markets, particularly in lower-income or frontier markets where commercial financing may be limited.
+
 Multilateral development banks and DFIs play a meaningful role by:
 
-- Providing anchor capital and risk‑sharing mechanisms;
-- Supporting regulatory and capacity‑building efforts;
-- Crowding in private capital through guarantees and co‑investment.
+- **Providing anchor capital and risk‑sharing mechanisms**: Development finance can provide anchor capital that reduces risk for commercial investors and enables projects that might not be financeable otherwise. Risk-sharing mechanisms (like guarantees or first-loss protection) can further reduce risk for commercial investors.
 
-Partnerships between commercial investors and development institutions can align risk/return expectations with broader developmental goals, especially in lower‑income or frontier markets.
+- **Supporting regulatory and capacity‑building efforts**: Development finance can support regulatory reform and capacity building, creating more favorable investment environments. This support can improve governance, reduce regulatory risk, and support market development.
+
+- **Crowding in private capital through guarantees and co‑investment**: Development finance can crowd in private capital by providing guarantees, co-investment, or other mechanisms that reduce risk or improve returns for commercial investors. This can enable larger-scale investment and faster market development.
+
+Partnerships between commercial investors and development institutions can align risk/return expectations with broader developmental goals, especially in lower‑income or frontier markets. These partnerships can create win-win situations where commercial investors gain access to attractive opportunities while development institutions achieve their developmental objectives. However, these partnerships require careful structuring to align interests and manage risks effectively.
 
 ## Conclusion
 
-AI and data infrastructure in emerging markets represent a long‑term structural theme with meaningful upside—but also significant complexity. The winners will likely be:
+AI and data infrastructure in emerging markets represent a long‑term structural theme with meaningful upside—but also significant complexity. The scale of opportunity is enormous, as emerging markets build the infrastructure needed for AI development and deployment. However, the challenges are also significant, requiring careful navigation of capital, regulatory, and geopolitical frictions.
 
-- Countries that combine sound macro frameworks with forward‑looking digital and data policies;
-- Companies that balance innovation with robust governance and risk management;
-- Investors who approach the space with patience, diversification, and a realistic view of frictions.
+The winners will likely be:
 
-As AI capabilities diffuse globally, emerging markets have the opportunity not merely to import technology but to shape and localize it. For investors in Eastern Europe and broader EM, understanding this trajectory is increasingly central to assessing growth, productivity, and resilience over the coming decade.`,
+- **Countries that combine sound macro frameworks with forward‑looking digital and data policies**: Countries with strong macro fundamentals, supportive regulatory frameworks, and forward-looking digital policies are best positioned to attract investment and develop AI capabilities. These countries can provide stable investment environments while supporting innovation and development.
+
+- **Companies that balance innovation with robust governance and risk management**: Companies that can innovate while maintaining strong governance and risk management are best positioned to succeed in emerging markets. This balance is crucial, as innovation without governance can lead to failures, while governance without innovation can limit growth.
+
+- **Investors who approach the space with patience, diversification, and a realistic view of frictions**: Investors who can take a long-term view, diversify across countries and sectors, and realistically assess frictions are best positioned to capture opportunities while managing risks. This approach requires patience, as returns may take time to materialize, and diversification, as individual investments may face challenges.
+
+As AI capabilities diffuse globally, emerging markets have the opportunity not merely to import technology but to shape and localize it. This localization can create competitive advantages and support faster adoption, as AI solutions are adapted to local contexts, languages, and needs. For investors in Eastern Europe and broader EM, understanding this trajectory is increasingly central to assessing growth, productivity, and resilience over the coming decade.
+
+The key is approaching AI and data infrastructure investing in emerging markets with the right framework, resources, and expectations—recognizing both the opportunities and challenges that exist. Success requires deep understanding of technology, markets, regulations, and geopolitics, combined with patience, diversification, and realistic risk management.`,
     date: formatDate(1),
     author: 'Anastasia Petrova',
     authorAvatar: getAuthorAvatar('Anastasia Petrova'),
@@ -2055,43 +2106,61 @@ Artificial intelligence depends on three pillars: compute, data, and talent. Eme
 
 ## Introduction
 
-Emerging markets (EM) owe much of their recent history to global liquidity cycles. Periods of abundant capital, low developed‑market yields, and compressed risk premia have supported EM borrowing, currency appreciation, and asset price gains. Conversely, tightening cycles, stronger dollars, and higher real yields have exposed vulnerabilities, particularly where external imbalances and policy credibility were weak.
+Emerging markets (EM) owe much of their recent history to global liquidity cycles. Periods of abundant capital, low developed‑market yields, and compressed risk premia have supported EM borrowing, currency appreciation, and asset price gains. The period from 2010-2021 was characterized by historically low interest rates in developed markets, abundant global liquidity, and compressed risk premia, creating favorable conditions for EM assets.
 
-The current transition toward a higher‑for‑longer global rate regime raises critical questions for EM debt and FX. Eastern European and frontier markets, many of which rely on external financing and face complex geopolitical backdrops, must adapt to:
+Conversely, tightening cycles, stronger dollars, and higher real yields have exposed vulnerabilities, particularly where external imbalances and policy credibility were weak. The post-pandemic period from 2022-2024 brought a dramatic shift, as central banks raised rates aggressively to combat inflation, global liquidity tightened, and risk premia widened. This created significant challenges for EM markets, particularly those with weak fundamentals.
 
-- Higher global risk‑free rates and term premia;
-- Tighter dollar liquidity and more volatile capital flows;
-- Domestic policy trade‑offs between inflation control and growth.
+The current transition toward a higher‑for‑longer global rate regime raises critical questions for EM debt and FX. After more than a decade of low rates, markets are adjusting to a new normal where rates may remain higher for longer than initially expected. This transition creates both challenges and opportunities for EM markets and investors.
 
-This article examines how the new rate environment reshapes EM debt and FX dynamics, with a particular focus on Eastern Europe and adjacent regions.
+Eastern European and frontier markets, many of which rely on external financing and face complex geopolitical backdrops, must adapt to:
+
+- **Higher global risk‑free rates and term premia**: As developed-market rates rise, EM borrowing costs increase, making it more expensive to finance deficits and debt. This creates challenges for countries with high debt levels or large financing needs.
+
+- **Tighter dollar liquidity and more volatile capital flows**: Tighter global liquidity reduces capital flows to EM, while higher volatility increases the risk of sudden stops and capital flow reversals. This creates challenges for countries dependent on external financing.
+
+- **Domestic policy trade‑offs between inflation control and growth**: Higher global rates force EM central banks to raise rates to maintain currency stability and control inflation, but this can slow growth. Countries must balance these competing objectives, creating policy challenges.
+
+This article examines how the new rate environment reshapes EM debt and FX dynamics, with a particular focus on Eastern Europe and adjacent regions. Understanding these dynamics is crucial for investors seeking to navigate the opportunities and risks in EM markets.
 
 ## Global Rate Regime and EM Transmission Channels
 
 ### Higher U.S. and European Yields as a Global Benchmark
 
-When U.S. Treasuries and core European government bonds offer low or negative real yields, EM sovereigns can attract capital with relatively modest spreads. As developed‑market real yields normalize:
+The relationship between developed-market yields and EM borrowing costs is fundamental to understanding EM debt dynamics. When developed-market yields are low, EM can attract capital with relatively modest spreads, but as yields rise, the dynamics change significantly.
 
-- The **relative yield advantage** of EM narrows unless spreads widen;
-- Global allocators face a higher hurdle rate to justify EM risk;
-- Funding costs for EM sovereigns and corporates rise.
+When U.S. Treasuries and core European government bonds offer low or negative real yields, EM sovereigns can attract capital with relatively modest spreads. During the 2010-2021 period, when developed-market real yields were low or negative, EM could offer attractive yields with spreads of 200-400 basis points, making them attractive to yield-seeking investors.
 
-The key question becomes whether EM fundamentals—growth, demographics, reform momentum—justify spreads that keep all‑in yields attractive versus safer alternatives.
+As developed‑market real yields normalize (as seen during 2022-2024), the dynamics change:
+
+- **The relative yield advantage of EM narrows unless spreads widen**: If developed-market yields rise but EM spreads don't widen, the relative yield advantage of EM narrows, making EM less attractive. EM spreads may need to widen to maintain attractiveness, but this increases borrowing costs.
+
+- **Global allocators face a higher hurdle rate to justify EM risk**: As developed-market yields rise, investors can earn higher returns with lower risk in developed markets, raising the hurdle rate for EM investments. This requires EM to offer higher spreads or better fundamentals to justify the additional risk.
+
+- **Funding costs for EM sovereigns and corporates rise**: Higher developed-market yields increase EM borrowing costs, as EM spreads are typically quoted relative to developed-market benchmarks. This makes it more expensive for EM to finance deficits and debt, creating fiscal and external pressures.
+
+The key question becomes whether EM fundamentals—growth, demographics, reform momentum—justify spreads that keep all‑in yields attractive versus safer alternatives. Countries with strong fundamentals (high growth, improving demographics, reform momentum) can justify tighter spreads, while countries with weak fundamentals may need wider spreads or may lose market access.
 
 ### Dollar Liquidity and Risk Sentiment
 
+Higher global rates often coincide with changes in dollar liquidity and risk sentiment that significantly affect EM markets. Understanding these relationships is crucial for assessing EM opportunities and risks.
+
 Higher global rates often coincide with:
 
-- Stronger dollars, particularly if the Federal Reserve tightens more aggressively than peers;
-- Tighter global liquidity conditions;
-- Higher risk aversion in periods of stress.
+- **Stronger dollars, particularly if the Federal Reserve tightens more aggressively than peers**: When the Fed tightens more aggressively than other central banks, the dollar typically strengthens, as higher US rates attract capital flows. This dollar strength creates headwinds for EM currencies and increases the cost of servicing dollar-denominated debt.
+
+- **Tighter global liquidity conditions**: Higher rates reduce global liquidity, as central banks withdraw liquidity through quantitative tightening and higher rates reduce credit creation. This tighter liquidity reduces capital flows to EM and increases financing costs.
+
+- **Higher risk aversion in periods of stress**: During periods of market stress, risk aversion increases, causing investors to flee risky assets (like EM) and seek safe havens (like US Treasuries). This can cause significant EM sell-offs, even for countries with strong fundamentals.
 
 For EM, this translates into:
 
-- More expensive external funding in hard currency;
-- Greater pressure on FX reserves and currency stability;
-- Increased importance of credible domestic policy to anchor expectations.
+- **More expensive external funding in hard currency**: Stronger dollars and tighter liquidity increase the cost of external funding in hard currency (dollars, euros), making it more expensive for EM to borrow. This creates challenges for countries with high external debt or large financing needs.
 
-Eastern European markets, many of which are integrated with the EU but maintain their own currencies and monetary frameworks, sit at a sensitive intersection of these forces.
+- **Greater pressure on FX reserves and currency stability**: Tighter liquidity and capital flow reversals put pressure on FX reserves, as countries may need to use reserves to defend currencies or meet external obligations. Countries with low reserves are particularly vulnerable.
+
+- **Increased importance of credible domestic policy to anchor expectations**: In a higher-rate, tighter-liquidity environment, credible domestic policy becomes more important for anchoring expectations and maintaining market access. Countries with weak policy credibility face higher borrowing costs and may lose market access.
+
+Eastern European markets, many of which are integrated with the EU but maintain their own currencies and monetary frameworks, sit at a sensitive intersection of these forces. They benefit from EU integration and access to EU markets and financing, but they also face challenges from higher global rates, tighter liquidity, and geopolitical risks. Understanding these dynamics is crucial for assessing opportunities and risks in Eastern European markets.
 
 ## Eastern Europe: Differentiation Within a Complex Region
 
@@ -2211,9 +2280,25 @@ Position sizing should reflect both volatility and liquidity—allocations that 
 
 ## Conclusion
 
-A higher‑for‑longer global rate regime does not close the door on emerging markets, but it raises the bar for capital allocation. Governments and corporates that built resilience—through prudent debt management, credible policy, and integration into stable institutional frameworks—are better placed to navigate the new environment. Others may face a more abrupt and costly adjustment.
+A higher‑for‑longer global rate regime does not close the door on emerging markets, but it raises the bar for capital allocation. The transition from low rates to higher rates creates challenges, but it also creates opportunities for investors who can identify countries and companies with strong fundamentals and resilience.
 
-For investors, the task is to move beyond simple yield comparisons and focus on real rates, balance sheets, policy credibility, and currency dynamics. In doing so, they can still find compelling opportunities in emerging markets debt and FX—particularly in parts of Eastern Europe and adjacent regions that combine attractive yields with improving fundamentals—even as the era of easy money recedes into the past.`,
+Governments and corporates that built resilience—through prudent debt management, credible policy, and integration into stable institutional frameworks—are better placed to navigate the new environment. These entities can maintain market access, finance at reasonable costs, and continue to grow even in a higher-rate environment. Countries with strong balance sheets, credible policies, and EU integration (like some Eastern European countries) are particularly well-positioned.
+
+Others may face a more abrupt and costly adjustment. Countries with weak fundamentals, high debt, or poor policy credibility may face higher borrowing costs, reduced market access, or even debt distress. These countries may need to implement painful adjustments, seek IMF support, or restructure debt.
+
+For investors, the task is to move beyond simple yield comparisons and focus on real rates, balance sheets, policy credibility, and currency dynamics. In a higher-rate environment, simple yield comparisons are insufficient—investors must understand whether high yields reflect value or risk, whether fundamentals justify spreads, and whether currencies are sustainable.
+
+Key factors for successful EM investing in a higher-rate environment include:
+
+- **Real rate analysis**: Understanding whether real rates are positive and sufficient to anchor inflation expectations, and whether they can be sustained without undermining growth.
+
+- **Balance sheet strength**: Assessing debt levels, currency composition, maturity profiles, and external positions to identify countries with strong balance sheets and low vulnerability.
+
+- **Policy credibility**: Evaluating monetary and fiscal policy frameworks, central bank independence, and policy track records to identify countries with credible policies.
+
+- **Currency dynamics**: Understanding exchange rate regimes, reserve adequacy, and currency sustainability to assess currency risk and opportunities.
+
+In doing so, investors can still find compelling opportunities in emerging markets debt and FX—particularly in parts of Eastern Europe and adjacent regions that combine attractive yields with improving fundamentals—even as the era of easy money recedes into the past. The key is approaching EM investing with the right framework, focusing on fundamentals, and managing risks carefully.`,
     date: formatDate(0),
     author: 'Anastasia Petrova',
     authorAvatar: getAuthorAvatar('Anastasia Petrova'),

@@ -119,10 +119,12 @@
 115. ✅ Расширена analytics статья "European Consumer Staples: Resilience and Dividend Yields in Uncertain Times" (1027 → 1500+ слов)
 116. ✅ Расширена analytics статья "European Energy Transition: Investment Opportunities and Policy Risks" (1065 → 1500+ слов)
 117. ✅ Расширена analytics статья "Frontier Africa Debt Markets: Opportunities and Risks" (983 → 1500+ слов)
+118. ✅ Расширена analytics статья "AI and Data Infrastructure in Emerging Markets: Opportunity and Friction" (873 → 1500+ слов)
+119. ✅ Расширена analytics статья "Emerging Markets Debt and FX in a Higher-Rate Global Cycle" (1147 → 1500+ слов)
 
 ## Результат
 
-- **Word count issues**: 179 → 92 статей (улучшение на 87 статей)
+- **Word count issues**: 179 → 90 статей (улучшение на 89 статей)
 - **Structure issues**: 13 → 8 статей (улучшение на 5 статей)
 - **Placeholder issues**: 28 статей (добавлен контент для 27 education статей, осталось 0 education + 1 analytics - возможно ложное срабатывание)
 
