@@ -27,7 +27,6 @@ export default function AuthCallbackPage() {
         const refreshToken = hashParams.get('refresh_token');
         
         if (accessToken && refreshToken) {
-          console.log('Setting session from OAuth tokens');
           const { error: sessionError } = await supabase.auth.setSession({
             access_token: accessToken,
             refresh_token: refreshToken,
@@ -57,10 +56,8 @@ export default function AuthCallbackPage() {
         }
 
         if (session) {
-          console.log('Session found, redirecting to home');
           navigate('/');
         } else {
-          console.log('No session found, redirecting to login');
           navigate('/auth/login');
         }
       } catch (error: any) {

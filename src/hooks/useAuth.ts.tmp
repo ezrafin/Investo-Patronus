@@ -107,6 +107,8 @@ export function useAuth(): UseAuthReturn {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, currentSession) => {
+
+      
       // Synchronous state updates only - no async operations here!
       setSession(currentSession);
       setUser(currentSession?.user ?? null);
@@ -129,6 +131,7 @@ export function useAuth(): UseAuthReturn {
 
       // Handle token refresh
       if (event === 'TOKEN_REFRESHED' && currentSession) {
+
         // Session is already updated, just ensure profile is loaded
         if (currentSession.user) {
           setTimeout(() => {
@@ -152,6 +155,8 @@ export function useAuth(): UseAuthReturn {
 
     // THEN check for existing session
     supabase.auth.getSession().then(({ data: { session: existingSession } }) => {
+
+      
       setSession(existingSession);
       setUser(existingSession?.user ?? null);
       
@@ -178,6 +183,8 @@ export function useAuth(): UseAuthReturn {
 
   const loadProfile = async (userId: string) => {
     try {
+
+      
       const { data, error } = await (supabase
         .from('profiles' as any)
         .select('*')
@@ -201,6 +208,9 @@ export function useAuth(): UseAuthReturn {
           comment_count: 0,
           privacy_level: data.privacy_level || 'public',
         });
+
+      } else {
+
       }
     } catch (error) {
       console.error('Error loading profile:', error);
@@ -293,6 +303,8 @@ export function useAuth(): UseAuthReturn {
   };
 
   const signOut = async () => {
+
+    
     // Clear state immediately for responsive UI
     setUser(null);
     setProfile(null);
@@ -322,6 +334,7 @@ export function useAuth(): UseAuthReturn {
     }
     
     setLoading(false);
+
   };
 
   const signInWithOAuth = async (provider: 'google' | 'github') => {
@@ -331,6 +344,7 @@ export function useAuth(): UseAuthReturn {
         ? window.location.origin 
         : 'https://investopatronus.com';
       const redirectUrl = `${productionDomain}/auth/callback`;
+
       
       const { error } = await supabase.auth.signInWithOAuth({
         provider,

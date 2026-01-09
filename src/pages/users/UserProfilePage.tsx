@@ -93,7 +93,6 @@ export default function UserProfilePage() {
       }
 
       if (data) {
-        console.log('Profile data loaded:', data);
         const displayName = data.display_name || data.username || null;
         setProfile({
           id: data.id,
@@ -108,7 +107,6 @@ export default function UserProfilePage() {
         });
         // Use joined_at if available, otherwise fallback to created_at
         const joinDate = data.joined_at || data.created_at;
-        console.log('Join date:', joinDate);
         if (joinDate) {
           setJoinedAt(joinDate);
         } else {

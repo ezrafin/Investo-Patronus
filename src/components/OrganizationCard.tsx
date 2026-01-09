@@ -21,6 +21,7 @@ const typeColors: Record<OrganizationType, string> = {
   asset_manager: 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20',
   pension_fund: 'bg-amber-500/10 text-amber-500 border-amber-500/20',
   wealth_manager: 'bg-indigo-500/10 text-indigo-500 border-indigo-500/20',
+  exchange: 'bg-orange-500/10 text-orange-500 border-orange-500/20',
 };
 
 function getTrustColor(score: number): string {
@@ -48,6 +49,7 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
       : type === 'bank' ? 'organizationCard.bank'
       : type === 'asset_manager' ? 'organizationCard.assetManager'
       : type === 'pension_fund' ? 'organizationCard.pensionFund'
+      : type === 'exchange' ? 'organizationCard.exchange'
       : 'organizationCard.wealthManager';
     return t(labelKey);
   };

@@ -20,7 +20,7 @@ export default function CompaniesPage() {
   const { CoinComponent } = usePageBillCollection({ billId: 'companies_page_visit' });
   const [selectedType, setSelectedType] = useState<OrganizationType | 'all'>('all');
   const [selectedRegion, setSelectedRegion] = useState<Region | 'all'>('all');
-  const [sortBy, setSortBy] = useState<SortOption>('alphabetical');
+  const [sortBy, setSortBy] = useState<SortOption>('combined');
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const sectionRef = useRef<HTMLElement>(null);
@@ -153,7 +153,9 @@ export default function CompaniesPage() {
                     : type.value === 'asset_manager' ? 'companiesPage.assetManagers'
                     : type.value === 'bank' ? 'companiesPage.banks'
                     : type.value === 'wealth_manager' ? 'companiesPage.wealthManagers'
-                    : 'companiesPage.pensionFunds';
+                    : type.value === 'pension_fund' ? 'companiesPage.pensionFunds'
+                    : type.value === 'exchange' ? 'companiesPage.exchange'
+                    : 'companiesPage.allTypes';
                   return (
                     <Button
                       key={type.value}
