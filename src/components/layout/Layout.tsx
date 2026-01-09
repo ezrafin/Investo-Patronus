@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background relative">
       {/* Skip to content link for accessibility */}
       <a
         href="#main-content"

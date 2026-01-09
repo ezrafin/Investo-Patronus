@@ -5,6 +5,7 @@ import { useCollectibleBills } from '@/hooks/useCollectibleBills';
 import { showBillCollectionToast } from './BillCollectionToast';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getBillNameTranslationKey } from '@/lib/utils/billTranslations';
+import { useUser } from '@/context/UserContext';
 
 interface PageCoinProps {
   billId: string;
@@ -17,23 +18,33 @@ interface PageCoinProps {
  * Only shows if the coin hasn't been collected yet
  */
 export function PageCoin({ billId, position, size = 'md' }: PageCoinProps) {
+  const { user } = useUser();
   const { isCollected, collectBill, loading } = useCollectibleBills();
   const { t } = useTranslation({ namespace: 'ui' });
   const location = useLocation();
   const [shouldShow, setShouldShow] = useState(false);
   const [hasInitialized, setHasInitialized] = useState(false);
+  const [hasBeenCollected, setHasBeenCollected] = useState(false);
 
   useEffect(() => {
+    // Don't show coins to unauthenticated users
+    if (!user) {
+      setHasInitialized(true);
+      setShouldShow(false);
+      return;
+    }
+
     // Wait for collection data to load before showing/hiding coin
     // This prevents the blinking effect
     if (!loading) {
       setHasInitialized(true);
-      setShouldShow(!isCollected(billId));
+      // Check both local state and global state
+      setShouldShow(!hasBeenCollected && !isCollected(billId));
     }
-  }, [billId, isCollected, loading]);
+  }, [billId, isCollected, loading, user, hasBeenCollected]);
 
-  // Don't render anything until we've loaded collection data
-  if (!hasInitialized || !shouldShow) {
+  // Don't render anything until we've loaded collection data or if user is not logged in
+  if (!user || !hasInitialized || !shouldShow || hasBeenCollected) {
     return null;
   }
 
@@ -44,6 +55,9 @@ export function PageCoin({ billId, position, size = 'md' }: PageCoinProps) {
     });
 
     if (response.success && response.collected && response.bill) {
+      // Mark as collected locally to prevent re-showing
+      setHasBeenCollected(true);
+      
       // Translate bill name
       const translationKey = getBillNameTranslationKey(billId);
       const translatedName = t(translationKey) !== translationKey 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -40,6 +40,21 @@ export function BillVisual({
     }, 800);
   };
 
+  // Persist collected state in sessionStorage to prevent re-showing after scroll
+  useEffect(() => {
+    if (isCollected) {
+      sessionStorage.setItem(`bill_collected_${billId}`, 'true');
+    }
+  }, [isCollected, billId]);
+
+  // Check if already collected in this session
+  useEffect(() => {
+    const wasCollected = sessionStorage.getItem(`bill_collected_${billId}`);
+    if (wasCollected === 'true') {
+      setIsCollected(true);
+    }
+  }, [billId]);
+
   if (isCollected) {
     return null; // Don't render after collection
   }
@@ -49,7 +64,7 @@ export function BillVisual({
       {!isCollected && (
         <motion.div
           className={cn(
-            'fixed z-40 cursor-pointer select-none',
+            'absolute z-40 cursor-pointer select-none',
             sizeClasses[size],
             className
           )}
