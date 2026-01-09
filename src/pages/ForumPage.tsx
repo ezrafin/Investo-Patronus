@@ -127,8 +127,8 @@ export default function ForumPage() {
         unpinnedTopics.sort((a, b) => b.replies - a.replies);
         break;
       case 'trending':
-        // Combine replies and views for trending score
-        unpinnedTopics.sort((a, b) => b.replies * 2 + b.views - (a.replies * 2 + a.views));
+        // Combine replies for trending score
+        unpinnedTopics.sort((a, b) => b.replies * 2 - (a.replies * 2));
         break;
       case 'most_liked':
         unpinnedTopics.sort((a, b) => (b.like_count || 0) - (a.like_count || 0));
@@ -243,7 +243,7 @@ export default function ForumPage() {
             </div>
             <div className="rounded-xl border border-border/60 bg-card overflow-hidden">
               {filteredAndSortedTopics
-                .filter(topic => (topic.replies * 2 + topic.views) > 30 || topic.is_featured)
+                .filter(topic => (topic.replies * 2) > 30 || topic.is_featured)
                 .slice(0, 3)
                 .map((topic, index) => (
                   <TopicCard

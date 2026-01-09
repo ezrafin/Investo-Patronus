@@ -116,7 +116,8 @@
     "correct": "正确",
     "moduleTestResults": "模块测试结果",
     "moduleTestPassed": "模块测试通过！",
-    "moduleTestReview": "复习材料后再试一次"
+    "moduleTestReview": "复习材料后再试一次",
+    "module": "模块"
   },
   "course": {
     "investment-fundamentals": {

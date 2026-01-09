@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { TrendingUp, MessageSquare, FileText, Newspaper, Video, Clock, Eye, ThumbsUp } from 'lucide-react';
+import { TrendingUp, MessageSquare, FileText, Newspaper, Video, Clock, ThumbsUp } from 'lucide-react';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -11,7 +11,6 @@ interface TrendingItem {
   id: string;
   type: 'article' | 'forum' | 'video' | 'analytics' | 'news';
   title: string;
-  views?: number;
   likes?: number;
   comments?: number;
   created_at: string;
@@ -53,9 +52,9 @@ export function TrendingContent({ className, limit = 10 }: { className?: string;
       // Get trending forum discussions
       const { data: forumData } = await supabase
         .from('forum_discussions')
-        .select('id, title, created_at, view_count, reply_count, author_name')
+        .select('id, title, created_at, reply_count, author_name')
         .gte('created_at', startDate.toISOString())
-        .order('view_count', { ascending: false })
+        .order('reply_count', { ascending: false })
         .limit(limit);
 
       if (forumData) {
@@ -64,7 +63,6 @@ export function TrendingContent({ className, limit = 10 }: { className?: string;
             id: item.id,
             type: 'forum',
             title: item.title,
-            views: item.view_count || 0,
             comments: item.reply_count || 0,
             created_at: item.created_at,
             author: item.author_name || 'Anonymous',
@@ -92,10 +90,10 @@ export function TrendingContent({ className, limit = 10 }: { className?: string;
         });
       }
 
-      // Sort by engagement score (views + comments)
+      // Sort by engagement score (comments + likes)
       trendingItems.sort((a, b) => {
-        const scoreA = (a.views || 0) + (a.likes || 0) * 2 + (a.comments || 0) * 1.5;
-        const scoreB = (b.views || 0) + (b.likes || 0) * 2 + (b.comments || 0) * 1.5;
+        const scoreA = (a.likes || 0) * 2 + (a.comments || 0) * 1.5;
+        const scoreB = (b.likes || 0) * 2 + (b.comments || 0) * 1.5;
         return scoreB - scoreA;
       });
 
@@ -201,12 +199,6 @@ export function TrendingContent({ className, limit = 10 }: { className?: string;
                   {item.title}
                 </h4>
                 <div className="flex items-center gap-3 text-xs text-muted-foreground mt-2">
-                  {item.views !== undefined && (
-                    <span className="flex items-center gap-1">
-                      <Eye className="h-3 w-3" />
-                      {item.views}
-                    </span>
-                  )}
                   {item.likes !== undefined && (
                     <span className="flex items-center gap-1">
                       <ThumbsUp className="h-3 w-3" />

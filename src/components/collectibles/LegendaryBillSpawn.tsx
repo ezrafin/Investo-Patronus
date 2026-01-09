@@ -5,6 +5,8 @@ import { useLocation } from 'react-router-dom';
 import { showBillCollectionToast } from './BillCollectionToast';
 import { supabase } from '@/integrations/supabase/client';
 import { useUser } from '@/context/UserContext';
+import { useTranslation } from '@/hooks/useTranslation';
+import { getBillNameTranslationKey } from '@/lib/utils/billTranslations';
 
 interface LegendaryBillSpawnProps {
   articleId: string;
@@ -14,6 +16,7 @@ interface LegendaryBillSpawnProps {
 export function LegendaryBillSpawn({ articleId, articleType }: LegendaryBillSpawnProps) {
   const { checkLegendarySpawn, collectBill, progress, hasAllRegularBills, legendarySpawn } = useCollectibleBills();
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const location = useLocation();
   const [shouldShow, setShouldShow] = useState(false);
 
@@ -61,10 +64,18 @@ export function LegendaryBillSpawn({ articleId, articleType }: LegendaryBillSpaw
     });
 
     if (response.success && response.collected) {
+      // Translate bill name
+      const billId = 'legendary_hidden_treasure';
+      const translationKey = getBillNameTranslationKey(billId);
+      const translatedName = t(translationKey) !== translationKey 
+        ? t(translationKey) 
+        : (response.bill?.name || 'Hidden Treasure');
+      
       showBillCollectionToast(
-        response.bill?.name || 'Hidden Treasure',
+        translatedName,
         'legendary',
-        response.progress
+        response.progress,
+        billId
       );
     }
   };

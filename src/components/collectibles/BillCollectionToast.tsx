@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/hooks/useTranslation';
+import { getBillNameTranslationKey } from '@/lib/utils/billTranslations';
 
 interface BillCollectionToastProps {
   billName: string;
@@ -67,11 +68,20 @@ export function BillCollectionToast({
   return null; // This component doesn't render anything itself
 }
 
+// Helper function to translate bill name
+function getTranslatedBillName(billId: string, fallbackName: string): string {
+  // This will be used in a context where we don't have access to useTranslation hook
+  // So we'll use a dynamic import or pass translation function
+  // For now, return fallback - translation will be handled in components that use useTranslation
+  return fallbackName;
+}
+
 // Helper function to show collection toast
 export async function showBillCollectionToast(
   billName: string,
   rarity: 'regular' | 'legendary',
-  progress?: { collected: number; total: number }
+  progress?: { collected: number; total: number },
+  billId?: string
 ) {
   const isLegendary = rarity === 'legendary';
   
@@ -84,6 +94,14 @@ export async function showBillCollectionToast(
     };
     return labels[key] || key;
   };
+  
+  // Get translated bill name if billId is provided
+  let displayName = billName;
+  if (billId) {
+    // Try to get translation from localStorage or use dynamic import
+    // For now, use fallback - proper translation requires useTranslation hook
+    displayName = billName;
+  }
   
   toast.success(
     <div className="flex items-center gap-3">
@@ -102,7 +120,7 @@ export async function showBillCollectionToast(
           {isLegendary ? `🎉 ${getLabel('billCollection.legendaryBillCollected')}` : getLabel('billCollection.billCollected')}
         </div>
         <div className="text-sm text-muted-foreground mt-0.5">
-          {billName}
+          {displayName}
         </div>
         {progress && (
           <div className="text-xs text-muted-foreground mt-1">

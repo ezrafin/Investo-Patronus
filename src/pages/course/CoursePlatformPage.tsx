@@ -17,6 +17,7 @@ import { Progress } from '@/components/ui/progress';
 
 export default function CoursePlatformPage() {
   const { t } = useTranslation({ namespace: 'education' });
+  const { t: tUi } = useTranslation({ namespace: 'ui' });
   const { user } = useUser();
   const { courseId } = useParams<{ courseId: string }>();
   const course = courseId ? getCourseById(courseId) : getAllCourses()[0];
@@ -120,7 +121,7 @@ export default function CoursePlatformPage() {
                 size="sm"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
-                {mobileMenuOpen ? t('buttons.close', { defaultValue: 'Close' }) : t('buttons.menu', { defaultValue: 'Menu' })}
+                {mobileMenuOpen ? tUi('buttons.close') : tUi('buttons.menu')}
               </Button>
             </div>
             {mobileMenuOpen && (
@@ -136,7 +137,7 @@ export default function CoursePlatformPage() {
                       ) : (
                         <ChevronRight className="h-4 w-4 flex-shrink-0" />
                       )}
-                      <span className="text-xs text-muted-foreground">Module {moduleIndex + 1}</span>
+                      <span className="text-xs text-muted-foreground">{t('courses.module')} {moduleIndex + 1}</span>
                       <span className="truncate flex-1">
                         {t(`course.${course.id}.module.${module.id}.title`) || module.title}
                       </span>
@@ -247,7 +248,7 @@ export default function CoursePlatformPage() {
                       <ChevronRight className="h-4 w-4 flex-shrink-0" />
                     )}
                     <div className="flex-1 min-w-0 flex flex-col">
-                      <span className="text-xs text-muted-foreground leading-tight">Module {moduleIndex + 1}</span>
+                      <span className="text-xs text-muted-foreground leading-tight">{t('courses.module')} {moduleIndex + 1}</span>
                       <p className="text-sm font-medium truncate leading-tight">
                         {t(`course.${course.id}.module.${module.id}.title`) || module.title}
                       </p>

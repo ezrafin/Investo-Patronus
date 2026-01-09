@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { BillVisual } from './BillVisual';
 import { useCollectibleBills } from '@/hooks/useCollectibleBills';
 import { showBillCollectionToast } from './BillCollectionToast';
+import { useTranslation } from '@/hooks/useTranslation';
+import { getBillNameTranslationKey } from '@/lib/utils/billTranslations';
 
 interface PageCoinProps {
   billId: string;
@@ -16,6 +18,7 @@ interface PageCoinProps {
  */
 export function PageCoin({ billId, position, size = 'md' }: PageCoinProps) {
   const { isCollected, collectBill, loading } = useCollectibleBills();
+  const { t } = useTranslation({ namespace: 'ui' });
   const location = useLocation();
   const [shouldShow, setShouldShow] = useState(false);
   const [hasInitialized, setHasInitialized] = useState(false);
@@ -41,10 +44,17 @@ export function PageCoin({ billId, position, size = 'md' }: PageCoinProps) {
     });
 
     if (response.success && response.collected && response.bill) {
+      // Translate bill name
+      const translationKey = getBillNameTranslationKey(billId);
+      const translatedName = t(translationKey) !== translationKey 
+        ? t(translationKey) 
+        : response.bill.name;
+      
       showBillCollectionToast(
-        response.bill.name,
+        translatedName,
         response.bill.rarity,
-        response.progress
+        response.progress,
+        billId
       );
     }
   };

@@ -15,6 +15,14 @@ export function CollectiblesControlMenu() {
   const [open, setOpen] = useState(false);
   const [allBills, setAllBills] = useState<Array<{ bill_id: string; name: string; rarity: 'regular' | 'legendary' }>>([]);
 
+  // Function to get translated bill name
+  const getBillName = (billId: string, fallbackName: string): string => {
+    const translationKey = `billCollection.billNames.${billId}`;
+    const translated = t(translationKey);
+    // If translation exists and is different from the key, use it; otherwise use fallback
+    return translated !== translationKey ? translated : fallbackName;
+  };
+
   // Load all bills
   useEffect(() => {
     const loadBills = async () => {
@@ -239,7 +247,7 @@ export function CollectiblesControlMenu() {
                               isLegendaryLocked && 'blur-sm'
                             )}
                           >
-                            {bill.name}
+                            {getBillName(bill.bill_id, bill.name)}
                             {isLegendary && (
                               <span className="ml-2 text-xs text-amber-500">⭐ {t('billCollection.legendary')}</span>
                             )}

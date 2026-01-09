@@ -116,7 +116,8 @@
     "correct": "richtig",
     "moduleTestResults": "Modultest-Ergebnisse",
     "moduleTestPassed": "Modultest bestanden!",
-    "moduleTestReview": "Wiederholen Sie den Stoff und versuchen Sie es erneut"
+    "moduleTestReview": "Wiederholen Sie den Stoff und versuchen Sie es erneut",
+    "module": "Modul"
   },
   "course": {
     "investment-fundamentals": {

@@ -116,7 +116,8 @@
     "correct": "correctes",
     "moduleTestResults": "Résultats du Test du Module",
     "moduleTestPassed": "Test du Module Réussi !",
-    "moduleTestReview": "Révisez le matériel et réessayez"
+    "moduleTestReview": "Révisez le matériel et réessayez",
+    "module": "Module"
   },
   "course": {
     "investment-fundamentals": {
