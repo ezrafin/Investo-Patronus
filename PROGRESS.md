@@ -65,11 +65,31 @@
 61. ✅ Расширена analytics статья "Greek Equities: Tourism, Banks, and Privatization in a Post-Crisis Market" (764 → 1500+ слов)
 62. ✅ Расширена analytics статья "Transition Finance: Funding the Hard-to-Abate Path to Net Zero" (768 → 1500+ слов)
 63. ✅ Расширена analytics статья "Social Factors in ESG: Labor Rights, Human Capital, and the Economics of "S"" (772 → 1500+ слов)
+64. ✅ Расширена analytics статья "China Tech Investment Landscape: Navigating Opportunities and Risks" (774 → 1500+ слов)
+65. ✅ Расширена analytics статья "Municipal Bond Market Dynamics: Credit Quality, Tax Efficiency, and Rate Risk" (781 → 1500+ слов)
+66. ✅ Расширена analytics статья "Southern Europe Equities: Reform Premia, Cyclicality, and the Search for Resilient Compounders" (782 → 1500+ слов)
+67. ✅ Расширена analytics статья "Nordic Equity Markets: Quality Growth and Sustainability in a Small-Open-Economy Cluster" (789 → 1500+ слов)
+68. ✅ Расширена analytics статья "ASEAN Growth and Supply-Chain Diversification: Positioning in a Fragmenting World" (796 → 1500+ слов)
+69. ✅ Расширена analytics статья "Taiwan Semiconductor Supply Chain: Technology Leadership and Geopolitical Considerations" (798 → 1500+ слов)
+70. ✅ Расширена analytics статья "Green Bonds: Market Evolution, Taxonomy Alignment, and Impact Reporting" (799 → 1500+ слов)
+71. ✅ Расширена analytics статья "Spanish and Portuguese Equities: Tourism, Banks, and Infrastructure in Iberia's Recovery Cycle" (805 → 1500+ слов)
+72. ✅ Расширена analytics статья "Italian Markets: Luxury Goods and Investment Opportunities" (807 → 1500+ слов)
+73. ✅ Расширена analytics статья "Liquidity Management and Cash Segmentation: Building Resilient Fixed Income Liquidity Buckets" (812 → 1500+ слов)
+74. ✅ Расширена analytics статья "AI and Digital Transformation in Italian SMBs and Services" (812 → 1500+ слов)
+75. ✅ Расширена analytics статья "Mediterranean Tourism Recovery: Cycles, Capacity, and Investment Themes" (814 → 1500+ слов)
+76. ✅ Расширена analytics статья "Impact Investing and Additionality in Public Markets: What Really Counts?" (815 → 1500+ слов)
+77. ✅ Расширена analytics статья "Just Transition Finance: Supporting Workers and Communities in the Energy Transition" (824 → 1500+ слов)
+78. ✅ Расширена analytics статья "Turkey Equities and Lira Risk: Navigating the New Policy Mix" (834 → 1500+ слов)
+79. ✅ Расширена analytics статья "AI Copilots and Productivity Software: Rethinking Economics of Knowledge Work" (837 → 1500+ слов)
+80. ✅ Расширена analytics статья "Vertical SaaS and Industry Cloud Platforms: Finding Durable Moats in Narrow Markets" (849 → 1500+ слов)
+81. ✅ Расширена analytics статья "South Korea Battery Technology and EV Supply Chains: Leadership in Energy Storage" (851 → 1500+ слов)
+82. ✅ Расширена analytics статья "AI, Automation, and Europe's Industrial Competitiveness" (852 → 1500+ слов)
+83. ✅ Расширена analytics статья "Cloud to Edge: Investment Opportunities in Distributed Computing Infrastructure" (855 → 1500+ слов)
 
 ## Результат
 
-- **Word count issues**: 179 → 145 статей (улучшение на 34 статьи)
-- **Structure issues**: 13 → 10 статей (улучшение на 3 статьи)
+- **Word count issues**: 179 → 126 статей (улучшение на 53 статьи)
+- **Structure issues**: 13 → 8 статей (улучшение на 5 статей)
 - **Placeholder issues**: 28 статей (добавлен контент для 27 education статей, осталось 0 education + 1 analytics - возможно ложное срабатывание)
 
 ## Осталось исправить

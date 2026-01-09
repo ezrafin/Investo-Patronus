@@ -3583,250 +3583,367 @@ Central & Eastern Europe (CEE) offers exposure to converging economies, open tra
 
 ## Introduction
 
-Turkey has long attracted—and tested—emerging‑market investors. Its equity market offers:
+Turkey has long attracted—and tested—emerging‑market investors. Its equity market offers compelling opportunities alongside significant challenges. The market provides:
 
-- Large, liquid banks and industrials.
-- Consumer and logistics names geared to a young, urbanizing population.
-- Exporters linked to European and Middle Eastern demand.
+- Large, liquid banks and industrials with regional scale
+- Consumer and logistics names geared to a young, urbanizing population creating growth potential
+- Exporters linked to European and Middle Eastern demand benefiting from geographic position
 
-At the same time, investors must contend with:
+**At the same time, investors must contend with:**
+- Episodes of unorthodox monetary policy creating uncertainty
+- High and volatile inflation eroding real returns
+- Sharp moves in the Turkish lira (TRY) affecting foreign investor returns
+- Geopolitical tensions and regional instability
+- Policy reversals and credibility challenges
 
-- Episodes of unorthodox monetary policy.
-- High and volatile inflation.
-- Sharp moves in the Turkish lira (TRY).
-
-Recent shifts toward a more orthodox policy mix have re‑ignited debate about whether Turkey is entering a new, more investable phase or simply another tactical window. This article outlines a framework for analyzing Turkey’s equity market in the context of macro policy, FX, and sector dynamics.
+Recent shifts toward a more orthodox policy mix have re‑ignited debate about whether Turkey is entering a new, more investable phase or simply another tactical window. The policy changes have been significant, but history suggests caution. This article outlines a framework for analyzing Turkey's equity market in the context of macro policy, FX, and sector dynamics.
 
 ## Macro Backdrop and Policy Regimes
 
 ### From Unorthodox to Gradually More Orthodox
 
-Over the past decade, Turkey has experienced:
+Over the past decade, Turkey has experienced significant policy volatility:
 
+**Unconventional Monetary Policy Periods:**
 - Periods of **unconventional monetary policy**:
-  - Reluctance to keep policy rates high despite inflation.
-  - Use of regulatory and macroprudential tools to steer credit.
+  - Reluctance to keep policy rates high despite inflation prioritizing growth
+  - Use of regulatory and macroprudential tools to steer credit bypassing rates
+  - Multiple policy frameworks and frequent changes
 - Episodes of:
-  - Sharp TRY depreciation.
-  - High and volatile inflation.
+  - Sharp TRY depreciation creating FX volatility
+  - High and volatile inflation eroding purchasing power
+  - Capital controls and regulatory interventions
 
-More recently, authorities have signaled:
+**Recent Policy Shifts:**
+- More recently, authorities have signaled:
+  - A shift toward higher nominal policy rates addressing inflation
+  - Efforts to simplify the policy framework improving clarity
+  - A desire to rebuild credibility with investors restoring confidence
+  - Commitment to orthodox monetary policy
 
-- A shift toward higher nominal policy rates.
-- Efforts to simplify the policy framework.
-- A desire to rebuild credibility with investors.
-
-For equities, this transition phase is critical:
-
+**For equities, this transition phase is critical:**
 - It can:
-  - Improve macro stability if sustained.
-  - Support banks’ margins and reduce tail risk.
-- But policy **reversals** or partial implementation remain key risks.
+  - Improve macro stability if sustained reducing uncertainty
+  - Support banks' margins and reduce tail risk improving fundamentals
+  - Attract foreign capital supporting valuations
+- But policy **reversals** or partial implementation remain key risks requiring vigilance
+- Historical patterns suggest policy can change quickly
+- Credibility must be earned over time
 
 ### Inflation, Growth, and External Balances
 
-Turkey’s economy is:
+Turkey's economy has distinct characteristics:
 
-- Relatively large and diversified.
-- Driven by:
-  - Domestic consumption.
-  - Construction and real estate.
-  - Export‑oriented manufacturing and tourism.
+**Economic Structure:**
+- Turkey's economy is:
+  - Relatively large and diversified with multiple growth drivers
+  - Driven by:
+    - Domestic consumption supporting growth
+    - Construction and real estate creating employment
+    - Export‑oriented manufacturing and tourism generating foreign exchange
 
-However:
+**Challenges:**
+- However:
+  - Persistent inflation has eroded real incomes affecting consumption
+  - The current account has been:
+    - Sensitive to energy prices creating volatility
+    - Influenced by domestic demand cycles and tourism revenues affecting sustainability
+  - External financing needs remain significant
+  - Reserve adequacy concerns persist
 
-- Persistent inflation has eroded real incomes.
-- The current account has been:
-  - Sensitive to energy prices.
-  - Influenced by domestic demand cycles and tourism revenues.
-
-Equity investors must keep a close eye on:
-
-- The trajectory of inflation under the new policy mix.
+**Equity investors must keep a close eye on:**
+- The trajectory of inflation under the new policy mix affecting real returns
 - The balance between:
-  - Growth support.
-  - External‑balance and inflation control.
+  - Growth support maintaining economic activity
+  - External‑balance and inflation control ensuring stability
+- Policy credibility and sustainability
+- Geopolitical developments
 
 ## Key Sectors: Banks, Exporters, and Domestic Demand
 
 ### Banks: Leverage to Policy and Lira Dynamics
 
-Turkish banks play a central role in:
+Turkish banks are central to the economy and equity market:
 
-- Financing the economy.
-- Transmitting monetary policy to households and firms.
+**Central Role:**
+- Turkish banks play a central role in:
+  - Financing the economy supporting growth
+  - Transmitting monetary policy to households and firms affecting credit
+  - Managing FX flows and reserves
+  - Supporting government financing
 
-They are exposed to:
+**Risk Exposures:**
+- They are exposed to:
+  - **Interest‑rate risk**:
+    - Changes in policy and bond yields affect asset and liability pricing
+    - Net interest margins sensitive to rate cycles
+    - Securities portfolios affected by rate moves
+  - **FX risk**:
+    - Borrowers with FX debt but TRY cash flows creating currency mismatch
+    - Regulatory limits and hedging requirements partially mitigate this
+    - FX lending restrictions and requirements
+  - Credit risk from economic cycles
+  - Regulatory and policy risk
 
-- **Interest‑rate risk**:
-  - Changes in policy and bond yields affect asset and liability pricing.
-- **FX risk**:
-  - Borrowers with FX debt but TRY cash flows.
-  - Regulatory limits and hedging requirements partially mitigate this.
+**Recent Policy Shifts:**
+- Recent policy shifts toward higher rates have:
+  - The potential to:
+    - Normalize margins over time improving profitability
+    - Strengthen the lira if sustained reducing FX risk
+    - Improve bank fundamentals
+  - Short‑term pressure on:
+    - Funding costs increasing expenses
+    - Borrower repayment capacity affecting asset quality
+    - Profitability during transition
 
-Recent policy shifts toward higher rates have:
-
-- The potential to:
-  - Normalize margins over time.
-  - Strengthen the lira if sustained.
-- Short‑term pressure on:
-  - Funding costs.
-  - Borrower repayment capacity.
-
-Investors should evaluate:
-
-- Capital adequacy and provisioning policies.
+**Investors should evaluate:**
+- Capital adequacy and provisioning policies assessing resilience
 - Asset‑quality trends in:
-  - Corporate loans.
-  - Household and SME segments.
+  - Corporate loans affected by economic cycles
+  - Household and SME segments sensitive to rates
 - Regulatory changes affecting:
-  - Securities portfolios.
-  - FX exposure management.
+  - Securities portfolios and risk management
+  - FX exposure management and limits
+- Management quality and strategy
+- Competitive positioning
 
 ### Exporters and Industrial Names
 
-Export‑oriented companies can:
+Export‑oriented companies represent important opportunities:
 
-- Benefit from:
-  - Competitive cost structures.
-  - A weaker TRY improving price competitiveness.
-- Suffer from:
-  - Input‑cost volatility.
-  - Trade and geopolitical tensions.
+**Competitive Advantages:**
+- Export‑oriented companies can:
+  - Benefit from:
+    - Competitive cost structures supporting margins
+    - A weaker TRY improving price competitiveness
+    - Geographic position between Europe and Middle East
+    - Young, skilled workforce
+  - Suffer from:
+    - Input‑cost volatility affecting margins
+    - Trade and geopolitical tensions disrupting flows
+    - Energy price sensitivity
+    - Supply chain disruptions
 
-Key industries include:
+**Key Industries Include:**
+- Autos and components with strong European presence
+- White goods and appliances with global brands
+- Textiles and apparel with competitive positioning
+- Steel and metals with regional demand
+- Chemicals and petrochemicals
 
-- Autos and components.
-- White goods and appliances.
-- Textiles and apparel.
-
-Investors should distinguish between:
-
-- Firms with:
-  - Strong brands and distribution networks abroad.
-  - Robust balance sheets and risk management.
-- More commoditized producers with:
-  - Thin margins.
-  - High leverage.
+**Investment Differentiation:**
+- Investors should distinguish between:
+  - Firms with:
+    - Strong brands and distribution networks abroad creating moats
+    - Robust balance sheets and risk management providing resilience
+    - Diversified markets reducing concentration
+  - More commoditized producers with:
+    - Thin margins vulnerable to competition
+    - High leverage increasing risk
+    - Limited differentiation
 
 ### Domestic Demand and Consumer Names
 
-Consumer, retail, and logistics companies are:
+Consumer, retail, and logistics companies are sensitive to domestic conditions:
 
-- Levered to:
-  - Real‑income trends.
-  - Employment and wage dynamics.
-  - Credit availability.
+**Demand Drivers:**
+- Consumer, retail, and logistics companies are:
+  - Levered to:
+    - Real‑income trends affecting purchasing power
+    - Employment and wage dynamics supporting consumption
+    - Credit availability enabling spending
+    - Demographic trends with young population
 
-In high‑inflation environments:
+**High-Inflation Environment:**
+- In high‑inflation environments:
+  - Inventory and pricing management become critical for profitability
+  - Companies that:
+    - Adjust prices quickly maintaining margins
+    - Manage working capital tightly reducing risk
+    - Have pricing power protecting profitability
+  may defend margins better
 
-- Inventory and pricing management become critical.
-- Companies that:
-  - Adjust prices quickly.
-  - Manage working capital tightly.
-  may defend margins better.
-
-However, elevated rates and inflation can:
-
-- Weigh on discretionary spending.
-- Increase credit risk in retail portfolios.
+**Challenges:**
+- However, elevated rates and inflation can:
+  - Weigh on discretionary spending reducing demand
+  - Increase credit risk in retail portfolios affecting banks
+  - Reduce consumer confidence
+  - Create operational challenges
 
 ## FX and Equity Risk: Thinking About the Lira
 
 ### TRY as a Central Risk Channel
 
-For foreign investors, TRY performance is often:
+For foreign investors, TRY performance is often the dominant factor:
 
-- The dominant driver of **total returns** in unhedged equity allocations.
+**Return Driver:**
+- For foreign investors, TRY performance is often:
+  - The dominant driver of **total returns** in unhedged equity allocations
+  - Can overwhelm equity performance
+  - Creates significant volatility
+  - Requires active management
 
-TRY can:
+**TRY Dynamics:**
+- TRY can:
+  - Rallies under:
+    - Credible policy tightening restoring confidence
+    - Improved external balances reducing vulnerability
+    - Positive surprises on reform attracting capital
+    - Strong tourism and export performance
+  - Weaken sharply when:
+    - Policy appears unsustainable creating doubt
+    - Geopolitical risks flare affecting sentiment
+    - Global risk appetite turns reducing EM flows
+    - External imbalances worsen
+    - Political uncertainty increases
 
-- Rallies under:
-  - Credible policy tightening.
-  - Improved external balances.
-  - Positive surprises on reform.
-- Weaken sharply when:
-  - Policy appears unsustainable.
-  - Geopolitical risks flare.
-  - Global risk appetite turns.
+**Historical Patterns:**
+- TRY has experienced significant volatility
+- Policy credibility is key driver
+- External factors matter significantly
+- Capital flows are sensitive
 
 ### Hedging Considerations
 
-Hedging TRY exposure:
+Hedging TRY exposure requires careful analysis:
 
-- Can reduce FX volatility.
-- May be:
-  - Expensive or capacity‑constrained, depending on instruments and tenors.
+**Hedging Options:**
+- Hedging TRY exposure:
+  - Can reduce FX volatility providing stability
+  - May be:
+    - Expensive or capacity‑constrained, depending on instruments and tenors
+    - Complex to implement
+    - Subject to regulatory constraints
 
-Investors must decide:
+**Investment Approach:**
+- Investors must decide:
+  - Whether Turkey is:
+    - A **tactical bet** sized small enough to tolerate FX swings accepting volatility
+    - Or a more **strategic allocation** where partial hedging could make sense reducing risk
+  - Risk tolerance and objectives
+  - Time horizon and strategy
 
-- Whether Turkey is:
-  - A **tactical bet** sized small enough to tolerate FX swings.
-  - Or a more **strategic allocation** where partial hedging could make sense.
+**Hedging Strategies:**
+- Full hedging eliminates FX risk but also upside
+- Partial hedging balances risk and return
+- Dynamic hedging adjusts to conditions
+- No hedging maximizes exposure to TRY moves
 
 ## Portfolio Construction and Risk Management
 
 ### Sizing and Time Horizon
 
-Given macro and FX volatility, Turkey is best approached as:
+Given macro and FX volatility, Turkey requires careful positioning:
 
-- A **small satellite allocation** within EM or EMEA portfolios.
+**Portfolio Role:**
+- Given macro and FX volatility, Turkey is best approached as:
+  - A **small satellite allocation** within EM or EMEA portfolios limiting risk
+  - Not a core holding given volatility
+  - Tactical or strategic depending on view
 
-Position sizes should:
+**Position Sizing:**
+- Position sizes should:
+  - Reflect:
+    - Risk tolerance for:
+      - Double‑digit drawdowns accepting volatility
+      - Policy surprises requiring flexibility
+    - Liquidity of key names ensuring exit options
+  - Be sized appropriately for risk budget
+  - Consider correlation with other holdings
 
-- Reflect:
-  - Risk tolerance for:
-    - Double‑digit drawdowns.
-    - Policy surprises.
-  - Liquidity of key names.
-
-Short‑term traders may focus on:
-
-- Cycles in policy communication and inflows.
-
-Long‑horizon investors should:
-
-- Require a:
-  - Clear narrative on policy normalization.
-  - Buffer against reversals.
+**Time Horizons:**
+- Short‑term traders may focus on:
+  - Cycles in policy communication and inflows
+  - Technical factors and sentiment
+  - Event-driven opportunities
+- Long‑horizon investors should:
+  - Require a:
+    - Clear narrative on policy normalization providing confidence
+    - Buffer against reversals managing risk
+  - Focus on fundamentals and value
+  - Take long-term view
 
 ### Stock Selection and Governance
 
-Corporate governance and shareholder treatment vary:
+Corporate governance varies significantly:
 
-- Some Turkish companies:
-  - Have improved disclosures.
-  - Follow international standards.
-- Others:
-  - Remain more opaque.
-  - Exhibit cyclical or politically influenced decision‑making.
+**Governance Quality:**
+- Corporate governance and shareholder treatment vary:
+  - Some Turkish companies:
+    - Have improved disclosures providing transparency
+    - Follow international standards enabling comparison
+    - Have strong management and boards
+  - Others:
+    - Remain more opaque creating risk
+    - Exhibit cyclical or politically influenced decision‑making affecting strategy
+    - Have weak governance structures
 
-Investors should:
+**Investment Focus:**
+- Investors should:
+  - Focus on:
+    - Governance quality reducing risk
+    - Capital‑allocation discipline ensuring value creation
+    - Balance‑sheet resilience providing safety
+  - Avoid companies with governance concerns
+  - Engage with management where possible
+  - Monitor governance developments
 
-- Focus on:
-  - Governance quality.
-  - Capital‑allocation discipline.
-  - Balance‑sheet resilience.
+## Geopolitical and Regional Factors
+
+### Geopolitical Risks
+
+Turkey faces significant geopolitical challenges:
+
+**Regional Tensions:**
+- Relations with neighbors can affect markets
+- EU relations impact trade and investment
+- Middle East dynamics create risks
+- Refugee and migration issues
+
+**Impact on Markets:**
+- Geopolitical tensions can:
+  - Affect foreign investment flows
+  - Impact trade relationships
+  - Create policy uncertainty
+  - Affect currency and markets
+
+### Regional Position
+
+Turkey's geographic position creates both opportunities and risks:
+
+**Opportunities:**
+- Bridge between Europe and Asia
+- Access to multiple markets
+- Strategic location for trade
+- Tourism from multiple regions
+
+**Risks:**
+- Exposure to regional conflicts
+- Dependence on trade routes
+- Energy transit risks
+- Refugee and migration pressures
 
 ## Conclusion
 
 Turkey offers a combination of:
 
-- Deep equity liquidity.
+- Deep equity liquidity enabling investment
 - Exposure to:
-  - Banks.
-  - Exporters.
-  - Domestic demand.
-- Elevated macro and FX volatility.
+  - Banks with policy sensitivity
+  - Exporters with competitive advantages
+  - Domestic demand with growth potential
+- Elevated macro and FX volatility requiring management
 
-The recent shift toward a more orthodox policy mix may **improve the risk‑reward balance**, but credibility must be earned over time, not assumed. For investors, Turkey is best treated as:
+**The recent shift toward a more orthodox policy mix may **improve the risk‑reward balance**, but credibility must be earned over time, not assumed.** Policy changes are positive but need to be sustained. **For investors, Turkey is best treated as:**
 
-- A targeted, risk‑budgeted exposure.
+- A targeted, risk‑budgeted exposure sized appropriately
 - Built on:
-  - Careful bank and corporate selection.
-  - Explicit views on the lira and policy path.
+  - Careful bank and corporate selection focusing on quality
+  - Explicit views on the lira and policy path managing FX risk
+  - Understanding of geopolitical factors
+  - Appropriate time horizon and strategy
 
-With such a framework, Turkey can complement broader emerging‑Europe allocations, offering upside in reform and normalization scenarios without overwhelming portfolio risk.`,
+**With such a framework, Turkey can complement broader emerging‑Europe allocations, offering upside in reform and normalization scenarios without overwhelming portfolio risk.** Success requires discipline, risk management, and realistic expectations. The market offers opportunities but demands respect for its volatility and complexity.`,
     date: formatDate(264),
     author: 'Anastasia Petrova',
     authorAvatar: getAuthorAvatar('Anastasia Petrova'),
