@@ -59,9 +59,9 @@ export function GlobalSearch() {
     const searchLower = searchQuery.toLowerCase();
     const allResults: SearchResult[] = [];
 
-    // Date filter
-    let dateFilterQuery = supabase;
-    if (dateFilter !== 'all') {
+    // Helper function to calculate date filter (avoid duplication)
+    const getDateFilter = (): string | null => {
+      if (dateFilter === 'all') return null;
       const now = new Date();
       const filterDate = new Date();
       
@@ -79,12 +79,22 @@ export function GlobalSearch() {
           filterDate.setFullYear(now.getFullYear() - 1);
           break;
       }
-    }
+      return filterDate.toISOString();
+    };
 
-    // Search companies (local)
+    const dateFilterValue = getDateFilter();
+
+    // Execute all searches in parallel using Promise.all
+    const searchPromises: Promise<void>[] = [];
+
+    // Search companies (local) - FAST, no async needed, expanded search
     if (contentType === 'all' || contentType === 'company') {
       const companyResults = organizations
-        .filter(org => org.name.toLowerCase().includes(searchLower))
+        .filter(org => 
+          org.name.toLowerCase().includes(searchLower) ||
+          org.description.toLowerCase().includes(searchLower) ||
+          org.headquarters.toLowerCase().includes(searchLower)
+        )
         .slice(0, 5)
         .map(org => ({
           type: 'company' as const,
@@ -95,175 +105,165 @@ export function GlobalSearch() {
       allResults.push(...companyResults);
     }
 
-    // Search news articles (database)
+    // Search news articles (database) - parallel
     if (contentType === 'all' || contentType === 'news') {
-      try {
-        let newsQuery = supabase
-          .from('news_articles')
-          .select('id, title, source_name, published_at')
-          .ilike('title', `%${searchQuery}%`);
-
-        if (dateFilter !== 'all') {
-          const now = new Date();
-          const filterDate = new Date();
-          
-          switch (dateFilter) {
-            case 'today':
-              filterDate.setHours(0, 0, 0, 0);
-              break;
-            case 'week':
-              filterDate.setDate(now.getDate() - 7);
-              break;
-            case 'month':
-              filterDate.setMonth(now.getMonth() - 1);
-              break;
-            case 'year':
-              filterDate.setFullYear(now.getFullYear() - 1);
-              break;
-          }
-          newsQuery = newsQuery.gte('published_at', filterDate.toISOString());
-        }
-
-        const { data: newsData } = await newsQuery.order('published_at', { ascending: false }).limit(5);
-        
-        if (newsData) {
-          allResults.push(...newsData.map(article => ({
-            type: 'news' as const,
-            id: article.id,
-            title: article.title,
-            subtitle: article.source_name,
-            date: article.published_at,
-          })));
-        }
-      } catch (error) {
-        console.error('News search error:', error);
-      }
-    }
-
-    // Search forum discussions (database)
-    if (contentType === 'all' || contentType === 'forum') {
-      try {
-        let forumQuery = supabase
-          .from('forum_discussions')
-          .select('id, title, category, created_at')
-          .eq('status', 'approved')
-          .ilike('title', `%${searchQuery}%`);
-
-        if (dateFilter !== 'all') {
-          const now = new Date();
-          const filterDate = new Date();
-          
-          switch (dateFilter) {
-            case 'today':
-              filterDate.setHours(0, 0, 0, 0);
-              break;
-            case 'week':
-              filterDate.setDate(now.getDate() - 7);
-              break;
-            case 'month':
-              filterDate.setMonth(now.getMonth() - 1);
-              break;
-            case 'year':
-              filterDate.setFullYear(now.getFullYear() - 1);
-              break;
-          }
-          forumQuery = forumQuery.gte('created_at', filterDate.toISOString());
-        }
-
-        const { data: forumData } = await forumQuery.order('created_at', { ascending: false }).limit(5);
-        
-        if (forumData) {
-          allResults.push(...forumData.map(discussion => ({
-            type: 'forum' as const,
-            id: discussion.id,
-            title: discussion.title,
-            subtitle: discussion.category,
-            date: discussion.created_at,
-          })));
-        }
-      } catch (error) {
-        console.error('Forum search error:', error);
-      }
-    }
-
-    // Search tickers (market symbols)
-    if (contentType === 'all' || contentType === 'ticker') {
-      try {
-        const queryUpper = searchQuery.toUpperCase().trim();
-        const marketTypes: Array<'stocks' | 'crypto' | 'indices' | 'commodities' | 'currencies'> = 
-          ['stocks', 'crypto', 'indices', 'commodities', 'currencies'];
-        
-        for (const marketType of marketTypes) {
+      searchPromises.push(
+        (async () => {
           try {
-            const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-            const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+            let newsQuery = supabase
+              .from('news_articles')
+              .select('id, title, source_name, published_at')
+              .ilike('title', `%${searchQuery}%`);
+
+            if (dateFilterValue) {
+              newsQuery = newsQuery.gte('published_at', dateFilterValue);
+            }
+
+            const { data: newsData } = await newsQuery
+              .order('published_at', { ascending: false })
+              .limit(5);
             
-            if (supabaseUrl && supabaseKey) {
-              const response = await fetch(
-                `${supabaseUrl}/functions/v1/fetch-stocks?type=${marketType}`,
-                {
-                  headers: {
-                    'Authorization': `Bearer ${supabaseKey}`,
-                    'Content-Type': 'application/json',
-                  },
-                }
-              );
-              
-              if (response.ok) {
-                const result = await response.json();
-                if (result?.data) {
-                  const matches = result.data
-                    .filter((item: MarketData) => 
-                      item.symbol.toUpperCase().includes(queryUpper) ||
-                      item.name.toUpperCase().includes(queryUpper)
-                    )
-                    .slice(0, 3)
-                    .map((item: MarketData) => ({
-                      type: 'ticker' as const,
-                      id: `${marketType}-${item.symbol}`,
-                      title: item.symbol,
-                      subtitle: item.name,
-                      symbol: item.symbol,
-                      marketType: marketType,
-                    }));
-                  allResults.push(...matches);
-                }
-              }
+            if (newsData) {
+              allResults.push(...newsData.map(article => ({
+                type: 'news' as const,
+                id: article.id,
+                title: article.title,
+                subtitle: article.source_name,
+                date: article.published_at,
+              })));
             }
           } catch (error) {
-            console.error(`Error searching ${marketType}:`, error);
+            console.error('News search error:', error);
           }
-        }
-      } catch (error) {
-        console.error('Ticker search error:', error);
-      }
+        })()
+      );
     }
 
-    // Search authors (forum profiles)
+    // Search forum discussions (database) - parallel
+    if (contentType === 'all' || contentType === 'forum') {
+      searchPromises.push(
+        (async () => {
+          try {
+            let forumQuery = supabase
+              .from('forum_discussions')
+              .select('id, title, category, created_at')
+              .eq('status', 'approved')
+              .ilike('title', `%${searchQuery}%`);
+
+            if (dateFilterValue) {
+              forumQuery = forumQuery.gte('created_at', dateFilterValue);
+            }
+
+            const { data: forumData } = await forumQuery
+              .order('created_at', { ascending: false })
+              .limit(5);
+            
+            if (forumData) {
+              allResults.push(...forumData.map(discussion => ({
+                type: 'forum' as const,
+                id: discussion.id,
+                title: discussion.title,
+                subtitle: discussion.category,
+                date: discussion.created_at,
+              })));
+            }
+          } catch (error) {
+            console.error('Forum search error:', error);
+          }
+        })()
+      );
+    }
+
+    // Search tickers (market symbols) - OPTIMIZED: parallel requests
+    if (contentType === 'all' || contentType === 'ticker') {
+      searchPromises.push(
+        (async () => {
+          try {
+            const queryUpper = searchQuery.toUpperCase().trim();
+            const marketTypes: Array<'stocks' | 'crypto' | 'indices' | 'commodities' | 'currencies'> = 
+              ['stocks', 'crypto', 'indices', 'commodities', 'currencies'];
+            
+            // Execute all market type searches in parallel
+            const tickerPromises = marketTypes.map(async (marketType) => {
+              try {
+                const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+                const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+                
+                if (!supabaseUrl || !supabaseKey) return [];
+
+                const response = await fetch(
+                  `${supabaseUrl}/functions/v1/fetch-stocks?type=${marketType}`,
+                  {
+                    headers: {
+                      'Authorization': `Bearer ${supabaseKey}`,
+                      'Content-Type': 'application/json',
+                    },
+                  }
+                );
+                
+                if (!response.ok) return [];
+
+                const result = await response.json();
+                if (!result?.data) return [];
+
+                return result.data
+                  .filter((item: MarketData) => 
+                    item.symbol.toUpperCase().includes(queryUpper) ||
+                    item.name.toUpperCase().includes(queryUpper)
+                  )
+                  .slice(0, 3)
+                  .map((item: MarketData) => ({
+                    type: 'ticker' as const,
+                    id: `${marketType}-${item.symbol}`,
+                    title: item.symbol,
+                    subtitle: item.name,
+                    symbol: item.symbol,
+                    marketType: marketType,
+                  }));
+              } catch (error) {
+                console.error(`Error searching ${marketType}:`, error);
+                return [];
+              }
+            });
+
+            const tickerResults = await Promise.all(tickerPromises);
+            allResults.push(...tickerResults.flat());
+          } catch (error) {
+            console.error('Ticker search error:', error);
+          }
+        })()
+      );
+    }
+
+    // Search authors (forum profiles) - parallel
     if (contentType === 'all' || contentType === 'author') {
-      try {
-        const { data: profiles } = await supabase
-          .from('profiles')
-          .select('id, username, display_name, avatar_url')
-          .or(`username.ilike.%${searchQuery}%,display_name.ilike.%${searchQuery}%`)
-          .limit(5);
-        
-        if (profiles) {
-          allResults.push(...profiles.map(profile => ({
-            type: 'author' as const,
-            id: profile.id,
-            title: profile.display_name || profile.username || 'Unknown User',
-            subtitle: `@${profile.username || 'unknown'}`,
-            authorId: profile.id,
-          })));
-        }
-      } catch (error) {
-        console.error('Author search error:', error);
-      }
+      searchPromises.push(
+        (async () => {
+          try {
+            const { data: profiles } = await supabase
+              .from('profiles')
+              .select('id, username, display_name, avatar_url')
+              .or(`username.ilike.%${searchQuery}%,display_name.ilike.%${searchQuery}%`)
+              .limit(5);
+            
+            if (profiles) {
+              allResults.push(...profiles.map(profile => ({
+                type: 'author' as const,
+                id: profile.id,
+                title: profile.display_name || profile.username || 'Unknown User',
+                subtitle: `@${profile.username || 'unknown'}`,
+                authorId: profile.id,
+              })));
+            }
+          } catch (error) {
+            console.error('Author search error:', error);
+          }
+        })()
+      );
     }
 
-    // Search analytics (would need analytics table)
-    // For now, this is a placeholder
+    // Wait for all searches to complete in parallel
+    await Promise.all(searchPromises);
 
     setResults(allResults);
     setLoading(false);
@@ -278,7 +278,7 @@ export function GlobalSearch() {
     }
   }, [contentType, dateFilter, collectBill, isCollected]);
 
-  // Debounce search with useMemo to prevent unnecessary re-renders
+  // Debounce search - reduced from 300ms to 200ms for faster response
   useEffect(() => {
     if (!query.trim()) {
       setResults([]);
@@ -288,7 +288,7 @@ export function GlobalSearch() {
     
     const timeoutId = setTimeout(() => {
       searchAll(query);
-    }, 300);
+    }, 200);
     return () => clearTimeout(timeoutId);
   }, [query, searchAll]);
 
