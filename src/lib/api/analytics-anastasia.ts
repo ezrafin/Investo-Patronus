@@ -2618,25 +2618,27 @@ This article provides a pragmatic framework for analyzing energy‑driven terms�
 
 ## Mapping Energy Exposure Across the Region
 
-CEE is not homogeneous. Countries differ markedly in:
+CEE is not homogeneous. Countries differ markedly in their energy dependencies, industrial structures, and policy capacities. Understanding these differences is essential for analyzing how terms-of-trade shocks affect each economy and identifying investment opportunities and risks. The region's energy landscape has been fundamentally reshaped by geopolitical events, supply chain reconfiguration, and the energy transition.
 
-- Their dependence on imported gas and oil.
-- The share of energy‑intensive industry in GDP.
-- Access to alternative supply routes and LNG capacity.
-- The pace of renewable‑energy deployment.
+Countries differ markedly in:
+
+- **Their dependence on imported gas and oil** – Some countries are heavily dependent on energy imports, while others have domestic production or alternative sources. Energy import dependence creates vulnerability to price shocks and supply disruptions. Countries with higher import dependence face larger terms-of-trade impacts when energy prices rise.
+- **The share of energy‑intensive industry in GDP** – Energy-intensive industries such as chemicals, metals, and heavy manufacturing are particularly sensitive to energy costs. Countries with larger shares of energy-intensive industry face greater economic impacts from energy price shocks. Industrial structure determines how energy shocks translate into economic effects.
+- **Access to alternative supply routes and LNG capacity** – Countries with access to alternative supply routes, LNG terminals, or diversified sources are better positioned to manage supply disruptions. Infrastructure investments in LNG capacity, pipeline connections, and storage facilities enhance energy security. Alternative supply routes reduce dependence on single sources.
+- **The pace of renewable‑energy deployment** – Renewable energy deployment reduces dependence on imported fossil fuels and creates opportunities for investment and growth. Countries with faster renewable deployment are better positioned for the energy transition. Renewable energy investments support long-term energy security and competitiveness.
 
 Broadly, we can distinguish three groups:
 
-1. **Energy‑import‑dependent manufacturing hubs** – e.g., Poland, Czech Republic, Slovakia, Hungary.
-2. **Mixed exporters with some domestic production** – e.g., Romania with gas and oil output, plus hydro and nuclear capacity.
-3. **Transit and storage hubs** – countries that play key roles in moving energy to the rest of Europe.
+1. **Energy‑import‑dependent manufacturing hubs** – Countries like Poland, Czech Republic, Slovakia, and Hungary are major manufacturing hubs with high energy import dependence. These countries have strong manufacturing sectors but face vulnerability to energy price shocks. Manufacturing competitiveness depends on energy costs, making these countries sensitive to terms-of-trade shocks. However, manufacturing strength also provides opportunities for energy efficiency investments and supply chain diversification.
+2. **Mixed exporters with some domestic production** – Countries like Romania have some domestic energy production (gas and oil) plus hydro and nuclear capacity, providing partial protection from import price shocks. These countries benefit from domestic production while still importing some energy. Mixed positions create more balanced terms-of-trade dynamics and reduce vulnerability to price shocks.
+3. **Transit and storage hubs** – Countries that play key roles in moving energy to the rest of Europe benefit from transit fees, storage capacity, and infrastructure investments. These countries can benefit from energy trade and infrastructure development. Transit hubs can generate revenue and enhance energy security for the region.
 
 Each group reacts differently to terms‑of‑trade shocks. Investors should build country‑level scorecards capturing:
 
-- Net energy import/export position.
-- Industrial structure and energy intensity.
-- Fiscal capacity to cushion price shocks.
-- EU support mechanisms and cohesion‑fund inflows.
+- **Net energy import/export position** – Understanding whether a country is a net importer or exporter of energy determines how terms-of-trade shocks affect the economy. Net importers face negative impacts when energy prices rise, while net exporters benefit. Net positions determine the direction and magnitude of terms-of-trade effects.
+- **Industrial structure and energy intensity** – Countries with energy-intensive industries face larger economic impacts from energy price shocks. Understanding industrial structure helps assess vulnerability and identify sectors most affected. Energy intensity determines how energy costs translate into economic effects.
+- **Fiscal capacity to cushion price shocks** – Countries with stronger fiscal positions can provide support to households and businesses during energy price shocks, reducing economic impacts. Fiscal capacity affects how countries respond to shocks and support economic stability. Strong fiscal positions enable policy responses that mitigate negative effects.
+- **EU support mechanisms and cohesion‑fund inflows** – EU member countries can access support mechanisms and structural funds that help manage energy transitions and economic adjustments. EU support provides additional resources for investment and policy responses. EU mechanisms enhance policy capacity and support long-term transitions.
 
 ## Growth and Inflation Channels
 
@@ -2737,18 +2739,28 @@ Investors can structure their analysis in four steps:
 
 ## Conclusion
 
-Energy‑driven terms‑of‑trade shocks are a defining feature of the CEE investment landscape. They can rapidly change growth trajectories, inflation paths, and policy reactions. Rather than treating these shocks as unpredictable exogenous risks, investors can systematically analyze how each economy and sector is exposed, and which assets are best positioned to benefit when conditions normalize.
+Energy‑driven terms‑of‑trade shocks are a defining feature of the CEE investment landscape. They can rapidly change growth trajectories, inflation paths, and policy reactions. Rather than treating these shocks as unpredictable exogenous risks, investors can systematically analyze how each economy and sector is exposed, and which assets are best positioned to benefit when conditions normalize. The energy transition, supply chain reconfiguration, and geopolitical developments are reshaping the region's energy landscape, creating both challenges and opportunities.
+
+The CEE region's energy exposure creates significant investment implications across equities, fixed income, and currencies. Understanding how energy price shocks affect each country's economy, sectors, and policy responses is essential for building robust portfolios. The region's heterogeneity requires country-specific analysis, but common themes include energy transition opportunities, supply chain diversification, and policy responses to manage shocks.
 
 **Key Investment Principles:**
-- **Country-specific analysis** is essential given the heterogeneity across CEE. Each country has different energy dependencies, industrial structures, and policy capacities that determine how they respond to shocks.
-- **Sector differentiation** matters significantly. Energy-intensive sectors face different challenges than services or technology sectors. Investors should identify sectors and companies that are well-positioned for the energy transition.
-- **Policy credibility** is a critical factor. Countries with credible policy frameworks and strong institutions tend to weather shocks better and recover faster. Policy credibility affects currency stability, bond yields, and equity valuations.
-- **Long-term perspective** is important as the energy transition creates both near-term volatility and long-term opportunities. Investors should balance short-term risk management with long-term positioning for the transition.
+
+- **Country-specific analysis** is essential given the heterogeneity across CEE. Each country has different energy dependencies, industrial structures, and policy capacities that determine how they respond to shocks. Investors should build detailed country scorecards that capture energy positions, industrial structures, fiscal capacity, and policy frameworks. Country-specific analysis enables more accurate assessment of risks and opportunities.
+- **Sector differentiation** matters significantly. Energy-intensive sectors face different challenges than services or technology sectors. Investors should identify sectors and companies that are well-positioned for the energy transition, have pricing power to pass on costs, or benefit from supply chain diversification. Sector differentiation helps identify winners and losers from energy shocks and the transition.
+- **Policy credibility** is a critical factor. Countries with credible policy frameworks and strong institutions tend to weather shocks better and recover faster. Policy credibility affects currency stability, bond yields, and equity valuations. Investors should assess policy frameworks, institutional strength, and policy responses to energy shocks. Policy credibility provides stability and supports long-term investment cases.
+- **Long-term perspective** is important as the energy transition creates both near-term volatility and long-term opportunities. Investors should balance short-term risk management with long-term positioning for the transition. The energy transition will create winners and losers, and investors should identify companies and sectors positioned to benefit. Long-term perspective helps capture value from structural changes.
 
 **The Energy Transition Opportunity:**
-- **Renewable energy investment** is creating opportunities across CEE as countries invest in solar, wind, and other renewable sources. Companies involved in renewable energy development, grid infrastructure, and energy storage may benefit.
-- **Energy efficiency** investments are becoming more attractive as energy costs remain elevated. Companies that help other businesses reduce energy consumption may see strong demand.
-- **Supply chain diversification** away from Russia is creating opportunities for CEE countries to become alternative suppliers to Western Europe. This can benefit exporters and logistics companies.
+
+- **Renewable energy investment** is creating opportunities across CEE as countries invest in solar, wind, and other renewable sources. Companies involved in renewable energy development, grid infrastructure, and energy storage may benefit. Renewable energy investments support energy security, reduce import dependence, and create growth opportunities. The renewable energy transition is a major investment theme.
+- **Energy efficiency** investments are becoming more attractive as energy costs remain elevated. Companies that help other businesses reduce energy consumption may see strong demand. Energy efficiency investments support competitiveness and reduce vulnerability to price shocks. Energy efficiency is a key component of the transition.
+- **Supply chain diversification** away from Russia is creating opportunities for CEE countries to become alternative suppliers to Western Europe. This can benefit exporters and logistics companies. Supply chain diversification supports manufacturing competitiveness and creates investment opportunities. CEE countries can benefit from supply chain reconfiguration.
+
+**Cross-Asset Investment Implications:**
+
+Energy-driven terms-of-trade shocks create implications across asset classes. For local-currency bonds, energy shocks affect inflation, monetary policy, and yields. For currencies, energy dependence affects current accounts and exchange rates. For equities, energy costs affect corporate margins, sector performance, and investment opportunities. Investors should analyze how energy shocks translate into cross-asset views and position portfolios accordingly.
+
+The CEE region's energy exposure will continue to shape investment opportunities and risks. Investors that systematically analyze energy dependencies, sector exposures, and policy responses will be better positioned to navigate volatility and capture opportunities from the energy transition and supply chain reconfiguration.
 
 For long‑horizon investors, the transition away from concentrated fossil‑fuel dependence and toward more diversified energy systems creates both near‑term volatility and long‑term opportunity. A disciplined, country‑by‑country approach—grounded in external‑balance analysis, policy credibility, and sector fundamentals—offers the best path to navigating this evolving landscape. Success requires patience, careful analysis, and the ability to identify companies and sectors that are well-positioned for the energy transition while managing near-term volatility.`,
     date: formatDate(260),
@@ -7450,70 +7462,70 @@ This article explores how Vietnamese equity markets are positioned, which factor
 
 ### Market Structure
 
-Vietnamese equity market structure:
+The Ho Chi Minh Stock Exchange (HOSE) is the primary equity market in Vietnam, operating as a developing exchange with growing sophistication and international recognition. Established in 2000, the exchange has evolved significantly, with improved regulation, infrastructure, and market development. The market's growth potential, manufacturing story, and economic development make it attractive for international investors seeking Southeast Asian exposure, though market development remains early stage.
 
 **Ho Chi Minh Stock Exchange:**
-- **Market structure** – HOSE market structure.
-- **Listings** – number of listed companies.
-- **Liquidity** – market liquidity.
-- **Indices** – market indices.
+- **Market structure** – The HOSE operates a main market with approximately 400-500 listed companies, including some of Vietnam's largest and most successful companies. The exchange maintains listing requirements and regulatory oversight, ensuring standards for listed companies. Trading is electronic, with modern clearing and settlement systems, though market infrastructure continues to develop rapidly.
+- **Listings** – The exchange hosts approximately 400-500 listed companies across various sectors, with major companies in manufacturing, real estate, financials, and consumer. The number of listings has grown significantly, reflecting market development and corporate growth. Many companies are well-established with strong market positions, though market development remains early stage.
+- **Liquidity** – Market liquidity is limited for many stocks, with daily trading volumes averaging $200-400 million, making it one of the smaller markets in Southeast Asia. Liquidity is concentrated in large-cap stocks, particularly those in major indices, but mid-cap and small-cap stocks can have very limited liquidity. This liquidity constraint requires careful position sizing and execution strategies.
+- **Indices** – The VN-Index is the primary market benchmark, representing the largest and most liquid stocks. The index includes approximately 200-300 stocks and represents approximately 80-90% of total market capitalization. Sector-specific indices are available, providing sector tracking capabilities.
 
 **Market Characteristics:**
-- **Size** – market capitalization.
-- **Sector composition** – sector composition.
-- **Foreign ownership** – foreign ownership levels.
-- **Liquidity** – trading liquidity considerations.
+- **Size** – Total market capitalization is approximately $200-250 billion, making it one of the smaller markets in Southeast Asia relative to economic size. The market's size reflects early stage development, limited listings, and market evolution. Market capitalization has grown significantly with economic development and corporate growth.
+- **Sector composition** – The market is well-diversified across sectors, with manufacturing representing approximately 20-25%, real estate 15-20%, financials 15-20%, consumer 10-15%, and other sectors. This diversification provides exposure to multiple economic themes, with manufacturing reflecting Vietnam's manufacturing hub status.
+- **Foreign ownership** – Foreign ownership levels are moderate, with international investors holding approximately 20-30% of free float for major stocks. Foreign participation reflects confidence in Vietnamese companies and markets, though ownership has fluctuated with economic conditions, currency movements, and policy developments. Foreign ownership provides liquidity and market depth.
+- **Liquidity** – Trading liquidity considerations are important, as liquidity can be limited for many stocks. Large-cap stocks have better liquidity, but mid-cap and small-cap stocks can have very limited liquidity, requiring careful position sizing. Liquidity constraints are a key consideration for investors.
 
 **Indices:**
-- **VN-Index** – VN-Index.
-- **Sector indices** – sector-specific indices.
-- **Benchmarks** – benchmark indices.
+- **VN-Index** – The VN-Index is the primary market benchmark, including the largest and most liquid stocks. The index is market-capitalization weighted and rebalanced periodically. It serves as the main reference for market performance and is widely used by investors and fund managers.
+- **Sector indices** – Sector-specific indices are available, including manufacturing, real estate, financials, and others. These indices provide sector tracking capabilities and enable sector-specific investment strategies. Sector indices are used for benchmarking and portfolio construction.
+- **Benchmarks** – International index providers like MSCI and FTSE include Vietnamese stocks in their emerging market and Southeast Asian indices, providing additional benchmarking options. Vietnamese stocks typically have smaller weights in Southeast Asian indices due to market size, but inclusion supports international investment flows.
 
 ### Economic Fundamentals
 
-Vietnamese economic fundamentals:
+Vietnamese economic fundamentals reflect a manufacturing-driven growth story combined with favorable demographics, trade integration, and economic development. The economy benefits significantly from manufacturing investment, supply chain diversification, and trade agreements. Understanding these dynamics is crucial for evaluating investment opportunities and long-term growth potential.
 
 **Manufacturing:**
-- **Manufacturing hub** – emerging manufacturing hub.
-- **FDI** – foreign direct investment.
-- **Export orientation** – export-oriented manufacturing.
-- **Growth** – manufacturing growth.
+- **Manufacturing hub** – Vietnam has emerged as an attractive manufacturing hub, benefiting from supply chain diversification, trade tensions, and cost advantages. The country has become a major destination for manufacturing investment, particularly in electronics, textiles, footwear, and other sectors. Manufacturing hub status is a key economic strength and investment theme.
+- **FDI** – Foreign direct investment in manufacturing is strong, with companies relocating production from China and other countries to Vietnam. FDI has been a major driver of economic growth, supporting manufacturing expansion, job creation, and infrastructure development. FDI momentum is expected to continue, supporting long-term growth.
+- **Export orientation** – Export-oriented manufacturing is a key characteristic, with exports representing approximately 100% of GDP. Major export sectors include electronics, textiles, footwear, and other manufactured goods. Export orientation provides growth opportunities but also creates sensitivity to external demand. Manufacturing exports are a key economic driver.
+- **Growth** – Manufacturing growth has been strong, with the sector contributing significantly to GDP growth and employment. Manufacturing expansion is supported by FDI, infrastructure development, and competitive advantages. Manufacturing growth is expected to continue, supporting economic development and market opportunities.
 
 **Trade:**
-- **Trade agreements** – trade agreements.
-- **Market access** – market access.
-- **Competitiveness** – competitiveness.
-- **Benefits** – trade benefits.
+- **Trade agreements** – Trade agreements including CPTPP, EVFTA, and others provide preferential trade access to major markets, supporting manufacturing and exports. These agreements ensure tariff-free or reduced-tariff trade for qualifying goods, creating competitive advantages for Vietnamese manufacturers. Trade agreements are a key strength supporting manufacturing competitiveness.
+- **Market access** – Market access to major markets including United States, European Union, and Asia provides growth opportunities and export diversification. Market access is a key advantage supporting manufacturing investment and export growth. Trade agreements enhance market access and competitiveness.
+- **Competitiveness** – Competitive advantages include strategic location, competitive labor costs, trade agreements, and manufacturing capabilities. These advantages support manufacturing competitiveness and attract investment. Vietnam's competitiveness is strong relative to other manufacturing destinations, particularly for labor-intensive manufacturing.
+- **Benefits** – Trade benefits include increased exports, manufacturing investment, job creation, and economic growth. Trade integration with major markets is a key economic strength, supporting long-term growth and investment opportunities. Trade benefits are substantial and expected to grow with manufacturing expansion.
 
 **Demographics:**
-- **Young population** – young population.
-- **Workforce** – competitive workforce.
-- **Urbanization** – urbanization trends.
-- **Growth** – demographic growth.
+- **Young population** – Young population with median age of approximately 32 years provides a significant demographic dividend. The young population supports manufacturing labor supply, consumption growth, and economic dynamism. Youth demographics are a key structural advantage supporting long-term growth and manufacturing competitiveness.
+- **Workforce** – Competitive workforce with competitive labor costs, improving skills, and work ethic supports manufacturing competitiveness. The workforce is a key advantage attracting manufacturing investment. Workforce quality and cost competitiveness are important strengths.
+- **Urbanization** – Urbanization trends are accelerating, with urban population growing and creating demand for infrastructure, housing, and services. Urbanization drives productivity, consumption, and economic growth. Major cities like Ho Chi Minh City and Hanoi are experiencing rapid development, creating opportunities in real estate, infrastructure, and consumer sectors.
+- **Growth** – Demographic growth supports long-term economic expansion, with population growth, urbanization, and workforce expansion providing foundations for growth. Demographics are a key structural advantage supporting investment cases and long-term growth potential.
 
 ## Investment Opportunities
 
 ### Manufacturing Sector
 
-Manufacturing companies benefiting from investment:
+Manufacturing companies are direct beneficiaries of manufacturing investment and supply chain diversification, as companies relocate production to Vietnam. This shift is driving significant investment, capacity expansion, and revenue growth for manufacturing companies. Electronics, textiles, footwear, and other manufacturing sectors are experiencing strong demand and investment growth.
 
 **Companies:**
-- **Manufacturing companies** – manufacturing companies.
-- **Export orientation** – export-oriented.
-- **FDI benefits** – benefits from FDI.
-- **Returns** – return potential.
+- **Manufacturing companies** – Manufacturing companies include both domestic and foreign-invested enterprises, with many companies benefiting from manufacturing investment and export growth. These companies serve global markets and benefit from Vietnam's manufacturing competitiveness. Manufacturing companies offer direct exposure to manufacturing growth trends.
+- **Export orientation** – Export-oriented manufacturing is a key characteristic, with companies generating significant revenue from exports to major markets. Export orientation reduces dependence on domestic demand and provides growth opportunities. Export-oriented companies are well-positioned to benefit from manufacturing investment and trade agreements.
+- **FDI benefits** – Benefits from FDI include increased demand for manufacturing services, supply chain integration, and technology transfer. Companies that serve FDI manufacturers or are part of supply chains benefit from manufacturing investment. FDI benefits create opportunities for manufacturing companies and suppliers.
+- **Returns** – Return potential is attractive for well-positioned manufacturing companies, with investment-driven demand, capacity expansion, and operational efficiency supporting returns. Manufacturing companies can achieve solid profitability and growth as manufacturing investment accelerates. Returns are supported by strong growth drivers.
 
 **Investment:**
-- **Manufacturing investment** – strong manufacturing investment.
-- **Growth** – manufacturing growth.
-- **Competitiveness** – competitiveness.
-- **Returns** – return potential.
+- **Manufacturing investment** – Strong manufacturing investment is driving capacity expansion, job creation, and economic growth. FDI in manufacturing has been a major driver, with companies investing in new facilities, equipment, and operations. Manufacturing investment creates opportunities for manufacturing companies, suppliers, and service providers.
+- **Growth** – Manufacturing growth has been strong, with the sector contributing significantly to GDP growth and employment. Manufacturing expansion is supported by FDI, infrastructure development, and competitive advantages. Manufacturing growth is expected to continue, supporting economic development and market opportunities.
+- **Competitiveness** – Competitive advantages include strategic location, competitive labor costs, trade agreements, and manufacturing capabilities. These advantages support manufacturing competitiveness and attract investment. Vietnam's competitiveness is strong relative to other manufacturing destinations.
+- **Returns** – Return potential is attractive, supported by manufacturing investment, export growth, and operational efficiency. Manufacturing companies can deliver solid returns as manufacturing investment accelerates and exports grow. Returns are supported by strong fundamentals and growth drivers.
 
 **Investment Case:**
-- **Manufacturing** – direct manufacturing benefits.
-- **Growth** – strong growth potential.
-- **FDI** – FDI-driven growth.
-- **Returns** – return potential.
+- **Manufacturing** – Direct manufacturing benefits are significant, with companies positioned to benefit from manufacturing investment, export growth, and supply chain integration. Manufacturing is a key investment theme creating substantial opportunities. Manufacturing exposure is a key investment focus.
+- **Growth** – Strong growth potential is supported by manufacturing investment, export expansion, and capacity growth. Manufacturing companies can achieve significant revenue and earnings growth as manufacturing investment accelerates. Growth prospects are positive and sustainable.
+- **FDI** – FDI-driven growth is a key characteristic, with foreign investment supporting manufacturing expansion and creating opportunities for domestic companies. FDI momentum is expected to continue, supporting long-term growth. FDI-driven growth is a key investment theme.
+- **Returns** – Return potential is attractive, supported by manufacturing-driven growth, investment expansion, and operational efficiency. Manufacturing companies can deliver solid returns as manufacturing investment accelerates. Returns are supported by strong fundamentals and growth drivers.
 
 ### Real Estate Sector
 
@@ -7680,19 +7692,27 @@ Market evolution:
 
 ## Conclusion
 
-Vietnamese equity markets offer exposure to an attractive manufacturing growth story driven by supply chain diversification, cost advantages, and trade benefits. While market development remains early stage and liquidity can be limited, the manufacturing momentum provides strong growth potential. Success requires careful stock selection, focus on manufacturing beneficiaries, and understanding of market limitations.
+Vietnamese equity markets offer exposure to an attractive manufacturing growth story driven by supply chain diversification, cost advantages, trade benefits, and favorable demographics. The country has emerged as one of the most attractive manufacturing destinations in Asia, benefiting from manufacturing investment, infrastructure development, and economic growth. While market development remains early stage and liquidity can be limited, the manufacturing momentum provides strong growth potential and compelling investment opportunities. Success requires careful stock selection, focus on manufacturing beneficiaries, and understanding of market limitations.
 
-For investors, Vietnam requires understanding manufacturing trends, identifying beneficiaries, and managing market risks. Success requires selective approach, bottom-up stock selection, and strong risk management.
+The Vietnamese market is characterized by a manufacturing-driven growth story with multiple tailwinds supporting long-term investment cases. Manufacturing investment, supply chain diversification, and trade agreements provide foundations for sustained growth. The economy's manufacturing focus, competitive advantages, and demographic trends create opportunities across multiple sectors. However, market development stage, liquidity constraints, and manufacturing dependence require careful navigation and selective approach.
 
-The Vietnamese equity market will continue to evolve as manufacturing investment continues and market development progresses. Investors that successfully identify manufacturing opportunities while managing risks will be positioned to benefit from this manufacturing growth story.
+For investors, Vietnam requires understanding manufacturing trends, identifying beneficiaries, and managing market risks. Success requires selective approach, bottom-up stock selection, and strong risk management. The market's manufacturing potential is attractive, but market development stage and liquidity constraints require careful management.
+
+The Vietnamese equity market will continue to evolve as manufacturing investment continues and market development progresses. Manufacturing investment is expected to continue, supporting manufacturing companies, real estate, infrastructure, and related sectors. Market development will improve liquidity, transparency, and market quality. Companies will continue to adapt, with quality companies delivering sustainable growth. Investors that successfully identify manufacturing opportunities while managing risks will be positioned to benefit from this manufacturing growth story.
+
+**Investment Focus Areas:**
 
 Investors should focus on:
-- **Manufacturing themes** – exposure to manufacturing growth themes.
-- **Quality companies** – quality companies with manufacturing exposure.
-- **Risk management** – strong risk management of market risks.
-- **Patience** – patience with market development.
+- **Manufacturing themes** – Exposure to manufacturing growth themes including supply chain diversification, FDI investment, and export growth. These themes provide sustainable growth drivers and long-term opportunities. Manufacturing themes are structural and support investment cases.
+- **Quality companies** – Quality companies with manufacturing exposure, strong fundamentals, and competitive advantages. These companies are better positioned to navigate challenges and deliver returns. Quality is essential for success in Vietnam's evolving market.
+- **Risk management** – Strong risk management of market development, liquidity, currency, and manufacturing dependence risks. Careful position sizing, diversification, and monitoring are essential. Risk management is critical for navigating Vietnam's challenges while capturing opportunities.
+- **Patience** – Patience with market development, as market evolution and liquidity improvement may take time. Short-term volatility can occur, but long-term fundamentals support returns. Patience is important for capturing value in Vietnam's developing market.
 
-Vietnam offers a compelling manufacturing growth story but requires understanding of market limitations. Investors that successfully navigate this will be positioned to benefit from this emerging manufacturing hub.`,
+**Market Positioning:**
+
+Vietnam offers a compelling manufacturing growth story but requires understanding of market limitations. The market provides exposure to an emerging manufacturing hub with strong growth potential and investment opportunities, but market development stage, liquidity constraints, and manufacturing dependence require careful management. Investors that successfully navigate this will be positioned to benefit from this emerging manufacturing hub.
+
+Vietnamese equity markets can provide attractive opportunities for long-term investors willing to accept market development risks and maintain patience. Manufacturing growth, FDI investment, and market development create value, but market limitations and risks require careful management. Success requires understanding manufacturing trends, identifying beneficiaries, and managing market risks effectively.`,
     date: formatDate(129),
     author: 'Anastasia Petrova',
     authorAvatar: getAuthorAvatar('Anastasia Petrova'),

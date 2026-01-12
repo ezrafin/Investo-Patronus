@@ -31,22 +31,22 @@ const COURSE_PREFIXES: Record<string, string> = {
 };
 
 /**
- * Generate video filename based on course, module, lesson, and video number
+ * Generate video filename based on course, unit, lesson, and video number
  * 
  * @param courseId - Course ID (e.g., 'macroeconomics')
- * @param moduleIndex - Module index (0-based, will be converted to 1-based for filename)
+ * @param unitIndex - Unit index (0-based, will be converted to 1-based for filename)
  * @param lessonIndex - Lesson index (0-based, will be converted to 1-based for filename)
  * @param videoIndex - Video index (0-based, will be converted to 1-based for filename)
  * @returns Generated filename (e.g., 'Macroeconomics-U1-L1-V1.mp4')
  */
 export function generateVideoFilename(
   courseId: string,
-  moduleIndex: number,
+  unitIndex: number,
   lessonIndex: number,
   videoIndex: number = 0
 ): string {
   const prefix = COURSE_PREFIXES[courseId] || courseId;
-  const unit = moduleIndex + 1; // Convert to 1-based
+  const unit = unitIndex + 1; // Convert to 1-based
   const lesson = lessonIndex + 1; // Convert to 1-based
   const video = videoIndex + 1; // Convert to 1-based
   
@@ -57,19 +57,19 @@ export function generateVideoFilename(
  * Generate full R2 URL for a video
  * 
  * @param courseId - Course ID
- * @param moduleIndex - Module index (0-based)
+ * @param unitIndex - Unit index (0-based)
  * @param lessonIndex - Lesson index (0-based)
  * @param videoIndex - Video index (0-based, defaults to 0 for first video)
  * @returns Full R2 URL to the video
  */
 export function getVideoUrl(
   courseId: string,
-  moduleIndex: number,
+  unitIndex: number,
   lessonIndex: number,
   videoIndex: number = 0
 ): string {
   const folder = COURSE_FOLDERS[courseId] || courseId;
-  const filename = generateVideoFilename(courseId, moduleIndex, lessonIndex, videoIndex);
+  const filename = generateVideoFilename(courseId, unitIndex, lessonIndex, videoIndex);
   
   return `${R2_PUBLIC_URL}/${folder}/${filename}`;
 }
@@ -78,20 +78,38 @@ export function getVideoUrl(
  * Generate all video URLs for a lesson (supports multiple videos per lesson)
  * 
  * @param courseId - Course ID
- * @param moduleIndex - Module index (0-based)
+ * @param unitIndex - Unit index (0-based)
  * @param lessonIndex - Lesson index (0-based)
  * @param videoCount - Number of videos in the lesson (default: 1)
  * @returns Array of video URLs
  */
 export function getLessonVideoUrls(
   courseId: string,
-  moduleIndex: number,
+  unitIndex: number,
   lessonIndex: number,
   videoCount: number = 1
 ): string[] {
   return Array.from({ length: videoCount }, (_, i) =>
-    getVideoUrl(courseId, moduleIndex, lessonIndex, i)
+    getVideoUrl(courseId, unitIndex, lessonIndex, i)
   );
+}
+
+/**
+ * Get video URL for a VideoContent item
+ * 
+ * @param courseId - Course ID
+ * @param unitIndex - Unit index (0-based)
+ * @param lessonIndex - Lesson index (0-based)
+ * @param videoContent - VideoContent item with videoIndex
+ * @returns Full R2 URL to the video
+ */
+export function getVideoContentUrl(
+  courseId: string,
+  unitIndex: number,
+  lessonIndex: number,
+  videoContent: { videoIndex: number }
+): string {
+  return getVideoUrl(courseId, unitIndex, lessonIndex, videoContent.videoIndex);
 }
 
 /**

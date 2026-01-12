@@ -5,27 +5,27 @@
       "placeholder": 28,
       "wordCount": {
         "veryLow": 0,
-        "low": 42,
-        "medium": 48,
-        "total": 90
+        "low": 32,
+        "medium": 49,
+        "total": 81
       }
     },
     "warning": {
-      "structure": 5
+      "structure": 0
     },
     "distribution": {
       "byAuthor": {
         "Christina Summerbell": {
           "placeholder": 1,
-          "wordCount": 21,
+          "wordCount": 17,
           "structure": 0,
-          "total": 22
+          "total": 18
         },
         "Assunta Novak": {
           "placeholder": 0,
-          "wordCount": 9,
+          "wordCount": 6,
           "structure": 0,
-          "total": 9
+          "total": 6
         },
         "Lysander Truog": {
           "placeholder": 0,
@@ -41,9 +41,9 @@
         },
         "Anastasia Petrova": {
           "placeholder": 0,
-          "wordCount": 18,
+          "wordCount": 16,
           "structure": 0,
-          "total": 18
+          "total": 16
         },
         "Luca Montefiore": {
           "placeholder": 0,
@@ -145,15 +145,15 @@
       "bySource": {
         "analytics-christina.ts": {
           "placeholder": 1,
-          "wordCount": 21,
+          "wordCount": 17,
           "structure": 0,
-          "total": 22
+          "total": 18
         },
         "analytics-assunta.ts": {
           "placeholder": 0,
-          "wordCount": 9,
+          "wordCount": 6,
           "structure": 0,
-          "total": 9
+          "total": 6
         },
         "analytics-lysander.ts": {
           "placeholder": 0,
@@ -169,9 +169,9 @@
         },
         "analytics-anastasia.ts": {
           "placeholder": 0,
-          "wordCount": 18,
+          "wordCount": 16,
           "structure": 0,
-          "total": 18
+          "total": 16
         },
         "analytics-luca.ts": {
           "placeholder": 0,
@@ -205,7 +205,7 @@
         }
       }
     },
-    "multipleIssues": 5
+    "multipleIssues": 0
   },
   "prioritized": {
     "critical": {
@@ -934,253 +934,6 @@
         "veryLow": [],
         "low": [
           {
-            "id": "streaming-media-infrastructure",
-            "type": "analytics",
-            "title": "Streaming Media Infrastructure: Powering the Future of Content Delivery",
-            "author": "Christina Summerbell",
-            "source": "analytics-christina.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1136 words, minimum required is 1500"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1136,
-              "headingLevels": 3,
-              "listCount": 112,
-              "paragraphCount": 49,
-              "sentenceVariety": 0.5079584719775627,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": true,
-              "repetitionScore": 1,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "digital-identity-and-authentication",
-            "type": "analytics",
-            "title": "Digital Identity and Authentication: Securing the Digital Economy",
-            "author": "Christina Summerbell",
-            "source": "analytics-christina.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1173 words, minimum required is 1500"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article lacks quotes, citations, or references to sources"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1173,
-              "headingLevels": 3,
-              "listCount": 125,
-              "paragraphCount": 51,
-              "sentenceVariety": 0.4904688907200607,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": false,
-              "repetitionScore": 1,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "blockchain-infrastructure-for-enterprises",
-            "type": "analytics",
-            "title": "Blockchain Infrastructure for Enterprises: Beyond Cryptocurrency",
-            "author": "Christina Summerbell",
-            "source": "analytics-christina.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1146 words, minimum required is 1500"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article lacks quotes, citations, or references to sources"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1146,
-              "headingLevels": 3,
-              "listCount": 119,
-              "paragraphCount": 51,
-              "sentenceVariety": 0.5079209791288687,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": false,
-              "repetitionScore": 1,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "robotics-and-automation-systems",
-            "type": "analytics",
-            "title": "Robotics and Automation Systems: The Future of Physical Work",
-            "author": "Christina Summerbell",
-            "source": "analytics-christina.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1121 words, minimum required is 1500"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article lacks quotes, citations, or references to sources"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1121,
-              "headingLevels": 3,
-              "listCount": 125,
-              "paragraphCount": 51,
-              "sentenceVariety": 0.5416532845838644,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": false,
-              "repetitionScore": 1,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "space-technology-commercialization",
-            "type": "analytics",
-            "title": "Space Technology Commercialization: The New Space Economy",
-            "author": "Christina Summerbell",
-            "source": "analytics-christina.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1103 words, minimum required is 1500"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article lacks quotes, citations, or references to sources"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1103,
-              "headingLevels": 3,
-              "listCount": 116,
-              "paragraphCount": 50,
-              "sentenceVariety": 0.5145483231698621,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": false,
-              "repetitionScore": 1,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "on-chain-derivatives-and-volatility-in-crypto-markets",
-            "type": "analytics",
-            "title": "On-Chain Derivatives and Volatility in Crypto Markets",
-            "author": "Assunta Novak",
-            "source": "analytics-assunta.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1024 words, minimum required is 1500"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article lacks quotes, citations, or references to sources"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1024,
-              "headingLevels": 3,
-              "listCount": 67,
-              "paragraphCount": 32,
-              "sentenceVariety": 0.4277276196743566,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": false,
-              "repetitionScore": 0.8,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "tokenized-real-world-assets-and-on-chain-yield-structures",
-            "type": "analytics",
-            "title": "Tokenized Real-World Assets and the Future of On-Chain Yield",
-            "author": "Assunta Novak",
-            "source": "analytics-assunta.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1013 words, minimum required is 1500"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article lacks quotes, citations, or references to sources"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1013,
-              "headingLevels": 3,
-              "listCount": 55,
-              "paragraphCount": 27,
-              "sentenceVariety": 0.5747202909840103,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": false,
-              "repetitionScore": 0.55,
-              "formalityScore": 0
-            }
-          },
-          {
             "id": "eastern-europe-macro-economic-outlook",
             "type": "analytics",
             "title": "Eastern Europe Macro: Economic Outlook and Investment Implications",
@@ -1190,12 +943,7 @@
               {
                 "category": "wordCount",
                 "severity": "critical",
-                "description": "Article has only 900 words, minimum required is 1500"
-              },
-              {
-                "category": "structure",
-                "severity": "info",
-                "description": "Article has only 0 list(s), minimum recommended is 2"
+                "description": "Article has only 952 words, minimum required is 1500"
               },
               {
                 "category": "aiStyle",
@@ -1209,11 +957,11 @@
               }
             ],
             "metrics": {
-              "wordCount": 900,
+              "wordCount": 952,
               "headingLevels": 3,
-              "listCount": 0,
-              "paragraphCount": 42,
-              "sentenceVariety": 0.4103656905736639,
+              "listCount": 8,
+              "paragraphCount": 44,
+              "sentenceVariety": 0.8839927275498992,
               "clicheCount": 0,
               "hasExamples": false,
               "hasQuotes": true,
@@ -1231,33 +979,7 @@
               {
                 "category": "wordCount",
                 "severity": "critical",
-                "description": "Article has only 932 words, minimum required is 1500"
-              }
-            ],
-            "metrics": {
-              "wordCount": 932,
-              "headingLevels": 3,
-              "listCount": 48,
-              "paragraphCount": 24,
-              "sentenceVariety": 0.5536746353523609,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": true,
-              "repetitionScore": 0.5,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "cee-banking-sectors-in-a-higher-rate-world",
-            "type": "analytics",
-            "title": "CEE Banking Sectors in a Higher-Rate World: Balancing Growth, Risk, and Regulation",
-            "author": "Anastasia Petrova",
-            "source": "analytics-anastasia.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1190 words, minimum required is 1500"
+                "description": "Article has only 1157 words, minimum required is 1500"
               },
               {
                 "category": "aiStyle",
@@ -1266,16 +988,16 @@
               }
             ],
             "metrics": {
-              "wordCount": 1190,
+              "wordCount": 1157,
               "headingLevels": 3,
-              "listCount": 94,
-              "paragraphCount": 38,
-              "sentenceVariety": 0.5683288147854493,
-              "clicheCount": 1,
+              "listCount": 55,
+              "paragraphCount": 26,
+              "sentenceVariety": 0.5251052221617237,
+              "clicheCount": 0,
               "hasExamples": true,
               "hasQuotes": true,
-              "repetitionScore": 0.95,
-              "formalityScore": 0.08403361344537816
+              "repetitionScore": 0.85,
+              "formalityScore": 0
             }
           },
           {
@@ -1288,7 +1010,7 @@
               {
                 "category": "wordCount",
                 "severity": "critical",
-                "description": "Article has only 866 words, minimum required is 1500"
+                "description": "Article has only 1133 words, minimum required is 1500"
               },
               {
                 "category": "aiStyle",
@@ -1307,81 +1029,14 @@
               }
             ],
             "metrics": {
-              "wordCount": 866,
+              "wordCount": 1133,
               "headingLevels": 3,
-              "listCount": 88,
-              "paragraphCount": 34,
-              "sentenceVariety": 0.5612461217210911,
+              "listCount": 95,
+              "paragraphCount": 36,
+              "sentenceVariety": 0.5336679025891494,
               "clicheCount": 0,
               "hasExamples": false,
               "hasQuotes": false,
-              "repetitionScore": 0.85,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "poland-equity-markets-eu-integration-and-growth-dynamics",
-            "type": "analytics",
-            "title": "Poland Equity Markets: EU Integration and Growth Dynamics",
-            "author": "Anastasia Petrova",
-            "source": "analytics-anastasia.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1089 words, minimum required is 1500"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article lacks quotes, citations, or references to sources"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1089,
-              "headingLevels": 3,
-              "listCount": 136,
-              "paragraphCount": 53,
-              "sentenceVariety": 0.6688848284913662,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": false,
-              "repetitionScore": 1,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "czech-republic-equity-markets-stability-and-eu-integration",
-            "type": "analytics",
-            "title": "Czech Republic Equity Markets: Stability and EU Integration Benefits",
-            "author": "Anastasia Petrova",
-            "source": "analytics-anastasia.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1051 words, minimum required is 1500"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1051,
-              "headingLevels": 3,
-              "listCount": 126,
-              "paragraphCount": 51,
-              "sentenceVariety": 0.694260858085931,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": true,
               "repetitionScore": 1,
               "formalityScore": 0
             }
@@ -2015,12 +1670,7 @@
               {
                 "category": "wordCount",
                 "severity": "critical",
-                "description": "Article has only 1017 words, minimum required is 1500"
-              },
-              {
-                "category": "structure",
-                "severity": "info",
-                "description": "Article has only 0 list(s), minimum recommended is 2"
+                "description": "Article has only 1088 words, minimum required is 1500"
               },
               {
                 "category": "aiStyle",
@@ -2029,15 +1679,15 @@
               }
             ],
             "metrics": {
-              "wordCount": 1017,
+              "wordCount": 1088,
               "headingLevels": 3,
-              "listCount": 0,
-              "paragraphCount": 44,
-              "sentenceVariety": 0.3956616249564141,
+              "listCount": 8,
+              "paragraphCount": 46,
+              "sentenceVariety": 0.9852789529147279,
               "clicheCount": 0,
               "hasExamples": true,
               "hasQuotes": true,
-              "repetitionScore": 0.9,
+              "repetitionScore": 0.95,
               "formalityScore": 0
             }
           },
@@ -2361,42 +2011,6 @@
               "listCount": 131,
               "paragraphCount": 54,
               "sentenceVariety": 1,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": true,
-              "repetitionScore": 1,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "robotics-automation-investment-opportunities",
-            "type": "analytics",
-            "title": "Robotics and Automation: Investment Opportunities in the Age of Intelligent Machines",
-            "author": "Christina Summerbell",
-            "source": "analytics-christina.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1400 words, minimum required is 1500"
-              },
-              {
-                "category": "structure",
-                "severity": "info",
-                "description": "Article has only 0 list(s), minimum recommended is 2"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1400,
-              "headingLevels": 3,
-              "listCount": 0,
-              "paragraphCount": 51,
-              "sentenceVariety": 0.3903739703600816,
               "clicheCount": 0,
               "hasExamples": true,
               "hasQuotes": true,
@@ -2838,6 +2452,73 @@
             }
           },
           {
+            "id": "streaming-media-infrastructure",
+            "type": "analytics",
+            "title": "Streaming Media Infrastructure: Powering the Future of Content Delivery",
+            "author": "Christina Summerbell",
+            "source": "analytics-christina.ts",
+            "issues": [
+              {
+                "category": "wordCount",
+                "severity": "critical",
+                "description": "Article has only 1476 words, minimum required is 1500"
+              },
+              {
+                "category": "aiStyle",
+                "severity": "info",
+                "description": "Article shows high word repetition, may indicate AI-generated content"
+              }
+            ],
+            "metrics": {
+              "wordCount": 1476,
+              "headingLevels": 3,
+              "listCount": 121,
+              "paragraphCount": 53,
+              "sentenceVariety": 1,
+              "clicheCount": 0,
+              "hasExamples": true,
+              "hasQuotes": true,
+              "repetitionScore": 1,
+              "formalityScore": 0
+            }
+          },
+          {
+            "id": "robotics-and-automation-systems",
+            "type": "analytics",
+            "title": "Robotics and Automation Systems: The Future of Physical Work",
+            "author": "Christina Summerbell",
+            "source": "analytics-christina.ts",
+            "issues": [
+              {
+                "category": "wordCount",
+                "severity": "critical",
+                "description": "Article has only 1339 words, minimum required is 1500"
+              },
+              {
+                "category": "aiStyle",
+                "severity": "info",
+                "description": "Article shows high word repetition, may indicate AI-generated content"
+              },
+              {
+                "category": "aiStyle",
+                "severity": "info",
+                "description": "Article lacks quotes, citations, or references to sources"
+              }
+            ],
+            "metrics": {
+              "wordCount": 1339,
+              "headingLevels": 3,
+              "listCount": 131,
+              "paragraphCount": 52,
+              "sentenceVariety": 0.5312703053532902,
+              "clicheCount": 0,
+              "hasExamples": true,
+              "hasQuotes": false,
+              "repetitionScore": 1,
+              "formalityScore": 0
+            }
+          },
+          {
             "id": "metaverse-infrastructure-and-platforms",
             "type": "analytics",
             "title": "Metaverse Infrastructure and Platforms: Building Virtual Worlds",
@@ -2986,12 +2667,7 @@
               {
                 "category": "wordCount",
                 "severity": "critical",
-                "description": "Article has only 1432 words, minimum required is 1500"
-              },
-              {
-                "category": "structure",
-                "severity": "info",
-                "description": "Article has only 0 list(s), minimum recommended is 2"
+                "description": "Article has only 1485 words, minimum required is 1500"
               },
               {
                 "category": "aiStyle",
@@ -3000,11 +2676,11 @@
               }
             ],
             "metrics": {
-              "wordCount": 1432,
+              "wordCount": 1485,
               "headingLevels": 3,
-              "listCount": 0,
-              "paragraphCount": 51,
-              "sentenceVariety": 0.3275638429699587,
+              "listCount": 8,
+              "paragraphCount": 52,
+              "sentenceVariety": 0.6087952046374595,
               "clicheCount": 0,
               "hasExamples": true,
               "hasQuotes": true,
@@ -3040,47 +2716,6 @@
               "hasExamples": true,
               "hasQuotes": true,
               "repetitionScore": 0.6,
-              "formalityScore": 0
-            }
-          },
-          {
-            "id": "crypto-options-market-structure-centralized-vs-onchain",
-            "type": "analytics",
-            "title": "Crypto Options Market Structure: Centralized Venues vs. On-Chain Protocols",
-            "author": "Assunta Novak",
-            "source": "analytics-assunta.ts",
-            "issues": [
-              {
-                "category": "wordCount",
-                "severity": "critical",
-                "description": "Article has only 1356 words, minimum required is 1500"
-              },
-              {
-                "category": "structure",
-                "severity": "warning",
-                "description": "Article has only 2 heading level(s), minimum recommended is 3"
-              },
-              {
-                "category": "structure",
-                "severity": "info",
-                "description": "Article has only 0 list(s), minimum recommended is 2"
-              },
-              {
-                "category": "aiStyle",
-                "severity": "info",
-                "description": "Article shows high word repetition, may indicate AI-generated content"
-              }
-            ],
-            "metrics": {
-              "wordCount": 1356,
-              "headingLevels": 2,
-              "listCount": 0,
-              "paragraphCount": 18,
-              "sentenceVariety": 0.44297170083614373,
-              "clicheCount": 0,
-              "hasExamples": true,
-              "hasQuotes": true,
-              "repetitionScore": 0.65,
               "formalityScore": 0
             }
           },
@@ -3538,6 +3173,37 @@
             }
           },
           {
+            "id": "cee-banking-sectors-in-a-higher-rate-world",
+            "type": "analytics",
+            "title": "CEE Banking Sectors in a Higher-Rate World: Balancing Growth, Risk, and Regulation",
+            "author": "Anastasia Petrova",
+            "source": "analytics-anastasia.ts",
+            "issues": [
+              {
+                "category": "wordCount",
+                "severity": "critical",
+                "description": "Article has only 1430 words, minimum required is 1500"
+              },
+              {
+                "category": "aiStyle",
+                "severity": "info",
+                "description": "Article shows high word repetition, may indicate AI-generated content"
+              }
+            ],
+            "metrics": {
+              "wordCount": 1430,
+              "headingLevels": 3,
+              "listCount": 101,
+              "paragraphCount": 40,
+              "sentenceVariety": 0.5345778952550857,
+              "clicheCount": 1,
+              "hasExamples": true,
+              "hasQuotes": true,
+              "repetitionScore": 1,
+              "formalityScore": 0.06993006993006992
+            }
+          },
+          {
             "id": "mediterranean-tourism-and-hospitality-recovery-and-transformation",
             "type": "analytics",
             "title": "Mediterranean Tourism and Hospitality: Recovery and Transformation",
@@ -3974,198 +3640,7 @@
       }
     },
     "warning": {
-      "structure": [
-        {
-          "id": "robotics-automation-investment-opportunities",
-          "type": "analytics",
-          "title": "Robotics and Automation: Investment Opportunities in the Age of Intelligent Machines",
-          "author": "Christina Summerbell",
-          "source": "analytics-christina.ts",
-          "issues": [
-            {
-              "category": "wordCount",
-              "severity": "critical",
-              "description": "Article has only 1400 words, minimum required is 1500"
-            },
-            {
-              "category": "structure",
-              "severity": "info",
-              "description": "Article has only 0 list(s), minimum recommended is 2"
-            },
-            {
-              "category": "aiStyle",
-              "severity": "info",
-              "description": "Article shows high word repetition, may indicate AI-generated content"
-            }
-          ],
-          "metrics": {
-            "wordCount": 1400,
-            "headingLevels": 3,
-            "listCount": 0,
-            "paragraphCount": 51,
-            "sentenceVariety": 0.3903739703600816,
-            "clicheCount": 0,
-            "hasExamples": true,
-            "hasQuotes": true,
-            "repetitionScore": 1,
-            "formalityScore": 0
-          }
-        },
-        {
-          "id": "bitcoin-cycles-investment-framework",
-          "type": "analytics",
-          "title": "Bitcoin Cycles: An Investment Framework for Understanding Market Dynamics",
-          "author": "Assunta Novak",
-          "source": "analytics-assunta.ts",
-          "issues": [
-            {
-              "category": "wordCount",
-              "severity": "critical",
-              "description": "Article has only 1432 words, minimum required is 1500"
-            },
-            {
-              "category": "structure",
-              "severity": "info",
-              "description": "Article has only 0 list(s), minimum recommended is 2"
-            },
-            {
-              "category": "aiStyle",
-              "severity": "info",
-              "description": "Article shows high word repetition, may indicate AI-generated content"
-            }
-          ],
-          "metrics": {
-            "wordCount": 1432,
-            "headingLevels": 3,
-            "listCount": 0,
-            "paragraphCount": 51,
-            "sentenceVariety": 0.3275638429699587,
-            "clicheCount": 0,
-            "hasExamples": true,
-            "hasQuotes": true,
-            "repetitionScore": 1,
-            "formalityScore": 0
-          }
-        },
-        {
-          "id": "crypto-options-market-structure-centralized-vs-onchain",
-          "type": "analytics",
-          "title": "Crypto Options Market Structure: Centralized Venues vs. On-Chain Protocols",
-          "author": "Assunta Novak",
-          "source": "analytics-assunta.ts",
-          "issues": [
-            {
-              "category": "wordCount",
-              "severity": "critical",
-              "description": "Article has only 1356 words, minimum required is 1500"
-            },
-            {
-              "category": "structure",
-              "severity": "warning",
-              "description": "Article has only 2 heading level(s), minimum recommended is 3"
-            },
-            {
-              "category": "structure",
-              "severity": "info",
-              "description": "Article has only 0 list(s), minimum recommended is 2"
-            },
-            {
-              "category": "aiStyle",
-              "severity": "info",
-              "description": "Article shows high word repetition, may indicate AI-generated content"
-            }
-          ],
-          "metrics": {
-            "wordCount": 1356,
-            "headingLevels": 2,
-            "listCount": 0,
-            "paragraphCount": 18,
-            "sentenceVariety": 0.44297170083614373,
-            "clicheCount": 0,
-            "hasExamples": true,
-            "hasQuotes": true,
-            "repetitionScore": 0.65,
-            "formalityScore": 0
-          }
-        },
-        {
-          "id": "eastern-europe-macro-economic-outlook",
-          "type": "analytics",
-          "title": "Eastern Europe Macro: Economic Outlook and Investment Implications",
-          "author": "Anastasia Petrova",
-          "source": "analytics-anastasia.ts",
-          "issues": [
-            {
-              "category": "wordCount",
-              "severity": "critical",
-              "description": "Article has only 900 words, minimum required is 1500"
-            },
-            {
-              "category": "structure",
-              "severity": "info",
-              "description": "Article has only 0 list(s), minimum recommended is 2"
-            },
-            {
-              "category": "aiStyle",
-              "severity": "info",
-              "description": "Article shows high word repetition, may indicate AI-generated content"
-            },
-            {
-              "category": "aiStyle",
-              "severity": "info",
-              "description": "Article lacks concrete examples (numbers, dates, company names, specific data)"
-            }
-          ],
-          "metrics": {
-            "wordCount": 900,
-            "headingLevels": 3,
-            "listCount": 0,
-            "paragraphCount": 42,
-            "sentenceVariety": 0.4103656905736639,
-            "clicheCount": 0,
-            "hasExamples": false,
-            "hasQuotes": true,
-            "repetitionScore": 1,
-            "formalityScore": 0
-          }
-        },
-        {
-          "id": "esg-integration-investment-framework",
-          "type": "analytics",
-          "title": "ESG Integration: An Investment Framework for Sustainable Returns",
-          "author": "Isabelle Dubois",
-          "source": "analytics-isabelle.ts",
-          "issues": [
-            {
-              "category": "wordCount",
-              "severity": "critical",
-              "description": "Article has only 1017 words, minimum required is 1500"
-            },
-            {
-              "category": "structure",
-              "severity": "info",
-              "description": "Article has only 0 list(s), minimum recommended is 2"
-            },
-            {
-              "category": "aiStyle",
-              "severity": "info",
-              "description": "Article shows high word repetition, may indicate AI-generated content"
-            }
-          ],
-          "metrics": {
-            "wordCount": 1017,
-            "headingLevels": 3,
-            "listCount": 0,
-            "paragraphCount": 44,
-            "sentenceVariety": 0.3956616249564141,
-            "clicheCount": 0,
-            "hasExamples": true,
-            "hasQuotes": true,
-            "repetitionScore": 0.9,
-            "formalityScore": 0
-          }
-        }
-      ]
+      "structure": []
     }
   }
 }

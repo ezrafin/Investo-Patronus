@@ -1,21 +1,22 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
-import { getCourseById, getAllCourses } from '@/data/courseData';
+import { getCourseById, getAllCourses } from '@/data/courses';
+import type { Course, Lesson, ContentItem, VideoContent, ArticleContent, QuizContent, MasteryCheckContent } from '@/data/courseTypes';
 import { MarkdownContent } from '@/components/content/MarkdownContent';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { 
   ChevronDown, ChevronRight, Play, CheckCircle, Clock, 
-  BookOpen, Award, Lightbulb, ArrowRight, Lock, ArrowLeft
+  BookOpen, Award, Lightbulb, ArrowRight, Lock, ArrowLeft, FileText, Target
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getCourseListingPath } from '@/lib/educationRoutes';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { VideoPlayer } from '@/components/education/VideoPlayer';
-import { getLessonVideoUrls } from '@/lib/r2VideoUtils';
+import { getVideoContentUrl } from '@/lib/r2VideoUtils';
 
 export default function CoursePlatformPage() {
   const { t } = useTranslation({ namespace: 'education' });
@@ -29,31 +30,34 @@ export default function CoursePlatformPage() {
     return <Navigate to="/academy" replace />;
   }
 
-  const [expandedModules, setExpandedModules] = useState<string[]>([course.modules[0]?.id]);
-  const [selectedLesson, setSelectedLesson] = useState<typeof course.modules[0]['lessons'][0] | undefined>(course.modules[0]?.lessons[0]);
+  const [expandedUnits, setExpandedUnits] = useState<string[]>([course.units[0]?.id]);
+  const [selectedLesson, setSelectedLesson] = useState<Lesson | undefined>(course.units[0]?.lessons[0]);
+  const [selectedContentItem, setSelectedContentItem] = useState<ContentItem | undefined>(undefined);
 
   // Reset state when course changes
   useEffect(() => {
-    if (course.modules[0]) {
-      setExpandedModules([course.modules[0].id]);
-      setSelectedLesson(course.modules[0].lessons[0]);
+    if (course.units[0]) {
+      setExpandedUnits([course.units[0].id]);
+      const firstLesson = course.units[0].lessons[0];
+      setSelectedLesson(firstLesson);
+      setSelectedContentItem(firstLesson?.contentItems[0]);
     }
   }, [course.id]);
   const [completedLessons, setCompletedLessons] = useState<string[]>([]);
   const [loadingProgress, setLoadingProgress] = useState(true);
   const [showQuiz, setShowQuiz] = useState(false);
   const [showFinalExam, setShowFinalExam] = useState(false);
-  const [showModuleTest, setShowModuleTest] = useState(false);
-  const [selectedModule, setSelectedModule] = useState<typeof course.modules[0] | undefined>(undefined);
+  const [showMasteryCheck, setShowMasteryCheck] = useState(false);
+  const [selectedUnit, setSelectedUnit] = useState<typeof course.units[0] | undefined>(undefined);
   const [quizAnswers, setQuizAnswers] = useState<Record<string, number>>({});
   const [finalExamAnswers, setFinalExamAnswers] = useState<Record<string, number>>({});
-  const [moduleTestAnswers, setModuleTestAnswers] = useState<Record<string, number>>({});
+  const [masteryCheckAnswers, setMasteryCheckAnswers] = useState<Record<string, number>>({});
 
-  const toggleModule = (moduleId: string) => {
-    setExpandedModules(prev => 
-      prev.includes(moduleId) 
-        ? prev.filter(id => id !== moduleId)
-        : [...prev, moduleId]
+  const toggleUnit = (unitId: string) => {
+    setExpandedUnits(prev => 
+      prev.includes(unitId) 
+        ? prev.filter(id => id !== unitId)
+        : [...prev, unitId]
     );
   };
 
@@ -78,32 +82,22 @@ export default function CoursePlatformPage() {
     loadProgress();
   }, [course.id, user]);
 
-  const totalLessons = course.modules.reduce((acc, m) => acc + m.lessons.length, 0);
+  const totalLessons = course.units.reduce((acc, u) => acc + u.lessons.length, 0);
   const progressPercent = totalLessons > 0 ? (completedLessons.length / totalLessons) * 100 : 0;
 
-  // Get video URLs for selected lesson
-  const lessonVideoUrls = useMemo(() => {
-    if (!selectedLesson) return [];
+  // Get unit and lesson indices for video URL generation
+  const { unitIndex, lessonIndex } = useMemo(() => {
+    if (!selectedLesson) return { unitIndex: -1, lessonIndex: -1 };
     
-    // Find module and lesson indices
-    let moduleIndex = -1;
-    let lessonIndex = -1;
-    
-    for (let mIdx = 0; mIdx < course.modules.length; mIdx++) {
-      const module = course.modules[mIdx];
-      const lIdx = module.lessons.findIndex(l => l.id === selectedLesson.id);
+    for (let uIdx = 0; uIdx < course.units.length; uIdx++) {
+      const unit = course.units[uIdx];
+      const lIdx = unit.lessons.findIndex(l => l.id === selectedLesson.id);
       if (lIdx !== -1) {
-        moduleIndex = mIdx;
-        lessonIndex = lIdx;
-        break;
+        return { unitIndex: uIdx, lessonIndex: lIdx };
       }
     }
-    
-    if (moduleIndex === -1 || lessonIndex === -1) return [];
-    
-    const videoCount = selectedLesson.videoCount || 1;
-    return getLessonVideoUrls(course.id, moduleIndex, lessonIndex, videoCount);
-  }, [selectedLesson, course.id, course.modules]);
+    return { unitIndex: -1, lessonIndex: -1 };
+  }, [selectedLesson, course.units]);
 
   const markComplete = async () => {
     if (selectedLesson && !completedLessons.includes(selectedLesson.id)) {
@@ -119,17 +113,32 @@ export default function CoursePlatformPage() {
     setQuizAnswers({ ...quizAnswers, [questionId]: answerIndex });
   };
 
-  const handleModuleTestClick = (module: typeof course.modules[0]) => {
-    setSelectedModule(module);
-    setShowModuleTest(true);
+  const handleMasteryCheckClick = (unit: typeof course.units[0]) => {
+    setSelectedUnit(unit);
+    setShowMasteryCheck(true);
     setShowQuiz(false);
     setShowFinalExam(false);
     setSelectedLesson(undefined);
-    setModuleTestAnswers({});
+    setSelectedContentItem(undefined);
+    setMasteryCheckAnswers({});
   };
 
-  const handleModuleTestAnswer = (questionId: string, answerIndex: number) => {
-    setModuleTestAnswers({ ...moduleTestAnswers, [questionId]: answerIndex });
+  const handleMasteryCheckAnswer = (questionId: string, answerIndex: number) => {
+    setMasteryCheckAnswers({ ...masteryCheckAnswers, [questionId]: answerIndex });
+  };
+
+  const handleContentItemClick = (item: ContentItem) => {
+    setSelectedContentItem(item);
+    if (item.type === 'quiz') {
+      setShowQuiz(true);
+      setShowFinalExam(false);
+      setShowMasteryCheck(false);
+      setQuizAnswers({});
+    } else {
+      setShowQuiz(false);
+      setShowFinalExam(false);
+      setShowMasteryCheck(false);
+    }
   };
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -152,32 +161,33 @@ export default function CoursePlatformPage() {
             </div>
             {mobileMenuOpen && (
               <div className="space-y-2 max-h-[60vh] overflow-y-auto">
-                {course.modules.map((module, moduleIndex) => (
-                  <div key={module.id} className="space-y-1">
+                {course.units.map((unit, unitIndex) => (
+                  <div key={unit.id} className="space-y-1">
                     <button
-                      onClick={() => toggleModule(module.id)}
+                      onClick={() => toggleUnit(unit.id)}
                       className="w-full flex items-center gap-2 p-2 rounded-lg hover:bg-secondary/50 transition-colors text-left text-sm"
                     >
-                      {expandedModules.includes(module.id) ? (
+                      {expandedUnits.includes(unit.id) ? (
                         <ChevronDown className="h-4 w-4 flex-shrink-0" />
                       ) : (
                         <ChevronRight className="h-4 w-4 flex-shrink-0" />
                       )}
-                      <span className="text-xs text-muted-foreground">{t('courses.module')} {moduleIndex + 1}</span>
+                      <span className="text-xs text-muted-foreground">{t('courses.unit')} {unitIndex + 1}</span>
                       <span className="truncate flex-1">
-                        {t(`course.${course.id}.module.${module.id}.title`) || module.title}
+                        {t(`course.${course.id}.unit.${unit.id}.title`) || unit.title}
                       </span>
                     </button>
-                    {expandedModules.includes(module.id) && (
+                    {expandedUnits.includes(unit.id) && (
                       <div className="ml-6 space-y-1">
-                        {module.lessons.map((lesson) => (
+                        {unit.lessons.map((lesson) => (
                           <button
                             key={lesson.id}
                             onClick={() => {
                               setSelectedLesson(lesson);
+                              setSelectedContentItem(lesson.contentItems[0]);
                               setShowQuiz(false);
                               setShowFinalExam(false);
-                              setShowModuleTest(false);
+                              setShowMasteryCheck(false);
                               setMobileMenuOpen(false);
                             }}
                             className={`w-full flex items-center gap-2 p-2 rounded-lg text-left text-xs transition-colors ${
@@ -192,20 +202,22 @@ export default function CoursePlatformPage() {
                               <Play className="h-3 w-3 flex-shrink-0" />
                             )}
                             <span className="truncate flex-1">
-                              {t(`course.${course.id}.module.${module.id}.lesson.${lesson.id}.title`) || lesson.title}
+                              {t(`course.${course.id}.unit.${unit.id}.lesson.${lesson.id}.title`) || lesson.title}
                             </span>
                           </button>
                         ))}
-                        <button
-                          onClick={() => {
-                            handleModuleTestClick(module);
-                            setMobileMenuOpen(false);
-                          }}
-                          className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-xs text-muted-foreground hover:bg-secondary/50"
-                        >
-                          <Award className="h-3 w-3 flex-shrink-0" />
-                          <span className="truncate">{t('courses.moduleTest')}</span>
-                        </button>
+                        {unit.masteryCheck && (
+                          <button
+                            onClick={() => {
+                              handleMasteryCheckClick(unit);
+                              setMobileMenuOpen(false);
+                            }}
+                            className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-xs text-muted-foreground hover:bg-secondary/50"
+                          >
+                            <Target className="h-3 w-3 flex-shrink-0" />
+                            <span className="truncate">{t('courses.masteryCheck')}</span>
+                          </button>
+                        )}
                       </div>
                     )}
                   </div>
@@ -214,8 +226,9 @@ export default function CoursePlatformPage() {
                   onClick={() => {
                     setShowFinalExam(true);
                     setShowQuiz(false);
-                    setShowModuleTest(false);
+                    setShowMasteryCheck(false);
                     setSelectedLesson(undefined);
+                    setSelectedContentItem(undefined);
                     setMobileMenuOpen(false);
                   }}
                   className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm font-medium hover:bg-secondary/50 mt-2"
@@ -262,31 +275,37 @@ export default function CoursePlatformPage() {
             </div>
 
             <nav className="p-2">
-              {course.modules.map((module, moduleIndex) => (
-                <div key={module.id} className="mb-2">
+              {course.units.map((unit, unitIndex) => (
+                <div key={unit.id} className="mb-2">
                   <button
-                    onClick={() => toggleModule(module.id)}
+                    onClick={() => toggleUnit(unit.id)}
                     className="w-full flex items-center gap-2 p-3 rounded-lg hover:bg-secondary/50 transition-colors text-left"
                   >
-                    {expandedModules.includes(module.id) ? (
+                    {expandedUnits.includes(unit.id) ? (
                       <ChevronDown className="h-4 w-4 flex-shrink-0" />
                     ) : (
                       <ChevronRight className="h-4 w-4 flex-shrink-0" />
                     )}
                     <div className="flex-1 min-w-0 flex flex-col">
-                      <span className="text-xs text-muted-foreground leading-tight">{t('courses.module')} {moduleIndex + 1}</span>
+                      <span className="text-xs text-muted-foreground leading-tight">{t('courses.unit')} {unitIndex + 1}</span>
                       <p className="text-sm font-medium truncate leading-tight">
-                        {t(`course.${course.id}.module.${module.id}.title`) || module.title}
+                        {t(`course.${course.id}.unit.${unit.id}.title`) || unit.title}
                       </p>
                     </div>
                   </button>
 
-                  {expandedModules.includes(module.id) && (
+                  {expandedUnits.includes(unit.id) && (
                     <div className="ml-4 space-y-1">
-                      {module.lessons.map((lesson, lessonIndex) => (
+                      {unit.lessons.map((lesson) => (
                         <button
                           key={lesson.id}
-                          onClick={() => { setSelectedLesson(lesson); setShowQuiz(false); setShowFinalExam(false); setShowModuleTest(false); }}
+                          onClick={() => { 
+                            setSelectedLesson(lesson); 
+                            setSelectedContentItem(lesson.contentItems[0]);
+                            setShowQuiz(false); 
+                            setShowFinalExam(false); 
+                            setShowMasteryCheck(false); 
+                          }}
                           className={`w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm transition-colors ${
                             selectedLesson?.id === lesson.id 
                               ? 'bg-primary text-primary-foreground' 
@@ -299,17 +318,19 @@ export default function CoursePlatformPage() {
                             <Play className="h-4 w-4 flex-shrink-0" />
                           )}
                           <span className="truncate flex-1">
-                            {t(`course.${course.id}.module.${module.id}.lesson.${lesson.id}.title`) || lesson.title}
+                            {t(`course.${course.id}.unit.${unit.id}.lesson.${lesson.id}.title`) || lesson.title}
                           </span>
                         </button>
                       ))}
-                      <button 
-                        onClick={() => handleModuleTestClick(module)}
-                        className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm text-muted-foreground hover:bg-secondary/50 transition-colors"
-                      >
-                        <Award className="h-4 w-4 flex-shrink-0" />
-                        <span className="truncate">{t('courses.moduleTest')}</span>
-                      </button>
+                      {unit.masteryCheck && (
+                        <button 
+                          onClick={() => handleMasteryCheckClick(unit)}
+                          className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm text-muted-foreground hover:bg-secondary/50 transition-colors"
+                        >
+                          <Target className="h-4 w-4 flex-shrink-0" />
+                          <span className="truncate">{t('courses.masteryCheck')}</span>
+                        </button>
+                      )}
                     </div>
                   )}
                 </div>
@@ -317,7 +338,13 @@ export default function CoursePlatformPage() {
 
               <div className="mt-4 p-3 border-t border-border">
                 <button 
-                  onClick={() => { setShowFinalExam(true); setShowQuiz(false); setShowModuleTest(false); setSelectedLesson(undefined); }}
+                  onClick={() => { 
+                    setShowFinalExam(true); 
+                    setShowQuiz(false); 
+                    setShowMasteryCheck(false); 
+                    setSelectedLesson(undefined); 
+                    setSelectedContentItem(undefined); 
+                  }}
                   className="w-full flex items-center gap-2 p-2 rounded-lg text-left text-sm font-medium hover:bg-secondary/50"
                 >
                   <Award className="h-5 w-5 text-primary flex-shrink-0" />
@@ -334,51 +361,15 @@ export default function CoursePlatformPage() {
 
           {/* Main Content */}
           <main className="flex-1 p-6 lg:p-8 overflow-y-auto">
-            {selectedLesson && !showQuiz && !showFinalExam && !showModuleTest && (
+            {selectedLesson && !showQuiz && !showFinalExam && !showMasteryCheck && (
               <div className="max-w-4xl mx-auto space-y-6">
-                {/* Video Player(s) */}
-                {lessonVideoUrls.length > 0 ? (
-                  <div className="space-y-4">
-                    {lessonVideoUrls.map((videoUrl, index) => (
-                      <div key={index} className="glass-card overflow-hidden p-0">
-                        {lessonVideoUrls.length > 1 && (
-                          <div className="px-4 pt-4 pb-2">
-                            <span className="text-sm text-muted-foreground">
-                              {t('courses.video')} {index + 1} {lessonVideoUrls.length > 1 ? `of ${lessonVideoUrls.length}` : ''}
-                            </span>
-                          </div>
-                        )}
-                        <VideoPlayer
-                          src={videoUrl}
-                          title={selectedLesson.title}
-                          className="aspect-video"
-                          onError={(error) => {
-                            console.error('Video loading error:', error);
-                          }}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="glass-card overflow-hidden">
-                    <div className="aspect-video bg-secondary flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center mx-auto mb-3">
-                          <Play className="h-6 w-6 text-primary-foreground ml-1" />
-                        </div>
-                        <p className="text-sm text-muted-foreground">{t('courses.lessonVideo')}</p>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
                 {/* Lesson Info */}
                 <div className="flex items-center justify-between">
                   <div>
                     <h1 className="heading-md">
-                      {selectedLesson && (() => {
-                        const module = course.modules.find(m => m.lessons.some(l => l.id === selectedLesson.id));
-                        return t(`course.${course.id}.module.${module?.id}.lesson.${selectedLesson.id}.title`) || selectedLesson.title;
+                      {(() => {
+                        const unit = course.units.find(u => u.lessons.some(l => l.id === selectedLesson.id));
+                        return t(`course.${course.id}.unit.${unit?.id}.lesson.${selectedLesson.id}.title`) || selectedLesson.title;
                       })()}
                     </h1>
                     <span className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
@@ -398,69 +389,127 @@ export default function CoursePlatformPage() {
                   </Button>
                 </div>
 
-                {/* Notes */}
-                <div className="glass-card p-6">
-                  <h2 className="heading-sm mb-4 flex items-center gap-2">
-                    <BookOpen className="h-5 w-5 text-primary" />
-                    {t('courses.lessonNotes')}
-                  </h2>
-                  <div className="prose prose-sm prose-invert max-w-none">
-                    <MarkdownContent content={selectedLesson.notes} />
+                {/* Content Items Navigation */}
+                {selectedLesson.contentItems.length > 1 && (
+                  <div className="glass-card p-4">
+                    <div className="flex gap-2 flex-wrap">
+                      {selectedLesson.contentItems.map((item) => (
+                        <Button
+                          key={item.id}
+                          variant={selectedContentItem?.id === item.id ? 'default' : 'outline'}
+                          size="sm"
+                          onClick={() => handleContentItemClick(item)}
+                        >
+                          {item.type === 'video' && <Play className="h-3 w-3 mr-1" />}
+                          {item.type === 'article' && <BookOpen className="h-3 w-3 mr-1" />}
+                          {item.type === 'practice' && <FileText className="h-3 w-3 mr-1" />}
+                          {item.type === 'quiz' && <Award className="h-3 w-3 mr-1" />}
+                          {item.type === 'mastery-check' && <Target className="h-3 w-3 mr-1" />}
+                          {item.title || t(`courses.${item.type}`)}
+                        </Button>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
-                {/* Important Points */}
-                <div className="glass-card p-6 border-l-4 border-yellow-500">
-                  <h2 className="heading-sm mb-4 flex items-center gap-2">
-                    <Lightbulb className="h-5 w-5 text-yellow-500" />
-                    {t('courses.keyPoints')}
-                  </h2>
-                  <ul className="space-y-2">
-                    {selectedLesson.importantPoints.map((point, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {/* Content Items Display */}
+                {selectedContentItem && (
+                  <div className="space-y-6">
+                    {/* Video Content */}
+                    {selectedContentItem.type === 'video' && unitIndex >= 0 && lessonIndex >= 0 && (
+                      <div className="glass-card overflow-hidden p-0">
+                        <VideoPlayer
+                          src={getVideoContentUrl(course.id, unitIndex, lessonIndex, selectedContentItem)}
+                          title={selectedContentItem.title || selectedLesson.title}
+                          className="aspect-video"
+                          onError={(error) => {
+                            console.error('Video loading error:', error);
+                          }}
+                        />
+                      </div>
+                    )}
 
-                {/* Quiz Button */}
-                {selectedLesson.quiz.length > 0 && (
-                  <Button onClick={() => setShowQuiz(true)} className="w-full" size="lg">
-                    {t('courses.takeQuiz')}
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
+                    {/* Article Content */}
+                    {selectedContentItem.type === 'article' && (
+                      <>
+                        <div className="glass-card p-6">
+                          <h2 className="heading-sm mb-4 flex items-center gap-2">
+                            <BookOpen className="h-5 w-5 text-primary" />
+                            {selectedContentItem.title || t('courses.article')}
+                          </h2>
+                          <div className="prose prose-sm prose-invert max-w-none">
+                            <MarkdownContent content={selectedContentItem.content} />
+                          </div>
+                        </div>
+                        {selectedContentItem.importantPoints && selectedContentItem.importantPoints.length > 0 && (
+                          <div className="glass-card p-6 border-l-4 border-yellow-500">
+                            <h2 className="heading-sm mb-4 flex items-center gap-2">
+                              <Lightbulb className="h-5 w-5 text-yellow-500" />
+                              {t('courses.keyPoints')}
+                            </h2>
+                            <ul className="space-y-2">
+                              {selectedContentItem.importantPoints.map((point, index) => (
+                                <li key={index} className="flex items-start gap-2 text-sm">
+                                  <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
+                                  {point}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </>
+                    )}
+
+                    {/* Practice Content */}
+                    {selectedContentItem.type === 'practice' && (
+                      <div className="glass-card p-6">
+                        <h2 className="heading-sm mb-4 flex items-center gap-2">
+                          <FileText className="h-5 w-5 text-primary" />
+                          {selectedContentItem.title || t('courses.practice')}
+                        </h2>
+                        <p className="text-muted-foreground">{t('courses.practiceComingSoon')}</p>
+                        {/* TODO: Implement practice exercises UI */}
+                      </div>
+                    )}
+
+                    {/* Quiz Content Button */}
+                    {selectedContentItem.type === 'quiz' && (
+                      <Button onClick={() => handleContentItemClick(selectedContentItem)} className="w-full" size="lg">
+                        {t('courses.takeQuiz')}
+                        <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    )}
+                  </div>
                 )}
               </div>
             )}
 
-            {/* Module Test View */}
-            {showModuleTest && selectedModule && !showQuiz && !showFinalExam && (
+            {/* Mastery Check View */}
+            {showMasteryCheck && selectedUnit && selectedUnit.masteryCheck && !showQuiz && !showFinalExam && (
               <div className="max-w-2xl mx-auto space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="heading-md">{t('courses.moduleTest')}</h2>
+                    <h2 className="heading-md">{t('courses.masteryCheck')}</h2>
                     <p className="text-sm text-muted-foreground mt-1">
-                      {t(`course.${course.id}.module.${selectedModule.id}.title`) || selectedModule.title}
+                      {t(`course.${course.id}.unit.${selectedUnit.id}.title`) || selectedUnit.title}
                     </p>
                   </div>
-                  <Button variant="outline" onClick={() => { setShowModuleTest(false); setSelectedModule(undefined); }}>
+                  <Button variant="outline" onClick={() => { setShowMasteryCheck(false); setSelectedUnit(undefined); }}>
                     {t('courses.backToCourse')}
                   </Button>
                 </div>
 
-                {selectedModule.moduleTest.map((question, qIndex) => (
+                {selectedUnit.masteryCheck.questions.map((question, qIndex) => (
                   <div key={question.id} className="glass-card p-6">
                     <p className="font-medium mb-4">{qIndex + 1}. {question.question}</p>
                     <div className="space-y-2">
                       {question.options.map((option, oIndex) => (
                         <button
                           key={oIndex}
-                          onClick={() => handleModuleTestAnswer(question.id, oIndex)}
+                          onClick={() => handleMasteryCheckAnswer(question.id, oIndex)}
                           className={`w-full text-left p-3 rounded-lg border transition-colors ${
-                            moduleTestAnswers[question.id] === oIndex
-                              ? moduleTestAnswers[question.id] === question.correctAnswer
+                            masteryCheckAnswers[question.id] === oIndex
+                              ? masteryCheckAnswers[question.id] === question.correctAnswer
                                 ? 'border-green-500 bg-green-500/10'
                                 : 'border-red-500 bg-red-500/10'
                               : 'border-border hover:border-primary/50'
@@ -470,7 +519,7 @@ export default function CoursePlatformPage() {
                         </button>
                       ))}
                     </div>
-                    {moduleTestAnswers[question.id] !== undefined && question.explanation && (
+                    {masteryCheckAnswers[question.id] !== undefined && question.explanation && (
                       <p className="mt-4 text-sm text-muted-foreground p-3 bg-secondary/50 rounded-lg">
                         {question.explanation}
                       </p>
@@ -478,27 +527,27 @@ export default function CoursePlatformPage() {
                   </div>
                 ))}
 
-                {/* Module Test Results */}
-                {Object.keys(moduleTestAnswers).length === selectedModule.moduleTest.length && (
+                {/* Mastery Check Results */}
+                {Object.keys(masteryCheckAnswers).length === selectedUnit.masteryCheck.questions.length && (
                   <div className="glass-card p-6 border-l-4 border-primary">
-                    <h3 className="heading-sm mb-4">{t('courses.moduleTestResults', { defaultValue: 'Module Test Results' })}</h3>
+                    <h3 className="heading-sm mb-4">{t('courses.masteryCheckResults', { defaultValue: 'Mastery Check Results' })}</h3>
                     {(() => {
-                      const correct = selectedModule.moduleTest.filter(
-                        q => moduleTestAnswers[q.id] === q.correctAnswer
+                      const correct = selectedUnit.masteryCheck.questions.filter(
+                        q => masteryCheckAnswers[q.id] === q.correctAnswer
                       ).length;
-                      const percentage = Math.round((correct / selectedModule.moduleTest.length) * 100);
-                      const passed = percentage >= 70; // 70% pass rate for module tests
+                      const percentage = Math.round((correct / selectedUnit.masteryCheck.questions.length) * 100);
+                      const passed = percentage >= selectedUnit.masteryCheck.passRate;
                       return (
                         <div className="space-y-4">
                           <div className="text-center">
                             <div className="text-3xl font-bold mb-2">{percentage}%</div>
                             <div className="text-sm text-muted-foreground">
-                              {correct} {t('courses.outOf')} {selectedModule.moduleTest.length} {t('courses.correct')}
+                              {correct} {t('courses.outOf')} {selectedUnit.masteryCheck.questions.length} {t('courses.correct')}
                             </div>
                           </div>
                           <div className={`text-center p-4 rounded-lg ${passed ? 'bg-green-500/10 border border-green-500/20' : 'bg-yellow-500/10 border border-yellow-500/20'}`}>
                             <p className={`font-semibold ${passed ? 'text-green-400' : 'text-yellow-400'}`}>
-                              {passed ? t('courses.moduleTestPassed', { defaultValue: 'Module Test Passed!' }) : t('courses.moduleTestReview', { defaultValue: 'Review the material and try again' })}
+                              {passed ? t('courses.masteryCheckPassed', { defaultValue: 'Mastery Check Passed!' }) : t('courses.masteryCheckReview', { defaultValue: `Review the material and try again. Pass rate: ${selectedUnit.masteryCheck.passRate}%` })}
                             </p>
                           </div>
                         </div>
@@ -510,26 +559,26 @@ export default function CoursePlatformPage() {
             )}
 
             {/* Quiz View */}
-            {showQuiz && selectedLesson && !showFinalExam && !showModuleTest && (() => {
-              // Find lesson index in module to generate quiz number
+            {showQuiz && selectedLesson && selectedContentItem && selectedContentItem.type === 'quiz' && !showFinalExam && !showMasteryCheck && (() => {
+              // Find lesson index in unit to generate quiz number
               let lessonNumber = 1;
-              for (const module of course.modules) {
-                const lessonIndex = module.lessons.findIndex(l => l.id === selectedLesson.id);
-                if (lessonIndex !== -1) {
-                  lessonNumber = lessonIndex + 1;
+              for (const unit of course.units) {
+                const lessonIdx = unit.lessons.findIndex(l => l.id === selectedLesson.id);
+                if (lessonIdx !== -1) {
+                  lessonNumber = lessonIdx + 1;
                   break;
                 }
               }
               return (
                 <div className="max-w-2xl mx-auto space-y-6">
                   <div className="flex items-center justify-between">
-                    <h2 className="heading-md">{t('courses.quiz')} {lessonNumber}</h2>
-                    <Button variant="outline" onClick={() => setShowQuiz(false)}>
+                    <h2 className="heading-md">{selectedContentItem.title || `${t('courses.quiz')} ${lessonNumber}`}</h2>
+                    <Button variant="outline" onClick={() => { setShowQuiz(false); setSelectedContentItem(selectedLesson.contentItems.find(item => item.type !== 'quiz') || selectedLesson.contentItems[0]); }}>
                       {t('courses.backToLesson')}
                     </Button>
                   </div>
 
-                {selectedLesson.quiz.map((question, qIndex) => (
+                {selectedContentItem.questions.map((question, qIndex) => (
                   <div key={question.id} className="glass-card p-6">
                     <p className="font-medium mb-4">{qIndex + 1}. {question.question}</p>
                     <div className="space-y-2">
@@ -577,7 +626,7 @@ export default function CoursePlatformPage() {
             })()}
 
             {/* Final Exam View */}
-            {showFinalExam && !showModuleTest && (
+            {showFinalExam && !showMasteryCheck && (
               <div className="max-w-2xl mx-auto space-y-6">
                 <div className="flex items-center justify-between">
                   <div>

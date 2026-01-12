@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { Course } from '@/data/courseData';
+import type { Course } from '@/data/courses';
 import { getCoursePath } from '@/lib/educationRoutes';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -11,8 +11,8 @@ interface CourseCardProps {
 
 export function CourseCard({ course, index = 0 }: CourseCardProps) {
   const { t } = useTranslation({ namespace: 'education' });
-  const totalLessons = course.modules.reduce((acc, module) => acc + module.lessons.length, 0);
-  const totalModules = course.modules.length;
+  const totalLessons = course.units.reduce((acc, unit) => acc + unit.lessons.length, 0);
+  const totalUnits = course.units.length;
   
   // Estimate total duration (rough calculation: average 15 min per lesson)
   const estimatedHours = Math.round((totalLessons * 15) / 60);
@@ -39,7 +39,7 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
 
       {/* Stats */}
       <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
-        <span>{t('courses.modules', { count: totalModules })}</span>
+        <span>{t('courses.units', { count: totalUnits })}</span>
         <span>{estimatedDuration}</span>
         <span>{t('courses.lessons', { count: totalLessons })}</span>
       </div>
