@@ -73,7 +73,7 @@ export default function CompaniesPage() {
 
         if (evaluations && evaluations.length > 0) {
           // Calculate average rating from user evaluations
-          const avgRating = evaluations.reduce((sum, eval) => sum + eval.rating, 0) / evaluations.length;
+          const avgRating = evaluations.reduce((sum, evaluation) => sum + evaluation.rating, 0) / evaluations.length;
           const roundedAvg = Math.round(avgRating);
 
           // Use the same average for both community and expert trust
