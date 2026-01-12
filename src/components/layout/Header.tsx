@@ -111,11 +111,6 @@ export function Header() {
       icon: BookOpen,
       description: t('descriptions.learning')
     }, {
-      name: t('navigation.videoLibrary'),
-      href: educationRoutes.video,
-      icon: GraduationCap,
-      description: t('descriptions.videoLibrary')
-    }, {
       name: t('navigation.academy'),
       href: '/academy',
       icon: Rocket,

@@ -56,7 +56,6 @@ export const BILL_IDS = [
   'analytics_article_read',
   'companies_page_visit',
   'learning_page_visit',
-  'video_library_visit',
   'bookmarks_page_visit',
   'bookmark_create',
   'watchlists_page_visit',

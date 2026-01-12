@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
-import { Bookmark, Newspaper, MessageSquare, FileText, Video, Trash2 } from 'lucide-react';
+import { Bookmark, Newspaper, MessageSquare, FileText, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -92,14 +92,6 @@ export default function BookmarksPage() {
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                 .join(' ');
               subtitle = 'Analytics Article';
-            } else if (bookmark.content_type === 'video') {
-              // Videos use slugs - extract title from slug
-              const slug = bookmark.content_id;
-              title = slug
-                .split('-')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(' ');
-              subtitle = 'Video';
             }
           } catch (error) {
             console.error(`Error loading ${bookmark.content_type} data:`, error);
@@ -145,8 +137,6 @@ export default function BookmarksPage() {
         return <Newspaper className="h-5 w-5" />;
       case 'forum':
         return <MessageSquare className="h-5 w-5" />;
-      case 'video':
-        return <Video className="h-5 w-5" />;
       case 'analytics':
         return <FileText className="h-5 w-5" />;
       default:
@@ -161,8 +151,6 @@ export default function BookmarksPage() {
       case 'article':
       case 'news':
         return `/news/${bookmark.content_id}`;
-      case 'video':
-        return `/video/${bookmark.content_id}`;
       case 'analytics':
         return `/analytics/${bookmark.content_id}`;
       default:
@@ -204,7 +192,6 @@ export default function BookmarksPage() {
               <TabsTrigger value="news">{t('bookmarksPage.tabsNews')}</TabsTrigger>
               <TabsTrigger value="analytics">{t('bookmarksPage.tabsAnalytics')}</TabsTrigger>
               <TabsTrigger value="forum">{t('bookmarksPage.tabsForum')}</TabsTrigger>
-              <TabsTrigger value="video">{t('bookmarksPage.tabsVideo')}</TabsTrigger>
             </TabsList>
 
             {loading ? (

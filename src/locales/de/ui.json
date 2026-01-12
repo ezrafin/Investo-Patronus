@@ -16,7 +16,6 @@
     "crypto": "Krypto",
     "currenciesEtfs": "Währungen & ETFs",
     "learning": "Lernen",
-    "videoLibrary": "Videothek",
     "academy": "Akademie",
     "mentorEducation": "Mentor-Bildung",
     "aboutUs": "Über uns",
@@ -297,7 +296,6 @@
     "crypto": "Kryptowährungsmärkte",
     "currenciesEtfs": "Forex und börsengehandelte Fonds",
     "learning": "Artikel und Leitfäden",
-    "videoLibrary": "Lehrvideos",
     "academy": "Akademie-Lernen",
     "mentorEducation": "Kurse mit Mentor",
     "aboutUs": "Erfahren Sie mehr über unsere Mission",
@@ -811,16 +809,6 @@
   },
   "lastUpdated": {
     "updated": "Aktualisiert"
-  },
-  "videoLibrary": {
-    "title": "Videobibliothek",
-    "description": "Bildungsvideos zu Investitionen, Marktanalyse und Finanzkompetenz. Lernen Sie in Ihrem eigenen Tempo.",
-    "backToLibrary": "Zurück zur Videobibliothek",
-    "videoNotFound": "Video Nicht Gefunden",
-    "showFilters": "Filter Anzeigen",
-    "hideFilters": "Filter Ausblenden",
-    "recommendationTitle": "Empfehlung",
-    "recommendationText": "Beginnen Sie mit dem Abschnitt \"Banken vs Investitionen\", um zu verstehen, welche realen Renditen verschiedene Finanzinstrumente bieten."
   },
   "pagination": {
     "previous": "Zurück",

@@ -128,8 +128,6 @@ export function TrendingContent({ className, limit = 10 }: { className?: string;
       case 'article':
       case 'news':
         return `/news/${item.id}`;
-      case 'video':
-        return `/video/${item.id}`;
       case 'analytics':
         return `/analytics/${item.id}`;
       default:

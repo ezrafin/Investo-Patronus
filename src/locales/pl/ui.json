@@ -16,7 +16,6 @@
     "crypto": "Kryptowaluty",
     "currenciesEtfs": "Waluty i ETF",
     "learning": "Nauka",
-    "videoLibrary": "Wideoteka",
     "academy": "Akademia",
     "mentorEducation": "Edukacja z mentorem",
     "aboutUs": "O nas",
@@ -290,7 +289,6 @@
     "crypto": "Rynki kryptowalut",
     "currenciesEtfs": "Forex i fundusze ETF",
     "learning": "Artykuły i poradniki",
-    "videoLibrary": "Filmy edukacyjne",
     "academy": "Nauka w akademii",
     "mentorEducation": "Kursy z mentorem",
     "aboutUs": "Poznaj naszą misję",
@@ -811,16 +809,6 @@
   },
   "lastUpdated": {
     "updated": "Zaktualizowano"
-  },
-  "videoLibrary": {
-    "title": "Biblioteka Wideo",
-    "description": "Filmy edukacyjne o inwestowaniu, analizie rynku i edukacji finansowej. Ucz się we własnym tempie.",
-    "backToLibrary": "Powrót do Biblioteki Wideo",
-    "videoNotFound": "Nie Znaleziono Filmu",
-    "showFilters": "Pokaż Filtry",
-    "hideFilters": "Ukryj Filtry",
-    "recommendationTitle": "Rekomendacja",
-    "recommendationText": "Zacznij od sekcji \"Banki vs Inwestycje\", aby zrozumieć, jakie rzeczywiste zwroty zapewniają różne instrumenty finansowe."
   },
   "pagination": {
     "previous": "Poprzedni",

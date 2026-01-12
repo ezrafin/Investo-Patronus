@@ -39,8 +39,6 @@ export function RelatedContent({ items, className }: RelatedContentProps) {
       case 'article':
       case 'news':
         return `/news/${item.id}`;
-      case 'video':
-        return `/video/${item.id}`;
       case 'analytics':
         return `/analytics/${item.id}`;
       default:

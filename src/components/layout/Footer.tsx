@@ -35,10 +35,6 @@ export function Footer() {
       href: educationRoutes.learning,
       icon: BookOpen
     }, {
-      name: t('navigation.videoLibrary'),
-      href: educationRoutes.video,
-      icon: GraduationCap
-    }, {
       name: t('navigation.academy'),
       href: '/academy',
       icon: Rocket

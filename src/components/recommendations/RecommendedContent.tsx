@@ -38,8 +38,6 @@ export function RecommendedContent({ className, limit = 5 }: RecommendedContentP
       case 'article':
       case 'news':
         return `/news/${rec.id}`;
-      case 'video':
-        return `/video/${rec.id}`;
       case 'analytics':
         return `/analytics/${rec.id}`;
       default:

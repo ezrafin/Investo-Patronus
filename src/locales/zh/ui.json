@@ -16,7 +16,6 @@
     "crypto": "加密货币",
     "currenciesEtfs": "货币与ETF",
     "learning": "学习",
-    "videoLibrary": "视频库",
     "academy": "学院",
     "mentorEducation": "导师教育",
     "aboutUs": "关于我们",
@@ -290,7 +289,6 @@
     "crypto": "加密货币市场",
     "currenciesEtfs": "外汇和交易所交易基金",
     "learning": "文章和指南",
-    "videoLibrary": "教育视频",
     "academy": "学院学习",
     "mentorEducation": "导师指导课程",
     "aboutUs": "了解我们的使命",
@@ -811,16 +809,6 @@
   },
   "lastUpdated": {
     "updated": "更新于"
-  },
-  "videoLibrary": {
-    "title": "视频库",
-    "description": "关于投资、市场分析和金融知识的教育视频。按自己的节奏学习。",
-    "backToLibrary": "返回视频库",
-    "videoNotFound": "未找到视频",
-    "showFilters": "显示筛选",
-    "hideFilters": "隐藏筛选",
-    "recommendationTitle": "推荐",
-    "recommendationText": "从\"银行 vs 投资\"部分开始，了解各种金融工具提供的实际回报。"
   },
   "pagination": {
     "previous": "上一页",

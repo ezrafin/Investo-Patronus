@@ -16,7 +16,6 @@
     "crypto": "Crypto",
     "currenciesEtfs": "Currencies & ETFs",
     "learning": "Learning",
-    "videoLibrary": "Video Library",
     "academy": "Academy",
     "mentorEducation": "Mentor Education",
     "aboutUs": "About Us",
@@ -299,7 +298,6 @@
     "crypto": "Cryptocurrency markets",
     "currenciesEtfs": "Forex and exchange-traded funds",
     "learning": "Articles and guides",
-    "videoLibrary": "Educational videos",
     "academy": "Academy learning",
     "mentorEducation": "Mentor-led courses",
     "aboutUs": "Learn about our mission",
@@ -786,16 +784,6 @@
   },
   "lastUpdated": {
     "updated": "Updated"
-  },
-  "videoLibrary": {
-    "title": "Video Library",
-    "description": "Educational videos on investing, market analysis, and financial literacy. Learn at your own pace.",
-    "backToLibrary": "Back to Video Library",
-    "videoNotFound": "Video Not Found",
-    "showFilters": "Show Filters",
-    "hideFilters": "Hide Filters",
-    "recommendationTitle": "Recommendation",
-    "recommendationText": "Start with the \"Banks vs Investments\" section to understand what real returns various financial instruments provide."
   },
   "pagination": {
     "previous": "Previous",

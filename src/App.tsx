@@ -59,9 +59,6 @@ const AuthorsPage = lazyWithRetry(() => import("./pages/AuthorsPage"));
 const DisclaimerPage = lazyWithRetry(() => import("./pages/DisclaimerPage"));
 const PrivacyPage = lazyWithRetry(() => import("./pages/PrivacyPage"));
 const TermsPage = lazyWithRetry(() => import("./pages/TermsPage"));
-// Video Pages
-const VideoLibraryPage = lazyWithRetry(() => import("./pages/video/VideoLibraryPage"));
-const VideoDetailPage = lazyWithRetry(() => import("./pages/video/VideoDetailPage"));
 // Education Pages
 const LearningPage = lazyWithRetry(() => import("./pages/education/LearningPage"));
 const LearningCoursePage = lazyWithRetry(() => import("./pages/education/LearningCoursePage"));
@@ -157,12 +154,9 @@ const App = () => {
                 <Route path="/disclaimer" element={<DisclaimerPage />} />
                 <Route path="/privacy" element={<PrivacyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
-                {/* Video Pages */}
-                <Route path="/video/:videoId" element={<VideoDetailPage />} />
                 {/* Education Pages */}
                 <Route path={educationRoutes.learning} element={<LearningPage />} />
                 <Route path={educationRoutes.course} element={<LearningCoursePage />} />
-                <Route path={educationRoutes.video} element={<VideoLibraryPage />} />
                 <Route path={educationRoutes.basicArticles} element={<BasicArticlesPage />} />
                 <Route path={educationRoutes.advancedArticles} element={<AdvancedArticlesPage />} />
                 <Route path={educationRoutes.article} element={<ArticleDetailPage />} />

@@ -4,7 +4,6 @@ export const educationRoutes = {
   root: EDUCATION_BASE_PATH,
   learning: `${EDUCATION_BASE_PATH}/learning`,
   course: `${EDUCATION_BASE_PATH}/course`,
-  video: `${EDUCATION_BASE_PATH}/video`,
   basicArticles: `${EDUCATION_BASE_PATH}/basic`,
   advancedArticles: `${EDUCATION_BASE_PATH}/advanced`,
   article: `${EDUCATION_BASE_PATH}/article/:articleId`,
@@ -20,10 +19,6 @@ export function getEducationLearningPath() {
 
 export function getEducationCoursePath() {
   return educationRoutes.course;
-}
-
-export function getEducationVideoPath() {
-  return educationRoutes.video;
 }
 
 export function getEducationBasicArticlesPath() {
