@@ -1,5 +1,8 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useUser } from '@/context/UserContext';
+import { supabase } from '@/integrations/supabase/client';
+import { useEffect } from 'react';
+import type { RealtimeChannel } from '@supabase/supabase-js';
 
 export interface Notification {
   id: string;
@@ -13,40 +16,93 @@ export interface Notification {
   created_at: string;
 }
 
-const STORAGE_KEY = 'user_notifications';
-
-function getStoredNotifications(userId: string): Notification[] {
-  try {
-    const stored = localStorage.getItem(`${STORAGE_KEY}_${userId}`);
-    return stored ? JSON.parse(stored) : [];
-  } catch {
-    return [];
-  }
-}
-
-function setStoredNotifications(userId: string, notifications: Notification[]) {
-  try {
-    localStorage.setItem(`${STORAGE_KEY}_${userId}`, JSON.stringify(notifications));
-  } catch {
-    // Ignore storage errors
-  }
-}
-
 /**
- * Hook for fetching user notifications (localStorage-based)
+ * Hook for fetching user notifications from Supabase
  */
 export function useNotifications() {
   const { user } = useUser();
+  const queryClient = useQueryClient();
 
-  return useQuery<Notification[], Error>({
+  const query = useQuery<Notification[], Error>({
     queryKey: ['notifications', user?.id],
     queryFn: async () => {
       if (!user) return [];
-      return getStoredNotifications(user.id);
+
+      const { data, error } = await supabase
+        .from('notifications')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false })
+        .limit(50);
+
+      if (error) {
+        console.error('Error fetching notifications:', error);
+        throw error;
+      }
+
+      return (data || []) as Notification[];
     },
     enabled: !!user,
     staleTime: 30 * 1000,
     gcTime: 5 * 60 * 1000,
+  });
+
+  // Set up real-time subscription
+  useEffect(() => {
+    if (!user) return;
+
+    const channel: RealtimeChannel = supabase
+      .channel(`notifications:${user.id}`)
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'notifications',
+          filter: `user_id=eq.${user.id}`,
+        },
+        () => {
+          // Invalidate queries to refetch
+          queryClient.invalidateQueries({ queryKey: ['notifications', user.id] });
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [user, queryClient]);
+
+  return query;
+}
+
+/**
+ * Hook for getting unread notification count
+ */
+export function useUnreadNotificationCount() {
+  const { user } = useUser();
+
+  return useQuery<number, Error>({
+    queryKey: ['notifications', 'unread', user?.id],
+    queryFn: async () => {
+      if (!user) return 0;
+
+      const { count, error } = await supabase
+        .from('notifications')
+        .select('*', { count: 'exact', head: true })
+        .eq('user_id', user.id)
+        .eq('read', false);
+
+      if (error) {
+        console.error('Error fetching unread count:', error);
+        return 0;
+      }
+
+      return count || 0;
+    },
+    enabled: !!user,
+    staleTime: 10 * 1000,
+    gcTime: 2 * 60 * 1000,
   });
 }
 
@@ -61,14 +117,17 @@ export function useMarkNotificationRead() {
     mutationFn: async (notificationId: string) => {
       if (!user) throw new Error('Not authenticated');
 
-      const notifications = getStoredNotifications(user.id);
-      const updated = notifications.map(n => 
-        n.id === notificationId ? { ...n, read: true } : n
-      );
-      setStoredNotifications(user.id, updated);
+      const { error } = await supabase
+        .from('notifications')
+        .update({ read: true })
+        .eq('id', notificationId)
+        .eq('user_id', user.id);
+
+      if (error) throw error;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['notifications', user?.id] });
+      queryClient.invalidateQueries({ queryKey: ['notifications', 'unread', user?.id] });
     },
   });
 }
@@ -84,12 +143,17 @@ export function useMarkAllNotificationsRead() {
     mutationFn: async () => {
       if (!user) throw new Error('Not authenticated');
 
-      const notifications = getStoredNotifications(user.id);
-      const updated = notifications.map(n => ({ ...n, read: true }));
-      setStoredNotifications(user.id, updated);
+      const { error } = await supabase
+        .from('notifications')
+        .update({ read: true })
+        .eq('user_id', user.id)
+        .eq('read', false);
+
+      if (error) throw error;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['notifications', user?.id] });
+      queryClient.invalidateQueries({ queryKey: ['notifications', 'unread', user?.id] });
     },
   });
 }

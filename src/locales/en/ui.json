@@ -651,6 +651,19 @@
     "follow": "Follow",
     "following": "Following"
   },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "No notifications",
+    "markAllRead": "Mark all read",
+    "moderationApproved": "Your content was approved",
+    "moderationRejected": "Your content was rejected",
+    "newComment": "New comment on your discussion",
+    "newFollower": "New follower",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "thisweek": "This Week",
+    "older": "Older"
+  },
   "globalSearch": {
     "placeholder": "Search companies, news, forum, tickers, authors...",
     "searchPlaceholder": "Search...",

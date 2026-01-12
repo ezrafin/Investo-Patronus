@@ -598,6 +598,19 @@
     "follow": "Suivre",
     "following": "Suivi"
   },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "Aucune notification",
+    "markAllRead": "Tout marquer comme lu",
+    "moderationApproved": "Votre contenu a été approuvé",
+    "moderationRejected": "Votre contenu a été rejeté",
+    "newComment": "Nouveau commentaire sur votre discussion",
+    "newFollower": "Nouveau follower",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "thisweek": "Cette semaine",
+    "older": "Plus ancien"
+  },
   "globalSearch": {
     "placeholder": "Rechercher entreprises, actualités, forum, tickers, auteurs...",
     "searchPlaceholder": "Rechercher...",

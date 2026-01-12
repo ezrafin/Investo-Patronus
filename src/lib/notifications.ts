@@ -8,7 +8,12 @@ export type NotificationType =
   | 'reaction_to_post'
   | 'reaction_to_reply'
   | 'new_follower'
-  | 'mention';
+  | 'mention'
+  | 'moderation_discussion_approved'
+  | 'moderation_discussion_rejected'
+  | 'moderation_reply_approved'
+  | 'moderation_reply_rejected'
+  | 'new_comment_on_discussion';
 
 export interface NotificationPayload {
   type: NotificationType;
@@ -126,6 +131,39 @@ export function formatNotificationMessage(
         body: t
           ? t('notifications.newFollowerBody').replace('{{author}}', author)
           : `${author} started following you`,
+      };
+    case 'new_comment_on_discussion':
+      return {
+        title: t ? t('notifications.newComment') : 'New comment on your discussion',
+        body: t
+          ? t('notifications.newCommentBody')
+              .replace('{{author}}', author)
+              .replace('{{discussion}}', discussion)
+          : `${author} commented on "${discussion}"`,
+      };
+    case 'moderation_discussion_approved':
+      return {
+        title: t ? t('notifications.moderationApproved') : 'Your discussion was approved',
+        body: t
+          ? t('notifications.moderationApprovedBody').replace('{{discussion}}', discussion)
+          : `Your discussion "${discussion}" has been approved`,
+      };
+    case 'moderation_discussion_rejected':
+      return {
+        title: t ? t('notifications.moderationRejected') : 'Your discussion was rejected',
+        body: t
+          ? t('notifications.moderationRejectedBody').replace('{{discussion}}', discussion)
+          : `Your discussion "${discussion}" was rejected`,
+      };
+    case 'moderation_reply_approved':
+      return {
+        title: t ? t('notifications.moderationApproved') : 'Your comment was approved',
+        body: t ? t('notifications.moderationApprovedReplyBody') : 'Your comment has been approved',
+      };
+    case 'moderation_reply_rejected':
+      return {
+        title: t ? t('notifications.moderationRejected') : 'Your comment was rejected',
+        body: t ? t('notifications.moderationRejectedReplyBody') : 'Your comment was rejected',
       };
     default:
       return {

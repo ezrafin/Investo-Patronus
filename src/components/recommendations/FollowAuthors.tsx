@@ -7,8 +7,9 @@ import { UserAvatar } from '@/components/user/UserAvatar';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
-import { authors as allAuthors, type AuthorProfile } from '@/data/authors';
 import { useTranslation } from '@/hooks/useTranslation';
+import { supabase } from '@/integrations/supabase/client';
+import { useUserFollow } from '@/hooks/useUserFollow';
 
 interface Author {
   id: string;
@@ -22,18 +23,6 @@ interface Author {
   is_following: boolean;
 }
 
-const mapAuthor = (profile: AuthorProfile): Author => ({
-  id: profile.id,
-  username: profile.username,
-  display_name: profile.display_name,
-  avatar_url: profile.avatar_url,
-  bio: profile.bio,
-  reputation: profile.reputation,
-  post_count: profile.post_count,
-  comment_count: profile.comment_count,
-  is_following: false,
-});
-
 export function FollowAuthors({ className, limit = 5 }: { className?: string; limit?: number }) {
   const { user } = useUser();
   const { t } = useTranslation({ namespace: 'ui' });
@@ -41,29 +30,60 @@ export function FollowAuthors({ className, limit = 5 }: { className?: string; li
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const topAuthors = allAuthors.slice(0, limit).map(mapAuthor);
-      setAuthors(topAuthors);
-      setLoading(false);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, [user, limit]);
+    const loadAuthors = async () => {
+      if (!user) {
+        setLoading(false);
+        return;
+      }
 
-  const toggleFollow = async (authorId: string, currentStatus: boolean) => {
-    if (!user) {
-      toast.error(t('toast.pleaseSignInToFollowAuthors'));
-      return;
-    }
+      try {
+        // Get top users by reputation_score or posts_count
+        const { data: profiles, error: profilesError } = await supabase
+          .from('profiles')
+          .select('id, username, display_name, avatar_url, bio, reputation_score, posts_count')
+          .neq('id', user.id) // Exclude current user
+          .not('reputation_score', 'is', null)
+          .order('reputation_score', { ascending: false })
+          .limit(limit * 2); // Get more to filter out already following
 
-    // Mock toggle - in real implementation would use Supabase
-    setAuthors((prev) =>
-      prev.map((author) =>
-        author.id === authorId ? { ...author, is_following: !currentStatus } : author
-      )
-    );
+        if (profilesError) throw profilesError;
 
-    toast.success(currentStatus ? t('toast.unfollowed') : t('toast.following'));
-  };
+        // Get list of users current user is following
+        const { data: following, error: followingError } = await supabase
+          .from('user_follows' as any)
+          .select('following_id')
+          .eq('follower_id', user.id);
+
+        if (followingError) throw followingError;
+
+        const followingIds = new Set((following || []).map((f: any) => f.following_id));
+
+        // Map profiles to authors and filter
+        const mappedAuthors: Author[] = (profiles || [])
+          .map((profile: any) => ({
+            id: profile.id,
+            username: profile.username,
+            display_name: profile.display_name,
+            avatar_url: profile.avatar_url,
+            bio: profile.bio,
+            reputation: profile.reputation_score || 0,
+            post_count: profile.posts_count || 0,
+            comment_count: 0, // Not available in profiles table
+            is_following: followingIds.has(profile.id),
+          }))
+          .slice(0, limit); // Take only the requested limit
+
+        setAuthors(mappedAuthors);
+      } catch (error) {
+        console.error('Error loading authors:', error);
+        toast.error(t('errors.failedToLoad', 'Failed to load authors'));
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadAuthors();
+  }, [user, limit, t]);
 
   if (!user) {
     return (
@@ -121,58 +141,91 @@ export function FollowAuthors({ className, limit = 5 }: { className?: string; li
           };
 
           return (
-            <div
+            <AuthorFollowItem
               key={author.id}
-              className="p-3 rounded-lg border border-border/50 hover:bg-secondary/50 transition-all"
-            >
-              <div className="flex items-center gap-3">
-                <Link to={`/users/${author.id}`} className="flex-shrink-0">
-                  <UserAvatar profile={profile} size="md" showReputation />
-                </Link>
-                <div className="flex-1 min-w-0">
-                  <Link to={`/users/${author.id}`} className="block">
-                    <h4 className="font-medium text-sm hover:text-primary transition-colors">
-                      {author.display_name || author.username || t('common.anonymous')}
-                    </h4>
-                  </Link>
-                  {author.bio && (
-                    <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                      {author.bio}
-                    </p>
-                  )}
-                  <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1">
-                      <FileText className="h-3 w-3" />
-                      {author.post_count}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <MessageSquare className="h-3 w-3" />
-                      {author.comment_count}
-                    </span>
-                  </div>
-                </div>
-                <Button
-                  variant={author.is_following ? 'outline' : 'default'}
-                  size="sm"
-                  onClick={() => toggleFollow(author.id, author.is_following)}
-                  className="flex-shrink-0 self-center"
-                >
-                  {author.is_following ? (
-                    <>
-                      <UserCheck className="h-3 w-3 mr-1" />
-                      {t('followAuthors.following')}
-                    </>
-                  ) : (
-                    <>
-                      <UserPlus className="h-3 w-3 mr-1" />
-                      {t('followAuthors.follow')}
-                    </>
-                  )}
-                </Button>
-              </div>
-            </div>
+              author={author}
+              profile={profile}
+              onFollowChange={(isFollowing) => {
+                setAuthors((prev) =>
+                  prev.map((a) =>
+                    a.id === author.id ? { ...a, is_following: isFollowing } : a
+                  )
+                );
+              }}
+            />
           );
         })}
+      </div>
+    </div>
+  );
+}
+
+function AuthorFollowItem({
+  author,
+  profile,
+  onFollowChange,
+}: {
+  author: Author;
+  profile: any;
+  onFollowChange: (isFollowing: boolean) => void;
+}) {
+  const { t } = useTranslation({ namespace: 'ui' });
+  const { isFollowing, loading, toggleFollow } = useUserFollow(author.id);
+
+  const handleToggle = async () => {
+    const previousState = isFollowing;
+    onFollowChange(!previousState); // Optimistic update
+    try {
+      await toggleFollow();
+    } catch (error) {
+      // Revert on error
+      onFollowChange(previousState);
+    }
+  };
+
+  return (
+    <div className="p-3 rounded-lg border border-border/50 hover:bg-secondary/50 transition-all">
+      <div className="flex items-center gap-3">
+        <Link to={`/users/${author.id}`} className="flex-shrink-0">
+          <UserAvatar profile={profile} size="md" showReputation />
+        </Link>
+        <div className="flex-1 min-w-0">
+          <Link to={`/users/${author.id}`} className="block">
+            <h4 className="font-medium text-sm hover:text-primary transition-colors">
+              {author.display_name || author.username || t('common.anonymous')}
+            </h4>
+          </Link>
+          {author.bio && (
+            <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+              {author.bio}
+            </p>
+          )}
+          <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1">
+              <FileText className="h-3 w-3" />
+              {author.post_count}
+            </span>
+          </div>
+        </div>
+        <Button
+          variant={isFollowing ? 'outline' : 'default'}
+          size="sm"
+          onClick={handleToggle}
+          disabled={loading}
+          className="flex-shrink-0 self-center"
+        >
+          {isFollowing ? (
+            <>
+              <UserCheck className="h-3 w-3 mr-1" />
+              {t('followAuthors.following')}
+            </>
+          ) : (
+            <>
+              <UserPlus className="h-3 w-3 mr-1" />
+              {t('followAuthors.follow')}
+            </>
+          )}
+        </Button>
       </div>
     </div>
   );

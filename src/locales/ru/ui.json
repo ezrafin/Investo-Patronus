@@ -599,6 +599,19 @@
     "follow": "Подписаться",
     "following": "Подписан"
   },
+  "notifications": {
+    "title": "Уведомления",
+    "empty": "Нет уведомлений",
+    "markAllRead": "Отметить все как прочитанные",
+    "moderationApproved": "Ваш контент был одобрен",
+    "moderationRejected": "Ваш контент был отклонен",
+    "newComment": "Новый комментарий к вашей дискуссии",
+    "newFollower": "Новый подписчик",
+    "today": "Сегодня",
+    "yesterday": "Вчера",
+    "thisweek": "На этой неделе",
+    "older": "Ранее"
+  },
   "globalSearch": {
     "placeholder": "Поиск компаний, новостей, форума, тикеров, авторов...",
     "searchPlaceholder": "Поиск...",

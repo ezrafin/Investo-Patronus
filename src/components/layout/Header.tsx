@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, GraduationCap, BookOpen, Award, Rocket, User, LogOut, Settings, Bookmark, Users, Trophy, Globe } from 'lucide-react';
+import { NotificationDropdown } from '@/components/notifications/NotificationDropdown';
 import { logger } from '@/lib/logger';
 import { useUserPreferences, type Theme } from '@/hooks/useUserPreferences';
 import { supabase } from '@/integrations/supabase/client';
@@ -237,6 +238,7 @@ export function Header() {
           {/* Live indicator + CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <GlobalSearch />
+            {user && <NotificationDropdown />}
             {user ? (
               <DropdownMenu modal={false}>
                 <DropdownMenuTrigger asChild>

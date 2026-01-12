@@ -598,6 +598,19 @@
     "follow": "关注",
     "following": "已关注"
   },
+  "notifications": {
+    "title": "通知",
+    "empty": "没有通知",
+    "markAllRead": "全部标记为已读",
+    "moderationApproved": "您的内容已通过审核",
+    "moderationRejected": "您的内容已被拒绝",
+    "newComment": "您的话题有新评论",
+    "newFollower": "新关注者",
+    "today": "今天",
+    "yesterday": "昨天",
+    "thisweek": "本周",
+    "older": "更早"
+  },
   "globalSearch": {
     "placeholder": "搜索公司、新闻、论坛、代码、作者...",
     "searchPlaceholder": "搜索...",
