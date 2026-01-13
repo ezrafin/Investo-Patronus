@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { validateMarketData, hasMinimumData } from "../_shared/validation.ts";
 import { retryWithBackoff, isRetryableError, retryWithBackoffConditional } from "../_shared/retry.ts";
 
@@ -6,6 +7,82 @@ const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+
+// Create Supabase client for caching prices
+function getSupabaseClient() {
+  const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+  const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+  return createClient(supabaseUrl, supabaseKey);
+}
+
+// Save prices to database for fallback
+async function savePricesToDB(data: any[], marketType: string, source: string) {
+  try {
+    const supabase = getSupabaseClient();
+    const now = new Date().toISOString();
+    
+    const records = data.map(item => ({
+      symbol: item.symbol,
+      market_type: marketType,
+      name: item.name,
+      price: item.price,
+      change: item.change || 0,
+      change_percent: item.changePercent || 0,
+      high: item.high || null,
+      low: item.low || null,
+      volume: item.volume || null,
+      source: source,
+      updated_at: now,
+    }));
+    
+    // Upsert prices
+    const { error } = await supabase
+      .from('market_prices')
+      .upsert(records, { onConflict: 'symbol,market_type' });
+    
+    if (error) {
+      console.error('Error saving prices to DB:', error);
+    } else {
+      console.log(`Saved ${records.length} prices to DB for ${marketType}`);
+    }
+  } catch (error) {
+    console.error('Error in savePricesToDB:', error);
+  }
+}
+
+// Load cached prices from database as fallback
+async function loadPricesFromDB(marketType: string): Promise<any[] | null> {
+  try {
+    const supabase = getSupabaseClient();
+    
+    const { data, error } = await supabase
+      .from('market_prices')
+      .select('*')
+      .eq('market_type', marketType)
+      .order('updated_at', { ascending: false });
+    
+    if (error || !data || data.length === 0) {
+      console.log(`No cached prices found in DB for ${marketType}`);
+      return null;
+    }
+    
+    console.log(`Loaded ${data.length} cached prices from DB for ${marketType}`);
+    
+    return data.map(item => ({
+      symbol: item.symbol,
+      name: item.name,
+      price: item.price,
+      change: item.change,
+      changePercent: item.change_percent,
+      high: item.high,
+      low: item.low,
+      volume: item.volume,
+    }));
+  } catch (error) {
+    console.error('Error loading prices from DB:', error);
+    return null;
+  }
+}
 
 interface MarketDataSource {
   data: any[];
@@ -223,9 +300,23 @@ serve(async (req) => {
       }
     }
 
-    // 8. Final fallback to mock data
+    // 8. Try DB cached prices as fallback before mock data
     if (!marketData || !hasMinimumData(marketData.data, 3)) {
-      console.log(`All APIs failed for ${type}, using mock data`);
+      console.log(`All APIs failed for ${type}, trying DB cache...`);
+      const cachedPrices = await loadPricesFromDB(type);
+      if (cachedPrices && cachedPrices.length > 0) {
+        const validated = validateMarketData(cachedPrices);
+        if (hasMinimumData(validated, 3)) {
+          marketData = { data: validated, source: 'db_cache' };
+          dataSource = 'db_cache';
+          console.log(`Using ${validated.length} cached prices from DB for ${type}`);
+        }
+      }
+    }
+
+    // 9. Final fallback to mock data
+    if (!marketData || !hasMinimumData(marketData.data, 3)) {
+      console.log(`All APIs and DB cache failed for ${type}, using mock data`);
       const mockData = getMockData(type);
       const validated = validateMarketData(mockData);
       marketData = { data: validated, source: 'mock' };
@@ -235,12 +326,21 @@ serve(async (req) => {
     const finalData = marketData.data;
     console.log(`Returning ${finalData.length} items from source: ${dataSource} for type: ${type}`);
 
+    // Save prices to DB if we got real data (not from DB cache or mock)
+    if (dataSource !== 'mock' && dataSource !== 'db_cache') {
+      // Fire and forget - don't block the response
+      savePricesToDB(finalData, type, dataSource).catch(err => 
+        console.error('Background save to DB failed:', err)
+      );
+    }
+
     return new Response(
       JSON.stringify({
         data: finalData,
         timestamp: new Date().toISOString(),
         source: dataSource,
         isDemo: dataSource === 'mock',
+        isCached: dataSource === 'db_cache',
       }),
       {
         headers: {
@@ -254,9 +354,29 @@ serve(async (req) => {
     console.error('Error fetching market data:', error);
     const message = error instanceof Error ? error.message : 'Unknown error';
     
-    // Even on error, return mock data so UI doesn't break
+    // Try DB cache first before mock data
     const { searchParams } = new URL(req.url);
     const type = searchParams.get('type') || 'stocks';
+    
+    const cachedPrices = await loadPricesFromDB(type);
+    if (cachedPrices && cachedPrices.length >= 3) {
+      return new Response(
+        JSON.stringify({
+          data: cachedPrices,
+          timestamp: new Date().toISOString(),
+          source: 'db_cache',
+          isDemo: false,
+          isCached: true,
+          error: message,
+        }),
+        {
+          status: 200,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
+    }
+    
+    // Final fallback to mock data
     const mockData = validateMarketData(getMockData(type));
     
     return new Response(

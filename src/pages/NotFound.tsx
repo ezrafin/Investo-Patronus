@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowLeft } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import { SEOHead } from "@/components/seo/SEOHead";
 
 const NotFound = () => {
   const location = useLocation();

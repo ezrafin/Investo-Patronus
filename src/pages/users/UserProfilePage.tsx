@@ -276,6 +276,9 @@ export default function UserProfilePage() {
   }
 
   const isOwnProfile = currentUser?.id === userId;
+  
+  const seoTitle = `${profile.display_name || profile.username || 'User Profile'} - INVESTOPATRONUS`;
+  const seoDescription = profile.bio || `View ${profile.display_name || profile.username || 'user'}'s profile on INVESTOPATRONUS. ${profile.reputation ? `Reputation: ${profile.reputation}` : ''}`;
 
   return (
     <Layout>

@@ -2,6 +2,7 @@ import { Layout } from '@/components/layout/Layout';
 import { Users, Target, Award, Globe } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 export default function AboutPage() {
   // Bill collection: info_page_visit
