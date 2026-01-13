@@ -160,13 +160,37 @@ Economics studies how societies allocate scarce resources. Scarcity forces choic
       {
         id: 'macroecon-u1-l2-video-1',
         type: 'video',
-        title: 'Opportunity cost and the Production Possibilities Curve',
+        title: 'Production possibilities curve',
         videoIndex: 0,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l2-video-2',
+        type: 'video',
+        title: 'Opportunity cost',
+        videoIndex: 1,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l2-video-3',
+        type: 'video',
+        title: 'Increasing opportunity cost',
+        videoIndex: 2,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l2-video-4',
+        type: 'video',
+        title: 'PPCs for increasing, decreasing and constant opportunity cost',
+        videoIndex: 3,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l2-video-5',
+        type: 'video',
+        title: 'Production Possibilities Curve as a model',
+        videoIndex: 4,
       } as VideoContent,
       {
         id: 'macroecon-u1-l2-article',
         type: 'article',
-        title: 'Learn: Opportunity cost and the Production Possibilities Curve',
+        title: 'Lesson summary: Opportunity cost and the PPC',
         content: `# Opportunity Cost and the Production Possibilities Curve
 
 ## Production possibilities curve
@@ -229,41 +253,9 @@ The PPC illustrates maximum production possibilities and trade-offs. Opportunity
         ],
       } as ArticleContent,
       {
-        id: 'macroecon-u1-l2-practice',
-        type: 'practice',
-        title: 'Practice: Opportunity cost and the PPC',
-        exercises: [
-          {
-            id: 'practice-1-2-1',
-            prompt: 'Draw a Production Possibilities Curve for an economy producing computers and food. Explain what points on, inside, and outside the curve represent.',
-            hints: [
-              'Label axes clearly',
-              'Points on the curve use all resources efficiently',
-              'Points inside represent unused resources',
-            ],
-          },
-          {
-            id: 'practice-1-2-2',
-            prompt: 'Calculate the opportunity cost of producing one more computer when moving from point A (10 computers, 50 food) to point B (15 computers, 40 food).',
-            hints: [
-              'Opportunity cost = what you give up / what you gain',
-              'Look at the change in food production',
-            ],
-          },
-          {
-            id: 'practice-1-2-3',
-            prompt: 'Explain why the PPC is typically bowed outward rather than a straight line.',
-            hints: [
-              'Consider resource specialization',
-              'Think about how resources adapt to different uses',
-            ],
-          },
-        ],
-      } as PracticeContent,
-      {
         id: 'macroecon-u1-l2-quiz',
         type: 'quiz',
-        title: 'Quiz: Opportunity cost and the PPC',
+        title: 'Opportunity cost and the PPC',
         questions: [],
       } as QuizContent,
     ],
@@ -276,13 +268,49 @@ The PPC illustrates maximum production possibilities and trade-offs. Opportunity
       {
         id: 'macroecon-u1-l3-video-1',
         type: 'video',
-        title: 'Comparative advantage and the gains from trade',
+        title: 'Comparative advantage, specialization, and gains from trade',
         videoIndex: 0,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l3-video-2',
+        type: 'video',
+        title: 'Comparative advantage and absolute advantage',
+        videoIndex: 1,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l3-video-3',
+        type: 'video',
+        title: 'Opportunity cost and comparative advantage using an output table',
+        videoIndex: 2,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l3-video-4',
+        type: 'video',
+        title: 'Terms of trade and the gains from trade',
+        videoIndex: 3,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l3-video-5',
+        type: 'video',
+        title: 'Input approach to determining comparative advantage',
+        videoIndex: 4,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l3-video-6',
+        type: 'video',
+        title: 'When there aren't gains from trade',
+        videoIndex: 5,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l3-video-7',
+        type: 'video',
+        title: 'Comparative advantage worked example',
+        videoIndex: 6,
       } as VideoContent,
       {
         id: 'macroecon-u1-l3-article',
         type: 'article',
-        title: 'Learn: Comparative advantage and the gains from trade',
+        title: 'Lesson summary: Comparative advantage and the gains from trade',
         content: `# Comparative Advantage and the Gains from Trade
 
 ## Comparative advantage, specialization, and gains from trade
@@ -370,40 +398,9 @@ Comparative advantage (lower opportunity cost) is the basis for beneficial trade
         ],
       } as ArticleContent,
       {
-        id: 'macroecon-u1-l3-practice',
-        type: 'practice',
-        title: 'Practice: Comparative advantage and the gains from trade',
-        exercises: [
-          {
-            id: 'practice-1-3-1',
-            prompt: 'Country A can produce 100 wheat or 50 cloth. Country B can produce 80 wheat or 40 cloth. Determine which country has a comparative advantage in each good and explain how they should trade.',
-            hints: [
-              'Calculate opportunity costs for each country',
-              'Compare opportunity costs to find comparative advantage',
-            ],
-          },
-          {
-            id: 'practice-1-3-2',
-            prompt: 'Explain the difference between absolute advantage and comparative advantage. Why is comparative advantage more important for trade?',
-            hints: [
-              'Absolute advantage is about productivity',
-              'Comparative advantage is about opportunity cost',
-            ],
-          },
-          {
-            id: 'practice-1-3-3',
-            prompt: 'If Country X has an opportunity cost of 2 units of Good A for 1 unit of Good B, and Country Y has an opportunity cost of 3 units of Good A for 1 unit of Good B, what are acceptable terms of trade?',
-            hints: [
-              'Terms of trade must be between the two opportunity costs',
-              'Both countries must gain from trade',
-            ],
-          },
-        ],
-      } as PracticeContent,
-      {
         id: 'macroecon-u1-l3-quiz',
         type: 'quiz',
-        title: 'Quiz: Comparative advantage and the gains from trade',
+        title: 'Comparative advantage and the gains from trade',
         questions: [],
       } as QuizContent,
     ],
@@ -416,13 +413,43 @@ Comparative advantage (lower opportunity cost) is the basis for beneficial trade
       {
         id: 'macroecon-u1-l4-video-1',
         type: 'video',
-        title: 'Demand',
+        title: 'Law of demand',
         videoIndex: 0,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l4-video-2',
+        type: 'video',
+        title: 'Price of related products and demand',
+        videoIndex: 1,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l4-video-3',
+        type: 'video',
+        title: 'Change in expected future prices and demand',
+        videoIndex: 2,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l4-video-4',
+        type: 'video',
+        title: 'Changes in income, population, or other factors',
+        videoIndex: 3,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l4-video-5',
+        type: 'video',
+        title: 'Normal and inferior goods',
+        videoIndex: 4,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l4-video-6',
+        type: 'video',
+        title: 'Change in demand versus change in quantity demanded',
+        videoIndex: 5,
       } as VideoContent,
       {
         id: 'macroecon-u1-l4-article',
         type: 'article',
-        title: 'Learn: Demand',
+        title: 'Lesson summary: Demand and the law of demand',
         content: `# Demand
 
 ## Law of demand
@@ -487,40 +514,9 @@ The law of demand shows the inverse relationship between price and quantity. Dem
         ],
       } as ArticleContent,
       {
-        id: 'macroecon-u1-l4-practice',
-        type: 'practice',
-        title: 'Practice: Demand',
-        exercises: [
-          {
-            id: 'practice-1-4-1',
-            prompt: 'Draw a demand curve and explain what causes movement along the curve versus what causes the curve to shift.',
-            hints: [
-              'Price changes cause movement along the curve',
-              'Other factors (income, preferences, etc.) shift the curve',
-            ],
-          },
-          {
-            id: 'practice-1-4-2',
-            prompt: 'Classify each pair as substitutes or complements: (a) Coffee and tea, (b) Cars and gasoline, (c) Butter and margarine, (d) Hot dogs and hot dog buns.',
-            hints: [
-              'Substitutes can replace each other',
-              'Complements are used together',
-            ],
-          },
-          {
-            id: 'practice-1-4-3',
-            prompt: 'Explain how an increase in income affects demand for normal goods versus inferior goods. Provide examples.',
-            hints: [
-              'Normal goods: demand increases with income',
-              'Inferior goods: demand decreases with income',
-            ],
-          },
-        ],
-      } as PracticeContent,
-      {
         id: 'macroecon-u1-l4-quiz',
         type: 'quiz',
-        title: 'Quiz: Demand',
+        title: 'Demand',
         questions: [],
       } as QuizContent,
     ],
@@ -533,13 +529,25 @@ The law of demand shows the inverse relationship between price and quantity. Dem
       {
         id: 'macroecon-u1-l5-video-1',
         type: 'video',
-        title: 'Supply',
+        title: 'Law of supply',
         videoIndex: 0,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l5-video-2',
+        type: 'video',
+        title: 'Factors affecting supply',
+        videoIndex: 1,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l5-video-3',
+        type: 'video',
+        title: 'Change in supply versus change in quantity supplied',
+        videoIndex: 2,
       } as VideoContent,
       {
         id: 'macroecon-u1-l5-article',
         type: 'article',
-        title: 'Learn: Supply',
+        title: 'Lesson summary: Supply and its determinants',
         content: `# Supply
 
 ## Law of supply
@@ -589,42 +597,9 @@ The law of supply shows the direct relationship between price and quantity suppl
         ],
       } as ArticleContent,
       {
-        id: 'macroecon-u1-l5-practice',
-        type: 'practice',
-        title: 'Practice: Supply',
-        exercises: [
-          {
-            id: 'practice-1-5-1',
-            prompt: 'Draw a supply curve and explain what causes movement along the curve versus what causes the curve to shift.',
-            hints: [
-              'Price changes cause movement along the curve',
-              'Other factors (input costs, technology, etc.) shift the curve',
-            ],
-          },
-          {
-            id: 'practice-1-5-2',
-            prompt: 'Explain how each of the following affects the supply of smartphones: (a) A decrease in the price of computer chips, (b) New manufacturing technology, (c) A tax on smartphone production, (d) More companies entering the market.',
-            hints: [
-              'Input prices: lower costs increase supply',
-              'Technology: improvements increase supply',
-              'Taxes: decrease supply',
-              'More sellers: increase supply',
-            ],
-          },
-          {
-            id: 'practice-1-5-3',
-            prompt: 'If producers expect prices to be higher next month, how does this affect current supply? Explain using a supply curve diagram.',
-            hints: [
-              'Producers may hold back supply to sell later',
-              'This shifts the supply curve left',
-            ],
-          },
-        ],
-      } as PracticeContent,
-      {
         id: 'macroecon-u1-l5-quiz',
         type: 'quiz',
-        title: 'Quiz: Supply',
+        title: 'Supply',
         questions: [],
       } as QuizContent,
     ],
@@ -637,13 +612,25 @@ The law of supply shows the direct relationship between price and quantity suppl
       {
         id: 'macroecon-u1-l6-video-1',
         type: 'video',
-        title: 'Markets',
+        title: 'Market equilibrium',
         videoIndex: 0,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l6-video-2',
+        type: 'video',
+        title: 'Changes in market equilibrium',
+        videoIndex: 1,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l6-video-3',
+        type: 'video',
+        title: 'Changes in equilibrium price and quantity when supply and demand change',
+        videoIndex: 2,
       } as VideoContent,
       {
         id: 'macroecon-u1-l6-article',
         type: 'article',
-        title: 'Learn: Markets',
+        title: 'Lesson summary: Market equilibrium, disequilibrium, and changes in equilibrium',
         content: `# Markets
 
 ## Market equilibrium
@@ -704,7 +691,7 @@ Market equilibrium occurs when quantity demanded equals quantity supplied. Equil
       {
         id: 'macroecon-u1-l6-practice',
         type: 'practice',
-        title: 'Practice: Market equilibrium and disequilibrium, Changes in equilibrium',
+        title: 'Markets',
         exercises: [
           {
             id: 'practice-1-6-1',
@@ -742,12 +729,6 @@ Market equilibrium occurs when quantity demanded equals quantity supplied. Equil
           },
         ],
       } as PracticeContent,
-      {
-        id: 'macroecon-u1-l6-quiz',
-        type: 'quiz',
-        title: 'Quiz: Markets',
-        questions: [],
-      } as QuizContent,
     ],
   },
 ];
