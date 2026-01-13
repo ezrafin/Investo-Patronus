@@ -11,7 +11,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 import { generateArticleSchema, generateOrganizationSchema } from '@/utils/structuredData';
-import { Calendar, Clock, User, Share2, ExternalLink, Tag, Building2 } from 'lucide-react';
+import { Calendar, User, Share2, ExternalLink, Tag, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { CompanyCard } from '@/components/CompanyCard';
@@ -185,10 +185,6 @@ export default function AnalyticsDetailPage() {
           <div className="flex items-center gap-3 mb-6">
             <span className="px-3 py-1 text-sm font-medium rounded bg-primary/10 text-primary">
               {typeLabels[article.type]}
-            </span>
-            <span className="flex items-center gap-1 text-sm text-muted-foreground">
-              <Clock className="h-4 w-4" />
-              {article.readTime}
             </span>
           </div>
 

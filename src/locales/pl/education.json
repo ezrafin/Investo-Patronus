@@ -91,6 +91,7 @@
     "infoDescription": "Każdy kurs jest podzielony na moduły z wieloma lekcjami. Ukończ lekcje we własnym tempie, rozwiąż quizy, aby sprawdzić wiedzę, i zdaj egzamin końcowy, aby wykazać się opanowaniem. Śledź postępy i wracaj w dowolnym momencie, aby przejrzeć materiały.",
     "startCourse": "Rozpocznij kurs",
     "modules": "{{count}} modułów",
+    "units": "{{count}} jednostek",
     "lessons": "{{count}} lekcji",
     "hours": "{{count}}+ godzin",
     "progress": "Postęp",

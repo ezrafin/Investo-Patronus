@@ -267,7 +267,6 @@ export function Header() {
                   </DropdownMenuItem>
                   
                   {/* Language Toggle */}
-                  <DropdownMenuSeparator />
                   <div>
                     <button
                       type="button"
@@ -277,7 +276,7 @@ export function Header() {
                         setLanguageMenuOpen(!languageMenuOpen);
                         setThemeMenuOpen(false);
                       }}
-                      className="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none w-full hover:bg-accent hover:text-accent-foreground"
+                      className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors w-full hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                       <Globe className="mr-2 h-4 w-4" />
                       {t('common.language')}
@@ -321,7 +320,6 @@ export function Header() {
                     </AnimatePresence>
                   </div>
                   
-                  <DropdownMenuSeparator />
                   {/* Theme Toggle Submenu */}
                   <div>
                     <button
@@ -332,7 +330,7 @@ export function Header() {
                         setThemeMenuOpen(!themeMenuOpen);
                         setLanguageMenuOpen(false);
                       }}
-                      className="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none w-full hover:bg-accent hover:text-accent-foreground"
+                      className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors w-full hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                       {(() => {
                         const currentThemeData = getCurrentThemeData();

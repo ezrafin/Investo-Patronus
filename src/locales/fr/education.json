@@ -91,6 +91,7 @@
     "infoDescription": "Chaque cours est divisé en modules avec plusieurs leçons. Complétez les leçons à votre rythme, passez des quiz pour tester vos connaissances et réussissez l'examen final pour démontrer votre maîtrise. Suivez vos progrès et revenez à tout moment pour réviser les matériaux.",
     "startCourse": "Commencer le cours",
     "modules": "{{count}} modules",
+    "units": "{{count}} unités",
     "lessons": "{{count}} leçons",
     "hours": "{{count}}+ heures",
     "progress": "Progrès",

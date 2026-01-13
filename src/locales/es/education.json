@@ -91,6 +91,7 @@
     "infoDescription": "Cada curso está dividido en módulos con múltiples lecciones. Completa lecciones a tu ritmo, realiza cuestionarios para probar tu conocimiento y aprueba el examen final para demostrar dominio. Rastrea tu progreso y regresa en cualquier momento para revisar materiales.",
     "startCourse": "Comenzar curso",
     "modules": "{{count}} módulos",
+    "units": "{{count}} unidades",
     "lessons": "{{count}} lecciones",
     "hours": "{{count}}+ horas",
     "progress": "Progreso",

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
-import { ArrowLeft, Clock, Calendar, User, Award } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Award } from 'lucide-react';
 import { getArticleById } from '@/data/educationArticles';
 import { getEducationLearningPath, getEducationBasicArticlesPath, getEducationAdvancedArticlesPath } from '@/lib/educationRoutes';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -91,10 +91,6 @@ export default function ArticleDetailPage() {
                     <span className="text-sm text-muted-foreground">• {article.credentials}</span>
                   </div>
                 )}
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Clock className="h-4 w-4" />
-                  <span>{article.readTime}</span>
-                </div>
                 {isAdvanced && 'lastUpdated' in article && (
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="h-4 w-4" />

@@ -91,6 +91,7 @@
     "infoDescription": "Jeder Kurs ist in Module mit mehreren Lektionen unterteilt. Schließe Lektionen in deinem eigenen Tempo ab, mache Quizze, um dein Wissen zu testen, und bestehe die Abschlussprüfung, um deine Beherrschung zu demonstrieren. Verfolge deinen Fortschritt und kehre jederzeit zurück, um Materialien zu wiederholen.",
     "startCourse": "Kurs starten",
     "modules": "{{count}} Module",
+    "units": "{{count}} Einheiten",
     "lessons": "{{count}} Lektionen",
     "hours": "{{count}}+ Stunden",
     "progress": "Fortschritt",

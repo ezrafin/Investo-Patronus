@@ -23,6 +23,7 @@ interface SearchResult {
   symbol?: string;
   marketType?: string;
   authorId?: string;
+  logo?: string;
 }
 
 export function GlobalSearch() {
@@ -101,6 +102,7 @@ export function GlobalSearch() {
           id: org.id,
           title: org.name,
           subtitle: org.type.replace('_', ' '),
+          logo: org.logo,
         }));
       allResults.push(...companyResults);
     }
@@ -469,31 +471,49 @@ export function GlobalSearch() {
               {!loading && groupedResults.company.length > 0 && (
                 <CommandGroup heading={t('globalSearch.companies')}>
                   <AnimatePresence>
-                    {groupedResults.company.map((result, index) => (
-                      <motion.div
-                        key={`company-${result.id}`}
-                        initial={prefersReducedMotion() ? {} : { opacity: 0, y: 10 }}
-                        animate={prefersReducedMotion() ? {} : { opacity: 1, y: 0 }}
-                        exit={prefersReducedMotion() ? {} : { opacity: 0, y: -10 }}
-                        transition={{
-                          ...transitions.fast,
-                          delay: prefersReducedMotion() ? 0 : (index * STAGGER.fast) / 1000,
-                        }}
-                      >
-                        <CommandItem
-                          onSelect={() => handleSelect(result)}
-                          className="flex items-center gap-3 cursor-pointer"
+                    {groupedResults.company.map((result, index) => {
+                      // Находим полную информацию об организации для получения логотипа
+                      const org = organizations.find(o => o.id === result.id);
+                      return (
+                        <motion.div
+                          key={`company-${result.id}`}
+                          initial={prefersReducedMotion() ? {} : { opacity: 0, y: 10 }}
+                          animate={prefersReducedMotion() ? {} : { opacity: 1, y: 0 }}
+                          exit={prefersReducedMotion() ? {} : { opacity: 0, y: -10 }}
+                          transition={{
+                            ...transitions.fast,
+                            delay: prefersReducedMotion() ? 0 : (index * STAGGER.fast) / 1000,
+                          }}
                         >
-                          {getIcon(result.type)}
-                          <div className="flex flex-col">
-                            <span className="font-medium">{result.title}</span>
-                            {result.subtitle && (
-                              <span className="text-xs text-muted-foreground capitalize">{result.subtitle}</span>
-                            )}
-                          </div>
-                        </CommandItem>
-                      </motion.div>
-                    ))}
+                          <CommandItem
+                            onSelect={() => handleSelect(result)}
+                            className="flex items-center gap-3 cursor-pointer"
+                          >
+                            {/* Логотип компании */}
+                            <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center overflow-hidden flex-shrink-0">
+                              {org?.logo ? (
+                                <img 
+                                  src={org.logo} 
+                                  alt={`${result.title} logo`}
+                                  className="w-6 h-6 object-contain"
+                                  onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                                  }}
+                                />
+                              ) : null}
+                              <Building2 className={`h-4 w-4 text-muted-foreground ${org?.logo ? 'hidden' : ''}`} />
+                            </div>
+                            <div className="flex flex-col">
+                              <span className="font-medium">{result.title}</span>
+                              {result.subtitle && (
+                                <span className="text-xs text-muted-foreground capitalize">{result.subtitle}</span>
+                              )}
+                            </div>
+                          </CommandItem>
+                        </motion.div>
+                      );
+                    })}
                   </AnimatePresence>
                 </CommandGroup>
               )}

@@ -91,6 +91,7 @@
     "infoDescription": "每个课程分为多个模块，每个模块包含多节课程。按照自己的节奏完成课程，参加测验以测试你的知识，并通过期末考试来展示你的掌握程度。跟踪你的进度，随时返回复习材料。",
     "startCourse": "开始课程",
     "modules": "{{count}} 个模块",
+    "units": "{{count}} 个单元",
     "lessons": "{{count}} 节课",
     "hours": "{{count}}+ 小时",
     "progress": "进度",
