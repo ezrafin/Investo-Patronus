@@ -125,93 +125,4488 @@
   "course": {
     "investment-fundamentals": {
       "title": "Podstawy Inwestowania",
-      "description": "Opanuj podstawy rynków finansowych, klas aktywów, realnych zwrotów i konstrukcji portfela"
-    },
-    "portfolio-management": {
-      "title": "Zarządzanie Portfelem Osobistym",
-      "description": "Naucz się budować, zarządzać i optymalizować swój osobisty portfel inwestycyjny za pomocą profesjonalnych strategii"
-    },
-    "technical-analysis": {
-      "title": "Mistrzostwo w Analizie Technicznej",
-      "description": "Opanuj wzorce wykresów, wskaźniki i sygnały handlowe, aby określić czas wejścia i wyjścia z rynku"
-    },
-    "fundamental-analysis": {
-      "title": "Dogłębna Analiza Fundamentalna",
-      "description": "Opanuj wycenę firm, analizę sprawozdań finansowych i techniki selekcji akcji"
-    },
-    "risk-management": {
-      "title": "Zarządzanie Ryzykiem i Psychologia",
-      "description": "Opanuj ocenę ryzyka, określanie rozmiaru pozycji i przezwyciężaj psychologiczne uprzedzenia w inwestowaniu"
-    },
-    "advanced-trading": {
-      "title": "Zaawansowane Strategie Handlowe",
-      "description": "Opanuj opcje, instrumenty pochodne, podejścia ilościowe i koncepcje handlu algorytmicznego",
-      "module": {
-        "at-module-1": { "title": "Podstawy Opcji", "lesson": { "at-lesson-1-1": { "title": "Wprowadzenie do Opcji" }, "at-lesson-1-2": { "title": "Wycenianie Opcji" }, "at-lesson-1-3": { "title": "Podstawowe Strategie Opcyjne" }, "at-lesson-1-4": { "title": "Zaawansowane Strategie Opcyjne" } } },
-        "at-module-2": { "title": "Instrumenty Pochodne", "lesson": { "at-lesson-2-1": { "title": "Kontrakty Terminowe" }, "at-lesson-2-2": { "title": "Swapy" }, "at-lesson-2-3": { "title": "Produkty Strukturyzowane" }, "at-lesson-2-4": { "title": "Zarządzanie Ryzykiem Instrumentów Pochodnych" } } },
-        "at-module-3": { "title": "Metody Ilościowe", "lesson": { "at-lesson-3-1": { "title": "Podstawy Analizy Ilościowej" }, "at-lesson-3-2": { "title": "Modele Czynnikowe" }, "at-lesson-3-3": { "title": "Backtesting Strategii" } } },
-        "at-module-4": { "title": "Handel Algorytmiczny", "lesson": { "at-lesson-4-1": { "title": "Wprowadzenie do Handlu Algorytmicznego" }, "at-lesson-4-2": { "title": "Algorytmy Wykonawcze" }, "at-lesson-4-3": { "title": "Handel Wysokiej Częstotliwości" }, "at-lesson-4-4": { "title": "Strategie Systematyczne" } } },
-        "at-module-5": { "title": "Zaawansowane Strategie", "lesson": { "at-lesson-5-1": { "title": "Handel Parami" }, "at-lesson-5-2": { "title": "Arbitraż Statystyczny" }, "at-lesson-5-3": { "title": "Strategie Neutralne Rynkowo" } } },
-        "at-module-6": { "title": "Optymalizacja Portfela", "lesson": { "at-lesson-6-1": { "title": "Współczesna Teoria Portfela" }, "at-lesson-6-2": { "title": "Parytet Ryzyka" }, "at-lesson-6-3": { "title": "Portfele Czynnikowe" } } }
-      }
-    },
-    "investment-fundamentals": {
-      "title": "Podstawy Inwestowania",
       "description": "Opanuj podstawy rynków finansowych, klas aktywów, realnych zwrotów i konstrukcji portfela",
       "module": {
-        "module-1": { "title": "Wprowadzenie do Rynków Finansowych", "lesson": { "lesson-1-1": { "title": "Czym są Rynki Finansowe" }, "lesson-1-2": { "title": "Klasy Aktywów: Akcje, Obligacje, Surowce" }, "lesson-1-3": { "title": "Zwroty Nominalne vs Realne" } } },
-        "module-2": { "title": "Rozumienie Zwrotów Realnych", "lesson": { "lesson-2-1": { "title": "Inflacja: Cichy Wróg Oszczędności" }, "lesson-2-2": { "title": "Porównanie: Lokaty vs Instrumenty Inwestycyjne" } } },
-        "module-3": { "title": "Budowanie Portfela Inwestycyjnego", "lesson": { "lesson-3-1": { "title": "Zasady Dywersyfikacji" }, "lesson-3-2": { "title": "Alokacja Aktywów według Wieku i Celów" } } },
-        "module-4": { "title": "Praktyczne Instrumenty", "lesson": { "lesson-4-1": { "title": "ETF: Prosty Sposób Inwestowania" }, "lesson-4-2": { "title": "Jak Otworzyć Konto Maklerskie" } } },
-        "module-5": { "title": "Rozpoczęcie z ETF", "lesson": { "lesson-5-1": { "title": "Rozumienie Struktury ETF" }, "lesson-5-2": { "title": "Wybór Pierwszych ETF" }, "lesson-5-3": { "title": "Pierwsza Inwestycja" } } }
+        "module-1": {
+          "title": "Wprowadzenie do Rynków Finansowych",
+          "lesson": {
+            "lesson-1-1": {
+              "title": "Czym są Rynki Finansowe"
+            },
+            "lesson-1-2": {
+              "title": "Klasy Aktywów: Akcje, Obligacje, Surowce"
+            },
+            "lesson-1-3": {
+              "title": "Zwroty Nominalne vs Realne"
+            }
+          }
+        },
+        "module-2": {
+          "title": "Rozumienie Zwrotów Realnych",
+          "lesson": {
+            "lesson-2-1": {
+              "title": "Inflacja: Cichy Wróg Oszczędności"
+            },
+            "lesson-2-2": {
+              "title": "Porównanie: Lokaty vs Instrumenty Inwestycyjne"
+            }
+          }
+        },
+        "module-3": {
+          "title": "Budowanie Portfela Inwestycyjnego",
+          "lesson": {
+            "lesson-3-1": {
+              "title": "Zasady Dywersyfikacji"
+            },
+            "lesson-3-2": {
+              "title": "Alokacja Aktywów według Wieku i Celów"
+            }
+          }
+        },
+        "module-4": {
+          "title": "Praktyczne Instrumenty",
+          "lesson": {
+            "lesson-4-1": {
+              "title": "ETF: Prosty Sposób Inwestowania"
+            },
+            "lesson-4-2": {
+              "title": "Jak Otworzyć Konto Maklerskie"
+            }
+          }
+        },
+        "module-5": {
+          "title": "Rozpoczęcie z ETF",
+          "lesson": {
+            "lesson-5-1": {
+              "title": "Rozumienie Struktury ETF"
+            },
+            "lesson-5-2": {
+              "title": "Wybór Pierwszych ETF"
+            },
+            "lesson-5-3": {
+              "title": "Pierwsza Inwestycja"
+            }
+          }
+        }
       }
     },
     "portfolio-management": {
       "title": "Zarządzanie Portfelem Osobistym",
       "description": "Naucz się budować, zarządzać i optymalizować swój osobisty portfel inwestycyjny za pomocą profesjonalnych strategii",
       "module": {
-        "pm-module-1": { "title": "Planowanie Portfela i Cele", "lesson": { "pm-lesson-1-1": { "title": "Definiowanie Celów Inwestycyjnych" }, "pm-lesson-1-2": { "title": "Ocena Tolerancji Ryzyka" }, "pm-lesson-1-3": { "title": "Znaczenie Horyzontu Czasowego" } } },
-        "pm-module-2": { "title": "Strategie Alokacji Aktywów", "lesson": { "pm-lesson-2-1": { "title": "Współczesna Teoria Portfela" }, "pm-lesson-2-2": { "title": "Alokacja Aktywów według Wieku" }, "pm-lesson-2-3": { "title": "Dywersyfikacja Geograficzna" }, "pm-lesson-2-4": { "title": "Dywersyfikacja Sektorowa" } } },
-        "pm-module-3": { "title": "Konstrukcja Portfela", "lesson": { "pm-lesson-3-1": { "title": "Wybór Właściwych ETF" }, "pm-lesson-3-2": { "title": "Budowanie Portfela Centralnego" }, "pm-lesson-3-3": { "title": "Strategie Satelitarne" }, "pm-lesson-3-4": { "title": "Strategie Rebalansowania" } } },
-        "pm-module-4": { "title": "Zarządzanie Portfelem", "lesson": { "pm-lesson-4-1": { "title": "Regularne Rebalansowanie" }, "pm-lesson-4-2": { "title": "Optymalizacja Podatkowa" }, "pm-lesson-4-3": { "title": "Zarządzanie Kosztami" } } },
-        "pm-module-5": { "title": "Monitorowanie i Korygowanie", "lesson": { "pm-lesson-5-1": { "title": "Śledzenie Wyników Portfela" }, "pm-lesson-5-2": { "title": "Kiedy Korygować Portfel" }, "pm-lesson-5-3": { "title": "Unikanie Typowych Błędów" } } },
-        "pm-module-6": { "title": "Zaawansowane Strategie", "lesson": { "pm-lesson-6-1": { "title": "Inwestowanie Czynnikowe" }, "pm-lesson-6-2": { "title": "Inwestowanie ESG" }, "pm-lesson-6-3": { "title": "Tax-Loss Harvesting" } } }
+        "pm-module-1": {
+          "title": "Planowanie Portfela i Cele",
+          "lesson": {
+            "pm-lesson-1-1": {
+              "title": "Definiowanie Celów Inwestycyjnych"
+            },
+            "pm-lesson-1-2": {
+              "title": "Ocena Tolerancji Ryzyka"
+            },
+            "pm-lesson-1-3": {
+              "title": "Znaczenie Horyzontu Czasowego"
+            }
+          }
+        },
+        "pm-module-2": {
+          "title": "Strategie Alokacji Aktywów",
+          "lesson": {
+            "pm-lesson-2-1": {
+              "title": "Współczesna Teoria Portfela"
+            },
+            "pm-lesson-2-2": {
+              "title": "Alokacja Aktywów według Wieku"
+            },
+            "pm-lesson-2-3": {
+              "title": "Dywersyfikacja Geograficzna"
+            },
+            "pm-lesson-2-4": {
+              "title": "Dywersyfikacja Sektorowa"
+            }
+          }
+        },
+        "pm-module-3": {
+          "title": "Konstrukcja Portfela",
+          "lesson": {
+            "pm-lesson-3-1": {
+              "title": "Wybór Właściwych ETF"
+            },
+            "pm-lesson-3-2": {
+              "title": "Budowanie Portfela Centralnego"
+            },
+            "pm-lesson-3-3": {
+              "title": "Strategie Satelitarne"
+            },
+            "pm-lesson-3-4": {
+              "title": "Strategie Rebalansowania"
+            }
+          }
+        },
+        "pm-module-4": {
+          "title": "Zarządzanie Portfelem",
+          "lesson": {
+            "pm-lesson-4-1": {
+              "title": "Regularne Rebalansowanie"
+            },
+            "pm-lesson-4-2": {
+              "title": "Optymalizacja Podatkowa"
+            },
+            "pm-lesson-4-3": {
+              "title": "Zarządzanie Kosztami"
+            }
+          }
+        },
+        "pm-module-5": {
+          "title": "Monitorowanie i Korygowanie",
+          "lesson": {
+            "pm-lesson-5-1": {
+              "title": "Śledzenie Wyników Portfela"
+            },
+            "pm-lesson-5-2": {
+              "title": "Kiedy Korygować Portfel"
+            },
+            "pm-lesson-5-3": {
+              "title": "Unikanie Typowych Błędów"
+            }
+          }
+        },
+        "pm-module-6": {
+          "title": "Zaawansowane Strategie",
+          "lesson": {
+            "pm-lesson-6-1": {
+              "title": "Inwestowanie Czynnikowe"
+            },
+            "pm-lesson-6-2": {
+              "title": "Inwestowanie ESG"
+            },
+            "pm-lesson-6-3": {
+              "title": "Tax-Loss Harvesting"
+            }
+          }
+        }
       }
     },
     "technical-analysis": {
       "title": "Mistrzostwo w Analizie Technicznej",
       "description": "Opanuj wzorce wykresów, wskaźniki i sygnały handlowe, aby określić czas wejścia i wyjścia z rynku",
       "module": {
-        "ta-module-1": { "title": "Podstawy Wykresów i Wzorców", "lesson": { "ta-lesson-1-1": { "title": "Czytanie Wykresów Cenowych" }, "ta-lesson-1-2": { "title": "Poziomy Wsparcia i Oporu" }, "ta-lesson-1-3": { "title": "Typowe Wzorce Wykresów" }, "ta-lesson-1-4": { "title": "Identyfikacja Trendu" } } },
-        "ta-module-2": { "title": "Wskaźniki Techniczne", "lesson": { "ta-lesson-2-1": { "title": "Średnie Kroczące" }, "ta-lesson-2-2": { "title": "RSI (Indeks Siły Względnej)" }, "ta-lesson-2-3": { "title": "MACD (Zbieżność-Rozbieżność Średnich Kroczących)" }, "ta-lesson-2-4": { "title": "Wstęgi Bollingera" } } },
-        "ta-module-3": { "title": "Wsparcie i Opór", "lesson": { "ta-lesson-3-1": { "title": "Identyfikacja Kluczowych Poziomów" }, "ta-lesson-3-2": { "title": "Handel Wsparciem i Oporem" }, "ta-lesson-3-3": { "title": "Dynamiczne Wsparcie i Opór" } } },
-        "ta-module-4": { "title": "Analiza Trendu", "lesson": { "ta-lesson-4-1": { "title": "Typy i Charakterystyka Trendów" }, "ta-lesson-4-2": { "title": "Strategie Podążania za Trendem" }, "ta-lesson-4-3": { "title": "Sygnały Odwrócenia Trendu" }, "ta-lesson-4-4": { "title": "Analiza Wieloramowa" } } },
-        "ta-module-5": { "title": "Sygnały Handlowe i Punkty Wejścia", "lesson": { "ta-lesson-5-1": { "title": "Zbieżność Sygnałów" }, "ta-lesson-5-2": { "title": "Techniki Wejścia" }, "ta-lesson-5-3": { "title": "Zarządzanie Ryzykiem w Handlu" }, "ta-lesson-5-4": { "title": "Strategie Wyjścia" } } }
+        "ta-module-1": {
+          "title": "Podstawy Wykresów i Wzorców",
+          "lesson": {
+            "ta-lesson-1-1": {
+              "title": "Czytanie Wykresów Cenowych"
+            },
+            "ta-lesson-1-2": {
+              "title": "Poziomy Wsparcia i Oporu"
+            },
+            "ta-lesson-1-3": {
+              "title": "Typowe Wzorce Wykresów"
+            },
+            "ta-lesson-1-4": {
+              "title": "Identyfikacja Trendu"
+            }
+          }
+        },
+        "ta-module-2": {
+          "title": "Wskaźniki Techniczne",
+          "lesson": {
+            "ta-lesson-2-1": {
+              "title": "Średnie Kroczące"
+            },
+            "ta-lesson-2-2": {
+              "title": "RSI (Indeks Siły Względnej)"
+            },
+            "ta-lesson-2-3": {
+              "title": "MACD (Zbieżność-Rozbieżność Średnich Kroczących)"
+            },
+            "ta-lesson-2-4": {
+              "title": "Wstęgi Bollingera"
+            }
+          }
+        },
+        "ta-module-3": {
+          "title": "Wsparcie i Opór",
+          "lesson": {
+            "ta-lesson-3-1": {
+              "title": "Identyfikacja Kluczowych Poziomów"
+            },
+            "ta-lesson-3-2": {
+              "title": "Handel Wsparciem i Oporem"
+            },
+            "ta-lesson-3-3": {
+              "title": "Dynamiczne Wsparcie i Opór"
+            }
+          }
+        },
+        "ta-module-4": {
+          "title": "Analiza Trendu",
+          "lesson": {
+            "ta-lesson-4-1": {
+              "title": "Typy i Charakterystyka Trendów"
+            },
+            "ta-lesson-4-2": {
+              "title": "Strategie Podążania za Trendem"
+            },
+            "ta-lesson-4-3": {
+              "title": "Sygnały Odwrócenia Trendu"
+            },
+            "ta-lesson-4-4": {
+              "title": "Analiza Wieloramowa"
+            }
+          }
+        },
+        "ta-module-5": {
+          "title": "Sygnały Handlowe i Punkty Wejścia",
+          "lesson": {
+            "ta-lesson-5-1": {
+              "title": "Zbieżność Sygnałów"
+            },
+            "ta-lesson-5-2": {
+              "title": "Techniki Wejścia"
+            },
+            "ta-lesson-5-3": {
+              "title": "Zarządzanie Ryzykiem w Handlu"
+            },
+            "ta-lesson-5-4": {
+              "title": "Strategie Wyjścia"
+            }
+          }
+        }
       }
     },
     "fundamental-analysis": {
       "title": "Dogłębna Analiza Fundamentalna",
       "description": "Opanuj wycenę firm, analizę sprawozdań finansowych i techniki selekcji akcji",
       "module": {
-        "fa-module-1": { "title": "Podstawy Sprawozdań Finansowych", "lesson": { "fa-lesson-1-1": { "title": "Bilans" }, "fa-lesson-1-2": { "title": "Rachunek Zysków i Strat" }, "fa-lesson-1-3": { "title": "Rachunek Przepływów Pieniężnych" }, "fa-lesson-1-4": { "title": "Analiza Sprawozdań Finansowych" } } },
-        "fa-module-2": { "title": "Analiza Wskaźników Finansowych", "lesson": { "fa-lesson-2-1": { "title": "Wskaźniki Rentowności" }, "fa-lesson-2-2": { "title": "Wskaźniki Płynności" }, "fa-lesson-2-3": { "title": "Wskaźniki Dźwigni" }, "fa-lesson-2-4": { "title": "Wskaźniki Efektywności" } } },
-        "fa-module-3": { "title": "Wycenianie Firmy", "lesson": { "fa-lesson-3-1": { "title": "Przegląd Metod Wyceny" }, "fa-lesson-3-2": { "title": "Analiza Wskaźnika P/E" }, "fa-lesson-3-3": { "title": "Analiza Wskaźnika P/B" }, "fa-lesson-3-4": { "title": "Zdyskontowany Przepływ Pieniężny (DCF)" } } },
-        "fa-module-4": { "title": "Analiza Branżowa", "lesson": { "fa-lesson-4-1": { "title": "Cykl Życia Branży" }, "fa-lesson-4-2": { "title": "Analiza Konkurencyjna" }, "fa-lesson-4-3": { "title": "Porównanie Branż" } } },
-        "fa-module-5": { "title": "Selekcja Akcji", "lesson": { "fa-lesson-5-1": { "title": "Podejście Inwestowania Wartościowego" }, "fa-lesson-5-2": { "title": "Podejście Inwestowania Wzrostowego" }, "fa-lesson-5-3": { "title": "Filtrowanie Jakościowe" } } },
-        "fa-module-6": { "title": "Analiza Zaawansowana", "lesson": { "fa-lesson-6-1": { "title": "Jakość Zysków" }, "fa-lesson-6-2": { "title": "Analiza Zarządzania" }, "fa-lesson-6-3": { "title": "Kompleksowa Wycena" } } }
+        "fa-module-1": {
+          "title": "Podstawy Sprawozdań Finansowych",
+          "lesson": {
+            "fa-lesson-1-1": {
+              "title": "Bilans"
+            },
+            "fa-lesson-1-2": {
+              "title": "Rachunek Zysków i Strat"
+            },
+            "fa-lesson-1-3": {
+              "title": "Rachunek Przepływów Pieniężnych"
+            },
+            "fa-lesson-1-4": {
+              "title": "Analiza Sprawozdań Finansowych"
+            }
+          }
+        },
+        "fa-module-2": {
+          "title": "Analiza Wskaźników Finansowych",
+          "lesson": {
+            "fa-lesson-2-1": {
+              "title": "Wskaźniki Rentowności"
+            },
+            "fa-lesson-2-2": {
+              "title": "Wskaźniki Płynności"
+            },
+            "fa-lesson-2-3": {
+              "title": "Wskaźniki Dźwigni"
+            },
+            "fa-lesson-2-4": {
+              "title": "Wskaźniki Efektywności"
+            }
+          }
+        },
+        "fa-module-3": {
+          "title": "Wycenianie Firmy",
+          "lesson": {
+            "fa-lesson-3-1": {
+              "title": "Przegląd Metod Wyceny"
+            },
+            "fa-lesson-3-2": {
+              "title": "Analiza Wskaźnika P/E"
+            },
+            "fa-lesson-3-3": {
+              "title": "Analiza Wskaźnika P/B"
+            },
+            "fa-lesson-3-4": {
+              "title": "Zdyskontowany Przepływ Pieniężny (DCF)"
+            }
+          }
+        },
+        "fa-module-4": {
+          "title": "Analiza Branżowa",
+          "lesson": {
+            "fa-lesson-4-1": {
+              "title": "Cykl Życia Branży"
+            },
+            "fa-lesson-4-2": {
+              "title": "Analiza Konkurencyjna"
+            },
+            "fa-lesson-4-3": {
+              "title": "Porównanie Branż"
+            }
+          }
+        },
+        "fa-module-5": {
+          "title": "Selekcja Akcji",
+          "lesson": {
+            "fa-lesson-5-1": {
+              "title": "Podejście Inwestowania Wartościowego"
+            },
+            "fa-lesson-5-2": {
+              "title": "Podejście Inwestowania Wzrostowego"
+            },
+            "fa-lesson-5-3": {
+              "title": "Filtrowanie Jakościowe"
+            }
+          }
+        },
+        "fa-module-6": {
+          "title": "Analiza Zaawansowana",
+          "lesson": {
+            "fa-lesson-6-1": {
+              "title": "Jakość Zysków"
+            },
+            "fa-lesson-6-2": {
+              "title": "Analiza Zarządzania"
+            },
+            "fa-lesson-6-3": {
+              "title": "Kompleksowa Wycena"
+            }
+          }
+        }
       }
     },
     "risk-management": {
       "title": "Zarządzanie Ryzykiem i Psychologia",
       "description": "Opanuj ocenę ryzyka, określanie rozmiaru pozycji i przezwyciężaj psychologiczne uprzedzenia w inwestowaniu",
       "module": {
-        "rm-module-1": { "title": "Rozumienie Ryzyka Inwestycyjnego", "lesson": { "rm-lesson-1-1": { "title": "Typy Ryzyka Inwestycyjnego" }, "rm-lesson-1-2": { "title": "Pomiar Ryzyka" }, "rm-lesson-1-3": { "title": "Kompromis Ryzyko-Zwrot" }, "rm-lesson-1-4": { "title": "Tolerancja Ryzyka" } } },
-        "rm-module-2": { "title": "Określanie Rozmiaru Pozycji", "lesson": { "rm-lesson-2-1": { "title": "Zasady Określania Rozmiaru Pozycji" }, "rm-lesson-2-2": { "title": "Kryterium Kelly'ego" }, "rm-lesson-2-3": { "title": "Metoda Stałego Ryzyka" }, "rm-lesson-2-4": { "title": "Korekta Zmienności" } } },
-        "rm-module-3": { "title": "Strategie Stop Loss", "lesson": { "rm-lesson-3-1": { "title": "Znaczenie Stop Loss" }, "rm-lesson-3-2": { "title": "Typy Stop Loss" }, "rm-lesson-3-3": { "title": "Umieszczanie Stop Loss" }, "rm-lesson-3-4": { "title": "Trailing Stop" } } },
-        "rm-module-4": { "title": "Psychologia Inwestowania", "lesson": { "rm-lesson-4-1": { "title": "Typowe Uprzedzenia Psychologiczne" }, "rm-lesson-4-2": { "title": "Pokonywanie Strachu i Chciwości" }, "rm-lesson-4-3": { "title": "Emocjonalny Handel" }, "rm-lesson-4-4": { "title": "Budowanie Dyscypliny" } } },
-        "rm-module-5": { "title": "Praktyka Zarządzania Ryzykiem", "lesson": { "rm-lesson-5-1": { "title": "Ryzyko Portfela" }, "rm-lesson-5-2": { "title": "Zarządzanie Korelacją" }, "rm-lesson-5-3": { "title": "Testy Stresowe" } } }
+        "rm-module-1": {
+          "title": "Rozumienie Ryzyka Inwestycyjnego",
+          "lesson": {
+            "rm-lesson-1-1": {
+              "title": "Typy Ryzyka Inwestycyjnego"
+            },
+            "rm-lesson-1-2": {
+              "title": "Pomiar Ryzyka"
+            },
+            "rm-lesson-1-3": {
+              "title": "Kompromis Ryzyko-Zwrot"
+            },
+            "rm-lesson-1-4": {
+              "title": "Tolerancja Ryzyka"
+            }
+          }
+        },
+        "rm-module-2": {
+          "title": "Określanie Rozmiaru Pozycji",
+          "lesson": {
+            "rm-lesson-2-1": {
+              "title": "Zasady Określania Rozmiaru Pozycji"
+            },
+            "rm-lesson-2-2": {
+              "title": "Kryterium Kelly'ego"
+            },
+            "rm-lesson-2-3": {
+              "title": "Metoda Stałego Ryzyka"
+            },
+            "rm-lesson-2-4": {
+              "title": "Korekta Zmienności"
+            }
+          }
+        },
+        "rm-module-3": {
+          "title": "Strategie Stop Loss",
+          "lesson": {
+            "rm-lesson-3-1": {
+              "title": "Znaczenie Stop Loss"
+            },
+            "rm-lesson-3-2": {
+              "title": "Typy Stop Loss"
+            },
+            "rm-lesson-3-3": {
+              "title": "Umieszczanie Stop Loss"
+            },
+            "rm-lesson-3-4": {
+              "title": "Trailing Stop"
+            }
+          }
+        },
+        "rm-module-4": {
+          "title": "Psychologia Inwestowania",
+          "lesson": {
+            "rm-lesson-4-1": {
+              "title": "Typowe Uprzedzenia Psychologiczne"
+            },
+            "rm-lesson-4-2": {
+              "title": "Pokonywanie Strachu i Chciwości"
+            },
+            "rm-lesson-4-3": {
+              "title": "Emocjonalny Handel"
+            },
+            "rm-lesson-4-4": {
+              "title": "Budowanie Dyscypliny"
+            }
+          }
+        },
+        "rm-module-5": {
+          "title": "Praktyka Zarządzania Ryzykiem",
+          "lesson": {
+            "rm-lesson-5-1": {
+              "title": "Ryzyko Portfela"
+            },
+            "rm-lesson-5-2": {
+              "title": "Zarządzanie Korelacją"
+            },
+            "rm-lesson-5-3": {
+              "title": "Testy Stresowe"
+            }
+          }
+        }
+      }
+    },
+    "advanced-trading": {
+      "title": "Zaawansowane Strategie Handlowe",
+      "description": "Opanuj opcje, instrumenty pochodne, podejścia ilościowe i koncepcje handlu algorytmicznego",
+      "module": {
+        "at-module-1": {
+          "title": "Podstawy Opcji",
+          "lesson": {
+            "at-lesson-1-1": {
+              "title": "Wprowadzenie do Opcji"
+            },
+            "at-lesson-1-2": {
+              "title": "Wycenianie Opcji"
+            },
+            "at-lesson-1-3": {
+              "title": "Podstawowe Strategie Opcyjne"
+            },
+            "at-lesson-1-4": {
+              "title": "Zaawansowane Strategie Opcyjne"
+            }
+          }
+        },
+        "at-module-2": {
+          "title": "Instrumenty Pochodne",
+          "lesson": {
+            "at-lesson-2-1": {
+              "title": "Kontrakty Terminowe"
+            },
+            "at-lesson-2-2": {
+              "title": "Swapy"
+            },
+            "at-lesson-2-3": {
+              "title": "Produkty Strukturyzowane"
+            },
+            "at-lesson-2-4": {
+              "title": "Zarządzanie Ryzykiem Instrumentów Pochodnych"
+            }
+          }
+        },
+        "at-module-3": {
+          "title": "Metody Ilościowe",
+          "lesson": {
+            "at-lesson-3-1": {
+              "title": "Podstawy Analizy Ilościowej"
+            },
+            "at-lesson-3-2": {
+              "title": "Modele Czynnikowe"
+            },
+            "at-lesson-3-3": {
+              "title": "Backtesting Strategii"
+            }
+          }
+        },
+        "at-module-4": {
+          "title": "Handel Algorytmiczny",
+          "lesson": {
+            "at-lesson-4-1": {
+              "title": "Wprowadzenie do Handlu Algorytmicznego"
+            },
+            "at-lesson-4-2": {
+              "title": "Algorytmy Wykonawcze"
+            },
+            "at-lesson-4-3": {
+              "title": "Handel Wysokiej Częstotliwości"
+            },
+            "at-lesson-4-4": {
+              "title": "Strategie Systematyczne"
+            }
+          }
+        },
+        "at-module-5": {
+          "title": "Zaawansowane Strategie",
+          "lesson": {
+            "at-lesson-5-1": {
+              "title": "Handel Parami"
+            },
+            "at-lesson-5-2": {
+              "title": "Arbitraż Statystyczny"
+            },
+            "at-lesson-5-3": {
+              "title": "Strategie Neutralne Rynkowo"
+            }
+          }
+        },
+        "at-module-6": {
+          "title": "Optymalizacja Portfela",
+          "lesson": {
+            "at-lesson-6-1": {
+              "title": "Współczesna Teoria Portfela"
+            },
+            "at-lesson-6-2": {
+              "title": "Parytet Ryzyka"
+            },
+            "at-lesson-6-3": {
+              "title": "Portfele Czynnikowe"
+            }
+          }
+        }
+      }
+    },
+    "macroeconomics": {
+      "title": "Makroekonomia",
+      "description": "Kompleksowe badanie zasad makroekonomicznych, polityk i ich wpływu na globalne gospodarki",
+      "unit": {
+        "unit-1": {
+          "title": "Jednostka 1: Podstawowe koncepcje ekonomiczne",
+          "description": "Wprowadzenie do fundamentalnych koncepcji i zasad ekonomicznych",
+          "lesson": {
+            "lesson-1-1": {
+              "title": "Wprowadzenie do makroekonomii",
+              "contentItem": {
+                "macroecon-u1-l1-video-1": {
+                  "title": "Wprowadzenie do makroekonomii"
+                },
+                "macroecon-u1-l1-article": {
+                  "title": "Poznaj: Wprowadzenie do makroekonomii"
+                },
+                "macroecon-u1-l1-practice": {
+                  "title": "Praktyka: Wprowadzenie do niedoboru i ekonomicznego sposobu myślenia"
+                },
+                "macroecon-u1-l1-quiz": {
+                  "title": "Quiz: Wprowadzenie do makroekonomii"
+                }
+              }
+            },
+            "lesson-1-2": {
+              "title": "Koszt alternatywny i krzywa możliwości produkcyjnych",
+              "contentItem": {
+                "macroecon-u1-l2-video-1": {
+                  "title": "Koszt alternatywny i krzywa możliwości produkcyjnych"
+                },
+                "macroecon-u1-l2-article": {
+                  "title": "Poznaj: Koszt alternatywny i krzywa możliwości produkcyjnych"
+                },
+                "macroecon-u1-l2-practice": {
+                  "title": "Praktyka: Koszt alternatywny i KMP"
+                },
+                "macroecon-u1-l2-quiz": {
+                  "title": "Quiz: Koszt alternatywny i KMP"
+                }
+              }
+            },
+            "lesson-1-3": {
+              "title": "Przewaga komparatywna i korzyści z handlu",
+              "contentItem": {
+                "macroecon-u1-l3-video-1": {
+                  "title": "Przewaga komparatywna i korzyści z handlu"
+                },
+                "macroecon-u1-l3-article": {
+                  "title": "Poznaj: Przewaga komparatywna i korzyści z handlu"
+                },
+                "macroecon-u1-l3-practice": {
+                  "title": "Praktyka: Przewaga komparatywna i korzyści z handlu"
+                },
+                "macroecon-u1-l3-quiz": {
+                  "title": "Quiz: Przewaga komparatywna i korzyści z handlu"
+                }
+              }
+            },
+            "lesson-1-4": {
+              "title": "Popyt",
+              "contentItem": {
+                "macroecon-u1-l4-video-1": {
+                  "title": "Popyt"
+                },
+                "macroecon-u1-l4-article": {
+                  "title": "Poznaj: Popyt"
+                },
+                "macroecon-u1-l4-practice": {
+                  "title": "Praktyka: Popyt"
+                },
+                "macroecon-u1-l4-quiz": {
+                  "title": "Quiz: Popyt"
+                }
+              }
+            },
+            "lesson-1-5": {
+              "title": "Podaż",
+              "contentItem": {
+                "macroecon-u1-l5-video-1": {
+                  "title": "Podaż"
+                },
+                "macroecon-u1-l5-article": {
+                  "title": "Poznaj: Podaż"
+                },
+                "macroecon-u1-l5-practice": {
+                  "title": "Praktyka: Podaż"
+                },
+                "macroecon-u1-l5-quiz": {
+                  "title": "Quiz: Podaż"
+                }
+              }
+            },
+            "lesson-1-6": {
+              "title": "Rynki",
+              "contentItem": {
+                "macroecon-u1-l6-video-1": {
+                  "title": "Rynki"
+                },
+                "macroecon-u1-l6-article": {
+                  "title": "Poznaj: Rynki"
+                },
+                "macroecon-u1-l6-practice": {
+                  "title": "Praktyka: Równowaga i nierównowaga rynkowa, Zmiany równowagi"
+                },
+                "macroecon-u1-l6-quiz": {
+                  "title": "Quiz: Rynki"
+                }
+              }
+            }
+          }
+        },
+        "unit-2": {
+          "title": "Jednostka 2: Wskaźniki ekonomiczne i cykl koniunkturalny",
+          "description": "Zrozumienie PKB, bezrobocia, inflacji i cykli koniunkturalnych",
+          "lesson": {
+            "lesson-2-1": {
+              "title": "Produkt Krajowy Brutto (Obieg okrężny i PKB)",
+              "contentItem": {
+                "macroecon-u2-l1-video-1": {
+                  "title": "Produkt Krajowy Brutto (Obieg okrężny i PKB)"
+                },
+                "macroecon-u2-l1-article": {
+                  "title": "Poznaj: Produkt Krajowy Brutto (Obieg okrężny i PKB)"
+                },
+                "macroecon-u2-l1-practice": {
+                  "title": "Praktyka: Model obiegu okrężnego i PKB"
+                },
+                "macroecon-u2-l1-quiz": {
+                  "title": "Quiz: Gross Domestic Product"
+                }
+              }
+            },
+            "lesson-2-2": {
+              "title": "Ograniczenia PKB",
+              "contentItem": {
+                "macroecon-u2-l2-video-1": {
+                  "title": "Ograniczenia PKB"
+                },
+                "macroecon-u2-l2-article": {
+                  "title": "Poznaj: Ograniczenia PKB"
+                },
+                "macroecon-u2-l2-practice": {
+                  "title": "Praktyka: Ograniczenia PKB"
+                },
+                "macroecon-u2-l2-quiz": {
+                  "title": "Quiz: Ograniczenia PKB"
+                }
+              }
+            },
+            "lesson-2-3": {
+              "title": "Bezrobocie",
+              "contentItem": {
+                "macroecon-u2-l3-video-1": {
+                  "title": "Bezrobocie"
+                },
+                "macroecon-u2-l3-article": {
+                  "title": "Poznaj: Bezrobocie"
+                },
+                "macroecon-u2-l3-practice": {
+                  "title": "Praktyka: Typy bezrobocia i naturalna stopa bezrobocia, Bezrobocie"
+                },
+                "macroecon-u2-l3-quiz": {
+                  "title": "Quiz: Bezrobocie"
+                }
+              }
+            },
+            "lesson-2-4": {
+              "title": "Inflacja (Indeksy cen i inflacja)",
+              "contentItem": {
+                "macroecon-u2-l4-video-1": {
+                  "title": "Inflacja (Indeksy cen i inflacja)"
+                },
+                "macroecon-u2-l4-article": {
+                  "title": "Poznaj: Inflacja (Indeksy cen i inflacja)"
+                },
+                "macroecon-u2-l4-practice": {
+                  "title": "Praktyka: Indeks cen konsumpcyjnych (CPI)"
+                },
+                "macroecon-u2-l4-quiz": {
+                  "title": "Quiz: Inflation"
+                }
+              }
+            },
+            "lesson-2-5": {
+              "title": "Koszty inflacji",
+              "contentItem": {
+                "macroecon-u2-l5-video-1": {
+                  "title": "Koszty inflacji"
+                },
+                "macroecon-u2-l5-article": {
+                  "title": "Poznaj: Koszty inflacji"
+                },
+                "macroecon-u2-l5-practice": {
+                  "title": "Praktyka: The costs of inflation"
+                },
+                "macroecon-u2-l5-quiz": {
+                  "title": "Quiz: Koszty inflacji"
+                }
+              }
+            },
+            "lesson-2-6": {
+              "title": "Realny a nominalny PKB",
+              "contentItem": {
+                "macroecon-u2-l6-video-1": {
+                  "title": "Realny a nominalny PKB"
+                },
+                "macroecon-u2-l6-article": {
+                  "title": "Poznaj: Realny a nominalny PKB"
+                },
+                "macroecon-u2-l6-practice": {
+                  "title": "Praktyka: Realny a nominalny PKB"
+                },
+                "macroecon-u2-l6-quiz": {
+                  "title": "Quiz: Realny a nominalny PKB"
+                }
+              }
+            },
+            "lesson-2-7": {
+              "title": "Cykle koniunkturalne",
+              "contentItem": {
+                "macroecon-u2-l7-video-1": {
+                  "title": "Cykle koniunkturalne"
+                },
+                "macroecon-u2-l7-article": {
+                  "title": "Poznaj: Cykle koniunkturalne"
+                },
+                "macroecon-u2-l7-practice": {
+                  "title": "Praktyka: Cykle koniunkturalne"
+                },
+                "macroecon-u2-l7-quiz": {
+                  "title": "Quiz: Cykle koniunkturalne"
+                }
+              }
+            }
+          }
+        },
+        "unit-3": {
+          "title": "Jednostka 3: Dochód narodowy i określanie cen",
+          "description": "Zrozumienie zagregowanego popytu, zagregowanej podaży i polityki fiskalnej",
+          "lesson": {
+            "lesson-3-1": {
+              "title": "Popyt zagregowany",
+              "contentItem": {
+                "macroecon-u3-l1-video-1": {
+                  "title": "Popyt zagregowany"
+                },
+                "macroecon-u3-l1-article": {
+                  "title": "Poznaj: Popyt zagregowany"
+                },
+                "macroecon-u3-l1-practice": {
+                  "title": "Praktyka: Popyt zagregowany"
+                },
+                "macroecon-u3-l1-quiz": {
+                  "title": "Quiz: Popyt zagregowany"
+                }
+              }
+            },
+            "lesson-3-2": {
+              "title": "Mnożniki",
+              "contentItem": {
+                "macroecon-u3-l2-video-1": {
+                  "title": "Mnożniki"
+                },
+                "macroecon-u3-l2-article": {
+                  "title": "Poznaj: Mnożniki"
+                },
+                "macroecon-u3-l2-practice": {
+                  "title": "Praktyka: Mnożniki wydatków i podatków"
+                },
+                "macroecon-u3-l2-quiz": {
+                  "title": "Quiz: Mnożniki"
+                }
+              }
+            },
+            "lesson-3-3": {
+              "title": "Krótkoterminowa podaż zagregowana",
+              "contentItem": {
+                "macroecon-u3-l3-video-1": {
+                  "title": "Krótkoterminowa podaż zagregowana"
+                },
+                "macroecon-u3-l3-article": {
+                  "title": "Poznaj: Krótkoterminowa podaż zagregowana"
+                },
+                "macroecon-u3-l3-practice": {
+                  "title": "Praktyka: Krótkoterminowa podaż zagregowana"
+                },
+                "macroecon-u3-l3-quiz": {
+                  "title": "Quiz: Krótkoterminowa podaż zagregowana"
+                }
+              }
+            },
+            "lesson-3-4": {
+              "title": "Długoterminowa podaż zagregowana",
+              "contentItem": {
+                "macroecon-u3-l4-video-1": {
+                  "title": "Długoterminowa podaż zagregowana"
+                },
+                "macroecon-u3-l4-article": {
+                  "title": "Poznaj: Długoterminowa podaż zagregowana"
+                },
+                "macroecon-u3-l4-practice": {
+                  "title": "Praktyka: Długoterminowa podaż zagregowana"
+                },
+                "macroecon-u3-l4-quiz": {
+                  "title": "Quiz: Długoterminowa podaż zagregowana"
+                }
+              }
+            },
+            "lesson-3-5": {
+              "title": "Równowaga w modelu AD-AS",
+              "contentItem": {
+                "macroecon-u3-l5-video-1": {
+                  "title": "Równowaga w modelu AD-AS"
+                },
+                "macroecon-u3-l5-article": {
+                  "title": "Poznaj: Równowaga w modelu AD-AS"
+                },
+                "macroecon-u3-l5-practice": {
+                  "title": "Praktyka: Równowaga w modelu AD-AS"
+                },
+                "macroecon-u3-l5-quiz": {
+                  "title": "Quiz: Równowaga w modelu AD-AS"
+                }
+              }
+            },
+            "lesson-3-6": {
+              "title": "Zmiany w modelu AD-AS w krótkim okresie",
+              "contentItem": {
+                "macroecon-u3-l6-video-1": {
+                  "title": "Zmiany w modelu AD-AS w krótkim okresie"
+                },
+                "macroecon-u3-l6-article": {
+                  "title": "Poznaj: Zmiany w modelu AD-AS w krótkim okresie"
+                },
+                "macroecon-u3-l6-practice": {
+                  "title": "Praktyka: Zmiany w modelu AD-AS w krótkim okresie"
+                },
+                "macroecon-u3-l6-quiz": {
+                  "title": "Quiz: Changes in the AD-AS model"
+                }
+              }
+            },
+            "lesson-3-7": {
+              "title": "Długoterminowa samoregulacja",
+              "contentItem": {
+                "macroecon-u3-l7-video-1": {
+                  "title": "Długoterminowa samoregulacja"
+                },
+                "macroecon-u3-l7-article": {
+                  "title": "Poznaj: Długoterminowa samoregulacja"
+                },
+                "macroecon-u3-l7-practice": {
+                  "title": "Praktyka: Długoterminowa samoregulacja w modelu AD-AS"
+                },
+                "macroecon-u3-l7-quiz": {
+                  "title": "Quiz: Długoterminowa samoregulacja"
+                }
+              }
+            },
+            "lesson-3-8": {
+              "title": "Polityka fiskalna",
+              "contentItem": {
+                "macroecon-u3-l8-video-1": {
+                  "title": "Polityka fiskalna"
+                },
+                "macroecon-u3-l8-article": {
+                  "title": "Poznaj: Polityka fiskalna"
+                },
+                "macroecon-u3-l8-practice": {
+                  "title": "Praktyka: Polityka fiskalna"
+                },
+                "macroecon-u3-l8-quiz": {
+                  "title": "Quiz: Polityka fiskalna"
+                }
+              }
+            },
+            "lesson-3-9": {
+              "title": "Automatyczne stabilizatory",
+              "contentItem": {
+                "macroecon-u3-l9-video-1": {
+                  "title": "Automatyczne stabilizatory"
+                },
+                "macroecon-u3-l9-article": {
+                  "title": "Poznaj: Automatyczne stabilizatory"
+                },
+                "macroecon-u3-l9-practice": {
+                  "title": "Praktyka: Automatyczne stabilizatory"
+                },
+                "macroecon-u3-l9-quiz": {
+                  "title": "Quiz: Automatyczne stabilizatory"
+                }
+              }
+            }
+          }
+        },
+        "unit-4": {
+          "title": "Jednostka 4: Sektor finansowy",
+          "description": "Zrozumienie pieniądza, bankowości, rynków finansowych i polityki monetarnej",
+          "lesson": {
+            "lesson-4-1": {
+              "title": "Aktywa finansowe",
+              "contentItem": {
+                "macroecon-u4-l1-video-1": {
+                  "title": "Aktywa finansowe"
+                },
+                "macroecon-u4-l1-article": {
+                  "title": "Poznaj: Aktywa finansowe"
+                },
+                "macroecon-u4-l1-practice": {
+                  "title": "Praktyka: Aktywa finansowe"
+                },
+                "macroecon-u4-l1-quiz": {
+                  "title": "Quiz: Aktywa finansowe"
+                }
+              }
+            },
+            "lesson-4-2": {
+              "title": "Nominalne a realne stopy procentowe",
+              "contentItem": {
+                "macroecon-u4-l2-video-1": {
+                  "title": "Nominalne a realne stopy procentowe"
+                },
+                "macroecon-u4-l2-article": {
+                  "title": "Poznaj: Nominalne a realne stopy procentowe"
+                },
+                "macroecon-u4-l2-practice": {
+                  "title": "Praktyka: Nominalne a realne stopy procentowe"
+                },
+                "macroecon-u4-l2-quiz": {
+                  "title": "Quiz: Nominalne a realne stopy procentowe"
+                }
+              }
+            },
+            "lesson-4-3": {
+              "title": "Definicja, pomiar i funkcje pieniądza",
+              "contentItem": {
+                "macroecon-u4-l3-video-1": {
+                  "title": "Definicja, pomiar i funkcje pieniądza"
+                },
+                "macroecon-u4-l3-article": {
+                  "title": "Poznaj: Definicja, pomiar i funkcje pieniądza"
+                },
+                "macroecon-u4-l3-practice": {
+                  "title": "Praktyka: Definicja, pomiar i funkcje pieniądza"
+                },
+                "macroecon-u4-l3-quiz": {
+                  "title": "Quiz: Definicja, pomiar i funkcje pieniądza"
+                }
+              }
+            },
+            "lesson-4-4": {
+              "title": "Bankowość i ekspansja podaży pieniądza",
+              "contentItem": {
+                "macroecon-u4-l4-video-1": {
+                  "title": "Bankowość i ekspansja podaży pieniądza"
+                },
+                "macroecon-u4-l4-article": {
+                  "title": "Poznaj: Bankowość i ekspansja podaży pieniądza"
+                },
+                "macroecon-u4-l4-practice": {
+                  "title": "Praktyka: Wprowadzenie do bankowości z rezerwą cząstkową, Mnożnik pieniężny i ekspansja podaży pieniądza"
+                },
+                "macroecon-u4-l4-quiz": {
+                  "title": "Quiz: Bankowość i ekspansja podaży pieniądza"
+                }
+              }
+            },
+            "lesson-4-5": {
+              "title": "Rynek pieniężny",
+              "contentItem": {
+                "macroecon-u4-l5-video-1": {
+                  "title": "Rynek pieniężny"
+                },
+                "macroecon-u4-l5-article": {
+                  "title": "Poznaj: Rynek pieniężny"
+                },
+                "macroecon-u4-l5-practice": {
+                  "title": "Praktyka: Rynek pieniężny: podstawowe koncepcje"
+                },
+                "macroecon-u4-l5-quiz": {
+                  "title": "Quiz: Rynek pieniężny"
+                }
+              }
+            },
+            "lesson-4-6": {
+              "title": "Polityka monetarna",
+              "contentItem": {
+                "macroecon-u4-l6-video-1": {
+                  "title": "Polityka monetarna"
+                },
+                "macroecon-u4-l6-article": {
+                  "title": "Poznaj: Polityka monetarna"
+                },
+                "macroecon-u4-l6-practice": {
+                  "title": "Praktyka: Polityka monetarna: podstawowe koncepcje, Zmiany na rynku pieniężnym"
+                },
+                "macroecon-u4-l6-quiz": {
+                  "title": "Quiz: Polityka monetarna"
+                }
+              }
+            },
+            "lesson-4-7": {
+              "title": "Rynek funduszy pożyczkowych",
+              "contentItem": {
+                "macroecon-u4-l7-video-1": {
+                  "title": "Rynek funduszy pożyczkowych"
+                },
+                "macroecon-u4-l7-article": {
+                  "title": "Poznaj: Rynek funduszy pożyczkowych"
+                },
+                "macroecon-u4-l7-practice": {
+                  "title": "Praktyka: Rynek funduszy pożyczkowych, Zmiany na rynku funduszy pożyczkowych"
+                },
+                "macroecon-u4-l7-quiz": {
+                  "title": "Quiz: Rynek funduszy pożyczkowych"
+                }
+              }
+            },
+            "lesson-4-8": {
+              "title": "Stopy procentowe i wartość czasowa pieniądza",
+              "contentItem": {
+                "macroecon-u4-l8-video-1": {
+                  "title": "Stopy procentowe i wartość czasowa pieniądza"
+                },
+                "macroecon-u4-l8-article": {
+                  "title": "Poznaj: Stopy procentowe i wartość czasowa pieniądza"
+                },
+                "macroecon-u4-l8-practice": {
+                  "title": "Praktyka: Stopy procentowe i wartość czasowa pieniądza"
+                },
+                "macroecon-u4-l8-quiz": {
+                  "title": "Quiz: Stopy procentowe i wartość czasowa pieniądza"
+                }
+              }
+            }
+          }
+        },
+        "unit-5": {
+          "title": "Jednostka 5: Długoterminowe konsekwencje polityki stabilizacyjnej",
+          "description": "Zrozumienie długoterminowych efektów polityki fiskalnej i monetarnej, wzrostu i zadłużenia",
+          "lesson": {
+            "lesson-5-1": {
+              "title": "Działania polityki fiskalnej i monetarnej w krótkim okresie",
+              "contentItem": {
+                "macroecon-u5-l1-video-1": {
+                  "title": "Działania polityki fiskalnej i monetarnej w krótkim okresie"
+                },
+                "macroecon-u5-l1-article": {
+                  "title": "Poznaj: Działania polityki fiskalnej i monetarnej w krótkim okresie"
+                },
+                "macroecon-u5-l1-practice": {
+                  "title": "Praktyka: Działania polityki fiskalnej i monetarnej w krótkim okresie"
+                },
+                "macroecon-u5-l1-quiz": {
+                  "title": "Quiz: Fiscal and Monetary Policy Actions"
+                }
+              }
+            },
+            "lesson-5-2": {
+              "title": "Krzywa Phillipsa",
+              "contentItem": {
+                "macroecon-u5-l2-video-1": {
+                  "title": "Krzywa Phillipsa"
+                },
+                "macroecon-u5-l2-article": {
+                  "title": "Poznaj: Krzywa Phillipsa"
+                },
+                "macroecon-u5-l2-practice": {
+                  "title": "Praktyka: Krzywa Phillipsa: podstawowe koncepcje, Krzywa Phillipsa: powiązanie zmian w modelu AD-AS z krzywą Phillipsa"
+                },
+                "macroecon-u5-l2-quiz": {
+                  "title": "Quiz: Krzywa Phillipsa"
+                }
+              }
+            },
+            "lesson-5-3": {
+              "title": "Wzrost podaży pieniądza i inflacja",
+              "contentItem": {
+                "macroecon-u5-l3-video-1": {
+                  "title": "Wzrost podaży pieniądza i inflacja"
+                },
+                "macroecon-u5-l3-article": {
+                  "title": "Poznaj: Wzrost podaży pieniądza i inflacja"
+                },
+                "macroecon-u5-l3-practice": {
+                  "title": "Praktyka: Wzrost podaży pieniądza i inflacja"
+                },
+                "macroecon-u5-l3-quiz": {
+                  "title": "Quiz: Wzrost podaży pieniądza i inflacja"
+                }
+              }
+            },
+            "lesson-5-4": {
+              "title": "Efekt wypierania",
+              "contentItem": {
+                "macroecon-u5-l4-video-1": {
+                  "title": "Efekt wypierania"
+                },
+                "macroecon-u5-l4-article": {
+                  "title": "Poznaj: Efekt wypierania"
+                },
+                "macroecon-u5-l4-practice": {
+                  "title": "Praktyka: Efekt wypierania"
+                },
+                "macroecon-u5-l4-quiz": {
+                  "title": "Quiz: Efekt wypierania"
+                }
+              }
+            },
+            "lesson-5-5": {
+              "title": "Deficyty i długi",
+              "contentItem": {
+                "macroecon-u5-l5-video-1": {
+                  "title": "Deficyty i długi"
+                },
+                "macroecon-u5-l5-article": {
+                  "title": "Poznaj: Deficyty i długi"
+                },
+                "macroecon-u5-l5-practice": {
+                  "title": "Praktyka: Deficyty i długi"
+                },
+                "macroecon-u5-l5-quiz": {
+                  "title": "Quiz: Deficyty i długi"
+                }
+              }
+            },
+            "lesson-5-6": {
+              "title": "Wzrost gospodarczy",
+              "contentItem": {
+                "macroecon-u5-l6-video-1": {
+                  "title": "Wzrost gospodarczy"
+                },
+                "macroecon-u5-l6-article": {
+                  "title": "Poznaj: Wzrost gospodarczy"
+                },
+                "macroecon-u5-l6-practice": {
+                  "title": "Praktyka: Wzrost gospodarczy"
+                },
+                "macroecon-u5-l6-quiz": {
+                  "title": "Quiz: Wzrost gospodarczy"
+                }
+              }
+            }
+          }
+        },
+        "unit-6": {
+          "title": "Jednostka 6: Gospodarka otwarta: handel międzynarodowy i finanse",
+          "description": "Zrozumienie bilansu płatniczego, kursów walutowych i międzynarodowych przepływów kapitału",
+          "lesson": {
+            "lesson-6-1": {
+              "title": "Bilans płatniczy",
+              "contentItem": {
+                "macroecon-u6-l1-video-1": {
+                  "title": "Bilans płatniczy"
+                },
+                "macroecon-u6-l1-article": {
+                  "title": "Poznaj: Bilans płatniczy"
+                },
+                "macroecon-u6-l1-practice": {
+                  "title": "Praktyka: Bilans płatniczy"
+                },
+                "macroecon-u6-l1-quiz": {
+                  "title": "Quiz: Bilans płatniczy"
+                }
+              }
+            },
+            "lesson-6-2": {
+              "title": "Kursy walutowe",
+              "contentItem": {
+                "macroecon-u6-l2-video-1": {
+                  "title": "Kursy walutowe"
+                },
+                "macroecon-u6-l2-article": {
+                  "title": "Poznaj: Kursy walutowe"
+                },
+                "macroecon-u6-l2-practice": {
+                  "title": "Praktyka: Kursy walutowe"
+                },
+                "macroecon-u6-l2-quiz": {
+                  "title": "Quiz: Kursy walutowe"
+                }
+              }
+            },
+            "lesson-6-3": {
+              "title": "Rynek walutowy",
+              "contentItem": {
+                "macroecon-u6-l3-video-1": {
+                  "title": "Rynek walutowy"
+                },
+                "macroecon-u6-l3-article": {
+                  "title": "Poznaj: Rynek walutowy"
+                },
+                "macroecon-u6-l3-practice": {
+                  "title": "Praktyka: Rynek walutowy"
+                },
+                "macroecon-u6-l3-quiz": {
+                  "title": "Quiz: Rynek walutowy"
+                }
+              }
+            },
+            "lesson-6-4": {
+              "title": "Wpływ zmian w polityce i warunkach ekonomicznych na rynek walutowy",
+              "contentItem": {
+                "macroecon-u6-l4-video-1": {
+                  "title": "Wpływ zmian w polityce i warunkach ekonomicznych na rynek walutowy"
+                },
+                "macroecon-u6-l4-article": {
+                  "title": "Poznaj: Wpływ zmian w polityce i warunkach ekonomicznych na rynek walutowy"
+                },
+                "macroecon-u6-l4-practice": {
+                  "title": "Praktyka: Wpływ zmian w polityce i warunkach ekonomicznych na rynek walutowy"
+                },
+                "macroecon-u6-l4-quiz": {
+                  "title": "Quiz: Wpływ zmian w polityce i warunkach ekonomicznych na rynek walutowy"
+                }
+              }
+            },
+            "lesson-6-5": {
+              "title": "Realne stopy procentowe i międzynarodowe przepływy kapitału",
+              "contentItem": {
+                "macroecon-u6-l5-video-1": {
+                  "title": "Realne stopy procentowe i międzynarodowe przepływy kapitału"
+                },
+                "macroecon-u6-l5-article": {
+                  "title": "Poznaj: Changes in the foreign exchange markets and net exports"
+                },
+                "macroecon-u6-l5-practice": {
+                  "title": "Praktyka: Zmiany na rynkach walutowych i eksport netto"
+                },
+                "macroecon-u6-l5-quiz": {
+                  "title": "Quiz: Realne stopy procentowe i międzynarodowe przepływy kapitału"
+                }
+              }
+            }
+          }
+        },
+        "unit-7": {
+          "title": "Jednostka 7: Podejścia keynesowskie i IS-LM",
+          "description": "Zrozumienie funkcji konsumpcji, krzyż keynesowski, model IS-LM i ekonomia keynesowska",
+          "lesson": {
+            "lesson-7-1": {
+              "title": "Funkcja konsumpcji",
+              "contentItem": {
+                "macroecon-u7-l1-video-1": {
+                  "title": "Funkcja konsumpcji"
+                },
+                "macroecon-u7-l1-article": {
+                  "title": "Poznaj: Funkcja konsumpcji"
+                },
+                "macroecon-u7-l1-practice": {
+                  "title": "Praktyka: Funkcja konsumpcji"
+                },
+                "macroecon-u7-l1-quiz": {
+                  "title": "Quiz: Funkcja konsumpcji"
+                }
+              }
+            },
+            "lesson-7-2": {
+              "title": "Krzyż keynesowski",
+              "contentItem": {
+                "macroecon-u7-l2-video-1": {
+                  "title": "Krzyż keynesowski"
+                },
+                "macroecon-u7-l2-article": {
+                  "title": "Poznaj: Krzyż keynesowski"
+                },
+                "macroecon-u7-l2-practice": {
+                  "title": "Praktyka: Krzyż keynesowski"
+                },
+                "macroecon-u7-l2-quiz": {
+                  "title": "Quiz: Krzyż keynesowski"
+                }
+              }
+            },
+            "lesson-7-3": {
+              "title": "IS-LM",
+              "contentItem": {
+                "macroecon-u7-l3-video-1": {
+                  "title": "IS-LM"
+                },
+                "macroecon-u7-l3-article": {
+                  "title": "Poznaj: IS-LM"
+                },
+                "macroecon-u7-l3-practice": {
+                  "title": "Praktyka: IS-LM"
+                },
+                "macroecon-u7-l3-quiz": {
+                  "title": "Quiz: IS-LM"
+                }
+              }
+            },
+            "lesson-7-4": {
+              "title": "Ekonomia keynesowska i jej krytyka",
+              "contentItem": {
+                "macroecon-u7-l4-video-1": {
+                  "title": "Ekonomia keynesowska i jej krytyka"
+                },
+                "macroecon-u7-l4-article": {
+                  "title": "Poznaj: Ekonomia keynesowska i jej krytyka"
+                },
+                "macroecon-u7-l4-practice": {
+                  "title": "Praktyka: Ekonomia keynesowska i jej krytyka"
+                },
+                "macroecon-u7-l4-quiz": {
+                  "title": "Quiz: Ekonomia keynesowska i jej krytyka"
+                }
+              }
+            }
+          }
+        },
+        "unit-8": {
+          "title": "Jednostka 8: Współczesne problemy makroekonomiczne",
+          "description": "Zrozumienie nierówności dochodów, dystrybucji bogactwa i kryzysu finansowego z 2008 roku",
+          "lesson": {
+            "lesson-8-1": {
+              "title": "Analiza nierówności dochodów w Stanach Zjednoczonych (we współpracy z The New York Times)",
+              "contentItem": {
+                "macroecon-u8-l1-video-1": {
+                  "title": "Analysis of income inequality in the United States"
+                },
+                "macroecon-u8-l1-article": {
+                  "title": "Poznaj: Analysis of income inequality in the United States"
+                },
+                "macroecon-u8-l1-practice": {
+                  "title": "Praktyka: Analysis of income inequality in the United States"
+                },
+                "macroecon-u8-l1-quiz": {
+                  "title": "Quiz: Analysis of income inequality in the United States"
+                }
+              }
+            },
+            "lesson-8-2": {
+              "title": "Dochód narodowy i nierówność",
+              "contentItem": {
+                "macroecon-u8-l2-video-1": {
+                  "title": "Dochód narodowy i nierówność"
+                },
+                "macroecon-u8-l2-article": {
+                  "title": "Poznaj: Dochód narodowy i nierówność"
+                },
+                "macroecon-u8-l2-practice": {
+                  "title": "Praktyka: Dochód narodowy i nierówność"
+                },
+                "macroecon-u8-l2-quiz": {
+                  "title": "Quiz: Dochód narodowy i nierówność"
+                }
+              }
+            },
+            "lesson-8-3": {
+              "title": "Kryzys finansowy z 2008 roku",
+              "contentItem": {
+                "macroecon-u8-l3-video-1": {
+                  "title": "Kryzys finansowy z 2008 roku"
+                },
+                "macroecon-u8-l3-article": {
+                  "title": "Poznaj: Kryzys finansowy z 2008 roku"
+                },
+                "macroecon-u8-l3-practice": {
+                  "title": "Praktyka: Kryzys finansowy z 2008 roku"
+                },
+                "macroecon-u8-l3-quiz": {
+                  "title": "Quiz: Kryzys finansowy z 2008 roku"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "microeconomics": {
+      "title": "Mikroekonomia",
+      "description": "Badanie pojedynczych jednostek ekonomicznych i procesów podejmowania decyzji",
+      "unit": {
+        "unit-1": {
+          "title": "Jednostka 1: Podstawowe koncepcje ekonomiczne",
+          "description": "Wprowadzenie do ekonomii, rzadkość, systemy ekonomiczne i model przepływu okrężnego",
+          "lesson": {
+            "lesson-1-1": {
+              "title": "Wprowadzenie do ekonomii",
+              "contentItem": {
+                "micro-u1-l1-video-1": {
+                  "title": "Wprowadzenie do ekonomii"
+                },
+                "micro-u1-l1-article": {
+                  "title": "Poznaj: Wprowadzenie do ekonomii"
+                },
+                "micro-u1-l1-practice": {
+                  "title": "Praktyka: Rzadkość"
+                },
+                "micro-u1-l1-quiz": {
+                  "title": "Quiz: Wprowadzenie do ekonomii"
+                }
+              }
+            },
+            "lesson-1-2": {
+              "title": "Systemy ekonomiczne",
+              "contentItem": {
+                "micro-u1-l2-video-1": {
+                  "title": "Systemy ekonomiczne"
+                },
+                "micro-u1-l2-article": {
+                  "title": "Poznaj: Systemy ekonomiczne"
+                },
+                "micro-u1-l2-practice": {
+                  "title": "Praktyka: Alokacja zasobów i systemy ekonomiczne"
+                },
+                "micro-u1-l2-quiz": {
+                  "title": "Quiz: Systemy ekonomiczne"
+                }
+              }
+            }
+          }
+        },
+        "unit-2": {
+          "title": "Jednostka 2: Podaż, popyt i równowaga rynkowa",
+          "description": "Zrozumienie popytu, podaży, równowagi rynkowej i tego, jak rynki dostosowują się do zmian",
+          "lesson": {
+            "lesson-2-1": {
+              "title": "Popyt",
+              "contentItem": {
+                "micro-u2-l1-video-1": {
+                  "title": "Popyt"
+                },
+                "micro-u2-l1-article": {
+                  "title": "Poznaj: Popyt"
+                },
+                "micro-u2-l1-practice": {
+                  "title": "Praktyka: Demand and the law of demand"
+                },
+                "micro-u2-l1-quiz": {
+                  "title": "Quiz: Popyt"
+                }
+              }
+            },
+            "lesson-2-2": {
+              "title": "Podaż",
+              "contentItem": {
+                "micro-u2-l2-video-1": {
+                  "title": "Podaż"
+                },
+                "micro-u2-l2-article": {
+                  "title": "Poznaj: Podaż"
+                },
+                "micro-u2-l2-practice": {
+                  "title": "Praktyka: Supply and the law of supply"
+                },
+                "micro-u2-l2-quiz": {
+                  "title": "Quiz: Podaż"
+                }
+              }
+            },
+            "lesson-2-3": {
+              "title": "Równowaga rynkowa i zmiany równowagi",
+              "contentItem": {
+                "micro-u2-l3-video-1": {
+                  "title": "Równowaga rynkowa i zmiany równowagi"
+                },
+                "micro-u2-l3-article": {
+                  "title": "Poznaj: Równowaga rynkowa i zmiany równowagi"
+                },
+                "micro-u2-l3-practice": {
+                  "title": "Praktyka: Market equilibrium and disequilibrium, Changes in equilibrium"
+                },
+                "micro-u2-l3-quiz": {
+                  "title": "Quiz: Równowaga rynkowa i zmiany równowagi"
+                }
+              }
+            }
+          }
+        },
+        "unit-3": {
+          "title": "Jednostka 3: Elastyczność",
+          "description": "Zrozumienie elastyczności cenowej popytu i podaży, elastyczności dochodowej i elastyczności krzyżowej",
+          "lesson": {
+            "lesson-3-1": {
+              "title": "Elastyczność cenowa popytu",
+              "contentItem": {
+                "micro-u3-l1-video-1": {
+                  "title": "Elastyczność cenowa popytu"
+                },
+                "micro-u3-l1-article": {
+                  "title": "Poznaj: Elastyczność cenowa popytu"
+                },
+                "micro-u3-l1-practice": {
+                  "title": "Praktyka: Price Elasticity of Demand and its Determinants, Determinants of price elasticity and the total revenue rule"
+                },
+                "micro-u3-l1-quiz": {
+                  "title": "Quiz: Elastyczność cenowa popytu"
+                }
+              }
+            },
+            "lesson-3-2": {
+              "title": "Elastyczność cenowa podaży",
+              "contentItem": {
+                "micro-u3-l2-video-1": {
+                  "title": "Elastyczność cenowa podaży"
+                },
+                "micro-u3-l2-article": {
+                  "title": "Poznaj: Elastyczność cenowa podaży"
+                },
+                "micro-u3-l2-practice": {
+                  "title": "Praktyka: Price Elasticity of Supply and its Determinants"
+                },
+                "micro-u3-l2-quiz": {
+                  "title": "Quiz: Elastyczność cenowa podaży"
+                }
+              }
+            },
+            "lesson-3-3": {
+              "title": "Elastyczność dochodowa popytu i elastyczność krzyżowa popytu",
+              "contentItem": {
+                "micro-u3-l3-video-1": {
+                  "title": "Elastyczność dochodowa popytu i elastyczność krzyżowa popytu"
+                },
+                "micro-u3-l3-article": {
+                  "title": "Poznaj: Elastyczność dochodowa popytu i elastyczność krzyżowa popytu"
+                },
+                "micro-u3-l3-practice": {
+                  "title": "Praktyka: Income Elasticity of Demand, Cross-Price Elasticity of Demand"
+                },
+                "micro-u3-l3-quiz": {
+                  "title": "Quiz: Elastyczność dochodowa popytu i elastyczność krzyżowa popytu"
+                }
+              }
+            }
+          }
+        },
+        "unit-4": {
+          "title": "Jednostka 4: Nadwyżka konsumenta i producenta, interwencje rynkowe i handel międzynarodowy",
+          "description": "Zrozumienie nadwyżki konsumenta i producenta, interwencji rynkowych, strat społecznych i handlu międzynarodowego",
+          "lesson": {
+            "lesson-4-1": {
+              "title": "Nadwyżka konsumenta i producenta",
+              "contentItem": {
+                "micro-u4-l1-video-1": {
+                  "title": "Nadwyżka konsumenta i producenta"
+                },
+                "micro-u4-l1-article": {
+                  "title": "Poznaj: Nadwyżka konsumenta i producenta"
+                },
+                "micro-u4-l1-practice": {
+                  "title": "Praktyka: Consumer and Producer Surplus and Allocative Efficiency"
+                },
+                "micro-u4-l1-quiz": {
+                  "title": "Quiz: Nadwyżka konsumenta i producenta"
+                }
+              }
+            },
+            "lesson-4-2": {
+              "title": "Interwencje rynkowe i straty społeczne",
+              "contentItem": {
+                "micro-u4-l2-video-1": {
+                  "title": "Interwencje rynkowe i straty społeczne"
+                },
+                "micro-u4-l2-article": {
+                  "title": "Poznaj: Interwencje rynkowe i straty społeczne"
+                },
+                "micro-u4-l2-practice": {
+                  "title": "Praktyka: Price and quantity controls, The effect of government interventions on surplus, Tax Incidence and Deadweight Loss"
+                },
+                "micro-u4-l2-quiz": {
+                  "title": "Quiz: Interwencje rynkowe i straty społeczne"
+                }
+              }
+            },
+            "lesson-4-3": {
+              "title": "Handel międzynarodowy",
+              "contentItem": {
+                "micro-u4-l3-video-1": {
+                  "title": "Handel międzynarodowy"
+                },
+                "micro-u4-l3-article": {
+                  "title": "Poznaj: Handel międzynarodowy"
+                },
+                "micro-u4-l3-practice": {
+                  "title": "Praktyka: International trade and public policy"
+                },
+                "micro-u4-l3-quiz": {
+                  "title": "Quiz: Handel międzynarodowy"
+                }
+              }
+            }
+          }
+        },
+        "unit-5": {
+          "title": "Jednostka 5: Teoria konsumenta",
+          "description": "Zrozumienie użyteczności, użyteczności krańcowej, maksymalizacji użyteczności i wyboru konsumenta z krzywymi obojętności",
+          "lesson": {
+            "lesson-5-1": {
+              "title": "Wprowadzenie do teorii konsumenta; użyteczność całkowita i użyteczność krańcowa",
+              "contentItem": {
+                "micro-u5-l1-video-1": {
+                  "title": "Wprowadzenie do teorii konsumenta; użyteczność całkowita i użyteczność krańcowa"
+                },
+                "micro-u5-l1-article": {
+                  "title": "Poznaj: Wprowadzenie do teorii konsumenta; użyteczność całkowita i użyteczność krańcowa"
+                },
+                "micro-u5-l1-practice": {
+                  "title": "Praktyka: Total Utility and Marginal Utility"
+                },
+                "micro-u5-l1-quiz": {
+                  "title": "Quiz: Wprowadzenie do teorii konsumenta; użyteczność całkowita i użyteczność krańcowa"
+                }
+              }
+            },
+            "lesson-5-2": {
+              "title": "Maksymalizacja użyteczności przy użyciu użyteczności krańcowej na wydany dolar",
+              "contentItem": {
+                "micro-u5-l2-video-1": {
+                  "title": "Maksymalizacja użyteczności przy użyciu użyteczności krańcowej na wydany dolar"
+                },
+                "micro-u5-l2-article": {
+                  "title": "Poznaj: Maksymalizacja użyteczności przy użyciu użyteczności krańcowej na wydany dolar"
+                },
+                "micro-u5-l2-practice": {
+                  "title": "Praktyka: Utility Maximization"
+                },
+                "micro-u5-l2-quiz": {
+                  "title": "Quiz: Maksymalizacja użyteczności przy użyciu użyteczności krańcowej na wydany dolar"
+                }
+              }
+            },
+            "lesson-5-3": {
+              "title": "Maksymalizacja użyteczności z krzywymi obojętności",
+              "contentItem": {
+                "micro-u5-l3-video-1": {
+                  "title": "Maksymalizacja użyteczności z krzywymi obojętności"
+                },
+                "micro-u5-l3-article": {
+                  "title": "Poznaj: Maksymalizacja użyteczności z krzywymi obojętności"
+                },
+                "micro-u5-l3-practice": {
+                  "title": "Praktyka: Maksymalizacja użyteczności z krzywymi obojętności"
+                },
+                "micro-u5-l3-quiz": {
+                  "title": "Quiz: Maksymalizacja użyteczności z krzywymi obojętności"
+                }
+              }
+            }
+          }
+        },
+        "unit-6": {
+          "title": "Jednostka 6: Decyzje produkcyjne i zysk ekonomiczny",
+          "description": "Zrozumienie funkcji produkcji, kosztów, maksymalizacji zysku i decyzji o wejściu/wyjściu firm",
+          "lesson": {
+            "lesson-6-1": {
+              "title": "Wprowadzenie do produkcji i kosztów",
+              "contentItem": {
+                "micro-u6-l1-video-1": {
+                  "title": "Wprowadzenie do produkcji i kosztów"
+                },
+                "micro-u6-l1-article": {
+                  "title": "Poznaj: Wprowadzenie do produkcji i kosztów"
+                },
+                "micro-u6-l1-practice": {
+                  "title": "Praktyka: The production function"
+                },
+                "micro-u6-l1-quiz": {
+                  "title": "Quiz: Wprowadzenie do produkcji i kosztów"
+                }
+              }
+            },
+            "lesson-6-2": {
+              "title": "Produkcja i koszty w krótkim okresie",
+              "contentItem": {
+                "micro-u6-l2-video-1": {
+                  "title": "Produkcja i koszty w krótkim okresie"
+                },
+                "micro-u6-l2-article": {
+                  "title": "Poznaj: Produkcja i koszty w krótkim okresie"
+                },
+                "micro-u6-l2-practice": {
+                  "title": "Praktyka: Short-run production costs: foundational concepts, Short-run production costs"
+                },
+                "micro-u6-l2-quiz": {
+                  "title": "Quiz: Produkcja i koszty w krótkim okresie"
+                }
+              }
+            },
+            "lesson-6-3": {
+              "title": "Produkcja i koszty w długim okresie",
+              "contentItem": {
+                "micro-u6-l3-video-1": {
+                  "title": "Produkcja i koszty w długim okresie"
+                },
+                "micro-u6-l3-article": {
+                  "title": "Poznaj: Produkcja i koszty w długim okresie"
+                },
+                "micro-u6-l3-practice": {
+                  "title": "Praktyka: Long-run production costs"
+                },
+                "micro-u6-l3-quiz": {
+                  "title": "Quiz: Produkcja i koszty w długim okresie"
+                }
+              }
+            },
+            "lesson-6-4": {
+              "title": "Rodzaje zysku",
+              "contentItem": {
+                "micro-u6-l4-video-1": {
+                  "title": "Rodzaje zysku"
+                },
+                "micro-u6-l4-article": {
+                  "title": "Poznaj: Rodzaje zysku"
+                },
+                "micro-u6-l4-practice": {
+                  "title": "Praktyka: Rodzaje zysku"
+                },
+                "micro-u6-l4-quiz": {
+                  "title": "Quiz: Rodzaje zysku"
+                }
+              }
+            },
+            "lesson-6-5": {
+              "title": "Maksymalizacja zysku",
+              "contentItem": {
+                "micro-u6-l5-video-1": {
+                  "title": "Maksymalizacja zysku"
+                },
+                "micro-u6-l5-article": {
+                  "title": "Poznaj: Maksymalizacja zysku"
+                },
+                "micro-u6-l5-practice": {
+                  "title": "Praktyka: Maksymalizacja zysku"
+                },
+                "micro-u6-l5-quiz": {
+                  "title": "Quiz: Maksymalizacja zysku"
+                }
+              }
+            },
+            "lesson-6-6": {
+              "title": "Wejście firm, wyjście i zasada zamknięcia",
+              "contentItem": {
+                "micro-u6-l6-video-1": {
+                  "title": "Wejście firm, wyjście i zasada zamknięcia"
+                },
+                "micro-u6-l6-article": {
+                  "title": "Poznaj: Wejście firm, wyjście i zasada zamknięcia"
+                },
+                "micro-u6-l6-practice": {
+                  "title": "Praktyka: Krótkoterminowe decyzje firm dotyczące produkcji i długoterminowe decyzje dotyczące wejścia lub wyjścia z rynku"
+                },
+                "micro-u6-l6-quiz": {
+                  "title": "Quiz: Wejście firm, wyjście i zasada zamknięcia"
+                }
+              }
+            }
+          }
+        },
+        "unit-7": {
+          "title": "Jednostka 7: Formy konkurencji",
+          "description": "Zrozumienie konkurencji doskonałej, monopolu, konkurencji monopolistycznej, oligopolu i teorii gier",
+          "lesson": {
+            "lesson-7-1": {
+              "title": "Konkurencja doskonała",
+              "contentItem": {
+                "micro-u7-l1-video-1": {
+                  "title": "Konkurencja doskonała"
+                },
+                "micro-u7-l1-article": {
+                  "title": "Poznaj: Konkurencja doskonała"
+                },
+                "micro-u7-l1-practice": {
+                  "title": "Praktyka: Perfect competition foundational concepts, Perfect competition in the short run and long run, Increasing, decreasing, and constant cost industries, Efficiency and perfect competition"
+                },
+                "micro-u7-l1-quiz": {
+                  "title": "Quiz: Konkurencja doskonała"
+                }
+              }
+            },
+            "lesson-7-2": {
+              "title": "Monopol",
+              "contentItem": {
+                "micro-u7-l2-video-1": {
+                  "title": "Monopol"
+                },
+                "micro-u7-l2-article": {
+                  "title": "Poznaj: Monopol"
+                },
+                "micro-u7-l2-practice": {
+                  "title": "Praktyka: Imperfect competition, Monopoly, Efficiency and monopolies"
+                },
+                "micro-u7-l2-quiz": {
+                  "title": "Quiz: Monopol"
+                }
+              }
+            },
+            "lesson-7-3": {
+              "title": "Dyskryminacja cenowa",
+              "contentItem": {
+                "micro-u7-l3-video-1": {
+                  "title": "Dyskryminacja cenowa"
+                },
+                "micro-u7-l3-article": {
+                  "title": "Poznaj: Dyskryminacja cenowa"
+                },
+                "micro-u7-l3-practice": {
+                  "title": "Praktyka: Dyskryminacja cenowa"
+                },
+                "micro-u7-l3-quiz": {
+                  "title": "Quiz: Dyskryminacja cenowa"
+                }
+              }
+            },
+            "lesson-7-4": {
+              "title": "Konkurencja monopolistyczna",
+              "contentItem": {
+                "micro-u7-l4-video-1": {
+                  "title": "Konkurencja monopolistyczna"
+                },
+                "micro-u7-l4-article": {
+                  "title": "Poznaj: Konkurencja monopolistyczna"
+                },
+                "micro-u7-l4-practice": {
+                  "title": "Praktyka: Konkurencja monopolistyczna"
+                },
+                "micro-u7-l4-quiz": {
+                  "title": "Quiz: Konkurencja monopolistyczna"
+                }
+              }
+            },
+            "lesson-7-5": {
+              "title": "Oligopol i teoria gier",
+              "contentItem": {
+                "micro-u7-l5-video-1": {
+                  "title": "Oligopol i teoria gier"
+                },
+                "micro-u7-l5-article": {
+                  "title": "Poznaj: Oligopol i teoria gier"
+                },
+                "micro-u7-l5-practice": {
+                  "title": "Praktyka: Game Theory"
+                },
+                "micro-u7-l5-quiz": {
+                  "title": "Quiz: Oligopol i teoria gier"
+                }
+              }
+            }
+          }
+        },
+        "unit-8": {
+          "title": "Jednostka 8: Rynki czynników produkcji",
+          "description": "Zrozumienie rynków czynników produkcji, popytu i podaży pracy, minimalizacji kosztów i monopsonu",
+          "lesson": {
+            "lesson-8-1": {
+              "title": "Wprowadzenie do rynków czynników produkcji",
+              "contentItem": {
+                "micro-u8-l1-video-1": {
+                  "title": "Wprowadzenie do rynków czynników produkcji"
+                },
+                "micro-u8-l1-article": {
+                  "title": "Poznaj: Wprowadzenie do rynków czynników produkcji"
+                },
+                "micro-u8-l1-practice": {
+                  "title": "Praktyka: Introduction to Factor Markets"
+                },
+                "micro-u8-l1-quiz": {
+                  "title": "Quiz: Wprowadzenie do rynków czynników produkcji"
+                }
+              }
+            },
+            "lesson-8-2": {
+              "title": "Zmiany w popycie i podaży czynników",
+              "contentItem": {
+                "micro-u8-l2-video-1": {
+                  "title": "Zmiany w popycie i podaży czynników"
+                },
+                "micro-u8-l2-article": {
+                  "title": "Poznaj: Zmiany w popycie i podaży czynników"
+                },
+                "micro-u8-l2-practice": {
+                  "title": "Praktyka: Zmiany w popycie i podaży czynników"
+                },
+                "micro-u8-l2-quiz": {
+                  "title": "Quiz: Zmiany w popycie i podaży czynników"
+                }
+              }
+            },
+            "lesson-8-3": {
+              "title": "Optymalny wybór czynników na rynkach czynników z doskonałą konkurencją",
+              "contentItem": {
+                "micro-u8-l3-video-1": {
+                  "title": "Optymalny wybór czynników na rynkach czynników z doskonałą konkurencją"
+                },
+                "micro-u8-l3-article": {
+                  "title": "Poznaj: Optymalny wybór czynników na rynkach czynników z doskonałą konkurencją"
+                },
+                "micro-u8-l3-practice": {
+                  "title": "Praktyka: Profit-maximizing behavior in perfectly competitive factor markets"
+                },
+                "micro-u8-l3-quiz": {
+                  "title": "Quiz: Optymalny wybór czynników na rynkach czynników z doskonałą konkurencją"
+                }
+              }
+            },
+            "lesson-8-4": {
+              "title": "Wybór nakładów, gdy rynki czynników są monopsonistycznie konkurencyjne",
+              "contentItem": {
+                "micro-u8-l4-video-1": {
+                  "title": "Wybór nakładów, gdy rynki czynników są monopsonistycznie konkurencyjne"
+                },
+                "micro-u8-l4-article": {
+                  "title": "Poznaj: Wybór nakładów, gdy rynki czynników są monopsonistycznie konkurencyjne"
+                },
+                "micro-u8-l4-practice": {
+                  "title": "Praktyka: Monopsonistic Markets"
+                },
+                "micro-u8-l4-quiz": {
+                  "title": "Quiz: Wybór nakładów, gdy rynki czynników są monopsonistycznie konkurencyjne"
+                }
+              }
+            }
+          }
+        },
+        "unit-9": {
+          "title": "Jednostka 9: Porażki rynku i rola rządu",
+          "description": "Zrozumienie efektów zewnętrznych, dóbr publicznych, wspólnych zasobów i interwencji rządowej",
+          "lesson": {
+            "lesson-9-1": {
+              "title": "Efekty zewnętrzne",
+              "contentItem": {
+                "micro-u9-l1-video-1": {
+                  "title": "Efekty zewnętrzne"
+                },
+                "micro-u9-l1-article": {
+                  "title": "Poznaj: Efekty zewnętrzne"
+                },
+                "micro-u9-l1-practice": {
+                  "title": "Praktyka: Efekty zewnętrzne"
+                },
+                "micro-u9-l1-quiz": {
+                  "title": "Quiz: Efekty zewnętrzne"
+                }
+              }
+            },
+            "lesson-9-2": {
+              "title": "Cztery typy dóbr: dobra prywatne, dobra publiczne, wspólne zasoby i monopole naturalne",
+              "contentItem": {
+                "micro-u9-l2-video-1": {
+                  "title": "Cztery typy dóbr: dobra prywatne, dobra publiczne, wspólne zasoby i monopole naturalne"
+                },
+                "micro-u9-l2-article": {
+                  "title": "Poznaj: Cztery typy dóbr: dobra prywatne, dobra publiczne, wspólne zasoby i monopole naturalne"
+                },
+                "micro-u9-l2-practice": {
+                  "title": "Praktyka: Public and private goods"
+                },
+                "micro-u9-l2-quiz": {
+                  "title": "Quiz: Cztery typy dóbr: dobra prywatne, dobra publiczne, wspólne zasoby i monopole naturalne"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "finance-markets": {
+      "title": "Finanse i rynki",
+      "description": "Kompleksowe badanie rynków finansowych, instrumentów i strategii inwestycyjnych",
+      "unit": {
+        "unit-1": {
+          "title": "Jednostka 1: Odsetki i długi",
+          "description": "Zrozumienie odsetek, odsetek składanych, kart kredytowych, pożyczek, wartości bieżącej i bankructwa",
+          "lesson": {
+            "lesson-1-1": {
+              "title": "Podstawy odsetek składanych",
+              "contentItem": {
+                "finance-u1-l1-video-1": {
+                  "title": "Podstawy odsetek składanych"
+                },
+                "finance-u1-l1-article": {
+                  "title": "Poznaj: Podstawy odsetek składanych"
+                },
+                "finance-u1-l1-practice": {
+                  "title": "Praktyka: Podstawy odsetek składanych"
+                },
+                "finance-u1-l1-quiz": {
+                  "title": "Quiz: Podstawy odsetek składanych"
+                }
+              }
+            },
+            "lesson-1-2": {
+              "title": "Podstawy odsetek",
+              "contentItem": {
+                "finance-u1-l2-video-1": {
+                  "title": "Podstawy odsetek"
+                },
+                "finance-u1-l2-article": {
+                  "title": "Poznaj: Podstawy odsetek"
+                },
+                "finance-u1-l2-practice": {
+                  "title": "Praktyka: Podstawy odsetek"
+                },
+                "finance-u1-l2-quiz": {
+                  "title": "Quiz: Podstawy odsetek"
+                }
+              }
+            },
+            "lesson-1-3": {
+              "title": "Karty kredytowe i pożyczki",
+              "contentItem": {
+                "finance-u1-l3-video-1": {
+                  "title": "Karty kredytowe i pożyczki"
+                },
+                "finance-u1-l3-article": {
+                  "title": "Poznaj: Karty kredytowe i pożyczki"
+                },
+                "finance-u1-l3-practice": {
+                  "title": "Praktyka: Karty kredytowe i pożyczki"
+                },
+                "finance-u1-l3-quiz": {
+                  "title": "Quiz: Karty kredytowe i pożyczki"
+                }
+              }
+            },
+            "lesson-1-4": {
+              "title": "Ciągłe odsetki składane i liczba e",
+              "contentItem": {
+                "finance-u1-l4-video-1": {
+                  "title": "Ciągłe odsetki składane i liczba e"
+                },
+                "finance-u1-l4-article": {
+                  "title": "Poznaj: Ciągłe odsetki składane i liczba e"
+                },
+                "finance-u1-l4-practice": {
+                  "title": "Praktyka: Ciągłe odsetki składane i liczba e"
+                },
+                "finance-u1-l4-quiz": {
+                  "title": "Quiz: Ciągłe odsetki składane i liczba e"
+                }
+              }
+            },
+            "lesson-1-5": {
+              "title": "Wartość bieżąca",
+              "contentItem": {
+                "finance-u1-l5-video-1": {
+                  "title": "Wartość bieżąca"
+                },
+                "finance-u1-l5-article": {
+                  "title": "Poznaj: Wartość bieżąca"
+                },
+                "finance-u1-l5-practice": {
+                  "title": "Praktyka: Wartość bieżąca"
+                },
+                "finance-u1-l5-quiz": {
+                  "title": "Quiz: Wartość bieżąca"
+                }
+              }
+            },
+            "lesson-1-6": {
+              "title": "Bankructwo osobiste",
+              "contentItem": {
+                "finance-u1-l6-video-1": {
+                  "title": "Bankructwo osobiste"
+                },
+                "finance-u1-l6-article": {
+                  "title": "Poznaj: Bankructwo osobiste"
+                },
+                "finance-u1-l6-practice": {
+                  "title": "Praktyka: Bankructwo osobiste"
+                },
+                "finance-u1-l6-quiz": {
+                  "title": "Quiz: Bankructwo osobiste"
+                }
+              }
+            }
+          }
+        },
+        "unit-2": {
+          "title": "Jednostka 2: Mieszkania",
+          "description": "Zrozumienie kapitału własnego w nieruchomościach, bilansów, wynajmu vs zakupu, kredytów hipotecznych i procesu zakupu domu",
+          "lesson": {
+            "lesson-2-1": {
+              "title": "Kapitał własny w nieruchomościach i osobiste bilanse",
+              "contentItem": {
+                "finance-u2-l1-video-1": {
+                  "title": "Kapitał własny w nieruchomościach i osobiste bilanse"
+                },
+                "finance-u2-l1-article": {
+                  "title": "Poznaj: Kapitał własny w nieruchomościach i osobiste bilanse"
+                },
+                "finance-u2-l1-practice": {
+                  "title": "Praktyka: Kapitał własny w nieruchomościach i osobiste bilanse"
+                },
+                "finance-u2-l1-quiz": {
+                  "title": "Quiz: Kapitał własny w nieruchomościach i osobiste bilanse"
+                }
+              }
+            },
+            "lesson-2-2": {
+              "title": "Wynajem vs zakup domu",
+              "contentItem": {
+                "finance-u2-l2-video-1": {
+                  "title": "Wynajem vs zakup domu"
+                },
+                "finance-u2-l2-article": {
+                  "title": "Poznaj: Wynajem vs zakup domu"
+                },
+                "finance-u2-l2-practice": {
+                  "title": "Praktyka: Wynajem vs zakup domu"
+                },
+                "finance-u2-l2-quiz": {
+                  "title": "Quiz: Wynajem vs zakup domu"
+                }
+              }
+            },
+            "lesson-2-3": {
+              "title": "Kredyty hipoteczne",
+              "contentItem": {
+                "finance-u2-l3-video-1": {
+                  "title": "Kredyty hipoteczne"
+                },
+                "finance-u2-l3-article": {
+                  "title": "Poznaj: Kredyty hipoteczne"
+                },
+                "finance-u2-l3-practice": {
+                  "title": "Praktyka: Kredyty hipoteczne"
+                },
+                "finance-u2-l3-quiz": {
+                  "title": "Quiz: Kredyty hipoteczne"
+                }
+              }
+            },
+            "lesson-2-4": {
+              "title": "Proces zakupu domu",
+              "contentItem": {
+                "finance-u2-l4-video-1": {
+                  "title": "Proces zakupu domu"
+                },
+                "finance-u2-l4-article": {
+                  "title": "Poznaj: Proces zakupu domu"
+                },
+                "finance-u2-l4-practice": {
+                  "title": "Praktyka: Proces zakupu domu"
+                },
+                "finance-u2-l4-quiz": {
+                  "title": "Quiz: Proces zakupu domu"
+                }
+              }
+            }
+          }
+        },
+        "unit-3": {
+          "title": "Jednostka 3: Inflacja",
+          "description": "Zrozumienie inflacji, deflacji, realnych i nominalnych zwrotów oraz wykorzystania mocy produkcyjnych",
+          "lesson": {
+            "lesson-3-1": {
+              "title": "Podstawy inflacji",
+              "contentItem": {
+                "finance-u3-l1-video-1": {
+                  "title": "Podstawy inflacji"
+                },
+                "finance-u3-l1-article": {
+                  "title": "Poznaj: Podstawy inflacji"
+                },
+                "finance-u3-l1-practice": {
+                  "title": "Praktyka: Podstawy inflacji"
+                },
+                "finance-u3-l1-quiz": {
+                  "title": "Quiz: Podstawy inflacji"
+                }
+              }
+            },
+            "lesson-3-2": {
+              "title": "Scenariusze inflacji",
+              "contentItem": {
+                "finance-u3-l2-video-1": {
+                  "title": "Scenariusze inflacji"
+                },
+                "finance-u3-l2-article": {
+                  "title": "Poznaj: Scenariusze inflacji"
+                },
+                "finance-u3-l2-practice": {
+                  "title": "Praktyka: Scenariusze inflacji"
+                },
+                "finance-u3-l2-quiz": {
+                  "title": "Quiz: Scenariusze inflacji"
+                }
+              }
+            },
+            "lesson-3-3": {
+              "title": "Zwrot realny i nominalny",
+              "contentItem": {
+                "finance-u3-l3-video-1": {
+                  "title": "Zwrot realny i nominalny"
+                },
+                "finance-u3-l3-article": {
+                  "title": "Poznaj: Zwrot realny i nominalny"
+                },
+                "finance-u3-l3-practice": {
+                  "title": "Praktyka: Zwrot realny i nominalny"
+                },
+                "finance-u3-l3-quiz": {
+                  "title": "Quiz: Zwrot realny i nominalny"
+                }
+              }
+            },
+            "lesson-3-4": {
+              "title": "Wykorzystanie mocy produkcyjnych i inflacja",
+              "contentItem": {
+                "finance-u3-l4-video-1": {
+                  "title": "Wykorzystanie mocy produkcyjnych i inflacja"
+                },
+                "finance-u3-l4-article": {
+                  "title": "Poznaj: Wykorzystanie mocy produkcyjnych i inflacja"
+                },
+                "finance-u3-l4-practice": {
+                  "title": "Praktyka: Wykorzystanie mocy produkcyjnych i inflacja"
+                },
+                "finance-u3-l4-quiz": {
+                  "title": "Quiz: Wykorzystanie mocy produkcyjnych i inflacja"
+                }
+              }
+            },
+            "lesson-3-5": {
+              "title": "Deflacja",
+              "contentItem": {
+                "finance-u3-l5-video-1": {
+                  "title": "Deflacja"
+                },
+                "finance-u3-l5-article": {
+                  "title": "Poznaj: Deflacja"
+                },
+                "finance-u3-l5-practice": {
+                  "title": "Praktyka: Deflacja"
+                },
+                "finance-u3-l5-quiz": {
+                  "title": "Quiz: Deflacja"
+                }
+              }
+            }
+          }
+        },
+        "unit-4": {
+          "title": "Jednostka 4: Podatki",
+          "description": "Zrozumienie podatków osobistych, opodatkowania korporacyjnego i planowania podatkowego",
+          "lesson": {
+            "lesson-4-1": {
+              "title": "Podatki osobiste",
+              "contentItem": {
+                "finance-u4-l1-video-1": {
+                  "title": "Podatki osobiste"
+                },
+                "finance-u4-l1-article": {
+                  "title": "Poznaj: Podatki osobiste"
+                },
+                "finance-u4-l1-practice": {
+                  "title": "Praktyka: Podatki osobiste"
+                },
+                "finance-u4-l1-quiz": {
+                  "title": "Quiz: Podatki osobiste"
+                }
+              }
+            },
+            "lesson-4-2": {
+              "title": "Opodatkowanie korporacyjne",
+              "contentItem": {
+                "finance-u4-l2-video-1": {
+                  "title": "Opodatkowanie korporacyjne"
+                },
+                "finance-u4-l2-article": {
+                  "title": "Poznaj: Opodatkowanie korporacyjne"
+                },
+                "finance-u4-l2-practice": {
+                  "title": "Praktyka: Opodatkowanie korporacyjne"
+                },
+                "finance-u4-l2-quiz": {
+                  "title": "Quiz: Opodatkowanie korporacyjne"
+                }
+              }
+            }
+          }
+        },
+        "unit-5": {
+          "title": "Jednostka 5: Rachunkowość i sprawozdania finansowe",
+          "description": "Zrozumienie rachunkowości kasowej vs memoriałowej, sprawozdań finansowych i amortyzacji",
+          "lesson": {
+            "lesson-5-1": {
+              "title": "Rachunkowość kasowa vs memoriałowa",
+              "contentItem": {
+                "finance-u5-l1-video-1": {
+                  "title": "Rachunkowość kasowa vs memoriałowa"
+                },
+                "finance-u5-l1-article": {
+                  "title": "Poznaj: Rachunkowość kasowa vs memoriałowa"
+                },
+                "finance-u5-l1-practice": {
+                  "title": "Praktyka: Rachunkowość kasowa vs memoriałowa"
+                },
+                "finance-u5-l1-quiz": {
+                  "title": "Quiz: Rachunkowość kasowa vs memoriałowa"
+                }
+              }
+            },
+            "lesson-5-2": {
+              "title": "Trzy podstawowe sprawozdania finansowe",
+              "contentItem": {
+                "finance-u5-l2-video-1": {
+                  "title": "Trzy podstawowe sprawozdania finansowe"
+                },
+                "finance-u5-l2-article": {
+                  "title": "Poznaj: Trzy podstawowe sprawozdania finansowe"
+                },
+                "finance-u5-l2-practice": {
+                  "title": "Praktyka: Interpretacja bilansu, Interpretacja rachunku zysków i strat"
+                },
+                "finance-u5-l2-quiz": {
+                  "title": "Quiz: Trzy podstawowe sprawozdania finansowe"
+                }
+              }
+            },
+            "lesson-5-3": {
+              "title": "Amortyzacja i umorzenie",
+              "contentItem": {
+                "finance-u5-l3-video-1": {
+                  "title": "Amortyzacja i umorzenie"
+                },
+                "finance-u5-l3-article": {
+                  "title": "Poznaj: Amortyzacja i umorzenie"
+                },
+                "finance-u5-l3-practice": {
+                  "title": "Praktyka: Amortyzacja i umorzenie"
+                },
+                "finance-u5-l3-quiz": {
+                  "title": "Quiz: Amortyzacja i umorzenie"
+                }
+              }
+            }
+          }
+        },
+        "unit-6": {
+          "title": "Jednostka 6: Akcje i obligacje",
+          "description": "Zrozumienie akcji, obligacji, finansów korporacyjnych, wyceny i cyklu życia firmy",
+          "lesson": {
+            "lesson-6-1": {
+              "title": "Wprowadzenie do akcji",
+              "contentItem": {
+                "finance-u6-l1-video-1": {
+                  "title": "Wprowadzenie do akcji"
+                },
+                "finance-u6-l1-article": {
+                  "title": "Poznaj: Wprowadzenie do akcji"
+                },
+                "finance-u6-l1-practice": {
+                  "title": "Praktyka: Wprowadzenie do akcji"
+                },
+                "finance-u6-l1-quiz": {
+                  "title": "Quiz: Wprowadzenie do akcji"
+                }
+              }
+            },
+            "lesson-6-2": {
+              "title": "Krótka sprzedaż akcji",
+              "contentItem": {
+                "finance-u6-l2-video-1": {
+                  "title": "Krótka sprzedaż akcji"
+                },
+                "finance-u6-l2-article": {
+                  "title": "Poznaj: Krótka sprzedaż akcji"
+                },
+                "finance-u6-l2-practice": {
+                  "title": "Praktyka: Krótka sprzedaż akcji"
+                },
+                "finance-u6-l2-quiz": {
+                  "title": "Quiz: Krótka sprzedaż akcji"
+                }
+              }
+            },
+            "lesson-6-3": {
+              "title": "Zrozumienie sprawozdań firmy i struktury kapitału",
+              "contentItem": {
+                "finance-u6-l3-video-1": {
+                  "title": "Zrozumienie sprawozdań firmy i struktury kapitału"
+                },
+                "finance-u6-l3-article": {
+                  "title": "Poznaj: Zrozumienie sprawozdań firmy i struktury kapitału"
+                },
+                "finance-u6-l3-practice": {
+                  "title": "Praktyka: Zrozumienie sprawozdań firmy i struktury kapitału"
+                },
+                "finance-u6-l3-quiz": {
+                  "title": "Quiz: Zrozumienie sprawozdań firmy i struktury kapitału"
+                }
+              }
+            },
+            "lesson-6-4": {
+              "title": "Metryki korporacyjne i wycena",
+              "contentItem": {
+                "finance-u6-l4-video-1": {
+                  "title": "Metryki korporacyjne i wycena"
+                },
+                "finance-u6-l4-article": {
+                  "title": "Poznaj: Metryki korporacyjne i wycena"
+                },
+                "finance-u6-l4-practice": {
+                  "title": "Praktyka: Metryki korporacyjne i wycena"
+                },
+                "finance-u6-l4-quiz": {
+                  "title": "Quiz: Metryki korporacyjne i wycena"
+                }
+              }
+            },
+            "lesson-6-5": {
+              "title": "Życie firmy – od narodzin do śmierci",
+              "contentItem": {
+                "finance-u6-l5-video-1": {
+                  "title": "Życie firmy – od narodzin do śmierci"
+                },
+                "finance-u6-l5-article": {
+                  "title": "Poznaj: Życie firmy – od narodzin do śmierci"
+                },
+                "finance-u6-l5-practice": {
+                  "title": "Praktyka: Życie firmy – od narodzin do śmierci"
+                },
+                "finance-u6-l5-quiz": {
+                  "title": "Quiz: Życie firmy – od narodzin do śmierci"
+                }
+              }
+            },
+            "lesson-6-6": {
+              "title": "Rozcieńczenie",
+              "contentItem": {
+                "finance-u6-l6-video-1": {
+                  "title": "Rozcieńczenie"
+                },
+                "finance-u6-l6-article": {
+                  "title": "Poznaj: Rozcieńczenie"
+                },
+                "finance-u6-l6-practice": {
+                  "title": "Praktyka: Rozcieńczenie"
+                },
+                "finance-u6-l6-quiz": {
+                  "title": "Quiz: Rozcieńczenie"
+                }
+              }
+            },
+            "lesson-6-7": {
+              "title": "Fuzje i przejęcia",
+              "contentItem": {
+                "finance-u6-l7-video-1": {
+                  "title": "Fuzje i przejęcia"
+                },
+                "finance-u6-l7-article": {
+                  "title": "Poznaj: Fuzje i przejęcia"
+                },
+                "finance-u6-l7-practice": {
+                  "title": "Praktyka: Fuzje i przejęcia"
+                },
+                "finance-u6-l7-quiz": {
+                  "title": "Quiz: Fuzje i przejęcia"
+                }
+              }
+            },
+            "lesson-6-8": {
+              "title": "Wykup lewarowany",
+              "contentItem": {
+                "finance-u6-l8-video-1": {
+                  "title": "Wykup lewarowany"
+                },
+                "finance-u6-l8-article": {
+                  "title": "Poznaj: Wykup lewarowany"
+                },
+                "finance-u6-l8-practice": {
+                  "title": "Praktyka: Wykup lewarowany"
+                },
+                "finance-u6-l8-quiz": {
+                  "title": "Quiz: Wykup lewarowany"
+                }
+              }
+            },
+            "lesson-6-9": {
+              "title": "Obligacje",
+              "contentItem": {
+                "finance-u6-l9-video-1": {
+                  "title": "Obligacje"
+                },
+                "finance-u6-l9-article": {
+                  "title": "Poznaj: Obligacje"
+                },
+                "finance-u6-l9-practice": {
+                  "title": "Praktyka: Obligacje"
+                },
+                "finance-u6-l9-quiz": {
+                  "title": "Quiz: Obligacje"
+                }
+              }
+            },
+            "lesson-6-10": {
+              "title": "Bankructwo korporacyjne",
+              "contentItem": {
+                "finance-u6-l10-video-1": {
+                  "title": "Bankructwo korporacyjne"
+                },
+                "finance-u6-l10-article": {
+                  "title": "Poznaj: Bankructwo korporacyjne"
+                },
+                "finance-u6-l10-practice": {
+                  "title": "Praktyka: Bankructwo korporacyjne"
+                },
+                "finance-u6-l10-quiz": {
+                  "title": "Quiz: Bankructwo korporacyjne"
+                }
+              }
+            }
+          }
+        },
+        "unit-7": {
+          "title": "Jednostka 7: Instrumenty inwestycyjne, ubezpieczenia i emerytura",
+          "description": "Zrozumienie funduszy inwestycyjnych, ETF, kont emerytalnych, ubezpieczeń, funduszy hedgingowych i zasad inwestowania",
+          "lesson": {
+            "lesson-7-1": {
+              "title": "Fundusze inwestycyjne i ETF",
+              "contentItem": {
+                "finance-u7-l1-video-1": {
+                  "title": "Fundusze inwestycyjne i ETF"
+                },
+                "finance-u7-l1-article": {
+                  "title": "Poznaj: Fundusze inwestycyjne i ETF"
+                },
+                "finance-u7-l1-practice": {
+                  "title": "Praktyka: Fundusze inwestycyjne i ETF"
+                },
+                "finance-u7-l1-quiz": {
+                  "title": "Quiz: Fundusze inwestycyjne i ETF"
+                }
+              }
+            },
+            "lesson-7-2": {
+              "title": "Konta emerytalne: IRA i 401k",
+              "contentItem": {
+                "finance-u7-l2-video-1": {
+                  "title": "Konta emerytalne: IRA i 401k"
+                },
+                "finance-u7-l2-article": {
+                  "title": "Poznaj: Konta emerytalne: IRA i 401k"
+                },
+                "finance-u7-l2-practice": {
+                  "title": "Praktyka: Konta emerytalne: IRA i 401k"
+                },
+                "finance-u7-l2-quiz": {
+                  "title": "Quiz: Konta emerytalne: IRA i 401k"
+                }
+              }
+            },
+            "lesson-7-3": {
+              "title": "Ubezpieczenie na życie",
+              "contentItem": {
+                "finance-u7-l3-video-1": {
+                  "title": "Ubezpieczenie na życie"
+                },
+                "finance-u7-l3-article": {
+                  "title": "Poznaj: Ubezpieczenie na życie"
+                },
+                "finance-u7-l3-practice": {
+                  "title": "Praktyka: Ubezpieczenie na życie"
+                },
+                "finance-u7-l3-quiz": {
+                  "title": "Quiz: Ubezpieczenie na życie"
+                }
+              }
+            },
+            "lesson-7-4": {
+              "title": "Fundusze hedgingowe",
+              "contentItem": {
+                "finance-u7-l4-video-1": {
+                  "title": "Fundusze hedgingowe"
+                },
+                "finance-u7-l4-article": {
+                  "title": "Poznaj: Fundusze hedgingowe"
+                },
+                "finance-u7-l4-practice": {
+                  "title": "Praktyka: Fundusze hedgingowe"
+                },
+                "finance-u7-l4-quiz": {
+                  "title": "Quiz: Fundusze hedgingowe"
+                }
+              }
+            },
+            "lesson-7-5": {
+              "title": "Inwestycje i konsumpcja",
+              "contentItem": {
+                "finance-u7-l5-video-1": {
+                  "title": "Inwestycje i konsumpcja"
+                },
+                "finance-u7-l5-article": {
+                  "title": "Poznaj: Inwestycje i konsumpcja"
+                },
+                "finance-u7-l5-practice": {
+                  "title": "Praktyka: Inwestycje i konsumpcja"
+                },
+                "finance-u7-l5-quiz": {
+                  "title": "Quiz: Inwestycje i konsumpcja"
+                }
+              }
+            }
+          }
+        },
+        "unit-8": {
+          "title": "Jednostka 8: Pieniądze, bankowość i banki centralne",
+          "description": "Zrozumienie bankowości, tworzenia pieniądza, banków centralnych, luzowania ilościowego, kryzysów finansowych i kryptowalut",
+          "lesson": {
+            "lesson-8-1": {
+              "title": "Bankowość i pieniądze",
+              "contentItem": {
+                "finance-u8-l1-video-1": {
+                  "title": "Bankowość i pieniądze"
+                },
+                "finance-u8-l1-article": {
+                  "title": "Poznaj: Bankowość i pieniądze"
+                },
+                "finance-u8-l1-practice": {
+                  "title": "Praktyka: Bankowość i pieniądze"
+                },
+                "finance-u8-l1-quiz": {
+                  "title": "Quiz: Bankowość i pieniądze"
+                }
+              }
+            },
+            "lesson-8-2": {
+              "title": "Luzowanie ilościowe",
+              "contentItem": {
+                "finance-u8-l2-video-1": {
+                  "title": "Luzowanie ilościowe"
+                },
+                "finance-u8-l2-article": {
+                  "title": "Poznaj: Luzowanie ilościowe"
+                },
+                "finance-u8-l2-practice": {
+                  "title": "Praktyka: Luzowanie ilościowe"
+                },
+                "finance-u8-l2-quiz": {
+                  "title": "Quiz: Luzowanie ilościowe"
+                }
+              }
+            },
+            "lesson-8-3": {
+              "title": "Ratunek banków w 2008 roku",
+              "contentItem": {
+                "finance-u8-l3-video-1": {
+                  "title": "Ratunek banków w 2008 roku"
+                },
+                "finance-u8-l3-article": {
+                  "title": "Poznaj: Ratunek banków w 2008 roku"
+                },
+                "finance-u8-l3-practice": {
+                  "title": "Praktyka: Ratunek banków w 2008 roku"
+                },
+                "finance-u8-l3-quiz": {
+                  "title": "Quiz: Ratunek banków w 2008 roku"
+                }
+              }
+            },
+            "lesson-8-4": {
+              "title": "Plan Geithnera",
+              "contentItem": {
+                "finance-u8-l4-video-1": {
+                  "title": "Plan Geithnera"
+                },
+                "finance-u8-l4-article": {
+                  "title": "Poznaj: Plan Geithnera"
+                },
+                "finance-u8-l4-practice": {
+                  "title": "Praktyka: Plan Geithnera"
+                },
+                "finance-u8-l4-quiz": {
+                  "title": "Quiz: Plan Geithnera"
+                }
+              }
+            },
+            "lesson-8-5": {
+              "title": "Wymiana walutowa i handel",
+              "contentItem": {
+                "finance-u8-l5-video-1": {
+                  "title": "Wymiana walutowa i handel"
+                },
+                "finance-u8-l5-article": {
+                  "title": "Poznaj: Wymiana walutowa i handel"
+                },
+                "finance-u8-l5-practice": {
+                  "title": "Praktyka: Wymiana walutowa i handel"
+                },
+                "finance-u8-l5-quiz": {
+                  "title": "Quiz: Wymiana walutowa i handel"
+                }
+              }
+            },
+            "lesson-8-6": {
+              "title": "Chińska waluta i dług USA",
+              "contentItem": {
+                "finance-u8-l6-video-1": {
+                  "title": "Chińska waluta i dług USA"
+                },
+                "finance-u8-l6-article": {
+                  "title": "Poznaj: Chińska waluta i dług USA"
+                },
+                "finance-u8-l6-practice": {
+                  "title": "Praktyka: Chińska waluta i dług USA"
+                },
+                "finance-u8-l6-quiz": {
+                  "title": "Quiz: Chińska waluta i dług USA"
+                }
+              }
+            },
+            "lesson-8-7": {
+              "title": "Grecki kryzys zadłużenia 2011-2012",
+              "contentItem": {
+                "finance-u8-l7-video-1": {
+                  "title": "Grecki kryzys zadłużenia 2011-2012"
+                },
+                "finance-u8-l7-article": {
+                  "title": "Poznaj: Grecki kryzys zadłużenia 2011-2012"
+                },
+                "finance-u8-l7-practice": {
+                  "title": "Praktyka: Grecki kryzys zadłużenia 2011-2012"
+                },
+                "finance-u8-l7-quiz": {
+                  "title": "Quiz: Grecki kryzys zadłużenia 2011-2012"
+                }
+              }
+            },
+            "lesson-8-8": {
+              "title": "Bitcoin",
+              "contentItem": {
+                "finance-u8-l8-video-1": {
+                  "title": "Bitcoin"
+                },
+                "finance-u8-l8-article": {
+                  "title": "Poznaj: Bitcoin"
+                },
+                "finance-u8-l8-practice": {
+                  "title": "Praktyka: Bitcoin"
+                },
+                "finance-u8-l8-quiz": {
+                  "title": "Quiz: Bitcoin"
+                }
+              }
+            }
+          }
+        },
+        "unit-9": {
+          "title": "Jednostka 9: Opcje, swapy, kontrakty terminowe, MBS, CDO i inne instrumenty pochodne",
+          "description": "Zrozumienie opcji, kontraktów terminowych, swapów, papierów wartościowych zabezpieczonych hipoteką, CDO, swapów na niewypłacalność kredytową i wyceny opcji",
+          "lesson": {
+            "lesson-9-1": {
+              "title": "Opcje sprzedaży i kupna",
+              "contentItem": {
+                "finance-u9-l1-video-1": {
+                  "title": "Opcje sprzedaży i kupna"
+                },
+                "finance-u9-l1-article": {
+                  "title": "Poznaj: Opcje sprzedaży i kupna"
+                },
+                "finance-u9-l1-practice": {
+                  "title": "Praktyka: Opcje sprzedaży i kupna"
+                },
+                "finance-u9-l1-quiz": {
+                  "title": "Quiz: Opcje sprzedaży i kupna"
+                }
+              }
+            },
+            "lesson-9-2": {
+              "title": "Kontrakty terminowe i futures",
+              "contentItem": {
+                "finance-u9-l2-video-1": {
+                  "title": "Kontrakty terminowe i futures"
+                },
+                "finance-u9-l2-article": {
+                  "title": "Poznaj: Kontrakty terminowe i futures"
+                },
+                "finance-u9-l2-practice": {
+                  "title": "Praktyka: Kontrakty terminowe i futures"
+                },
+                "finance-u9-l2-quiz": {
+                  "title": "Quiz: Kontrakty terminowe i futures"
+                }
+              }
+            },
+            "lesson-9-3": {
+              "title": "Papiery wartościowe zabezpieczone hipoteką",
+              "contentItem": {
+                "finance-u9-l3-video-1": {
+                  "title": "Papiery wartościowe zabezpieczone hipoteką"
+                },
+                "finance-u9-l3-article": {
+                  "title": "Poznaj: Papiery wartościowe zabezpieczone hipoteką"
+                },
+                "finance-u9-l3-practice": {
+                  "title": "Praktyka: Papiery wartościowe zabezpieczone hipoteką"
+                },
+                "finance-u9-l3-quiz": {
+                  "title": "Quiz: Papiery wartościowe zabezpieczone hipoteką"
+                }
+              }
+            },
+            "lesson-9-4": {
+              "title": "Zabezpieczone zobowiązania dłużne",
+              "contentItem": {
+                "finance-u9-l4-video-1": {
+                  "title": "Zabezpieczone zobowiązania dłużne"
+                },
+                "finance-u9-l4-article": {
+                  "title": "Poznaj: Zabezpieczone zobowiązania dłużne"
+                },
+                "finance-u9-l4-practice": {
+                  "title": "Praktyka: Zabezpieczone zobowiązania dłużne"
+                },
+                "finance-u9-l4-quiz": {
+                  "title": "Quiz: Zabezpieczone zobowiązania dłużne"
+                }
+              }
+            },
+            "lesson-9-5": {
+              "title": "Swapy na niewypłacalność kredytową",
+              "contentItem": {
+                "finance-u9-l5-video-1": {
+                  "title": "Swapy na niewypłacalność kredytową"
+                },
+                "finance-u9-l5-article": {
+                  "title": "Poznaj: Swapy na niewypłacalność kredytową"
+                },
+                "finance-u9-l5-practice": {
+                  "title": "Praktyka: Swapy na niewypłacalność kredytową"
+                },
+                "finance-u9-l5-quiz": {
+                  "title": "Quiz: Swapy na niewypłacalność kredytową"
+                }
+              }
+            },
+            "lesson-9-6": {
+              "title": "Swapy stóp procentowych",
+              "contentItem": {
+                "finance-u9-l6-video-1": {
+                  "title": "Swapy stóp procentowych"
+                },
+                "finance-u9-l6-article": {
+                  "title": "Poznaj: Swapy stóp procentowych"
+                },
+                "finance-u9-l6-practice": {
+                  "title": "Praktyka: Swapy stóp procentowych"
+                },
+                "finance-u9-l6-quiz": {
+                  "title": "Quiz: Swapy stóp procentowych"
+                }
+              }
+            },
+            "lesson-9-7": {
+              "title": "Formuła Blacka-Scholesa",
+              "contentItem": {
+                "finance-u9-l7-video-1": {
+                  "title": "Formuła Blacka-Scholesa"
+                },
+                "finance-u9-l7-article": {
+                  "title": "Poznaj: Formuła Blacka-Scholesa"
+                },
+                "finance-u9-l7-practice": {
+                  "title": "Praktyka: Formuła Blacka-Scholesa"
+                },
+                "finance-u9-l7-quiz": {
+                  "title": "Quiz: Formuła Blacka-Scholesa"
+                }
+              }
+            }
+          }
+        },
+        "unit-10": {
+          "title": "Jednostka 10: Współczesna ekonomia",
+          "description": "Zrozumienie bezrobocia, cen mieszkań, kryzysu kredytowego, ratunków finansowych i problemów Unii Europejskiej",
+          "lesson": {
+            "lesson-10-1": {
+              "title": "Bezrobocie",
+              "contentItem": {
+                "finance-u10-l1-video-1": {
+                  "title": "Bezrobocie"
+                },
+                "finance-u10-l1-article": {
+                  "title": "Poznaj: Bezrobocie"
+                },
+                "finance-u10-l1-practice": {
+                  "title": "Praktyka: Bezrobocie"
+                },
+                "finance-u10-l1-quiz": {
+                  "title": "Quiz: Bezrobocie"
+                }
+              }
+            },
+            "lesson-10-2": {
+              "title": "Zagadka cen mieszkań",
+              "contentItem": {
+                "finance-u10-l2-video-1": {
+                  "title": "Zagadka cen mieszkań"
+                },
+                "finance-u10-l2-article": {
+                  "title": "Poznaj: Zagadka cen mieszkań"
+                },
+                "finance-u10-l2-practice": {
+                  "title": "Praktyka: Zagadka cen mieszkań"
+                },
+                "finance-u10-l2-quiz": {
+                  "title": "Quiz: Zagadka cen mieszkań"
+                }
+              }
+            },
+            "lesson-10-3": {
+              "title": "Kryzys kredytowy",
+              "contentItem": {
+                "finance-u10-l3-video-1": {
+                  "title": "Kryzys kredytowy"
+                },
+                "finance-u10-l3-article": {
+                  "title": "Poznaj: Kryzys kredytowy"
+                },
+                "finance-u10-l3-practice": {
+                  "title": "Praktyka: Kryzys kredytowy"
+                },
+                "finance-u10-l3-quiz": {
+                  "title": "Quiz: Kryzys kredytowy"
+                }
+              }
+            },
+            "lesson-10-4": {
+              "title": "Ratunek Paulsona",
+              "contentItem": {
+                "finance-u10-l4-video-1": {
+                  "title": "Ratunek Paulsona"
+                },
+                "finance-u10-l4-article": {
+                  "title": "Poznaj: Ratunek Paulsona"
+                },
+                "finance-u10-l4-practice": {
+                  "title": "Praktyka: Ratunek Paulsona"
+                },
+                "finance-u10-l4-quiz": {
+                  "title": "Quiz: Ratunek Paulsona"
+                }
+              }
+            },
+            "lesson-10-5": {
+              "title": "Unia Europejska",
+              "contentItem": {
+                "finance-u10-l5-video-1": {
+                  "title": "Brexit i wprowadzenie do Unii Europejskiej"
+                },
+                "finance-u10-l5-video-2": {
+                  "title": "Wprowadzenie: Zjednoczone Królestwo vs Wielka Brytania vs Anglia"
+                },
+                "finance-u10-l5-video-3": {
+                  "title": "Grecka recesja zadłużenia i oszczędności (część 1)"
+                },
+                "finance-u10-l5-video-4": {
+                  "title": "Grecki kryzys finansowy (część 2)"
+                },
+                "finance-u10-l5-video-5": {
+                  "title": "Jak i dlaczego Grecja opuściłaby euro (część 3)"
+                },
+                "finance-u10-l5-video-6": {
+                  "title": "Dlaczego Europa martwi się o Grecję"
+                },
+                "finance-u10-l5-article": {
+                  "title": "Poznaj: Unia Europejska"
+                },
+                "finance-u10-l5-practice": {
+                  "title": "Praktyka: Unia Europejska"
+                },
+                "finance-u10-l5-quiz": {
+                  "title": "Quiz: Unia Europejska"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "economics-personal-finance": {
+      "title": "Ekonomia i finanse osobiste",
+      "description": "Zrozumienie finansów osobistych poprzez zasady ekonomiczne",
+      "unit": {
+        "unit-1": {
+          "title": "Jednostka 1: Podstawy ekonomii",
+          "description": "Zrozumienie rzadkości, kosztu alternatywnego, podejmowania decyzji, czynników produkcji, kapitału ludzkiego i systemów ekonomicznych",
+          "lesson": {
+            "lesson-1-1": {
+              "title": "Scarcity",
+              "contentItem": {
+                "economics-u1-l1-video-1": {
+                  "title": "Scarcity"
+                },
+                "economics-u1-l1-article": {
+                  "title": "Poznaj: Scarcity"
+                },
+                "economics-u1-l1-practice": {
+                  "title": "Praktyka: Intro to economics: Scarcity"
+                },
+                "economics-u1-l1-quiz": {
+                  "title": "Quiz: Scarcity"
+                }
+              }
+            },
+            "lesson-1-2": {
+              "title": "Costs and benefits",
+              "contentItem": {
+                "economics-u1-l2-video-1": {
+                  "title": "Costs and benefits"
+                },
+                "economics-u1-l2-article": {
+                  "title": "Poznaj: Costs and benefits"
+                },
+                "economics-u1-l2-practice": {
+                  "title": "Praktyka: Opportunity cost and the PPC"
+                },
+                "economics-u1-l2-quiz": {
+                  "title": "Quiz: Costs and benefits"
+                }
+              }
+            },
+            "lesson-1-3": {
+              "title": "Decision making and unintended consequences",
+              "contentItem": {
+                "economics-u1-l3-video-1": {
+                  "title": "Decision making and unintended consequences"
+                },
+                "economics-u1-l3-article": {
+                  "title": "Poznaj: Decision making and unintended consequences"
+                },
+                "economics-u1-l3-practice": {
+                  "title": "Praktyka: Decision making and unintended consequences"
+                },
+                "economics-u1-l3-quiz": {
+                  "title": "Quiz: Decision making and unintended consequences"
+                }
+              }
+            },
+            "lesson-1-4": {
+              "title": "Factors of production",
+              "contentItem": {
+                "economics-u1-l4-video-1": {
+                  "title": "Factors of production"
+                },
+                "economics-u1-l4-article": {
+                  "title": "Poznaj: Factors of production"
+                },
+                "economics-u1-l4-practice": {
+                  "title": "Praktyka: Factors of production, impact of human capital on production, and the role of entrepreneurs"
+                },
+                "economics-u1-l4-quiz": {
+                  "title": "Quiz: Factors of production"
+                }
+              }
+            },
+            "lesson-1-5": {
+              "title": "Human capital and income",
+              "contentItem": {
+                "economics-u1-l5-video-1": {
+                  "title": "Human capital and income"
+                },
+                "economics-u1-l5-article": {
+                  "title": "Poznaj: Human capital and income"
+                },
+                "economics-u1-l5-practice": {
+                  "title": "Praktyka: Human capital and income"
+                },
+                "economics-u1-l5-quiz": {
+                  "title": "Quiz 2: Human capital and income"
+                }
+              }
+            },
+            "lesson-1-6": {
+              "title": "Economic systems",
+              "contentItem": {
+                "economics-u1-l6-video-1": {
+                  "title": "Economic systems"
+                },
+                "economics-u1-l6-article": {
+                  "title": "Poznaj: Economic systems"
+                },
+                "economics-u1-l6-practice": {
+                  "title": "Praktyka: Economic systems"
+                },
+                "economics-u1-l6-quiz": {
+                  "title": "Quiz: Economic systems"
+                }
+              }
+            }
+          }
+        },
+        "unit-2": {
+          "title": "Jednostka 2: Producenci i konsumenci na rynkach",
+          "description": "Zrozumienie bodźców, marketingu, kosztów, przychodów, zysku, produktywności, organizacji biznesu i struktur rynkowych",
+          "lesson": {
+            "lesson-2-1": {
+              "title": "Incentives and marketing",
+              "contentItem": {
+                "economics-u2-l1-video-1": {
+                  "title": "Incentives and marketing"
+                },
+                "economics-u2-l1-article": {
+                  "title": "Poznaj: Incentives and marketing"
+                },
+                "economics-u2-l1-practice": {
+                  "title": "Praktyka: Effects of marketing and incentives"
+                },
+                "economics-u2-l1-quiz": {
+                  "title": "Quiz: Incentives and marketing"
+                }
+              }
+            },
+            "lesson-2-2": {
+              "title": "Cost, revenue, and profit",
+              "contentItem": {
+                "economics-u2-l2-video-1": {
+                  "title": "Cost, revenue, and profit"
+                },
+                "economics-u2-l2-article": {
+                  "title": "Poznaj: Cost, revenue, and profit"
+                },
+                "economics-u2-l2-practice": {
+                  "title": "Praktyka: Cost, revenue, and profit"
+                },
+                "economics-u2-l2-quiz": {
+                  "title": "Quiz: Cost, revenue, and profit"
+                }
+              }
+            },
+            "lesson-2-3": {
+              "title": "Productivity and economic growth",
+              "contentItem": {
+                "economics-u2-l3-video-1": {
+                  "title": "Productivity and economic growth"
+                },
+                "economics-u2-l3-article": {
+                  "title": "Poznaj: Productivity and economic growth"
+                },
+                "economics-u2-l3-practice": {
+                  "title": "Praktyka: Productivity and economic growth"
+                },
+                "economics-u2-l3-quiz": {
+                  "title": "Quiz: Productivity and economic growth"
+                }
+              }
+            },
+            "lesson-2-4": {
+              "title": "Business organization",
+              "contentItem": {
+                "economics-u2-l4-video-1": {
+                  "title": "Business organization"
+                },
+                "economics-u2-l4-article": {
+                  "title": "Poznaj: Business organization"
+                },
+                "economics-u2-l4-practice": {
+                  "title": "Praktyka: Business organization"
+                },
+                "economics-u2-l4-quiz": {
+                  "title": "Quiz: Business organization"
+                }
+              }
+            },
+            "lesson-2-5": {
+              "title": "Market structures and competition",
+              "contentItem": {
+                "economics-u2-l5-video-1": {
+                  "title": "Market structures and competition"
+                },
+                "economics-u2-l5-article": {
+                  "title": "Poznaj: Market structures and competition"
+                },
+                "economics-u2-l5-practice": {
+                  "title": "Praktyka: Market structures and competition"
+                },
+                "economics-u2-l5-quiz": {
+                  "title": "Quiz: Market structures and competition"
+                }
+              }
+            }
+          }
+        },
+        "unit-3": {
+          "title": "Jednostka 3: Mikroekonomia i systemy cenowe",
+          "description": "Zrozumienie popytu, podaży, elastyczności, równowagi rynkowej i kontroli cen",
+          "lesson": {
+            "lesson-3-1": {
+              "title": "Demand",
+              "contentItem": {
+                "economics-u3-l1-video-1": {
+                  "title": "Demand"
+                },
+                "economics-u3-l1-article": {
+                  "title": "Poznaj: Demand"
+                },
+                "economics-u3-l1-practice": {
+                  "title": "Praktyka: Demand and the determinants of demand"
+                },
+                "economics-u3-l1-quiz": {
+                  "title": "Quiz: Demand"
+                }
+              }
+            },
+            "lesson-3-2": {
+              "title": "Supply",
+              "contentItem": {
+                "economics-u3-l2-video-1": {
+                  "title": "Supply"
+                },
+                "economics-u3-l2-article": {
+                  "title": "Poznaj: Supply"
+                },
+                "economics-u3-l2-practice": {
+                  "title": "Praktyka: Supply"
+                },
+                "economics-u3-l2-quiz": {
+                  "title": "Quiz: Supply"
+                }
+              }
+            },
+            "lesson-3-3": {
+              "title": "Elasticity",
+              "contentItem": {
+                "economics-u3-l3-video-1": {
+                  "title": "Elasticity"
+                },
+                "economics-u3-l3-article": {
+                  "title": "Poznaj: Elasticity"
+                },
+                "economics-u3-l3-practice": {
+                  "title": "Praktyka: Elasticity of supply and demand"
+                },
+                "economics-u3-l3-quiz": {
+                  "title": "Quiz: Elasticity"
+                }
+              }
+            },
+            "lesson-3-4": {
+              "title": "Equilibrium",
+              "contentItem": {
+                "economics-u3-l4-video-1": {
+                  "title": "Equilibrium"
+                },
+                "economics-u3-l4-article": {
+                  "title": "Poznaj: Equilibrium"
+                },
+                "economics-u3-l4-practice": {
+                  "title": "Praktyka: Equilibrium and disequilibrium in markets"
+                },
+                "economics-u3-l4-quiz": {
+                  "title": "Quiz: Equilibrium"
+                }
+              }
+            },
+            "lesson-3-5": {
+              "title": "Price controls",
+              "contentItem": {
+                "economics-u3-l5-video-1": {
+                  "title": "Price controls"
+                },
+                "economics-u3-l5-article": {
+                  "title": "Poznaj: Price controls"
+                },
+                "economics-u3-l5-practice": {
+                  "title": "Praktyka: Price ceilings and floors"
+                },
+                "economics-u3-l5-quiz": {
+                  "title": "Quiz: Price controls"
+                }
+              }
+            }
+          }
+        },
+        "unit-4": {
+          "title": "Jednostka 4: Rola rządu na rynkach",
+          "description": "Zrozumienie dóbr publicznych i prywatnych, praw własności i redystrybucji bogactwa przez rząd",
+          "lesson": {
+            "lesson-4-1": {
+              "title": "Public vs private",
+              "contentItem": {
+                "economics-u4-l1-video-1": {
+                  "title": "Public vs private"
+                },
+                "economics-u4-l1-article": {
+                  "title": "Poznaj: Public vs private"
+                },
+                "economics-u4-l1-practice": {
+                  "title": "Praktyka: Government actions in markets"
+                },
+                "economics-u4-l1-quiz": {
+                  "title": "Quiz: Public vs private"
+                }
+              }
+            },
+            "lesson-4-2": {
+              "title": "Property rights",
+              "contentItem": {
+                "economics-u4-l2-video-1": {
+                  "title": "Property rights"
+                },
+                "economics-u4-l2-article": {
+                  "title": "Poznaj: Property rights"
+                },
+                "economics-u4-l2-practice": {
+                  "title": "Praktyka: Government enforcement of property rights and contracts"
+                },
+                "economics-u4-l2-quiz": {
+                  "title": "Quiz 1: Property rights"
+                }
+              }
+            },
+            "lesson-4-3": {
+              "title": "Redistribution of wealth",
+              "contentItem": {
+                "economics-u4-l3-video-1": {
+                  "title": "Redistribution of wealth"
+                },
+                "economics-u4-l3-article": {
+                  "title": "Poznaj: Redistribution of wealth"
+                },
+                "economics-u4-l3-practice": {
+                  "title": "Praktyka: Government redistribution of wealth"
+                },
+                "economics-u4-l3-quiz": {
+                  "title": "Quiz: Redistribution of wealth"
+                }
+              }
+            }
+          }
+        },
+        "unit-5": {
+          "title": "Jednostka 5: Wyzwania makroekonomiczne",
+          "description": "Zrozumienie wskaźników makroekonomicznych, zagregowanego popytu i podaży oraz cykli koniunkturalnych",
+          "lesson": {
+            "lesson-5-1": {
+              "title": "Macroeconomic indicators",
+              "contentItem": {
+                "economics-u5-l1-video-1": {
+                  "title": "Macroeconomic indicators"
+                },
+                "economics-u5-l1-article": {
+                  "title": "Poznaj: Macroeconomic indicators"
+                },
+                "economics-u5-l1-practice": {
+                  "title": "Praktyka: Macroeconomic indicators"
+                },
+                "economics-u5-l1-quiz": {
+                  "title": "Quiz: Macroeconomic indicators"
+                }
+              }
+            },
+            "lesson-5-2": {
+              "title": "The macroeconomy and economic challenges",
+              "contentItem": {
+                "economics-u5-l2-video-1": {
+                  "title": "The macroeconomy and economic challenges"
+                },
+                "economics-u5-l2-article": {
+                  "title": "Poznaj: The macroeconomy and economic challenges"
+                },
+                "economics-u5-l2-practice": {
+                  "title": "Praktyka: Market effects on income"
+                },
+                "economics-u5-l2-quiz": {
+                  "title": "Quiz: The macroeconomy and economic challenges"
+                }
+              }
+            },
+            "lesson-5-3": {
+              "title": "Business cycles",
+              "contentItem": {
+                "economics-u5-l3-video-1": {
+                  "title": "Business cycles"
+                },
+                "economics-u5-l3-article": {
+                  "title": "Poznaj: Business cycles"
+                },
+                "economics-u5-l3-practice": {
+                  "title": "Praktyka: Business cycles"
+                },
+                "economics-u5-l3-quiz": {
+                  "title": "Quiz: Business cycles"
+                }
+              }
+            }
+          }
+        },
+        "unit-6": {
+          "title": "Jednostka 6: Pieniądze, bankowość i rynki finansowe",
+          "description": "Zrozumienie pieniądza, instytucji finansowych i rynków oraz Rezerwy Federalnej",
+          "lesson": {
+            "lesson-6-1": {
+              "title": "Money",
+              "contentItem": {
+                "economics-u6-l1-video-1": {
+                  "title": "Money"
+                },
+                "economics-u6-l1-article": {
+                  "title": "Poznaj: Money"
+                },
+                "economics-u6-l1-practice": {
+                  "title": "Praktyka: Money"
+                },
+                "economics-u6-l1-quiz": {
+                  "title": "Quiz: Money"
+                }
+              }
+            },
+            "lesson-6-2": {
+              "title": "Financial markets and institutions",
+              "contentItem": {
+                "economics-u6-l2-video-1": {
+                  "title": "Financial markets and institutions"
+                },
+                "economics-u6-l2-article": {
+                  "title": "Poznaj: Financial markets and institutions"
+                },
+                "economics-u6-l2-practice": {
+                  "title": "Praktyka: Financial and monetary systems"
+                },
+                "economics-u6-l2-quiz": {
+                  "title": "Quiz: Financial markets and institutions"
+                }
+              }
+            },
+            "lesson-6-3": {
+              "title": "The Federal Reserve",
+              "contentItem": {
+                "economics-u6-l3-video-1": {
+                  "title": "The Federal Reserve"
+                },
+                "economics-u6-l3-article": {
+                  "title": "Poznaj: The Federal Reserve"
+                },
+                "economics-u6-l3-practice": {
+                  "title": "Praktyka: History of banking and the Federal Reserve"
+                },
+                "economics-u6-l3-quiz": {
+                  "title": "Quiz: The Federal Reserve"
+                }
+              }
+            }
+          }
+        },
+        "unit-7": {
+          "title": "Jednostka 7: Stabilizacja ekonomiczna",
+          "description": "Zrozumienie polityki pieniężnej, polityki fiskalnej i budżetów rządowych",
+          "lesson": {
+            "lesson-7-1": {
+              "title": "Monetary policy",
+              "contentItem": {
+                "economics-u7-l1-video-1": {
+                  "title": "Monetary policy"
+                },
+                "economics-u7-l1-article": {
+                  "title": "Poznaj: Monetary policy"
+                },
+                "economics-u7-l1-practice": {
+                  "title": "Praktyka: Monetary policy"
+                },
+                "economics-u7-l1-quiz": {
+                  "title": "Quiz: Monetary policy"
+                }
+              }
+            },
+            "lesson-7-2": {
+              "title": "Fiscal policy",
+              "contentItem": {
+                "economics-u7-l2-video-1": {
+                  "title": "Fiscal policy"
+                },
+                "economics-u7-l2-article": {
+                  "title": "Poznaj: Fiscal policy"
+                },
+                "economics-u7-l2-practice": {
+                  "title": "Praktyka: Fiscal policy"
+                },
+                "economics-u7-l2-quiz": {
+                  "title": "Quiz: Fiscal policy"
+                }
+              }
+            },
+            "lesson-7-3": {
+              "title": "Government budgets; revenue and expenditures",
+              "contentItem": {
+                "economics-u7-l3-video-1": {
+                  "title": "Government budgets; revenue and expenditures"
+                },
+                "economics-u7-l3-article": {
+                  "title": "Poznaj: Government budgets; revenue and expenditures"
+                },
+                "economics-u7-l3-practice": {
+                  "title": "Praktyka: Government budgets revenue and expenditures"
+                },
+                "economics-u7-l3-quiz": {
+                  "title": "Quiz: Government budgets; revenue and expenditures"
+                }
+              }
+            }
+          }
+        },
+        "unit-8": {
+          "title": "Jednostka 8: Gospodarka globalna",
+          "description": "Zrozumienie handlu, kursów walutowych i globalizacji",
+          "lesson": {
+            "lesson-8-1": {
+              "title": "Trade",
+              "contentItem": {
+                "economics-u8-l1-video-1": {
+                  "title": "Trade"
+                },
+                "economics-u8-l1-article": {
+                  "title": "Poznaj: Trade"
+                },
+                "economics-u8-l1-practice": {
+                  "title": "Praktyka: Trade"
+                },
+                "economics-u8-l1-quiz": {
+                  "title": "Quiz: Trade"
+                }
+              }
+            },
+            "lesson-8-2": {
+              "title": "Currency conversion",
+              "contentItem": {
+                "economics-u8-l2-video-1": {
+                  "title": "Currency conversion"
+                },
+                "economics-u8-l2-article": {
+                  "title": "Poznaj: Currency conversion"
+                },
+                "economics-u8-l2-practice": {
+                  "title": "Praktyka: Exchange rates"
+                },
+                "economics-u8-l2-quiz": {
+                  "title": "Quiz: Currency conversion"
+                }
+              }
+            },
+            "lesson-8-3": {
+              "title": "Globalization",
+              "contentItem": {
+                "economics-u8-l3-video-1": {
+                  "title": "Globalization"
+                },
+                "economics-u8-l3-article": {
+                  "title": "Poznaj: Globalization"
+                },
+                "economics-u8-l3-practice": {
+                  "title": "Praktyka: Globalization"
+                },
+                "economics-u8-l3-quiz": {
+                  "title": "Quiz: Globalization"
+                }
+              }
+            }
+          }
+        },
+        "unit-9": {
+          "title": "Jednostka 9: Kariera i edukacja",
+          "description": "Zrozumienie edukacji jako inwestycji, płacenia za edukację, pomocy finansowej i pożyczek studenckich",
+          "lesson": {
+            "lesson-9-1": {
+              "title": "Education and earnings",
+              "contentItem": {
+                "economics-u9-l1-video-1": {
+                  "title": "Education and earnings"
+                },
+                "economics-u9-l1-article": {
+                  "title": "Poznaj: Education and earnings"
+                },
+                "economics-u9-l1-practice": {
+                  "title": "Praktyka: Educational investment"
+                },
+                "economics-u9-l1-quiz": {
+                  "title": "Quiz: Education and earnings"
+                }
+              }
+            },
+            "lesson-9-2": {
+              "title": "Postsecondary education",
+              "contentItem": {
+                "economics-u9-l2-video-1": {
+                  "title": "Postsecondary education"
+                },
+                "economics-u9-l2-article": {
+                  "title": "Poznaj: Postsecondary education"
+                },
+                "economics-u9-l2-practice": {
+                  "title": "Praktyka: Paying for education"
+                },
+                "economics-u9-l2-quiz": {
+                  "title": "Quiz: Postsecondary education"
+                }
+              }
+            },
+            "lesson-9-3": {
+              "title": "Cost of postsecondary education",
+              "contentItem": {
+                "economics-u9-l3-video-1": {
+                  "title": "Cost of postsecondary education"
+                },
+                "economics-u9-l3-article": {
+                  "title": "Poznaj: Cost of postsecondary education"
+                },
+                "economics-u9-l3-practice": {
+                  "title": "Praktyka: Comparing different options"
+                },
+                "economics-u9-l3-quiz": {
+                  "title": "Quiz: Cost of postsecondary education"
+                }
+              }
+            },
+            "lesson-9-4": {
+              "title": "Financial aid",
+              "contentItem": {
+                "economics-u9-l4-video-1": {
+                  "title": "Financial aid"
+                },
+                "economics-u9-l4-article": {
+                  "title": "Poznaj: Financial aid"
+                },
+                "economics-u9-l4-practice": {
+                  "title": "Praktyka: FAFSA and financial aid"
+                },
+                "economics-u9-l4-quiz": {
+                  "title": "Quiz: Financial aid"
+                }
+              }
+            },
+            "lesson-9-5": {
+              "title": "Student loans",
+              "contentItem": {
+                "economics-u9-l5-video-1": {
+                  "title": "Student loans"
+                },
+                "economics-u9-l5-article": {
+                  "title": "Poznaj: Student loans"
+                },
+                "economics-u9-l5-practice": {
+                  "title": "Praktyka: Student loan repayment"
+                },
+                "economics-u9-l5-quiz": {
+                  "title": "Quiz: Student loans"
+                }
+              }
+            }
+          }
+        },
+        "unit-10": {
+          "title": "Jednostka 10: Zatrudnienie",
+          "description": "Zrozumienie wynagrodzeń, świadczeń, wypłat, nietypowej płacy i procesu zatrudnienia",
+          "lesson": {
+            "lesson-10-1": {
+              "title": "Compensation",
+              "contentItem": {
+                "economics-u10-l1-video-1": {
+                  "title": "Compensation"
+                },
+                "economics-u10-l1-article": {
+                  "title": "Poznaj: Compensation"
+                },
+                "economics-u10-l1-practice": {
+                  "title": "Praktyka: Benefits"
+                },
+                "economics-u10-l1-quiz": {
+                  "title": "Quiz: Compensation"
+                }
+              }
+            },
+            "lesson-10-2": {
+              "title": "Paycheck",
+              "contentItem": {
+                "economics-u10-l2-video-1": {
+                  "title": "Paycheck"
+                },
+                "economics-u10-l2-article": {
+                  "title": "Poznaj: Paycheck"
+                },
+                "economics-u10-l2-practice": {
+                  "title": "Praktyka: Paycheck deductions"
+                },
+                "economics-u10-l2-quiz": {
+                  "title": "Quiz: Paycheck"
+                }
+              }
+            },
+            "lesson-10-3": {
+              "title": "Non-typical pay",
+              "contentItem": {
+                "economics-u10-l3-video-1": {
+                  "title": "Non-typical pay"
+                },
+                "economics-u10-l3-article": {
+                  "title": "Poznaj: Non-typical pay"
+                },
+                "economics-u10-l3-practice": {
+                  "title": "Praktyka: Non-typical pay structures"
+                },
+                "economics-u10-l3-quiz": {
+                  "title": "Quiz: Non-typical pay"
+                }
+              }
+            },
+            "lesson-10-4": {
+              "title": "Hiring process",
+              "contentItem": {
+                "economics-u10-l4-video-1": {
+                  "title": "Hiring process"
+                },
+                "economics-u10-l4-article": {
+                  "title": "Poznaj: Hiring process"
+                },
+                "economics-u10-l4-practice": {
+                  "title": "Praktyka: Hiring forms"
+                },
+                "economics-u10-l4-quiz": {
+                  "title": "Quiz: Hiring process"
+                }
+              }
+            }
+          }
+        },
+        "unit-11": {
+          "title": "Jednostka 11: Bankowość",
+          "description": "Zrozumienie instytucji bankowych, kont bankowych, zarządzania kontami i odsetek",
+          "lesson": {
+            "lesson-11-1": {
+              "title": "Banking and financial institutions",
+              "contentItem": {
+                "economics-u11-l1-video-1": {
+                  "title": "Banking and financial institutions"
+                },
+                "economics-u11-l1-article": {
+                  "title": "Poznaj: Banking and financial institutions"
+                },
+                "economics-u11-l1-practice": {
+                  "title": "Praktyka: Banking institutions"
+                },
+                "economics-u11-l1-quiz": {
+                  "title": "Quiz: Banking and financial institutions"
+                }
+              }
+            },
+            "lesson-11-2": {
+              "title": "Understanding bank accounts",
+              "contentItem": {
+                "economics-u11-l2-video-1": {
+                  "title": "Understanding bank accounts"
+                },
+                "economics-u11-l2-article": {
+                  "title": "Poznaj: Understanding bank accounts"
+                },
+                "economics-u11-l2-practice": {
+                  "title": "Praktyka: Account identification"
+                },
+                "economics-u11-l2-quiz": {
+                  "title": "Quiz: Understanding bank accounts"
+                }
+              }
+            },
+            "lesson-11-3": {
+              "title": "Tracking, reconciling and more",
+              "contentItem": {
+                "economics-u11-l3-video-1": {
+                  "title": "Tracking, reconciling and more"
+                },
+                "economics-u11-l3-article": {
+                  "title": "Poznaj: Tracking, reconciling and more"
+                },
+                "economics-u11-l3-practice": {
+                  "title": "Praktyka: Account tracking and management"
+                },
+                "economics-u11-l3-quiz": {
+                  "title": "Quiz: Tracking, reconciling and more"
+                }
+              }
+            },
+            "lesson-11-4": {
+              "title": "Interest",
+              "contentItem": {
+                "economics-u11-l4-video-1": {
+                  "title": "Interest"
+                },
+                "economics-u11-l4-article": {
+                  "title": "Poznaj: Interest"
+                },
+                "economics-u11-l4-practice": {
+                  "title": "Praktyka: Understanding compound growth"
+                },
+                "economics-u11-l4-quiz": {
+                  "title": "Quiz: Interest"
+                }
+              }
+            }
+          }
+        },
+        "unit-12": {
+          "title": "Jednostka 12: Cele finansowe",
+          "description": "Zrozumienie celów SMART, celów krótko/średnio/długoterminowych i wartości netto",
+          "lesson": {
+            "lesson-12-1": {
+              "title": "SMART goals",
+              "contentItem": {
+                "economics-u12-l1-video-1": {
+                  "title": "SMART goals"
+                },
+                "economics-u12-l1-article": {
+                  "title": "Poznaj: SMART goals"
+                },
+                "economics-u12-l1-practice": {
+                  "title": "Praktyka: SMART goals"
+                },
+                "economics-u12-l1-quiz": {
+                  "title": "Quiz: SMART goals"
+                }
+              }
+            },
+            "lesson-12-2": {
+              "title": "Short, medium, and long term goals",
+              "contentItem": {
+                "economics-u12-l2-video-1": {
+                  "title": "Short, medium, and long term goals"
+                },
+                "economics-u12-l2-article": {
+                  "title": "Poznaj: Short, medium, and long term goals"
+                },
+                "economics-u12-l2-practice": {
+                  "title": "Praktyka: Short, medium, long term goals"
+                },
+                "economics-u12-l2-quiz": {
+                  "title": "Quiz: Short, medium, and long term goals"
+                }
+              }
+            },
+            "lesson-12-3": {
+              "title": "Net worth",
+              "contentItem": {
+                "economics-u12-l3-video-1": {
+                  "title": "Net worth"
+                },
+                "economics-u12-l3-article": {
+                  "title": "Poznaj: Net worth"
+                },
+                "economics-u12-l3-practice": {
+                  "title": "Praktyka: Net worth"
+                },
+                "economics-u12-l3-quiz": {
+                  "title": "Quiz: Net worth"
+                }
+              }
+            }
+          }
+        },
+        "unit-13": {
+          "title": "Jednostka 13: Budżetowanie i oszczędzanie",
+          "description": "Zrozumienie budżetowania, oszczędzania pieniędzy, funduszy awaryjnych i redukcji wydatków",
+          "lesson": {
+            "lesson-13-1": {
+              "title": "Budgeting",
+              "contentItem": {
+                "economics-u13-l1-video-1": {
+                  "title": "Budgeting"
+                },
+                "economics-u13-l1-article": {
+                  "title": "Poznaj: Budgeting"
+                },
+                "economics-u13-l1-practice": {
+                  "title": "Praktyka: Building a budget"
+                },
+                "economics-u13-l1-quiz": {
+                  "title": "Quiz: Budgeting"
+                }
+              }
+            },
+            "lesson-13-2": {
+              "title": "Saving money",
+              "contentItem": {
+                "economics-u13-l2-video-1": {
+                  "title": "Saving money"
+                },
+                "economics-u13-l2-article": {
+                  "title": "Poznaj: Saving money"
+                },
+                "economics-u13-l2-practice": {
+                  "title": "Praktyka: Emergency fund"
+                },
+                "economics-u13-l2-quiz": {
+                  "title": "Quiz: Saving money"
+                }
+              }
+            },
+            "lesson-13-3": {
+              "title": "Reducing expenses",
+              "contentItem": {
+                "economics-u13-l3-video-1": {
+                  "title": "Reducing expenses"
+                },
+                "economics-u13-l3-article": {
+                  "title": "Poznaj: Reducing expenses"
+                },
+                "economics-u13-l3-practice": {
+                  "title": "Praktyka: Unit pricing"
+                },
+                "economics-u13-l3-quiz": {
+                  "title": "Quiz: Reducing expenses"
+                }
+              }
+            }
+          }
+        },
+        "unit-14": {
+          "title": "Jednostka 14: Oszczędzanie i inwestowanie",
+          "description": "Zrozumienie ryzyka i zwrotu, planowania emerytury i ubezpieczenia społecznego",
+          "lesson": {
+            "lesson-14-1": {
+              "title": "Risk and return",
+              "contentItem": {
+                "economics-u14-l1-video-1": {
+                  "title": "Risk and return"
+                },
+                "economics-u14-l1-article": {
+                  "title": "Poznaj: Risk and return"
+                },
+                "economics-u14-l1-practice": {
+                  "title": "Praktyka: Investments"
+                },
+                "economics-u14-l1-quiz": {
+                  "title": "Quiz: Risk and return"
+                }
+              }
+            },
+            "lesson-14-2": {
+              "title": "Planning for retirement",
+              "contentItem": {
+                "economics-u14-l2-video-1": {
+                  "title": "Planning for retirement"
+                },
+                "economics-u14-l2-article": {
+                  "title": "Poznaj: Planning for retirement"
+                },
+                "economics-u14-l2-practice": {
+                  "title": "Praktyka: Retirement"
+                },
+                "economics-u14-l2-quiz": {
+                  "title": "Quiz: Planning for retirement"
+                }
+              }
+            },
+            "lesson-14-3": {
+              "title": "Saving for retirement",
+              "contentItem": {
+                "economics-u14-l3-video-1": {
+                  "title": "Saving for retirement"
+                },
+                "economics-u14-l3-article": {
+                  "title": "Poznaj: Saving for retirement"
+                },
+                "economics-u14-l3-practice": {
+                  "title": "Praktyka: Social Security"
+                },
+                "economics-u14-l3-quiz": {
+                  "title": "Quiz: Saving for retirement"
+                }
+              }
+            }
+          }
+        },
+        "unit-15": {
+          "title": "Jednostka 15: Kredyt konsumencki",
+          "description": "Zrozumienie kart kredytowych, ocen kredytowych i zarządzania kredytem",
+          "lesson": {
+            "lesson-15-1": {
+              "title": "Credit cards",
+              "contentItem": {
+                "economics-u15-l1-video-1": {
+                  "title": "Credit cards"
+                },
+                "economics-u15-l1-article": {
+                  "title": "Poznaj: Credit cards"
+                },
+                "economics-u15-l1-practice": {
+                  "title": "Praktyka: Credit cards"
+                },
+                "economics-u15-l1-quiz": {
+                  "title": "Quiz: Credit cards"
+                }
+              }
+            },
+            "lesson-15-2": {
+              "title": "Credit score",
+              "contentItem": {
+                "economics-u15-l2-video-1": {
+                  "title": "Credit score"
+                },
+                "economics-u15-l2-article": {
+                  "title": "Poznaj: Credit score"
+                },
+                "economics-u15-l2-practice": {
+                  "title": "Praktyka: Understanding credit score"
+                },
+                "economics-u15-l2-quiz": {
+                  "title": "Quiz: Credit score"
+                }
+              }
+            }
+          }
+        },
+        "unit-16": {
+          "title": "Jednostka 16: Pożyczki i długi",
+          "description": "Zrozumienie warunków pożyczania, źródeł pożyczek, typów pożyczek, zarządzania długami i bankructwa",
+          "lesson": {
+            "lesson-16-1": {
+              "title": "Terms of borrowing",
+              "contentItem": {
+                "economics-u16-l1-video-1": {
+                  "title": "Terms of borrowing"
+                },
+                "economics-u16-l1-article": {
+                  "title": "Poznaj: Terms of borrowing"
+                },
+                "economics-u16-l1-practice": {
+                  "title": "Praktyka: APR"
+                },
+                "economics-u16-l1-quiz": {
+                  "title": "Quiz: Terms of borrowing"
+                }
+              }
+            },
+            "lesson-16-2": {
+              "title": "Borrowing money",
+              "contentItem": {
+                "economics-u16-l2-video-1": {
+                  "title": "Borrowing money"
+                },
+                "economics-u16-l2-article": {
+                  "title": "Poznaj: Borrowing money"
+                },
+                "economics-u16-l2-practice": {
+                  "title": "Praktyka: Credit and sources"
+                },
+                "economics-u16-l2-quiz": {
+                  "title": "Quiz: Borrowing money"
+                }
+              }
+            },
+            "lesson-16-3": {
+              "title": "Types of loans",
+              "contentItem": {
+                "economics-u16-l3-video-1": {
+                  "title": "Types of loans"
+                },
+                "economics-u16-l3-article": {
+                  "title": "Poznaj: Types of loans"
+                },
+                "economics-u16-l3-practice": {
+                  "title": "Praktyka: Secured vs unsecured credit"
+                },
+                "economics-u16-l3-quiz": {
+                  "title": "Quiz: Types of loans"
+                }
+              }
+            },
+            "lesson-16-4": {
+              "title": "Debt",
+              "contentItem": {
+                "economics-u16-l4-video-1": {
+                  "title": "Debt"
+                },
+                "economics-u16-l4-article": {
+                  "title": "Poznaj: Debt"
+                },
+                "economics-u16-l4-practice": {
+                  "title": "Praktyka: Debt repayment"
+                },
+                "economics-u16-l4-quiz": {
+                  "title": "Quiz: Debt"
+                }
+              }
+            },
+            "lesson-16-5": {
+              "title": "Bankruptcy",
+              "contentItem": {
+                "economics-u16-l5-video-1": {
+                  "title": "Bankruptcy"
+                },
+                "economics-u16-l5-article": {
+                  "title": "Poznaj: Bankruptcy"
+                },
+                "economics-u16-l5-practice": {
+                  "title": "Praktyka: Bankruptcy"
+                },
+                "economics-u16-l5-quiz": {
+                  "title": "Quiz: Bankruptcy"
+                }
+              }
+            }
+          }
+        },
+        "unit-17": {
+          "title": "Jednostka 17: Podatki",
+          "description": "Zrozumienie podatków, podatków lokalnych, formularzy podatkowych i podatków dochodowych",
+          "lesson": {
+            "lesson-17-1": {
+              "title": "What are taxes and why do we pay them",
+              "contentItem": {
+                "economics-u17-l1-video-1": {
+                  "title": "What are taxes and why do we pay them"
+                },
+                "economics-u17-l1-article": {
+                  "title": "Poznaj: What are taxes and why do we pay them"
+                },
+                "economics-u17-l1-practice": {
+                  "title": "Praktyka: Taxes"
+                },
+                "economics-u17-l1-quiz": {
+                  "title": "Quiz: What are taxes and why do we pay them"
+                }
+              }
+            },
+            "lesson-17-2": {
+              "title": "Local taxes",
+              "contentItem": {
+                "economics-u17-l2-video-1": {
+                  "title": "Local taxes"
+                },
+                "economics-u17-l2-article": {
+                  "title": "Poznaj: Local taxes"
+                },
+                "economics-u17-l2-practice": {
+                  "title": "Praktyka: Calculating local taxes"
+                },
+                "economics-u17-l2-quiz": {
+                  "title": "Quiz: Local taxes"
+                }
+              }
+            },
+            "lesson-17-3": {
+              "title": "Tax forms",
+              "contentItem": {
+                "economics-u17-l3-video-1": {
+                  "title": "Tax forms"
+                },
+                "economics-u17-l3-article": {
+                  "title": "Poznaj: Tax forms"
+                },
+                "economics-u17-l3-practice": {
+                  "title": "Praktyka: Tax forms and tax terms"
+                },
+                "economics-u17-l3-quiz": {
+                  "title": "Quiz: Tax forms"
+                }
+              }
+            },
+            "lesson-17-4": {
+              "title": "Personal taxes",
+              "contentItem": {
+                "economics-u17-l4-video-1": {
+                  "title": "Personal taxes"
+                },
+                "economics-u17-l4-article": {
+                  "title": "Poznaj: Personal taxes"
+                },
+                "economics-u17-l4-practice": {
+                  "title": "Praktyka: Progressive taxation and tax brackets"
+                },
+                "economics-u17-l4-quiz": {
+                  "title": "Quiz: Personal taxes"
+                }
+              }
+            }
+          }
+        },
+        "unit-18": {
+          "title": "Jednostka 18: Ubezpieczenia",
+          "description": "Zrozumienie zarządzania ryzykiem, podstaw ubezpieczeń, ubezpieczenia samochodu, ubezpieczenia zdrowotnego, ubezpieczenia na życie, ubezpieczenia mienia i planowania majątku",
+          "lesson": {
+            "lesson-18-1": {
+              "title": "What is risk and how to manage it?",
+              "contentItem": {
+                "economics-u18-l1-video-1": {
+                  "title": "What is risk and how to manage it?"
+                },
+                "economics-u18-l1-article": {
+                  "title": "Poznaj: What is risk and how to manage it?"
+                },
+                "economics-u18-l1-practice": {
+                  "title": "Praktyka: Risk"
+                },
+                "economics-u18-l1-quiz": {
+                  "title": "Quiz: What is risk and how to manage it?"
+                }
+              }
+            },
+            "lesson-18-2": {
+              "title": "Insurance basics and terminology",
+              "contentItem": {
+                "economics-u18-l2-video-1": {
+                  "title": "Insurance basics and terminology"
+                },
+                "economics-u18-l2-article": {
+                  "title": "Poznaj: Insurance basics and terminology"
+                },
+                "economics-u18-l2-practice": {
+                  "title": "Praktyka: Insurance basics"
+                },
+                "economics-u18-l2-quiz": {
+                  "title": "Quiz: Insurance basics and terminology"
+                }
+              }
+            },
+            "lesson-18-3": {
+              "title": "Car insurance",
+              "contentItem": {
+                "economics-u18-l3-video-1": {
+                  "title": "Car insurance"
+                },
+                "economics-u18-l3-article": {
+                  "title": "Poznaj: Car insurance"
+                },
+                "economics-u18-l3-practice": {
+                  "title": "Praktyka: Car insurance"
+                },
+                "economics-u18-l3-quiz": {
+                  "title": "Quiz: Car insurance"
+                }
+              }
+            },
+            "lesson-18-4": {
+              "title": "Health insurance",
+              "contentItem": {
+                "economics-u18-l4-video-1": {
+                  "title": "Health insurance"
+                },
+                "economics-u18-l4-article": {
+                  "title": "Poznaj: Health insurance"
+                },
+                "economics-u18-l4-practice": {
+                  "title": "Praktyka: Health insurance plans"
+                },
+                "economics-u18-l4-quiz": {
+                  "title": "Quiz: Health insurance"
+                }
+              }
+            },
+            "lesson-18-5": {
+              "title": "Life insurance",
+              "contentItem": {
+                "economics-u18-l5-video-1": {
+                  "title": "Life insurance"
+                },
+                "economics-u18-l5-article": {
+                  "title": "Poznaj: Life insurance"
+                },
+                "economics-u18-l5-practice": {
+                  "title": "Praktyka: Life insurance policies"
+                },
+                "economics-u18-l5-quiz": {
+                  "title": "Quiz: Life insurance"
+                }
+              }
+            },
+            "lesson-18-6": {
+              "title": "Property insurance",
+              "contentItem": {
+                "economics-u18-l6-video-1": {
+                  "title": "Property insurance"
+                },
+                "economics-u18-l6-article": {
+                  "title": "Poznaj: Property insurance"
+                },
+                "economics-u18-l6-practice": {
+                  "title": "Praktyka: Property insurance policies"
+                },
+                "economics-u18-l6-quiz": {
+                  "title": "Quiz: Property insurance"
+                }
+              }
+            },
+            "lesson-18-7": {
+              "title": "Estate planning",
+              "contentItem": {
+                "economics-u18-l7-video-1": {
+                  "title": "Estate planning"
+                },
+                "economics-u18-l7-article": {
+                  "title": "Poznaj: Estate planning"
+                },
+                "economics-u18-l7-practice": {
+                  "title": "Praktyka: Estate planning"
+                },
+                "economics-u18-l7-quiz": {
+                  "title": "Quiz: Estate planning"
+                }
+              }
+            }
+          }
+        },
+        "unit-19": {
+          "title": "Jednostka 19: Zakup samochodu",
+          "description": "Zrozumienie posiadania vs leasingu, kredytów samochodowych i prawdziwego kosztu posiadania samochodu",
+          "lesson": {
+            "lesson-19-1": {
+              "title": "Owning vs leasing",
+              "contentItem": {
+                "economics-u19-l1-video-1": {
+                  "title": "Owning vs leasing"
+                },
+                "economics-u19-l1-article": {
+                  "title": "Poznaj: Owning vs leasing"
+                },
+                "economics-u19-l1-practice": {
+                  "title": "Praktyka: Pros and cons of lease vs buy"
+                },
+                "economics-u19-l1-quiz": {
+                  "title": "Quiz: Owning vs leasing"
+                }
+              }
+            },
+            "lesson-19-2": {
+              "title": "Car loans",
+              "contentItem": {
+                "economics-u19-l2-video-1": {
+                  "title": "Car loans"
+                },
+                "economics-u19-l2-article": {
+                  "title": "Poznaj: Car loans"
+                },
+                "economics-u19-l2-practice": {
+                  "title": "Praktyka: Financing a car"
+                },
+                "economics-u19-l2-quiz": {
+                  "title": "Quiz: Car loans"
+                }
+              }
+            },
+            "lesson-19-3": {
+              "title": "Cost of car ownership",
+              "contentItem": {
+                "economics-u19-l3-video-1": {
+                  "title": "Cost of car ownership"
+                },
+                "economics-u19-l3-article": {
+                  "title": "Poznaj: Cost of car ownership"
+                },
+                "economics-u19-l3-practice": {
+                  "title": "Praktyka: Additional costs of car ownership"
+                },
+                "economics-u19-l3-quiz": {
+                  "title": "Quiz: Cost of car ownership"
+                }
+              }
+            }
+          }
+        },
+        "unit-20": {
+          "title": "Jednostka 20: Mieszkania",
+          "description": "Zrozumienie wynajmu vs własności mieszkania, kosztów mieszkaniowych i wymagań",
+          "lesson": {
+            "lesson-20-1": {
+              "title": "Renting vs homeownership",
+              "contentItem": {
+                "economics-u20-l1-video-1": {
+                  "title": "Renting vs homeownership"
+                },
+                "economics-u20-l1-article": {
+                  "title": "Poznaj: Renting vs homeownership"
+                },
+                "economics-u20-l1-practice": {
+                  "title": "Praktyka: Owning vs renting"
+                },
+                "economics-u20-l1-quiz": {
+                  "title": "Quiz: Renting vs homeownership"
+                }
+              }
+            }
+          }
+        },
+        "unit-21": {
+          "title": "Jednostka 21: Oszustwa i oszukaństwa",
+          "description": "Zrozumienie informacji osobistych i tożsamości, powszechnych oszustw, umów i ochrony konsumentów",
+          "lesson": {
+            "lesson-21-1": {
+              "title": "Personal information and identity",
+              "contentItem": {
+                "economics-u21-l1-video-1": {
+                  "title": "Personal information and identity"
+                },
+                "economics-u21-l1-article": {
+                  "title": "Poznaj: Personal information and identity"
+                },
+                "economics-u21-l1-practice": {
+                  "title": "Praktyka: Identity theft"
+                },
+                "economics-u21-l1-quiz": {
+                  "title": "Quiz: Personal information and identity"
+                }
+              }
+            },
+            "lesson-21-2": {
+              "title": "Common scams",
+              "contentItem": {
+                "economics-u21-l2-video-1": {
+                  "title": "Common scams"
+                },
+                "economics-u21-l2-article": {
+                  "title": "Poznaj: Common scams"
+                },
+                "economics-u21-l2-practice": {
+                  "title": "Praktyka: Scams"
+                },
+                "economics-u21-l2-quiz": {
+                  "title": "Quiz: Common scams"
+                }
+              }
+            },
+            "lesson-21-3": {
+              "title": "Contracts",
+              "contentItem": {
+                "economics-u21-l3-video-1": {
+                  "title": "Contracts"
+                },
+                "economics-u21-l3-article": {
+                  "title": "Poznaj: Contracts"
+                },
+                "economics-u21-l3-practice": {
+                  "title": "Praktyka: Understanding contracts"
+                },
+                "economics-u21-l3-quiz": {
+                  "title": "Quiz: Contracts"
+                }
+              }
+            },
+            "lesson-21-4": {
+              "title": "Consumer protection agencies",
+              "contentItem": {
+                "economics-u21-l4-video-1": {
+                  "title": "Consumer protection agencies"
+                },
+                "economics-u21-l4-article": {
+                  "title": "Poznaj: Consumer protection agencies"
+                },
+                "economics-u21-l4-practice": {
+                  "title": "Praktyka: Consumer protection agencies"
+                },
+                "economics-u21-l4-quiz": {
+                  "title": "Quiz: Consumer protection agencies"
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
 }
-

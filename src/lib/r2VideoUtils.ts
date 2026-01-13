@@ -4,8 +4,8 @@
  * Structure:
  * - Macroeconomics: /macro/Macroeconomics-U1-L1-V1.mp4
  * - Microeconomics: /micro/Microeconomics-U1-L1-V1.mp4
- * - Finance & Markets: /finance/Finance&Markets-U1-L1-V1.mp4
- * - Economics & Personal Finance: /economics/Economics&Personal-U1-L1-V1.mp4
+ * - Finance & Markets: /fin/Finance&Markets-U1-L1-V1.mp4
+ * - Economics & Personal Finance: /personal/Economics&Personal-U1-L1-V1.mp4
  */
 
 const R2_PUBLIC_URL = 'https://pub-3a415fdd495c4b5eaaadb487006b4f22.r2.dev';
@@ -16,8 +16,8 @@ const R2_PUBLIC_URL = 'https://pub-3a415fdd495c4b5eaaadb487006b4f22.r2.dev';
 const COURSE_FOLDERS: Record<string, string> = {
   macroeconomics: 'macro',
   microeconomics: 'micro',
-  'finance-markets': 'finance',
-  'economics-personal-finance': 'economics'
+  'finance-markets': 'fin',
+  'economics-personal-finance': 'personal'
 };
 
 /**

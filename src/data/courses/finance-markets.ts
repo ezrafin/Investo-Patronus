@@ -8246,8 +8246,38 @@ const unit10Lessons: Lesson[] = [
       {
         id: 'finance-u10-l5-video-1',
         type: 'video',
-        title: 'European Union',
+        title: 'Brexit and European Union primer',
         videoIndex: 0,
+      } as VideoContent,
+      {
+        id: 'finance-u10-l5-video-2',
+        type: 'video',
+        title: 'United Kingdom vs Great Britain vs England primer',
+        videoIndex: 1,
+      } as VideoContent,
+      {
+        id: 'finance-u10-l5-video-3',
+        type: 'video',
+        title: 'Greek debt recession and austerity (part 1)',
+        videoIndex: 2,
+      } as VideoContent,
+      {
+        id: 'finance-u10-l5-video-4',
+        type: 'video',
+        title: 'Greek financial crisis (part 2)',
+        videoIndex: 3,
+      } as VideoContent,
+      {
+        id: 'finance-u10-l5-video-5',
+        type: 'video',
+        title: 'How and why Greece would leave the Euro (part 3)',
+        videoIndex: 4,
+      } as VideoContent,
+      {
+        id: 'finance-u10-l5-video-6',
+        type: 'video',
+        title: 'Why Europe is worried about Greece',
+        videoIndex: 5,
       } as VideoContent,
       {
         id: 'finance-u10-l5-article',
