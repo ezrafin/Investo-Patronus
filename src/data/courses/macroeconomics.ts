@@ -298,7 +298,7 @@ The PPC illustrates maximum production possibilities and trade-offs. Opportunity
       {
         id: 'macroecon-u1-l3-video-6',
         type: 'video',
-        title: 'When there aren't gains from trade',
+        title: "When there aren't gains from trade",
         videoIndex: 5,
       } as VideoContent,
       {
