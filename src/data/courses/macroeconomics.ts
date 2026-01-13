@@ -17,8 +17,32 @@ const unit1Lessons: Lesson[] = [
       {
         id: 'macroecon-u1-l1-video-1',
         type: 'video',
-        title: 'Introduction to macroeconomics',
+        title: 'Introduction to economics',
         videoIndex: 0,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l1-video-2',
+        type: 'video',
+        title: 'Scarcity',
+        videoIndex: 1,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l1-video-3',
+        type: 'video',
+        title: 'Normative and positive statements',
+        videoIndex: 2,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l1-video-4',
+        type: 'video',
+        title: 'Economic models',
+        videoIndex: 3,
+      } as VideoContent,
+      {
+        id: 'macroecon-u1-l1-video-5',
+        type: 'video',
+        title: 'Command and market economies',
+        videoIndex: 4,
       } as VideoContent,
       {
         id: 'macroecon-u1-l1-article',
