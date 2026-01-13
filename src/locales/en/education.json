@@ -673,7 +673,7 @@
       "description": "Comprehensive study of macroeconomic principles, policies, and their impact on global economies",
       "unit": {
         "unit-1": {
-          "title": "Unit 1: Basic economics concepts",
+          "title": "Basic economics concepts",
           "description": "Introduction to fundamental economic concepts and principles",
           "lesson": {
             "lesson-1-1": {
@@ -793,7 +793,7 @@
           }
         },
         "unit-2": {
-          "title": "Unit 2: Economic indicators and the business cycle",
+          "title": "Economic indicators and the business cycle",
           "description": "Understanding GDP, unemployment, inflation, and business cycles",
           "lesson": {
             "lesson-2-1": {
@@ -918,7 +918,7 @@
           }
         },
         "unit-3": {
-          "title": "Unit 3: National income and price determination",
+          "title": "National income and price determination",
           "description": "Understanding aggregate demand, aggregate supply, and fiscal policy",
           "lesson": {
             "lesson-3-1": {
@@ -1077,7 +1077,7 @@
           }
         },
         "unit-4": {
-          "title": "Unit 4: Financial sector",
+          "title": "Financial sector",
           "description": "Understanding money, banking, financial markets, and monetary policy",
           "lesson": {
             "lesson-4-1": {
@@ -1219,7 +1219,7 @@
           }
         },
         "unit-5": {
-          "title": "Unit 5: Long-run consequences of stabilization policies",
+          "title": "Long-run consequences of stabilization policies",
           "description": "Understanding long-run effects of fiscal and monetary policy, growth, and debt",
           "lesson": {
             "lesson-5-1": {
@@ -1327,7 +1327,7 @@
           }
         },
         "unit-6": {
-          "title": "Unit 6: Open economy: international trade and finance",
+          "title": "Open economy: international trade and finance",
           "description": "Understanding balance of payments, exchange rates, and international capital flows",
           "lesson": {
             "lesson-6-1": {
@@ -1418,7 +1418,7 @@
           }
         },
         "unit-7": {
-          "title": "Unit 7: Keynesian approaches and IS-LM",
+          "title": "Keynesian approaches and IS-LM",
           "description": "Understanding consumption functions, Keynesian cross, IS-LM model, and Keynesian economics",
           "lesson": {
             "lesson-7-1": {
@@ -1492,7 +1492,7 @@
           }
         },
         "unit-8": {
-          "title": "Unit 8: Contemporary macroeconomic issues",
+          "title": "Contemporary macroeconomic issues",
           "description": "Understanding income inequality, wealth distribution, and the 2008 financial crisis",
           "lesson": {
             "lesson-8-1": {
@@ -1555,7 +1555,7 @@
       "description": "Study of individual economic units and their decision-making processes",
       "unit": {
         "unit-1": {
-          "title": "Unit 1: Basic economic concepts",
+          "title": "Basic economic concepts",
           "description": "Introduction to economics, scarcity, economic systems, and the circular flow model",
           "lesson": {
             "lesson-1-1": {
@@ -1595,7 +1595,7 @@
           }
         },
         "unit-2": {
-          "title": "Unit 2: Supply, demand, and market equilibrium",
+          "title": "Supply, demand, and market equilibrium",
           "description": "Understanding demand, supply, market equilibrium, and how markets adjust to changes",
           "lesson": {
             "lesson-2-1": {
@@ -1652,7 +1652,7 @@
           }
         },
         "unit-3": {
-          "title": "Unit 3: Elasticity",
+          "title": "Elasticity",
           "description": "Understanding price elasticity of demand and supply, income elasticity, and cross-price elasticity",
           "lesson": {
             "lesson-3-1": {
@@ -1709,7 +1709,7 @@
           }
         },
         "unit-4": {
-          "title": "Unit 4: Consumer and producer surplus, market interventions, and international trade",
+          "title": "Consumer and producer surplus, market interventions, and international trade",
           "description": "Understanding consumer and producer surplus, market interventions, deadweight loss, and international trade",
           "lesson": {
             "lesson-4-1": {
@@ -1766,7 +1766,7 @@
           }
         },
         "unit-5": {
-          "title": "Unit 5: Consumer theory",
+          "title": "Consumer theory",
           "description": "Understanding utility, marginal utility, utility maximization, and consumer choice with indifference curves",
           "lesson": {
             "lesson-5-1": {
@@ -1823,7 +1823,7 @@
           }
         },
         "unit-6": {
-          "title": "Unit 6: Production decisions and economic profit",
+          "title": "Production decisions and economic profit",
           "description": "Understanding production functions, costs, profit maximization, and firm entry/exit decisions",
           "lesson": {
             "lesson-6-1": {
@@ -1931,7 +1931,7 @@
           }
         },
         "unit-7": {
-          "title": "Unit 7: Forms of competition",
+          "title": "Forms of competition",
           "description": "Understanding perfect competition, monopoly, monopolistic competition, oligopoly, and game theory",
           "lesson": {
             "lesson-7-1": {
@@ -2022,7 +2022,7 @@
           }
         },
         "unit-8": {
-          "title": "Unit 8: Factor markets",
+          "title": "Factor markets",
           "description": "Understanding factor markets, labor demand and supply, cost minimization, and monopsony",
           "lesson": {
             "lesson-8-1": {
@@ -2096,7 +2096,7 @@
           }
         },
         "unit-9": {
-          "title": "Unit 9: Market failure and the role of government",
+          "title": "Market failure and the role of government",
           "description": "Understanding externalities, public goods, common resources, and government intervention",
           "lesson": {
             "lesson-9-1": {
@@ -2142,7 +2142,7 @@
       "description": "Comprehensive study of financial markets, instruments, and investment strategies",
       "unit": {
         "unit-1": {
-          "title": "Unit 1: Interest and debt",
+          "title": "Interest and debt",
           "description": "Understanding interest, compound interest, credit cards, loans, present value, and bankruptcy",
           "lesson": {
             "lesson-1-1": {
@@ -2250,7 +2250,7 @@
           }
         },
         "unit-2": {
-          "title": "Unit 2: Housing",
+          "title": "Housing",
           "description": "Understanding home equity, balance sheets, renting vs. buying, mortgages, and the home buying process",
           "lesson": {
             "lesson-2-1": {
@@ -2324,7 +2324,7 @@
           }
         },
         "unit-3": {
-          "title": "Unit 3: Inflation",
+          "title": "Inflation",
           "description": "Understanding inflation, deflation, real vs. nominal returns, and capacity utilization",
           "lesson": {
             "lesson-3-1": {
@@ -2415,7 +2415,7 @@
           }
         },
         "unit-4": {
-          "title": "Unit 4: Taxes",
+          "title": "Taxes",
           "description": "Understanding personal taxes, corporate taxation, and tax planning",
           "lesson": {
             "lesson-4-1": {
@@ -2455,7 +2455,7 @@
           }
         },
         "unit-5": {
-          "title": "Unit 5: Accounting and financial statements",
+          "title": "Accounting and financial statements",
           "description": "Understanding cash vs. accrual accounting, financial statements, and depreciation",
           "lesson": {
             "lesson-5-1": {
@@ -2512,7 +2512,7 @@
           }
         },
         "unit-6": {
-          "title": "Unit 6: Stocks and bonds",
+          "title": "Stocks and bonds",
           "description": "Understanding stocks, bonds, corporate finance, valuation, and company life cycle",
           "lesson": {
             "lesson-6-1": {
@@ -2688,7 +2688,7 @@
           }
         },
         "unit-7": {
-          "title": "Unit 7: Investment vehicles, insurance, and retirement",
+          "title": "Investment vehicles, insurance, and retirement",
           "description": "Understanding mutual funds, ETFs, retirement accounts, insurance, hedge funds, and investment principles",
           "lesson": {
             "lesson-7-1": {
@@ -2779,7 +2779,7 @@
           }
         },
         "unit-8": {
-          "title": "Unit 8: Money, banking and central banks",
+          "title": "Money, banking and central banks",
           "description": "Understanding banking, money creation, central banks, quantitative easing, financial crises, and cryptocurrencies",
           "lesson": {
             "lesson-8-1": {
@@ -2921,7 +2921,7 @@
           }
         },
         "unit-9": {
-          "title": "Unit 9: Options, swaps, futures, MBSs, CDOs, and other derivatives",
+          "title": "Options, swaps, futures, MBSs, CDOs, and other derivatives",
           "description": "Understanding options, futures, swaps, mortgage-backed securities, CDOs, credit default swaps, and option pricing",
           "lesson": {
             "lesson-9-1": {
@@ -3046,7 +3046,7 @@
           }
         },
         "unit-10": {
-          "title": "Unit 10: Current economics",
+          "title": "Current economics",
           "description": "Understanding unemployment, housing prices, credit crisis, financial bailouts, and European Union issues",
           "lesson": {
             "lesson-10-1": {
@@ -3158,7 +3158,7 @@
       "description": "Understanding personal finance through economic principles",
       "unit": {
         "unit-1": {
-          "title": "Unit 1: Foundations of economics",
+          "title": "Foundations of economics",
           "description": "Understanding scarcity, opportunity cost, decision-making, factors of production, human capital, and economic systems",
           "lesson": {
             "lesson-1-1": {
@@ -3266,7 +3266,7 @@
           }
         },
         "unit-2": {
-          "title": "Unit 2: Producers and consumers in markets",
+          "title": "Producers and consumers in markets",
           "description": "Understanding incentives, marketing, costs, revenue, profit, productivity, business organization, and market structures",
           "lesson": {
             "lesson-2-1": {
@@ -3357,7 +3357,7 @@
           }
         },
         "unit-3": {
-          "title": "Unit 3: The microeconomy and price systems",
+          "title": "The microeconomy and price systems",
           "description": "Understanding demand, supply, elasticity, market equilibrium, and price controls",
           "lesson": {
             "lesson-3-1": {
@@ -3448,7 +3448,7 @@
           }
         },
         "unit-4": {
-          "title": "Unit 4: The role of government in markets",
+          "title": "The role of government in markets",
           "description": "Understanding public vs. private goods, property rights, and government redistribution of wealth",
           "lesson": {
             "lesson-4-1": {
@@ -3505,7 +3505,7 @@
           }
         },
         "unit-5": {
-          "title": "Unit 5: Macroeconomic challenges",
+          "title": "Macroeconomic challenges",
           "description": "Understanding macroeconomic indicators, aggregate demand and supply, and business cycles",
           "lesson": {
             "lesson-5-1": {
@@ -3562,7 +3562,7 @@
           }
         },
         "unit-6": {
-          "title": "Unit 6: Money, Banking, and Financial Markets",
+          "title": "Money, Banking, and Financial Markets",
           "description": "Understanding money, financial institutions and markets, and the Federal Reserve",
           "lesson": {
             "lesson-6-1": {
@@ -3619,7 +3619,7 @@
           }
         },
         "unit-7": {
-          "title": "Unit 7: Economic stabilization",
+          "title": "Economic stabilization",
           "description": "Understanding monetary policy, fiscal policy, and government budgets",
           "lesson": {
             "lesson-7-1": {
@@ -3676,7 +3676,7 @@
           }
         },
         "unit-8": {
-          "title": "Unit 8: Global economy",
+          "title": "Global economy",
           "description": "Understanding trade, exchange rates, and globalization",
           "lesson": {
             "lesson-8-1": {
@@ -3733,7 +3733,7 @@
           }
         },
         "unit-9": {
-          "title": "Unit 9: Careers and education",
+          "title": "Careers and education",
           "description": "Understanding education as investment, paying for education, financial aid, and student loans",
           "lesson": {
             "lesson-9-1": {
@@ -3824,7 +3824,7 @@
           }
         },
         "unit-10": {
-          "title": "Unit 10: Employment",
+          "title": "Employment",
           "description": "Understanding compensation, benefits, paychecks, non-typical pay, and hiring process",
           "lesson": {
             "lesson-10-1": {
@@ -3898,7 +3898,7 @@
           }
         },
         "unit-11": {
-          "title": "Unit 11: Banking",
+          "title": "Banking",
           "description": "Understanding banking institutions, bank accounts, account management, and interest",
           "lesson": {
             "lesson-11-1": {

@@ -87,9 +87,14 @@ export function VideoPlayer({
   useEffect(() => {
     if (!nextVideoUrl) return;
 
-    // Remove existing prefetch link if any
-    if (prefetchLinkRef.current) {
-      document.head.removeChild(prefetchLinkRef.current);
+    // Remove existing prefetch link if any (with safety check)
+    if (prefetchLinkRef.current && document.head.contains(prefetchLinkRef.current)) {
+      try {
+        document.head.removeChild(prefetchLinkRef.current);
+      } catch (error) {
+        // Element may have been removed already, ignore error
+        console.warn('Failed to remove prefetch link:', error);
+      }
     }
 
     // Create new prefetch link
@@ -102,8 +107,14 @@ export function VideoPlayer({
 
     return () => {
       if (prefetchLinkRef.current && document.head.contains(prefetchLinkRef.current)) {
-        document.head.removeChild(prefetchLinkRef.current);
+        try {
+          document.head.removeChild(prefetchLinkRef.current);
+        } catch (error) {
+          // Element may have been removed already, ignore error
+          console.warn('Failed to remove prefetch link in cleanup:', error);
+        }
       }
+      prefetchLinkRef.current = null;
     };
   }, [nextVideoUrl]);
 
@@ -430,8 +441,14 @@ export function VideoPlayer({
         clearTimeout(controlsTimeoutRef.current);
       }
       if (prefetchLinkRef.current && document.head.contains(prefetchLinkRef.current)) {
-        document.head.removeChild(prefetchLinkRef.current);
+        try {
+          document.head.removeChild(prefetchLinkRef.current);
+        } catch (error) {
+          // Element may have been removed already, ignore error
+          console.warn('Failed to remove prefetch link in component unmount:', error);
+        }
       }
+      prefetchLinkRef.current = null;
     };
   }, []);
 

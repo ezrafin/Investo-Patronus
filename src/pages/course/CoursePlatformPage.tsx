@@ -481,6 +481,7 @@ export default function CoursePlatformPage() {
                     {selectedContentItem.type === 'video' && unitIndex >= 0 && lessonIndex >= 0 && (
                       <div className="glass-card overflow-hidden p-0">
                         <VideoPlayer
+                          key={`${videoId}-${selectedContentItem.id}`}
                           src={getVideoContentUrl(course.id, unitIndex, lessonIndex, selectedContentItem)}
                           title={selectedContentItem.title || selectedLesson.title}
                           className="aspect-video"

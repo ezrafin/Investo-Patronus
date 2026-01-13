@@ -74,6 +74,9 @@ export default function ModerationPage() {
   const [loadingDiscussions, setLoadingDiscussions] = useState(false);
   const [loadingReplies, setLoadingReplies] = useState(false);
   const [loadingEvaluations, setLoadingEvaluations] = useState(false);
+  const [approvingAllDiscussions, setApprovingAllDiscussions] = useState(false);
+  const [approvingAllReplies, setApprovingAllReplies] = useState(false);
+  const [approvingAllEvaluations, setApprovingAllEvaluations] = useState(false);
   const [activeTab, setActiveTab] = useState<'discussions' | 'replies' | 'evaluations' | 'reports'>('discussions');
   const [reportsTab, setReportsTab] = useState<'pending' | 'all'>('pending');
 
@@ -350,6 +353,90 @@ export default function ModerationPage() {
     }
   };
 
+  const handleApproveAllDiscussions = async () => {
+    if (pendingDiscussions.length === 0) return;
+    
+    setApprovingAllDiscussions(true);
+    try {
+      const discussionIds = pendingDiscussions.map(d => d.id);
+      
+      const { data, error } = await supabase
+        .from('forum_discussions')
+        .update({ is_featured: true })
+        .in('id', discussionIds)
+        .select();
+      
+      if (error) throw error;
+      
+      // Update UI
+      setPendingDiscussions([]);
+      toast.success(`Approved ${discussionIds.length} discussion${discussionIds.length > 1 ? 's' : ''}`);
+    } catch (error: any) {
+      console.error('Error approving all discussions:', error);
+      toast.error(error.message || 'Failed to approve all discussions');
+      // Reload on error
+      loadPendingDiscussions();
+    } finally {
+      setApprovingAllDiscussions(false);
+    }
+  };
+
+  const handleApproveAllReplies = async () => {
+    if (pendingReplies.length === 0) return;
+    
+    setApprovingAllReplies(true);
+    try {
+      const replyIds = pendingReplies.map(r => r.id);
+      
+      const { data, error } = await supabase
+        .from('forum_replies')
+        .update({ is_approved: true })
+        .in('id', replyIds)
+        .select();
+      
+      if (error) throw error;
+      
+      // Update UI
+      setPendingReplies([]);
+      toast.success(`Approved ${replyIds.length} repl${replyIds.length > 1 ? 'ies' : 'y'}`);
+    } catch (error: any) {
+      console.error('Error approving all replies:', error);
+      toast.error(error.message || 'Failed to approve all replies');
+      // Reload on error
+      loadPendingReplies();
+    } finally {
+      setApprovingAllReplies(false);
+    }
+  };
+
+  const handleApproveAllEvaluations = async () => {
+    if (pendingEvaluations.length === 0) return;
+    
+    setApprovingAllEvaluations(true);
+    try {
+      const evaluationIds = pendingEvaluations.map(e => e.id);
+      
+      const { data, error } = await supabase
+        .from('company_evaluations')
+        .update({ is_approved: true })
+        .in('id', evaluationIds)
+        .select();
+      
+      if (error) throw error;
+      
+      // Update UI
+      setPendingEvaluations([]);
+      toast.success(`Approved ${evaluationIds.length} company review${evaluationIds.length > 1 ? 's' : ''}`);
+    } catch (error: any) {
+      console.error('Error approving all evaluations:', error);
+      toast.error(error.message || 'Failed to approve all company reviews');
+      // Reload on error
+      loadPendingEvaluations();
+    } finally {
+      setApprovingAllEvaluations(false);
+    }
+  };
+
   const handleModerationAction = async (
     action: 'delete' | 'lock' | 'pin' | 'approve' | 'hide' | 'unhide',
     contentType: string,
@@ -481,6 +568,27 @@ export default function ModerationPage() {
 
             {/* Discussions Tab */}
             <TabsContent value="discussions" className="mt-6">
+              {pendingDiscussions.length > 0 && (
+                <div className="mb-4 flex justify-end">
+                  <Button
+                    onClick={handleApproveAllDiscussions}
+                    disabled={approvingAllDiscussions || pendingDiscussions.length === 0}
+                    variant="default"
+                  >
+                    {approvingAllDiscussions ? (
+                      <>
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                        Approving...
+                      </>
+                    ) : (
+                      <>
+                        <CheckCircle className="h-4 w-4 mr-2" />
+                        Approve All Discussions ({pendingDiscussions.length})
+                      </>
+                    )}
+                  </Button>
+                </div>
+              )}
               {loadingDiscussions ? (
                 <div className="space-y-4">
                   {Array.from({ length: 5 }).map((_, i) => (
