@@ -463,6 +463,100 @@
           }
         }
       }
+    },
+    "macroeconomics": {
+      "title": "Macroeconomics",
+      "description": "Comprehensive study of macroeconomic principles, policies, and their impact on global economies",
+      "unit": {
+        "unit-1": {
+          "title": "Unit 1: Basic economics concepts",
+          "description": "Introduction to fundamental economic concepts and principles",
+          "lesson": {
+            "lesson-1-1": {
+              "title": "Introduction to macroeconomics",
+              "contentItem": {
+                "macroecon-u1-l1-video-1": { "title": "Introduction to macroeconomics" },
+                "macroecon-u1-l1-article": { "title": "Learn: Introduction to macroeconomics" },
+                "macroecon-u1-l1-practice": { "title": "Practice: Introduction to scarcity and the economic way of thinking" },
+                "macroecon-u1-l1-quiz": { "title": "Quiz: Introduction to macroeconomics" }
+              }
+            },
+            "lesson-1-2": {
+              "title": "Opportunity cost and the Production Possibilities Curve",
+              "contentItem": {
+                "macroecon-u1-l2-video-1": { "title": "Opportunity cost and the Production Possibilities Curve" },
+                "macroecon-u1-l2-article": { "title": "Learn: Opportunity cost and the Production Possibilities Curve" },
+                "macroecon-u1-l2-practice": { "title": "Practice: Opportunity cost and the PPC" },
+                "macroecon-u1-l2-quiz": { "title": "Quiz: Opportunity cost and the PPC" }
+              }
+            },
+            "lesson-1-3": {
+              "title": "Comparative advantage and the gains from trade",
+              "contentItem": {
+                "macroecon-u1-l3-video-1": { "title": "Comparative advantage and the gains from trade" },
+                "macroecon-u1-l3-article": { "title": "Learn: Comparative advantage and the gains from trade" },
+                "macroecon-u1-l3-practice": { "title": "Practice: Comparative advantage and the gains from trade" },
+                "macroecon-u1-l3-quiz": { "title": "Quiz: Comparative advantage and the gains from trade" }
+              }
+            },
+            "lesson-1-4": {
+              "title": "Demand",
+              "contentItem": {
+                "macroecon-u1-l4-video-1": { "title": "Demand" },
+                "macroecon-u1-l4-article": { "title": "Learn: Demand" },
+                "macroecon-u1-l4-practice": { "title": "Practice: Demand" },
+                "macroecon-u1-l4-quiz": { "title": "Quiz: Demand" }
+              }
+            },
+            "lesson-1-5": {
+              "title": "Supply",
+              "contentItem": {
+                "macroecon-u1-l5-video-1": { "title": "Supply" },
+                "macroecon-u1-l5-article": { "title": "Learn: Supply" },
+                "macroecon-u1-l5-practice": { "title": "Practice: Supply" },
+                "macroecon-u1-l5-quiz": { "title": "Quiz: Supply" }
+              }
+            },
+            "lesson-1-6": {
+              "title": "Markets",
+              "contentItem": {
+                "macroecon-u1-l6-video-1": { "title": "Markets" },
+                "macroecon-u1-l6-article": { "title": "Learn: Markets" },
+                "macroecon-u1-l6-practice": { "title": "Practice: Market equilibrium and disequilibrium, Changes in equilibrium" },
+                "macroecon-u1-l6-quiz": { "title": "Quiz: Markets" }
+              }
+            }
+          }
+        },
+        "unit-2": {
+          "title": "Unit 2: Economic indicators and the business cycle",
+          "description": "Understanding GDP, unemployment, inflation, and business cycles"
+        },
+        "unit-3": {
+          "title": "Unit 3: National income and price determination",
+          "description": "Understanding aggregate demand, aggregate supply, and fiscal policy"
+        },
+        "unit-4": {
+          "title": "Unit 4: Financial sector",
+          "description": "Understanding money, banking, financial markets, and monetary policy"
+        },
+        "unit-5": {
+          "title": "Unit 5: Long-run consequences of stabilization policies",
+          "description": "Understanding long-run effects of fiscal and monetary policy, growth, and debt"
+        },
+        "unit-6": {
+          "title": "Unit 6: Open economy: international trade and finance",
+          "description": "Understanding balance of payments, exchange rates, and international capital flows"
+        },
+        "unit-7": {
+          "title": "Unit 7: Keynesian approaches and IS-LM",
+          "description": "Understanding consumption functions, Keynesian cross, IS-LM model, and Keynesian economics"
+        },
+        "unit-8": {
+          "title": "Unit 8: Contemporary macroeconomic issues",
+          "description": "Understanding income inequality, wealth distribution, and the 2008 financial crisis"
+        }
+      }
     }
   }
 }
