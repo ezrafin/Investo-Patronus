@@ -3,6 +3,7 @@ import { CourseCard } from '@/components/education/CourseCard';
 import { getAllCourses } from '@/data/courses';
 import { useTranslation } from '@/hooks/useTranslation';
 import { BookOpen } from 'lucide-react';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 export default function CourseListingPage() {
   const { t } = useTranslation({ namespace: 'education' });

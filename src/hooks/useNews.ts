@@ -34,11 +34,12 @@ interface UseNewsResult {
 
 async function fetchNewsData(market: string, forceRefresh = false): Promise<NewsData> {
   // Step 1: Try to load cached news from database (fast)
+  // Increased limit to support proper pagination (was 50, now 1000)
   let query = supabase
     .from('news_articles')
     .select('*')
     .order('published_at', { ascending: false })
-    .limit(50);
+    .limit(1000);
 
   if (market !== 'all') {
     query = query.eq('market', market);
