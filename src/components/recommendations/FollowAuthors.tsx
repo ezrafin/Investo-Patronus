@@ -176,17 +176,16 @@ function AuthorCard({
           </div>
         </div>
         {showFollowButton && (
-          <Button
-            variant="outline"
-            size="sm"
-            asChild
-            className="flex-shrink-0 self-center"
-          >
-            <Link to={`/users/${author.id}`}>
+          <Link to={`/users/${author.id}`}>
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex-shrink-0 self-center"
+            >
               <UserPlus className="h-3 w-3 mr-1" />
               {t('followAuthors.viewProfile', 'View')}
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         )}
       </div>
     </div>
