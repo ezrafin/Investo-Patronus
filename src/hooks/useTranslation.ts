@@ -15,6 +15,7 @@ export function useTranslation(options?: UseTranslationOptions) {
   const { language, translations, loading } = useI18n();
   const [namespaceTranslations, setNamespaceTranslations] = useState<Record<string, any>>({});
   const [namespaceLoading, setNamespaceLoading] = useState(false);
+  const [englishFallback, setEnglishFallback] = useState<Record<string, any>>({});
 
   const namespace = options?.namespace;
 
@@ -35,6 +36,22 @@ export function useTranslation(options?: UseTranslationOptions) {
     };
 
     loadNamespace();
+  }, [namespace, language]);
+
+  // Load English fallback for namespace if needed
+  useEffect(() => {
+    if (!namespace || language === 'en') return;
+    
+    const loadEnglishFallback = async () => {
+      try {
+        const loaded = await loadTranslation('en', namespace);
+        setEnglishFallback(loaded);
+      } catch (error) {
+        logger.error(`Error loading English fallback for namespace ${namespace}:`, error);
+      }
+    };
+    
+    loadEnglishFallback();
   }, [namespace, language]);
 
   // Get fallback translations (English)
@@ -74,13 +91,15 @@ export function useTranslation(options?: UseTranslationOptions) {
       fallback = fallbackTranslations?.ui;
     } else if (namespaceTranslations && Object.keys(namespaceTranslations).length > 0) {
       targetTranslations = namespaceTranslations;
-      // For non-ui/common namespaces, try to load English fallback
-      if (language !== 'en') {
-        // Load English fallback for this namespace if needed
-        // For now, we'll use the namespace translations and fallback to key
-        fallback = undefined;
+      // Use English fallback if available
+      if (language !== 'en' && englishFallback && Object.keys(englishFallback).length > 0) {
+        fallback = englishFallback;
       }
     } else if (namespace && !namespaceTranslations) {
+      // If namespace not loaded yet, try to use English fallback
+      if (englishFallback && Object.keys(englishFallback).length > 0) {
+        targetTranslations = englishFallback;
+      }
       // Namespace specified but not loaded yet - try to use ui/common as fallback
       if (targetNamespace.startsWith('ui.')) {
         // If key starts with 'ui.', use ui namespace

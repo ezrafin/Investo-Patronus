@@ -53,9 +53,10 @@ export default defineConfig(({ mode }) => ({
             if (id.includes('node_modules/@supabase')) {
               return 'vendor-supabase';
             }
-            // Charts - separate chunk as it's large and not always needed
+            // Charts - keep with vendor-react to avoid initialization issues
+            // Recharts has dependencies on React that need to be loaded together
             if (id.includes('node_modules/recharts') || id.includes('node_modules/d3')) {
-              return 'vendor-charts';
+              return 'vendor-react';
             }
             // Form libraries
             if (

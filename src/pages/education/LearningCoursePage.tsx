@@ -79,7 +79,7 @@ const testimonials = [
 
 
 export default function LearningCoursePage() {
-  const { t } = useTranslation({ namespace: 'education' });
+  const { t, language } = useTranslation({ namespace: 'education' });
   const { t: tUi } = useTranslation({ namespace: 'ui' });
   const [email, setEmail] = useState('');
 
