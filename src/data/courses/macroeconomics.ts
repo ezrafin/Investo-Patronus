@@ -815,7 +815,7 @@ The law of supply shows the direct relationship between price and quantity suppl
         questions: [
           {
             id: 'q1',
-            prompt: 'The graph shows two supply curves S1 (green line) and S2 (red line). Point A is on S2 at (Q=2, P=6), point B is on S1 at (Q=2, P=4), point C is on S2 at (Q=6, P=8), and point D is on S1 at (Q=6, P=6). Which of the following movements would represent a decrease in the quantity supplied, but not associated with a decrease in supply?',
+            question: 'The graph shows two supply curves S1 (green line) and S2 (red line). Point A is on S2 at (Q=2, P=6), point B is on S1 at (Q=2, P=4), point C is on S2 at (Q=6, P=8), and point D is on S1 at (Q=6, P=6). Which of the following movements would represent a decrease in the quantity supplied, but not associated with a decrease in supply?',
             options: [
               'B to D',
               'C to A',
@@ -828,7 +828,7 @@ The law of supply shows the direct relationship between price and quantity suppl
           },
           {
             id: 'q2',
-            prompt: 'Which of the following statements accurately describes how an event will impact supply?',
+            question: 'Which of the following statements accurately describes how an event will impact supply?',
             options: [
               'An increase in costs of production will cause an increase in the supply curve',
               'An increase in demand will cause an increase in supply',
@@ -841,7 +841,7 @@ The law of supply shows the direct relationship between price and quantity suppl
           },
           {
             id: 'q3',
-            prompt: 'Which of the following best describes the law of supply?',
+            question: 'Which of the following best describes the law of supply?',
             options: [
               'Legal authorities regulate markets',
               'Producers sell the same amount of a good no matter its price',
@@ -854,7 +854,7 @@ The law of supply shows the direct relationship between price and quantity suppl
           },
           {
             id: 'q4',
-            prompt: 'Coffee bean merchants notice that coffee prices are at a historic low today, but they expect the price of coffee beans to increase in the next six months. How will the expectation of an increase in future prices most likely affect the supply of coffee beans on the market today?',
+            question: 'Coffee bean merchants notice that coffee prices are at a historic low today, but they expect the price of coffee beans to increase in the next six months. How will the expectation of an increase in future prices most likely affect the supply of coffee beans on the market today?',
             options: [
               'Supply will decrease',
               'Supply will increase',
@@ -1001,7 +1001,7 @@ Market equilibrium occurs when quantity demanded equals quantity supplied. Equil
         questions: [
           {
             id: 'q1',
-            prompt: 'What happens to the price and quantity of dog treats if the demand for dog treats increases and the supply of dog treats increases?',
+            question: 'What happens to the price and quantity of dog treats if the demand for dog treats increases and the supply of dog treats increases?',
             options: [
               'Price decreases; quantity increases',
               'Price increases; quantity decreases',
@@ -1014,7 +1014,7 @@ Market equilibrium occurs when quantity demanded equals quantity supplied. Equil
           },
           {
             id: 'q2',
-            prompt: 'Shampoo and conditioner are complementary goods. What happens to the price and quantity of conditioner if the price of shampoo decreases?',
+            question: 'Shampoo and conditioner are complementary goods. What happens to the price and quantity of conditioner if the price of shampoo decreases?',
             options: [
               'Price decreases; quantity increases',
               'Price decreases; quantity decreases',
@@ -1027,7 +1027,7 @@ Market equilibrium occurs when quantity demanded equals quantity supplied. Equil
           },
           {
             id: 'q3',
-            prompt: 'The graph shows the market for cheese with supply curve S1, initial demand curve D1 (equilibrium E1 at price Py and quantity QB), and new demand curve D2 after a decrease in demand (equilibrium E2 at price Px and quantity QA). Which of the following statements about the decrease in demand shown in the graph is correct?',
+            question: 'The graph shows the market for cheese with supply curve S1, initial demand curve D1 (equilibrium E1 at price Py and quantity QB), and new demand curve D2 after a decrease in demand (equilibrium E2 at price Px and quantity QA). Which of the following statements about the decrease in demand shown in the graph is correct?',
             options: [
               'The new equilibrium is P = Px and Q = QA',
               'The new equilibrium is E2',

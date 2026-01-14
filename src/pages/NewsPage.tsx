@@ -21,13 +21,17 @@ export default function NewsPage() {
   const { t, language } = useTranslation({ namespace: 'ui' });
   const [activeFilter, setActiveFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
+  
+  // Use server-side pagination
   const {
     news,
     loading,
     error,
     lastUpdated,
+    totalCount,
     refetch
-  } = useNews(activeFilter);
+  } = useNews({ market: activeFilter, page: currentPage, pageSize: ITEMS_PER_PAGE });
+  
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [isFetchingHistorical, setIsFetchingHistorical] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -130,9 +134,10 @@ export default function NewsPage() {
     });
   };
 
-  // Pagination
-  const totalPages = Math.ceil(news.length / ITEMS_PER_PAGE);
-  const paginatedNews = news.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+  // Server-side pagination - totalCount from database
+  const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
+  // No need to slice - already paginated from server
+  const paginatedNews = news;
   return <Layout>
       <SEOHead
         title="Financial News & Market Updates"

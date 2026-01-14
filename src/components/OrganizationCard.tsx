@@ -58,14 +58,24 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
   useEffect(() => {
     async function loadRatingData() {
       try {
-        // Get total rating count
-        const { count, error: countError } = await supabase
-          .from('company_evaluations')
-          .select('*', { count: 'exact', head: true })
-          .eq('company_slug', organization.id);
+        // Get pre-calculated rating count from companies_metadata (optimized)
+        const { data: metadata, error: metadataError } = await supabase
+          .from('companies_metadata')
+          .select('rating_count')
+          .eq('company_slug', organization.id)
+          .maybeSingle();
 
-        if (countError) throw countError;
-        setRatingCount(count || 0);
+        if (metadataError) {
+          logger.error('Error loading metadata:', metadataError);
+          // Fallback to direct count if metadata not found
+          const { count, error: countError } = await supabase
+            .from('company_evaluations')
+            .select('*', { count: 'exact', head: true })
+            .eq('company_slug', organization.id);
+          if (!countError) setRatingCount(count || 0);
+        } else {
+          setRatingCount(metadata?.rating_count || 0);
+        }
 
         // Get user's rating if logged in
         if (user) {

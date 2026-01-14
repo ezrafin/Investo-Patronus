@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { MarketData } from '@/lib/api/types';
 import { fetchMarketData } from '@/lib/api/market';
@@ -16,19 +16,57 @@ interface UseMarketDataReturn {
   lastUpdated: Date | null;
   refresh: () => Promise<void>;
   isDemo: boolean;
+  isRefreshing: boolean;
+}
+
+// Map market types to database market_type values
+const marketTypeMap: Record<string, string> = {
+  crypto: 'crypto',
+  stocks: 'stocks',
+  indices: 'indices',
+  commodities: 'commodities',
+  currencies: 'currencies',
+};
+
+// Load cached prices from database first (fast)
+async function loadCachedPrices(type: string): Promise<MarketData[]> {
+  try {
+    const { data, error } = await supabase
+      .from('market_prices')
+      .select('*')
+      .eq('market_type', marketTypeMap[type] || type)
+      .order('updated_at', { ascending: false });
+
+    if (error || !data) return [];
+
+    return data.map(item => ({
+      symbol: item.symbol,
+      name: item.name,
+      price: item.price,
+      change: item.change ?? 0,
+      changePercent: item.change_percent ?? 0,
+      high: item.high ?? 0,
+      low: item.low ?? 0,
+      volume: item.volume ?? undefined,
+    }));
+  } catch (err) {
+    logger.error('Error loading cached prices:', err);
+    return [];
+  }
 }
 
 export function useMarketData({ type, refreshInterval = 120000 }: UseMarketDataOptions): UseMarketDataReturn {
   const [data, setData] = useState<MarketData[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [isDemo, setIsDemo] = useState(false);
+  const hasFetchedRef = useRef(false);
 
-  const fetchData = useCallback(async () => {
+  const fetchFreshData = useCallback(async () => {
     try {
       setError(null);
-      setIsDemo(false);
       
       if (type === 'crypto') {
         const { data: responseData, error: fetchError } = await supabase.functions.invoke('fetch-crypto');
@@ -39,16 +77,10 @@ export function useMarketData({ type, refreshInterval = 120000 }: UseMarketDataO
           setData(responseData.data);
           setLastUpdated(new Date(responseData.timestamp));
           setIsDemo(false);
-        } else {
-          // Fallback to local mock data so UI is not empty
-          const fallback = await fetchMarketData('crypto');
-
-          setData(fallback);
-          setLastUpdated(new Date());
-          setIsDemo(true);
+          return;
         }
       } else {
-        // For non-crypto types (indices, stocks, commodities, currencies), use fetch-stocks with type parameter
+        // For non-crypto types, use fetch-stocks with type parameter
         const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
         const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
         
@@ -76,26 +108,72 @@ export function useMarketData({ type, refreshInterval = 120000 }: UseMarketDataO
           setData(result.data);
           setLastUpdated(new Date(result.timestamp));
           setIsDemo(false);
+          return;
         } else if (result?.error) {
           throw new Error(result.error);
         }
       }
+      
+      // If we get here, API returned no data - fallback to mock
+      const fallback = await fetchMarketData(type as 'crypto');
+      setData(fallback);
+      setLastUpdated(new Date());
+      setIsDemo(true);
     } catch (err) {
-      logger.error(`Error fetching ${type} data:`, err);
-      setError(err instanceof Error ? err.message : 'Failed to fetch data');
-    } finally {
-      setLoading(false);
+      logger.error(`Error fetching fresh ${type} data:`, err);
+      // Don't set error if we already have cached data
+      if (data.length === 0) {
+        setError(err instanceof Error ? err.message : 'Failed to fetch data');
+      }
     }
-  }, [type]);
+  }, [type, data.length]);
+
+  const fetchData = useCallback(async () => {
+    // Step 1: Load cached data from DB first (instant)
+    const cachedData = await loadCachedPrices(type);
+    
+    if (cachedData.length > 0) {
+      setData(cachedData);
+      setLoading(false);
+      setIsDemo(false);
+      
+      // Get last update time from cache
+      const { data: latestPrice } = await supabase
+        .from('market_prices')
+        .select('updated_at')
+        .eq('market_type', marketTypeMap[type] || type)
+        .order('updated_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      
+      if (latestPrice?.updated_at) {
+        setLastUpdated(new Date(latestPrice.updated_at));
+      }
+    }
+    
+    // Step 2: Fetch fresh data in background
+    setIsRefreshing(true);
+    await fetchFreshData();
+    setIsRefreshing(false);
+    setLoading(false);
+  }, [type, fetchFreshData]);
 
   useEffect(() => {
+    // Reset state when type changes
+    hasFetchedRef.current = false;
+    setLoading(true);
+    setData([]);
+    
     fetchData();
     
     // Set up auto-refresh
-    const interval = setInterval(fetchData, refreshInterval);
+    const interval = setInterval(() => {
+      setIsRefreshing(true);
+      fetchFreshData().finally(() => setIsRefreshing(false));
+    }, refreshInterval);
     
     return () => clearInterval(interval);
-  }, [fetchData, refreshInterval]);
+  }, [fetchData, fetchFreshData, refreshInterval, type]);
 
   return {
     data,
@@ -104,5 +182,6 @@ export function useMarketData({ type, refreshInterval = 120000 }: UseMarketDataO
     lastUpdated,
     refresh: fetchData,
     isDemo,
+    isRefreshing,
   };
 }
