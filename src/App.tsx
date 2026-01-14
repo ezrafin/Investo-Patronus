@@ -15,6 +15,8 @@ import { CookieConsentBanner } from "@/components/cookies/CookieConsentBanner";
 import { NotificationManager } from "@/components/notifications/NotificationManager";
 import { AnimatedRoutesWrapper } from "@/components/navigation/AnimatedRoutesWrapper";
 import { ErrorBoundary } from "@/components/error/ErrorBoundary";
+import { OfflineIndicator } from "@/components/layout/OfflineIndicator";
+import { logger } from "@/lib/logger";
 
 // Eager load critical pages
 import Index from "./pages/Index";
@@ -27,7 +29,7 @@ const lazyWithRetry = (componentImport: () => Promise<any>) => {
     } catch (error) {
       // If module fails to load, try reloading the page
       if (error instanceof Error && error.message.includes('Failed to fetch dynamically imported module')) {
-        console.warn('Module load failed, reloading page...', error);
+        logger.warn('Module load failed, reloading page...', error);
         // Small delay before reload to avoid infinite loops
         setTimeout(() => {
           window.location.reload();
@@ -112,6 +114,9 @@ const queryClient = new QueryClient({
       refetchOnReconnect: true, // Refetch when network reconnects
       refetchOnMount: true, // Always refetch on mount for fresh data
       networkMode: 'online', // Only run queries when online
+      // Use placeholderData for better UX during refetch
+      // This allows showing cached data while fetching fresh data
+      placeholderData: (previousData) => previousData,
     },
     mutations: {
       retry: 1, // Retry mutations once on failure
@@ -131,6 +136,7 @@ const App = () => {
             <Sonner />
             <BrowserRouter>
               {/* Skip to main content link is handled in Layout component */}
+              <OfflineIndicator />
               <Suspense fallback={<LoadingScreen />}>
                 <ErrorBoundary>
                   <AnimatedRoutesWrapper>

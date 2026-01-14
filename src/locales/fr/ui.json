@@ -404,7 +404,17 @@
     "publishedCount": "{{count}} articles publiés",
     "ctaTitle": "Vous voulez contribuer ?",
     "ctaSubtitle": "Nous cherchons des auteurs expérimentés. Partagez votre expertise avec notre audience.",
-    "ctaButton": "Postuler pour écrire"
+    "ctaButton": "Postuler pour écrire",
+    "authorBios": {
+      "christina-summerbell": "Analyste de marché senior avec plus de 15 ans d'expérience en recherche actions et gestion de portefeuille, spécialisée dans les actions technologiques et de croissance.",
+      "assunta-novak": "Chercheuse en cryptomonnaies et blockchain couvrant les actifs numériques et la structure du marché depuis 2015.",
+      "lysander-truog": "Spécialiste en revenus fixes couvrant les marchés obligataires et la dynamique des taux d'intérêt pour les investisseurs à long terme.",
+      "elias-wolfenstein": "Stratège des marchés européens spécialisé dans l'analyse des fusions et acquisitions transfrontalières et les tendances économiques régionales dans l'UE.",
+      "anastasia-petrova": "Experte des marchés émergents avec une connaissance approfondie des économies d'Europe de l'Est et de la dynamique du secteur énergétique.",
+      "luca-montefiore": "Analyste des marchés méditerranéens se concentrant sur les biens de luxe, les investissements dans le secteur du tourisme et les marchés financiers italiens.",
+      "isabelle-dubois": "Conseillère en finance durable et spécialiste des investissements ESG avec une expertise en obligations vertes et investissement à impact.",
+      "xu-meiling": "Analyste des marchés Asie-Pacifique spécialisée dans les actions chinoises, les tendances du secteur technologique et les flux d'investissement transfrontaliers."
+    }
   },
   "watchlistPage": {
     "seoTitle": "Watchlists — INVESTOPATRONUS",
@@ -539,9 +549,23 @@
     "badge": "Communauté",
     "heroTitle": "Hub communautaire",
     "heroSubtitle": "Connectez-vous avec d'autres investisseurs, suivez vos progrès et découvrez les meilleurs contributeurs",
+    "seoTitle": "Hub communautaire — INVESTOPATRONUS",
+    "seoDescription": "Explorez les meilleurs contributeurs et l'activité de la communauté pour les investisseurs.",
     "tabLeaderboard": "Classement",
     "tabActivity": "Flux d'activité",
-    "activityTitle": "Flux d'activité"
+    "activityTitle": "Flux d'activité",
+    "activityFeed": {
+      "replied": "a répondu",
+      "repliedToDiscussion": "A répondu à la discussion",
+      "createdDiscussion": "a créé une discussion",
+      "ratedCompany": "a noté une entreprise",
+      "rated": "A noté {{company}}",
+      "rating": "Note : {{rating}}/100",
+      "signInToSee": "Connectez-vous pour voir l'activité de la communauté",
+      "signIn": "Se connecter",
+      "noActivity": "Aucune activité récente pour le moment",
+      "noActivityDesc": "L'activité de la communauté apparaîtra ici lorsque des discussions et des réponses seront publiées"
+    }
   },
   "home": {
     "heroTitleLine1": "Votre gardien sur",
@@ -594,6 +618,7 @@
     "signInToFollow": "Connectez-vous pour suivre les auteurs",
     "noAuthorsFound": "Aucun auteur trouvé",
     "follow": "Suivre",
+    "viewProfile": "Voir le profil",
     "following": "Suivi"
   },
   "notifications": {
@@ -913,6 +938,14 @@
     "posts": "Publications",
     "comments": "Commentaires",
     "basicInformation": "Informations de Base",
+    "reputationLevels": {
+      "newbie": "Débutant",
+      "member": "Membre",
+      "active": "Actif",
+      "expert": "Expert",
+      "guru": "Guru",
+      "legend": "Légende"
+    },
     "emailSettings": "Paramètres Email",
     "privacySettings": "Paramètres de Confidentialité",
     "currentEmail": "Email Actuel",

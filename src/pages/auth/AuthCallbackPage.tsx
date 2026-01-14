@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Layout } from '@/components/layout/Layout';
+import { logger } from '@/lib/logger';
 
 export default function AuthCallbackPage() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function AuthCallbackPage() {
         const errorDescription = hashParams.get('error_description');
         
         if (errorParam) {
-          console.error('OAuth error:', errorParam, errorDescription);
+          logger.error('OAuth error:', errorParam, errorDescription);
           setError(errorDescription || errorParam);
           setTimeout(() => navigate('/auth/login'), 3000);
           return;
@@ -33,7 +34,7 @@ export default function AuthCallbackPage() {
           });
           
           if (sessionError) {
-            console.error('Session set error:', sessionError);
+            logger.error('Session set error:', sessionError);
             setError(sessionError.message);
             setTimeout(() => navigate('/auth/login'), 3000);
             return;
@@ -49,7 +50,7 @@ export default function AuthCallbackPage() {
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         
         if (sessionError) {
-          console.error('Auth error:', sessionError);
+          logger.error('Auth error:', sessionError);
           setError(sessionError.message);
           setTimeout(() => navigate('/auth/login'), 3000);
           return;
@@ -61,7 +62,7 @@ export default function AuthCallbackPage() {
           navigate('/auth/login');
         }
       } catch (error: any) {
-        console.error('Callback error:', error);
+        logger.error('Callback error:', error);
         setError(error?.message || 'Authentication failed');
         setTimeout(() => navigate('/auth/login'), 3000);
       }

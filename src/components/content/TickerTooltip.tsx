@@ -3,6 +3,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { supabase } from '@/integrations/supabase/client';
 import { TrendingUp, TrendingDown, Loader2 } from 'lucide-react';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
+import { logger } from '@/lib/logger';
 
 interface TickerTooltipProps {
   symbol: string;
@@ -41,7 +42,7 @@ export function TickerTooltip({ symbol, marketType = 'stocks', children }: Ticke
         setError(true);
       }
     } catch (err) {
-      console.error('Error fetching ticker price:', err);
+      logger.error('Error fetching ticker price:', err);
       setError(true);
     } finally {
       setLoading(false);

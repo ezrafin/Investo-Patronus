@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { logger } from '@/lib/logger';
 
 interface RelatedItem {
   type: 'article' | 'forum' | 'video' | 'analytics' | 'news';
@@ -104,7 +105,7 @@ export function useRelatedContent({ contentType, contentId, category, limit = 3 
           setRelatedItems(items);
         }
       } catch (error) {
-        console.error('Error fetching related content:', error);
+        logger.error('Error fetching related content:', error);
         // Fallback to basic matching on error
         const fallbackItems = analyticsArticles
           .filter(a => a.slug !== contentId)

@@ -13,6 +13,7 @@ import { useCollectibleBills } from '@/hooks/useCollectibleBills';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getMotionVariant, transitions, STAGGER, prefersReducedMotion } from '@/lib/animations';
 import { useTranslation } from '@/hooks/useTranslation';
+import { logger } from '@/lib/logger';
 
 interface SearchResult {
   type: 'company' | 'news' | 'forum' | 'analytics' | 'ticker' | 'author';
@@ -135,7 +136,7 @@ export function GlobalSearch() {
               })));
             }
           } catch (error) {
-            console.error('News search error:', error);
+            logger.error('News search error:', error);
           }
         })()
       );
@@ -169,7 +170,7 @@ export function GlobalSearch() {
               })));
             }
           } catch (error) {
-            console.error('Forum search error:', error);
+            logger.error('Forum search error:', error);
           }
         })()
       );
@@ -222,7 +223,7 @@ export function GlobalSearch() {
                     marketType: marketType,
                   }));
               } catch (error) {
-                console.error(`Error searching ${marketType}:`, error);
+                logger.error(`Error searching ${marketType}:`, error);
                 return [];
               }
             });
@@ -230,7 +231,7 @@ export function GlobalSearch() {
             const tickerResults = await Promise.all(tickerPromises);
             allResults.push(...tickerResults.flat());
           } catch (error) {
-            console.error('Ticker search error:', error);
+            logger.error('Ticker search error:', error);
           }
         })()
       );
@@ -257,7 +258,7 @@ export function GlobalSearch() {
               })));
             }
           } catch (error) {
-            console.error('Author search error:', error);
+            logger.error('Author search error:', error);
           }
         })()
       );
@@ -279,7 +280,7 @@ export function GlobalSearch() {
     }
   }, [contentType, dateFilter, collectBill, isCollected]);
 
-  // Debounce search - reduced from 300ms to 200ms for faster response
+  // Debounce search - 300ms delay to reduce API calls
   useEffect(() => {
     if (!query.trim()) {
       setResults([]);
@@ -287,9 +288,10 @@ export function GlobalSearch() {
       return;
     }
     
+    setLoading(true); // Show loading state during debounce
     const timeoutId = setTimeout(() => {
       searchAll(query);
-    }, 200);
+    }, 300);
     return () => clearTimeout(timeoutId);
   }, [query, searchAll]);
 

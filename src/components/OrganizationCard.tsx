@@ -8,6 +8,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useUser } from '@/context/UserContext';
+import { logger } from '@/lib/logger';
 import { useTranslation } from '@/hooks/useTranslation';
 interface OrganizationCardProps {
   organization: Organization;
@@ -81,7 +82,7 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
           setUserRating(null);
         }
       } catch (error) {
-        console.error('Error loading rating data:', error);
+        logger.error('Error loading rating data:', error);
       }
     }
 

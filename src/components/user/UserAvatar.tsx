@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { UserProfile } from '@/hooks/useAuth';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface UserAvatarProps {
   profile: UserProfile | null;
@@ -22,6 +23,8 @@ const badgeSizes = {
 };
 
 export function UserAvatar({ profile, size = 'md', showReputation = false, className }: UserAvatarProps) {
+  const { t } = useTranslation({ namespace: 'ui' });
+  
   const getInitials = (name: string | null) => {
     if (!name) return 'U';
     return name
@@ -33,14 +36,15 @@ export function UserAvatar({ profile, size = 'md', showReputation = false, class
   };
 
   const getReputationLevel = (reputation: number) => {
-    if (reputation >= 500) return { level: 'Guru', color: 'bg-amber-500' };
-    if (reputation >= 100) return { level: 'Expert', color: 'bg-purple-500' };
-    if (reputation >= 50) return { level: 'Active', color: 'bg-green-500' };
-    if (reputation >= 10) return { level: 'Member', color: 'bg-blue-500' };
-    return { level: 'Newbie', color: 'bg-muted' };
+    if (reputation >= 500) return { levelKey: 'guru', color: 'bg-amber-500' };
+    if (reputation >= 100) return { levelKey: 'expert', color: 'bg-purple-500' };
+    if (reputation >= 50) return { levelKey: 'active', color: 'bg-green-500' };
+    if (reputation >= 10) return { levelKey: 'member', color: 'bg-blue-500' };
+    return { levelKey: 'newbie', color: 'bg-muted' };
   };
 
   const reputationInfo = profile ? getReputationLevel(profile.reputation) : null;
+  const levelName = reputationInfo ? t(`profilePage.reputationLevels.${reputationInfo.levelKey}`) : '';
 
   return (
     <div className={cn('relative inline-block', className)}>
@@ -57,7 +61,7 @@ export function UserAvatar({ profile, size = 'md', showReputation = false, class
             badgeSizes[size],
             reputationInfo.color
           )}
-          title={`${reputationInfo.level} (${profile.reputation} reputation)`}
+          title={`${levelName} (${profile.reputation} ${t('profilePage.reputation')})`}
         >
           {profile.reputation >= 100 ? '★' : profile.reputation >= 50 ? '▲' : '•'}
         </div>

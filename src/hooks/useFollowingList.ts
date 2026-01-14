@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useUser } from '@/context/UserContext';
+import { logger } from '@/lib/logger';
 
 export function useFollowingList() {
   const { user } = useUser();
@@ -24,7 +25,7 @@ export function useFollowingList() {
 
       setFollowingIds((data as any[] | null)?.map(item => item.following_id) || []);
     } catch (error) {
-      console.error('Error loading following list:', error);
+      logger.error('Error loading following list:', error);
       setFollowingIds([]);
     } finally {
       setLoading(false);

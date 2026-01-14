@@ -51,7 +51,7 @@ export default function AuthorsPage() {
                     className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-border"
                   />
                   <h3 className="heading-xs mb-1">{author.display_name}</h3>
-                  <p className="text-sm text-primary mb-3">{author.bio}</p>
+                  <p className="text-sm text-primary mb-3">{t(`authorsPage.authorBios.${author.id}`, author.bio)}</p>
                   <div className="text-sm text-muted-foreground">
                     {t('authorsPage.publishedCount', { count: articleCount })}
                   </div>

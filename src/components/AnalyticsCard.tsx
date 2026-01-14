@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Clock } from 'lucide-react';
 import { AnalyticsArticle } from '@/lib/api/types';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { LazyImage } from '@/components/ui/lazy-image';
 
 interface AnalyticsCardProps {
   article: AnalyticsArticle;
@@ -47,12 +48,11 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
         {/* Article Image */}
         {article.imageUrl && (
           <div className="relative h-32 sm:h-40 w-full overflow-hidden bg-muted">
-            <img
+            <LazyImage
               src={article.imageUrl}
               alt={article.title}
-              loading="lazy"
-              decoding="async"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              aspectRatio="wide"
+              className="w-full h-full group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             <span className={`absolute bottom-2 sm:bottom-3 left-2 sm:left-3 badge-outline text-xs bg-background/80 backdrop-blur-sm ${isDark ? 'border-border/50 text-muted-foreground' : ''}`}>

@@ -5,6 +5,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { MessageSquare, FileText, Clock, Star } from 'lucide-react';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { useFollowingList } from '@/hooks/useFollowingList';
+import { useTranslation } from '@/hooks/useTranslation';
+import { logger } from '@/lib/logger';
 
 interface ActivityItem {
   id: string;
@@ -20,6 +22,7 @@ interface ActivityItem {
 
 export function ActivityFeed() {
   const { user } = useUser();
+  const { t } = useTranslation({ namespace: 'ui' });
   const { followingIds } = useFollowingList();
   const [activities, setActivities] = useState<ActivityItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -62,7 +65,7 @@ export function ActivityFeed() {
             id: post.id,
             type: 'post',
             title: post.title,
-            user_name: post.author_name || 'Anonymous',
+            user_name: post.author_name || t('common.anonymous'),
             user_id: post.user_id,
             user_avatar: '',
             created_at: post.created_at,
@@ -89,9 +92,9 @@ export function ActivityFeed() {
           activitiesList.push({
             id: reply.id,
             type: 'reply',
-            title: 'Replied to discussion',
+            title: t('communityPage.activityFeed.repliedToDiscussion'),
             content: reply.content?.substring(0, 100),
-            user_name: reply.author_name || 'Anonymous',
+            user_name: reply.author_name || t('common.anonymous'),
             user_id: reply.user_id,
             user_avatar: '',
             created_at: reply.created_at,
@@ -124,9 +127,9 @@ export function ActivityFeed() {
             activitiesList.push({
               id: item.id,
               type: 'evaluation',
-              title: `Rated ${item.company_slug}`,
-              content: item.comment || `Rating: ${item.rating}/100`,
-              user_name: profile?.display_name || 'User',
+              title: t('communityPage.activityFeed.rated', { company: item.company_slug }),
+              content: item.comment || t('communityPage.activityFeed.rating', { rating: item.rating }),
+              user_name: profile?.display_name || t('common.anonymous'),
               user_id: item.user_id,
               user_avatar: '',
               created_at: item.created_at,
@@ -143,7 +146,7 @@ export function ActivityFeed() {
 
       setActivities(activitiesList.slice(0, 15));
     } catch (error) {
-      console.error('Error loading activity feed:', error);
+      logger.error('Error loading activity feed:', error);
     } finally {
       setLoading(false);
     }
@@ -152,9 +155,9 @@ export function ActivityFeed() {
   if (!user) {
     return (
       <div className="premium-card p-6 text-center">
-        <p className="text-muted-foreground mb-4">Sign in to see community activity</p>
+        <p className="text-muted-foreground mb-4">{t('communityPage.activityFeed.signInToSee')}</p>
         <Link to="/auth/login" className="text-primary hover:underline">
-          Sign in
+          {t('communityPage.activityFeed.signIn')}
         </Link>
       </div>
     );
@@ -174,9 +177,9 @@ export function ActivityFeed() {
     return (
       <div className="premium-card p-6 text-center">
         <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-        <p className="text-muted-foreground mb-2">No recent activity yet</p>
+        <p className="text-muted-foreground mb-2">{t('communityPage.activityFeed.noActivity')}</p>
         <p className="text-sm text-muted-foreground">
-          Community activity will appear here when discussions and replies are posted
+          {t('communityPage.activityFeed.noActivityDesc')}
         </p>
       </div>
     );
@@ -205,10 +208,10 @@ export function ActivityFeed() {
                   <span className="font-medium text-xs sm:text-sm">{activity.user_name}</span>
                   <span className="text-xs text-muted-foreground">
                     {activity.type === 'post' 
-                      ? 'created a discussion' 
+                      ? t('communityPage.activityFeed.createdDiscussion')
                       : activity.type === 'evaluation'
-                      ? 'rated a company'
-                      : 'replied'}
+                      ? t('communityPage.activityFeed.ratedCompany')
+                      : t('communityPage.activityFeed.replied')}
                   </span>
                 </div>
                 <div className="font-medium text-xs sm:text-sm mb-1 line-clamp-1">{activity.title}</div>

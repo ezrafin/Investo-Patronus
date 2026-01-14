@@ -79,13 +79,14 @@ const testimonials = [
 
 
 export default function LearningCoursePage() {
-  const { t } = useTranslation({ namespace: 'ui' });
+  const { t } = useTranslation({ namespace: 'education' });
+  const { t: tUi } = useTranslation({ namespace: 'ui' });
   const [email, setEmail] = useState('');
 
   const handleNotify = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast.success(t('toast.courseNotification'));
+      toast.success(tUi('toast.courseNotification'));
       setEmail('');
     }
   };
@@ -98,21 +99,21 @@ export default function LearningCoursePage() {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
               <Rocket className="h-4 w-4" />
-              <span className="text-sm font-medium">Launching Q1 2026</span>
+              <span className="text-sm font-medium">{t('learningCourse.hero.badge')}</span>
             </div>
             <h1 className="heading-hero mb-6">
-              Master the Markets
-              <span className="block gradient-text">Investment Course</span>
+              {t('learningCourse.hero.title')}
+              <span className="block gradient-text">{t('learningCourse.hero.subtitle')}</span>
             </h1>
             <p className="body-xl max-w-2xl mx-auto mb-8">
-              A comprehensive, structured learning program designed to take you from beginner to confident investor. Our expert-led curriculum covers everything you need to succeed.
+              {t('learningCourse.hero.description')}
             </p>
 
             {/* Notify Form */}
             <form onSubmit={handleNotify} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input
                 type="email"
-                placeholder={t('auth.emailPlaceholder')}
+                placeholder={tUi('auth.emailPlaceholder')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -120,7 +121,7 @@ export default function LearningCoursePage() {
               />
               <Button type="submit">
                 <Bell className="h-4 w-4 mr-2" />
-                {t('toast.notifyMe')}
+                {tUi('toast.notifyMe')}
               </Button>
             </form>
           </div>
@@ -129,19 +130,19 @@ export default function LearningCoursePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             <div className="glass-card p-6 text-center">
               <div className="heading-lg text-primary mb-2">85+</div>
-              <div className="text-sm text-muted-foreground">Video Lessons</div>
+              <div className="text-sm text-muted-foreground">{t('learningCourse.stats.videoLessons')}</div>
             </div>
             <div className="glass-card p-6 text-center">
               <div className="heading-lg text-primary mb-2">23+</div>
-              <div className="text-sm text-muted-foreground">Hours of Content</div>
+              <div className="text-sm text-muted-foreground">{t('learningCourse.stats.hoursOfContent')}</div>
             </div>
             <div className="glass-card p-6 text-center">
               <div className="heading-lg text-primary mb-2">8</div>
-              <div className="text-sm text-muted-foreground">Comprehensive Modules</div>
+              <div className="text-sm text-muted-foreground">{t('learningCourse.stats.comprehensiveModules')}</div>
             </div>
             <div className="glass-card p-6 text-center">
               <div className="heading-lg text-primary mb-2">1</div>
-              <div className="text-sm text-muted-foreground">Certification</div>
+              <div className="text-sm text-muted-foreground">{t('learningCourse.stats.certification')}</div>
             </div>
           </div>
 
@@ -149,32 +150,35 @@ export default function LearningCoursePage() {
           {/* Course Modules & Features */}
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="heading-lg mb-6">Course Curriculum</h2>
+              <h2 className="heading-lg mb-6">{t('learningCourse.curriculum.title')}</h2>
               <div className="space-y-3">
-                {courseModules.map((module, index) => (
-                  <div key={module.title} className="glass-card p-4 flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <span className="text-primary font-semibold">{index + 1}</span>
+                {courseModules.map((module, index) => {
+                  const moduleKey = `module${index + 1}` as 'module1' | 'module2' | 'module3' | 'module4' | 'module5' | 'module6' | 'module7' | 'module8';
+                  return (
+                    <div key={module.title} className="glass-card p-4 flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary font-semibold">{index + 1}</span>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-medium">{t(`learningCourse.modules.${moduleKey}.title`)}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {module.lessons} {t('learningCourse.curriculum.lessons')} • {t(`learningCourse.modules.${moduleKey}.duration`)}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-medium">{module.title}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {module.lessons} lessons • {module.duration}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
             <div>
-              <h2 className="heading-lg mb-6">What You Will Get</h2>
+              <h2 className="heading-lg mb-6">{t('learningCourse.features.title')}</h2>
               <div className="glass-card p-8">
                 <ul className="space-y-4">
-                  {features.map((feature) => (
+                  {features.map((feature, index) => (
                     <li key={feature} className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span>{feature}</span>
+                      <span>{t(`learningCourse.features.feature${index + 1}`)}</span>
                     </li>
                   ))}
                 </ul>
@@ -198,14 +202,14 @@ export default function LearningCoursePage() {
                     </div>
                     <div className="text-sm">
                       <span className="font-medium">2,500+</span>
-                      <span className="text-muted-foreground"> students waiting</span>
+                      <span className="text-muted-foreground"> {t('learningCourse.socialProof.studentsWaiting')}</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((i) => (
                       <Star key={i} className="h-4 w-4 fill-yellow-500 text-yellow-500" />
                     ))}
-                    <span className="text-sm text-muted-foreground ml-2">Based on pilot program feedback</span>
+                    <span className="text-sm text-muted-foreground ml-2">{t('learningCourse.socialProof.basedOnFeedback')}</span>
                   </div>
                 </div>
               </div>
@@ -214,70 +218,76 @@ export default function LearningCoursePage() {
 
           {/* Instructors */}
           <div className="mb-16">
-            <h2 className="heading-lg text-center mb-8">Meet Your Instructors</h2>
+            <h2 className="heading-lg text-center mb-8">{t('learningCourse.instructors.title')}</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {instructors.map((instructor) => (
-                <div key={instructor.name} className="glass-card p-6 text-center">
-                  <img 
-                    src={instructor.image} 
-                    alt={instructor.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                  />
-                  <h3 className="font-semibold text-lg">{instructor.name}</h3>
-                  <p className="text-primary text-sm mb-1">{instructor.title}</p>
-                  <p className="text-xs text-muted-foreground mb-3">{instructor.credentials}</p>
-                  <p className="text-sm text-muted-foreground">{instructor.bio}</p>
-                </div>
-              ))}
+              {instructors.map((instructor, index) => {
+                const instructorKey = `instructor${index + 1}` as const;
+                return (
+                  <div key={instructor.name} className="glass-card p-6 text-center">
+                    <img 
+                      src={instructor.image} 
+                      alt={instructor.name}
+                      className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                    />
+                    <h3 className="font-semibold text-lg">{t(`learningCourse.instructors.${instructorKey}.name`)}</h3>
+                    <p className="text-primary text-sm mb-1">{t(`learningCourse.instructors.${instructorKey}.title`)}</p>
+                    <p className="text-xs text-muted-foreground mb-3">{t(`learningCourse.instructors.${instructorKey}.credentials`)}</p>
+                    <p className="text-sm text-muted-foreground">{t(`learningCourse.instructors.${instructorKey}.bio`)}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           {/* Testimonials */}
           <div className="mb-16">
-            <h2 className="heading-lg text-center mb-8">What Students Say</h2>
+            <h2 className="heading-lg text-center mb-8">{t('learningCourse.testimonials.title')}</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((testimonial) => (
-                <div key={testimonial.name} className="glass-card p-6">
-                  <Quote className="h-8 w-8 text-primary/30 mb-4" />
-                  <p className="body-sm mb-6">"{testimonial.quote}"</p>
-                  <div className="flex items-center gap-3">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-10 h-10 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="font-medium text-sm">{testimonial.name}</p>
-                      <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+              {testimonials.map((testimonial, index) => {
+                const testimonialKey = `testimonial${index + 1}` as const;
+                return (
+                  <div key={testimonial.name} className="glass-card p-6">
+                    <Quote className="h-8 w-8 text-primary/30 mb-4" />
+                    <p className="body-sm mb-6">"{t(`learningCourse.testimonials.${testimonialKey}.quote`)}"</p>
+                    <div className="flex items-center gap-3">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-10 h-10 rounded-full object-cover"
+                      />
+                      <div>
+                        <p className="font-medium text-sm">{t(`learningCourse.testimonials.${testimonialKey}.name`)}</p>
+                        <p className="text-xs text-muted-foreground">{t(`learningCourse.testimonials.${testimonialKey}.role`)}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-0.5 mt-4">
+                      {Array.from({ length: testimonial.rating }).map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                      ))}
                     </div>
                   </div>
-                  <div className="flex items-center gap-0.5 mt-4">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-500 text-yellow-500" />
-                    ))}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
           {/* CTA */}
           <div className="glass-card p-8 lg:p-12 text-center">
-            <h2 className="heading-md mb-4">Be the First to Know</h2>
+            <h2 className="heading-md mb-4">{t('learningCourse.cta.title')}</h2>
             <p className="body-lg mb-6 max-w-2xl mx-auto">
-              Join our waitlist to get early access and exclusive launch pricing when the course becomes available in Q1 2026.
+              {t('learningCourse.cta.description')}
             </p>
             <form onSubmit={handleNotify} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input
                 type="email"
-                placeholder={t('auth.emailPlaceholder')}
+                placeholder={tUi('auth.emailPlaceholder')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="flex-1"
               />
               <Button type="submit" size="lg">
-                {t('toast.joinWaitlist')}
+                {tUi('toast.joinWaitlist')}
               </Button>
             </form>
           </div>

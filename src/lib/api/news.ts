@@ -1,4 +1,5 @@
 import type { NewsItem } from './types';
+import { logger } from '@/lib/logger';
 
 /**
  * @deprecated Fallback-only mock data for development.
@@ -41,7 +42,7 @@ export async function fetchNews(filters?: { market?: string; source?: string }):
     const { data, error } = await query;
     
     if (error) {
-      console.error('Error fetching news:', error);
+      logger.error('Error fetching news:', error);
       if (import.meta.env.DEV) {
         let result = [...mockNews];
         if (filters?.market && filters.market !== 'all') {
@@ -63,7 +64,7 @@ export async function fetchNews(filters?: { market?: string; source?: string }):
       imageUrl: article.image_url || undefined,
     }));
   } catch (error) {
-    console.error('Error in fetchNews:', error);
+    logger.error('Error in fetchNews:', error);
     if (import.meta.env.DEV) {
       let result = [...mockNews];
       if (filters?.market && filters.market !== 'all') {
@@ -86,7 +87,7 @@ export async function fetchNewsById(id: string): Promise<NewsItem | null> {
       .single();
     
     if (error || !data) {
-      console.error('Error fetching news by id:', error);
+      logger.error('Error fetching news by id:', error);
       if (import.meta.env.DEV) {
         return mockNews.find(item => item.id === id) || null;
       }
@@ -104,7 +105,7 @@ export async function fetchNewsById(id: string): Promise<NewsItem | null> {
       imageUrl: data.image_url || undefined,
     };
   } catch (error) {
-    console.error('Error in fetchNewsById:', error);
+    logger.error('Error in fetchNewsById:', error);
     return null;
   }
 }

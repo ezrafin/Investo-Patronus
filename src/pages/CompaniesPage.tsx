@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
 import { Building2, TrendingUp, Users, Award, ArrowUpDown, Globe, Search } from 'lucide-react';
+import { logger } from '@/lib/logger';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { useTranslation } from '@/hooks/useTranslation';
 import { supabase } from '@/integrations/supabase/client';
@@ -61,7 +62,7 @@ export default function CompaniesPage() {
           .eq('is_approved', true);
 
         if (error) {
-          console.error('Error fetching evaluations:', error);
+          logger.error('Error fetching evaluations:', error);
           // Fallback to static data if database query fails
           setStats({
             total: organizations.length,
@@ -94,7 +95,7 @@ export default function CompaniesPage() {
           }));
         }
       } catch (error) {
-        console.error('Error calculating average trust:', error);
+        logger.error('Error calculating average trust:', error);
         // Fallback to static data on error
         setStats(prev => ({
           ...prev,

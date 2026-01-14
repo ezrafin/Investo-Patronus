@@ -195,7 +195,15 @@
     "clearFilter": "清除筛选",
     "trendingTopics": "热门讨论",
     "viewAllTrending": "查看所有热门 →",
-    "noTrendingTopics": "目前没有热门主题"
+    "noTrendingTopics": "目前没有热门主题",
+    "names": {
+      "general": "一般讨论",
+      "stocks": "股票分析",
+      "crypto": "加密货币",
+      "etfs": "ETF和基金",
+      "beginners": "初学者问题",
+      "news": "市场新闻"
+    }
   },
   "featured": {
     "title": "精选",

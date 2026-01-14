@@ -8,6 +8,7 @@ import {
   BreadcrumbPage,
 } from '@/components/ui/breadcrumb';
 import { generateBreadcrumbs, BreadcrumbItem as BreadcrumbItemType } from '@/utils/breadcrumbs';
+import { logger } from '@/lib/logger';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { generateBreadcrumbListSchema } from '@/utils/structuredData';
 import { getMotionVariant, transitions, STAGGER, prefersReducedMotion } from '@/lib/animations';
@@ -37,7 +38,7 @@ export function Breadcrumbs({ pageTitle, items, className }: BreadcrumbsProps) {
     const pathname = location?.pathname || (typeof window !== 'undefined' ? window.location.pathname : '/');
     breadcrumbItems = items || generateBreadcrumbs(pathname, pageTitle);
   } catch (error) {
-    console.error('Breadcrumb generation error:', error);
+    logger.error('Breadcrumb generation error:', error);
     breadcrumbItems = [];
   }
 
@@ -46,7 +47,7 @@ export function Breadcrumbs({ pageTitle, items, className }: BreadcrumbsProps) {
   try {
     structuredData = generateBreadcrumbListSchema(breadcrumbItems);
   } catch (error) {
-    console.error('BreadcrumbList schema generation error:', error);
+    logger.error('BreadcrumbList schema generation error:', error);
     structuredData = null;
   }
 

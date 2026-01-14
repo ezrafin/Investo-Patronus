@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { logger } from '@/lib/logger';
 
 interface StructuredDataProps {
   data: object | object[];
@@ -27,7 +28,7 @@ export function StructuredData({ data }: StructuredDataProps) {
       const jsonData = Array.isArray(data) ? data : [data];
       script.textContent = JSON.stringify(jsonData);
     } catch (error) {
-      console.error('StructuredData error:', error);
+      logger.error('StructuredData error:', error);
     }
   }, [data]); // Remove scriptId from dependencies
 

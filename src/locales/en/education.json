@@ -87,6 +87,8 @@
     "badge": "Courses",
     "title": "Financial Education Courses",
     "subtitle": "Comprehensive courses covering everything from investment fundamentals to advanced trading strategies. Learn at your own pace with structured modules and practical lessons.",
+    "seoTitle": "Investment Academy - Online Finance Courses",
+    "seoDescription": "Enroll in comprehensive finance and economics courses. Learn macroeconomics, microeconomics, finance & markets, and personal finance through structured courses with video lessons and quizzes.",
     "infoTitle": "How Our Courses Work",
     "infoDescription": "Each course is divided into modules with multiple lessons. Complete lessons at your own pace, take quizzes to test your knowledge, and pass the final exam to demonstrate mastery. Track your progress and return anytime to review materials.",
     "startCourse": "Start Course",
@@ -4627,6 +4629,116 @@
           }
         }
       }
+    }
+  },
+  "learningCourse": {
+    "hero": {
+      "badge": "Launching Q1 2026",
+      "title": "Master the Markets",
+      "subtitle": "Investment Course",
+      "description": "A comprehensive, structured learning program designed to take you from beginner to confident investor. Our expert-led curriculum covers everything you need to succeed."
+    },
+    "stats": {
+      "videoLessons": "Video Lessons",
+      "hoursOfContent": "Hours of Content",
+      "comprehensiveModules": "Comprehensive Modules",
+      "certification": "Certification"
+    },
+    "curriculum": {
+      "title": "Course Curriculum",
+      "lessons": "lessons"
+    },
+    "modules": {
+      "module1": {
+        "title": "Introduction to Financial Markets",
+        "duration": "2 hours"
+      },
+      "module2": {
+        "title": "Understanding Asset Classes",
+        "duration": "3 hours"
+      },
+      "module3": {
+        "title": "Technical Analysis Fundamentals",
+        "duration": "4 hours"
+      },
+      "module4": {
+        "title": "Fundamental Analysis Deep Dive",
+        "duration": "4 hours"
+      },
+      "module5": {
+        "title": "Portfolio Construction & Management",
+        "duration": "3 hours"
+      },
+      "module6": {
+        "title": "Risk Management Strategies",
+        "duration": "2 hours"
+      },
+      "module7": {
+        "title": "Advanced Trading Strategies",
+        "duration": "3.5 hours"
+      },
+      "module8": {
+        "title": "Psychology of Investing",
+        "duration": "1.5 hours"
+      }
+    },
+    "features": {
+      "title": "What You Will Get",
+      "feature1": "Self-paced learning modules",
+      "feature2": "Interactive quizzes and assessments",
+      "feature3": "Real-world case studies",
+      "feature4": "Certificate upon completion",
+      "feature5": "Lifetime access to materials",
+      "feature6": "Community discussion forums",
+      "feature7": "Monthly live Q&A sessions",
+      "feature8": "Downloadable resources & templates"
+    },
+    "socialProof": {
+      "studentsWaiting": "students waiting",
+      "basedOnFeedback": "Based on pilot program feedback"
+    },
+    "instructors": {
+      "title": "Meet Your Instructors",
+      "instructor1": {
+        "name": "Dr. Michael Torres",
+        "title": "Lead Instructor",
+        "credentials": "CFA, CMT, PhD Finance",
+        "bio": "20+ years of experience in institutional asset management. Former portfolio manager at Fidelity Investments."
+      },
+      "instructor2": {
+        "name": "Sarah Mitchell",
+        "title": "Technical Analysis Expert",
+        "credentials": "CMT, Market Technician",
+        "bio": "Author of \"Chart Patterns That Work\" and regular contributor to technical analysis publications."
+      },
+      "instructor3": {
+        "name": "James Chen",
+        "title": "Portfolio Strategy Instructor",
+        "credentials": "CFA, CAIA",
+        "bio": "Former quantitative strategist at Goldman Sachs. Specializes in factor investing and portfolio optimization."
+      }
+    },
+    "testimonials": {
+      "title": "What Students Say",
+      "testimonial1": {
+        "name": "Jennifer Adams",
+        "role": "Software Engineer",
+        "quote": "This course transformed my understanding of the markets. The practical exercises and real-world case studies made complex concepts accessible."
+      },
+      "testimonial2": {
+        "name": "Robert Kim",
+        "role": "Small Business Owner",
+        "quote": "Finally, an investment course that goes beyond basics without being overwhelming. The instructor support is exceptional."
+      },
+      "testimonial3": {
+        "name": "Maria Garcia",
+        "role": "Healthcare Professional",
+        "quote": "Worth every minute. I went from knowing nothing about investing to confidently managing my own portfolio."
+      }
+    },
+    "cta": {
+      "title": "Be the First to Know",
+      "description": "Join our waitlist to get early access and exclusive launch pricing when the course becomes available in Q1 2026."
     }
   }
 }

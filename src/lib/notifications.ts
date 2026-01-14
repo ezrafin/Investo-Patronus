@@ -2,6 +2,7 @@
  * Notification system utilities
  * Handles push notifications and coordinates with backend for email notifications
  */
+import { logger } from './logger';
 
 export type NotificationType = 
   | 'reply_to_discussion'
@@ -32,7 +33,7 @@ type TemplateTranslator = (key: string) => string;
  */
 export async function requestNotificationPermission(): Promise<boolean> {
   if (!('Notification' in window)) {
-    console.warn('This browser does not support notifications');
+    logger.warn('This browser does not support notifications');
     return false;
   }
 
@@ -41,7 +42,7 @@ export async function requestNotificationPermission(): Promise<boolean> {
   }
 
   if (Notification.permission === 'denied') {
-    console.warn('Notification permission denied');
+    logger.warn('Notification permission denied');
     return false;
   }
 

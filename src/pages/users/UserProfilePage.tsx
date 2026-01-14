@@ -17,6 +17,7 @@ import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { useCollectibleBills } from '@/hooks/useCollectibleBills';
 import { useTranslation } from '@/hooks/useTranslation';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { logger } from '@/lib/logger';
 
 export default function UserProfilePage() {
   const { t, language } = useTranslation({ namespace: 'profile' });
@@ -59,13 +60,13 @@ export default function UserProfilePage() {
         .eq('is_approved', true);
       
       if (error) {
-        console.error('Error loading comment count:', error);
+        logger.error('Error loading comment count:', error);
         return 0;
       }
       
       return count || 0;
     } catch (error) {
-      console.error('Error calculating comment count:', error);
+      logger.error('Error calculating comment count:', error);
       return 0;
     }
   };
@@ -112,7 +113,7 @@ export default function UserProfilePage() {
         .maybeSingle() as any);
 
       if (error) {
-        console.error('Error loading profile:', error);
+        logger.error('Error loading profile:', error);
         throw error;
       }
 
@@ -139,12 +140,12 @@ export default function UserProfilePage() {
         if (joinDate) {
           setJoinedAt(joinDate);
         } else {
-          console.warn('No join date found, setting to null');
+          logger.warn('No join date found, setting to null');
           setJoinedAt(null);
         }
         await loadFollowStats(data.id);
       } else {
-        console.warn('Profile not found for userId:', userId);
+        logger.warn('Profile not found for userId:', userId);
         // Try to get basic user info from auth.users if profile doesn't exist
         try {
           const { data: authData } = await supabase.auth.admin.getUserById(userId);
@@ -179,7 +180,7 @@ export default function UserProfilePage() {
           }
         } catch (authError) {
           // If admin API is not available, fallback to basic profile
-          console.warn('Could not fetch user from auth:', authError);
+          logger.warn('Could not fetch user from auth:', authError);
           const commentCount = await loadCommentCount(userId);
           setProfile({
             id: userId,
@@ -197,7 +198,7 @@ export default function UserProfilePage() {
       }
       await loadFollowStats(userId);
     } catch (error) {
-      console.error('Error loading profile:', error);
+      logger.error('Error loading profile:', error);
       const commentCount = await loadCommentCount(userId);
       setProfile({
         id: userId,
@@ -218,13 +219,13 @@ export default function UserProfilePage() {
 
   const formatJoinedDate = (date: string | null): string => {
     if (!date) {
-      console.warn('No join date available');
+      logger.warn('No join date available');
       return t('header.unknown');
     }
     try {
       const dateObj = new Date(date);
       if (isNaN(dateObj.getTime())) {
-        console.warn('Invalid date:', date);
+        logger.warn('Invalid date:', date);
         return t('header.unknown');
       }
       // Map language to locale code
@@ -243,7 +244,7 @@ export default function UserProfilePage() {
         year: 'numeric',
       });
     } catch (error) {
-      console.error('Error formatting date:', error, date);
+      logger.error('Error formatting date:', error, date);
       return t('header.unknown');
     }
   };

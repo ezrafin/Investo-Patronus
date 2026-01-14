@@ -4,6 +4,7 @@ import { NewsArticle } from '@/hooks/useNews';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { getAuthorAvatar } from '@/lib/api/utils';
+import { LazyImage } from '@/components/ui/lazy-image';
 
 interface NewsCardRealProps {
   article: NewsArticle;
@@ -103,15 +104,12 @@ export function NewsCardReal({ article, featured = false, index = 0 }: NewsCardR
       >
         {/* Image */}
         <div className={`relative ${featured ? 'h-40 sm:h-52' : 'h-32 sm:h-40'} w-full overflow-hidden bg-muted`}>
-          <img
+          <LazyImage
             src={imageUrl}
             alt={article.title}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = getMarketImage(article.market, index);
-            }}
+            aspectRatio="wide"
+            fallback={getMarketImage(article.market, index)}
+            className="w-full h-full group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
           <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 flex items-center gap-2 flex-wrap">

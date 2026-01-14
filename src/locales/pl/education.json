@@ -87,6 +87,8 @@
     "badge": "Kursy",
     "title": "Kursy Edukacji Finansowej",
     "subtitle": "Kompleksowe kursy obejmujące wszystko od podstaw inwestowania po zaawansowane strategie tradingowe. Ucz się we własnym tempie z ustrukturyzowanymi modułami i praktycznymi lekcjami.",
+    "seoTitle": "Akademia Inwestycji - Kursy Finansowe Online",
+    "seoDescription": "Zapisz się na kompleksowe kursy finansowe i ekonomiczne. Ucz się makroekonomii, mikroekonomii, finansów i rynków oraz finansów osobistych poprzez ustrukturyzowane kursy z lekcjami wideo i quizami.",
     "infoTitle": "Jak działają nasze kursy",
     "infoDescription": "Każdy kurs jest podzielony na moduły z wieloma lekcjami. Ukończ lekcje we własnym tempie, rozwiąż quizy, aby sprawdzić wiedzę, i zdaj egzamin końcowy, aby wykazać się opanowaniem. Śledź postępy i wracaj w dowolnym momencie, aby przejrzeć materiały.",
     "startCourse": "Rozpocznij kurs",
@@ -120,7 +122,10 @@
     "moduleTestResults": "Wyniki Testu Modułu",
     "moduleTestPassed": "Test Modułu Zdany!",
     "moduleTestReview": "Przejrzyj materiał i spróbuj ponownie",
-    "module": "Moduł"
+    "module": "Moduł",
+    "unit": "Jednostka",
+    "seoCourseTitle": "{{title}} - Kurs Online | INVESTOPATRONUS",
+    "seoCourseDescription": "Ucz się {{title}} z naszym kompleksowym kursem online. Dostęp do lekcji wideo, interaktywnych quizów i eksperckich treści, aby opanować {{description}}."
   },
   "course": {
     "investment-fundamentals": {
@@ -4619,6 +4624,116 @@
           }
         }
       }
+    }
+  },
+  "learningCourse": {
+    "hero": {
+      "badge": "Premiera Q1 2026",
+      "title": "Opanuj Rynki",
+      "subtitle": "Kurs Inwestycyjny",
+      "description": "Kompleksowy, strukturyzowany program edukacyjny zaprojektowany, aby przekształcić Cię z początkującego w pewnego siebie inwestora. Nasz program prowadzony przez ekspertów obejmuje wszystko, czego potrzebujesz, aby odnieść sukces."
+    },
+    "stats": {
+      "videoLessons": "Lekcji Wideo",
+      "hoursOfContent": "Godzin Treści",
+      "comprehensiveModules": "Kompleksowe Moduły",
+      "certification": "Certyfikat"
+    },
+    "curriculum": {
+      "title": "Program Kursu",
+      "lessons": "lekcji"
+    },
+    "modules": {
+      "module1": {
+        "title": "Wprowadzenie do Rynków Finansowych",
+        "duration": "2 godziny"
+      },
+      "module2": {
+        "title": "Zrozumienie Klas Aktywów",
+        "duration": "3 godziny"
+      },
+      "module3": {
+        "title": "Podstawy Analizy Technicznej",
+        "duration": "4 godziny"
+      },
+      "module4": {
+        "title": "Dogłębna Analiza Fundamentalna",
+        "duration": "4 godziny"
+      },
+      "module5": {
+        "title": "Budowa i Zarządzanie Portfelem",
+        "duration": "3 godziny"
+      },
+      "module6": {
+        "title": "Strategie Zarządzania Ryzykiem",
+        "duration": "2 godziny"
+      },
+      "module7": {
+        "title": "Zaawansowane Strategie Tradingowe",
+        "duration": "3.5 godziny"
+      },
+      "module8": {
+        "title": "Psychologia Inwestowania",
+        "duration": "1.5 godziny"
+      }
+    },
+    "features": {
+      "title": "Co Otrzymasz",
+      "feature1": "Moduły nauki we własnym tempie",
+      "feature2": "Interaktywne quizy i oceny",
+      "feature3": "Praktyczne studia przypadków",
+      "feature4": "Certyfikat po ukończeniu",
+      "feature5": "Dożywotni dostęp do materiałów",
+      "feature6": "Fora dyskusyjne społeczności",
+      "feature7": "Miesięczne sesje Q&A na żywo",
+      "feature8": "Materiały i szablony do pobrania"
+    },
+    "socialProof": {
+      "studentsWaiting": "studentów czeka",
+      "basedOnFeedback": "Na podstawie opinii z programu pilotażowego"
+    },
+    "instructors": {
+      "title": "Poznaj Swoich Instruktorów",
+      "instructor1": {
+        "name": "Dr Michael Torres",
+        "title": "Główny Instruktor",
+        "credentials": "CFA, CMT, PhD Finanse",
+        "bio": "Ponad 20 lat doświadczenia w instytucjonalnym zarządzaniu aktywami. Były menedżer portfela w Fidelity Investments."
+      },
+      "instructor2": {
+        "name": "Sarah Mitchell",
+        "title": "Ekspertka ds. Analizy Technicznej",
+        "credentials": "CMT, Analityk Rynkowy",
+        "bio": "Autorka książki \"Chart Patterns That Work\" i regularna współautorka publikacji dotyczących analizy technicznej."
+      },
+      "instructor3": {
+        "name": "James Chen",
+        "title": "Instruktor Strategii Portfela",
+        "credentials": "CFA, CAIA",
+        "bio": "Były strateg ilościowy w Goldman Sachs. Specjalizuje się w inwestowaniu czynnikowym i optymalizacji portfela."
+      }
+    },
+    "testimonials": {
+      "title": "Co Mówią Studenci",
+      "testimonial1": {
+        "name": "Jennifer Adams",
+        "role": "Inżynier Oprogramowania",
+        "quote": "Ten kurs zmienił moje rozumienie rynków. Praktyczne ćwiczenia i rzeczywiste studia przypadków sprawiły, że złożone koncepcje stały się dostępne."
+      },
+      "testimonial2": {
+        "name": "Robert Kim",
+        "role": "Właściciel Małej Firmy",
+        "quote": "Wreszcie kurs inwestycyjny, który wykracza poza podstawy, nie będąc przytłaczającym. Wsparcie instruktorów jest wyjątkowe."
+      },
+      "testimonial3": {
+        "name": "Maria Garcia",
+        "role": "Specjalista ds. Zdrowia",
+        "quote": "Warto każdej minuty. Przeszłam od całkowitej niewiedzy o inwestowaniu do pewnego zarządzania własnym portfelem."
+      }
+    },
+    "cta": {
+      "title": "Bądź Pierwszy, Kto Się Dowie",
+      "description": "Dołącz do naszej listy oczekujących, aby uzyskać wczesny dostęp i ekskluzywne ceny startowe, gdy kurs stanie się dostępny w Q1 2026."
     }
   }
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
+import { logger } from '@/lib/logger';
 
 export interface Recommendation {
   type: 'article' | 'forum' | 'video' | 'analytics' | 'news';
@@ -72,7 +73,7 @@ export function useRecommendations() {
       recs.sort((a, b) => b.score - a.score);
       setRecommendations(recs.slice(0, 6));
     } catch (error) {
-      console.error('Error loading recommendations:', error);
+      logger.error('Error loading recommendations:', error);
       setRecommendations([]);
     } finally {
       setLoading(false);

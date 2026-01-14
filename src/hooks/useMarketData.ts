@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { MarketData } from '@/lib/api/types';
 import { fetchMarketData } from '@/lib/api/market';
+import { logger } from '@/lib/logger';
 
 interface UseMarketDataOptions {
   type: 'crypto' | 'stocks' | 'indices' | 'commodities' | 'currencies';
@@ -80,7 +81,7 @@ export function useMarketData({ type, refreshInterval = 120000 }: UseMarketDataO
         }
       }
     } catch (err) {
-      console.error(`Error fetching ${type} data:`, err);
+      logger.error(`Error fetching ${type} data:`, err);
       setError(err instanceof Error ? err.message : 'Failed to fetch data');
     } finally {
       setLoading(false);

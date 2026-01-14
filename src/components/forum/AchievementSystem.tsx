@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useTranslation } from '@/hooks/useTranslation';
+import { logger } from '@/lib/logger';
 interface AchievementSystemProps {
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
@@ -90,7 +91,7 @@ export function AchievementSystem({
       if (error) throw error;
       setUnlockedAchievements(data?.map((a: any) => a.achievement_id) || []);
     } catch (error) {
-      console.error('Error loading achievements:', error);
+      logger.error('Error loading achievements:', error);
     } finally {
       setLoading(false);
     }

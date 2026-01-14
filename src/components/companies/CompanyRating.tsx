@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { logger } from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -111,7 +112,7 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
         }
       }
     } catch (error) {
-      console.error('Error loading evaluations:', error);
+      logger.error('Error loading evaluations:', error);
     } finally {
       setLoading(false);
     }

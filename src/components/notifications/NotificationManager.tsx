@@ -4,6 +4,7 @@ import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { requestNotificationPermission, showNotification, formatNotificationMessage } from '@/lib/notifications';
 import { supabase } from '@/integrations/supabase/client';
 import type { RealtimeChannel } from '@supabase/supabase-js';
+import { logger } from '@/lib/logger';
 
 /**
  * NotificationManager component
@@ -21,7 +22,7 @@ export function NotificationManager() {
     // Request notification permission when user enables push notifications
     requestNotificationPermission().then((granted) => {
       if (!granted) {
-        console.warn('Notification permission not granted');
+        logger.warn('Notification permission not granted');
       }
     });
   }, [user, preferences.push_notifications]);

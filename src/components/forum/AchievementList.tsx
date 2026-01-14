@@ -5,6 +5,7 @@ import { achievements, Achievement, getRarityColor } from '@/data/achievements';
 import { Lock } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTranslation } from '@/hooks/useTranslation';
+import { logger } from '@/lib/logger';
 
 export function AchievementList() {
   const { user } = useUser();
@@ -70,7 +71,7 @@ export function AchievementList() {
       if (error) throw error;
       setUnlockedAchievements(data?.map((a: any) => a.achievement_id) || []);
     } catch (error) {
-      console.error('Error loading achievements:', error);
+      logger.error('Error loading achievements:', error);
     } finally {
       setLoading(false);
     }

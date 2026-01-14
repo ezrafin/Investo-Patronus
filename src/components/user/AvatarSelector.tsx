@@ -7,6 +7,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useTranslation } from '@/hooks/useTranslation';
 import { validateAvatarFile } from '@/lib/utils/fileValidation';
+import { logger } from '@/lib/logger';
 
 // DiceBear Notionists background colors
 const AVATAR_BACKGROUND_COLORS = ['b6e3f4', 'c0aede', 'd1d4f9', 'ffd5dc', 'ffdfbf'];
@@ -51,7 +52,7 @@ export function AvatarSelector({ open, onOpenChange, currentAvatar, onSelect, us
         const cachedSet = new Set<string>(JSON.parse(cached));
         setUnavailableAvatars(cachedSet);
       } catch (error) {
-        console.error('Failed to parse cached unavailable avatars:', error);
+        logger.error('Failed to parse cached unavailable avatars:', error);
       }
     }
   }, []);
@@ -239,7 +240,7 @@ export function AvatarSelector({ open, onOpenChange, currentAvatar, onSelect, us
       onOpenChange(false);
       toast.success(t('toast.avatarUploadedSuccess', { ns: 'ui' }));
     } catch (error) {
-      console.error('Upload error:', error);
+      logger.error('Upload error:', error);
       toast.error(t('toast.failedToUploadAvatar', { ns: 'ui' }));
     } finally {
       setUploading(false);

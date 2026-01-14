@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useUser } from '@/context/UserContext';
+import { logger } from '@/lib/logger';
 
 interface Bill {
   id: string;
@@ -103,7 +104,7 @@ export function useCollectibleBills() {
         setLegendarySpawn(null);
       }
     } catch (err) {
-      console.error('Error loading collection data:', err);
+      logger.error('Error loading collection data:', err);
       setError(err instanceof Error ? err.message : 'Failed to load collection data');
     } finally {
       setLoading(false);
@@ -178,7 +179,7 @@ export function useCollectibleBills() {
 
       return response;
     } catch (err) {
-      console.error('Error collecting coin:', err);
+      logger.error('Error collecting coin:', err);
       const errorMessage = err instanceof Error ? err.message : 'Failed to collect coin';
       setError(errorMessage);
       return {

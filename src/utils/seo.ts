@@ -1,4 +1,5 @@
 import type { SupportedLanguage } from '@/lib/i18n';
+import { logger } from '@/lib/logger';
 
 export interface SEOData {
   title?: string;
@@ -92,7 +93,7 @@ export function updateDocumentHead(seoData: SEOData) {
         }
         element.setAttribute('content', content);
       } catch (error) {
-        console.error(`Error updating meta tag ${name}:`, error);
+        logger.error(`Error updating meta tag ${name}:`, error);
       }
     };
 
@@ -149,7 +150,7 @@ export function updateDocumentHead(seoData: SEOData) {
           }
           hreflangLink.setAttribute('href', langUrl);
         } catch (error) {
-          console.error(`Error updating hreflang for ${lang}:`, error);
+          logger.error(`Error updating hreflang for ${lang}:`, error);
         }
       });
     }
@@ -164,10 +165,10 @@ export function updateDocumentHead(seoData: SEOData) {
       }
       canonicalLink.setAttribute('href', tags.canonical);
     } catch (error) {
-      console.error('Error updating canonical URL:', error);
+      logger.error('Error updating canonical URL:', error);
     }
   } catch (error) {
-    console.error('Error updating document head:', error);
+    logger.error('Error updating document head:', error);
   }
 }
 

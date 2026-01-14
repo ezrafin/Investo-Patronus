@@ -7,6 +7,7 @@ import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getLocaleForLanguage } from '@/lib/i18n';
+import { logger } from '@/lib/logger';
 
 interface LeaderboardEntry {
   id: string;
@@ -52,7 +53,7 @@ export function Leaderboard() {
       if (error) throw error;
       setLeaderboard(data || []);
     } catch (error) {
-      console.error('Error loading leaderboard:', error);
+      logger.error('Error loading leaderboard:', error);
     } finally {
       setLoading(false);
     }

@@ -67,7 +67,7 @@ const categoryColors: Record<string, { bg: string; border: string; icon: string 
 };
 
 export function CategoryGrid({ categories, selectedCategoryId, onCategoryClick }: CategoryGridProps) {
-  const { t } = useTranslation({ namespace: 'ui' });
+  const { t } = useTranslation({ namespace: 'forum' });
   if (categories.length === 0) return null;
 
   const handleClick = (categoryId: string) => {
@@ -120,7 +120,7 @@ export function CategoryGrid({ categories, selectedCategoryId, onCategoryClick }
                       isSelected ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'
                     )}
                   >
-                    {category.name}
+                    {t(`categories.names.${slug}`, category.name)}
                   </h3>
                   {category.topic_count !== undefined && (
                     <p className="text-xs text-muted-foreground">

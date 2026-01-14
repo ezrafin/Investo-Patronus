@@ -411,7 +411,17 @@
     "publishedCount": "{{count}} veröffentlichte Artikel",
     "ctaTitle": "Möchtest du mitwirken?",
     "ctaSubtitle": "Wir suchen immer erfahrene Autoren. Teile dein Wissen mit unserem Publikum.",
-    "ctaButton": "Als Autor bewerben"
+    "ctaButton": "Als Autor bewerben",
+    "authorBios": {
+      "christina-summerbell": "Senior-Marktanalystin mit über 15 Jahren Erfahrung in Aktienforschung und Portfoliomanagement, spezialisiert auf Technologie- und Wachstumsaktien.",
+      "assunta-novak": "Kryptowährungs- und Blockchain-Forscherin, die seit 2015 digitale Assets und Marktstrukturen abdeckt.",
+      "lysander-truog": "Festzins-Spezialist, der Anleihemärkte und Zinsdynamik für langfristige Investoren abdeckt.",
+      "elias-wolfenstein": "Europäischer Marktstratege, spezialisiert auf grenzüberschreitende M&A-Analysen und regionale Wirtschaftstrends in der EU.",
+      "anastasia-petrova": "Expertin für Schwellenmärkte mit tiefem Wissen über osteuropäische Volkswirtschaften und Energiesektordynamik.",
+      "luca-montefiore": "Mittelmeermarktanalyst, fokussiert auf Luxusgüter, Tourismussektorinvestitionen und italienische Finanzmärkte.",
+      "isabelle-dubois": "Nachhaltigkeitsfinanzberaterin und ESG-Investment-Spezialistin mit Expertise in grünen Anleihen und Impact-Investing.",
+      "xu-meiling": "Asien-Pazifik-Marktanalystin, spezialisiert auf chinesische Aktien, Technologiesektortrends und grenzüberschreitende Investitionsströme."
+    }
   },
   "watchlistPage": {
     "seoTitle": "Watchlists — INVESTOPATRONUS",
@@ -546,9 +556,23 @@
     "badge": "Community",
     "heroTitle": "Community Hub",
     "heroSubtitle": "Vernetze dich mit Anlegern, verfolge deinen Fortschritt und entdecke Top-Beiträge",
+    "seoTitle": "Community Hub — INVESTOPATRONUS",
+    "seoDescription": "Entdecke Top-Beiträge und Community-Aktivitäten für Anleger.",
     "tabLeaderboard": "Bestenliste",
     "tabActivity": "Aktivitätsfeed",
-    "activityTitle": "Aktivitätsfeed"
+    "activityTitle": "Aktivitätsfeed",
+    "activityFeed": {
+      "replied": "antwortete",
+      "repliedToDiscussion": "Antwortete in Diskussion",
+      "createdDiscussion": "erstellte eine Diskussion",
+      "ratedCompany": "bewertete ein Unternehmen",
+      "rated": "Bewertete {{company}}",
+      "rating": "Bewertung: {{rating}}/100",
+      "signInToSee": "Melde dich an, um Community-Aktivitäten zu sehen",
+      "signIn": "Anmelden",
+      "noActivity": "Noch keine kürzliche Aktivität",
+      "noActivityDesc": "Community-Aktivitäten werden hier angezeigt, wenn Diskussionen und Antworten veröffentlicht werden"
+    }
   },
   "marketTable": {
     "symbol": "Symbol",
@@ -594,6 +618,7 @@
     "signInToFollow": "Anmelden, um Autoren zu folgen",
     "noAuthorsFound": "Keine Autoren gefunden",
     "follow": "Folgen",
+    "viewProfile": "Profil ansehen",
     "following": "Folgt"
   },
   "notifications": {
@@ -913,6 +938,14 @@
     "posts": "Beiträge",
     "comments": "Kommentare",
     "basicInformation": "Grundinformationen",
+    "reputationLevels": {
+      "newbie": "Anfänger",
+      "member": "Mitglied",
+      "active": "Aktiv",
+      "expert": "Experte",
+      "guru": "Guru",
+      "legend": "Legende"
+    },
     "emailSettings": "E-Mail-Einstellungen",
     "privacySettings": "Datenschutz-Einstellungen",
     "currentEmail": "Aktuelle E-Mail",

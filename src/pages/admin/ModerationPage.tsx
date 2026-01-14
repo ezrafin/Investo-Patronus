@@ -11,6 +11,7 @@ import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useTranslation } from '@/hooks/useTranslation';
 import { formatRelativeTime } from '@/lib/utils/date';
+import { logger } from '@/lib/logger';
 
 interface Report {
   id: string;
@@ -116,7 +117,7 @@ export default function ModerationPage() {
       if (error) throw error;
       setReports((data || []) as Report[]);
     } catch (error) {
-      console.error('Error loading reports:', error);
+      logger.error('Error loading reports:', error);
       toast.error(t('toast.failedToLoadReports'));
     } finally {
       setLoading(false);
@@ -136,7 +137,7 @@ export default function ModerationPage() {
       if (error) throw error;
       setPendingDiscussions((data || []) as unknown as PendingDiscussion[]);
     } catch (error) {
-      console.error('Error loading pending discussions:', error);
+      logger.error('Error loading pending discussions:', error);
       toast.error(t('toast.failedToLoadPendingDiscussions'));
     } finally {
       setLoadingDiscussions(false);
@@ -172,7 +173,7 @@ export default function ModerationPage() {
 
       setPendingReplies(repliesWithTitles as PendingReply[]);
     } catch (error) {
-      console.error('Error loading pending replies:', error);
+      logger.error('Error loading pending replies:', error);
       toast.error(t('toast.failedToLoadPendingReplies'));
     } finally {
       setLoadingReplies(false);
@@ -211,7 +212,7 @@ export default function ModerationPage() {
 
       setPendingEvaluations(evaluationsWithNames as PendingEvaluation[]);
     } catch (error) {
-      console.error('Error loading pending evaluations:', error);
+      logger.error('Error loading pending evaluations:', error);
       toast.error(t('toast.failedToLoadPendingEvaluations'));
     } finally {
       setLoadingEvaluations(false);
@@ -257,7 +258,7 @@ export default function ModerationPage() {
         toast.success(t('toast.discussionRejectedDeleted'));
       }
     } catch (error: any) {
-      console.error('Moderation error:', error);
+      logger.error('Moderation error:', error);
       toast.error(error.message || t('toast.failedToUpdateDiscussion'));
       // Reload on error to restore correct state
       loadPendingDiscussions();
@@ -306,7 +307,7 @@ export default function ModerationPage() {
         toast.success(t('toast.replyRejectedDeleted'));
       }
     } catch (error: any) {
-      console.error('Moderation error:', error);
+      logger.error('Moderation error:', error);
       toast.error(error.message || t('toast.failedToUpdateReply'));
       // Reload on error to restore correct state
       loadPendingReplies();
@@ -349,7 +350,7 @@ export default function ModerationPage() {
         toast.success(t('toast.evaluationRejectedDeleted'));
       }
     } catch (error: any) {
-      console.error('Moderation error:', error);
+      logger.error('Moderation error:', error);
       toast.error(error.message || t('toast.failedToUpdateEvaluation'));
       // Reload on error to restore correct state
       loadPendingEvaluations();
@@ -376,7 +377,7 @@ export default function ModerationPage() {
           .in('id', batch);
         
         if (error) {
-          console.error(`Error approving batch ${i / BATCH_SIZE + 1}:`, error);
+          logger.error(`Error approving batch ${i / BATCH_SIZE + 1}:`, error);
           failedCount += batch.length;
         } else {
           approvedCount += batch.length;
@@ -397,7 +398,7 @@ export default function ModerationPage() {
         toast.success(`Approved ${approvedCount} discussion${approvedCount > 1 ? 's' : ''}`);
       }
     } catch (error: any) {
-      console.error('Error approving all discussions:', error);
+      logger.error('Error approving all discussions:', error);
       toast.error(error.message || 'Failed to approve all discussions');
       // Reload on error
       loadPendingDiscussions();
@@ -426,7 +427,7 @@ export default function ModerationPage() {
           .in('id', batch);
         
         if (error) {
-          console.error(`Error approving batch ${i / BATCH_SIZE + 1}:`, error);
+          logger.error(`Error approving batch ${i / BATCH_SIZE + 1}:`, error);
           failedCount += batch.length;
         } else {
           approvedCount += batch.length;
@@ -447,7 +448,7 @@ export default function ModerationPage() {
         toast.success(`Approved ${approvedCount} repl${approvedCount > 1 ? 'ies' : 'y'}`);
       }
     } catch (error: any) {
-      console.error('Error approving all replies:', error);
+      logger.error('Error approving all replies:', error);
       toast.error(error.message || 'Failed to approve all replies');
       // Reload on error
       loadPendingReplies();
@@ -476,7 +477,7 @@ export default function ModerationPage() {
           .in('id', batch);
         
         if (error) {
-          console.error(`Error approving batch ${i / BATCH_SIZE + 1}:`, error);
+          logger.error(`Error approving batch ${i / BATCH_SIZE + 1}:`, error);
           failedCount += batch.length;
         } else {
           approvedCount += batch.length;
@@ -497,7 +498,7 @@ export default function ModerationPage() {
         toast.success(`Approved ${approvedCount} company review${approvedCount > 1 ? 's' : ''}`);
       }
     } catch (error: any) {
-      console.error('Error approving all evaluations:', error);
+      logger.error('Error approving all evaluations:', error);
       toast.error(error.message || 'Failed to approve all company reviews');
       // Reload on error
       loadPendingEvaluations();

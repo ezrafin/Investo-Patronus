@@ -7,6 +7,7 @@ import { basicArticles } from '@/data/educationArticles';
 import { ArticleCard } from '@/components/education/ArticleCard';
 import { useTranslation } from '@/hooks/useTranslation';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { logger } from '@/lib/logger';
 
 const categories = [
   { name: 'Getting Started', count: 15 },
@@ -35,7 +36,7 @@ export default function BasicArticlesPage() {
         }
       }
     } catch (e) {
-      console.error('Error loading completed articles:', e);
+      logger.error('Error loading completed articles:', e);
       try {
         localStorage.removeItem('education-basic-articles-read');
       } catch {
@@ -50,7 +51,7 @@ export default function BasicArticlesPage() {
     try {
       localStorage.setItem('education-basic-articles-read', JSON.stringify(completedIds));
     } catch (e) {
-      console.error('Error saving completed articles:', e);
+      logger.error('Error saving completed articles:', e);
     }
   }, [completedIds]);
 

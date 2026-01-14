@@ -1,6 +1,7 @@
 import { UserProfile } from '@/hooks/useAuth';
 import { Award, Star, TrendingUp, Crown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface ReputationBadgeProps {
   profile: UserProfile | null;
@@ -10,12 +11,12 @@ interface ReputationBadgeProps {
 }
 
 const reputationLevels = [
-  { min: 0, name: 'Newbie', icon: null, color: 'text-muted-foreground', bgColor: 'bg-muted' },
-  { min: 10, name: 'Member', icon: TrendingUp, color: 'text-blue-500', bgColor: 'bg-blue-500/10' },
-  { min: 50, name: 'Active', icon: TrendingUp, color: 'text-green-500', bgColor: 'bg-green-500/10' },
-  { min: 100, name: 'Expert', icon: Award, color: 'text-purple-500', bgColor: 'bg-purple-500/10' },
-  { min: 500, name: 'Guru', icon: Star, color: 'text-amber-500', bgColor: 'bg-amber-500/10' },
-  { min: 1000, name: 'Legend', icon: Crown, color: 'text-amber-600', bgColor: 'bg-amber-600/10' },
+  { min: 0, key: 'newbie', icon: null, color: 'text-muted-foreground', bgColor: 'bg-muted' },
+  { min: 10, key: 'member', icon: TrendingUp, color: 'text-blue-500', bgColor: 'bg-blue-500/10' },
+  { min: 50, key: 'active', icon: TrendingUp, color: 'text-green-500', bgColor: 'bg-green-500/10' },
+  { min: 100, key: 'expert', icon: Award, color: 'text-purple-500', bgColor: 'bg-purple-500/10' },
+  { min: 500, key: 'guru', icon: Star, color: 'text-amber-500', bgColor: 'bg-amber-500/10' },
+  { min: 1000, key: 'legend', icon: Crown, color: 'text-amber-600', bgColor: 'bg-amber-600/10' },
 ];
 
 function getReputationLevel(reputation: number) {
@@ -38,16 +39,18 @@ const iconSizes = {
 };
 
 export function ReputationBadge({ profile, size = 'md', showLevel = true, className }: ReputationBadgeProps) {
+  const { t } = useTranslation({ namespace: 'ui' });
   if (!profile) return null;
 
   const reputation = profile.reputation || 0;
   const level = getReputationLevel(reputation);
   const Icon = level.icon;
+  const levelName = t(`profilePage.reputationLevels.${level.key}`);
 
   return (
     <div className={cn('inline-flex items-center gap-1.5 rounded-full font-medium', sizeClasses[size], level.bgColor, level.color, className)}>
       {Icon && <Icon className={iconSizes[size]} />}
-      {showLevel && <span>{level.name}</span>}
+      {showLevel && <span>{levelName}</span>}
       <span className="tabular-nums opacity-75">({reputation})</span>
     </div>
   );

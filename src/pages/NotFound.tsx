@@ -4,13 +4,14 @@ import { Layout } from "@/components/layout/Layout";
 import { ArrowLeft } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { SEOHead } from "@/components/seo/SEOHead";
+import { logger } from "@/lib/logger";
 
 const NotFound = () => {
   const location = useLocation();
   const { t } = useTranslation({ namespace: "ui" });
 
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    logger.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
   return (

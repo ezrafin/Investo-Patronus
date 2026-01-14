@@ -1,5 +1,6 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { ErrorFallback } from './ErrorFallback';
+import { logger } from '@/lib/logger';
 
 interface Props {
   children: ReactNode;
@@ -36,10 +37,12 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // Log error to console in development
-    if (process.env.NODE_ENV === 'development') {
-      console.error('ErrorBoundary caught an error:', error, errorInfo);
-    }
+    // Always log errors (logger handles production/development)
+    logger.error('ErrorBoundary caught an error:', {
+      error: error.message,
+      stack: error.stack,
+      componentStack: errorInfo.componentStack,
+    });
 
     // Call optional error handler
     this.props.onError?.(error, errorInfo);
@@ -50,8 +53,13 @@ export class ErrorBoundary extends Component<Props, State> {
       errorInfo,
     });
 
-    // In production, you might want to send this to an error reporting service
-    // Example: Sentry.captureException(error, { contexts: { react: errorInfo } });
+    // In production, send to error tracking service if available
+    // This can be integrated with services like Sentry, LogRocket, etc.
+    if (import.meta.env.PROD && typeof window !== 'undefined') {
+      // Example integration point for error tracking services
+      // Sentry.captureException(error, { contexts: { react: errorInfo } });
+      // LogRocket.captureException(error, { tags: { component: 'ErrorBoundary' } });
+    }
   }
 
   handleReset = () => {

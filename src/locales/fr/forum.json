@@ -62,7 +62,15 @@
     "clearFilter": "Effacer le filtre",
     "trendingTopics": "Discussions tendances",
     "viewAllTrending": "Voir toutes les tendances →",
-    "noTrendingTopics": "Aucun sujet tendance pour le moment"
+    "noTrendingTopics": "Aucun sujet tendance pour le moment",
+    "names": {
+      "general": "Discussion générale",
+      "stocks": "Analyse d'actions",
+      "crypto": "Cryptomonnaie",
+      "etfs": "ETF et fonds",
+      "beginners": "Questions de débutants",
+      "news": "Actualités du marché"
+    }
   },
   "errorLoadingCategories": "Erreur lors du chargement des catégories",
   "tryAgain": "Réessayer",

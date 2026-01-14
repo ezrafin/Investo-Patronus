@@ -812,7 +812,60 @@ The law of supply shows the direct relationship between price and quantity suppl
         id: 'macroecon-u1-l5-quiz',
         type: 'quiz',
         title: 'Supply',
-        questions: [],
+        questions: [
+          {
+            id: 'q1',
+            prompt: 'The graph shows two supply curves S1 (green line) and S2 (red line). Point A is on S2 at (Q=2, P=6), point B is on S1 at (Q=2, P=4), point C is on S2 at (Q=6, P=8), and point D is on S1 at (Q=6, P=6). Which of the following movements would represent a decrease in the quantity supplied, but not associated with a decrease in supply?',
+            options: [
+              'B to D',
+              'C to A',
+              'A to B',
+              'D to A',
+              'B to A',
+            ],
+            correctAnswer: 4, // E. B to A - movement up along S1 curve
+            explanation: 'Movement from B to A represents a decrease in quantity supplied (from Q=2 to Q=2, but at higher price P=4 to P=6) along the same supply curve S1. This is a movement along the curve caused by a price change, not a shift of the supply curve itself.',
+          },
+          {
+            id: 'q2',
+            prompt: 'Which of the following statements accurately describes how an event will impact supply?',
+            options: [
+              'An increase in costs of production will cause an increase in the supply curve',
+              'An increase in demand will cause an increase in supply',
+              'An increase in price will cause supply to increase',
+              'A decrease in price will cause supply to increase',
+              'A decrease in resource costs will cause an increase in the supply curve',
+            ],
+            correctAnswer: 4, // E. A decrease in resource costs will cause an increase in the supply curve
+            explanation: 'A decrease in resource costs (input prices) will shift the supply curve to the right, representing an increase in supply. Lower input costs make production more profitable, so producers are willing to supply more at each price level.',
+          },
+          {
+            id: 'q3',
+            prompt: 'Which of the following best describes the law of supply?',
+            options: [
+              'Legal authorities regulate markets',
+              'Producers sell the same amount of a good no matter its price',
+              'Sellers set the price that demanders pay',
+              'Supply is infinite',
+              'As price increases, quantity supplied increases',
+            ],
+            correctAnswer: 4, // E. As price increases, quantity supplied increases
+            explanation: 'The law of supply states that, all else equal, there is a direct relationship between price and quantity supplied. As the price of a good increases, producers are willing to supply more of it because higher prices mean higher potential profits.',
+          },
+          {
+            id: 'q4',
+            prompt: 'Coffee bean merchants notice that coffee prices are at a historic low today, but they expect the price of coffee beans to increase in the next six months. How will the expectation of an increase in future prices most likely affect the supply of coffee beans on the market today?',
+            options: [
+              'Supply will decrease',
+              'Supply will increase',
+              'There will be a movement along the same supply curve to a new higher quantity supplied',
+              'There will be a movement along the same supply curve to a new lower quantity supplied',
+              'No change in supply',
+            ],
+            correctAnswer: 0, // A. Supply will decrease
+            explanation: 'When producers expect higher future prices, they have an incentive to hold back current supply to sell later at the higher price. This causes the supply curve to shift to the left, representing a decrease in supply at each price level today.',
+          },
+        ],
       } as QuizContent,
     ],
   },
@@ -941,6 +994,52 @@ Market equilibrium occurs when quantity demanded equals quantity supplied. Equil
           },
         ],
       } as PracticeContent,
+      {
+        id: 'macroecon-u1-l6-quiz',
+        type: 'quiz',
+        title: 'Markets',
+        questions: [
+          {
+            id: 'q1',
+            prompt: 'What happens to the price and quantity of dog treats if the demand for dog treats increases and the supply of dog treats increases?',
+            options: [
+              'Price decreases; quantity increases',
+              'Price increases; quantity decreases',
+              'We do not know what happens to price; quantity increases',
+              'Price decreases; quantity decreases',
+              'Price decreases; quantity demanded doesn\'t change',
+            ],
+            correctAnswer: 2, // C. We do not know what happens to price; quantity increases
+            explanation: 'When both demand and supply increase, the quantity definitely increases because both shifts move quantity in the same direction. However, the effect on price is ambiguous because demand increase pushes price up while supply increase pushes price down. The final price depends on which shift is larger.',
+          },
+          {
+            id: 'q2',
+            prompt: 'Shampoo and conditioner are complementary goods. What happens to the price and quantity of conditioner if the price of shampoo decreases?',
+            options: [
+              'Price decreases; quantity increases',
+              'Price decreases; quantity decreases',
+              'Price increases; quantity increases',
+              'Price increases; quantity decreases',
+              'Price decreases; quantity demanded does not change',
+            ],
+            correctAnswer: 2, // C. Price increases; quantity increases
+            explanation: 'When the price of shampoo decreases, the demand for conditioner (a complementary good) increases because people buy more shampoo and therefore need more conditioner. This shifts the demand curve for conditioner to the right, resulting in both a higher equilibrium price and a higher equilibrium quantity.',
+          },
+          {
+            id: 'q3',
+            prompt: 'The graph shows the market for cheese with supply curve S1, initial demand curve D1 (equilibrium E1 at price Py and quantity QB), and new demand curve D2 after a decrease in demand (equilibrium E2 at price Px and quantity QA). Which of the following statements about the decrease in demand shown in the graph is correct?',
+            options: [
+              'The new equilibrium is P = Px and Q = QA',
+              'The new equilibrium is E2',
+              'The new equilibrium is P = Py and Q = QB',
+              'The new equilibrium is E1',
+              'The new equilibrium is P = Py and Q = QA',
+            ],
+            correctAnswer: 0, // A. The new equilibrium is P = Px and Q = QA
+            explanation: 'When demand decreases (shifts from D1 to D2), the new equilibrium point E2 occurs at the intersection of the supply curve S1 and the new demand curve D2. This new equilibrium has a lower price (Px) and a lower quantity (QA) compared to the initial equilibrium.',
+          },
+        ],
+      } as QuizContent,
     ],
   },
 ];

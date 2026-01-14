@@ -8,6 +8,7 @@ import { useNews } from '@/hooks/useNews';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { logger } from '@/lib/logger';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getLocaleForLanguage } from '@/lib/i18n';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
@@ -78,7 +79,7 @@ export default function NewsPage() {
           }
         });
         if (error) {
-          console.error('Batch error:', error);
+          logger.error('Batch error:', error);
           toast.error(
             t('newsPage.historicalBatchError')
               .replace('{{batch}}', String(i + 1))
@@ -101,7 +102,7 @@ export default function NewsPage() {
       );
       refetch();
     } catch (error) {
-      console.error('Historical fetch error:', error);
+      logger.error('Historical fetch error:', error);
       toast.error(t('newsPage.historicalFailed'));
     } finally {
       setIsFetchingHistorical(false);

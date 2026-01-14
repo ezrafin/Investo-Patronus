@@ -326,7 +326,7 @@ export async function fetchTopicById(id: string): Promise<ForumTopic | null> {
       authorReputation: authorReputation ?? undefined,
     };
   } catch (error) {
-    console.error('Error fetching topic by id:', error);
+    logger.error('Error fetching topic by id:', error);
     if (import.meta.env.DEV) {
       return mockForumTopics.find(topic => topic.id === id) || null;
     }

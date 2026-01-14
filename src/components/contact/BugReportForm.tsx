@@ -8,6 +8,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Loader2 } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useAuth } from '@/hooks/useAuth';
+import { logger } from '@/lib/logger';
 
 interface BugReportFormProps {
   onClose: () => void;
@@ -56,7 +57,7 @@ export function BugReportForm({ onClose }: BugReportFormProps) {
       toast.success(t('contactPage.bugReport.success'));
       onClose();
     } catch (error) {
-      console.error('Error submitting bug report:', error);
+      logger.error('Error submitting bug report:', error);
       toast.error(t('contactPage.bugReport.error'));
     } finally {
       setIsSubmitting(false);

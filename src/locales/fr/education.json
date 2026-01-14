@@ -87,6 +87,8 @@
     "badge": "Cours",
     "title": "Cours d'éducation financière",
     "subtitle": "Cours complets couvrant tout des fondamentaux de l'investissement aux stratégies de trading avancées. Apprenez à votre rythme avec des modules structurés et des leçons pratiques.",
+    "seoTitle": "Académie d'Investissement - Cours de Finance en Ligne",
+    "seoDescription": "Inscrivez-vous à des cours complets de finance et d'économie. Apprenez la macroéconomie, la microéconomie, la finance et les marchés, ainsi que les finances personnelles grâce à des cours structurés avec des leçons vidéo et des quiz.",
     "infoTitle": "Comment fonctionnent nos cours",
     "infoDescription": "Chaque cours est divisé en modules avec plusieurs leçons. Complétez les leçons à votre rythme, passez des quiz pour tester vos connaissances et réussissez l'examen final pour démontrer votre maîtrise. Suivez vos progrès et revenez à tout moment pour réviser les matériaux.",
     "startCourse": "Commencer le cours",
@@ -120,7 +122,10 @@
     "moduleTestResults": "Résultats du Test du Module",
     "moduleTestPassed": "Test du Module Réussi !",
     "moduleTestReview": "Révisez le matériel et réessayez",
-    "module": "Module"
+    "module": "Module",
+    "unit": "Unité",
+    "seoCourseTitle": "{{title}} - Cours en Ligne | INVESTOPATRONUS",
+    "seoCourseDescription": "Apprenez {{title}} avec notre cours en ligne complet. Accédez à des leçons vidéo, des quiz interactifs et du contenu d'expert pour maîtriser {{description}}."
   },
   "course": {
     "investment-fundamentals": {
@@ -211,6 +216,116 @@
         "rm-module-4": { "title": "Psychologie de l'Investissement", "lesson": { "rm-lesson-4-1": { "title": "Biais Psychologiques Courants" }, "rm-lesson-4-2": { "title": "Surmonter la Peur et l'Avarice" }, "rm-lesson-4-3": { "title": "Trading Émotionnel" }, "rm-lesson-4-4": { "title": "Développer la Discipline" } } },
         "rm-module-5": { "title": "Pratique de Gestion des Risques", "lesson": { "rm-lesson-5-1": { "title": "Risque de Portefeuille" }, "rm-lesson-5-2": { "title": "Gestion de Corrélation" }, "rm-lesson-5-3": { "title": "Tests de Stress" } } }
       }
+    }
+  },
+  "learningCourse": {
+    "hero": {
+      "badge": "Lancement Q1 2026",
+      "title": "Maîtrisez les Marchés",
+      "subtitle": "Cours d'Investissement",
+      "description": "Un programme d'apprentissage complet et structuré conçu pour vous transformer d'un débutant en investisseur confiant. Notre programme dirigé par des experts couvre tout ce dont vous avez besoin pour réussir."
+    },
+    "stats": {
+      "videoLessons": "Leçons Vidéo",
+      "hoursOfContent": "Heures de Contenu",
+      "comprehensiveModules": "Modules Complets",
+      "certification": "Certification"
+    },
+    "curriculum": {
+      "title": "Programme du Cours",
+      "lessons": "leçons"
+    },
+    "modules": {
+      "module1": {
+        "title": "Introduction aux Marchés Financiers",
+        "duration": "2 heures"
+      },
+      "module2": {
+        "title": "Comprendre les Classes d'Actifs",
+        "duration": "3 heures"
+      },
+      "module3": {
+        "title": "Fondamentaux de l'Analyse Technique",
+        "duration": "4 heures"
+      },
+      "module4": {
+        "title": "Analyse Fondamentale Approfondie",
+        "duration": "4 heures"
+      },
+      "module5": {
+        "title": "Construction & Gestion de Portefeuille",
+        "duration": "3 heures"
+      },
+      "module6": {
+        "title": "Stratégies de Gestion des Risques",
+        "duration": "2 heures"
+      },
+      "module7": {
+        "title": "Stratégies de Trading Avancées",
+        "duration": "3.5 heures"
+      },
+      "module8": {
+        "title": "Psychologie de l'Investissement",
+        "duration": "1.5 heures"
+      }
+    },
+    "features": {
+      "title": "Ce Que Vous Obtenez",
+      "feature1": "Modules d'apprentissage à votre rythme",
+      "feature2": "Quiz et évaluations interactifs",
+      "feature3": "Études de cas réelles",
+      "feature4": "Certificat à la fin",
+      "feature5": "Accès à vie aux matériaux",
+      "feature6": "Forums de discussion communautaires",
+      "feature7": "Sessions Q&A en direct mensuelles",
+      "feature8": "Ressources et modèles téléchargeables"
+    },
+    "socialProof": {
+      "studentsWaiting": "étudiants en attente",
+      "basedOnFeedback": "Basé sur les commentaires du programme pilote"
+    },
+    "instructors": {
+      "title": "Rencontrez Vos Instructeurs",
+      "instructor1": {
+        "name": "Dr. Michael Torres",
+        "title": "Instructeur Principal",
+        "credentials": "CFA, CMT, PhD Finance",
+        "bio": "Plus de 20 ans d'expérience en gestion d'actifs institutionnels. Ancien gestionnaire de portefeuille chez Fidelity Investments."
+      },
+      "instructor2": {
+        "name": "Sarah Mitchell",
+        "title": "Experte en Analyse Technique",
+        "credentials": "CMT, Technicienne de Marché",
+        "bio": "Auteure de \"Chart Patterns That Work\" et contributrice régulière aux publications d'analyse technique."
+      },
+      "instructor3": {
+        "name": "James Chen",
+        "title": "Instructeur en Stratégie de Portefeuille",
+        "credentials": "CFA, CAIA",
+        "bio": "Ancien stratège quantitatif chez Goldman Sachs. Spécialisé dans l'investissement factoriel et l'optimisation de portefeuille."
+      }
+    },
+    "testimonials": {
+      "title": "Ce Que Disent les Étudiants",
+      "testimonial1": {
+        "name": "Jennifer Adams",
+        "role": "Ingénieure Logicielle",
+        "quote": "Ce cours a transformé ma compréhension des marchés. Les exercices pratiques et les études de cas réelles ont rendu les concepts complexes accessibles."
+      },
+      "testimonial2": {
+        "name": "Robert Kim",
+        "role": "Propriétaire de Petite Entreprise",
+        "quote": "Enfin, un cours d'investissement qui va au-delà des bases sans être accablant. Le soutien des instructeurs est exceptionnel."
+      },
+      "testimonial3": {
+        "name": "Maria Garcia",
+        "role": "Professionnelle de la Santé",
+        "quote": "Ça vaut chaque minute. Je suis passée de ne rien savoir sur l'investissement à gérer confiantement mon propre portefeuille."
+      }
+    },
+    "cta": {
+      "title": "Soyez le Premier à Savoir",
+      "description": "Rejoignez notre liste d'attente pour obtenir un accès anticipé et des prix de lancement exclusifs lorsque le cours sera disponible au Q1 2026."
     }
   }
 }

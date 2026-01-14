@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 import { useUserPreferences } from '@/hooks/useUserPreferences';
 import { detectBrowserLanguage, loadTranslation, type SupportedLanguage } from '@/lib/i18n';
+import { logger } from '@/lib/logger';
 
 interface I18nContextType {
   language: SupportedLanguage;
@@ -35,7 +36,7 @@ export function I18nProvider({ children }: I18nProviderProps) {
         ui,
       });
     } catch (error) {
-      console.error('Error loading translations:', error);
+      logger.error('Error loading translations:', error);
     } finally {
       setLoading(false);
     }
@@ -58,7 +59,7 @@ export function I18nProvider({ children }: I18nProviderProps) {
           storedLanguage = storedPrefs.language as SupportedLanguage;
         }
       } catch (e) {
-        console.error('Error parsing stored preferences:', e);
+        logger.error('Error parsing stored preferences:', e);
       }
     }
 
@@ -72,7 +73,7 @@ export function I18nProvider({ children }: I18nProviderProps) {
       initialLanguage = detectBrowserLanguage();
       // Сохраняем определенный язык в preferences (только если нет сохраненных настроек)
       if (!hasStoredPreferences) {
-        updatePreferences({ language: initialLanguage }).catch(console.error);
+        updatePreferences({ language: initialLanguage }).catch((err) => logger.error('Error updating preferences:', err));
       }
     }
 

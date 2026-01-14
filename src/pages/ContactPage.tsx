@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { BugReportForm } from '@/components/contact/BugReportForm';
+import { logger } from '@/lib/logger';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
@@ -49,7 +50,7 @@ export default function ContactPage() {
         message: ''
       });
     } catch (error) {
-      console.error('Error submitting contact form:', error);
+      logger.error('Error submitting contact form:', error);
       toast.error(t('contactPage.toastError'));
     } finally {
       setIsSubmitting(false);

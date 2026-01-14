@@ -195,7 +195,15 @@
     "clearFilter": "Clear filter",
     "trendingTopics": "Trending Discussions",
     "viewAllTrending": "View all trending →",
-    "noTrendingTopics": "No trending topics at the moment"
+    "noTrendingTopics": "No trending topics at the moment",
+    "names": {
+      "general": "General Discussion",
+      "stocks": "Stock Analysis",
+      "crypto": "Cryptocurrency",
+      "etfs": "ETFs & Funds",
+      "beginners": "Beginner Questions",
+      "news": "Market News"
+    }
   },
   "featured": {
     "title": "Featured",

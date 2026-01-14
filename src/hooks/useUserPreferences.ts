@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
+import { logger } from '@/lib/logger';
 
 export type Theme = 'dark' | 'glacier' | 'harvest' | 'lavender' | 'brutalist' | 'obsidian' | 'orchid' | 'solar' | 'tide' | 'verdant';
 
@@ -95,7 +96,7 @@ export function useUserPreferences() {
         if (!isMounted.current) return;
 
         if (error) {
-          console.error('Error fetching preferences:', error);
+          logger.error('Error fetching preferences:', error);
           // Fall back to local storage
           const localPrefs = getLocalPreferences(user.id);
           if (localPrefs) {
@@ -126,7 +127,7 @@ export function useUserPreferences() {
           }, { onConflict: 'user_id' });
         }
       } catch (e) {
-        console.error('Error loading preferences:', e);
+        logger.error('Error loading preferences:', e);
       } finally {
         if (isMounted.current) {
           setLoading(false);
@@ -156,7 +157,7 @@ export function useUserPreferences() {
           ...newPreferences,
         }, { onConflict: 'user_id' });
       } catch (e) {
-        console.error('Error saving preferences:', e);
+        logger.error('Error saving preferences:', e);
       }
     }
   }, [preferences, user?.id]);

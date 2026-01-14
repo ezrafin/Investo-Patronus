@@ -438,9 +438,23 @@
     "badge": "Community",
     "heroTitle": "Community Hub",
     "heroSubtitle": "Connect with fellow investors, track your progress, and discover top contributors",
+    "seoTitle": "Community Hub — INVESTOPATRONUS",
+    "seoDescription": "Explore top contributors and community activity for investors.",
     "tabLeaderboard": "Leaderboard",
     "tabActivity": "Activity feed",
-    "activityTitle": "Activity feed"
+    "activityTitle": "Activity feed",
+    "activityFeed": {
+      "replied": "replied",
+      "repliedToDiscussion": "Replied to discussion",
+      "createdDiscussion": "created a discussion",
+      "ratedCompany": "rated a company",
+      "rated": "Rated {{company}}",
+      "rating": "Rating: {{rating}}/100",
+      "signInToSee": "Sign in to see community activity",
+      "signIn": "Sign in",
+      "noActivity": "No recent activity yet",
+      "noActivityDesc": "Community activity will appear here when discussions and replies are posted"
+    }
   },
   "advertisePage": {
     "badge": "Advertise",
@@ -520,7 +534,17 @@
     "publishedCount": "{{count}} articles published",
     "ctaTitle": "Want to Contribute?",
     "ctaSubtitle": "We are always looking for knowledgeable writers to join our team. Share your expertise with our audience.",
-    "ctaButton": "Apply to Write"
+    "ctaButton": "Apply to Write",
+    "authorBios": {
+      "christina-summerbell": "Senior market analyst with 15+ years of experience in equity research and portfolio management, specializing in technology and growth stocks.",
+      "assunta-novak": "Cryptocurrency and blockchain researcher covering digital assets and market structure since 2015.",
+      "lysander-truog": "Fixed income specialist covering bond markets and interest rate dynamics for long-term investors.",
+      "elias-wolfenstein": "European markets strategist specializing in cross-border M&A analysis and regional economic trends across the EU.",
+      "anastasia-petrova": "Emerging markets expert with deep knowledge of Eastern European economies and energy sector dynamics.",
+      "luca-montefiore": "Mediterranean markets analyst focusing on luxury goods, tourism sector investments, and Italian financial markets.",
+      "isabelle-dubois": "Sustainable finance advisor and ESG investment specialist with expertise in green bonds and impact investing.",
+      "xu-meiling": "Asia-Pacific markets analyst specializing in Chinese equities, technology sector trends, and cross-border investment flows."
+    }
   },
   "watchlistPage": {
     "seoTitle": "Watchlists — INVESTOPATRONUS",
@@ -647,6 +671,7 @@
     "signInToFollow": "Sign in to follow authors",
     "noAuthorsFound": "No authors found",
     "follow": "Follow",
+    "viewProfile": "View Profile",
     "following": "Following"
   },
   "notifications": {
@@ -966,6 +991,14 @@
     "posts": "Posts",
     "comments": "Comments",
     "basicInformation": "Basic Information",
+    "reputationLevels": {
+      "newbie": "Newbie",
+      "member": "Member",
+      "active": "Active",
+      "expert": "Expert",
+      "guru": "Guru",
+      "legend": "Legend"
+    },
     "emailSettings": "Email Settings",
     "privacySettings": "Privacy Settings",
     "currentEmail": "Current Email",
@@ -997,6 +1030,10 @@
     "form": {
       "title": "Job Application"
     }
+  },
+  "offline": {
+    "title": "You are offline",
+    "message": "Some features may be limited. Content will refresh when you reconnect."
   }
 }
 

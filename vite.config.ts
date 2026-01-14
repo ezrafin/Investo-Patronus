@@ -26,16 +26,24 @@ export default defineConfig(({ mode }) => ({
           // Only split vendor libraries - let Vite handle app code
           // This prevents circular dependency issues
           if (id.includes('node_modules')) {
-            // Combine all React ecosystem into one chunk to ensure correct order
+            // React core - keep separate for better caching
             if (
               id.includes('node_modules/react') || 
               id.includes('node_modules/react-dom') ||
-              id.includes('node_modules/react-router') ||
-              id.includes('node_modules/framer-motion') || 
+              id.includes('node_modules/react-router')
+            ) {
+              return 'vendor-react';
+            }
+            // UI libraries - frequently used together
+            if (
               id.includes('node_modules/@radix-ui') ||
               id.includes('node_modules/lucide-react')
             ) {
-              return 'vendor-react';
+              return 'vendor-ui';
+            }
+            // Animation library - separate chunk as it's large
+            if (id.includes('node_modules/framer-motion')) {
+              return 'vendor-animation';
             }
             // Query library
             if (id.includes('node_modules/@tanstack/react-query')) {
@@ -45,9 +53,17 @@ export default defineConfig(({ mode }) => ({
             if (id.includes('node_modules/@supabase')) {
               return 'vendor-supabase';
             }
-            // Charts - объединяем с vendor-react для избежания проблем с инициализацией
+            // Charts - separate chunk as it's large and not always needed
             if (id.includes('node_modules/recharts') || id.includes('node_modules/d3')) {
-              return 'vendor-react';
+              return 'vendor-charts';
+            }
+            // Form libraries
+            if (
+              id.includes('node_modules/react-hook-form') ||
+              id.includes('node_modules/@hookform') ||
+              id.includes('node_modules/zod')
+            ) {
+              return 'vendor-forms';
             }
           }
           // Let Vite handle app code splitting automatically

@@ -411,7 +411,17 @@
     "publishedCount": "{{count}} artículos publicados",
     "ctaTitle": "¿Quieres contribuir?",
     "ctaSubtitle": "Buscamos autores con conocimiento. Comparte tu experiencia con nuestra audiencia.",
-    "ctaButton": "Postular para escribir"
+    "ctaButton": "Postular para escribir",
+    "authorBios": {
+      "christina-summerbell": "Analista de mercado senior con más de 15 años de experiencia en investigación de acciones y gestión de carteras, especializada en acciones tecnológicas y de crecimiento.",
+      "assunta-novak": "Investigadora de criptomonedas y blockchain que cubre activos digitales y estructura de mercado desde 2015.",
+      "lysander-truog": "Especialista en renta fija que cubre mercados de bonos y dinámica de tasas de interés para inversores a largo plazo.",
+      "elias-wolfenstein": "Estratega de mercados europeos especializado en análisis de fusiones y adquisiciones transfronterizas y tendencias económicas regionales en la UE.",
+      "anastasia-petrova": "Experta en mercados emergentes con profundo conocimiento de las economías de Europa del Este y la dinámica del sector energético.",
+      "luca-montefiore": "Analista de mercados mediterráneos enfocado en bienes de lujo, inversiones en el sector turístico y mercados financieros italianos.",
+      "isabelle-dubois": "Asesora de finanzas sostenibles y especialista en inversiones ESG con experiencia en bonos verdes e inversión de impacto.",
+      "xu-meiling": "Analista de mercados de Asia-Pacífico especializada en acciones chinas, tendencias del sector tecnológico y flujos de inversión transfronterizos."
+    }
   },
   "watchlistPage": {
     "seoTitle": "Watchlists — INVESTOPATRONUS",
@@ -546,9 +556,23 @@
     "badge": "Comunidad",
     "heroTitle": "Centro de la comunidad",
     "heroSubtitle": "Conecta con otros inversores, sigue tu progreso y descubre a los principales colaboradores",
+    "seoTitle": "Centro de la comunidad — INVESTOPATRONUS",
+    "seoDescription": "Explora a los principales colaboradores y la actividad de la comunidad para inversores.",
     "tabLeaderboard": "Ranking",
     "tabActivity": "Actividad",
-    "activityTitle": "Actividad"
+    "activityTitle": "Actividad",
+    "activityFeed": {
+      "replied": "respondió",
+      "repliedToDiscussion": "Respondió en la discusión",
+      "createdDiscussion": "creó una discusión",
+      "ratedCompany": "calificó una empresa",
+      "rated": "Calificó {{company}}",
+      "rating": "Calificación: {{rating}}/100",
+      "signInToSee": "Inicia sesión para ver la actividad de la comunidad",
+      "signIn": "Iniciar sesión",
+      "noActivity": "Aún no hay actividad reciente",
+      "noActivityDesc": "La actividad de la comunidad aparecerá aquí cuando se publiquen discusiones y respuestas"
+    }
   },
   "marketTable": {
     "symbol": "Símbolo",
@@ -594,6 +618,7 @@
     "signInToFollow": "Inicia sesión para seguir autores",
     "noAuthorsFound": "No se encontraron autores",
     "follow": "Seguir",
+    "viewProfile": "Ver perfil",
     "following": "Siguiendo"
   },
   "notifications": {
@@ -913,6 +938,14 @@
     "posts": "Publicaciones",
     "comments": "Comentarios",
     "basicInformation": "Información Básica",
+    "reputationLevels": {
+      "newbie": "Principiante",
+      "member": "Miembro",
+      "active": "Activo",
+      "expert": "Experto",
+      "guru": "Gurú",
+      "legend": "Leyenda"
+    },
     "emailSettings": "Configuración de Correo",
     "privacySettings": "Configuración de Privacidad",
     "currentEmail": "Correo Actual",

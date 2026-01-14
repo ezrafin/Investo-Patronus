@@ -62,7 +62,15 @@
     "clearFilter": "Очистить фильтр",
     "trendingTopics": "Популярные обсуждения",
     "viewAllTrending": "Посмотреть все популярные →",
-    "noTrendingTopics": "Популярных тем пока нет"
+    "noTrendingTopics": "Популярных тем пока нет",
+    "names": {
+      "general": "Общие обсуждения",
+      "stocks": "Анализ акций",
+      "crypto": "Криптовалюты",
+      "etfs": "ETF и фонды",
+      "beginners": "Вопросы новичков",
+      "news": "Рыночные новости"
+    }
   },
   "errorLoadingCategories": "Ошибка загрузки категорий",
   "tryAgain": "Повторить",

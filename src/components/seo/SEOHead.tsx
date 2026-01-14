@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { SEOData, updateDocumentHead } from '@/utils/seo';
 import { useI18n } from '@/context/I18nContext';
 import { SUPPORTED_LANGUAGES, type SupportedLanguage } from '@/lib/i18n';
+import { logger } from '@/lib/logger';
 
 interface SEOHeadProps {
   title?: string;
@@ -105,7 +106,7 @@ export function SEOHead({
         twitterCreator,
       });
     } catch (error) {
-      console.error('SEOHead update error:', error);
+      logger.error('SEOHead update error:', error);
     }
   }, [
     location?.pathname,

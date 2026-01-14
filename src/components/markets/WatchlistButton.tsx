@@ -4,6 +4,7 @@ import { Star, Plus } from 'lucide-react';
 import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { logger } from '@/lib/logger';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -46,7 +47,7 @@ export function WatchlistButton({ symbol, marketType }: WatchlistButtonProps) {
       if (error) throw error;
       setWatchlists(data || []);
     } catch (error) {
-      console.error('Error loading watchlists:', error);
+      logger.error('Error loading watchlists:', error);
     }
   };
 
@@ -76,7 +77,7 @@ export function WatchlistButton({ symbol, marketType }: WatchlistButtonProps) {
 
       setIsInWatchlist((itemsData?.length || 0) > 0);
     } catch (error) {
-      console.error('Error checking watchlist:', error);
+      logger.error('Error checking watchlist:', error);
     }
   };
 

@@ -404,7 +404,17 @@
     "publishedCount": "已发布 {{count}} 篇文章",
     "ctaTitle": "想要贡献内容？",
     "ctaSubtitle": "我们欢迎有经验的作者加入，与读者分享你的专业知识。",
-    "ctaButton": "申请成为作者"
+    "ctaButton": "申请成为作者",
+    "authorBios": {
+      "christina-summerbell": "高级市场分析师，拥有15年以上的股票研究和投资组合管理经验，专注于科技股和成长股。",
+      "assunta-novak": "加密货币和区块链研究员，自2015年以来一直关注数字资产和市场结构。",
+      "lysander-truog": "固定收益专家，为长期投资者提供债券市场和利率动态分析。",
+      "elias-wolfenstein": "欧洲市场策略师，专注于跨境并购分析和欧盟区域经济趋势。",
+      "anastasia-petrova": "新兴市场专家，对东欧经济和能源行业动态有深入了解。",
+      "luca-montefiore": "地中海市场分析师，专注于奢侈品、旅游业投资和意大利金融市场。",
+      "isabelle-dubois": "可持续金融顾问和ESG投资专家，在绿色债券和影响力投资方面具有专业知识。",
+      "xu-meiling": "亚太市场分析师，专注于中国股票、科技行业趋势和跨境投资流动。"
+    }
   },
   "watchlistPage": {
     "seoTitle": "自选列表 — INVESTOPATRONUS",
@@ -539,9 +549,23 @@
     "badge": "社区",
     "heroTitle": "社区中心",
     "heroSubtitle": "与投资者交流，跟踪进度，发现优秀贡献者",
+    "seoTitle": "社区中心 — INVESTOPATRONUS",
+    "seoDescription": "探索顶级贡献者和投资者社区动态。",
     "tabLeaderboard": "排行榜",
     "tabActivity": "动态",
-    "activityTitle": "动态"
+    "activityTitle": "动态",
+    "activityFeed": {
+      "replied": "回复",
+      "repliedToDiscussion": "回复了讨论",
+      "createdDiscussion": "创建了讨论",
+      "ratedCompany": "评价了公司",
+      "rated": "评价了 {{company}}",
+      "rating": "评分：{{rating}}/100",
+      "signInToSee": "登录以查看社区动态",
+      "signIn": "登录",
+      "noActivity": "暂无最近动态",
+      "noActivityDesc": "当发布讨论和回复时，社区动态将显示在这里"
+    }
   },
   "home": {
     "heroTitleLine1": "守护您在",
@@ -594,6 +618,7 @@
     "signInToFollow": "登录以关注作者",
     "noAuthorsFound": "未找到作者",
     "follow": "关注",
+    "viewProfile": "查看资料",
     "following": "已关注"
   },
   "notifications": {
@@ -913,6 +938,14 @@
     "posts": "帖子",
     "comments": "评论",
     "basicInformation": "基本信息",
+    "reputationLevels": {
+      "newbie": "新手",
+      "member": "成员",
+      "active": "活跃",
+      "expert": "专家",
+      "guru": "大师",
+      "legend": "传奇"
+    },
     "emailSettings": "电子邮件设置",
     "privacySettings": "隐私设置",
     "currentEmail": "当前电子邮件",

@@ -8,6 +8,7 @@ import { Bookmark, Newspaper, MessageSquare, FileText, Trash2 } from 'lucide-rea
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { logger } from '@/lib/logger';
 import { useTranslation } from '@/hooks/useTranslation';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { useCollectibleBills } from '@/hooks/useCollectibleBills';
@@ -95,7 +96,7 @@ export default function BookmarksPage() {
               subtitle = 'Analytics Article';
             }
           } catch (error) {
-            console.error(`Error loading ${bookmark.content_type} data:`, error);
+            logger.error(`Error loading ${bookmark.content_type} data:`, error);
           }
 
           return {
@@ -108,7 +109,7 @@ export default function BookmarksPage() {
 
       setBookmarks(bookmarksWithData as BookmarkItem[]);
     } catch (error) {
-      console.error('Error loading bookmarks:', error);
+      logger.error('Error loading bookmarks:', error);
       toast.error(t('bookmarksPage.loadError'));
     } finally {
       setLoading(false);

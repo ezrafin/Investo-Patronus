@@ -87,6 +87,8 @@
     "badge": "Cursos",
     "title": "Cursos de Educación Financiera",
     "subtitle": "Cursos completos que cubren todo desde fundamentos de inversión hasta estrategias avanzadas de trading. Aprende a tu ritmo con módulos estructurados y lecciones prácticas.",
+    "seoTitle": "Academia de Inversiones - Cursos de Finanzas Online",
+    "seoDescription": "Inscríbete en cursos completos de finanzas y economía. Aprende macroeconomía, microeconomía, finanzas y mercados, y finanzas personales a través de cursos estructurados con lecciones en video y cuestionarios.",
     "infoTitle": "Cómo funcionan nuestros cursos",
     "infoDescription": "Cada curso está dividido en módulos con múltiples lecciones. Completa lecciones a tu ritmo, realiza cuestionarios para probar tu conocimiento y aprueba el examen final para demostrar dominio. Rastrea tu progreso y regresa en cualquier momento para revisar materiales.",
     "startCourse": "Comenzar curso",
@@ -120,7 +122,10 @@
     "moduleTestResults": "Resultados del Test del Módulo",
     "moduleTestPassed": "¡Test del Módulo Aprobado!",
     "moduleTestReview": "Revisa el material e intenta de nuevo",
-    "module": "Módulo"
+    "module": "Módulo",
+    "unit": "Unidad",
+    "seoCourseTitle": "{{title}} - Curso Online | INVESTOPATRONUS",
+    "seoCourseDescription": "Aprende {{title}} con nuestro curso online completo. Accede a lecciones en video, cuestionarios interactivos y contenido experto para dominar {{description}}."
   },
   "course": {
     "investment-fundamentals": {
@@ -211,6 +216,116 @@
         "rm-module-4": { "title": "Psicología de la Inversión", "lesson": { "rm-lesson-4-1": { "title": "Sesgos Psicológicos Comunes" }, "rm-lesson-4-2": { "title": "Superando el Miedo y la Codicia" }, "rm-lesson-4-3": { "title": "Trading Emocional" }, "rm-lesson-4-4": { "title": "Construyendo Disciplina" } } },
         "rm-module-5": { "title": "Práctica de Gestión de Riesgos", "lesson": { "rm-lesson-5-1": { "title": "Riesgo del Portafolio" }, "rm-lesson-5-2": { "title": "Gestión de Correlación" }, "rm-lesson-5-3": { "title": "Pruebas de Estrés" } } }
       }
+    }
+  },
+  "learningCourse": {
+    "hero": {
+      "badge": "Lanzamiento Q1 2026",
+      "title": "Domina los Mercados",
+      "subtitle": "Curso de Inversión",
+      "description": "Un programa de aprendizaje completo y estructurado diseñado para llevarte de principiante a inversor confiado. Nuestro plan de estudios dirigido por expertos cubre todo lo que necesitas para tener éxito."
+    },
+    "stats": {
+      "videoLessons": "Lecciones en Video",
+      "hoursOfContent": "Horas de Contenido",
+      "comprehensiveModules": "Módulos Completos",
+      "certification": "Certificación"
+    },
+    "curriculum": {
+      "title": "Plan de Estudios del Curso",
+      "lessons": "lecciones"
+    },
+    "modules": {
+      "module1": {
+        "title": "Introducción a los Mercados Financieros",
+        "duration": "2 horas"
+      },
+      "module2": {
+        "title": "Comprensión de las Clases de Activos",
+        "duration": "3 horas"
+      },
+      "module3": {
+        "title": "Fundamentos del Análisis Técnico",
+        "duration": "4 horas"
+      },
+      "module4": {
+        "title": "Análisis Fundamental Profundo",
+        "duration": "4 horas"
+      },
+      "module5": {
+        "title": "Construcción y Gestión de Portafolio",
+        "duration": "3 horas"
+      },
+      "module6": {
+        "title": "Estrategias de Gestión de Riesgos",
+        "duration": "2 horas"
+      },
+      "module7": {
+        "title": "Estrategias de Trading Avanzadas",
+        "duration": "3.5 horas"
+      },
+      "module8": {
+        "title": "Psicología de la Inversión",
+        "duration": "1.5 horas"
+      }
+    },
+    "features": {
+      "title": "Lo Que Obtendrás",
+      "feature1": "Módulos de aprendizaje a tu ritmo",
+      "feature2": "Cuestionarios y evaluaciones interactivas",
+      "feature3": "Estudios de casos del mundo real",
+      "feature4": "Certificado al completar",
+      "feature5": "Acceso de por vida a los materiales",
+      "feature6": "Foros de discusión comunitarios",
+      "feature7": "Sesiones mensuales de Q&A en vivo",
+      "feature8": "Recursos y plantillas descargables"
+    },
+    "socialProof": {
+      "studentsWaiting": "estudiantes esperando",
+      "basedOnFeedback": "Basado en comentarios del programa piloto"
+    },
+    "instructors": {
+      "title": "Conoce a Tus Instructores",
+      "instructor1": {
+        "name": "Dr. Michael Torres",
+        "title": "Instructor Principal",
+        "credentials": "CFA, CMT, PhD Finanzas",
+        "bio": "Más de 20 años de experiencia en gestión institucional de activos. Ex gestor de cartera en Fidelity Investments."
+      },
+      "instructor2": {
+        "name": "Sarah Mitchell",
+        "title": "Experta en Análisis Técnico",
+        "credentials": "CMT, Técnica de Mercado",
+        "bio": "Autora de \"Chart Patterns That Work\" y colaboradora regular en publicaciones de análisis técnico."
+      },
+      "instructor3": {
+        "name": "James Chen",
+        "title": "Instructor de Estrategia de Portafolio",
+        "credentials": "CFA, CAIA",
+        "bio": "Ex estratega cuantitativo en Goldman Sachs. Se especializa en inversión por factores y optimización de portafolio."
+      }
+    },
+    "testimonials": {
+      "title": "Lo Que Dicen los Estudiantes",
+      "testimonial1": {
+        "name": "Jennifer Adams",
+        "role": "Ingeniera de Software",
+        "quote": "Este curso transformó mi comprensión de los mercados. Los ejercicios prácticos y los estudios de casos reales hicieron accesibles los conceptos complejos."
+      },
+      "testimonial2": {
+        "name": "Robert Kim",
+        "role": "Propietario de Pequeño Negocio",
+        "quote": "Finalmente, un curso de inversión que va más allá de lo básico sin ser abrumador. El apoyo de los instructores es excepcional."
+      },
+      "testimonial3": {
+        "name": "Maria Garcia",
+        "role": "Profesional de la Salud",
+        "quote": "Vale cada minuto. Pasé de no saber nada sobre inversión a gestionar con confianza mi propio portafolio."
+      }
+    },
+    "cta": {
+      "title": "Sé el Primero en Saber",
+      "description": "Únete a nuestra lista de espera para obtener acceso anticipado y precios de lanzamiento exclusivos cuando el curso esté disponible en Q1 2026."
     }
   }
 }

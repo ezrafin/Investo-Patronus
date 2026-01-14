@@ -2,6 +2,7 @@
  * i18n core module
  * Handles loading and caching translations with fallback to English
  */
+import { logger } from './logger';
 
 export type SupportedLanguage = 'en' | 'zh' | 'es' | 'ru' | 'de' | 'fr' | 'pl';
 
@@ -85,12 +86,12 @@ export async function loadTranslation(
         return data;
       } catch {
         // If even English doesn't exist, return empty object
-        console.warn(`Translation file not found: ${namespace} for ${language} or en`);
+        logger.warn(`Translation file not found: ${namespace} for ${language} or en`);
         return {};
       }
     }
 
-    console.warn(`Translation file not found: ${namespace} for ${language}`);
+    logger.warn(`Translation file not found: ${namespace} for ${language}`);
     return {};
   }
 }

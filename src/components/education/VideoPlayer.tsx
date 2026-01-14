@@ -16,6 +16,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { logger } from '@/lib/logger';
 
 interface VideoPlayerProps {
   src: string;
@@ -93,7 +94,7 @@ export function VideoPlayer({
         document.head.removeChild(prefetchLinkRef.current);
       } catch (error) {
         // Element may have been removed already, ignore error
-        console.warn('Failed to remove prefetch link:', error);
+        logger.warn('Failed to remove prefetch link:', error);
       }
     }
 
@@ -111,7 +112,7 @@ export function VideoPlayer({
           document.head.removeChild(prefetchLinkRef.current);
         } catch (error) {
           // Element may have been removed already, ignore error
-          console.warn('Failed to remove prefetch link in cleanup:', error);
+          logger.warn('Failed to remove prefetch link in cleanup:', error);
         }
       }
       prefetchLinkRef.current = null;
@@ -334,7 +335,7 @@ export function VideoPlayer({
       video.pause();
     } else {
       video.play().catch(err => {
-        console.error('Error playing video:', err);
+        logger.error('Error playing video:', err);
         setError('Failed to play video');
       });
     }
@@ -395,7 +396,7 @@ export function VideoPlayer({
       }
       resetControlsTimeout();
     } catch (err) {
-      console.error('Picture-in-Picture error:', err);
+      logger.error('Picture-in-Picture error:', err);
     }
   };
 
@@ -445,7 +446,7 @@ export function VideoPlayer({
           document.head.removeChild(prefetchLinkRef.current);
         } catch (error) {
           // Element may have been removed already, ignore error
-          console.warn('Failed to remove prefetch link in component unmount:', error);
+          logger.warn('Failed to remove prefetch link in component unmount:', error);
         }
       }
       prefetchLinkRef.current = null;
@@ -480,12 +481,16 @@ export function VideoPlayer({
         }}
         onClick={resetControlsTimeout}
         tabIndex={0}
-        style={{ outline: 'none' }}
+        style={{ outline: 'none', overflow: 'hidden' }}
       >
         <video
           ref={videoRef}
           src={src}
-          className="w-full h-full object-contain bg-black rounded-lg"
+          className="w-full h-full bg-black rounded-lg"
+          style={{
+            objectFit: 'cover',
+            clipPath: 'inset(0 0 5% 0)' // Crop bottom 5%
+          }}
           playsInline
           preload="metadata"
         >

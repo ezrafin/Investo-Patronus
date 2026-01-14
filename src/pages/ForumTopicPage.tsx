@@ -31,11 +31,11 @@ import { formatRelativeTime } from '@/lib/utils/date';
 import { useIsMobile } from '@/hooks/useResponsive';
 
 const userLevels = [
-  { min: 0, name: 'Newbie', color: 'bg-muted text-muted-foreground' },
-  { min: 10, name: 'Member', color: 'bg-blue-100 text-blue-700' },
-  { min: 50, name: 'Active', color: 'bg-green-100 text-green-700' },
-  { min: 100, name: 'Expert', color: 'bg-purple-100 text-purple-700' },
-  { min: 500, name: 'Guru', color: 'bg-amber-100 text-amber-700' },
+  { min: 0, key: 'newbie', color: 'bg-muted text-muted-foreground' },
+  { min: 10, key: 'member', color: 'bg-blue-100 text-blue-700' },
+  { min: 50, key: 'active', color: 'bg-green-100 text-green-700' },
+  { min: 100, key: 'expert', color: 'bg-purple-100 text-purple-700' },
+  { min: 500, key: 'guru', color: 'bg-amber-100 text-amber-700' },
 ];
 
 function getUserLevel(rating: number) {
@@ -397,9 +397,9 @@ export default function ForumTopicPage() {
                             </Link>
                             {level && (
                               <span className={cn('inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full mt-1', level.color)}>
-                                {level.name === 'Guru' && <Star className="h-3 w-3" />}
-                                {level.name === 'Expert' && <Award className="h-3 w-3" />}
-                                {level.name}
+                                {level.key === 'guru' && <Star className="h-3 w-3" />}
+                                {level.key === 'expert' && <Award className="h-3 w-3" />}
+                                {tUi(`profilePage.reputationLevels.${level.key}`)}
                               </span>
                             )}
                           </div>
@@ -423,9 +423,9 @@ export default function ForumTopicPage() {
                             </Link>
                             {level && (
                               <span className={cn('inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full mt-1', level.color)}>
-                                {level.name === 'Guru' && <Star className="h-3 w-3" />}
-                                {level.name === 'Expert' && <Award className="h-3 w-3" />}
-                                {level.name}
+                                {level.key === 'guru' && <Star className="h-3 w-3" />}
+                                {level.key === 'expert' && <Award className="h-3 w-3" />}
+                                {tUi(`profilePage.reputationLevels.${level.key}`)}
                               </span>
                             )}
                           </div>

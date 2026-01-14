@@ -6,6 +6,7 @@ import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useTranslation } from '@/hooks/useTranslation';
+import { logger } from '@/lib/logger';
 
 interface TrendingItem {
   id: string;
@@ -65,7 +66,7 @@ export function TrendingContent({ className, limit = 10 }: { className?: string;
             title: item.title,
             comments: item.reply_count || 0,
             created_at: item.created_at,
-            author: item.author_name || 'Anonymous',
+            author: item.author_name || t('common.anonymous'),
           });
         });
       }
@@ -85,7 +86,7 @@ export function TrendingContent({ className, limit = 10 }: { className?: string;
             type: 'news',
             title: item.title,
             created_at: item.published_at,
-            author: item.author || 'Unknown',
+            author: item.author || t('common.anonymous'),
           });
         });
       }
@@ -99,7 +100,7 @@ export function TrendingContent({ className, limit = 10 }: { className?: string;
 
       setTrending(trendingItems.slice(0, limit));
     } catch (error) {
-      console.error('Error loading trending content:', error);
+      logger.error('Error loading trending content:', error);
     } finally {
       setLoading(false);
     }

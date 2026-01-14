@@ -2,6 +2,7 @@
  * Centralized error handling system
  * Provides consistent error handling, logging, and user feedback
  */
+import { logger } from './logger';
 
 export enum ErrorType {
   NETWORK = 'NETWORK',
@@ -172,7 +173,7 @@ class ErrorHandler {
 
     // Log to console in development
     if (process.env.NODE_ENV === 'development') {
-      console.error('ErrorHandler:', {
+      logger.error('ErrorHandler:', {
         type: errorContext.type,
         message: errorContext.message,
         context: errorContext.context,
@@ -191,7 +192,7 @@ class ErrorHandler {
     // For now, we'll just log it
     if (process.env.NODE_ENV === 'production') {
       // You can send to your analytics/error tracking service here
-      console.error('Production error:', errorContext);
+      logger.error('Production error:', errorContext);
     }
   }
 

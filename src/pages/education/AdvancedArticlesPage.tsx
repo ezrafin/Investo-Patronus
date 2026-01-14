@@ -7,6 +7,7 @@ import { advancedArticles } from '@/data/educationArticles';
 import { ArticleCard } from '@/components/education/ArticleCard';
 import { useTranslation } from '@/hooks/useTranslation';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { logger } from '@/lib/logger';
 
 const categories = [
   { name: 'Technical Analysis', count: 18 },
@@ -35,7 +36,7 @@ export default function AdvancedArticlesPage() {
         }
       }
     } catch (e) {
-      console.error('Error loading completed articles:', e);
+      logger.error('Error loading completed articles:', e);
       try {
         localStorage.removeItem('education-advanced-articles-read');
       } catch {
@@ -50,7 +51,7 @@ export default function AdvancedArticlesPage() {
     try {
       localStorage.setItem('education-advanced-articles-read', JSON.stringify(completedIds));
     } catch (e) {
-      console.error('Error saving completed articles:', e);
+      logger.error('Error saving completed articles:', e);
     }
   }, [completedIds]);
 

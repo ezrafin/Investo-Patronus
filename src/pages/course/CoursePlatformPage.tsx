@@ -18,6 +18,7 @@ import { Progress } from '@/components/ui/progress';
 import { VideoPlayer } from '@/components/education/VideoPlayer';
 import { getVideoContentUrl } from '@/lib/r2VideoUtils';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { logger } from '@/lib/logger';
 
 export default function CoursePlatformPage() {
   const { t } = useTranslation({ namespace: 'education' });
@@ -74,7 +75,7 @@ export default function CoursePlatformPage() {
         try {
           setCompletedLessons(JSON.parse(saved));
         } catch (e) {
-          console.error('Error parsing localStorage progress:', e);
+          logger.error('Error parsing localStorage progress:', e);
         }
       }
       setLoadingProgress(false);
@@ -194,12 +195,19 @@ export default function CoursePlatformPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const seoTitle = useMemo(() => {
-    return `${course.title} - Online Course | INVESTOPATRONUS`;
-  }, [course.title]);
+    const courseTitle = t(`course.${course.id}.title`) || course.title;
+    return t('courses.seoCourseTitle', { title: courseTitle, defaultValue: `${courseTitle} - Online Course | INVESTOPATRONUS` });
+  }, [course.id, course.title, t]);
 
   const seoDescription = useMemo(() => {
-    return `Learn ${course.title.toLowerCase()} with our comprehensive online course. Access video lessons, interactive quizzes, and expert content to master ${course.description.toLowerCase()}.`;
-  }, [course.title, course.description]);
+    const courseTitle = t(`course.${course.id}.title`) || course.title;
+    const courseDesc = t(`course.${course.id}.description`) || course.description;
+    return t('courses.seoCourseDescription', { 
+      title: courseTitle.toLowerCase(), 
+      description: courseDesc.toLowerCase(),
+      defaultValue: `Learn ${courseTitle.toLowerCase()} with our comprehensive online course. Access video lessons, interactive quizzes, and expert content to master ${courseDesc.toLowerCase()}.`
+    });
+  }, [course.id, course.title, course.description, t]);
 
   return (
     <Layout>
@@ -488,7 +496,7 @@ export default function CoursePlatformPage() {
                           videoId={videoId}
                           nextVideoUrl={nextVideoUrl}
                           onError={(error) => {
-                            console.error('Video loading error:', error);
+                            logger.error('Video loading error:', error);
                           }}
                         />
                       </div>
@@ -584,7 +592,7 @@ export default function CoursePlatformPage() {
                         </button>
                       ))}
                     </div>
-                    {masteryCheckAnswers[question.id] !== undefined && question.explanation && (
+                    {masteryCheckAnswers[question.id] !== undefined && masteryCheckAnswers[question.id] === question.correctAnswer && question.explanation && (
                       <p className="mt-4 text-sm text-muted-foreground p-3 bg-secondary/50 rounded-lg">
                         {question.explanation}
                       </p>
@@ -650,7 +658,7 @@ export default function CoursePlatformPage() {
                       {question.options.map((option, oIndex) => {
                         const isSelected = quizAnswers[question.id] === oIndex;
                         const isCorrect = oIndex === question.correctAnswer;
-                        const showExplanation = isSelected && question.optionExplanations && question.optionExplanations[oIndex];
+                        const showExplanation = isSelected && isCorrect && question.optionExplanations && question.optionExplanations[oIndex];
                         
                         return (
                           <div key={oIndex} className="space-y-1">
@@ -679,7 +687,7 @@ export default function CoursePlatformPage() {
                         );
                       })}
                     </div>
-                    {quizAnswers[question.id] !== undefined && question.explanation && !question.optionExplanations && (
+                    {quizAnswers[question.id] !== undefined && quizAnswers[question.id] === question.correctAnswer && question.explanation && !question.optionExplanations && (
                       <p className="mt-4 text-sm text-muted-foreground p-3 bg-secondary/50 rounded-lg">
                         {question.explanation}
                       </p>
@@ -725,7 +733,7 @@ export default function CoursePlatformPage() {
                         </button>
                       ))}
                     </div>
-                    {finalExamAnswers[question.id] !== undefined && question.explanation && (
+                    {finalExamAnswers[question.id] !== undefined && finalExamAnswers[question.id] === question.correctAnswer && question.explanation && (
                       <p className="mt-4 text-sm text-muted-foreground p-3 bg-secondary/50 rounded-lg">
                         {question.explanation}
                       </p>

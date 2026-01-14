@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { SEOData, updateDocumentHead } from '@/utils/seo';
+import { logger } from '@/lib/logger';
 
 export function useSEO(data: SEOData) {
   // useLocation must be called unconditionally (React hooks rule)
@@ -27,7 +28,7 @@ export function useSEO(data: SEOData) {
         canonical: fullUrl,
       });
     } catch (error) {
-      console.error('useSEO error:', error);
+      logger.error('useSEO error:', error);
     }
   }, [location?.pathname, data]);
 }

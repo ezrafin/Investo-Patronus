@@ -8,6 +8,7 @@ import { MarkdownContent } from '@/components/content/MarkdownContent';
 import { useReadingHistory } from '@/hooks/useReadingHistory';
 import { useRelatedContent } from '@/hooks/useRelatedContent';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { logger } from '@/lib/logger';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
 import { generateArticleSchema, generateOrganizationSchema } from '@/utils/structuredData';
@@ -69,7 +70,7 @@ export default function AnalyticsDetailPage() {
             }
           }
         } catch (error) {
-          console.error('Error loading article:', error);
+          logger.error('Error loading article:', error);
           setArticle(null);
         } finally {
           setLoading(false);

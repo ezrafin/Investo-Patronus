@@ -4,6 +4,7 @@ import { useUser } from '@/context/UserContext';
 import { toast } from 'sonner';
 import { useCollectibleBills } from './useCollectibleBills';
 import { useTranslation } from '@/hooks/useTranslation';
+import { logger } from '@/lib/logger';
 
 export function useUserFollow(targetUserId?: string) {
   const { user } = useUser();
@@ -24,7 +25,7 @@ export function useUserFollow(targetUserId?: string) {
         .maybeSingle();
 
       if (error) {
-        console.error('Error loading follow status:', error);
+        logger.error('Error loading follow status:', error);
         return;
       }
 

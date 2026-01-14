@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { Upload, Plus, X, Loader2 } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import { logger } from '@/lib/logger';
 
 interface JobApplicationFormProps {
   position: string;
@@ -95,7 +96,7 @@ export function JobApplicationForm({ position, onClose }: JobApplicationFormProp
       toast.success(t('careersPage.form.success'));
       onClose();
     } catch (error) {
-      console.error('Error submitting application:', error);
+      logger.error('Error submitting application:', error);
       toast.error(t('careersPage.form.error'));
     } finally {
       setIsSubmitting(false);

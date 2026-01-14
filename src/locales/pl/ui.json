@@ -404,7 +404,17 @@
     "publishedCount": "{{count}} opublikowanych artykułów",
     "ctaTitle": "Chcesz dołączyć?",
     "ctaSubtitle": "Szukamy doświadczonych autorów. Podziel się wiedzą z naszą społecznością.",
-    "ctaButton": "Aplikuj jako autor"
+    "ctaButton": "Aplikuj jako autor",
+    "authorBios": {
+      "christina-summerbell": "Starsza analityczka rynkowa z ponad 15-letnim doświadczeniem w badaniach akcji i zarządzaniu portfelem, specjalizująca się w akcjach technologicznych i wzrostowych.",
+      "assunta-novak": "Badaczka kryptowalut i blockchain, zajmująca się aktywami cyfrowymi i strukturą rynku od 2015 roku.",
+      "lysander-truog": "Specjalista od dochodów stałych, zajmujący się rynkami obligacji i dynamiką stóp procentowych dla inwestorów długoterminowych.",
+      "elias-wolfenstein": "Strateg rynków europejskich specjalizujący się w analizie transgranicznych fuzji i przejęć oraz regionalnych trendach gospodarczych w UE.",
+      "anastasia-petrova": "Ekspertka rynków wschodzących z dogłębną wiedzą o gospodarkach Europy Wschodniej i dynamice sektora energetycznego.",
+      "luca-montefiore": "Analityk rynków śródziemnomorskich skupiający się na dobrach luksusowych, inwestycjach w sektorze turystycznym i włoskich rynkach finansowych.",
+      "isabelle-dubois": "Doradczyni ds. zrównoważonych finansów i specjalistka od inwestycji ESG z ekspertyzą w zakresie zielonych obligacji i inwestycji wpływu.",
+      "xu-meiling": "Analityczka rynków Azji i Pacyfiku specjalizująca się w akcjach chińskich, trendach sektora technologicznego i transgranicznych przepływach inwestycyjnych."
+    }
   },
   "watchlistPage": {
     "seoTitle": "Watchlisty — INVESTOPATRONUS",
@@ -539,9 +549,23 @@
     "badge": "Społeczność",
     "heroTitle": "Centrum społeczności",
     "heroSubtitle": "Połącz się z inwestorami, śledź postępy i poznaj najlepszych autorów",
+    "seoTitle": "Centrum społeczności — INVESTOPATRONUS",
+    "seoDescription": "Poznaj najlepszych autorów i aktywność społeczności dla inwestorów.",
     "tabLeaderboard": "Ranking",
     "tabActivity": "Aktywność",
-    "activityTitle": "Aktywność"
+    "activityTitle": "Aktywność",
+    "activityFeed": {
+      "replied": "odpowiedział",
+      "repliedToDiscussion": "Odpowiedział w dyskusji",
+      "createdDiscussion": "utworzył dyskusję",
+      "ratedCompany": "ocenił firmę",
+      "rated": "Ocenił {{company}}",
+      "rating": "Ocena: {{rating}}/100",
+      "signInToSee": "Zaloguj się, aby zobaczyć aktywność społeczności",
+      "signIn": "Zaloguj się",
+      "noActivity": "Brak ostatniej aktywności",
+      "noActivityDesc": "Aktywność społeczności pojawi się tutaj, gdy zostaną opublikowane dyskusje i odpowiedzi"
+    }
   },
   "home": {
     "heroTitleLine1": "Twój strażnik na",
@@ -594,6 +618,7 @@
     "signInToFollow": "Zaloguj się, aby obserwować autorów",
     "noAuthorsFound": "Nie znaleziono autorów",
     "follow": "Obserwuj",
+    "viewProfile": "Zobacz profil",
     "following": "Obserwujesz"
   },
   "notifications": {
@@ -913,6 +938,14 @@
     "posts": "Posty",
     "comments": "Komentarze",
     "basicInformation": "Podstawowe Informacje",
+    "reputationLevels": {
+      "newbie": "Nowicjusz",
+      "member": "Członek",
+      "active": "Aktywny",
+      "expert": "Ekspert",
+      "guru": "Guru",
+      "legend": "Legenda"
+    },
     "emailSettings": "Ustawienia Email",
     "privacySettings": "Ustawienia Prywatności",
     "currentEmail": "Aktualny Email",

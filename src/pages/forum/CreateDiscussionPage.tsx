@@ -16,6 +16,7 @@ import { useForumCategories } from '@/hooks/useForumCategories';
 import { checkRateLimit } from '@/lib/api/rateLimit';
 import { z } from 'zod';
 import { useTranslation } from '@/hooks/useTranslation';
+import { logger } from '@/lib/logger';
 import { useCollectibleBills } from '@/hooks/useCollectibleBills';
 
 export default function CreateDiscussionPage() {
@@ -186,11 +187,11 @@ export default function CreateDiscussionPage() {
         });
 
         if (emailError) {
-          console.error('Error sending moderation email:', emailError);
+          logger.error('Error sending moderation email:', emailError);
           // Don't throw - discussion is still created
         }
       } catch (emailErr) {
-        console.error('Error sending moderation email:', emailErr);
+        logger.error('Error sending moderation email:', emailErr);
         // Don't throw - discussion is still created
       }
 

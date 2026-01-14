@@ -3,6 +3,7 @@ import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useEffect } from 'react';
 import type { RealtimeChannel } from '@supabase/supabase-js';
+import { logger } from '@/lib/logger';
 
 export interface Notification {
   id: string;
@@ -36,7 +37,7 @@ export function useNotifications() {
         .limit(50);
 
       if (error) {
-        console.error('Error fetching notifications:', error);
+        logger.error('Error fetching notifications:', error);
         throw error;
       }
 
@@ -94,7 +95,7 @@ export function useUnreadNotificationCount() {
         .eq('read', false);
 
       if (error) {
-        console.error('Error fetching unread count:', error);
+        logger.error('Error fetching unread count:', error);
         return 0;
       }
 

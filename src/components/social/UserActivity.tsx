@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { MessageSquare, FileText, Clock } from 'lucide-react';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
+import { useTranslation } from '@/hooks/useTranslation';
+import { logger } from '@/lib/logger';
 
 interface ActivityItem {
   id: string;
@@ -14,6 +16,7 @@ interface ActivityItem {
 }
 
 export function UserActivity({ userId }: { userId: string }) {
+  const { t } = useTranslation({ namespace: 'ui' });
   const [activities, setActivities] = useState<ActivityItem[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,7 +41,7 @@ export function UserActivity({ userId }: { userId: string }) {
           activitiesList.push({
             id: reply.id,
             type: 'reply',
-            title: 'Replied to discussion',
+            title: t('communityPage.activityFeed.repliedToDiscussion'),
             content: reply.content?.substring(0, 100),
             created_at: reply.created_at,
             link: `/forum/${reply.discussion_id}`,
@@ -48,7 +51,7 @@ export function UserActivity({ userId }: { userId: string }) {
 
       setActivities(activitiesList.slice(0, 20));
     } catch (error) {
-      console.error('Error loading activity:', error);
+      logger.error('Error loading activity:', error);
     } finally {
       setLoading(false);
     }
@@ -68,7 +71,7 @@ export function UserActivity({ userId }: { userId: string }) {
     return (
       <div className="text-center py-8 text-muted-foreground">
         <MessageSquare className="h-12 w-12 mx-auto mb-4 opacity-50" />
-        <p>No activity yet</p>
+        <p>{t('communityPage.activityFeed.noActivity')}</p>
       </div>
     );
   }

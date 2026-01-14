@@ -62,7 +62,15 @@
     "clearFilter": "Wyczyść filtr",
     "trendingTopics": "Popularne dyskusje",
     "viewAllTrending": "Zobacz wszystkie popularne →",
-    "noTrendingTopics": "Obecnie brak popularnych tematów"
+    "noTrendingTopics": "Obecnie brak popularnych tematów",
+    "names": {
+      "general": "Dyskusja ogólna",
+      "stocks": "Analiza akcji",
+      "crypto": "Kryptowaluta",
+      "etfs": "ETF i fundusze",
+      "beginners": "Pytania dla początkujących",
+      "news": "Wiadomości rynkowe"
+    }
   },
   "errorLoadingCategories": "Błąd ładowania kategorii",
   "tryAgain": "Spróbuj ponownie",

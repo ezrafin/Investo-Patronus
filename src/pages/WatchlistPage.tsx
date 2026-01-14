@@ -8,6 +8,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Plus, Trash2, Star, AlertCircle, TrendingUp, BarChart3, Coins, Bitcoin, DollarSign, MessageSquare } from 'lucide-react';
 import { MarketData } from '@/lib/api/types';
+import { logger } from '@/lib/logger';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { fetchDiscussionsForWatchlist, ForumTopic } from '@/lib/api/index';
@@ -71,7 +72,7 @@ export default function WatchlistPage() {
       const data = await fetchDiscussionsForWatchlist(user.id);
       setDiscussions(data);
     } catch (error) {
-      console.error('Error loading discussions:', error);
+      logger.error('Error loading discussions:', error);
     } finally {
       setDiscussionsLoading(false);
     }
@@ -123,7 +124,7 @@ export default function WatchlistPage() {
       loadDiscussions();
     } catch (error: any) {
       clearTimeout(timeoutId);
-      console.error('Error loading watchlists:', error);
+      logger.error('Error loading watchlists:', error);
       setLoadError(error?.message || t('watchlistPage.loadError'));
       toast.error(t('watchlistPage.loadError'));
     } finally {
@@ -451,7 +452,7 @@ function WatchlistItemRow({ item, watchlistId, onDelete }: { item: WatchlistItem
           setPrice({ price: data.price, changePercent: data.changePercent || 0 });
         }
       } catch (err) {
-        console.error('Error fetching price:', err);
+        logger.error('Error fetching price:', err);
       } finally {
         setLoading(false);
       }

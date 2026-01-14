@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useI18n } from '@/context/I18nContext';
 import { getTranslation, loadTranslation, type SupportedLanguage } from '@/lib/i18n';
 import { useState, useEffect } from 'react';
+import { logger } from '@/lib/logger';
 
 interface UseTranslationOptions {
   namespace?: string;
@@ -27,7 +28,7 @@ export function useTranslation(options?: UseTranslationOptions) {
         const loaded = await loadTranslation(language, namespace);
         setNamespaceTranslations(loaded);
       } catch (error) {
-        console.error(`Error loading namespace ${namespace}:`, error);
+        logger.error(`Error loading namespace ${namespace}:`, error);
       } finally {
         setNamespaceLoading(false);
       }

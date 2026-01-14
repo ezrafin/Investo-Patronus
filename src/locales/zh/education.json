@@ -87,6 +87,8 @@
     "badge": "课程",
     "title": "金融教育课程",
     "subtitle": "全面的课程，涵盖从投资基础到高级交易策略的所有内容。按照自己的节奏学习，使用结构化模块和实践课程。",
+    "seoTitle": "投资学院 - 在线金融课程",
+    "seoDescription": "报名参加全面的金融和经济学课程。通过结构化课程、视频课程和测验学习宏观经济学、微观经济学、金融与市场以及个人理财。",
     "infoTitle": "我们的课程如何运作",
     "infoDescription": "每个课程分为多个模块，每个模块包含多节课程。按照自己的节奏完成课程，参加测验以测试你的知识，并通过期末考试来展示你的掌握程度。跟踪你的进度，随时返回复习材料。",
     "startCourse": "开始课程",
@@ -120,7 +122,10 @@
     "moduleTestResults": "模块测试结果",
     "moduleTestPassed": "模块测试通过！",
     "moduleTestReview": "复习材料后再试一次",
-    "module": "模块"
+    "module": "模块",
+    "unit": "单元",
+    "seoCourseTitle": "{{title}} - 在线课程 | INVESTOPATRONUS",
+    "seoCourseDescription": "通过我们的综合在线课程学习 {{title}}。访问视频课程、互动测验和专家内容，掌握 {{description}}。"
   },
   "course": {
     "investment-fundamentals": {
@@ -481,6 +486,116 @@
           }
         }
       }
+    }
+  },
+  "learningCourse": {
+    "hero": {
+      "badge": "2026年第一季度推出",
+      "title": "掌握市场",
+      "subtitle": "投资课程",
+      "description": "一个全面的、结构化的学习计划，旨在将您从初学者转变为自信的投资者。我们由专家主导的课程涵盖您成功所需的一切。"
+    },
+    "stats": {
+      "videoLessons": "视频课程",
+      "hoursOfContent": "内容时长",
+      "comprehensiveModules": "综合模块",
+      "certification": "认证"
+    },
+    "curriculum": {
+      "title": "课程大纲",
+      "lessons": "课程"
+    },
+    "modules": {
+      "module1": {
+        "title": "金融市场导论",
+        "duration": "2小时"
+      },
+      "module2": {
+        "title": "理解资产类别",
+        "duration": "3小时"
+      },
+      "module3": {
+        "title": "技术分析基础",
+        "duration": "4小时"
+      },
+      "module4": {
+        "title": "深入基本面分析",
+        "duration": "4小时"
+      },
+      "module5": {
+        "title": "投资组合构建与管理",
+        "duration": "3小时"
+      },
+      "module6": {
+        "title": "风险管理策略",
+        "duration": "2小时"
+      },
+      "module7": {
+        "title": "高级交易策略",
+        "duration": "3.5小时"
+      },
+      "module8": {
+        "title": "投资心理学",
+        "duration": "1.5小时"
+      }
+    },
+    "features": {
+      "title": "您将获得什么",
+      "feature1": "自定进度的学习模块",
+      "feature2": "互动测验和评估",
+      "feature3": "真实案例研究",
+      "feature4": "完成后的证书",
+      "feature5": "终身访问材料",
+      "feature6": "社区讨论论坛",
+      "feature7": "每月现场问答环节",
+      "feature8": "可下载的资源与模板"
+    },
+    "socialProof": {
+      "studentsWaiting": "学生等待中",
+      "basedOnFeedback": "基于试点项目反馈"
+    },
+    "instructors": {
+      "title": "认识您的讲师",
+      "instructor1": {
+        "name": "Michael Torres 博士",
+        "title": "首席讲师",
+        "credentials": "CFA, CMT, 金融学博士",
+        "bio": "在机构资产管理方面拥有20多年的经验。曾任富达投资的投资组合经理。"
+      },
+      "instructor2": {
+        "name": "Sarah Mitchell",
+        "title": "技术分析专家",
+        "credentials": "CMT, 市场技术分析师",
+        "bio": "《有效的图表模式》一书的作者，定期为技术分析出版物撰稿。"
+      },
+      "instructor3": {
+        "name": "James Chen",
+        "title": "投资组合策略讲师",
+        "credentials": "CFA, CAIA",
+        "bio": "前高盛量化策略师。专注于因子投资和投资组合优化。"
+      }
+    },
+    "testimonials": {
+      "title": "学生评价",
+      "testimonial1": {
+        "name": "Jennifer Adams",
+        "role": "软件工程师",
+        "quote": "这门课程改变了我对市场的理解。实践练习和真实案例研究使复杂的概念变得易于理解。"
+      },
+      "testimonial2": {
+        "name": "Robert Kim",
+        "role": "小企业主",
+        "quote": "终于有一门投资课程能够超越基础知识而不会让人感到不知所措。讲师支持非常出色。"
+      },
+      "testimonial3": {
+        "name": "Maria Garcia",
+        "role": "医疗专业人员",
+        "quote": "每一分钟都值得。我从对投资一无所知到自信地管理自己的投资组合。"
+      }
+    },
+    "cta": {
+      "title": "抢先了解",
+      "description": "加入我们的候补名单，在2026年第一季度课程推出时获得早期访问权限和独家发布价格。"
     }
   }
 }
