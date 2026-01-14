@@ -22,6 +22,7 @@ export interface NewsArticle {
 interface NewsData {
   articles: NewsArticle[];
   lastUpdated: string | null;
+  totalCount: number;
 }
 
 interface UseNewsResult {
@@ -29,80 +30,112 @@ interface UseNewsResult {
   loading: boolean;
   error: string | null;
   lastUpdated: string | null;
+  totalCount: number;
   refetch: () => void;
 }
 
-async function fetchNewsData(market: string, forceRefresh = false): Promise<NewsData> {
-  // Step 1: Try to load cached news from database (fast)
-  // Increased limit to support proper pagination (was 50, now 1000)
+interface UseNewsOptions {
+  market?: string;
+  page?: number;
+  pageSize?: number;
+}
+
+async function fetchNewsData(
+  market: string,
+  page: number,
+  pageSize: number,
+  forceRefresh = false
+): Promise<NewsData> {
+  const offset = (page - 1) * pageSize;
+
+  // Build query with server-side pagination
   let query = supabase
     .from('news_articles')
-    .select('*')
+    .select('*', { count: 'exact' })
     .order('published_at', { ascending: false })
-    .limit(1000);
+    .range(offset, offset + pageSize - 1);
 
   if (market !== 'all') {
     query = query.eq('market', market);
   }
 
-  const { data: cachedArticles, error: dbError } = await query;
+  const { data: articles, error: dbError, count } = await query;
 
   // Get last fetch time
   let lastUpdated: string | null = null;
-  if (!dbError && cachedArticles && cachedArticles.length > 0) {
-    const { data: fetchLog } = await supabase
-      .from('news_fetch_log')
-      .select('last_fetched_at')
-      .order('last_fetched_at', { ascending: false })
-      .limit(1)
-      .maybeSingle();
-    
-    if (fetchLog) {
-      lastUpdated = fetchLog.last_fetched_at;
-    }
+  const { data: fetchLog } = await supabase
+    .from('news_fetch_log')
+    .select('last_fetched_at')
+    .order('last_fetched_at', { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (fetchLog) {
+    lastUpdated = fetchLog.last_fetched_at;
   }
 
-  // Step 2: If forceRefresh or no cached data, fetch from edge function
-  if (forceRefresh || !cachedArticles || cachedArticles.length === 0) {
-    const { data, error: fnError } = await supabase.functions.invoke('fetch-news', {
-      body: { market, forceRefresh }
-    });
+  if (dbError) {
+    logger.error('Error fetching news:', dbError);
+    throw dbError;
+  }
 
-    if (fnError) {
-      // If edge function fails but we have cached data, return cached
-      if (cachedArticles && cachedArticles.length > 0) {
-        return { articles: cachedArticles, lastUpdated };
+  // If no data and force refresh, try to fetch from edge function
+  if (forceRefresh || (!articles || articles.length === 0)) {
+    try {
+      const { data, error: fnError } = await supabase.functions.invoke('fetch-news', {
+        body: { market, forceRefresh: true }
+      });
+
+      if (!fnError && data?.articles) {
+        // After refresh, re-query to get paginated results
+        let refreshQuery = supabase
+          .from('news_articles')
+          .select('*', { count: 'exact' })
+          .order('published_at', { ascending: false })
+          .range(offset, offset + pageSize - 1);
+        
+        if (market !== 'all') {
+          refreshQuery = refreshQuery.eq('market', market);
+        }
+
+        const { data: freshArticles, count: freshCount } = await refreshQuery;
+
+        return {
+          articles: freshArticles || [],
+          lastUpdated: data.lastUpdated || lastUpdated,
+          totalCount: freshCount || 0,
+        };
       }
-      throw fnError;
-    }
-
-    if (data?.articles) {
-      return {
-        articles: data.articles,
-        lastUpdated: data.lastUpdated || lastUpdated,
-      };
+    } catch (error) {
+      logger.error('Error refreshing news from API:', error);
     }
   }
 
-  // Return cached data (or empty if no cache and no API response)
   return {
-    articles: cachedArticles || [],
+    articles: articles || [],
     lastUpdated,
+    totalCount: count || 0,
   };
 }
 
-export function useNews(market: string = 'all'): UseNewsResult {
+export function useNews(options: UseNewsOptions | string = {}): UseNewsResult {
+  // Support legacy string parameter (market)
+  const normalizedOptions: UseNewsOptions = typeof options === 'string' 
+    ? { market: options } 
+    : options;
+  
+  const { market = 'all', page = 1, pageSize = 15 } = normalizedOptions;
+
   const { data, isLoading, error, refetch: queryRefetch } = useQuery<NewsData, Error>({
-    queryKey: ['news', market],
-    queryFn: () => fetchNewsData(market, false),
-    staleTime: 2 * 60 * 1000, // 2 minutes - news can be slightly stale
+    queryKey: ['news', market, page, pageSize],
+    queryFn: () => fetchNewsData(market, page, pageSize, false),
+    staleTime: 2 * 60 * 1000, // 2 minutes
     gcTime: 10 * 60 * 1000, // 10 minutes
-    refetchInterval: 5 * 60 * 1000, // Refetch every 5 minutes in background
+    refetchInterval: 5 * 60 * 1000, // 5 minutes background refresh
     refetchIntervalInBackground: true,
   });
 
   const refetch = () => {
-    // Force refresh from API
     void queryRefetch();
   };
 
@@ -111,6 +144,7 @@ export function useNews(market: string = 'all'): UseNewsResult {
     loading: isLoading,
     error: error?.message || null,
     lastUpdated: data?.lastUpdated || null,
+    totalCount: data?.totalCount || 0,
     refetch,
   };
 }
