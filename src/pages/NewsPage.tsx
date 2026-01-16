@@ -15,6 +15,7 @@ import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { SEOHead } from '@/components/seo/SEOHead';
 
 const ITEMS_PER_PAGE = 15;
+const MAX_PAGES = 50; // Maximum number of pages to show
 export default function NewsPage() {
   // Bill collection: news_page_visit
   const { CoinComponent } = usePageBillCollection({ billId: 'news_page_visit' });
@@ -53,7 +54,10 @@ export default function NewsPage() {
     setIsRefreshing(false);
   };
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    // Limit page to maximum allowed pages
+    const maxAllowedPage = Math.min(MAX_PAGES, Math.ceil(totalCount / ITEMS_PER_PAGE));
+    const validPage = Math.min(page, maxAllowedPage);
+    setCurrentPage(validPage);
     // Scroll to top of section when page changes
     setTimeout(() => {
       sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -134,8 +138,8 @@ export default function NewsPage() {
     });
   };
 
-  // Server-side pagination - totalCount from database
-  const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
+  // Server-side pagination - totalCount from database, limited to 50 pages
+  const totalPages = Math.min(MAX_PAGES, Math.ceil(totalCount / ITEMS_PER_PAGE));
   // No need to slice - already paginated from server
   const paginatedNews = news;
   return <Layout>
