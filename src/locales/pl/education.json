@@ -2943,10 +2943,10 @@
                 "finance-u1-l1-article": {
                   "title": "Naucz się: Podstawy procentu składanego",
                   "importantPoints": [
-                    "Compound interest: interest on principal + accumulated interest",
-                    "Formula: A = P(1 + r)^n",
-                    "Rule of 72: approximate years to double = 72 / interest rate",
-                    "Compound interest grows faster than simple interest"
+                    "Procent składany: odsetki od kapitału + naliczone odsetki",
+                    "Wzór: A = P(1 + r)^n",
+                    "Reguła 72: przybliżone lata do podwojenia = 72 / stopa procentowa",
+                    "Procent składany rośnie szybciej niż prosty procent"
                   ]
                 }
               }
@@ -2957,12 +2957,12 @@
                   "title": "Podstawy procentu"
                 },
                 "finance-u1-l2-article": {
-                  "title": "Naucz się: Interest basics",
+                  "title": "Naucz się: Podstawy procentu",
                   "importantPoints": [
-                    "Interest: price for borrowing or return for lending",
-                    "Compound interest: interest on principal + accumulated interest",
-                    "More frequent compounding = higher returns",
-                    "Formula: A = P(1 + r/n)^(nt)"
+                    "Procent: cena za pożyczanie lub zwrot za pożyczanie",
+                    "Procent składany: procent od kapitału + naliczone odsetki",
+                    "Częstsze kapitalizowanie = wyższe zwroty",
+                    "Wzór: A = P(1 + r/n)^(nt)"
                   ]
                 }
               }
@@ -2973,12 +2973,12 @@
                   "title": "Karty kredytowe i pożyczki"
                 },
                 "finance-u1-l3-article": {
-                  "title": "Naucz się: Credit cards and loans",
+                  "title": "Naucz się: Karty kredytowe i pożyczki",
                   "importantPoints": [
-                    "APR: stated annual interest rate",
-                    "Effective APR: actual rate after compounding",
-                    "Credit card system involves multiple institutions",
-                    "Payday loans: very high interest, should be avoided"
+                    "APR: podana roczna stopa procentowa",
+                    "Efektywna APR: rzeczywista stopa po kapitalizacji",
+                    "System kart kredytowych obejmuje wiele instytucji",
+                    "Pożyczki do wypłaty: bardzo wysokie oprocentowanie, należy unikać"
                   ]
                 }
               }
@@ -2989,12 +2989,12 @@
                   "title": "Ciągły procent składany i liczba e"
                 },
                 "finance-u1-l4-article": {
-                  "title": "Naucz się: Continuous compound interest and e",
+                  "title": "Naucz się: Ciągły procent składany i liczba e",
                   "importantPoints": [
-                    "e (Euler's number) ≈ 2.71828",
-                    "e = limit of (1 + 1/n)^n as n → ∞",
-                    "Continuous compounding: A = Pe^(rt)",
-                    "Continuous compounding gives maximum growth"
+                    "e (liczba Eulera) ≈ 2,71828",
+                    "e = granica (1 + 1/n)^n gdy n → ∞",
+                    "Ciągła kapitalizacja: A = Pe^(rt)",
+                    "Ciągła kapitalizacja daje maksymalny wzrost"
                   ]
                 }
               }
@@ -3005,12 +3005,12 @@
                   "title": "Wartość bieżąca"
                 },
                 "finance-u1-l5-article": {
-                  "title": "Naucz się: Present value",
+                  "title": "Naucz się: Wartość bieżąca",
                   "importantPoints": [
-                    "Time value of money: money today worth more than future",
-                    "Present value: current worth of future sum",
+                    "Wartość pieniądza w czasie: pieniądze dzisiaj warte więcej niż w przyszłości",
+                    "Wartość bieżąca: obecna wartość przyszłej sumy",
                     "PV = FV / (1 + r)^n",
-                    "DCF: discounts all future cash flows to present"
+                    "DCF: dyskontuje wszystkie przyszłe przepływy pieniężne do teraźniejszości"
                   ]
                 }
               }
@@ -3021,12 +3021,12 @@
                   "title": "Bankructwo osobiste"
                 },
                 "finance-u1-l6-article": {
-                  "title": "Naucz się: Personal bankruptcy",
+                  "title": "Naucz się: Bankructwo osobiste",
                   "importantPoints": [
-                    "Bankruptcy: legal process for debt relief",
-                    "Chapter 7: liquidation, quick discharge",
-                    "Chapter 13: reorganization, repayment plan",
-                    "Serious consequences: credit damage, long-term effects"
+                    "Bankructwo: proces prawny ulgi w długach",
+                    "Rozdział 7: likwidacja, szybkie umorzenie",
+                    "Rozdział 13: reorganizacja, plan spłaty",
+                    "Poważne konsekwencje: uszkodzenie kredytu, długoterminowe skutki"
                   ]
                 }
               }
@@ -3041,12 +3041,12 @@
                   "title": "Kapitał własny w nieruchomościach i osobiste sprawozdania bilansowe"
                 },
                 "finance-u2-l1-article": {
-                  "title": "Naucz się: Home equity and personal balance sheets",
+                  "title": "Naucz się: Kapitał własny w nieruchomościach i osobiste sprawozdania bilansowe",
                   "importantPoints": [
-                    "Balance sheet: Assets = Liabilities + Equity",
-                    "Home equity = Home value - Mortgage balance",
-                    "Equity grows through appreciation and principal payments",
-                    "Home equity loans use home as collateral"
+                    "Bilans: Aktywa = Zobowiązania + Kapitał własny",
+                    "Kapitał własny w nieruchomości = Wartość nieruchomości - Saldo hipoteki",
+                    "Kapitał własny rośnie poprzez aprecjację i spłatę kapitału",
+                    "Pożyczki pod kapitał własny w nieruchomości używają domu jako zabezpieczenia"
                   ]
                 }
               }
@@ -3057,13 +3057,13 @@
                   "title": "Wynajem vs zakup mieszkania"
                 },
                 "finance-u2-l2-article": {
-                  "title": "Naucz się: Renting vs. buying a home",
+                  "title": "Naucz się: Wynajem vs zakup mieszkania",
                   "importantPoints": [
-                    "Renting: flexibility, no maintenance, lower upfront costs",
-                    "Buying: builds equity, tax benefits, stability",
-                    "Buying not always better: consider transaction costs, maintenance, opportunity cost",
-                    "Housing depreciation can create negative equity",
-                    "Detailed analysis requires comparing all costs"
+                    "Wynajem: elastyczność, brak konserwacji, niższe koszty wstępne",
+                    "Zakup: buduje kapitał własny, korzyści podatkowe, stabilność",
+                    "Zakup nie zawsze lepszy: rozważ koszty transakcyjne, konserwację, koszt alternatywny",
+                    "Deprecjacja mieszkania może stworzyć ujemny kapitał własny",
+                    "Szczegółowa analiza wymaga porównania wszystkich kosztów"
                   ]
                 }
               }
@@ -3074,13 +3074,13 @@
                   "title": "Hipoteka"
                 },
                 "finance-u2-l3-article": {
-                  "title": "Naucz się: Mortgages",
+                  "title": "Naucz się: Hipoteka",
                   "importantPoints": [
-                    "Mortgage: loan secured by real estate",
-                    "Fixed-rate: constant rate, predictable",
-                    "ARM: rate changes, lower initial rate but risky",
-                    "Short sale: sell for less than mortgage balance",
-                    "Mortgage payments calculated using geometric series"
+                    "Hipoteka: pożyczka zabezpieczona nieruchomością",
+                    "Stała stopa: stała stopa, przewidywalna",
+                    "ARM: stopa się zmienia, niższa początkowa stopa, ale ryzykowna",
+                    "Krótka sprzedaż: sprzedaż za mniej niż saldo hipoteki",
+                    "Płatności hipoteczne obliczane przy użyciu szeregu geometrycznego"
                   ]
                 }
               }
@@ -3091,13 +3091,13 @@
                   "title": "Proces zakupu mieszkania"
                 },
                 "finance-u2-l4-article": {
-                  "title": "Naucz się: Home buying process",
+                  "title": "Naucz się: Proces zakupu mieszkania",
                   "importantPoints": [
-                    "Title: legal ownership; Deed: document transferring title",
-                    "Title insurance protects against ownership claims",
-                    "Making offer: research, negotiate, include contingencies",
-                    "Escrow: neutral third party holds funds/documents",
-                    "Mortgage escrow: holds tax/insurance payments"
+                    "Tytuł: prawna własność; Akt: dokument przenoszący tytuł",
+                    "Ubezpieczenie tytułu chroni przed roszczeniami własnościowymi",
+                    "Składanie oferty: badania, negocjacje, uwzględnienie warunków",
+                    "Escrow: neutralna strona trzecia przechowuje środki/dokumenty",
+                    "Escrow hipoteczny: przechowuje płatności podatkowe/ubezpieczeniowe"
                   ]
                 }
               }
@@ -3112,12 +3112,12 @@
                   "title": "Podstawy inflacji"
                 },
                 "finance-u3-l1-article": {
-                  "title": "Naucz się: Inflation basics",
+                  "title": "Naucz się: Podstawy inflacji",
                   "importantPoints": [
-                    "Inflation: general increase in prices over time",
-                    "Reduces purchasing power of money",
-                    "Measured as percentage change in price index",
-                    "CPI: primary measure of consumer inflation"
+                    "Inflacja: ogólny wzrost cen w czasie",
+                    "Zmniejsza siłę nabywczą pieniądza",
+                    "Mierzona jako procentowa zmiana w indeksie cen",
+                    "CPI: podstawowa miara inflacji konsumenckiej"
                   ]
                 }
               }
@@ -3128,12 +3128,12 @@
                   "title": "Scenariusze inflacji"
                 },
                 "finance-u3-l2-article": {
-                  "title": "Naucz się: Inflation scenarios",
+                  "title": "Naucz się: Scenariusze inflacji",
                   "importantPoints": [
-                    "Moderate inflation (2-3%): normal in healthy economies",
-                    "Stagflation: high inflation + high unemployment + low growth",
-                    "Hyperinflation: extremely rapid inflation (>50% per month)",
-                    "Each scenario has different causes and consequences"
+                    "Umiarkowana inflacja (2-3%): normalna w zdrowych gospodarkach",
+                    "Stagflacja: wysoka inflacja + wysokie bezrobocie + niski wzrost",
+                    "Hiperinflacja: ekstremalnie szybka inflacja (>50% miesięcznie)",
+                    "Każdy scenariusz ma różne przyczyny i konsekwencje"
                   ]
                 }
               }
@@ -3144,12 +3144,12 @@
                   "title": "Realna i nominalna stopa zwrotu"
                 },
                 "finance-u3-l3-article": {
-                  "title": "Naucz się: Real and nominal return",
+                  "title": "Naucz się: Realna i nominalna stopa zwrotu",
                   "importantPoints": [
-                    "Nominal return: return without inflation adjustment",
-                    "Real return: return adjusted for inflation",
-                    "Real Return ≈ Nominal Return - Inflation",
-                    "Real return shows actual purchasing power"
+                    "Zwrot nominalny: zwrot bez korekty inflacji",
+                    "Zwrot realny: zwrot skorygowany o inflację",
+                    "Zwrot realny ≈ Zwrot nominalny - Inflacja",
+                    "Zwrot realny pokazuje rzeczywistą siłę nabywczą"
                   ]
                 }
               }
@@ -3160,12 +3160,12 @@
                   "title": "Wykorzystanie mocy produkcyjnych i inflacja"
                 },
                 "finance-u3-l4-article": {
-                  "title": "Naucz się: Capacity utilization and inflation",
+                  "title": "Naucz się: Wykorzystanie mocy produkcyjnych i inflacja",
                   "importantPoints": [
-                    "Capacity utilization: percentage of capacity used",
-                    "Low utilization: can increase production, prices stable",
-                    "High utilization: hard to increase, prices may rise",
-                    "Capacity utilization affects inflation/deflation pressures"
+                    "Wykorzystanie mocy: procent wykorzystanych mocy",
+                    "Niskie wykorzystanie: można zwiększyć produkcję, ceny stabilne",
+                    "Wysokie wykorzystanie: trudno zwiększyć, ceny mogą rosnąć",
+                    "Wykorzystanie mocy wpływa na presję inflacyjną/deflacyjną"
                   ]
                 }
               }
@@ -3176,12 +3176,12 @@
                   "title": "Deflacja"
                 },
                 "finance-u3-l5-article": {
-                  "title": "Naucz się: Deflation",
+                  "title": "Naucz się: Deflacja",
                   "importantPoints": [
-                    "Deflation: general decrease in prices",
-                    "Can occur despite money growth if velocity falls",
-                    "Deflationary spiral: self-reinforcing cycle",
-                    "Dangerous: increases real debt, encourages hoarding"
+                    "Deflacja: ogólny spadek cen",
+                    "Może wystąpić pomimo wzrostu pieniądza, jeśli prędkość spada",
+                    "Spirala deflacyjna: samowzmacniający się cykl",
+                    "Niebezpieczna: zwiększa realny dług, zachęca do gromadzenia"
                   ]
                 }
               }
@@ -3196,13 +3196,13 @@
                   "title": "Podatki osobiste"
                 },
                 "finance-u4-l1-article": {
-                  "title": "Naucz się: Personal taxes",
+                  "title": "Naucz się: Podatki osobiste",
                   "importantPoints": [
-                    "Progressive taxation: higher income → higher rate",
-                    "Tax deductions reduce taxable income",
-                    "AMT ensures high earners pay minimum tax",
-                    "Estate tax applies only to very large estates",
-                    "Marriage penalty: married couples may pay more"
+                    "Opodatkowanie progresywne: wyższy dochód → wyższa stawka",
+                    "Odliczenia podatkowe zmniejszają dochód podlegający opodatkowaniu",
+                    "AMT zapewnia, że wysokie zarobki płacą minimalny podatek",
+                    "Podatek od spadku dotyczy tylko bardzo dużych majątków",
+                    "Kara małżeńska: małżeństwa mogą płacić więcej"
                   ]
                 }
               }
@@ -3213,13 +3213,13 @@
                   "title": "Opodatkowanie korporacyjne"
                 },
                 "finance-u4-l2-article": {
-                  "title": "Naucz się: Corporate taxation",
+                  "title": "Naucz się: Opodatkowanie korporacyjne",
                   "importantPoints": [
-                    "Corporations: separate legal entity with limited liability",
-                    "Double taxation: corporate tax + personal tax on dividends",
-                    "Transfer pricing: can shift profits to low-tax countries",
-                    "Tax havens: countries with very low taxes",
-                    "Raises fairness and efficiency questions"
+                    "Korporacje: odrębna osoba prawna z ograniczoną odpowiedzialnością",
+                    "Podwójne opodatkowanie: podatek korporacyjny + podatek osobisty od dywidend",
+                    "Ceny transferowe: mogą przenosić zyski do krajów o niskich podatkach",
+                    "Raje podatkowe: kraje z bardzo niskimi podatkami",
+                    "Podnosi pytania o sprawiedliwość i efektywność"
                   ]
                 }
               }
@@ -3234,12 +3234,12 @@
                   "title": "Rachunkowość kasowa vs memoriałowa"
                 },
                 "finance-u5-l1-article": {
-                  "title": "Naucz się: Cash versus accrual accounting",
+                  "title": "Naucz się: Rachunkowość kasowa vs memoriałowa",
                   "importantPoints": [
-                    "Cash accounting: records when cash received/paid",
-                    "Accrual accounting: records when earned/incurred",
-                    "Accrual matches revenue with expenses",
-                    "Accrual required for large businesses (GAAP)"
+                    "Rachunkowość kasowa: rejestruje, gdy gotówka otrzymana/wypłacona",
+                    "Rachunkowość memoriałowa: rejestruje, gdy zarobione/poniesione",
+                    "Memoriał dopasowuje przychody do wydatków",
+                    "Memoriał wymagany dla dużych firm (GAAP)"
                   ]
                 }
               }
@@ -3250,13 +3250,13 @@
                   "title": "Trzy podstawowe sprawozdania finansowe"
                 },
                 "finance-u5-l2-article": {
-                  "title": "Naucz się: Three core financial statements",
+                  "title": "Naucz się: Trzy podstawowe sprawozdania finansowe",
                   "importantPoints": [
-                    "Balance sheet: snapshot at point in time",
-                    "Income statement: performance over period",
-                    "Cash flow statement: actual cash movements",
-                    "Net income flows to retained earnings on balance sheet",
-                    "Fair value: current market price vs. historical cost"
+                    "Bilans: migawka w danym momencie",
+                    "Rachunek zysków i strat: wyniki w okresie",
+                    "Rachunek przepływów pieniężnych: rzeczywiste ruchy gotówki",
+                    "Dochód netto przepływa do zysków zatrzymanych w bilansie",
+                    "Wartość godziwa: aktualna cena rynkowa vs koszt historyczny"
                   ]
                 },
                 "finance-u5-l2-quiz": {
@@ -3270,13 +3270,13 @@
                   "title": "Amortyzacja i zużycie"
                 },
                 "finance-u5-l3-article": {
-                  "title": "Naucz się: Depreciation and amortization",
+                  "title": "Naucz się: Amortyzacja i zużycie",
                   "importantPoints": [
-                    "Depreciation: allocates cost of tangible assets over useful life",
-                    "Amortization: allocates cost of intangible assets over useful life",
-                    "Both are non-cash expenses",
-                    "Must be added back in cash flow statement",
-                    "Smooths expenses and matches with revenue"
+                    "Amortyzacja: alokuje koszt aktywów materialnych w okresie użytkowania",
+                    "Zużycie: alokuje koszt aktywów niematerialnych w okresie użytkowania",
+                    "Oba są wydatkami niepieniężnymi",
+                    "Muszą być dodane z powrotem w rachunku przepływów pieniężnych",
+                    "Wygładza wydatki i dopasowuje do przychodów"
                   ]
                 }
               }
@@ -3291,12 +3291,12 @@
                   "title": "Wprowadzenie do akcji"
                 },
                 "finance-u6-l1-article": {
-                  "title": "Naucz się: Introduction to stocks",
+                  "title": "Naucz się: Wprowadzenie do akcji",
                   "importantPoints": [
-                    "Stock: ownership share in company",
-                    "Shareholders have voting and dividend rights",
-                    "Stocks: higher risk, higher potential return",
-                    "Bonds: lower risk, fixed return"
+                    "Akcja: udział własnościowy w firmie",
+                    "Akcjonariusze mają prawo głosu i dywidendy",
+                    "Akcje: wyższe ryzyko, wyższy potencjalny zwrot",
+                    "Obligacje: niższe ryzyko, stały zwrot"
                   ]
                 }
               }
@@ -3307,12 +3307,12 @@
                   "title": "Krótka sprzedaż akcji"
                 },
                 "finance-u6-l2-article": {
-                  "title": "Naucz się: Shorting stock",
+                  "title": "Naucz się: Krótka sprzedaż akcji",
                   "importantPoints": [
-                    "Short selling: sell stock you don't own, bet on price decline",
-                    "Unlimited loss potential (price can rise indefinitely)",
-                    "Requires margin account and collateral",
-                    "Controversial but serves market functions"
+                    "Krótka sprzedaż: sprzedaj akcje, których nie posiadasz, obstaw spadek ceny",
+                    "Nieograniczony potencjał strat (cena może rosnąć w nieskończoność)",
+                    "Wymaga konta z depozytem i zabezpieczenia",
+                    "Kontrowersyjne, ale służy funkcjom rynku"
                   ]
                 }
               }
@@ -3323,12 +3323,12 @@
                   "title": "Zrozumienie sprawozdań firmy i struktury kapitału"
                 },
                 "finance-u6-l3-article": {
-                  "title": "Naucz się: Understanding company statements and capital structure",
+                  "title": "Naucz się: Zrozumienie sprawozdań firmy i struktury kapitału",
                   "importantPoints": [
-                    "Gross profit = Revenue - COGS",
-                    "Operating profit = Gross profit - Operating expenses",
-                    "Capital structure: mix of debt and equity",
-                    "Market cap = Share price × Shares outstanding"
+                    "Zysk brutto = Przychody - Koszt sprzedanych towarów",
+                    "Zysk operacyjny = Zysk brutto - Koszty operacyjne",
+                    "Struktura kapitału: mieszanka długu i kapitału własnego",
+                    "Kapitalizacja rynkowa = Cena akcji × Liczba akcji w obrocie"
                   ]
                 }
               }
@@ -3356,13 +3356,13 @@
                   "title": "Życie firmy – od narodzin do śmierci"
                 },
                 "finance-u6-l5-article": {
-                  "title": "Naucz się: Life of a company – from birth to death",
+                  "title": "Naucz się: Życie firmy – od narodzin do śmierci",
                   "importantPoints": [
-                    "Startup funding: bootstrapping → angels → VC → IPO",
-                    "IPO: transition from private to public",
-                    "Equity: dilutes ownership, no repayment",
-                    "Debt: must repay, keeps ownership",
-                    "Chapter 7: liquidation; Chapter 11: restructuring"
+                    "Finansowanie startupu: bootstrapping → aniołowie → VC → IPO",
+                    "IPO: przejście z prywatnego na publiczne",
+                    "Kapitał własny: rozwadnia własność, bez spłaty",
+                    "Dług: musi spłacić, zachowuje własność",
+                    "Rozdział 7: likwidacja; Rozdział 11: restrukturyzacja"
                   ]
                 }
               }
@@ -3373,11 +3373,11 @@
                   "title": "Rozwodnienie"
                 },
                 "finance-u6-l6-article": {
-                  "title": "Naucz się: Dilution",
+                  "title": "Naucz się: Rozwodnienie",
                   "importantPoints": [
-                    "Dilution: reduction in ownership percentage",
-                    "Occurs when new shares issued",
-                    "Ownership % decreases but company value may increase"
+                    "Rozwodnienie: zmniejszenie procentu własności",
+                    "Występuje, gdy emitowane są nowe akcje",
+                    "Procent własności maleje, ale wartość firmy może wzrosnąć"
                   ]
                 }
               }
@@ -3388,12 +3388,12 @@
                   "title": "Fuzje i przejęcia"
                 },
                 "finance-u6-l7-article": {
-                  "title": "Naucz się: Mergers and acquisitions",
+                  "title": "Naucz się: Fuzje i przejęcia",
                   "importantPoints": [
-                    "Stock acquisitions: use shares instead of cash",
-                    "Target stock usually rises after announcement",
-                    "Acquirer stock may fall",
-                    "Merger arbitrage: profit from acquisition spreads"
+                    "Przejęcia akcji: użyj akcji zamiast gotówki",
+                    "Akcje celu zwykle rosną po ogłoszeniu",
+                    "Akcje nabywcy mogą spaść",
+                    "Arbitraż fuzji: zysk z spreadów przejęć"
                   ]
                 },
                 "finance-u6-l7-quiz": {
@@ -3407,12 +3407,12 @@
                   "title": "Wykup z wykorzystaniem kapitału dłużnego"
                 },
                 "finance-u6-l8-article": {
-                  "title": "Naucz się: Leveraged buy-outs",
+                  "title": "Naucz się: Wykup z wykorzystaniem kapitału dłużnego",
                   "importantPoints": [
-                    "LBO: buying company with mostly debt",
-                    "High leverage amplifies returns and risk",
-                    "Uses company assets as collateral",
-                    "Tax benefits from interest deduction"
+                    "LBO: kupno firmy głównie za dług",
+                    "Wysoka dźwignia wzmacnia zwroty i ryzyko",
+                    "Używa aktywów firmy jako zabezpieczenia",
+                    "Korzyści podatkowe z odliczenia odsetek"
                   ]
                 },
                 "finance-u6-l8-quiz": {
@@ -3426,13 +3426,13 @@
                   "title": "Obligacje"
                 },
                 "finance-u6-l9-article": {
-                  "title": "Naucz się: Bonds",
+                  "title": "Naucz się: Obligacje",
                   "importantPoints": [
-                    "Bonds: loans with fixed payments and maturity",
-                    "Bond prices inversely related to interest rates",
-                    "Yield curve: shows yields at different maturities",
-                    "Normal curve: upward sloping; Inverted: downward (recession signal)",
-                    "Treasury bonds: safest, used as benchmark"
+                    "Obligacje: pożyczki ze stałymi płatnościami i terminem zapadalności",
+                    "Ceny obligacji odwrotnie powiązane ze stopami procentowymi",
+                    "Krzywa dochodowości: pokazuje rentowności przy różnych terminach zapadalności",
+                    "Normalna krzywa: wznosząca się; Odwrócona: opadająca (sygnał recesji)",
+                    "Obligacje skarbowe: najbezpieczniejsze, używane jako benchmark"
                   ]
                 },
                 "finance-u6-l9-quiz": {
@@ -3446,12 +3446,12 @@
                   "title": "Bankructwo korporacyjne"
                 },
                 "finance-u6-l10-article": {
-                  "title": "Naucz się: Corporate bankruptcy",
+                  "title": "Naucz się: Bankructwo korporacyjne",
                   "importantPoints": [
-                    "Chapter 7: liquidation, company ends",
-                    "Chapter 11: restructuring, company continues",
-                    "Priority: secured creditors → unsecured → stockholders",
-                    "Chapter 11 allows company to survive"
+                    "Rozdział 7: likwidacja, firma kończy działalność",
+                    "Rozdział 11: restrukturyzacja, firma kontynuuje",
+                    "Priorytet: zabezpieczeni wierzyciele → niezabezpieczeni → akcjonariusze",
+                    "Rozdział 11 pozwala firmie przetrwać"
                   ]
                 },
                 "finance-u6-l10-quiz": {
@@ -3469,12 +3469,12 @@
                   "title": "Fundusze wzajemne i ETF"
                 },
                 "finance-u7-l1-article": {
-                  "title": "Naucz się: Mutual funds and ETFs",
+                  "title": "Naucz się: Fundusze wzajemne i ETF",
                   "importantPoints": [
-                    "Open-ended funds: continuously create/redeem shares",
-                    "Closed-end funds: fixed shares, trade on exchange",
-                    "ETFs: trade like stocks, low fees, tax efficient",
-                    "Ponzi schemes: fraudulent, use new money to pay old investors"
+                    "Fundusze otwarte: ciągle tworzą/umarzają akcje",
+                    "Fundusze zamknięte: stałe akcje, handel na giełdzie",
+                    "ETF: handel jak akcje, niskie opłaty, efektywne podatkowo",
+                    "Schematy Ponziego: oszukańcze, używają nowych pieniędzy do płacenia starym inwestorom"
                   ]
                 },
                 "finance-u7-l1-quiz": {
@@ -3488,12 +3488,12 @@
                   "title": "Konta emerytalne: IRA i 401k"
                 },
                 "finance-u7-l2-article": {
-                  "title": "Naucz się: Retirement accounts: IRAs and 401ks",
+                  "title": "Naucz się: Konta emerytalne: IRA i 401k",
                   "importantPoints": [
-                    "Traditional IRA: tax deduction now, taxes later",
-                    "Roth IRA: taxes now, tax-free withdrawals",
-                    "401(k): employer-sponsored, higher limits, employer match",
-                    "Each has different tax treatment and benefits"
+                    "Tradycyjne IRA: odliczenie podatkowe teraz, podatki później",
+                    "Roth IRA: podatki teraz, bezpłatne wypłaty",
+                    "401(k): sponsorowane przez pracodawcę, wyższe limity, dopasowanie pracodawcy",
+                    "Każde ma różne traktowanie podatkowe i korzyści"
                   ]
                 },
                 "finance-u7-l2-quiz": {
@@ -3507,12 +3507,12 @@
                   "title": "Ubezpieczenie na życie"
                 },
                 "finance-u7-l3-article": {
-                  "title": "Naucz się: Life insurance",
+                  "title": "Naucz się: Ubezpieczenie na życie",
                   "importantPoints": [
-                    "Term life: coverage for specific period",
-                    "Pays benefit if death during term",
-                    "Premiums based on death probability",
-                    "No cash value, lower cost than permanent"
+                    "Ubezpieczenie terminowe: pokrycie na określony okres",
+                    "Wypłaca świadczenie, jeśli śmierć w trakcie okresu",
+                    "Składki oparte na prawdopodobieństwie śmierci",
+                    "Brak wartości gotówkowej, niższy koszt niż stałe"
                   ]
                 }
               }
@@ -3523,12 +3523,12 @@
                   "title": "Fundusze hedgingowe"
                 },
                 "finance-u7-l4-article": {
-                  "title": "Naucz się: Hedge funds",
+                  "title": "Naucz się: Fundusze hedgingowe",
                   "importantPoints": [
-                    "Hedge funds: private, less regulated, for wealthy investors",
-                    "Fee structure: management fee + performance fee (2 and 20)",
-                    "Strategies: long-short, merger arbitrage, market neutral",
-                    "Different from VC and private equity"
+                    "Fundusze hedgingowe: prywatne, mniej regulowane, dla zamożnych inwestorów",
+                    "Struktura opłat: opłata za zarządzanie + opłata za wyniki (2 i 20)",
+                    "Strategie: long-short, arbitraż fuzji, neutralne rynkowo",
+                    "Różne od VC i kapitału prywatnego"
                   ]
                 }
               }
@@ -3539,12 +3539,12 @@
                   "title": "Inwestycje i konsumpcja"
                 },
                 "finance-u7-l5-article": {
-                  "title": "Naucz się: Investment and consumption",
+                  "title": "Naucz się: Inwestycje i konsumpcja",
                   "importantPoints": [
-                    "Risk-return tradeoff: higher risk → higher return",
-                    "Human capital: ability to earn income",
-                    "Investment vs. consumption: balance future and present",
-                    "Wealth destruction: many factors can reduce wealth"
+                    "Kompromis ryzyko-zwrot: wyższe ryzyko → wyższy zwrot",
+                    "Kapitał ludzki: zdolność do zarabiania dochodu",
+                    "Inwestycje vs konsumpcja: równowaga przyszłości i teraźniejszości",
+                    "Niszczenie bogactwa: wiele czynników może zmniejszyć bogactwo"
                   ]
                 }
               }
@@ -3559,13 +3559,13 @@
                   "title": "Bankowość i pieniądze"
                 },
                 "finance-u8-l1-article": {
-                  "title": "Naucz się: Banking and money",
+                  "title": "Naucz się: Bankowość i pieniądze",
                   "importantPoints": [
-                    "Fractional reserve banking: banks hold fraction of deposits",
-                    "Money multiplier: 1 / reserve ratio",
-                    "Banks create money through lending",
-                    "Central banks control money supply through various tools",
-                    "Fed funds rate: key monetary policy tool"
+                    "Bankowość z rezerwą cząstkową: banki trzymają część depozytów",
+                    "Mnożnik pieniądza: 1 / stopa rezerwowa",
+                    "Banki tworzą pieniądze poprzez pożyczanie",
+                    "Banki centralne kontrolują podaż pieniądza przez różne narzędzia",
+                    "Stopa funduszy Fed: kluczowe narzędzie polityki pieniężnej"
                   ]
                 }
               }
@@ -3576,12 +3576,12 @@
                   "title": "Luzowanie ilościowe"
                 },
                 "finance-u8-l2-article": {
-                  "title": "Naucz się: Quantitative easing",
+                  "title": "Naucz się: Luzowanie ilościowe",
                   "importantPoints": [
-                    "QE: large-scale purchase of long-term securities",
-                    "Used when interest rates near zero",
-                    "Lowers long-term rates, stimulates economy",
-                    "Risks: inflation, asset bubbles"
+                    "QE: zakup na dużą skalę długoterminowych papierów wartościowych",
+                    "Używane, gdy stopy procentowe bliskie zera",
+                    "Obniża długoterminowe stopy, stymuluje gospodarkę",
+                    "Ryzyka: inflacja, bańki aktywów"
                   ]
                 }
               }
@@ -3592,13 +3592,13 @@
                   "title": "Ratowanie banków w 2008 roku"
                 },
                 "finance-u8-l3-article": {
-                  "title": "Naucz się: 2008 bank bailout",
+                  "title": "Naucz się: Ratowanie banków w 2008 roku",
                   "importantPoints": [
-                    "Liquidity vs. solvency: different problems need different solutions",
-                    "Book value vs. market value: gap hid true condition",
-                    "Systemic risk: justified government intervention",
-                    "TARP: capital injections to stabilize banks",
-                    "Moral hazard: bailouts create future risk-taking"
+                    "Płynność vs wypłacalność: różne problemy wymagają różnych rozwiązań",
+                    "Wartość księgowa vs wartość rynkowa: luka ukrywała prawdziwy stan",
+                    "Ryzyko systemowe: uzasadniona interwencja rządu",
+                    "TARP: wstrzyknięcia kapitału w celu stabilizacji banków",
+                    "Ryzyko moralne: ratunki tworzą przyszłe podejmowanie ryzyka"
                   ]
                 }
               }
@@ -3609,12 +3609,12 @@
                   "title": "Plan Geithnera"
                 },
                 "finance-u8-l4-article": {
-                  "title": "Naucz się: Geithner plan",
+                  "title": "Naucz się: Plan Geithnera",
                   "importantPoints": [
-                    "Geithner plan: public-private partnership",
-                    "Goal: remove toxic assets",
-                    "Faced challenges in implementation",
-                    "Part of comprehensive response"
+                    "Plan Geithnera: partnerstwo publiczno-prywatne",
+                    "Cel: usunięcie toksycznych aktywów",
+                    "Napotkał wyzwania w realizacji",
+                    "Część kompleksowej odpowiedzi"
                   ]
                 }
               }
@@ -3625,12 +3625,12 @@
                   "title": "Wymiana walutowa i handel"
                 },
                 "finance-u8-l5-article": {
-                  "title": "Naucz się: Foreign exchange and trade",
+                  "title": "Naucz się: Wymiana walutowa i handel",
                   "importantPoints": [
-                    "Exchange rates affect trade competitiveness",
-                    "Currency pegs can influence trade",
-                    "China-US debt loop: trade and capital flows",
-                    "Carry trade: interest rate arbitrage with currency risk"
+                    "Kursy walutowe wpływają na konkurencyjność handlową",
+                    "Peggi walutowe mogą wpływać na handel",
+                    "Pętla długu Chiny-USA: handel i przepływy kapitału",
+                    "Carry trade: arbitraż stóp procentowych z ryzykiem walutowym"
                   ]
                 }
               }
@@ -3641,12 +3641,12 @@
                   "title": "Chińska waluta i dług USA"
                 },
                 "finance-u8-l6-article": {
-                  "title": "Naucz się: Chinese currency and U.S. debt",
+                  "title": "Naucz się: Chińska waluta i dług USA",
                   "importantPoints": [
-                    "China pegged yuan to maintain trade advantage",
-                    "Accumulated large foreign reserves",
-                    "Financed US deficit through Treasury purchases",
-                    "Floating exchange would reduce imbalances"
+                    "Chiny przywiązały juana, aby utrzymać przewagę handlową",
+                    "Nagromadziły duże rezerwy walutowe",
+                    "Finansowały deficyt USA poprzez zakupy obligacji skarbowych",
+                    "Płynny kurs zmniejszyłby nierównowagi"
                   ]
                 }
               }
@@ -3657,12 +3657,12 @@
                   "title": "Grecki kryzys zadłużeniowy 2011-2012"
                 },
                 "finance-u8-l7-article": {
-                  "title": "Naucz się: 2011-2012 Greek debt crisis",
+                  "title": "Naucz się: Grecki kryzys zadłużeniowy 2011-2012",
                   "importantPoints": [
-                    "Greek crisis: high debt, recession, austerity",
-                    "Bailouts came with strict conditions",
-                    "Grexit considered but very disruptive",
-                    "Contagion risk worried Europe"
+                    "Kryzys grecki: wysoki dług, recesja, oszczędności",
+                    "Ratunki przyszły ze ścisłymi warunkami",
+                    "Grexit rozważany, ale bardzo destrukcyjny",
+                    "Ryzyko zarażenia martwiło Europę"
                   ]
                 }
               }
@@ -3675,11 +3675,11 @@
                 "finance-u8-l8-article": {
                   "title": "Naucz się: Bitcoin",
                   "importantPoints": [
-                    "Bitcoin: decentralized digital currency",
-                    "Blockchain: public ledger of transactions",
-                    "Proof of work: secures network through computation",
-                    "Limited supply: 21 million bitcoins",
-                    "Cryptographic security: hashing and digital signatures"
+                    "Bitcoin: zdecentralizowana waluta cyfrowa",
+                    "Blockchain: publiczny rejestr transakcji",
+                    "Dowód pracy: zabezpiecza sieć poprzez obliczenia",
+                    "Ograniczona podaż: 21 milionów bitcoinów",
+                    "Bezpieczeństwo kryptograficzne: haszowanie i podpisy cyfrowe"
                   ]
                 }
               }
@@ -3694,13 +3694,13 @@
                   "title": "Opcje put i call"
                 },
                 "finance-u9-l1-article": {
-                  "title": "Naucz się: Put and call options",
+                  "title": "Naucz się: Opcje put i call",
                   "importantPoints": [
-                    "Call: right to buy, put: right to sell",
-                    "Options provide leverage",
-                    "Puts can act as insurance",
-                    "Put-call parity links option prices",
-                    "Writing options: limited profit, large loss potential"
+                    "Call: prawo do zakupu, put: prawo do sprzedaży",
+                    "Opcje zapewniają dźwignię",
+                    "Puty mogą działać jak ubezpieczenie",
+                    "Parity put-call łączy ceny opcji",
+                    "Sprzedawanie opcji: ograniczony zysk, duży potencjał strat"
                   ]
                 }
               }
@@ -3711,14 +3711,14 @@
                   "title": "Kontrakty forward i futures"
                 },
                 "finance-u9-l2-article": {
-                  "title": "Naucz się: Forward and futures contracts",
+                  "title": "Naucz się: Kontrakty forward i futures",
                   "importantPoints": [
-                    "Forward: customized OTC contract",
-                    "Futures: standardized exchange-traded",
-                    "Margin: collateral, daily settlement",
-                    "Contango: future > spot",
-                    "Backwardation: future < spot",
-                    "Arbitrage keeps prices aligned"
+                    "Forward: niestandardowy kontrakt OTC",
+                    "Futures: standaryzowane, giełdowe",
+                    "Depozyt: zabezpieczenie, codzienne rozliczenie",
+                    "Kontango: futures > spot",
+                    "Backwardation: futures < spot",
+                    "Arbitraż utrzymuje ceny wyrównane"
                   ]
                 }
               }
@@ -3729,11 +3729,11 @@
                   "title": "Zabezpieczone hipoteką papiery wartościowe"
                 },
                 "finance-u9-l3-article": {
-                  "title": "Naucz się: Mortgage-backed securities",
+                  "title": "Naucz się: Zabezpieczone hipoteką papiery wartościowe",
                   "importantPoints": [
-                    "MBS: securities backed by mortgage pools",
-                    "Tranches: different risk/return classes",
-                    "Risks: prepayment, default, interest rate"
+                    "MBS: papiery wartościowe zabezpieczone pulami hipotek",
+                    "Tranche: różne klasy ryzyka/zwrotu",
+                    "Ryzyka: przedpłata, niewypłacalność, stopa procentowa"
                   ]
                 }
               }
@@ -3744,12 +3744,12 @@
                   "title": "Zabezpieczone zobowiązania dłużne"
                 },
                 "finance-u9-l4-article": {
-                  "title": "Naucz się: Collateralized debt obligations",
+                  "title": "Naucz się: Zabezpieczone zobowiązania dłużne",
                   "importantPoints": [
-                    "CDO: backed by pool of debt",
-                    "Tranches: equity, mezzanine, senior",
-                    "Risks: default, correlation, complexity",
-                    "Played role in 2008 crisis"
+                    "CDO: zabezpieczone pulą długu",
+                    "Tranche: kapitał własny, mezzanine, senior",
+                    "Ryzyka: niewypłacalność, korelacja, złożoność",
+                    "Odegrały rolę w kryzysie 2008"
                   ]
                 }
               }
@@ -3760,12 +3760,12 @@
                   "title": "Kredytowe swapy na wypadek niewypłacalności"
                 },
                 "finance-u9-l5-article": {
-                  "title": "Naucz się: Credit default swaps",
+                  "title": "Naucz się: Kredytowe swapy na wypadek niewypłacalności",
                   "importantPoints": [
-                    "CDS: insurance against default",
-                    "Buyer pays premium, seller pays if default",
-                    "Uses: hedging, speculation, arbitrage",
-                    "Systemic risk: can amplify crises"
+                    "CDS: ubezpieczenie od niewypłacalności",
+                    "Kupujący płaci składkę, sprzedający płaci przy niewypłacalności",
+                    "Zastosowania: zabezpieczenie, spekulacja, arbitraż",
+                    "Ryzyko systemowe: może wzmacniać kryzysy"
                   ]
                 }
               }
@@ -3776,12 +3776,12 @@
                   "title": "Swapy stóp procentowych"
                 },
                 "finance-u9-l6-article": {
-                  "title": "Naucz się: Interest rate swaps",
+                  "title": "Naucz się: Swapy stóp procentowych",
                   "importantPoints": [
-                    "Swap: exchange fixed for floating rate",
-                    "Exchange interest payments, not principal",
-                    "Uses: convert exposure, hedge, speculate",
-                    "Risks: counterparty, basis, market"
+                    "Swap: wymiana stałej na zmienną stopę",
+                    "Wymiana płatności odsetkowych, nie kapitału",
+                    "Zastosowania: konwersja ekspozycji, zabezpieczenie, spekulacja",
+                    "Ryzyka: kontrahent, bazowe, rynkowe"
                   ]
                 }
               }
@@ -3792,12 +3792,12 @@
                   "title": "Formuła Blacka-Scholesa"
                 },
                 "finance-u9-l7-article": {
-                  "title": "Naucz się: Black-Scholes formula",
+                  "title": "Naucz się: Formuła Blacka-Scholesa",
                   "importantPoints": [
-                    "Black-Scholes: model for option pricing",
-                    "Inputs: price, strike, time, rate, volatility",
-                    "Implied volatility: from market prices",
-                    "Reflects market expectations"
+                    "Black-Scholes: model wyceny opcji",
+                    "Wejścia: cena, strike, czas, stopa, zmienność",
+                    "Implikowana zmienność: z cen rynkowych",
+                    "Odbija oczekiwania rynkowe"
                   ]
                 }
               }
@@ -3812,12 +3812,12 @@
                   "title": "Bezrobocie"
                 },
                 "finance-u10-l1-article": {
-                  "title": "Naucz się: Unemployment",
+                  "title": "Naucz się: Bezrobocie",
                   "importantPoints": [
-                    "Unemployment: multiple types (frictional, structural, cyclical)",
-                    "Unemployment rate: percentage of labor force",
-                    "Limitations: doesn't count discouraged workers",
-                    "Stimulus: cost per job analysis"
+                    "Bezrobocie: wiele typów (frykcyjne, strukturalne, cykliczne)",
+                    "Stopa bezrobocia: procent siły roboczej",
+                    "Ograniczenia: nie liczy zniechęconych pracowników",
+                    "Stymulacja: analiza kosztu na jedno miejsce pracy"
                   ]
                 }
               }
@@ -3828,12 +3828,12 @@
                   "title": "Zagadka cen mieszkań"
                 },
                 "finance-u10-l2-article": {
-                  "title": "Naucz się: Housing price conundrum",
+                  "title": "Naucz się: Zagadka cen mieszkań",
                   "importantPoints": [
-                    "Housing prices: multiple factors",
-                    "Low rates, easy credit, speculation",
-                    "Supply constraints, demographics",
-                    "Policy and financial factors"
+                    "Ceny mieszkań: wiele czynników",
+                    "Niskie stopy, łatwy kredyt, spekulacja",
+                    "Ograniczenia podaży, demografia",
+                    "Czynniki polityczne i finansowe"
                   ]
                 }
               }
@@ -3844,12 +3844,12 @@
                   "title": "Kryzys kredytowy"
                 },
                 "finance-u10-l3-article": {
-                  "title": "Naucz się: Credit crisis",
+                  "title": "Naucz się: Kryzys kredytowy",
                   "importantPoints": [
-                    "Housing bubble led to credit crisis",
-                    "MBS, CDOs amplified risks",
-                    "CDS created systemic risk",
-                    "Massive wealth destruction"
+                    "Bańka mieszkaniowa doprowadziła do kryzysu kredytowego",
+                    "MBS, CDO wzmocniły ryzyka",
+                    "CDS stworzyły ryzyko systemowe",
+                    "Masowe niszczenie bogactwa"
                   ]
                 }
               }
@@ -3860,13 +3860,13 @@
                   "title": "Ratunek Paulsona"
                 },
                 "finance-u10-l4-article": {
-                  "title": "Naucz się: Paulson bailout",
+                  "title": "Naucz się: Ratunek Paulsona",
                   "importantPoints": [
-                    "Liquidity vs. solvency: different problems",
-                    "TARP: $700 billion bailout program",
-                    "Systemic risk justified intervention",
-                    "Moral hazard: ongoing concern",
-                    "Comprehensive response needed"
+                    "Płynność vs wypłacalność: różne problemy",
+                    "TARP: program ratunkowy 700 miliardów dolarów",
+                    "Ryzyko systemowe uzasadniło interwencję",
+                    "Ryzyko moralne: ciągła troska",
+                    "Potrzebna kompleksowa odpowiedź"
                   ]
                 }
               }
@@ -3892,13 +3892,13 @@
                   "title": "Dlaczego Europa martwi się o Grecję"
                 },
                 "finance-u10-l5-article": {
-                  "title": "Naucz się: European Union",
+                  "title": "Naucz się: Unia Europejska",
                   "importantPoints": [
-                    "Brexit: UK leaving EU",
-                    "EU: economic and political union",
-                    "Greek crisis: debt, austerity, bailouts",
-                    "Grexit: considered but disruptive",
-                    "Contagion risk worried Europe"
+                    "Brexit: wyjście Wielkiej Brytanii z UE",
+                    "UE: unia gospodarcza i polityczna",
+                    "Kryzys grecki: dług, oszczędności, ratunki",
+                    "Grexit: rozważany, ale destrukcyjny",
+                    "Ryzyko zarażenia martwiło Europę"
                   ]
                 }
               }
@@ -3916,19 +3916,19 @@
             "lesson-1-1": {
               "contentItem": {
                 "economics-u1-l1-video-1": {
-                  "title": "Scarcity"
+                  "title": "Niedobór"
                 },
                 "economics-u1-l1-article": {
-                  "title": "Naucz się: Scarcity",
+                  "title": "Naucz się: Niedobór",
                   "importantPoints": [
-                    "Economics: study of choices with limited resources",
-                    "Scarcity: unlimited wants vs. limited resources",
-                    "Scarcity is permanent, not temporary",
-                    "Forces us to make choices"
+                    "Ekonomia: nauka o wyborach przy ograniczonych zasobach",
+                    "Niedobór: nieograniczone potrzeby vs ograniczone zasoby",
+                    "Niedobór jest stały, nie tymczasowy",
+                    "Wymusza na nas dokonywanie wyborów"
                   ]
                 },
                 "economics-u1-l1-practice": {
-                  "title": "Praktyka: Intro to economics: Scarcity"
+                  "title": "Praktyka: Wprowadzenie do ekonomii: Niedobór"
                 },
                 "economics-u1-l1-quiz": {
                   "title": "Quiz: Scarcity"
@@ -3938,19 +3938,19 @@
             "lesson-1-2": {
               "contentItem": {
                 "economics-u1-l2-video-1": {
-                  "title": "Costs and benefits"
+                  "title": "Koszty i korzyści"
                 },
                 "economics-u1-l2-article": {
-                  "title": "Naucz się: Costs and benefits",
+                  "title": "Naucz się: Koszty i korzyści",
                   "importantPoints": [
-                    "PPC: shows maximum production combinations",
-                    "Opportunity cost: value of next best alternative",
-                    "Points on curve: efficient",
-                    "Increasing opportunity cost along curve"
+                    "KPP: pokazuje maksymalne kombinacje produkcji",
+                    "Koszt alternatywny: wartość następnej najlepszej alternatywy",
+                    "Punkty na krzywej: efektywne",
+                    "Rosnący koszt alternatywny wzdłuż krzywej"
                   ]
                 },
                 "economics-u1-l2-practice": {
-                  "title": "Praktyka: Opportunity cost and the PPC"
+                  "title": "Praktyka: Koszt alternatywny i KPP"
                 },
                 "economics-u1-l2-quiz": {
                   "title": "Quiz: Costs and benefits"
@@ -3960,19 +3960,19 @@
             "lesson-1-3": {
               "contentItem": {
                 "economics-u1-l3-video-1": {
-                  "title": "Decision making and unintended consequences"
+                  "title": "Podejmowanie decyzji i niezamierzone konsekwencje"
                 },
                 "economics-u1-l3-article": {
-                  "title": "Naucz się: Decision making and unintended consequences",
+                  "title": "Naucz się: Podejmowanie decyzji i niezamierzone konsekwencje",
                   "importantPoints": [
-                    "Optimal decisions: consider all costs and benefits",
-                    "CBA: systematic decision-making approach",
-                    "PACED: structured framework",
-                    "Unintended consequences: unforeseen results"
+                    "Optymalne decyzje: rozważ wszystkie koszty i korzyści",
+                    "CBA: systematyczne podejście do podejmowania decyzji",
+                    "PACED: ustrukturyzowane ramy",
+                    "Niezamierzone konsekwencje: nieprzewidziane rezultaty"
                   ]
                 },
                 "economics-u1-l3-practice": {
-                  "title": "Praktyka: Decision making and unintended consequences"
+                  "title": "Praktyka: Podejmowanie decyzji i niezamierzone konsekwencje"
                 },
                 "economics-u1-l3-quiz": {
                   "title": "Quiz: Decision making and unintended consequences"
@@ -3982,19 +3982,19 @@
             "lesson-1-4": {
               "contentItem": {
                 "economics-u1-l4-video-1": {
-                  "title": "Factors of production"
+                  "title": "Czynniki produkcji"
                 },
                 "economics-u1-l4-article": {
-                  "title": "Naucz się: Factors of production",
+                  "title": "Naucz się: Czynniki produkcji",
                   "importantPoints": [
-                    "Four factors: land, labor, capital, entrepreneurship",
-                    "Human capital: knowledge and skills",
-                    "Investment in human capital increases productivity",
-                    "Entrepreneurship: innovation and risk-taking"
+                    "Cztery czynniki: ziemia, praca, kapitał, przedsiębiorczość",
+                    "Kapitał ludzki: wiedza i umiejętności",
+                    "Inwestycja w kapitał ludzki zwiększa produktywność",
+                    "Przedsiębiorczość: innowacyjność i podejmowanie ryzyka"
                   ]
                 },
                 "economics-u1-l4-practice": {
-                  "title": "Praktyka: Factors of production, impact of human capital on production, and the role of entrepreneurs"
+                  "title": "Praktyka: Czynniki produkcji, wpływ kapitału ludzkiego na produkcję i rola przedsiębiorców"
                 },
                 "economics-u1-l4-quiz": {
                   "title": "Quiz: Factors of production"
@@ -4004,19 +4004,19 @@
             "lesson-1-5": {
               "contentItem": {
                 "economics-u1-l5-video-1": {
-                  "title": "Human capital and income"
+                  "title": "Kapitał ludzki i dochód"
                 },
                 "economics-u1-l5-article": {
-                  "title": "Naucz się: Human capital and income",
+                  "title": "Naucz się: Kapitał ludzki i dochód",
                   "importantPoints": [
-                    "Investment in human capital: education, training",
-                    "Benefits: higher income, better opportunities",
-                    "Market value: what employers pay for skills",
-                    "Develop high-value skills"
+                    "Inwestycja w kapitał ludzki: edukacja, szkolenia",
+                    "Korzyści: wyższy dochód, lepsze możliwości",
+                    "Wartość rynkowa: to, co pracodawcy płacą za umiejętności",
+                    "Rozwijaj umiejętności o wysokiej wartości"
                   ]
                 },
                 "economics-u1-l5-practice": {
-                  "title": "Praktyka: Human capital and income"
+                  "title": "Praktyka: Kapitał ludzki i dochód"
                 },
                 "economics-u1-l5-quiz": {
                   "title": "Quiz 2: Human capital and income"
@@ -4026,20 +4026,20 @@
             "lesson-1-6": {
               "contentItem": {
                 "economics-u1-l6-video-1": {
-                  "title": "Economic systems"
+                  "title": "Systemy ekonomiczne"
                 },
                 "economics-u1-l6-article": {
-                  "title": "Naucz się: Economic systems",
+                  "title": "Naucz się: Systemy ekonomiczne",
                   "importantPoints": [
-                    "Command: government makes decisions",
-                    "Market: individuals and businesses decide",
-                    "Circular flow: money and goods circulate",
-                    "Mixed economy: combination of both",
-                    "Traditional: based on customs"
+                    "Nakazowy: rząd podejmuje decyzje",
+                    "Rynkowy: jednostki i firmy decydują",
+                    "Przepływ okrężny: pieniądze i dobra krążą",
+                    "Gospodarka mieszana: kombinacja obu",
+                    "Tradycyjny: oparty na zwyczajach"
                   ]
                 },
                 "economics-u1-l6-practice": {
-                  "title": "Praktyka: Economic systems"
+                  "title": "Praktyka: Systemy ekonomiczne"
                 },
                 "economics-u1-l6-quiz": {
                   "title": "Quiz: Economic systems"
@@ -4053,19 +4053,19 @@
             "lesson-2-1": {
               "contentItem": {
                 "economics-u2-l1-video-1": {
-                  "title": "Incentives and marketing"
+                  "title": "Zachęty i marketing"
                 },
                 "economics-u2-l1-article": {
-                  "title": "Naucz się: Incentives and marketing",
+                  "title": "Naucz się: Zachęty i marketing",
                   "importantPoints": [
-                    "Incentives: motivate behavior (positive and negative)",
-                    "Marketing: influences consumer decisions",
-                    "Consumer sovereignty: consumers determine production",
-                    "Marketing can limit consumer sovereignty"
+                    "Zachęty: motywują zachowanie (pozytywne i negatywne)",
+                    "Marketing: wpływa na decyzje konsumentów",
+                    "Suwerenność konsumenta: konsumenci określają produkcję",
+                    "Marketing może ograniczać suwerenność konsumenta"
                   ]
                 },
                 "economics-u2-l1-practice": {
-                  "title": "Praktyka: Effects of marketing and incentives"
+                  "title": "Praktyka: Efekty marketingu i zachęt"
                 },
                 "economics-u2-l1-quiz": {
                   "title": "Quiz: Incentives and marketing"
@@ -4075,19 +4075,19 @@
             "lesson-2-2": {
               "contentItem": {
                 "economics-u2-l2-video-1": {
-                  "title": "Cost, revenue, and profit"
+                  "title": "Koszt, przychód i zysk"
                 },
                 "economics-u2-l2-article": {
-                  "title": "Naucz się: Cost, revenue, and profit",
+                  "title": "Naucz się: Koszt, przychód i zysk",
                   "importantPoints": [
-                    "Cost: fixed and variable",
-                    "Revenue: price × quantity",
-                    "Profit: revenue - costs",
-                    "Businesses maximize profit"
+                    "Koszt: stały i zmienny",
+                    "Przychód: cena × ilość",
+                    "Zysk: przychód - koszty",
+                    "Firmy maksymalizują zysk"
                   ]
                 },
                 "economics-u2-l2-practice": {
-                  "title": "Praktyka: Cost, revenue, and profit"
+                  "title": "Praktyka: Koszt, przychód i zysk"
                 },
                 "economics-u2-l2-quiz": {
                   "title": "Quiz: Cost, revenue, and profit"
@@ -4097,19 +4097,19 @@
             "lesson-2-3": {
               "contentItem": {
                 "economics-u2-l3-video-1": {
-                  "title": "Productivity and economic growth"
+                  "title": "Produktywność i wzrost gospodarczy"
                 },
                 "economics-u2-l3-article": {
-                  "title": "Naucz się: Productivity and economic growth",
+                  "title": "Naucz się: Produktywność i wzrost gospodarczy",
                   "importantPoints": [
-                    "Investment in capital drives economic growth",
-                    "Productivity: output per input",
-                    "Higher productivity → more production",
-                    "Productivity growth improves standard of living"
+                    "Inwestycja w kapitał napędza wzrost gospodarczy",
+                    "Produktywność: produkcja na jednostkę nakładu",
+                    "Wyższa produktywność → więcej produkcji",
+                    "Wzrost produktywności poprawia standard życia"
                   ]
                 },
                 "economics-u2-l3-practice": {
-                  "title": "Praktyka: Productivity and economic growth"
+                  "title": "Praktyka: Produktywność i wzrost gospodarczy"
                 },
                 "economics-u2-l3-quiz": {
                   "title": "Quiz: Productivity and economic growth"
@@ -4119,19 +4119,19 @@
             "lesson-2-4": {
               "contentItem": {
                 "economics-u2-l4-video-1": {
-                  "title": "Business organization"
+                  "title": "Organizacja biznesowa"
                 },
                 "economics-u2-l4-article": {
-                  "title": "Naucz się: Business organization",
+                  "title": "Naucz się: Organizacja biznesowa",
                   "importantPoints": [
-                    "Sole proprietorship: one owner, unlimited liability",
-                    "Partnership: multiple owners, share profits",
-                    "Corporation: legal entity, limited liability",
-                    "Limited liability protects personal assets"
+                    "Jednoosobowa działalność: jeden właściciel, nieograniczona odpowiedzialność",
+                    "Spółka: wielu właścicieli, dzielą zyski",
+                    "Korporacja: osoba prawna, ograniczona odpowiedzialność",
+                    "Ograniczona odpowiedzialność chroni majątek osobisty"
                   ]
                 },
                 "economics-u2-l4-practice": {
-                  "title": "Praktyka: Business organization"
+                  "title": "Praktyka: Organizacja biznesowa"
                 },
                 "economics-u2-l4-quiz": {
                   "title": "Quiz: Business organization"
@@ -4141,20 +4141,20 @@
             "lesson-2-5": {
               "contentItem": {
                 "economics-u2-l5-video-1": {
-                  "title": "Market structures and competition"
+                  "title": "Struktury rynkowe i konkurencja"
                 },
                 "economics-u2-l5-article": {
-                  "title": "Naucz się: Market structures and competition",
+                  "title": "Naucz się: Struktury rynkowe i konkurencja",
                   "importantPoints": [
-                    "Perfect competition: many sellers, identical products",
-                    "Monopolistic competition: differentiated products",
-                    "Oligopoly: few sellers",
-                    "Monopoly: single seller",
-                    "Non-price competition: quality, service, branding"
+                    "Konkurencja doskonała: wielu sprzedawców, identyczne produkty",
+                    "Konkurencja monopolistyczna: zróżnicowane produkty",
+                    "Oligopol: niewielu sprzedawców",
+                    "Monopol: jeden sprzedawca",
+                    "Konkurencja pozacenowa: jakość, usługa, branding"
                   ]
                 },
                 "economics-u2-l5-practice": {
-                  "title": "Praktyka: Market structures and competition"
+                  "title": "Praktyka: Struktury rynkowe i konkurencja"
                 },
                 "economics-u2-l5-quiz": {
                   "title": "Quiz: Market structures and competition"
@@ -4168,21 +4168,21 @@
             "lesson-3-1": {
               "contentItem": {
                 "economics-u3-l1-video-1": {
-                  "title": "Demand"
+                  "title": "Popyt"
                 },
                 "economics-u3-l1-article": {
-                  "title": "Naucz się: Demand",
+                  "title": "Naucz się: Popyt",
                   "importantPoints": [
-                    "Law of demand: price ↑ → quantity ↓",
-                    "Substitutes: price ↑ → demand ↑",
-                    "Complements: price ↑ → demand ↓",
-                    "Normal goods: income ↑ → demand ↑",
-                    "Inferior goods: income ↑ → demand ↓",
-                    "Price change = movement; other factors = shift"
+                    "Prawo popytu: cena ↑ → ilość ↓",
+                    "Substytuty: cena ↑ → popyt ↑",
+                    "Dobra komplementarne: cena ↑ → popyt ↓",
+                    "Dobra normalne: dochód ↑ → popyt ↑",
+                    "Dobra niższego rzędu: dochód ↑ → popyt ↓",
+                    "Zmiana ceny = ruch; inne czynniki = przesunięcie"
                   ]
                 },
                 "economics-u3-l1-practice": {
-                  "title": "Praktyka: Demand and the determinants of demand"
+                  "title": "Praktyka: Popyt i determinanty popytu"
                 },
                 "economics-u3-l1-quiz": {
                   "title": "Quiz: Demand"
@@ -4192,19 +4192,19 @@
             "lesson-3-2": {
               "contentItem": {
                 "economics-u3-l2-video-1": {
-                  "title": "Supply"
+                  "title": "Podaż"
                 },
                 "economics-u3-l2-article": {
-                  "title": "Naucz się: Supply",
+                  "title": "Naucz się: Podaż",
                   "importantPoints": [
-                    "Law of supply: price ↑ → quantity ↑",
-                    "Supply curve: upward sloping",
-                    "Determinants: input prices, technology, number of sellers",
-                    "Price change = movement; other factors = shift"
+                    "Prawo podaży: cena ↑ → ilość ↑",
+                    "Krzywa podaży: wznosząca się",
+                    "Determinanty: ceny nakładów, technologia, liczba sprzedawców",
+                    "Zmiana ceny = ruch; inne czynniki = przesunięcie"
                   ]
                 },
                 "economics-u3-l2-practice": {
-                  "title": "Praktyka: Supply"
+                  "title": "Praktyka: Podaż"
                 },
                 "economics-u3-l2-quiz": {
                   "title": "Quiz: Supply"
@@ -4214,20 +4214,20 @@
             "lesson-3-3": {
               "contentItem": {
                 "economics-u3-l3-video-1": {
-                  "title": "Elasticity"
+                  "title": "Elastyczność"
                 },
                 "economics-u3-l3-article": {
-                  "title": "Naucz się: Elasticity",
+                  "title": "Naucz się: Elastyczność",
                   "importantPoints": [
-                    "Elasticity: responsiveness to price changes",
-                    "Elastic: quantity changes a lot",
-                    "Inelastic: quantity changes little",
-                    "Demand elasticity: substitutes, necessity, income proportion",
-                    "Supply elasticity: time, inputs, storage, flexibility"
+                    "Elastyczność: wrażliwość na zmiany cen",
+                    "Elastyczny: ilość zmienia się znacznie",
+                    "Nieelastyczny: ilość zmienia się niewiele",
+                    "Elastyczność popytu: substytuty, konieczność, proporcja dochodu",
+                    "Elastyczność podaży: czas, nakłady, magazynowanie, elastyczność"
                   ]
                 },
                 "economics-u3-l3-practice": {
-                  "title": "Praktyka: Elasticity of supply and demand"
+                  "title": "Praktyka: Elastyczność podaży i popytu"
                 },
                 "economics-u3-l3-quiz": {
                   "title": "Quiz: Elasticity"
@@ -4237,20 +4237,20 @@
             "lesson-3-4": {
               "contentItem": {
                 "economics-u3-l4-video-1": {
-                  "title": "Equilibrium"
+                  "title": "Równowaga"
                 },
                 "economics-u3-l4-article": {
-                  "title": "Naucz się: Equilibrium",
+                  "title": "Naucz się: Równowaga",
                   "importantPoints": [
-                    "Equilibrium: supply = demand",
-                    "Equilibrium price and quantity",
-                    "Surplus: price too high",
-                    "Shortage: price too low",
-                    "Shifts change equilibrium"
+                    "Równowaga: podaż = popyt",
+                    "Cena i ilość równowagi",
+                    "Nadwyżka: cena zbyt wysoka",
+                    "Niedobór: cena zbyt niska",
+                    "Przesunięcia zmieniają równowagę"
                   ]
                 },
                 "economics-u3-l4-practice": {
-                  "title": "Praktyka: Equilibrium and disequilibrium in markets"
+                  "title": "Praktyka: Równowaga i nierównowaga na rynkach"
                 },
                 "economics-u3-l4-quiz": {
                   "title": "Quiz: Equilibrium"
@@ -4260,19 +4260,19 @@
             "lesson-3-5": {
               "contentItem": {
                 "economics-u3-l5-video-1": {
-                  "title": "Price controls"
+                  "title": "Kontrola cen"
                 },
                 "economics-u3-l5-article": {
-                  "title": "Naucz się: Price controls",
+                  "title": "Naucz się: Kontrola cen",
                   "importantPoints": [
-                    "Price ceiling: maximum price, creates shortage",
-                    "Price floor: minimum price, creates surplus",
-                    "Interfere with market equilibrium",
-                    "Reduce efficiency"
+                    "Pułap cenowy: maksymalna cena, tworzy niedobór",
+                    "Podłoga cenowa: minimalna cena, tworzy nadwyżkę",
+                    "Ingerują w równowagę rynkową",
+                    "Zmniejszają efektywność"
                   ]
                 },
                 "economics-u3-l5-practice": {
-                  "title": "Praktyka: Price ceilings and floors"
+                  "title": "Praktyka: Pułapy i podłogi cenowe"
                 },
                 "economics-u3-l5-quiz": {
                   "title": "Quiz: Price controls"
@@ -4286,20 +4286,20 @@
             "lesson-4-1": {
               "contentItem": {
                 "economics-u4-l1-video-1": {
-                  "title": "Public vs private"
+                  "title": "Publiczne vs prywatne"
                 },
                 "economics-u4-l1-article": {
-                  "title": "Naucz się: Public vs private",
+                  "title": "Naucz się: Publiczne vs prywatne",
                   "importantPoints": [
-                    "Tragedy of commons: overuse of shared resources",
-                    "Rival: use reduces availability",
-                    "Non-rival: use doesn't reduce availability",
-                    "Excludable: can prevent use",
-                    "Public goods: non-rival and non-excludable"
+                    "Tragedia wspólnego pastwiska: nadużywanie wspólnych zasobów",
+                    "Rywalizacyjne: użycie zmniejsza dostępność",
+                    "Nierywaliżacyjne: użycie nie zmniejsza dostępności",
+                    "Wykluczalne: można zapobiec użyciu",
+                    "Dobra publiczne: nierywaliżacyjne i niewykluczalne"
                   ]
                 },
                 "economics-u4-l1-practice": {
-                  "title": "Praktyka: Government actions in markets"
+                  "title": "Praktyka: Działania rządu na rynkach"
                 },
                 "economics-u4-l1-quiz": {
                   "title": "Quiz: Public vs private"
@@ -4309,20 +4309,20 @@
             "lesson-4-2": {
               "contentItem": {
                 "economics-u4-l2-video-1": {
-                  "title": "Property rights"
+                  "title": "Prawa własności"
                 },
                 "economics-u4-l2-article": {
-                  "title": "Naucz się: Property rights",
+                  "title": "Naucz się: Prawa własności",
                   "importantPoints": [
-                    "Property rights: legal right to own, use, dispose",
-                    "Essential for market economies",
-                    "Government enforces property rights",
-                    "Government enforces contracts",
-                    "Enables markets and investment"
+                    "Prawa własności: prawo do posiadania, używania, rozporządzania",
+                    "Niezbędne dla gospodarek rynkowych",
+                    "Rząd egzekwuje prawa własności",
+                    "Rząd egzekwuje umowy",
+                    "Umożliwia rynki i inwestycje"
                   ]
                 },
                 "economics-u4-l2-practice": {
-                  "title": "Praktyka: Government enforcement of property rights and contracts"
+                  "title": "Praktyka: Egzekwowanie przez rząd praw własności i umów"
                 },
                 "economics-u4-l2-quiz": {
                   "title": "Quiz 1: Property rights"
@@ -4332,20 +4332,20 @@
             "lesson-4-3": {
               "contentItem": {
                 "economics-u4-l3-video-1": {
-                  "title": "Redistribution of wealth"
+                  "title": "Redystrybucja bogactwa"
                 },
                 "economics-u4-l3-article": {
-                  "title": "Naucz się: Redistribution of wealth",
+                  "title": "Naucz się: Redystrybucja bogactwa",
                   "importantPoints": [
-                    "Transfer programs: redistribute income",
-                    "Cash transfers: direct payments",
-                    "In-kind transfers: goods/services",
-                    "Social insurance: funded by contributions",
-                    "Social safety net: help people in need"
+                    "Programy transferowe: redystrybuują dochód",
+                    "Transfery gotówkowe: bezpośrednie płatności",
+                    "Transfery w naturze: dobra/usługi",
+                    "Ubezpieczenie społeczne: finansowane ze składek",
+                    "Sieć bezpieczeństwa społecznego: pomoc potrzebującym"
                   ]
                 },
                 "economics-u4-l3-practice": {
-                  "title": "Praktyka: Government redistribution of wealth"
+                  "title": "Praktyka: Rządowa redystrybucja bogactwa"
                 },
                 "economics-u4-l3-quiz": {
                   "title": "Quiz: Redistribution of wealth"
@@ -4359,21 +4359,21 @@
             "lesson-5-1": {
               "contentItem": {
                 "economics-u5-l1-video-1": {
-                  "title": "Macroeconomic indicators"
+                  "title": "Wskaźniki makroekonomiczne"
                 },
                 "economics-u5-l1-article": {
-                  "title": "Naucz się: Macroeconomic indicators",
+                  "title": "Naucz się: Wskaźniki makroekonomiczne",
                   "importantPoints": [
-                    "GDP: total value of goods and services produced",
-                    "Real GDP: adjusted for inflation",
-                    "GDP limitations: doesn't measure quality of life",
-                    "Inflation: general increase in prices",
-                    "Unemployment types: frictional, structural, cyclical",
-                    "Natural unemployment: frictional + structural"
+                    "PKB: całkowita wartość wyprodukowanych dóbr i usług",
+                    "Realny PKB: skorygowany o inflację",
+                    "Ograniczenia PKB: nie mierzy jakości życia",
+                    "Inflacja: ogólny wzrost cen",
+                    "Typy bezrobocia: frykcyjne, strukturalne, cykliczne",
+                    "Naturalne bezrobocie: frykcyjne + strukturalne"
                   ]
                 },
                 "economics-u5-l1-practice": {
-                  "title": "Praktyka: Macroeconomic indicators"
+                  "title": "Praktyka: Wskaźniki makroekonomiczne"
                 },
                 "economics-u5-l1-quiz": {
                   "title": "Quiz: Macroeconomic indicators"
@@ -4383,19 +4383,19 @@
             "lesson-5-2": {
               "contentItem": {
                 "economics-u5-l2-video-1": {
-                  "title": "The macroeconomy and economic challenges"
+                  "title": "Makroekonomia i wyzwania ekonomiczne"
                 },
                 "economics-u5-l2-article": {
-                  "title": "Naucz się: The macroeconomy and economic challenges",
+                  "title": "Naucz się: Makroekonomia i wyzwania ekonomiczne",
                   "importantPoints": [
-                    "Aggregate demand: total demand for all goods",
-                    "Aggregate supply: total supply of all goods",
-                    "AD-AS model: determines price level and output",
-                    "Shifts affect income, employment, prices"
+                    "Popyt zagregowany: całkowity popyt na wszystkie dobra",
+                    "Podaż zagregowana: całkowita podaż wszystkich dóbr",
+                    "Model AD-AS: określa poziom cen i produkcję",
+                    "Przesunięcia wpływają na dochód, zatrudnienie, ceny"
                   ]
                 },
                 "economics-u5-l2-practice": {
-                  "title": "Praktyka: Market effects on income"
+                  "title": "Praktyka: Efekty rynkowe na dochód"
                 },
                 "economics-u5-l2-quiz": {
                   "title": "Quiz: The macroeconomy and economic challenges"
@@ -4405,19 +4405,19 @@
             "lesson-5-3": {
               "contentItem": {
                 "economics-u5-l3-video-1": {
-                  "title": "Business cycles"
+                  "title": "Cykle koniunkturalne"
                 },
                 "economics-u5-l3-article": {
-                  "title": "Naucz się: Business cycles",
+                  "title": "Naucz się: Cykle koniunkturalne",
                   "importantPoints": [
-                    "Business cycle: expansion, peak, recession, trough",
-                    "Employment: varies with cycle",
-                    "Inflation: often varies with cycle",
-                    "Cycles caused by AD/AS changes, confidence, shocks"
+                    "Cykl koniunkturalny: ekspansja, szczyt, recesja, dno",
+                    "Zatrudnienie: zmienia się z cyklem",
+                    "Inflacja: często zmienia się z cyklem",
+                    "Cykle spowodowane zmianami AD/AS, zaufaniem, szokami"
                   ]
                 },
                 "economics-u5-l3-practice": {
-                  "title": "Praktyka: Business cycles"
+                  "title": "Praktyka: Cykle koniunkturalne"
                 },
                 "economics-u5-l3-quiz": {
                   "title": "Quiz: Business cycles"
@@ -4431,20 +4431,20 @@
             "lesson-6-1": {
               "contentItem": {
                 "economics-u6-l1-video-1": {
-                  "title": "Money"
+                  "title": "Pieniądze"
                 },
                 "economics-u6-l1-article": {
-                  "title": "Naucz się: Money",
+                  "title": "Naucz się: Pieniądze",
                   "importantPoints": [
-                    "Money functions: medium of exchange, unit of account, store of value, standard of deferred payment",
-                    "Characteristics: durable, portable, divisible, uniform, limited supply, acceptable",
-                    "Commodity money: has intrinsic value",
-                    "Fiat money: no intrinsic value, government decree",
-                    "Fiat more flexible but requires trust"
+                    "Funkcje pieniądza: środek wymiany, jednostka rozliczeniowa, przechowywanie wartości, standard odroczonych płatności",
+                    "Cechy: trwałe, przenośne, podzielne, jednolite, ograniczona podaż, akceptowalne",
+                    "Pieniądz towarowy: ma wartość wewnętrzną",
+                    "Pieniądz fiducjarny: brak wartości wewnętrznej, dekret rządowy",
+                    "Fiducjarny bardziej elastyczny, ale wymaga zaufania"
                   ]
                 },
                 "economics-u6-l1-practice": {
-                  "title": "Praktyka: Money"
+                  "title": "Praktyka: Pieniądze"
                 },
                 "economics-u6-l1-quiz": {
                   "title": "Quiz: Money"
@@ -4454,20 +4454,20 @@
             "lesson-6-2": {
               "contentItem": {
                 "economics-u6-l2-video-1": {
-                  "title": "Financial markets and institutions"
+                  "title": "Rynki finansowe i instytucje"
                 },
                 "economics-u6-l2-article": {
-                  "title": "Naucz się: Financial markets and institutions",
+                  "title": "Naucz się: Rynki finansowe i instytucje",
                   "importantPoints": [
-                    "Financial institutions: intermediaries between savers and borrowers",
-                    "Financial markets: where assets are traded",
-                    "Types: banks, credit unions, investment banks, insurance, mutual funds",
-                    "Markets: stock, bond, money, forex, derivatives",
-                    "Monetary systems: create and manage money"
+                    "Instytucje finansowe: pośrednicy między oszczędzającymi a pożyczkobiorcami",
+                    "Rynki finansowe: gdzie handluje się aktywami",
+                    "Typy: banki, kasy kredytowe, banki inwestycyjne, ubezpieczenia, fundusze wzajemne",
+                    "Rynki: akcje, obligacje, pieniądze, forex, instrumenty pochodne",
+                    "Systemy monetarne: tworzą i zarządzają pieniędzmi"
                   ]
                 },
                 "economics-u6-l2-practice": {
-                  "title": "Praktyka: Financial and monetary systems"
+                  "title": "Praktyka: Systemy finansowe i monetarne"
                 },
                 "economics-u6-l2-quiz": {
                   "title": "Quiz: Financial markets and institutions"
@@ -4477,20 +4477,20 @@
             "lesson-6-3": {
               "contentItem": {
                 "economics-u6-l3-video-1": {
-                  "title": "The Federal Reserve"
+                  "title": "Rezerwa Federalna"
                 },
                 "economics-u6-l3-article": {
-                  "title": "Naucz się: The Federal Reserve",
+                  "title": "Naucz się: Rezerwa Federalna",
                   "importantPoints": [
-                    "Banking crises led to Fed creation",
-                    "Structure: Board of Governors, 12 regional banks, FOMC",
-                    "Functions: monetary policy, bank regulation, payment systems",
-                    "Financial stability, lender of last resort",
-                    "Created 1913, evolved over time"
+                    "Kryzysy bankowe doprowadziły do utworzenia Fed",
+                    "Struktura: Rada Gubernatorów, 12 banków regionalnych, FOMC",
+                    "Funkcje: polityka pieniężna, regulacja banków, systemy płatności",
+                    "Stabilność finansowa, pożyczkodawca ostatniej instancji",
+                    "Utworzona w 1913, ewoluowała w czasie"
                   ]
                 },
                 "economics-u6-l3-practice": {
-                  "title": "Praktyka: History of banking and the Federal Reserve"
+                  "title": "Praktyka: Historia bankowości i Rezerwy Federalnej"
                 },
                 "economics-u6-l3-quiz": {
                   "title": "Quiz: The Federal Reserve"
@@ -4504,20 +4504,20 @@
             "lesson-7-1": {
               "contentItem": {
                 "economics-u7-l1-video-1": {
-                  "title": "Monetary policy"
+                  "title": "Polityka pieniężna"
                 },
                 "economics-u7-l1-article": {
-                  "title": "Naucz się: Monetary policy",
+                  "title": "Naucz się: Polityka pieniężna",
                   "importantPoints": [
-                    "Monetary policy: Fed controls money supply and interest rates",
-                    "Tools: open market operations, reserve requirements, discount rate",
-                    "Expansionary: increase money, lower rates, stimulate",
-                    "Contractionary: decrease money, raise rates, slow economy",
-                    "Interest rates affected by policy, demand, supply, inflation, risk"
+                    "Polityka pieniężna: Fed kontroluje podaż pieniądza i stopy procentowe",
+                    "Narzędzia: operacje otwartego rynku, wymogi rezerwowe, stopa dyskontowa",
+                    "Ekspansywna: zwiększ pieniądze, obniż stopy, stymuluj",
+                    "Kontrakcyjna: zmniejsz pieniądze, podnieś stopy, spowolnij gospodarkę",
+                    "Stopy procentowe wpływają: polityka, popyt, podaż, inflacja, ryzyko"
                   ]
                 },
                 "economics-u7-l1-practice": {
-                  "title": "Praktyka: Monetary policy"
+                  "title": "Praktyka: Polityka pieniężna"
                 },
                 "economics-u7-l1-quiz": {
                   "title": "Quiz: Monetary policy"
@@ -4527,19 +4527,19 @@
             "lesson-7-2": {
               "contentItem": {
                 "economics-u7-l2-video-1": {
-                  "title": "Fiscal policy"
+                  "title": "Polityka fiskalna"
                 },
                 "economics-u7-l2-article": {
-                  "title": "Naucz się: Fiscal policy",
+                  "title": "Naucz się: Polityka fiskalna",
                   "importantPoints": [
-                    "Fiscal policy: government use of taxes and spending",
-                    "Expansionary: increase spending, decrease taxes",
-                    "Contractionary: decrease spending, increase taxes",
-                    "Automatic stabilizers: automatic adjustments"
+                    "Polityka fiskalna: rządowe wykorzystanie podatków i wydatków",
+                    "Ekspansywna: zwiększ wydatki, zmniejsz podatki",
+                    "Kontrakcyjna: zmniejsz wydatki, zwiększ podatki",
+                    "Automatyczne stabilizatory: automatyczne dostosowania"
                   ]
                 },
                 "economics-u7-l2-practice": {
-                  "title": "Praktyka: Fiscal policy"
+                  "title": "Praktyka: Polityka fiskalna"
                 },
                 "economics-u7-l2-quiz": {
                   "title": "Quiz: Fiscal policy"
@@ -4549,21 +4549,21 @@
             "lesson-7-3": {
               "contentItem": {
                 "economics-u7-l3-video-1": {
-                  "title": "Government budgets; revenue and expenditures"
+                  "title": "Budżety rządowe; dochody i wydatki"
                 },
                 "economics-u7-l3-article": {
-                  "title": "Naucz się: Government budgets; revenue and expenditures",
+                  "title": "Naucz się: Budżety rządowe; dochody i wydatki",
                   "importantPoints": [
-                    "Tax structures: progressive, regressive, proportional",
-                    "Mandatory outlays: required by law (Social Security, Medicare)",
-                    "Discretionary outlays: set by Congress (defense, education)",
-                    "State revenue: taxes, fees, federal grants",
-                    "Deficit: spending > revenue",
-                    "Debt: accumulated deficits"
+                    "Struktury podatkowe: progresywne, regresywne, proporcjonalne",
+                    "Wydatki obowiązkowe: wymagane przez prawo (Ubezpieczenia Społeczne, Medicare)",
+                    "Wydatki uznaniowe: ustalone przez Kongres (obrona, edukacja)",
+                    "Dochody stanowe: podatki, opłaty, dotacje federalne",
+                    "Deficyt: wydatki > dochody",
+                    "Dług: skumulowane deficyty"
                   ]
                 },
                 "economics-u7-l3-practice": {
-                  "title": "Praktyka: Government budgets revenue and expenditures"
+                  "title": "Praktyka: Dochody i wydatki budżetów rządowych"
                 },
                 "economics-u7-l3-quiz": {
                   "title": "Quiz: Government budgets; revenue and expenditures"
@@ -4577,22 +4577,22 @@
             "lesson-8-1": {
               "contentItem": {
                 "economics-u8-l1-video-1": {
-                  "title": "Trade"
+                  "title": "Handel"
                 },
                 "economics-u8-l1-article": {
-                  "title": "Naucz się: Trade",
+                  "title": "Naucz się: Handel",
                   "importantPoints": [
-                    "Comparative advantage: lower opportunity cost",
-                    "Specialization: focus on what you do best",
-                    "Gains from trade: both countries benefit",
-                    "Absolute vs. comparative advantage",
-                    "Trade surplus: exports > imports",
-                    "Trade deficit: exports < imports",
-                    "Trade barriers: tariffs, quotas, subsidies"
+                    "Przewaga komparatywna: niższy koszt alternatywny",
+                    "Specjalizacja: skup się na tym, co robisz najlepiej",
+                    "Korzyści z handlu: oba kraje zyskują",
+                    "Przewaga absolutna vs komparatywna",
+                    "Nadwyżka handlowa: eksport > import",
+                    "Deficyt handlowy: eksport < import",
+                    "Bariery handlowe: cła, kwoty, subsydia"
                   ]
                 },
                 "economics-u8-l1-practice": {
-                  "title": "Praktyka: Trade"
+                  "title": "Praktyka: Handel"
                 },
                 "economics-u8-l1-quiz": {
                   "title": "Quiz: Trade"
@@ -4602,21 +4602,21 @@
             "lesson-8-2": {
               "contentItem": {
                 "economics-u8-l2-video-1": {
-                  "title": "Currency conversion"
+                  "title": "Konwersja walut"
                 },
                 "economics-u8-l2-article": {
-                  "title": "Naucz się: Currency conversion",
+                  "title": "Naucz się: Konwersja walut",
                   "importantPoints": [
-                    "Exchange rate: price of one currency in another",
-                    "Fixed vs. floating vs. managed float",
-                    "Factors: interest rates, inflation, growth, stability",
-                    "Appreciation: currency increases in value",
-                    "Depreciation: currency decreases in value",
-                    "Affects trade and investment"
+                    "Kurs wymiany: cena jednej waluty w drugiej",
+                    "Stały vs płynny vs zarządzany płynny",
+                    "Czynniki: stopy procentowe, inflacja, wzrost, stabilność",
+                    "Aprecjacja: waluta zyskuje na wartości",
+                    "Deprecjacja: waluta traci na wartości",
+                    "Wpływa na handel i inwestycje"
                   ]
                 },
                 "economics-u8-l2-practice": {
-                  "title": "Praktyka: Exchange rates"
+                  "title": "Praktyka: Kursy wymiany"
                 },
                 "economics-u8-l2-quiz": {
                   "title": "Quiz: Currency conversion"
@@ -4626,21 +4626,21 @@
             "lesson-8-3": {
               "contentItem": {
                 "economics-u8-l3-video-1": {
-                  "title": "Globalization"
+                  "title": "Globalizacja"
                 },
                 "economics-u8-l3-article": {
-                  "title": "Naucz się: Globalization",
+                  "title": "Naucz się: Globalizacja",
                   "importantPoints": [
-                    "Globalization: increasing economic integration",
-                    "Economic interdependence: countries depend on each other",
-                    "Benefits: lower prices, growth, technology",
-                    "Costs: job losses, inequality, environmental concerns",
-                    "Trade agreements: reduce barriers",
-                    "Types: FTA, customs unions, common markets"
+                    "Globalizacja: rosnąca integracja gospodarcza",
+                    "Współzależność gospodarcza: kraje zależą od siebie",
+                    "Korzyści: niższe ceny, wzrost, technologia",
+                    "Koszty: utrata miejsc pracy, nierówności, obawy środowiskowe",
+                    "Umowy handlowe: zmniejszają bariery",
+                    "Typy: FTA, unie celne, wspólne rynki"
                   ]
                 },
                 "economics-u8-l3-practice": {
-                  "title": "Praktyka: Globalization"
+                  "title": "Praktyka: Globalizacja"
                 },
                 "economics-u8-l3-quiz": {
                   "title": "Quiz: Globalization"
@@ -4654,19 +4654,19 @@
             "lesson-9-1": {
               "contentItem": {
                 "economics-u9-l1-video-1": {
-                  "title": "Education and earnings"
+                  "title": "Edukacja i zarobki"
                 },
                 "economics-u9-l1-article": {
-                  "title": "Naucz się: Education and earnings",
+                  "title": "Naucz się: Edukacja i zarobki",
                   "importantPoints": [
-                    "Education as investment: costs and returns",
-                    "Benefits: higher income, better opportunities",
-                    "Investment in human capital",
-                    "Types: formal education, training, certifications"
+                    "Edukacja jako inwestycja: koszty i zwroty",
+                    "Korzyści: wyższy dochód, lepsze możliwości",
+                    "Inwestycja w kapitał ludzki",
+                    "Typy: formalna edukacja, szkolenia, certyfikaty"
                   ]
                 },
                 "economics-u9-l1-practice": {
-                  "title": "Praktyka: Educational investment"
+                  "title": "Praktyka: Inwestycja edukacyjna"
                 },
                 "economics-u9-l1-quiz": {
                   "title": "Quiz: Education and earnings"
@@ -4676,22 +4676,22 @@
             "lesson-9-2": {
               "contentItem": {
                 "economics-u9-l2-video-1": {
-                  "title": "Postsecondary education"
+                  "title": "Edukacja podyplomowa"
                 },
                 "economics-u9-l2-article": {
-                  "title": "Naucz się: Postsecondary education",
+                  "title": "Naucz się: Edukacja podyplomowa",
                   "importantPoints": [
-                    "Direct costs: tuition, fees, books",
-                    "Indirect costs: transportation, opportunity cost",
-                    "True cost: net price after financial aid",
-                    "Grants: free money, don't repay",
-                    "Scholarships: free money, don't repay",
-                    "Student loans: must repay with interest",
-                    "529 plans: tax-advantaged savings"
+                    "Koszty bezpośrednie: czesne, opłaty, książki",
+                    "Koszty pośrednie: transport, koszt alternatywny",
+                    "Prawdziwy koszt: cena netto po pomocy finansowej",
+                    "Dotacje: darmowe pieniądze, nie spłacasz",
+                    "Stypendia: darmowe pieniądze, nie spłacasz",
+                    "Pożyczki studenckie: musisz spłacić z odsetkami",
+                    "Plany 529: oszczędności z korzyściami podatkowymi"
                   ]
                 },
                 "economics-u9-l2-practice": {
-                  "title": "Praktyka: Paying for education"
+                  "title": "Praktyka: Płacenie za edukację"
                 },
                 "economics-u9-l2-quiz": {
                   "title": "Quiz: Postsecondary education"
@@ -4701,20 +4701,20 @@
             "lesson-9-3": {
               "contentItem": {
                 "economics-u9-l3-video-1": {
-                  "title": "Cost of postsecondary education"
+                  "title": "Koszt edukacji podyplomowej"
                 },
                 "economics-u9-l3-article": {
-                  "title": "Naucz się: Cost of postsecondary education",
+                  "title": "Naucz się: Koszt edukacji podyplomowej",
                   "importantPoints": [
-                    "Compare net price, not sticker price",
-                    "Public: lower cost, state-funded",
-                    "Private: higher cost, more resources",
-                    "Community college: lowest cost, two-year",
-                    "Certification: short-term, specific skills"
+                    "Porównuj cenę netto, nie cenę nominalną",
+                    "Publiczne: niższy koszt, finansowane przez państwo",
+                    "Prywatne: wyższy koszt, więcej zasobów",
+                    "Kolegium społeczne: najniższy koszt, dwuletnie",
+                    "Certyfikacja: krótkoterminowa, konkretne umiejętności"
                   ]
                 },
                 "economics-u9-l3-practice": {
-                  "title": "Praktyka: Comparing different options"
+                  "title": "Praktyka: Porównywanie różnych opcji"
                 },
                 "economics-u9-l3-quiz": {
                   "title": "Quiz: Cost of postsecondary education"
@@ -4724,20 +4724,20 @@
             "lesson-9-4": {
               "contentItem": {
                 "economics-u9-l4-video-1": {
-                  "title": "Financial aid"
+                  "title": "Pomoc finansowa"
                 },
                 "economics-u9-l4-article": {
-                  "title": "Naucz się: Financial aid",
+                  "title": "Naucz się: Pomoc finansowa",
                   "importantPoints": [
-                    "FAFSA: required for federal aid",
-                    "Financial aid package: grants, scholarships, work-study, loans",
-                    "Compare net price, not total aid",
-                    "Accept free money first, loans last",
-                    "Eligibility varies by type of aid"
+                    "FAFSA: wymagane dla pomocy federalnej",
+                    "Pakiet pomocy finansowej: dotacje, stypendia, praca-studiowanie, pożyczki",
+                    "Porównuj cenę netto, nie całkowitą pomoc",
+                    "Przyjmij darmowe pieniądze najpierw, pożyczki na końcu",
+                    "Kwalifikowalność różni się w zależności od typu pomocy"
                   ]
                 },
                 "economics-u9-l4-practice": {
-                  "title": "Praktyka: FAFSA and financial aid"
+                  "title": "Praktyka: FAFSA i pomoc finansowa"
                 },
                 "economics-u9-l4-quiz": {
                   "title": "Quiz: Financial aid"
@@ -4747,24 +4747,24 @@
             "lesson-9-5": {
               "contentItem": {
                 "economics-u9-l5-video-1": {
-                  "title": "Student loans"
+                  "title": "Pożyczki studenckie"
                 },
                 "economics-u9-l5-article": {
-                  "title": "Naucz się: Student loans",
+                  "title": "Naucz się: Pożyczki studenckie",
                   "importantPoints": [
-                    "Loans: benefits and drawbacks",
-                    "Repayment options: standard, graduated, extended, income-driven",
-                    "Consolidation: simplify but may cost more",
-                    "PSLF: forgiveness for public service",
-                    "Deferment: temporarily postpone payments",
-                    "Default: serious consequences"
+                    "Pożyczki: korzyści i wady",
+                    "Opcje spłaty: standardowa, stopniowa, przedłużona, zależna od dochodu",
+                    "Konsolidacja: upraszcza, ale może kosztować więcej",
+                    "PSLF: umorzenie za służbę publiczną",
+                    "Odroczenie: tymczasowe odłożenie płatności",
+                    "Niewypłacalność: poważne konsekwencje"
                   ]
                 },
                 "economics-u9-l5-practice": {
-                  "title": "Praktyka: Student loan repayment"
+                  "title": "Praktyka: Spłata pożyczek studenckich"
                 },
                 "economics-u9-l5-practice-2": {
-                  "title": "Practice: Student loan repayment and default"
+                  "title": "Praktyka: Spłata i niewypłacalność pożyczek studenckich"
                 },
                 "economics-u9-l5-quiz": {
                   "title": "Quiz: Student loans"
@@ -4778,23 +4778,23 @@
             "lesson-10-1": {
               "contentItem": {
                 "economics-u10-l1-video-1": {
-                  "title": "Compensation"
+                  "title": "Wynagrodzenie"
                 },
                 "economics-u10-l1-article": {
-                  "title": "Naucz się: Compensation",
+                  "title": "Naucz się: Wynagrodzenie",
                   "importantPoints": [
-                    "Employee benefits: non-wage compensation",
-                    "Types: health, retirement, time off, insurance",
-                    "Value: 30-40% of salary",
-                    "Understand costs and options",
-                    "Benefits vary by employer"
+                    "Świadczenia pracownicze: wynagrodzenie pozapłacowe",
+                    "Typy: zdrowie, emerytura, urlop, ubezpieczenie",
+                    "Wartość: 30-40% wynagrodzenia",
+                    "Zrozum koszty i opcje",
+                    "Świadczenia różnią się w zależności od pracodawcy"
                   ]
                 },
                 "economics-u10-l1-practice": {
-                  "title": "Praktyka: Benefits"
+                  "title": "Praktyka: Świadczenia"
                 },
                 "economics-u10-l1-practice-2": {
-                  "title": "Practice: Identifying benefits"
+                  "title": "Praktyka: Identyfikacja świadczeń"
                 },
                 "economics-u10-l1-quiz": {
                   "title": "Quiz: Compensation"
@@ -4804,20 +4804,20 @@
             "lesson-10-2": {
               "contentItem": {
                 "economics-u10-l2-video-1": {
-                  "title": "Paycheck"
+                  "title": "Wypłata"
                 },
                 "economics-u10-l2-article": {
-                  "title": "Naucz się: Paycheck",
+                  "title": "Naucz się: Wypłata",
                   "importantPoints": [
-                    "Gross pay: total before deductions",
-                    "Net pay: take-home after deductions",
-                    "Deductions: taxes, insurance, retirement",
-                    "Paystub: shows all details",
-                    "Review regularly for accuracy"
+                    "Wynagrodzenie brutto: całkowite przed potrąceniami",
+                    "Wynagrodzenie netto: do domu po potrąceniach",
+                    "Potrącenia: podatki, ubezpieczenie, emerytura",
+                    "Lista płac: pokazuje wszystkie szczegóły",
+                    "Przeglądaj regularnie dla dokładności"
                   ]
                 },
                 "economics-u10-l2-practice": {
-                  "title": "Praktyka: Paycheck deductions"
+                  "title": "Praktyka: Potrącenia z wypłaty"
                 },
                 "economics-u10-l2-quiz": {
                   "title": "Quiz: Paycheck"
@@ -4827,21 +4827,21 @@
             "lesson-10-3": {
               "contentItem": {
                 "economics-u10-l3-video-1": {
-                  "title": "Non-typical pay"
+                  "title": "Niestandardowe wynagrodzenie"
                 },
                 "economics-u10-l3-article": {
-                  "title": "Naucz się: Non-typical pay",
+                  "title": "Naucz się: Niestandardowe wynagrodzenie",
                   "importantPoints": [
-                    "Non-typical pay: variable, less predictable",
-                    "Types: commission, tips, contract, freelance",
-                    "Tax implications: must report income",
-                    "Self-employment tax: 15.3%",
-                    "Quarterly estimated taxes",
-                    "Track income and expenses"
+                    "Niestandardowe wynagrodzenie: zmienne, mniej przewidywalne",
+                    "Typy: prowizja, napiwki, kontrakt, freelancing",
+                    "Implikacje podatkowe: musisz zgłosić dochód",
+                    "Podatek od samozatrudnienia: 15,3%",
+                    "Kwartalne szacunkowe podatki",
+                    "Śledź dochody i wydatki"
                   ]
                 },
                 "economics-u10-l3-practice": {
-                  "title": "Praktyka: Non-typical pay structures"
+                  "title": "Praktyka: Struktury niestandardowego wynagrodzenia"
                 },
                 "economics-u10-l3-quiz": {
                   "title": "Quiz: Non-typical pay"
@@ -4851,20 +4851,20 @@
             "lesson-10-4": {
               "contentItem": {
                 "economics-u10-l4-video-1": {
-                  "title": "Hiring process"
+                  "title": "Proces zatrudniania"
                 },
                 "economics-u10-l4-article": {
-                  "title": "Naucz się: Hiring process",
+                  "title": "Naucz się: Proces zatrudniania",
                   "importantPoints": [
-                    "Hiring forms: required documents",
-                    "W-4: tax withholding form",
-                    "I-9: employment eligibility verification",
-                    "Complete within required timeframes",
-                    "Update when circumstances change"
+                    "Formularze zatrudnienia: wymagane dokumenty",
+                    "W-4: formularz potrącania podatku",
+                    "I-9: weryfikacja uprawnień do zatrudnienia",
+                    "Wypełnij w wymaganych terminach",
+                    "Aktualizuj, gdy zmienią się okoliczności"
                   ]
                 },
                 "economics-u10-l4-practice": {
-                  "title": "Praktyka: Hiring forms"
+                  "title": "Praktyka: Formularze zatrudnienia"
                 },
                 "economics-u10-l4-quiz": {
                   "title": "Quiz: Hiring process"
@@ -4878,20 +4878,20 @@
             "lesson-11-1": {
               "contentItem": {
                 "economics-u11-l1-video-1": {
-                  "title": "Banking and financial institutions"
+                  "title": "Bankowość i instytucje finansowe"
                 },
                 "economics-u11-l1-article": {
-                  "title": "Naucz się: Banking and financial institutions",
+                  "title": "Naucz się: Bankowość i instytucje finansowe",
                   "importantPoints": [
-                    "Types: commercial banks, credit unions, online banks",
-                    "Credit unions: member-owned, lower fees",
-                    "Online banks: lower fees, higher rates",
-                    "Consider: fees, rates, convenience, services",
-                    "FDIC/NCUA insurance protects deposits"
+                    "Typy: banki komercyjne, kasy kredytowe, banki online",
+                    "Kasy kredytowe: własność członków, niższe opłaty",
+                    "Banki online: niższe opłaty, wyższe stopy",
+                    "Rozważ: opłaty, stopy, wygoda, usługi",
+                    "Ubezpieczenie FDIC/NCUA chroni depozyty"
                   ]
                 },
                 "economics-u11-l1-practice": {
-                  "title": "Praktyka: Banking institutions"
+                  "title": "Praktyka: Instytucje bankowe"
                 },
                 "economics-u11-l1-quiz": {
                   "title": "Quiz: Banking and financial institutions"
@@ -4901,27 +4901,27 @@
             "lesson-11-2": {
               "contentItem": {
                 "economics-u11-l2-video-1": {
-                  "title": "Understanding bank accounts"
+                  "title": "Rozumienie kont bankowych"
                 },
                 "economics-u11-l2-article": {
-                  "title": "Naucz się: Understanding bank accounts",
+                  "title": "Naucz się: Rozumienie kont bankowych",
                   "importantPoints": [
-                    "Checking: daily transactions",
-                    "Savings: earn interest, limited transactions",
-                    "Money market: higher interest",
-                    "CD: fixed term, highest interest",
-                    "Opening: ID, SSN, initial deposit",
-                    "Management: monitor, track, reconcile"
+                    "Rachunek bieżący: codzienne transakcje",
+                    "Oszczędnościowy: zarabia odsetki, ograniczone transakcje",
+                    "Rachunek rynku pieniężnego: wyższe odsetki",
+                    "CD: stały termin, najwyższe odsetki",
+                    "Otwarcie: dowód tożsamości, PESEL, początkowy depozyt",
+                    "Zarządzanie: monitoruj, śledź, uzgadniaj"
                   ]
                 },
                 "economics-u11-l2-practice": {
-                  "title": "Praktyka: Account identification"
+                  "title": "Praktyka: Identyfikacja konta"
                 },
                 "economics-u11-l2-practice-2": {
-                  "title": "Practice: Opening and managing bank accounts"
+                  "title": "Praktyka: Otwieranie i zarządzanie kontami bankowymi"
                 },
                 "economics-u11-l2-practice-3": {
-                  "title": "Practice: Effective bank account management"
+                  "title": "Praktyka: Skuteczne zarządzanie kontem bankowym"
                 },
                 "economics-u11-l2-quiz": {
                   "title": "Quiz: Understanding bank accounts"
@@ -4931,19 +4931,19 @@
             "lesson-11-3": {
               "contentItem": {
                 "economics-u11-l3-video-1": {
-                  "title": "Tracking, reconciling and more"
+                  "title": "Śledzenie, uzgadnianie i więcej"
                 },
                 "economics-u11-l3-article": {
-                  "title": "Naucz się: Tracking, reconciling and more",
+                  "title": "Naucz się: Śledzenie, uzgadnianie i więcej",
                   "importantPoints": [
-                    "Regular tracking: know balance, avoid overdrafts",
-                    "Catch errors and fraud",
-                    "Reconciliation: match records with statement",
-                    "Benefits: accuracy, control, security"
+                    "Regularne śledzenie: poznaj saldo, unikaj przekroczeń",
+                    "Wychwyć błędy i oszustwa",
+                    "Uzgadnianie: dopasuj zapisy do wyciągu",
+                    "Korzyści: dokładność, kontrola, bezpieczeństwo"
                   ]
                 },
                 "economics-u11-l3-practice": {
-                  "title": "Praktyka: Account tracking and management"
+                  "title": "Praktyka: Śledzenie i zarządzanie kontem"
                 },
                 "economics-u11-l3-quiz": {
                   "title": "Quiz: Tracking, reconciling and more"
@@ -4953,24 +4953,24 @@
             "lesson-11-4": {
               "contentItem": {
                 "economics-u11-l4-video-1": {
-                  "title": "Interest"
+                  "title": "Odsetki"
                 },
                 "economics-u11-l4-article": {
-                  "title": "Naucz się: Interest",
+                  "title": "Naucz się: Odsetki",
                   "importantPoints": [
-                    "Interest: money earned on savings or paid on loans",
-                    "Compound interest: interest on interest",
-                    "Time is key factor in compounding",
-                    "Rates affected by Fed policy, inflation, economy",
-                    "Rising rates: good for savers, bad for borrowers",
-                    "Falling rates: bad for savers, good for borrowers"
+                    "Odsetki: pieniądze zarobione na oszczędnościach lub zapłacone za pożyczki",
+                    "Odsetki składane: odsetki od odsetek",
+                    "Czas jest kluczowym czynnikiem w składaniu",
+                    "Stopy wpływają: polityka Fed, inflacja, gospodarka",
+                    "Rosnące stopy: dobre dla oszczędzających, złe dla pożyczkobiorców",
+                    "Spadające stopy: złe dla oszczędzających, dobre dla pożyczkobiorców"
                   ]
                 },
                 "economics-u11-l4-practice": {
-                  "title": "Praktyka: Understanding compound growth"
+                  "title": "Praktyka: Rozumienie wzrostu składanego"
                 },
                 "economics-u11-l4-practice-2": {
-                  "title": "Practice: The effects of interest rates"
+                  "title": "Praktyka: Efekty stóp procentowych"
                 },
                 "economics-u11-l4-quiz": {
                   "title": "Quiz: Interest"
@@ -4984,19 +4984,19 @@
             "lesson-12-1": {
               "contentItem": {
                 "economics-u12-l1-video-1": {
-                  "title": "SMART goals"
+                  "title": "Cele SMART"
                 },
                 "economics-u12-l1-article": {
-                  "title": "Naucz się: SMART goals",
+                  "title": "Naucz się: Cele SMART",
                   "importantPoints": [
-                    "SMART: Specific, Measurable, Achievable, Relevant, Time-bound",
-                    "More effective than vague goals",
-                    "Clear, trackable, realistic",
-                    "Write goals down, review regularly"
+                    "SMART: Konkretne, Mierzalne, Osiągalne, Istotne, Określone w czasie",
+                    "Bardziej skuteczne niż niejasne cele",
+                    "Jasne, śledzone, realistyczne",
+                    "Zapisz cele, przeglądaj regularnie"
                   ]
                 },
                 "economics-u12-l1-practice": {
-                  "title": "Praktyka: SMART goals"
+                  "title": "Praktyka: Cele SMART"
                 },
                 "economics-u12-l1-quiz": {
                   "title": "Quiz: SMART goals"
@@ -5006,20 +5006,20 @@
             "lesson-12-2": {
               "contentItem": {
                 "economics-u12-l2-video-1": {
-                  "title": "Short, medium, and long term goals"
+                  "title": "Cele krótko-, średnio- i długoterminowe"
                 },
                 "economics-u12-l2-article": {
-                  "title": "Naucz się: Short, medium, and long term goals",
+                  "title": "Naucz się: Cele krótko-, średnio- i długoterminowe",
                   "importantPoints": [
-                    "Short-term: within 1 year",
-                    "Medium-term: 1-5 years",
-                    "Long-term: 5+ years",
-                    "Balance all three types",
-                    "Prioritize and plan"
+                    "Krótkoterminowe: w ciągu 1 roku",
+                    "Średnioterminowe: 1-5 lat",
+                    "Długoterminowe: 5+ lat",
+                    "Równoważ wszystkie trzy typy",
+                    "Ustal priorytety i planuj"
                   ]
                 },
                 "economics-u12-l2-practice": {
-                  "title": "Praktyka: Short, medium, long term goals"
+                  "title": "Praktyka: Cele krótko-, średnio- i długoterminowe"
                 },
                 "economics-u12-l2-quiz": {
                   "title": "Quiz: Short, medium, and long term goals"
@@ -5029,20 +5029,20 @@
             "lesson-12-3": {
               "contentItem": {
                 "economics-u12-l3-video-1": {
-                  "title": "Net worth"
+                  "title": "Wartość netto"
                 },
                 "economics-u12-l3-article": {
-                  "title": "Naucz się: Net worth",
+                  "title": "Naucz się: Wartość netto",
                   "importantPoints": [
-                    "Net worth: assets - liabilities",
-                    "Assets: what you own",
-                    "Liabilities: what you owe",
-                    "Measures financial position",
-                    "Track over time"
+                    "Wartość netto: aktywa - zobowiązania",
+                    "Aktywa: to, co posiadasz",
+                    "Zobowiązania: to, co jesteś winien",
+                    "Mierzy sytuację finansową",
+                    "Śledź w czasie"
                   ]
                 },
                 "economics-u12-l3-practice": {
-                  "title": "Praktyka: Net worth"
+                  "title": "Praktyka: Wartość netto"
                 },
                 "economics-u12-l3-quiz": {
                   "title": "Quiz: Net worth"
@@ -5056,20 +5056,20 @@
             "lesson-13-1": {
               "contentItem": {
                 "economics-u13-l1-video-1": {
-                  "title": "Budgeting"
+                  "title": "Budżetowanie"
                 },
                 "economics-u13-l1-article": {
-                  "title": "Naucz się: Budgeting",
+                  "title": "Naucz się: Budżetowanie",
                   "importantPoints": [
-                    "Budget: plan for spending money",
-                    "Start by tracking current spending",
-                    "Build: income, expenses, savings",
-                    "50-30-20 rule: needs, wants, savings",
-                    "Balance: income = expenses + savings"
+                    "Budżet: plan wydawania pieniędzy",
+                    "Zacznij od śledzenia obecnych wydatków",
+                    "Buduj: dochód, wydatki, oszczędności",
+                    "Zasada 50-30-20: potrzeby, zachcianki, oszczędności",
+                    "Równowaga: dochód = wydatki + oszczędności"
                   ]
                 },
                 "economics-u13-l1-practice": {
-                  "title": "Praktyka: Building a budget"
+                  "title": "Praktyka: Budowanie budżetu"
                 },
                 "economics-u13-l1-quiz": {
                   "title": "Quiz: Budgeting"
@@ -5079,20 +5079,20 @@
             "lesson-13-2": {
               "contentItem": {
                 "economics-u13-l2-video-1": {
-                  "title": "Saving money"
+                  "title": "Oszczędzanie pieniędzy"
                 },
                 "economics-u13-l2-article": {
-                  "title": "Naucz się: Saving money",
+                  "title": "Naucz się: Oszczędzanie pieniędzy",
                   "importantPoints": [
-                    "Why save: emergencies, goals, retirement",
-                    "How: pay yourself first, automate",
-                    "Planned vs. unplanned expenses",
-                    "Emergency fund: 3-6 months expenses",
-                    "Start small, be consistent"
+                    "Dlaczego oszczędzać: nagłe wypadki, cele, emerytura",
+                    "Jak: zapłać sobie najpierw, automatyzuj",
+                    "Planowane vs nieplanowane wydatki",
+                    "Fundusz awaryjny: 3-6 miesięcy wydatków",
+                    "Zacznij mało, bądź konsekwentny"
                   ]
                 },
                 "economics-u13-l2-practice": {
-                  "title": "Praktyka: Emergency fund"
+                  "title": "Praktyka: Fundusz awaryjny"
                 },
                 "economics-u13-l2-quiz": {
                   "title": "Quiz: Saving money"
@@ -5102,20 +5102,20 @@
             "lesson-13-3": {
               "contentItem": {
                 "economics-u13-l3-video-1": {
-                  "title": "Reducing expenses"
+                  "title": "Redukcja wydatków"
                 },
                 "economics-u13-l3-article": {
-                  "title": "Naucz się: Reducing expenses",
+                  "title": "Naucz się: Redukcja wydatków",
                   "importantPoints": [
-                    "Compare deals: total cost, unit price, quality",
-                    "Unit pricing: price per unit",
-                    "Larger sizes often cheaper per unit",
-                    "Multiple strategies to reduce expenses",
-                    "Track spending, cut wants, negotiate"
+                    "Porównuj oferty: całkowity koszt, cena jednostkowa, jakość",
+                    "Cena jednostkowa: cena za jednostkę",
+                    "Większe rozmiary często tańsze za jednostkę",
+                    "Wiele strategii redukcji wydatków",
+                    "Śledź wydatki, ogranicz zachcianki, negocjuj"
                   ]
                 },
                 "economics-u13-l3-practice": {
-                  "title": "Praktyka: Unit pricing"
+                  "title": "Praktyka: Cena jednostkowa"
                 },
                 "economics-u13-l3-quiz": {
                   "title": "Quiz: Reducing expenses"
@@ -5129,21 +5129,21 @@
             "lesson-14-1": {
               "contentItem": {
                 "economics-u14-l1-video-1": {
-                  "title": "Risk and return"
+                  "title": "Ryzyko i zwrot"
                 },
                 "economics-u14-l1-article": {
-                  "title": "Naucz się: Risk and return",
+                  "title": "Naucz się: Ryzyko i zwrot",
                   "importantPoints": [
-                    "Risk: possibility of loss",
-                    "Return: profit or loss",
-                    "Risk-return tradeoff: higher risk → higher return",
-                    "Stocks: higher risk, higher return",
-                    "Bonds: lower risk, lower return",
-                    "Diversification: spreads risk"
+                    "Ryzyko: możliwość straty",
+                    "Zwrot: zysk lub strata",
+                    "Kompromis ryzyko-zwrot: wyższe ryzyko → wyższy zwrot",
+                    "Akcje: wyższe ryzyko, wyższy zwrot",
+                    "Obligacje: niższe ryzyko, niższy zwrot",
+                    "Dywersyfikacja: rozkłada ryzyko"
                   ]
                 },
                 "economics-u14-l1-practice": {
-                  "title": "Praktyka: Investments"
+                  "title": "Praktyka: Inwestycje"
                 },
                 "economics-u14-l1-quiz": {
                   "title": "Quiz: Risk and return"
@@ -5153,20 +5153,20 @@
             "lesson-14-2": {
               "contentItem": {
                 "economics-u14-l2-video-1": {
-                  "title": "Planning for retirement"
+                  "title": "Planowanie emerytury"
                 },
                 "economics-u14-l2-article": {
-                  "title": "Naucz się: Planning for retirement",
+                  "title": "Naucz się: Planowanie emerytury",
                   "importantPoints": [
-                    "Plan early: longer life, inflation, healthcare",
-                    "Estimate costs: 70-80% of pre-retirement income",
-                    "Sources: Social Security, 401(k), savings, investments",
-                    "Diversify income sources",
-                    "Healthcare major expense"
+                    "Planuj wcześnie: dłuższe życie, inflacja, opieka zdrowotna",
+                    "Oszacuj koszty: 70-80% dochodu przed emeryturą",
+                    "Źródła: Ubezpieczenia Społeczne, 401(k), oszczędności, inwestycje",
+                    "Dywersyfikuj źródła dochodu",
+                    "Opieka zdrowotna główny wydatek"
                   ]
                 },
                 "economics-u14-l2-practice": {
-                  "title": "Praktyka: Retirement"
+                  "title": "Praktyka: Emerytura"
                 },
                 "economics-u14-l2-quiz": {
                   "title": "Quiz: Planning for retirement"
@@ -5176,20 +5176,20 @@
             "lesson-14-3": {
               "contentItem": {
                 "economics-u14-l3-video-1": {
-                  "title": "Saving for retirement"
+                  "title": "Oszczędzanie na emeryturę"
                 },
                 "economics-u14-l3-article": {
-                  "title": "Naucz się: Saving for retirement",
+                  "title": "Naucz się: Oszczędzanie na emeryturę",
                   "importantPoints": [
-                    "Social Security: government retirement program",
-                    "Funded by payroll taxes",
-                    "Provides retirement, disability, survivor benefits",
-                    "Amount based on earnings history",
-                    "Not enough alone, need additional savings"
+                    "Ubezpieczenia Społeczne: rządowy program emerytalny",
+                    "Finansowane z podatków od wynagrodzeń",
+                    "Zapewnia emerytury, renty, świadczenia dla pozostałych",
+                    "Kwota oparta na historii zarobków",
+                    "Niewystarczające same, potrzebne dodatkowe oszczędności"
                   ]
                 },
                 "economics-u14-l3-practice": {
-                  "title": "Praktyka: Social Security"
+                  "title": "Praktyka: Ubezpieczenia Społeczne"
                 },
                 "economics-u14-l3-quiz": {
                   "title": "Quiz: Saving for retirement"
@@ -5203,21 +5203,21 @@
             "lesson-15-1": {
               "contentItem": {
                 "economics-u15-l1-video-1": {
-                  "title": "Credit cards"
+                  "title": "Karty kredytowe"
                 },
                 "economics-u15-l1-article": {
-                  "title": "Naucz się: Credit cards",
+                  "title": "Naucz się: Karty kredytowe",
                   "importantPoints": [
-                    "Credit card: borrow money to make purchases",
-                    "Types: standard, rewards, secured, student",
-                    "Compare: APR, fees, rewards, grace period",
-                    "Schumer box: standardized terms",
-                    "Good: convenience, rewards, build credit",
-                    "Bad: high rates, debt risk, fees"
+                    "Karta kredytowa: pożycz pieniądze, aby dokonać zakupów",
+                    "Typy: standardowa, z nagrodami, zabezpieczona, studencka",
+                    "Porównaj: APR, opłaty, nagrody, okres karencji",
+                    "Pole Schumera: ustandaryzowane warunki",
+                    "Dobre: wygoda, nagrody, budowanie kredytu",
+                    "Złe: wysokie stopy, ryzyko długu, opłaty"
                   ]
                 },
                 "economics-u15-l1-practice": {
-                  "title": "Praktyka: Credit cards"
+                  "title": "Praktyka: Karty kredytowe"
                 },
                 "economics-u15-l1-quiz": {
                   "title": "Quiz: Credit cards"
@@ -5227,23 +5227,23 @@
             "lesson-15-2": {
               "contentItem": {
                 "economics-u15-l2-video-1": {
-                  "title": "Credit score"
+                  "title": "Ocena kredytowa"
                 },
                 "economics-u15-l2-article": {
-                  "title": "Naucz się: Credit score",
+                  "title": "Naucz się: Ocena kredytowa",
                   "importantPoints": [
-                    "Credit score: 300-850, measures creditworthiness",
-                    "Factors: payment history (35%), utilization (30%), history (15%)",
-                    "Higher score: better rates, easier approval",
-                    "Improve: pay on time, reduce debt, keep old accounts",
-                    "Takes time to improve"
+                    "Ocena kredytowa: 300-850, mierzy wiarygodność kredytową",
+                    "Czynniki: historia płatności (35%), wykorzystanie (30%), historia (15%)",
+                    "Wyższa ocena: lepsze stopy, łatwiejsza aprobata",
+                    "Popraw: płać na czas, zmniejsz dług, zachowaj stare konta",
+                    "Wymaga czasu na poprawę"
                   ]
                 },
                 "economics-u15-l2-practice": {
-                  "title": "Praktyka: Understanding credit score"
+                  "title": "Praktyka: Rozumienie oceny kredytowej"
                 },
                 "economics-u15-l2-practice-2": {
-                  "title": "Practice: Factors that affect a credit score"
+                  "title": "Praktyka: Czynniki wpływające na ocenę kredytową"
                 },
                 "economics-u15-l2-quiz": {
                   "title": "Quiz: Credit score"
@@ -5257,16 +5257,16 @@
             "lesson-16-1": {
               "contentItem": {
                 "economics-u16-l1-video-1": {
-                  "title": "Terms of borrowing"
+                  "title": "Warunki pożyczania"
                 },
                 "economics-u16-l1-article": {
-                  "title": "Naucz się: Terms of borrowing",
+                  "title": "Naucz się: Warunki pożyczania",
                   "importantPoints": [
-                    "APR: Annual Percentage Rate",
-                    "Includes interest and fees",
-                    "Shows true cost of borrowing",
-                    "Allows comparison of loans",
-                    "Lower APR = less cost"
+                    "APR: Roczna Stopa Procentowa",
+                    "Zawiera odsetki i opłaty",
+                    "Pokazuje prawdziwy koszt pożyczania",
+                    "Umożliwia porównanie pożyczek",
+                    "Niższy APR = mniejszy koszt"
                   ]
                 },
                 "economics-u16-l1-practice": {
@@ -5280,30 +5280,30 @@
             "lesson-16-2": {
               "contentItem": {
                 "economics-u16-l2-video-1": {
-                  "title": "Borrowing money"
+                  "title": "Pożyczanie pieniędzy"
                 },
                 "economics-u16-l2-article": {
-                  "title": "Naucz się: Borrowing money",
+                  "title": "Naucz się: Pożyczanie pieniędzy",
                   "importantPoints": [
-                    "Sources: banks, credit unions, online, credit cards",
-                    "Process: check credit, shop, apply, review, accept",
-                    "Requirements: credit score, income, employment",
-                    "Predatory lending: unfair practices, warning signs",
-                    "Consumer laws: protect borrowers",
-                    "Know your rights"
+                    "Źródła: banki, kasy kredytowe, online, karty kredytowe",
+                    "Proces: sprawdź kredyt, porównaj, aplikuj, przejrzyj, zaakceptuj",
+                    "Wymagania: ocena kredytowa, dochód, zatrudnienie",
+                    "Drapieżne pożyczanie: nieuczciwe praktyki, znaki ostrzegawcze",
+                    "Prawa konsumentów: chronią pożyczkobiorców",
+                    "Znaj swoje prawa"
                   ]
                 },
                 "economics-u16-l2-practice": {
-                  "title": "Praktyka: Credit and sources"
+                  "title": "Praktyka: Kredyt i źródła"
                 },
                 "economics-u16-l2-practice-2": {
-                  "title": "Practice: Loan requirements"
+                  "title": "Praktyka: Wymagania pożyczki"
                 },
                 "economics-u16-l2-practice-3": {
-                  "title": "Practice: Predatory lending"
+                  "title": "Praktyka: Drapieżne pożyczanie"
                 },
                 "economics-u16-l2-practice-4": {
-                  "title": "Practice: Consumer laws"
+                  "title": "Praktyka: Prawa konsumentów"
                 },
                 "economics-u16-l2-quiz": {
                   "title": "Quiz: Borrowing money"
@@ -5313,19 +5313,19 @@
             "lesson-16-3": {
               "contentItem": {
                 "economics-u16-l3-video-1": {
-                  "title": "Types of loans"
+                  "title": "Typy pożyczek"
                 },
                 "economics-u16-l3-article": {
-                  "title": "Naucz się: Types of loans",
+                  "title": "Naucz się: Typy pożyczek",
                   "importantPoints": [
-                    "Secured: backed by collateral, lower rates",
-                    "Unsecured: no collateral, higher rates",
-                    "Secured: easier to get, asset at risk",
-                    "Unsecured: harder to get, no asset at risk"
+                    "Zabezpieczone: zabezpieczone zastawem, niższe stopy",
+                    "Niezabezpieczone: bez zastawu, wyższe stopy",
+                    "Zabezpieczone: łatwiejsze do uzyskania, aktywa zagrożone",
+                    "Niezabezpieczone: trudniejsze do uzyskania, brak aktywów zagrożonych"
                   ]
                 },
                 "economics-u16-l3-practice": {
-                  "title": "Praktyka: Secured vs unsecured credit"
+                  "title": "Praktyka: Kredyt zabezpieczony vs niezabezpieczony"
                 },
                 "economics-u16-l3-quiz": {
                   "title": "Quiz: Types of loans"
@@ -5335,26 +5335,26 @@
             "lesson-16-4": {
               "contentItem": {
                 "economics-u16-l4-video-1": {
-                  "title": "Debt"
+                  "title": "Dług"
                 },
                 "economics-u16-l4-article": {
-                  "title": "Naucz się: Debt",
+                  "title": "Naucz się: Dług",
                   "importantPoints": [
-                    "High rate method: pay highest rate first, saves money",
-                    "Snowball method: pay smallest first, provides motivation",
-                    "Debt repayment: systematic approach",
-                    "Amortization: shows payment schedule",
-                    "Debt management: budget, prioritize, avoid new debt"
+                    "Metoda wysokiej stopy: spłać najwyższą stopę najpierw, oszczędza pieniądze",
+                    "Metoda kuli śnieżnej: spłać najmniejszą najpierw, daje motywację",
+                    "Spłata długu: systematyczne podejście",
+                    "Amortyzacja: pokazuje harmonogram płatności",
+                    "Zarządzanie długiem: budżet, priorytetyzuj, unikaj nowego długu"
                   ]
                 },
                 "economics-u16-l4-practice": {
-                  "title": "Praktyka: Debt repayment"
+                  "title": "Praktyka: Spłata długu"
                 },
                 "economics-u16-l4-practice-2": {
-                  "title": "Practice: Debt payoff"
+                  "title": "Praktyka: Spłata długu"
                 },
                 "economics-u16-l4-practice-3": {
-                  "title": "Practice: Debt management"
+                  "title": "Praktyka: Zarządzanie długiem"
                 },
                 "economics-u16-l4-quiz": {
                   "title": "Quiz: Debt"
@@ -5364,20 +5364,20 @@
             "lesson-16-5": {
               "contentItem": {
                 "economics-u16-l5-video-1": {
-                  "title": "Bankruptcy"
+                  "title": "Bankructwo"
                 },
                 "economics-u16-l5-article": {
-                  "title": "Naucz się: Bankruptcy",
+                  "title": "Naucz się: Bankructwo",
                   "importantPoints": [
-                    "Bankruptcy: legal process to eliminate/restructure debt",
-                    "Chapter 7: liquidation, discharge debts",
-                    "Chapter 13: reorganization, repay over time",
-                    "Serious consequences: credit, future borrowing",
-                    "Last resort, consider alternatives first"
+                    "Bankructwo: proces prawny eliminacji/restrukturyzacji długu",
+                    "Rozdział 7: likwidacja, umorzenie długów",
+                    "Rozdział 13: reorganizacja, spłata w czasie",
+                    "Poważne konsekwencje: kredyt, przyszłe pożyczanie",
+                    "Ostatnia deska ratunku, rozważ alternatywy najpierw"
                   ]
                 },
                 "economics-u16-l5-practice": {
-                  "title": "Praktyka: Bankruptcy"
+                  "title": "Praktyka: Bankructwo"
                 },
                 "economics-u16-l5-quiz": {
                   "title": "Quiz: Bankruptcy"
@@ -5391,19 +5391,19 @@
             "lesson-17-1": {
               "contentItem": {
                 "economics-u17-l1-video-1": {
-                  "title": "What are taxes and why do we pay them"
+                  "title": "Czym są podatki i dlaczego je płacimy"
                 },
                 "economics-u17-l1-article": {
-                  "title": "Naucz się: What are taxes and why do we pay them",
+                  "title": "Naucz się: Czym są podatki i dlaczego je płacimy",
                   "importantPoints": [
-                    "Taxes: money paid to government",
-                    "Fund government services",
-                    "Types: income, sales, property, payroll",
-                    "Required by law"
+                    "Podatki: pieniądze płacone rządowi",
+                    "Finansują usługi rządowe",
+                    "Typy: dochodowy, od sprzedaży, od nieruchomości, od wynagrodzeń",
+                    "Wymagane przez prawo"
                   ]
                 },
                 "economics-u17-l1-practice": {
-                  "title": "Praktyka: Taxes"
+                  "title": "Praktyka: Podatki"
                 },
                 "economics-u17-l1-quiz": {
                   "title": "Quiz: What are taxes and why do we pay them"
@@ -5413,20 +5413,20 @@
             "lesson-17-2": {
               "contentItem": {
                 "economics-u17-l2-video-1": {
-                  "title": "Local taxes"
+                  "title": "Podatki lokalne"
                 },
                 "economics-u17-l2-article": {
-                  "title": "Naucz się: Local taxes",
+                  "title": "Naucz się: Podatki lokalne",
                   "importantPoints": [
-                    "Local taxes: collected by local governments",
-                    "Types: property, sales, income, utility",
-                    "Sales tax: rate × price",
-                    "Property tax: assessed value × rate",
-                    "Fund local services"
+                    "Podatki lokalne: pobierane przez samorządy lokalne",
+                    "Typy: od nieruchomości, od sprzedaży, dochodowy, od mediów",
+                    "Podatek od sprzedaży: stopa × cena",
+                    "Podatek od nieruchomości: wartość szacunkowa × stopa",
+                    "Finansują usługi lokalne"
                   ]
                 },
                 "economics-u17-l2-practice": {
-                  "title": "Praktyka: Calculating local taxes"
+                  "title": "Praktyka: Obliczanie podatków lokalnych"
                 },
                 "economics-u17-l2-quiz": {
                   "title": "Quiz: Local taxes"
@@ -5436,23 +5436,23 @@
             "lesson-17-3": {
               "contentItem": {
                 "economics-u17-l3-video-1": {
-                  "title": "Tax forms"
+                  "title": "Formularze podatkowe"
                 },
                 "economics-u17-l3-article": {
-                  "title": "Naucz się: Tax forms",
+                  "title": "Naucz się: Formularze podatkowe",
                   "importantPoints": [
-                    "Tax forms: documents to file taxes",
-                    "Common: 1040, W-2, 1099",
-                    "Key terms: AGI, deductions, credits",
-                    "W-2: wage and tax statement",
-                    "Different boxes show different information"
+                    "Formularze podatkowe: dokumenty do składania podatków",
+                    "Typowe: 1040, W-2, 1099",
+                    "Kluczowe terminy: AGI, odliczenia, ulgi",
+                    "W-2: oświadczenie o wynagrodzeniu i podatku",
+                    "Różne pola pokazują różne informacje"
                   ]
                 },
                 "economics-u17-l3-practice": {
-                  "title": "Praktyka: Tax forms and tax terms"
+                  "title": "Praktyka: Formularze podatkowe i terminy podatkowe"
                 },
                 "economics-u17-l3-practice-2": {
-                  "title": "Practice: W-2 form"
+                  "title": "Praktyka: Formularz W-2"
                 },
                 "economics-u17-l3-quiz": {
                   "title": "Quiz: Tax forms"
@@ -5462,20 +5462,20 @@
             "lesson-17-4": {
               "contentItem": {
                 "economics-u17-l4-video-1": {
-                  "title": "Personal taxes"
+                  "title": "Podatki osobiste"
                 },
                 "economics-u17-l4-article": {
-                  "title": "Naucz się: Personal taxes",
+                  "title": "Naucz się: Podatki osobiste",
                   "importantPoints": [
-                    "Progressive taxation: rate increases with income",
-                    "Tax brackets: income ranges with different rates",
-                    "Not all income taxed at same rate",
-                    "Marginal rate: rate on last dollar",
-                    "Effective rate: average rate"
+                    "Opodatkowanie progresywne: stopa rośnie z dochodem",
+                    "Progi podatkowe: zakresy dochodów z różnymi stopami",
+                    "Nie cały dochód opodatkowany tą samą stopą",
+                    "Stopa krańcowa: stopa na ostatni dolar",
+                    "Stopa efektywna: średnia stopa"
                   ]
                 },
                 "economics-u17-l4-practice": {
-                  "title": "Praktyka: Progressive taxation and tax brackets"
+                  "title": "Praktyka: Opodatkowanie progresywne i progi podatkowe"
                 },
                 "economics-u17-l4-quiz": {
                   "title": "Quiz: Personal taxes"
