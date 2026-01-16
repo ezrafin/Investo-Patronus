@@ -37,7 +37,7 @@
   "community": "社区",
   "forumTitle": "论坛",
   "forumDescription": "与社区讨论投资策略，分享经验，分析市场",
-  "categories": "类别",
+  "categoriesTitle": "类别",
   "errorLoadingCategories": "加载类别出错",
   "tryAgain": "重试",
   "topics": "个主题",

@@ -214,7 +214,7 @@ export default function ForumPage() {
         <section className="section-spacing-sm border-b border-border">
           <div className="container-wide">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="heading-sm">{t('categories') || 'Categories'}</h2>
+              <h2 className="heading-sm">{t('categoriesTitle') || 'Categories'}</h2>
               {categoryFilter && (
                 <button
                   onClick={() => handleCategoryChange(undefined)}

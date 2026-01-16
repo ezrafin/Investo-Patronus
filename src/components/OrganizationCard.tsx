@@ -71,7 +71,8 @@ export function OrganizationCard({ organization, index = 0 }: OrganizationCardPr
           const { count, error: countError } = await supabase
             .from('company_evaluations')
             .select('*', { count: 'exact', head: true })
-            .eq('company_slug', organization.id);
+            .eq('company_slug', organization.id)
+            .eq('is_approved', true);
           if (!countError) setRatingCount(count || 0);
         } else {
           setRatingCount(metadata?.rating_count || 0);

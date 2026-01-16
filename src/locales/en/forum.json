@@ -37,7 +37,7 @@
   "community": "Community",
   "forumTitle": "Forum",
   "forumDescription": "Discuss investment strategies, share experiences, and analyze markets with the community",
-  "categories": "Categories",
+  "categoriesTitle": "Categories",
   "errorLoadingCategories": "Error loading categories",
   "tryAgain": "Try Again",
   "topics": "topics",

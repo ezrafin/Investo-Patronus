@@ -71,7 +71,10 @@ export function getVideoUrl(
   const folder = COURSE_FOLDERS[courseId] || courseId;
   const filename = generateVideoFilename(courseId, unitIndex, lessonIndex, videoIndex);
   
-  return `${R2_PUBLIC_URL}/${folder}/${filename}`;
+  // Encode the filename to handle special characters like & in URL
+  const encodedFilename = encodeURIComponent(filename);
+  
+  return `${R2_PUBLIC_URL}/${folder}/${encodedFilename}`;
 }
 
 /**
