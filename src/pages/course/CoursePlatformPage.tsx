@@ -788,10 +788,12 @@ export default function CoursePlatformPage() {
             {showQuiz && selectedLesson && selectedContentItem && selectedContentItem.type === 'quiz' && !showFinalExam && !showMasteryCheck && (() => {
               // Find lesson index in unit to generate quiz number
               let lessonNumber = 1;
+              let foundUnitId = '';
               for (const unit of course.units) {
                 const lessonIdx = unit.lessons.findIndex(l => l.id === selectedLesson.id);
                 if (lessonIdx !== -1) {
                   lessonNumber = lessonIdx + 1;
+                  foundUnitId = unit.id;
                   break;
                 }
               }
@@ -799,8 +801,46 @@ export default function CoursePlatformPage() {
               const quizContent = selectedContentItem as QuizContent;
               const questions = quizContent.questions || [];
               const currentQuestion = questions[currentQuestionIndex];
-              const hasAnswer = currentQuestion && quizAnswers[currentQuestion.id] !== undefined;
-              const isCorrectAnswer = currentQuestion && hasAnswer && quizAnswers[currentQuestion.id] === currentQuestion.correctAnswer;
+              
+              // Get translated question if available
+              const getTranslatedQuestion = (question: QuizQuestion): QuizQuestion => {
+                if (!question) return question;
+                
+                const translationKey = `course.${course.id}.unit.${foundUnitId}.lesson.${selectedLesson.id}.contentItem.${quizContent.id}.questions.${question.id}`;
+                
+                // Try to get translated question text
+                const translatedQuestionText = t(`${translationKey}.question`, { defaultValue: question.question });
+                
+                // Try to get translated options array
+                // Check if translation exists by trying to get the first option
+                const firstOptionKey = `${translationKey}.options.0`;
+                const firstTranslatedOpt = t(firstOptionKey, { defaultValue: null });
+                let translatedOptions = question.options;
+                
+                // If first option translation exists, get all options
+                if (firstTranslatedOpt && firstTranslatedOpt !== firstOptionKey) {
+                  translatedOptions = question.options.map((_, idx) => {
+                    const optKey = `${translationKey}.options.${idx}`;
+                    const translatedOpt = t(optKey, { defaultValue: question.options[idx] });
+                    return translatedOpt !== optKey ? translatedOpt : question.options[idx];
+                  });
+                }
+                
+                // Try to get translated explanation
+                const explanationKey = `${translationKey}.explanation`;
+                const translatedExplanation = t(explanationKey, { defaultValue: question.explanation || '' });
+                
+                return {
+                  ...question,
+                  question: translatedQuestionText !== `${translationKey}.question` ? translatedQuestionText : question.question,
+                  options: translatedOptions,
+                  explanation: translatedExplanation !== explanationKey && translatedExplanation ? translatedExplanation : question.explanation,
+                };
+              };
+              
+              const translatedQuestion = currentQuestion ? getTranslatedQuestion(currentQuestion) : currentQuestion;
+              const hasAnswer = translatedQuestion && quizAnswers[translatedQuestion.id] !== undefined;
+              const isCorrectAnswer = translatedQuestion && hasAnswer && quizAnswers[translatedQuestion.id] === translatedQuestion.correctAnswer;
               const canGoNext = isCorrectAnswer;
               const isLastQuestion = currentQuestionIndex === questions.length - 1;
               
@@ -829,21 +869,21 @@ export default function CoursePlatformPage() {
                   )}
 
                   {/* Current Question */}
-                  {currentQuestion && (
+                  {translatedQuestion && (
                     <div className="glass-card p-6">
-                      <p className="font-medium mb-4">{currentQuestion.question}</p>
+                      <p className="font-medium mb-4">{translatedQuestion.question}</p>
                       <div className="space-y-2">
-                        {currentQuestion.options.map((option, oIndex) => {
-                          const isSelected = quizAnswers[currentQuestion.id] === oIndex;
-                          const isCorrect = oIndex === currentQuestion.correctAnswer;
-                          const showExplanation = isSelected && isCorrect && currentQuestion.optionExplanations && currentQuestion.optionExplanations[oIndex];
+                        {translatedQuestion.options.map((option, oIndex) => {
+                          const isSelected = quizAnswers[translatedQuestion.id] === oIndex;
+                          const isCorrect = oIndex === translatedQuestion.correctAnswer;
+                          const showExplanation = isSelected && isCorrect && translatedQuestion.optionExplanations && translatedQuestion.optionExplanations[oIndex];
                           
                           return (
                             <div key={oIndex} className="space-y-1">
                               <button
                                 onClick={() => {
                                   if (!hasAnswer || isCorrect) {
-                                    handleQuizAnswer(currentQuestion.id, oIndex);
+                                    handleQuizAnswer(translatedQuestion.id, oIndex);
                                   }
                                 }}
                                 disabled={hasAnswer && !isCorrect && !isSelected}
@@ -865,16 +905,16 @@ export default function CoursePlatformPage() {
                                     ? 'text-green-700 dark:text-green-400 bg-green-500/10' 
                                     : 'text-red-700 dark:text-red-400 bg-red-500/10'
                                 }`}>
-                                  {currentQuestion.optionExplanations?.[oIndex]}
+                                  {translatedQuestion.optionExplanations?.[oIndex]}
                                 </p>
                               )}
                             </div>
                           );
                         })}
                       </div>
-                      {hasAnswer && isCorrectAnswer && currentQuestion.explanation && !currentQuestion.optionExplanations && (
+                      {hasAnswer && isCorrectAnswer && translatedQuestion.explanation && !translatedQuestion.optionExplanations && (
                         <p className="mt-4 text-sm text-muted-foreground p-3 bg-secondary/50 rounded-lg">
-                          {currentQuestion.explanation}
+                          {translatedQuestion.explanation}
                         </p>
                       )}
                     </div>

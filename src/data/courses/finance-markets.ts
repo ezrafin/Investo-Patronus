@@ -4,7 +4,6 @@ import type {
   Lesson,
   VideoContent,
   ArticleContent,
-  QuizContent,
 } from '../courseTypes';
 
 const unit1Lessons: Lesson[] = [
@@ -1985,12 +1984,6 @@ const unit5Lessons: Lesson[] = [
           'Fair value: current market price vs. historical cost',
         ],
       } as ArticleContent,
-      {
-        id: 'finance-u5-l2-quiz',
-        type: 'quiz',
-        title: 'Quiz: Three core financial statements',
-        questions: [],
-      } as QuizContent,
     ],
   },
   {
@@ -2867,12 +2860,6 @@ const unit6Lessons: Lesson[] = [
           'Merger arbitrage: profit from acquisition spreads',
         ],
       } as ArticleContent,
-      {
-        id: 'finance-u6-l7-quiz',
-        type: 'quiz',
-        title: 'Quiz: Mergers and acquisitions',
-        questions: [],
-      } as QuizContent,
     ],
   },
   {
@@ -2929,12 +2916,6 @@ const unit6Lessons: Lesson[] = [
           'Tax benefits from interest deduction',
         ],
       } as ArticleContent,
-      {
-        id: 'finance-u6-l8-quiz',
-        type: 'quiz',
-        title: 'Quiz: Leveraged buy-outs',
-        questions: [],
-      } as QuizContent,
     ],
   },
   {
@@ -3077,12 +3058,6 @@ const unit6Lessons: Lesson[] = [
           'Treasury bonds: safest, used as benchmark',
         ],
       } as ArticleContent,
-      {
-        id: 'finance-u6-l9-quiz',
-        type: 'quiz',
-        title: 'Quiz: Bonds',
-        questions: [],
-      } as QuizContent,
     ],
   },
   {
@@ -3149,12 +3124,6 @@ const unit6Lessons: Lesson[] = [
           'Chapter 11 allows company to survive',
         ],
       } as ArticleContent,
-      {
-        id: 'finance-u6-l10-quiz',
-        type: 'quiz',
-        title: 'Quiz: Corporate bankruptcy',
-        questions: [],
-      } as QuizContent,
     ],
   },
 ];
@@ -3270,12 +3239,6 @@ const unit7Lessons: Lesson[] = [
           'Ponzi schemes: fraudulent, use new money to pay old investors',
         ],
       } as ArticleContent,
-      {
-        id: 'finance-u7-l1-quiz',
-        type: 'quiz',
-        title: 'Quiz: Mutual funds and ETFs',
-        questions: [],
-      } as QuizContent,
     ],
   },
   {
@@ -3358,12 +3321,6 @@ const unit7Lessons: Lesson[] = [
           'Each has different tax treatment and benefits',
         ],
       } as ArticleContent,
-      {
-        id: 'finance-u7-l2-quiz',
-        type: 'quiz',
-        title: 'Quiz: Retirement accounts: IRAs and 401ks',
-        questions: [],
-      } as QuizContent,
     ],
   },
   {
@@ -6209,7 +6166,5 @@ export const financeMarketsCourse: Course = {
       lessons: unit10Lessons,
     },
   ],
-  finalExamPassRate: 75,
-  finalExam: [],
 };
 
