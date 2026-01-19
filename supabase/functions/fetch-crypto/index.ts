@@ -20,10 +20,17 @@ serve(async (req) => {
   try {
     console.log('Fetching crypto data with multiple fallbacks...');
     
+    const COINMARKETCAP_API_KEY = Deno.env.get('COINMARKETCAP_API_KEY');
+    const CRYPTOCOMPARE_API_KEY = Deno.env.get('CRYPTOCOMPARE_API_KEY');
+    const NOMICS_API_KEY = Deno.env.get('NOMICS_API_KEY');
+    const MESSARI_API_KEY = Deno.env.get('MESSARI_API_KEY');
+    const COINAPI_API_KEY = Deno.env.get('COINAPI_API_KEY');
+    
     let marketData: CryptoSource | null = null;
     let dataSource = 'unknown';
 
-    // Fallback chain: CoinGecko -> Binance -> CoinCap -> Mock
+    // Fallback chain: CoinGecko -> CoinMarketCap -> CryptoCompare -> Binance -> CoinCap -> Nomics -> Messari -> CoinAPI -> Mock
+    // Total free tier: Unlimited (CoinGecko/Binance/CoinCap) + 10,000 + 100,000 + 1,000 + 1,000 + 3,000 = 115,000+ with keys + unlimited fallbacks
     
     // 1. Try CoinGecko
     try {
@@ -74,6 +81,56 @@ serve(async (req) => {
     } catch (apiError) {
       console.log('CoinGecko API failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
       marketData = null;
+    }
+
+    // 1a. Try CoinMarketCap (if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 5)) && COINMARKETCAP_API_KEY) {
+      try {
+        console.log('Attempting CoinMarketCap API...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchCoinMarketCap(COINMARKETCAP_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 5)) {
+            return { data: validated, source: 'coinmarketcap' };
+          }
+          throw new Error('CoinMarketCap returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 5)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from CoinMarketCap`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('CoinMarketCap failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 1b. Try CryptoCompare (if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 5)) && CRYPTOCOMPARE_API_KEY) {
+      try {
+        console.log('Attempting CryptoCompare API...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchCryptoCompare(CRYPTOCOMPARE_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 5)) {
+            return { data: validated, source: 'cryptocompare' };
+          }
+          throw new Error('CryptoCompare returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 5)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from CryptoCompare`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('CryptoCompare failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
     }
 
     // 2. Try Binance Public API (free, no key required)
@@ -216,6 +273,81 @@ serve(async (req) => {
       }
     }
 
+    // 3a. Try Nomics (if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 5)) && NOMICS_API_KEY) {
+      try {
+        console.log('Attempting Nomics API...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchNomics(NOMICS_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 5)) {
+            return { data: validated, source: 'nomics' };
+          }
+          throw new Error('Nomics returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 5)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from Nomics`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('Nomics failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 3b. Try Messari (if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 5)) && MESSARI_API_KEY) {
+      try {
+        console.log('Attempting Messari API...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchMessari(MESSARI_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 5)) {
+            return { data: validated, source: 'messari' };
+          }
+          throw new Error('Messari returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 5)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from Messari`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('Messari failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 3c. Try CoinAPI (if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 5)) && COINAPI_API_KEY) {
+      try {
+        console.log('Attempting CoinAPI...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchCoinAPI(COINAPI_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 5)) {
+            return { data: validated, source: 'coinapi' };
+          }
+          throw new Error('CoinAPI returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 5)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from CoinAPI`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('CoinAPI failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
     // 4. Final fallback to mock data
     if (!marketData || !hasMinimumData(marketData.data, 5)) {
       console.log('All APIs failed, using mock data');
@@ -297,4 +429,244 @@ function getMockCryptoData() {
     { symbol: 'MATIC', name: 'Polygon', price: addVariation(0.62), change: addVariation(0.035, 50), changePercent: addVariation(6.0, 50), high: 0.65, low: 0.58, volume: '$680M', marketCap: '$6.2B' },
     { symbol: 'SHIB', name: 'Shiba Inu', price: addVariation(0.0000245, 5), change: addVariation(0.0000012, 50), changePercent: addVariation(5.2, 50), high: 0.0000255, low: 0.0000235, volume: '$850M', marketCap: '$14B' },
   ];
+}
+
+// CoinMarketCap API (free tier: 333 calls/day = ~10,000/month, requires API key)
+async function fetchCoinMarketCap(apiKey: string): Promise<any[]> {
+  try {
+    const response = await fetch(
+      'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=20&convert=USD',
+      {
+        headers: {
+          'X-CMC_PRO_API_KEY': apiKey,
+          'Accept': 'application/json',
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`CoinMarketCap API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const coins = data.data || [];
+
+    return coins.map((coin: any) => ({
+      symbol: coin.symbol || '',
+      name: coin.name || '',
+      price: coin.quote?.USD?.price || 0,
+      change: coin.quote?.USD?.price_24h || 0,
+      changePercent: coin.quote?.USD?.percent_change_24h || 0,
+      high: coin.quote?.USD?.high_24h || coin.quote?.USD?.price || 0,
+      low: coin.quote?.USD?.low_24h || coin.quote?.USD?.price || 0,
+      volume: formatVolume(coin.quote?.USD?.volume_24h || 0),
+      marketCap: formatVolume(coin.quote?.USD?.market_cap || 0),
+    })).filter((c: any) => c.price > 0);
+  } catch (error) {
+    console.error('CoinMarketCap error:', error);
+    return [];
+  }
+}
+
+// CryptoCompare API (free tier: 100,000 calls/month, requires API key)
+async function fetchCryptoCompare(apiKey: string): Promise<any[]> {
+  try {
+    const topSymbols = ['BTC', 'ETH', 'USDT', 'XRP', 'BNB', 'SOL', 'USDC', 'ADA', 'DOGE', 'TRX', 'AVAX', 'LINK', 'DOT', 'MATIC', 'SHIB', 'UNI', 'ATOM', 'ETC', 'LTC', 'XLM'];
+    const symbolsStr = topSymbols.join(',');
+    
+    const response = await fetch(
+      `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${symbolsStr}&tsyms=USD&api_key=${apiKey}`
+    );
+
+    if (!response.ok) {
+      throw new Error(`CryptoCompare API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const raw = data.RAW || {};
+    const display = data.DISPLAY || {};
+
+    const cryptoMap: Record<string, string> = {
+      'BTC': 'Bitcoin', 'ETH': 'Ethereum', 'USDT': 'Tether', 'XRP': 'XRP', 'BNB': 'BNB',
+      'SOL': 'Solana', 'USDC': 'USD Coin', 'ADA': 'Cardano', 'DOGE': 'Dogecoin', 'TRX': 'TRON',
+      'AVAX': 'Avalanche', 'LINK': 'Chainlink', 'DOT': 'Polkadot', 'MATIC': 'Polygon', 'SHIB': 'Shiba Inu',
+      'UNI': 'Uniswap', 'ATOM': 'Cosmos', 'ETC': 'Ethereum Classic', 'LTC': 'Litecoin', 'XLM': 'Stellar',
+    };
+
+    return topSymbols.map((symbol) => {
+      const coin = raw[symbol]?.USD;
+      if (!coin) return null;
+
+      return {
+        symbol,
+        name: cryptoMap[symbol] || symbol,
+        price: coin.PRICE || 0,
+        change: coin.CHANGE24HOUR || 0,
+        changePercent: coin.CHANGEPCT24HOUR || 0,
+        high: coin.HIGH24HOUR || coin.PRICE || 0,
+        low: coin.LOW24HOUR || coin.PRICE || 0,
+        volume: formatVolume(coin.VOLUME24HOUR || 0),
+        marketCap: formatVolume(coin.MKTCAP || 0),
+      };
+    }).filter(Boolean);
+  } catch (error) {
+    console.error('CryptoCompare error:', error);
+    return [];
+  }
+}
+
+// Nomics API (free tier: 1000 calls/month, requires API key)
+async function fetchNomics(apiKey: string): Promise<any[]> {
+  try {
+    const topSymbols = ['BTC', 'ETH', 'USDT', 'XRP', 'BNB', 'SOL', 'USDC', 'ADA', 'DOGE', 'TRX', 'AVAX', 'LINK', 'DOT', 'MATIC', 'SHIB', 'UNI', 'ATOM', 'ETC', 'LTC', 'XLM'];
+    const symbolsStr = topSymbols.join(',');
+    
+    const response = await fetch(
+      `https://api.nomics.com/v1/currencies/ticker?key=${apiKey}&ids=${symbolsStr}&interval=1d&convert=USD`
+    );
+
+    if (!response.ok) {
+      throw new Error(`Nomics API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    const cryptoMap: Record<string, string> = {
+      'BTC': 'Bitcoin', 'ETH': 'Ethereum', 'USDT': 'Tether', 'XRP': 'XRP', 'BNB': 'BNB',
+      'SOL': 'Solana', 'USDC': 'USD Coin', 'ADA': 'Cardano', 'DOGE': 'Dogecoin', 'TRX': 'TRON',
+      'AVAX': 'Avalanche', 'LINK': 'Chainlink', 'DOT': 'Polkadot', 'MATIC': 'Polygon', 'SHIB': 'Shiba Inu',
+      'UNI': 'Uniswap', 'ATOM': 'Cosmos', 'ETC': 'Ethereum Classic', 'LTC': 'Litecoin', 'XLM': 'Stellar',
+    };
+
+    return data.map((coin: any) => ({
+      symbol: coin.symbol || '',
+      name: cryptoMap[coin.symbol] || coin.name || coin.symbol,
+      price: parseFloat(coin.price) || 0,
+      change: parseFloat(coin['1d']?.price_change) || 0,
+      changePercent: parseFloat(coin['1d']?.price_change_pct) * 100 || 0,
+      high: parseFloat(coin['1d']?.high) || coin.price || 0,
+      low: parseFloat(coin['1d']?.low) || coin.price || 0,
+      volume: formatVolume(parseFloat(coin['1d']?.volume) || 0),
+      marketCap: formatVolume(parseFloat(coin.market_cap) || 0),
+    })).filter((c: any) => c.price > 0);
+  } catch (error) {
+    console.error('Nomics error:', error);
+    return [];
+  }
+}
+
+// Messari API (free tier: 1000 calls/month, requires API key)
+async function fetchMessari(apiKey: string): Promise<any[]> {
+  try {
+    const topSymbols = ['BTC', 'ETH', 'USDT', 'XRP', 'BNB', 'SOL', 'USDC', 'ADA', 'DOGE', 'TRX', 'AVAX', 'LINK', 'DOT', 'MATIC', 'SHIB', 'UNI', 'ATOM', 'ETC', 'LTC', 'XLM'];
+    const symbolsStr = topSymbols.join(',');
+    
+    const response = await fetch(
+      `https://data.messari.io/api/v1/assets/${symbolsStr.toLowerCase()}/metrics`,
+      {
+        headers: {
+          'x-messari-api-key': apiKey,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Messari API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const assets = Array.isArray(data.data) ? data.data : [data.data].filter(Boolean);
+
+    const cryptoMap: Record<string, string> = {
+      'BTC': 'Bitcoin', 'ETH': 'Ethereum', 'USDT': 'Tether', 'XRP': 'XRP', 'BNB': 'BNB',
+      'SOL': 'Solana', 'USDC': 'USD Coin', 'ADA': 'Cardano', 'DOGE': 'Dogecoin', 'TRX': 'TRON',
+      'AVAX': 'Avalanche', 'LINK': 'Chainlink', 'DOT': 'Polkadot', 'MATIC': 'Polygon', 'SHIB': 'Shiba Inu',
+      'UNI': 'Uniswap', 'ATOM': 'Cosmos', 'ETC': 'Ethereum Classic', 'LTC': 'Litecoin', 'XLM': 'Stellar',
+    };
+
+    return assets.map((asset: any) => {
+      const symbol = asset.symbol || '';
+      const metrics = asset.metrics?.market_data || {};
+      return {
+        symbol: symbol.toUpperCase(),
+        name: cryptoMap[symbol.toUpperCase()] || asset.name || symbol,
+        price: metrics.price_usd || 0,
+        change: metrics.price_change_24h || 0,
+        changePercent: metrics.percent_change_usd_24h || 0,
+        high: metrics.ohlcv_last_24_hour?.high || metrics.price_usd || 0,
+        low: metrics.ohlcv_last_24_hour?.low || metrics.price_usd || 0,
+        volume: formatVolume(metrics.volume_last_24_hours || 0),
+        marketCap: formatVolume(metrics.marketcap?.current_marketcap_usd || 0),
+      };
+    }).filter((c: any) => c.price > 0);
+  } catch (error) {
+    console.error('Messari error:', error);
+    return [];
+  }
+}
+
+// CoinAPI (free tier: 100 calls/day = ~3000/month, requires API key)
+async function fetchCoinAPI(apiKey: string): Promise<any[]> {
+  try {
+    const topSymbols = ['BTC', 'ETH', 'USDT', 'XRP', 'BNB', 'SOL', 'USDC', 'ADA', 'DOGE', 'TRX', 'AVAX', 'LINK', 'DOT', 'MATIC', 'SHIB', 'UNI', 'ATOM', 'ETC', 'LTC', 'XLM'];
+    
+    const results = await Promise.all(
+      topSymbols.slice(0, 10).map(async (symbol) => {
+        try {
+          const response = await fetch(
+            `https://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`
+          );
+          
+          if (!response.ok) return null;
+          
+          const data = await response.json();
+          if (!data.rate) return null;
+          
+          // Get 24h change from separate endpoint
+          let changePercent = 0;
+          try {
+            const historyResp = await fetch(
+              `https://rest.coinapi.io/v1/exchangerate/${symbol}/USD/history?period_id=1DAY&limit=2&apikey=${apiKey}`
+            );
+            if (historyResp.ok) {
+              const historyData = await historyResp.json();
+              if (historyData.length >= 2) {
+                const current = historyData[0].rate_close;
+                const previous = historyData[1].rate_close;
+                changePercent = previous > 0 ? ((current - previous) / previous) * 100 : 0;
+              }
+            }
+          } catch {
+            // Ignore history fetch errors
+          }
+          
+          const cryptoMap: Record<string, string> = {
+            'BTC': 'Bitcoin', 'ETH': 'Ethereum', 'USDT': 'Tether', 'XRP': 'XRP', 'BNB': 'BNB',
+            'SOL': 'Solana', 'USDC': 'USD Coin', 'ADA': 'Cardano', 'DOGE': 'Dogecoin', 'TRX': 'TRON',
+            'AVAX': 'Avalanche', 'LINK': 'Chainlink', 'DOT': 'Polkadot', 'MATIC': 'Polygon', 'SHIB': 'Shiba Inu',
+            'UNI': 'Uniswap', 'ATOM': 'Cosmos', 'ETC': 'Ethereum Classic', 'LTC': 'Litecoin', 'XLM': 'Stellar',
+          };
+          
+          return {
+            symbol,
+            name: cryptoMap[symbol] || symbol,
+            price: data.rate || 0,
+            change: (data.rate || 0) * (changePercent / 100),
+            changePercent,
+            high: data.rate || 0,
+            low: data.rate || 0,
+            volume: '-',
+            marketCap: '-',
+          };
+        } catch {
+          return null;
+        }
+      })
+    );
+    
+    return results.filter(Boolean);
+  } catch (error) {
+    console.error('CoinAPI error:', error);
+    return [];
+  }
 }

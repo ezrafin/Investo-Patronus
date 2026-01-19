@@ -108,6 +108,15 @@ serve(async (req) => {
     const CURRENCY_API_KEY = Deno.env.get('CURRENCY_API_KEY');
     const OPEN_EXCHANGE_RATES_API_KEY = Deno.env.get('OPEN_EXCHANGE_RATES_API_KEY');
     const CURRENCY_FREAKS_API_KEY = Deno.env.get('CURRENCY_FREAKS_API_KEY');
+    const CURRENCY_LAYER_API_KEY = Deno.env.get('CURRENCY_LAYER_API_KEY');
+    const EXCHANGE_RATES_DATA_API_KEY = Deno.env.get('EXCHANGE_RATES_DATA_API_KEY');
+    const CURRENCY_SCOOP_API_KEY = Deno.env.get('CURRENCY_SCOOP_API_KEY');
+    const ONEFORGE_API_KEY = Deno.env.get('ONEFORGE_API_KEY');
+    const MARKETSTACK_API_KEY = Deno.env.get('MARKETSTACK_API_KEY');
+    const EOD_HISTORICAL_DATA_API_KEY = Deno.env.get('EOD_HISTORICAL_DATA_API_KEY');
+    const FINANCIAL_MODELING_PREP_API_KEY = Deno.env.get('FINANCIAL_MODELING_PREP_API_KEY');
+    const QUANDL_API_KEY = Deno.env.get('QUANDL_API_KEY');
+    const WORLD_TRADING_DATA_API_KEY = Deno.env.get('WORLD_TRADING_DATA_API_KEY');
     
     let marketData: MarketDataSource | null = null;
     let dataSource = 'unknown';
@@ -123,10 +132,15 @@ serve(async (req) => {
     // 7a. CurrencyAPI (if key exists) - provides change data
     // 7b. Open Exchange Rates (if key exists) - provides change data
     // 7c. CurrencyFreaks (if key exists) - provides change data
-    // For currencies (free fallbacks, no change data):
+    // 7g. CurrencyLayer (if key exists) - provides change data
+    // 7h. Exchange Rates Data API (if key exists) - provides change data
+    // 7i. CurrencyScoop (if key exists) - provides change data
+    // 7j. 1Forge (if key exists) - provides change data
+    // For currencies (free fallbacks):
     // 7d. ExchangeRate-API (free, no key)
     // 7e. exchangerate.host (free, no key)
     // 7f. Fixer.io (free tier)
+    // 7k. frankfurter.app (free, no key) - provides change data
     // 8. DB cache
     // 9. Mock data
 
@@ -286,6 +300,131 @@ serve(async (req) => {
       }
     }
 
+    // 6a. Try Marketstack (for stocks, indices, and commodities, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && (type === 'stocks' || type === 'indices' || type === 'commodities') && MARKETSTACK_API_KEY) {
+      try {
+        console.log(`Attempting Marketstack API for ${type}...`);
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchMarketstackQuotes(type, MARKETSTACK_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'marketstack' };
+          }
+          throw new Error('Marketstack returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from Marketstack`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('Marketstack failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 6b. Try EOD Historical Data (for stocks, indices, and commodities, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && (type === 'stocks' || type === 'indices' || type === 'commodities') && EOD_HISTORICAL_DATA_API_KEY) {
+      try {
+        console.log(`Attempting EOD Historical Data API for ${type}...`);
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchEODHistoricalDataQuotes(type, EOD_HISTORICAL_DATA_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'eodhistorical' };
+          }
+          throw new Error('EOD Historical Data returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from EOD Historical Data`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('EOD Historical Data failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 6c. Try Financial Modeling Prep (for stocks, indices, and commodities, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && (type === 'stocks' || type === 'indices' || type === 'commodities') && FINANCIAL_MODELING_PREP_API_KEY) {
+      try {
+        console.log(`Attempting Financial Modeling Prep API for ${type}...`);
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchFinancialModelingPrepQuotes(type, FINANCIAL_MODELING_PREP_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'financialmodelingprep' };
+          }
+          throw new Error('Financial Modeling Prep returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from Financial Modeling Prep`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('Financial Modeling Prep failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 6d. Try Quandl (for stocks, indices, and commodities, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && (type === 'stocks' || type === 'indices' || type === 'commodities') && QUANDL_API_KEY) {
+      try {
+        console.log(`Attempting Quandl API for ${type}...`);
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchQuandlQuotes(type, QUANDL_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'quandl' };
+          }
+          throw new Error('Quandl returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from Quandl`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('Quandl failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 6e. Try World Trading Data (for stocks only, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'stocks' && WORLD_TRADING_DATA_API_KEY) {
+      try {
+        console.log('Attempting World Trading Data API for stocks...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchWorldTradingDataQuotes(type, WORLD_TRADING_DATA_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'worldtradingdata' };
+          }
+          throw new Error('World Trading Data returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from World Trading Data`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('World Trading Data failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
     // 7. For currencies, try API with keys FIRST (they provide proper change data)
     // 7a. Try CurrencyAPI (for currencies only, if key exists)
     if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies' && CURRENCY_API_KEY) {
@@ -433,6 +572,131 @@ serve(async (req) => {
         }
       } catch (apiError) {
         console.log('Fixer.io failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 7g. Try CurrencyLayer (for currencies only, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies' && CURRENCY_LAYER_API_KEY) {
+      try {
+        console.log('Attempting CurrencyLayer for currencies...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchCurrencyLayer(CURRENCY_LAYER_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'currencylayer' };
+          }
+          throw new Error('CurrencyLayer returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from CurrencyLayer`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('CurrencyLayer failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 7h. Try Exchange Rates Data API (for currencies only, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies' && EXCHANGE_RATES_DATA_API_KEY) {
+      try {
+        console.log('Attempting Exchange Rates Data API for currencies...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchExchangeRatesData(EXCHANGE_RATES_DATA_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'exchangeratesdata' };
+          }
+          throw new Error('Exchange Rates Data API returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from Exchange Rates Data API`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('Exchange Rates Data API failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 7i. Try CurrencyScoop (for currencies only, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies' && CURRENCY_SCOOP_API_KEY) {
+      try {
+        console.log('Attempting CurrencyScoop for currencies...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchCurrencyScoop(CURRENCY_SCOOP_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'currencyscoop' };
+          }
+          throw new Error('CurrencyScoop returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from CurrencyScoop`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('CurrencyScoop failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 7j. Try 1Forge (for currencies only, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies' && ONEFORGE_API_KEY) {
+      try {
+        console.log('Attempting 1Forge for currencies...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetch1Forge(ONEFORGE_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: '1forge' };
+          }
+          throw new Error('1Forge returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from 1Forge`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('1Forge failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 7k. Try frankfurter.app (for currencies only, free fallback - no key required)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies') {
+      try {
+        console.log('Attempting frankfurter.app for currencies...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchFrankfurter();
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'frankfurter' };
+          }
+          throw new Error('frankfurter.app returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from frankfurter.app`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('frankfurter.app failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
         marketData = null;
       }
     }
@@ -1266,6 +1530,431 @@ async function fetchCurrencyFreaks(apiKey?: string): Promise<any[]> {
   }
 }
 
+// CurrencyLayer (free tier: 1000 requests/month, requires API key)
+async function fetchCurrencyLayer(apiKey?: string): Promise<any[]> {
+  if (!apiKey) {
+    return [];
+  }
+
+  try {
+    const latestResp = await fetch(
+      `http://api.currencylayer.com/live?access_key=${apiKey}&source=USD`
+    );
+
+    if (!latestResp.ok) {
+      throw new Error(`CurrencyLayer latest error: ${latestResp.status}`);
+    }
+
+    const latestJson = await latestResp.json();
+    if (!latestJson.success) {
+      throw new Error(`CurrencyLayer API error: ${latestJson.error?.info || 'Unknown error'}`);
+    }
+
+    const latestRates: Record<string, number> = latestJson.quotes || {};
+
+    // Previous day for change calculation
+    const yesterday = new Date();
+    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+    const y = yesterday.getUTCFullYear();
+    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(yesterday.getUTCDate()).padStart(2, '0');
+    const prevDate = `${y}-${m}-${d}`;
+
+    let prevRates: Record<string, number> = {};
+    try {
+      const prevResp = await fetch(
+        `http://api.currencylayer.com/historical?access_key=${apiKey}&date=${prevDate}&source=USD`
+      );
+      if (prevResp.ok) {
+        const prevJson = await prevResp.json();
+        if (prevJson.success) {
+          prevRates = prevJson.quotes || {};
+        }
+      }
+    } catch (historicalError) {
+      console.error('CurrencyLayer historical fetch failed:', historicalError);
+    }
+
+    return CURRENCY_SYMBOLS.map((item) => {
+      if (!item.exchangeRate) {
+        if (item.symbol === 'EURGBP') {
+          const eurRate = latestRates['USDEUR'] ? 1 / latestRates['USDEUR'] : 1;
+          const gbpRate = latestRates['USDGBP'] ? 1 / latestRates['USDGBP'] : 1;
+          const price = eurRate / gbpRate;
+          const prevEurRate = prevRates['USDEUR'] ? 1 / prevRates['USDEUR'] : eurRate;
+          const prevGbpRate = prevRates['USDGBP'] ? 1 / prevRates['USDGBP'] : gbpRate;
+          const prevPrice = prevEurRate / prevGbpRate;
+          const change = price - prevPrice;
+          const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
+          return {
+            symbol: formatSymbol(item.symbol, 'currencies'),
+            name: item.name,
+            price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
+          };
+        }
+        return null;
+      }
+
+      const quoteKey = `USD${item.exchangeRate}`;
+      const rate = latestRates[quoteKey];
+      if (!rate) return null;
+
+      let price = 1 / rate; // Invert for USD/XXX pairs
+      const prevRate = prevRates[quoteKey];
+      const prevPrice = prevRate ? 1 / prevRate : price;
+      const change = price - prevPrice;
+      const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
+
+      return {
+        symbol: formatSymbol(item.symbol, 'currencies'),
+        name: item.name,
+        price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
+      };
+    }).filter(Boolean);
+  } catch (error) {
+    console.error('CurrencyLayer error:', error);
+    return [];
+  }
+}
+
+// Exchange Rates Data API (free tier: 1000 requests/month, requires API key)
+async function fetchExchangeRatesData(apiKey?: string): Promise<any[]> {
+  if (!apiKey) {
+    return [];
+  }
+
+  try {
+    const latestResp = await fetch(
+      `https://api.exchangeratesdata.io/v1/latest?access_key=${apiKey}&base=USD`
+    );
+
+    if (!latestResp.ok) {
+      throw new Error(`Exchange Rates Data API latest error: ${latestResp.status}`);
+    }
+
+    const latestJson = await latestResp.json();
+    if (!latestJson.success) {
+      throw new Error(`Exchange Rates Data API error: ${latestJson.error?.info || 'Unknown error'}`);
+    }
+
+    const latestRates: Record<string, number> = latestJson.rates || {};
+
+    // Previous day for change calculation
+    const yesterday = new Date();
+    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+    const y = yesterday.getUTCFullYear();
+    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(yesterday.getUTCDate()).padStart(2, '0');
+    const prevDate = `${y}-${m}-${d}`;
+
+    let prevRates: Record<string, number> = {};
+    try {
+      const prevResp = await fetch(
+        `https://api.exchangeratesdata.io/v1/${prevDate}?access_key=${apiKey}&base=USD`
+      );
+      if (prevResp.ok) {
+        const prevJson = await prevResp.json();
+        if (prevJson.success) {
+          prevRates = prevJson.rates || {};
+        }
+      }
+    } catch (historicalError) {
+      console.error('Exchange Rates Data API historical fetch failed:', historicalError);
+    }
+
+    return CURRENCY_SYMBOLS.map((item) => {
+      if (!item.exchangeRate) {
+        if (item.symbol === 'EURGBP') {
+          const eurRate = latestRates['EUR'] || 1;
+          const gbpRate = latestRates['GBP'] || 1;
+          const price = eurRate / gbpRate;
+          const prevEurRate = prevRates['EUR'] || eurRate;
+          const prevGbpRate = prevRates['GBP'] || gbpRate;
+          const prevPrice = prevEurRate / prevGbpRate;
+          const change = price - prevPrice;
+          const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
+          return {
+            symbol: formatSymbol(item.symbol, 'currencies'),
+            name: item.name,
+            price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
+          };
+        }
+        return null;
+      }
+
+      const rate = latestRates[item.exchangeRate];
+      if (!rate) return null;
+
+      let price = 1 / rate; // Invert for USD/XXX pairs
+      const prevRate = prevRates[item.exchangeRate];
+      const prevPrice = prevRate ? 1 / prevRate : price;
+      const change = price - prevPrice;
+      const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
+
+      return {
+        symbol: formatSymbol(item.symbol, 'currencies'),
+        name: item.name,
+        price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
+      };
+    }).filter(Boolean);
+  } catch (error) {
+    console.error('Exchange Rates Data API error:', error);
+    return [];
+  }
+}
+
+// CurrencyScoop (free tier: 500 requests/month, requires API key)
+async function fetchCurrencyScoop(apiKey?: string): Promise<any[]> {
+  if (!apiKey) {
+    return [];
+  }
+
+  try {
+    const latestResp = await fetch(
+      `https://api.currencyscoop.com/v1/latest?api_key=${apiKey}&base=USD`
+    );
+
+    if (!latestResp.ok) {
+      throw new Error(`CurrencyScoop latest error: ${latestResp.status}`);
+    }
+
+    const latestJson = await latestResp.json();
+    if (!latestJson.meta || latestJson.meta.code !== 200) {
+      throw new Error(`CurrencyScoop API error: ${latestJson.meta?.error || 'Unknown error'}`);
+    }
+
+    const latestRates: Record<string, number> = latestJson.response?.rates || {};
+
+    // Previous day for change calculation
+    const yesterday = new Date();
+    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+    const y = yesterday.getUTCFullYear();
+    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(yesterday.getUTCDate()).padStart(2, '0');
+    const prevDate = `${y}-${m}-${d}`;
+
+    let prevRates: Record<string, number> = {};
+    try {
+      const prevResp = await fetch(
+        `https://api.currencyscoop.com/v1/historical?api_key=${apiKey}&base=USD&date=${prevDate}`
+      );
+      if (prevResp.ok) {
+        const prevJson = await prevResp.json();
+        if (prevJson.meta?.code === 200) {
+          prevRates = prevJson.response?.rates || {};
+        }
+      }
+    } catch (historicalError) {
+      console.error('CurrencyScoop historical fetch failed:', historicalError);
+    }
+
+    return CURRENCY_SYMBOLS.map((item) => {
+      if (!item.exchangeRate) {
+        if (item.symbol === 'EURGBP') {
+          const eurRate = latestRates['EUR'] || 1;
+          const gbpRate = latestRates['GBP'] || 1;
+          const price = eurRate / gbpRate;
+          const prevEurRate = prevRates['EUR'] || eurRate;
+          const prevGbpRate = prevRates['GBP'] || gbpRate;
+          const prevPrice = prevEurRate / prevGbpRate;
+          const change = price - prevPrice;
+          const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
+          return {
+            symbol: formatSymbol(item.symbol, 'currencies'),
+            name: item.name,
+            price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
+          };
+        }
+        return null;
+      }
+
+      const rate = latestRates[item.exchangeRate];
+      if (!rate) return null;
+
+      let price = 1 / rate; // Invert for USD/XXX pairs
+      const prevRate = prevRates[item.exchangeRate];
+      const prevPrice = prevRate ? 1 / prevRate : price;
+      const change = price - prevPrice;
+      const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
+
+      return {
+        symbol: formatSymbol(item.symbol, 'currencies'),
+        name: item.name,
+        price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
+      };
+    }).filter(Boolean);
+  } catch (error) {
+    console.error('CurrencyScoop error:', error);
+    return [];
+  }
+}
+
+// 1Forge (free tier: 500 requests/month, requires API key)
+async function fetch1Forge(apiKey?: string): Promise<any[]> {
+  if (!apiKey) {
+    return [];
+  }
+
+  try {
+    const response = await fetch(
+      `https://api.1forge.com/quotes?pairs=${CURRENCY_SYMBOLS.map(item => {
+        if (item.symbol === 'EURGBP') return 'EURGBP';
+        if (item.symbol.startsWith('USD')) return item.symbol;
+        return `USD${item.exchangeRate}`;
+      }).filter(Boolean).join(',')}&api_key=${apiKey}`
+    );
+
+    if (!response.ok) {
+      throw new Error(`1Forge API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    if (!Array.isArray(data)) {
+      throw new Error('1Forge API returned invalid data format');
+    }
+
+    const quotesMap: Record<string, any> = {};
+    data.forEach((quote: any) => {
+      quotesMap[quote.symbol] = quote;
+    });
+
+    return CURRENCY_SYMBOLS.map((item) => {
+      let symbolKey = '';
+      if (item.symbol === 'EURGBP') {
+        symbolKey = 'EURGBP';
+      } else if (item.symbol.startsWith('USD')) {
+        symbolKey = item.symbol;
+      } else {
+        symbolKey = `USD${item.exchangeRate}`;
+      }
+
+      const quote = quotesMap[symbolKey];
+      if (!quote || !quote.price) return null;
+
+      const price = quote.price;
+      const change = quote.change || 0;
+      const changePercent = quote.change_percent || 0;
+
+      return {
+        symbol: formatSymbol(item.symbol, 'currencies'),
+        name: item.name,
+        price,
+        change,
+        changePercent,
+        high: quote.high || price,
+        low: quote.low || price,
+      };
+    }).filter(Boolean);
+  } catch (error) {
+    console.error('1Forge error:', error);
+    return [];
+  }
+}
+
+// frankfurter.app (unlimited, no API key required)
+async function fetchFrankfurter(): Promise<any[]> {
+  try {
+    const latestResp = await fetch('https://api.frankfurter.app/latest?from=USD');
+
+    if (!latestResp.ok) {
+      throw new Error(`Frankfurter API error: ${latestResp.status}`);
+    }
+
+    const latestJson = await latestResp.json();
+    const latestRates: Record<string, number> = latestJson.rates || {};
+
+    // Previous day for change calculation
+    const yesterday = new Date();
+    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+    const y = yesterday.getUTCFullYear();
+    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(yesterday.getUTCDate()).padStart(2, '0');
+    const prevDate = `${y}-${m}-${d}`;
+
+    let prevRates: Record<string, number> = {};
+    try {
+      const prevResp = await fetch(`https://api.frankfurter.app/${prevDate}?from=USD`);
+      if (prevResp.ok) {
+        const prevJson = await prevResp.json();
+        prevRates = prevJson.rates || {};
+      }
+    } catch (historicalError) {
+      console.error('Frankfurter historical fetch failed:', historicalError);
+    }
+
+    return CURRENCY_SYMBOLS.map((item) => {
+      if (!item.exchangeRate) {
+        if (item.symbol === 'EURGBP') {
+          const eurRate = latestRates['EUR'] || 1;
+          const gbpRate = latestRates['GBP'] || 1;
+          const price = eurRate / gbpRate;
+          const prevEurRate = prevRates['EUR'] || eurRate;
+          const prevGbpRate = prevRates['GBP'] || gbpRate;
+          const prevPrice = prevEurRate / prevGbpRate;
+          const change = price - prevPrice;
+          const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
+          return {
+            symbol: formatSymbol(item.symbol, 'currencies'),
+            name: item.name,
+            price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
+          };
+        }
+        return null;
+      }
+
+      const rate = latestRates[item.exchangeRate];
+      if (!rate) return null;
+
+      let price = 1 / rate; // Invert for USD/XXX pairs
+      const prevRate = prevRates[item.exchangeRate];
+      const prevPrice = prevRate ? 1 / prevRate : price;
+      const change = price - prevPrice;
+      const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
+
+      return {
+        symbol: formatSymbol(item.symbol, 'currencies'),
+        name: item.name,
+        price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
+      };
+    }).filter(Boolean);
+  } catch (error) {
+    console.error('Frankfurter error:', error);
+    return [];
+  }
+}
+
 // Improved Yahoo Finance with better headers and retry
 async function fetchYahooFinanceQuotes(type: string): Promise<any[]> {
   let symbols: string[] = [];
@@ -1390,6 +2079,290 @@ async function fetchAlphaVantageQuotes(apiKey: string): Promise<any[]> {
     })
   );
   return results.filter(Boolean);
+}
+
+// Marketstack API (free tier: 1000 requests/month, requires API key)
+async function fetchMarketstackQuotes(type: string, apiKey: string): Promise<any[]> {
+  try {
+    let symbols: string[] = [];
+    let symbolMap: Record<string, { name: string; originalSymbol: string }> = {};
+    
+    if (type === 'stocks') {
+      symbols = STOCK_SYMBOLS.slice(0, 10);
+      symbols.forEach(s => symbolMap[s] = { name: s, originalSymbol: s });
+    } else if (type === 'indices') {
+      symbols = INDEX_SYMBOLS.slice(0, 5).map(item => item.symbol.replace('^', ''));
+      INDEX_SYMBOLS.slice(0, 5).forEach(item => {
+        symbolMap[item.symbol.replace('^', '')] = { name: item.name, originalSymbol: item.symbol };
+      });
+    } else if (type === 'commodities') {
+      symbols = COMMODITY_SYMBOLS.slice(0, 5).map(item => item.symbol.replace('=F', ''));
+      COMMODITY_SYMBOLS.slice(0, 5).forEach(item => {
+        symbolMap[item.symbol.replace('=F', '')] = { name: item.name, originalSymbol: item.symbol };
+      });
+    } else {
+      return [];
+    }
+    
+    const symbolsStr = symbols.join(',');
+    const response = await fetch(
+      `http://api.marketstack.com/v1/eod/latest?access_key=${apiKey}&symbols=${symbolsStr}`
+    );
+    
+    if (!response.ok) {
+      throw new Error(`Marketstack API error: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    const quotes = data.data || [];
+    
+    return quotes.map((quote: any) => {
+      const info = symbolMap[quote.symbol] || { name: quote.symbol, originalSymbol: quote.symbol };
+      return {
+        symbol: formatSymbol(info.originalSymbol, type),
+        name: info.name,
+        price: quote.close || 0,
+        change: (quote.close || 0) - (quote.open || 0),
+        changePercent: quote.open ? (((quote.close || 0) - quote.open) / quote.open) * 100 : 0,
+        high: quote.high || quote.close || 0,
+        low: quote.low || quote.close || 0,
+        volume: formatVolume(quote.volume || 0),
+      };
+    }).filter((q: any) => q.price > 0);
+  } catch (error) {
+    console.error('Marketstack error:', error);
+    return [];
+  }
+}
+
+// EOD Historical Data API (free tier: 20 calls/day = ~600/month, requires API key)
+async function fetchEODHistoricalDataQuotes(type: string, apiKey: string): Promise<any[]> {
+  if (type !== 'stocks' && type !== 'indices' && type !== 'commodities') return [];
+  
+  try {
+    let symbols: string[] = [];
+    let symbolMap: Record<string, { name: string; originalSymbol: string }> = {};
+    
+    if (type === 'stocks') {
+      symbols = STOCK_SYMBOLS.slice(0, 5);
+      symbols.forEach(s => symbolMap[s] = { name: s, originalSymbol: s });
+    } else if (type === 'indices') {
+      symbols = INDEX_SYMBOLS.slice(0, 3).map(item => item.symbol.replace('^', ''));
+      INDEX_SYMBOLS.slice(0, 3).forEach(item => {
+        symbolMap[item.symbol.replace('^', '')] = { name: item.name, originalSymbol: item.symbol };
+      });
+    } else if (type === 'commodities') {
+      symbols = COMMODITY_SYMBOLS.slice(0, 3).map(item => item.symbol.replace('=F', ''));
+      COMMODITY_SYMBOLS.slice(0, 3).forEach(item => {
+        symbolMap[item.symbol.replace('=F', '')] = { name: item.name, originalSymbol: item.symbol };
+      });
+    }
+    
+    const results = await Promise.all(
+      symbols.map(async (symbol) => {
+        try {
+          let suffix = '';
+          if (type === 'stocks') suffix = '.US';
+          else if (type === 'commodities') suffix = '.CMX'; // Commodity exchange
+          const response = await fetch(
+            `https://eodhistoricaldata.com/api/real-time/${symbol}${suffix}?api_token=${apiKey}&fmt=json`
+          );
+          
+          if (!response.ok) return null;
+          
+          const data = await response.json();
+          if (!data.close) return null;
+          
+          const info = symbolMap[symbol] || { name: symbol, originalSymbol: symbol };
+          return {
+            symbol: formatSymbol(info.originalSymbol, type),
+            name: info.name,
+            price: parseFloat(data.close) || 0,
+            change: parseFloat(data.change) || 0,
+            changePercent: parseFloat(data.change_percent) || 0,
+            high: parseFloat(data.high) || data.close || 0,
+            low: parseFloat(data.low) || data.close || 0,
+            volume: formatVolume(parseInt(data.volume) || 0),
+          };
+        } catch {
+          return null;
+        }
+      })
+    );
+    return results.filter(Boolean);
+  } catch (error) {
+    console.error('EOD Historical Data error:', error);
+    return [];
+  }
+}
+
+// Financial Modeling Prep API (free tier: 250 calls/day = ~7500/month, requires API key)
+async function fetchFinancialModelingPrepQuotes(type: string, apiKey: string): Promise<any[]> {
+  if (type !== 'stocks' && type !== 'indices' && type !== 'commodities') return [];
+  
+  try {
+    let symbols: string[] = [];
+    let symbolMap: Record<string, { name: string; originalSymbol: string }> = {};
+    
+    if (type === 'stocks') {
+      symbols = STOCK_SYMBOLS.slice(0, 10);
+      symbols.forEach(s => symbolMap[s] = { name: s, originalSymbol: s });
+    } else if (type === 'indices') {
+      symbols = INDEX_SYMBOLS.slice(0, 5).map(item => item.symbol.replace('^', ''));
+      INDEX_SYMBOLS.slice(0, 5).forEach(item => {
+        symbolMap[item.symbol.replace('^', '')] = { name: item.name, originalSymbol: item.symbol };
+      });
+    }
+    
+    const symbolsStr = symbols.join(',');
+    const response = await fetch(
+      `https://financialmodelingprep.com/api/v3/quote/${symbolsStr}?apikey=${apiKey}`
+    );
+    
+    if (!response.ok) {
+      throw new Error(`Financial Modeling Prep API error: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    if (!Array.isArray(data)) return [];
+    
+    return data.map((quote: any) => {
+      const info = symbolMap[quote.symbol] || { name: quote.name || quote.symbol, originalSymbol: quote.symbol };
+      return {
+        symbol: formatSymbol(info.originalSymbol, type),
+        name: info.name,
+        price: quote.price || 0,
+        change: quote.change || 0,
+        changePercent: quote.changesPercentage || 0,
+        high: quote.dayHigh || quote.price || 0,
+        low: quote.dayLow || quote.price || 0,
+        volume: formatVolume(quote.volume || 0),
+      };
+    }).filter((q: any) => q.price > 0);
+  } catch (error) {
+    console.error('Financial Modeling Prep error:', error);
+    return [];
+  }
+}
+
+// Quandl/Nasdaq Data Link API (free tier: 50 calls/day = ~1500/month, requires API key)
+async function fetchQuandlQuotes(type: string, apiKey: string): Promise<any[]> {
+  if (type !== 'stocks' && type !== 'indices' && type !== 'commodities') return [];
+  
+  try {
+    let symbols: string[] = [];
+    let symbolMap: Record<string, { name: string; originalSymbol: string; dataset: string }> = {};
+    
+    if (type === 'stocks') {
+      symbols = STOCK_SYMBOLS.slice(0, 5);
+      symbols.forEach(s => symbolMap[s] = { name: s, originalSymbol: s, dataset: `WIKI/${s}` });
+    } else if (type === 'indices') {
+      // Quandl uses different datasets for indices
+      const indexDatasets: Record<string, string> = {
+        '^GSPC': 'YAHOO/INDEX_GSPC',
+        '^DJI': 'YAHOO/INDEX_DJI',
+        '^IXIC': 'YAHOO/INDEX_IXIC',
+      };
+      symbols = INDEX_SYMBOLS.slice(0, 3).map(item => item.symbol);
+      INDEX_SYMBOLS.slice(0, 3).forEach(item => {
+        if (indexDatasets[item.symbol]) {
+          symbolMap[item.symbol] = { name: item.name, originalSymbol: item.symbol, dataset: indexDatasets[item.symbol] };
+        }
+      });
+      symbols = symbols.filter(s => symbolMap[s]);
+    } else if (type === 'commodities') {
+      // Quandl uses different datasets for commodities
+      const commodityDatasets: Record<string, string> = {
+        'GC=F': 'CHRIS/CME_GC1', // Gold
+        'SI=F': 'CHRIS/CME_SI1', // Silver
+        'CL=F': 'CHRIS/ICE_T1', // Crude Oil
+      };
+      symbols = COMMODITY_SYMBOLS.slice(0, 3).map(item => item.symbol);
+      COMMODITY_SYMBOLS.slice(0, 3).forEach(item => {
+        if (commodityDatasets[item.symbol]) {
+          symbolMap[item.symbol] = { name: item.name, originalSymbol: item.symbol, dataset: commodityDatasets[item.symbol] };
+        }
+      });
+      symbols = symbols.filter(s => symbolMap[s]);
+    }
+    
+    const results = await Promise.all(
+      symbols.map(async (symbol) => {
+        try {
+          const dataset = symbolMap[symbol]?.dataset || `WIKI/${symbol}`;
+          const response = await fetch(
+            `https://www.quandl.com/api/v3/datasets/${dataset}/data.json?api_key=${apiKey}&limit=1&order=desc`
+          );
+          
+          if (!response.ok) return null;
+          
+          const data = await response.json();
+          const datasetData = data.dataset;
+          if (!datasetData || !datasetData.data || datasetData.data.length === 0) return null;
+          
+          const latest = datasetData.data[0];
+          // Format: [Date, Open, High, Low, Close, Volume, ...]
+          const close = parseFloat(latest[4]) || 0;
+          const open = parseFloat(latest[1]) || close;
+          const high = parseFloat(latest[2]) || close;
+          const low = parseFloat(latest[3]) || close;
+          const change = close - open;
+          const changePercent = open > 0 ? (change / open) * 100 : 0;
+          
+          const info = symbolMap[symbol] || { name: symbol, originalSymbol: symbol };
+          return {
+            symbol: formatSymbol(info.originalSymbol, type),
+            name: info.name,
+            price: close,
+            change,
+            changePercent,
+            high,
+            low,
+            volume: formatVolume(parseInt(latest[5]) || 0),
+          };
+        } catch {
+          return null;
+        }
+      })
+    );
+    return results.filter(Boolean);
+  } catch (error) {
+    console.error('Quandl error:', error);
+    return [];
+  }
+}
+
+// World Trading Data API (free tier: 250 calls/day = ~7500/month, requires API key)
+async function fetchWorldTradingDataQuotes(type: string, apiKey: string): Promise<any[]> {
+  if (type !== 'stocks') return [];
+  
+  try {
+    const symbols = STOCK_SYMBOLS.slice(0, 10).join(',');
+    const response = await fetch(
+      `https://api.worldtradingdata.com/api/v1/stock?symbol=${symbols}&api_token=${apiKey}`
+    );
+    
+    if (!response.ok) {
+      throw new Error(`World Trading Data API error: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    const quotes = data.data || [];
+    
+    return quotes.map((quote: any) => ({
+      symbol: quote.symbol,
+      name: quote.name || quote.symbol,
+      price: parseFloat(quote.price) || 0,
+      change: parseFloat(quote.change) || 0,
+      changePercent: parseFloat(quote.change_percent) || 0,
+      high: parseFloat(quote.day_high) || quote.price || 0,
+      low: parseFloat(quote.day_low) || quote.price || 0,
+      volume: formatVolume(parseInt(quote.volume) || 0),
+    })).filter((q: any) => q.price > 0);
+  } catch (error) {
+    console.error('World Trading Data error:', error);
+    return [];
+  }
 }
 
 async function fetchFinnhubQuotes(type: string, apiKey: string): Promise<any[]> {
