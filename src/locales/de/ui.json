@@ -135,6 +135,8 @@
     "failedToAddToWatchlist": "Hinzufügen zur Beobachtungsliste fehlgeschlagen",
     "courseNotification": "Sie werden benachrichtigt, wenn der Kurs startet!",
     "pleaseSignInToFollowAuthors": "Bitte melden Sie sich an, um Autoren zu folgen",
+    "followingAuthor": "Autor wird gefolgt",
+    "unfollowedAuthor": "Autor nicht mehr gefolgt",
     "unfollowed": "Entfolgt",
     "following": "Folgen",
     "contentHidden": "Inhalt ausgeblendet",

@@ -107,6 +107,7 @@ serve(async (req) => {
     const TWELVE_DATA_API_KEY = Deno.env.get('TWELVE_DATA_API_KEY');
     const CURRENCY_API_KEY = Deno.env.get('CURRENCY_API_KEY');
     const OPEN_EXCHANGE_RATES_API_KEY = Deno.env.get('OPEN_EXCHANGE_RATES_API_KEY');
+    const CURRENCY_FREAKS_API_KEY = Deno.env.get('CURRENCY_FREAKS_API_KEY');
     
     let marketData: MarketDataSource | null = null;
     let dataSource = 'unknown';
@@ -123,6 +124,7 @@ serve(async (req) => {
     // 7b. Fixer.io (for currencies only, free tier)
     // 7c. CurrencyAPI (for currencies only, if key exists)
     // 7d. Open Exchange Rates (for currencies only, if key exists)
+    // 7e. CurrencyFreaks (for currencies only, if key exists)
     // 8. DB cache
     // 9. Mock data
 
@@ -403,6 +405,31 @@ serve(async (req) => {
         }
       } catch (apiError) {
         console.log('Open Exchange Rates failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 7e. Try CurrencyFreaks (for currencies only, if key exists)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies' && CURRENCY_FREAKS_API_KEY) {
+      try {
+        console.log('Attempting CurrencyFreaks for currencies...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchCurrencyFreaks(CURRENCY_FREAKS_API_KEY);
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'currencyfreaks' };
+          }
+          throw new Error('CurrencyFreaks returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from CurrencyFreaks`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('CurrencyFreaks failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
         marketData = null;
       }
     }
@@ -923,58 +950,99 @@ async function fetchFixerIO(): Promise<any[]> {
 }
 
 // CurrencyAPI (free tier: 300 requests/month, requires API key but has free tier)
+// We fetch latest + previous day's rates to compute proper daily change/changePercent.
 async function fetchCurrencyAPI(apiKey?: string): Promise<any[]> {
   if (!apiKey) {
-    // Try without key first (some endpoints work)
     return [];
   }
-  
+
   try {
-    const response = await fetch(`https://api.currencyapi.com/v3/latest?apikey=${apiKey}&base_currency=USD`);
-    
-    if (!response.ok) {
-      throw new Error(`CurrencyAPI error: ${response.status}`);
+    // Latest rates (base USD)
+    const latestResp = await fetch(
+      `https://api.currencyapi.com/v3/latest?apikey=${apiKey}&base_currency=USD`
+    );
+
+    if (!latestResp.ok) {
+      throw new Error(`CurrencyAPI latest error: ${latestResp.status}`);
     }
-    
-    const data = await response.json();
-    const rates = data.data || {};
-    
+
+    const latestJson = await latestResp.json();
+    const latestRates: Record<string, { value: number }> = latestJson.data || {};
+
+    // Previous day (T-1) for daily change
+    const yesterday = new Date();
+    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+    const y = yesterday.getUTCFullYear();
+    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(yesterday.getUTCDate()).padStart(2, '0');
+    const prevDate = `${y}-${m}-${d}`;
+
+    let prevRates: Record<string, { value: number }> = {};
+    try {
+      const prevResp = await fetch(
+        `https://api.currencyapi.com/v3/historical?apikey=${apiKey}&base_currency=USD&date=${prevDate}`
+      );
+      if (prevResp.ok) {
+        const prevJson = await prevResp.json();
+        prevRates = (prevJson.data || {}) as Record<string, { value: number }>;
+      } else {
+        console.warn('CurrencyAPI historical error:', prevResp.status);
+      }
+    } catch (historicalError) {
+      console.error('CurrencyAPI historical fetch failed:', historicalError);
+    }
+
     return CURRENCY_SYMBOLS.map((item) => {
+      // Cross pair EUR/GBP: compute from EUR and GBP
       if (!item.exchangeRate) {
         if (item.symbol === 'EURGBP') {
-          const eurData = rates['EUR'];
-          const gbpData = rates['GBP'];
-          if (!eurData || !gbpData) return null;
-          const price = eurData.value / gbpData.value;
+          const eurLatest = latestRates['EUR'];
+          const gbpLatest = latestRates['GBP'];
+          const eurPrev = prevRates['EUR'];
+          const gbpPrev = prevRates['GBP'];
+          if (!eurLatest || !gbpLatest || !eurPrev || !gbpPrev) return null;
+
+          const price = eurLatest.value / gbpLatest.value;
+          const prevPrice = eurPrev.value / gbpPrev.value;
+          const change = price - prevPrice;
+          const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+
           return {
             symbol: 'EUR/GBP',
             name: item.name,
             price,
-            change: 0,
-            changePercent: 0,
-            high: price,
-            low: price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
           };
         }
         return null;
       }
-      
-      const currencyData = rates[item.exchangeRate];
-      if (!currencyData) return null;
-      
-      let price = currencyData.value;
+
+      const latest = latestRates[item.exchangeRate];
+      const prev = prevRates[item.exchangeRate];
+      if (!latest || !prev) return null;
+
+      // Base is USD: for USDXXX we invert, как и раньше
+      let price = latest.value;
+      let prevPrice = prev.value;
       if (item.symbol.startsWith('USD')) {
         price = 1 / price;
+        prevPrice = 1 / prevPrice;
       }
-      
+
+      const change = price - prevPrice;
+      const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+
       return {
         symbol: formatSymbol(item.symbol, 'currencies'),
         name: item.name,
         price,
-        change: 0,
-        changePercent: 0,
-        high: price,
-        low: price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
       };
     }).filter(Boolean);
   } catch (error) {
@@ -984,60 +1052,213 @@ async function fetchCurrencyAPI(apiKey?: string): Promise<any[]> {
 }
 
 // Open Exchange Rates (free tier: 1000 requests/month, requires API key)
+// Similar to CurrencyAPI: fetch latest + previous day and compute daily change.
 async function fetchOpenExchangeRates(apiKey?: string): Promise<any[]> {
   if (!apiKey) {
     return [];
   }
-  
+
   try {
-    const response = await fetch(`https://openexchangerates.org/api/latest.json?app_id=${apiKey}&base=USD`);
-    
-    if (!response.ok) {
-      throw new Error(`Open Exchange Rates error: ${response.status}`);
+    // NOTE: in free plan base is always USD; we don't pass &base to avoid errors.
+    const latestResp = await fetch(
+      `https://openexchangerates.org/api/latest.json?app_id=${apiKey}`
+    );
+
+    if (!latestResp.ok) {
+      throw new Error(`Open Exchange Rates latest error: ${latestResp.status}`);
     }
-    
-    const data = await response.json();
-    const rates = data.rates || {};
-    
+
+    const latestJson = await latestResp.json();
+    const latestRates: Record<string, number> = latestJson.rates || {};
+
+    // Previous day for daily change
+    const yesterday = new Date();
+    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+    const y = yesterday.getUTCFullYear();
+    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(yesterday.getUTCDate()).padStart(2, '0');
+    const prevDate = `${y}-${m}-${d}`;
+
+    let prevRates: Record<string, number> = {};
+    try {
+      const prevResp = await fetch(
+        `https://openexchangerates.org/api/historical/${prevDate}.json?app_id=${apiKey}`
+      );
+      if (prevResp.ok) {
+        const prevJson = await prevResp.json();
+        prevRates = (prevJson.rates || {}) as Record<string, number>;
+      } else {
+        console.warn('Open Exchange Rates historical error:', prevResp.status);
+      }
+    } catch (historicalError) {
+      console.error('Open Exchange Rates historical fetch failed:', historicalError);
+    }
+
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
         if (item.symbol === 'EURGBP') {
-          const eurRate = rates['EUR'] || 1;
-          const gbpRate = rates['GBP'] || 1;
-          const price = eurRate / gbpRate;
+          const eurLatest = latestRates['EUR'];
+          const gbpLatest = latestRates['GBP'];
+          const eurPrev = prevRates['EUR'];
+          const gbpPrev = prevRates['GBP'];
+          if (!eurLatest || !gbpLatest || !eurPrev || !gbpPrev) return null;
+
+          const price = eurLatest / gbpLatest;
+          const prevPrice = eurPrev / gbpPrev;
+          const change = price - prevPrice;
+          const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+
           return {
             symbol: 'EUR/GBP',
             name: item.name,
             price,
-            change: 0,
-            changePercent: 0,
-            high: price,
-            low: price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
           };
         }
         return null;
       }
-      
-      const rate = rates[item.exchangeRate];
-      if (!rate) return null;
-      
-      let price = rate;
+
+      const latest = latestRates[item.exchangeRate];
+      const prev = prevRates[item.exchangeRate];
+      if (!latest || !prev) return null;
+
+      let price = latest;
+      let prevPrice = prev;
       if (item.symbol.startsWith('USD')) {
-        price = 1 / rate;
+        price = 1 / price;
+        prevPrice = 1 / prevPrice;
       }
-      
+
+      const change = price - prevPrice;
+      const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+
       return {
         symbol: formatSymbol(item.symbol, 'currencies'),
         name: item.name,
         price,
-        change: 0,
-        changePercent: 0,
-        high: price,
-        low: price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
       };
     }).filter(Boolean);
   } catch (error) {
     console.error('Open Exchange Rates error:', error);
+    return [];
+  }
+}
+
+// CurrencyFreaks (free tier: 1000 requests/month, requires API key)
+// Uses latest + historical (previous day) to compute daily change for major pairs.
+async function fetchCurrencyFreaks(apiKey?: string): Promise<any[]> {
+  if (!apiKey) {
+    return [];
+  }
+
+  try {
+    // Build comma-separated list of ISO codes we need for CURRENCY_SYMBOLS
+    const symbolsSet = new Set<string>();
+    CURRENCY_SYMBOLS.forEach((item) => {
+      if (item.exchangeRate) {
+        symbolsSet.add(item.exchangeRate);
+      } else if (item.symbol === 'EURGBP') {
+        symbolsSet.add('EUR');
+        symbolsSet.add('GBP');
+      }
+    });
+    const symbolsParam = Array.from(symbolsSet).join(',');
+
+    // Latest rates (base USD)
+    const latestResp = await fetch(
+      `https://api.currencyfreaks.com/v2.0/rates/latest?apikey=${apiKey}&symbols=${encodeURIComponent(symbolsParam)}`
+    );
+    if (!latestResp.ok) {
+      throw new Error(`CurrencyFreaks latest error: ${latestResp.status}`);
+    }
+    const latestJson = await latestResp.json();
+    const latestRates: Record<string, string> = latestJson.rates || {};
+
+    // Previous day
+    const yesterday = new Date();
+    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+    const y = yesterday.getUTCFullYear();
+    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(yesterday.getUTCDate()).padStart(2, '0');
+    const prevDate = `${y}-${m}-${d}`;
+
+    let prevRates: Record<string, string> = {};
+    try {
+      const prevResp = await fetch(
+        `https://api.currencyfreaks.com/v2.0/rates/historical?apikey=${apiKey}&date=${prevDate}&symbols=${encodeURIComponent(symbolsParam)}`
+      );
+      if (prevResp.ok) {
+        const prevJson = await prevResp.json();
+        prevRates = (prevJson.rates || {}) as Record<string, string>;
+      } else {
+        console.warn('CurrencyFreaks historical error:', prevResp.status);
+      }
+    } catch (historicalError) {
+      console.error('CurrencyFreaks historical fetch failed:', historicalError);
+    }
+
+    return CURRENCY_SYMBOLS.map((item) => {
+      if (!item.exchangeRate) {
+        if (item.symbol === 'EURGBP') {
+          const eurLatest = parseFloat(latestRates['EUR'] || '0');
+          const gbpLatest = parseFloat(latestRates['GBP'] || '0');
+          const eurPrev = parseFloat(prevRates['EUR'] || '0');
+          const gbpPrev = parseFloat(prevRates['GBP'] || '0');
+          if (!eurLatest || !gbpLatest || !eurPrev || !gbpPrev) return null;
+
+          const price = eurLatest / gbpLatest;
+          const prevPrice = eurPrev / gbpPrev;
+          const change = price - prevPrice;
+          const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+
+          return {
+            symbol: 'EUR/GBP',
+            name: item.name,
+            price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
+          };
+        }
+        return null;
+      }
+
+      const latestStr = latestRates[item.exchangeRate];
+      const prevStr = prevRates[item.exchangeRate];
+      if (!latestStr || !prevStr) return null;
+
+      let price = parseFloat(latestStr);
+      let prevPrice = parseFloat(prevStr);
+      if (!price || !prevPrice) return null;
+
+      if (item.symbol.startsWith('USD')) {
+        price = 1 / price;
+        prevPrice = 1 / prevPrice;
+      }
+
+      const change = price - prevPrice;
+      const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+
+      return {
+        symbol: formatSymbol(item.symbol, 'currencies'),
+        name: item.name,
+        price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
+      };
+    }).filter(Boolean);
+  } catch (error) {
+    console.error('CurrencyFreaks error:', error);
     return [];
   }
 }

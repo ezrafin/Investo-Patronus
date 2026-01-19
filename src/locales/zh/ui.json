@@ -128,6 +128,8 @@
     "failedToAddToWatchlist": "添加到观察列表失败",
     "courseNotification": "课程启动时您将收到通知！",
     "pleaseSignInToFollowAuthors": "请登录以关注作者",
+    "followingAuthor": "正在关注作者",
+    "unfollowedAuthor": "已取消关注作者",
     "unfollowed": "已取消关注",
     "following": "正在关注",
     "contentHidden": "内容已隐藏",

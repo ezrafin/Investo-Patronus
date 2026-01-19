@@ -128,6 +128,8 @@
     "failedToAddToWatchlist": "Nie udało się dodać do listy obserwowanych",
     "courseNotification": "Zostaniesz powiadomiony, gdy kurs się rozpocznie!",
     "pleaseSignInToFollowAuthors": "Proszę się zalogować, aby obserwować autorów",
+    "followingAuthor": "Obserwowanie autora",
+    "unfollowedAuthor": "Przestano obserwować autora",
     "unfollowed": "Przestano obserwować",
     "following": "Obserwowanie",
     "contentHidden": "Treść ukryta",

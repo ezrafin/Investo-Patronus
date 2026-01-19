@@ -128,6 +128,8 @@
     "failedToAddToWatchlist": "Échec de l'ajout à la liste de surveillance",
     "courseNotification": "Vous serez averti lorsque le cours sera lancé !",
     "pleaseSignInToFollowAuthors": "Veuillez vous connecter pour suivre des auteurs",
+    "followingAuthor": "Auteur suivi",
+    "unfollowedAuthor": "Auteur non suivi",
     "unfollowed": "Ne plus suivre",
     "following": "Suivre",
     "contentHidden": "Contenu masqué",

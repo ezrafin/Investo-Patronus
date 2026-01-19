@@ -135,6 +135,8 @@
     "failedToAddToWatchlist": "Error al añadir a la lista de seguimiento",
     "courseNotification": "¡Serás notificado cuando el curso se lance!",
     "pleaseSignInToFollowAuthors": "Por favor, inicia sesión para seguir autores",
+    "followingAuthor": "Siguiendo autor",
+    "unfollowedAuthor": "Dejaste de seguir autor",
     "unfollowed": "Dejaste de seguir",
     "following": "Siguiendo",
     "contentHidden": "Contenido oculto",

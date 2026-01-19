@@ -58,7 +58,7 @@ export function useAuthorFollow(authorId?: string) {
           last_article_count: 0,
         });
         if (error) throw error;
-        toast.success(t('toast.followingAuthor', 'Following author'));
+        toast.success(t('toast.followingAuthor'));
       } else {
         const { error } = await supabase
           .from('author_follows')
@@ -66,7 +66,7 @@ export function useAuthorFollow(authorId?: string) {
           .eq('user_id', user.id)
           .eq('author_id', authorId);
         if (error) throw error;
-        toast.success(t('toast.unfollowedAuthor', 'Unfollowed author'));
+        toast.success(t('toast.unfollowedAuthor'));
       }
     } catch (error: any) {
       setIsFollowing(!next);

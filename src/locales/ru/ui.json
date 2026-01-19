@@ -128,6 +128,8 @@
     "failedToAddToWatchlist": "Не удалось добавить в список наблюдения",
     "courseNotification": "Вы будете уведомлены, когда курс запустится!",
     "pleaseSignInToFollowAuthors": "Пожалуйста, войдите, чтобы подписаться на авторов",
+    "followingAuthor": "Подписка на автора",
+    "unfollowedAuthor": "Отписка от автора",
     "unfollowed": "Отписаны",
     "following": "Подписаны",
     "contentHidden": "Контент скрыт",
