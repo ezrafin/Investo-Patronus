@@ -179,6 +179,7 @@
     "sessionExpired": "Сессия истекла. Пожалуйста, войдите снова.",
     "validationServiceError": "Ошибка службы валидации",
     "replyPosted": "Ответ опубликован",
+    "replyPendingModeration": "Ответ отправлен и ожидает валидации",
     "failedToPostReply": "Не удалось опубликовать ответ",
     "failedToUpdateReaction": "Не удалось обновить реакцию"
   },

@@ -179,6 +179,7 @@
     "sessionExpired": "Sesja wygasła. Proszę zalogować się ponownie.",
     "validationServiceError": "Błąd usługi walidacji",
     "replyPosted": "Odpowiedź opublikowana",
+    "replyPendingModeration": "Odpowiedź wysłana i oczekuje na walidację",
     "failedToPostReply": "Nie udało się opublikować odpowiedzi",
     "failedToUpdateReaction": "Nie udało się zaktualizować reakcji"
   },

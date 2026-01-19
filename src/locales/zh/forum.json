@@ -144,6 +144,7 @@
     "sessionExpired": "会话已过期。请重新登录。",
     "validationServiceError": "验证服务错误",
     "replyPosted": "回复已发布",
+    "replyPendingModeration": "回复已提交，正在等待验证",
     "failedToPostReply": "发布回复失败",
     "failedToUpdateReaction": "更新反应失败"
   },

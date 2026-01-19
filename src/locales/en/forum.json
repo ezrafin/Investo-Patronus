@@ -144,6 +144,7 @@
     "sessionExpired": "Session expired. Please sign in again.",
     "validationServiceError": "Validation service error",
     "replyPosted": "Reply posted",
+    "replyPendingModeration": "Reply submitted and pending validation",
     "failedToPostReply": "Failed to post reply",
     "failedToUpdateReaction": "Failed to update reaction"
   },

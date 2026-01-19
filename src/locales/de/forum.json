@@ -179,6 +179,7 @@
     "sessionExpired": "Sitzung abgelaufen. Bitte melden Sie sich erneut an.",
     "validationServiceError": "Validierungsdienstfehler",
     "replyPosted": "Antwort veröffentlicht",
+    "replyPendingModeration": "Antwort gesendet und wartet auf Validierung",
     "failedToPostReply": "Antwort konnte nicht veröffentlicht werden",
     "failedToUpdateReaction": "Reaktion konnte nicht aktualisiert werden"
   },

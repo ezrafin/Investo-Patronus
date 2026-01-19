@@ -179,6 +179,7 @@
     "sessionExpired": "Sesión expirada. Por favor, inicia sesión nuevamente.",
     "validationServiceError": "Error del servicio de validación",
     "replyPosted": "Respuesta publicada",
+    "replyPendingModeration": "Respuesta enviada y en espera de validación",
     "failedToPostReply": "Error al publicar respuesta",
     "failedToUpdateReaction": "Error al actualizar reacción"
   },

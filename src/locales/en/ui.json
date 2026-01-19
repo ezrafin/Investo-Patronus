@@ -132,6 +132,8 @@
     "alreadyInWatchlist": "Already in watchlist",
     "failedToAddToWatchlist": "Failed to add to watchlist",
     "courseNotification": "You will be notified when the course launches!",
+    "notifyMe": "Notify me",
+    "joinWaitlist": "Join waitlist",
     "pleaseSignInToFollowAuthors": "Please sign in to follow authors",
     "followingAuthor": "Following author",
     "unfollowedAuthor": "Unfollowed author",
