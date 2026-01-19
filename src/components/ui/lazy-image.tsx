@@ -122,8 +122,8 @@ export function LazyImage({
       {/* Actual image - only load when queued */}
       {shouldLoad && (
         <picture>
-          {/* WebP source */}
-          {src && !src.includes('.svg') && !src.includes('.gif') && (
+          {/* WebP source - skip for analytics images (they are JPG only) */}
+          {src && !src.includes('.svg') && !src.includes('.gif') && !src.includes('/analytics/') && (
             <source
               srcSet={srcSet || src.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
               type="image/webp"
