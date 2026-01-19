@@ -119,12 +119,14 @@ serve(async (req) => {
     // 4. Alpha Vantage (if key exists, stocks only)
     // 5. Twelve Data (if key exists)
     // 6. Yahoo Finance (improved)
-    // 7. ExchangeRate-API (for currencies only)
-    // 7a. exchangerate.host (for currencies only, free, no key)
-    // 7b. Fixer.io (for currencies only, free tier)
-    // 7c. CurrencyAPI (for currencies only, if key exists)
-    // 7d. Open Exchange Rates (for currencies only, if key exists)
-    // 7e. CurrencyFreaks (for currencies only, if key exists)
+    // For currencies (with proper change data):
+    // 7a. CurrencyAPI (if key exists) - provides change data
+    // 7b. Open Exchange Rates (if key exists) - provides change data
+    // 7c. CurrencyFreaks (if key exists) - provides change data
+    // For currencies (free fallbacks, no change data):
+    // 7d. ExchangeRate-API (free, no key)
+    // 7e. exchangerate.host (free, no key)
+    // 7f. Fixer.io (free tier)
     // 8. DB cache
     // 9. Mock data
 
@@ -284,82 +286,8 @@ serve(async (req) => {
       }
     }
 
-    // 7. Try ExchangeRate-API (for currencies only)
-    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies') {
-      try {
-        console.log('Attempting ExchangeRate-API for currencies...');
-        marketData = await retryWithBackoff(async () => {
-          const data = await fetchExchangeRateAPI();
-          const validated = validateMarketData(data);
-          if (hasMinimumData(validated, 3)) {
-            return { data: validated, source: 'exchangerate' };
-          }
-          throw new Error('ExchangeRate-API returned insufficient valid data');
-        }, 2, 1000, 10000);
-
-        if (marketData && hasMinimumData(marketData.data, 3)) {
-          dataSource = marketData.source;
-          console.log(`Successfully fetched ${marketData.data.length} valid items from ExchangeRate-API`);
-        } else {
-          marketData = null;
-        }
-      } catch (apiError) {
-        console.log('ExchangeRate-API failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
-        marketData = null;
-      }
-    }
-
-    // 7a. Try exchangerate.host (for currencies only, free, no key)
-    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies') {
-      try {
-        console.log('Attempting exchangerate.host for currencies...');
-        marketData = await retryWithBackoff(async () => {
-          const data = await fetchExchangeRateHost();
-          const validated = validateMarketData(data);
-          if (hasMinimumData(validated, 3)) {
-            return { data: validated, source: 'exchangeratehost' };
-          }
-          throw new Error('exchangerate.host returned insufficient valid data');
-        }, 2, 1000, 10000);
-
-        if (marketData && hasMinimumData(marketData.data, 3)) {
-          dataSource = marketData.source;
-          console.log(`Successfully fetched ${marketData.data.length} valid items from exchangerate.host`);
-        } else {
-          marketData = null;
-        }
-      } catch (apiError) {
-        console.log('exchangerate.host failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
-        marketData = null;
-      }
-    }
-
-    // 7b. Try Fixer.io (for currencies only, free tier)
-    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies') {
-      try {
-        console.log('Attempting Fixer.io for currencies...');
-        marketData = await retryWithBackoff(async () => {
-          const data = await fetchFixerIO();
-          const validated = validateMarketData(data);
-          if (hasMinimumData(validated, 3)) {
-            return { data: validated, source: 'fixerio' };
-          }
-          throw new Error('Fixer.io returned insufficient valid data');
-        }, 2, 1000, 10000);
-
-        if (marketData && hasMinimumData(marketData.data, 3)) {
-          dataSource = marketData.source;
-          console.log(`Successfully fetched ${marketData.data.length} valid items from Fixer.io`);
-        } else {
-          marketData = null;
-        }
-      } catch (apiError) {
-        console.log('Fixer.io failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
-        marketData = null;
-      }
-    }
-
-    // 7c. Try CurrencyAPI (for currencies only, if key exists)
+    // 7. For currencies, try API with keys FIRST (they provide proper change data)
+    // 7a. Try CurrencyAPI (for currencies only, if key exists)
     if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies' && CURRENCY_API_KEY) {
       try {
         console.log('Attempting CurrencyAPI for currencies...');
@@ -384,7 +312,7 @@ serve(async (req) => {
       }
     }
 
-    // 7d. Try Open Exchange Rates (for currencies only, if key exists)
+    // 7b. Try Open Exchange Rates (for currencies only, if key exists)
     if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies' && OPEN_EXCHANGE_RATES_API_KEY) {
       try {
         console.log('Attempting Open Exchange Rates for currencies...');
@@ -409,7 +337,7 @@ serve(async (req) => {
       }
     }
 
-    // 7e. Try CurrencyFreaks (for currencies only, if key exists)
+    // 7c. Try CurrencyFreaks (for currencies only, if key exists)
     if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies' && CURRENCY_FREAKS_API_KEY) {
       try {
         console.log('Attempting CurrencyFreaks for currencies...');
@@ -430,6 +358,81 @@ serve(async (req) => {
         }
       } catch (apiError) {
         console.log('CurrencyFreaks failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 7d. Try ExchangeRate-API (for currencies only, free fallback - no change data)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies') {
+      try {
+        console.log('Attempting ExchangeRate-API for currencies...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchExchangeRateAPI();
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'exchangerate' };
+          }
+          throw new Error('ExchangeRate-API returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from ExchangeRate-API`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('ExchangeRate-API failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 7e. Try exchangerate.host (for currencies only, free fallback - no change data)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies') {
+      try {
+        console.log('Attempting exchangerate.host for currencies...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchExchangeRateHost();
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'exchangeratehost' };
+          }
+          throw new Error('exchangerate.host returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from exchangerate.host`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('exchangerate.host failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
+        marketData = null;
+      }
+    }
+
+    // 7f. Try Fixer.io (for currencies only, free fallback - no change data)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type === 'currencies') {
+      try {
+        console.log('Attempting Fixer.io for currencies...');
+        marketData = await retryWithBackoff(async () => {
+          const data = await fetchFixerIO();
+          const validated = validateMarketData(data);
+          if (hasMinimumData(validated, 3)) {
+            return { data: validated, source: 'fixerio' };
+          }
+          throw new Error('Fixer.io returned insufficient valid data');
+        }, 2, 1000, 10000);
+
+        if (marketData && hasMinimumData(marketData.data, 3)) {
+          dataSource = marketData.source;
+          console.log(`Successfully fetched ${marketData.data.length} valid items from Fixer.io`);
+        } else {
+          marketData = null;
+        }
+      } catch (apiError) {
+        console.log('Fixer.io failed:', apiError instanceof Error ? apiError.message : 'Unknown error');
         marketData = null;
       }
     }

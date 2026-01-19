@@ -1,10 +1,5 @@
 import { AnalyticsArticle } from './types';
-import { getAuthorAvatar, categoryImages } from './utils';
-
-const getImage = (type: string, index: number) => {
-  const images = categoryImages[type] || categoryImages.markets;
-  return images[index % images.length];
-};
+import { getAuthorAvatar, getAnalyticsImage } from './utils';
 
 const formatDate = (offset: number) => {
   const baseDate = new Date('2024-12-31T00:00:00Z');
@@ -335,7 +330,7 @@ CLOs can provide attractive risk-adjusted returns when analyzed and managed prop
 
 Collateralized loan obligations (CLOs) are structured credit products that pool leveraged loans.`),
     ),
-    imageUrl: getImage('expert', 166),
+    imageUrl: getAnalyticsImage('structured-credit-products-and-clo-markets-collateralized-loan-obligations'),
     tags: ['CLOs', 'Structured Credit', 'Leveraged Loans', 'Fixed Income', 'Credit Risk'],
   },
   {
@@ -766,7 +761,7 @@ High-yield bonds can provide attractive risk-adjusted returns when managed prope
 
 High-yield bonds—also known as junk bonds—occupy a unique place in fixed income markets.`),
     ),
-    imageUrl: getImage('expert', 165),
+    imageUrl: getAnalyticsImage('corporate-credit-cycles-and-high-yield-strategies-navigating-credit-markets'),
     tags: ['High-Yield Bonds', 'Credit Cycles', 'Corporate Credit', 'Fixed Income', 'Credit Risk'],
   },
   {
@@ -1180,7 +1175,7 @@ With careful construction and ongoing management, municipal bond portfolios can 
 
 For investors in high tax brackets, municipal bonds have long been a cornerstone of tax-efficient income strategies.`),
     ),
-    imageUrl: getImage('expert', 164),
+    imageUrl: getAnalyticsImage('municipal-bonds-and-tax-exempt-strategies-building-efficient-income-portfolios'),
     tags: ['Municipal Bonds', 'Tax-Exempt', 'Fixed Income', 'Income Strategies', 'Tax Efficiency'],
   },
   {
@@ -1396,7 +1391,7 @@ For investors, the key takeaway is simple: if you want to understand Treasury be
 
 For many investors, the U.S. Treasury market is the definition of safety and liquidity. It is the benchmark curve for global finance: used to discount cash flows, collateralize derivatives, and price risk across asset classes.`)
     ),
-    imageUrl: getImage('technical', 1),
+    imageUrl: getAnalyticsImage('treasury-market-plumbing-and-the-basis-trade-why-repo-matters'),
     tags: ['Treasuries', 'Repo', 'Market Structure', 'Basis Trade', 'Rates'],
     relatedMarkets: ['bonds', 'rates'],
   },
@@ -1585,7 +1580,7 @@ In fixed income, optionality is never free. The discipline is to measure it, pri
 
 Fixed income is often described as “simple”: you lend money and receive coupons and principal. In practice, many bonds embed options that transfer value between issuer and investor depending on the path of interest rates.`)
     ),
-    imageUrl: getImage('technical', 0),
+    imageUrl: getAnalyticsImage('callable-bonds-and-negative-convexity-managing-fixed-income-optionality'),
     tags: ['Fixed Income', 'Callable Bonds', 'Convexity', 'Duration', 'Rates'],
     relatedMarkets: ['bonds', 'rates'],
   },
@@ -1830,7 +1825,7 @@ As inflation concerns have re-emerged and real yields have risen to more attract
 
 Inflation‑linked bonds—such as TIPS in the U.S. and index‑linked gilts or OATi in Europe—offer investors a way to protect purchasing power by tying principal and coupons to inflation indices. After years of subdued inflation, these instruments are once again central to asset‑allocation discussions as investors reassess how to structure real‑return portfolios.`)
     ),
-    imageUrl: getImage('technical', 2),
+    imageUrl: getAnalyticsImage('inflation-linked-bonds-and-real-return-strategies'),
     tags: ['Inflation-Linked Bonds', 'Real Returns', 'Fixed Income', 'TIPS', 'Portfolio Construction'],
   },
   {
@@ -2072,7 +2067,7 @@ The future of fixed income portfolio management will likely involve even more so
 
 Multi‑sector bond portfolios—combining government, investment‑grade, high yield, securitized, and emerging market debt—offer investors a powerful toolkit to balance income and risk across cycles. Historically, portfolio construction relied on macro judgment, fundamental credit work, and relatively coarse risk metrics. Today, advances in data availability, computing power, and AI‑driven analytics allow fixed income investors to analyze risk and optimize allocations more effectively.`)
     ),
-    imageUrl: getImage('expert', 1),
+    imageUrl: getAnalyticsImage('building-a-resilient-multi-sector-bond-portfolio-with-ai-and-analytics'),
     tags: ['Fixed Income', 'Multi-Sector', 'AI', 'Risk Management', 'Portfolio Construction'],
   },
   {
@@ -2251,7 +2246,7 @@ This environment reshapes the opportunity set across the yield curve and credit 
 
 This article outlines a practical framework for fixed income strategy under a higher‑for‑longer regime: how to think about term premia, curve shape, sector allocation, and portfolio construction for long‑term investors.`)
     ),
-    imageUrl: getImage('longterm', 0),
+    imageUrl: getAnalyticsImage('fixed-income-strategy-in-a-higher-for-longer-rate-regime'),
     tags: ['Fixed Income', 'Interest Rates', 'Yield Curve', 'Investment Grade', 'High Yield'],
   },
   {
@@ -2698,7 +2693,7 @@ However, yield curve investing requires careful risk management and realistic ex
 Investors should focus on appropriate duration positioning, sector allocation, and risk management. Success requires understanding both yield curve dynamics and portfolio management principles.
 
 The yield curve will continue evolving with economic conditions. Investors who understand these dynamics and manage risk appropriately can navigate yield curve environments successfully.`)),
-    imageUrl: getImage('technical', 158),
+    imageUrl: getAnalyticsImage('yield-curve-analysis-investment-implications'),
     tags: ['Yield Curve', 'Fixed Income', 'Bonds', 'Investment Strategy', 'Interest Rates'],
   },
 
@@ -2895,7 +2890,7 @@ Investors who develop and maintain such frameworks will be better positioned to 
 
 Duration is one of the most powerful—and misunderstood—concepts in fixed income investing. In quiet markets, it can be treated as a simple statistic: a number that approximates how much a bond price will change for a 1% move in yields. In volatile rate environments, however, duration becomes a more dynamic tool: a lever investors can pull to express macro views, manage risk, and stabilize portfolio returns.`),
     ),
-    imageUrl: getImage('expert', 159),
+    imageUrl: getAnalyticsImage('duration-strategy-in-volatile-rate-environments'),
     tags: ['Duration', 'Fixed Income', 'Risk Management', 'Interest Rates', 'Portfolio Strategy'],
   },
   {
@@ -3100,7 +3095,7 @@ By understanding what spreads are really paying for, how they evolve through the
 
 Credit spreads are one of the most closely watched indicators in fixed income markets. They summarize, in a single number, how much extra yield investors demand to hold risky bonds instead of government securities.`),
     ),
-    imageUrl: getImage('expert', 160),
+    imageUrl: getAnalyticsImage('credit-spreads-and-cycle-aware-bond-positioning'),
     tags: ['Credit Spreads', 'Fixed Income', 'Cycle Positioning', 'Investment Strategy', 'Risk Management'],
   },
   {
@@ -3379,7 +3374,7 @@ The key to success is not just owning ILBs, but understanding their mechanics, v
 
 After a decade in which inflation seemed structurally subdued, the post‑pandemic period delivered a sharp reminder that price stability cannot be taken for granted.`),
     ),
-    imageUrl: getImage('longterm', 161),
+    imageUrl: getAnalyticsImage('inflation-linked-bonds-and-real-return-strategies'),
     tags: ['Inflation-Linked Bonds', 'Real Yields', 'Breakevens', 'Fixed Income', 'Real Return'],
   },
   {
@@ -3776,7 +3771,7 @@ Liquidity management is not simply about "keeping some cash on the side." It is 
 
 In an era of higher interest rates and episodic market stress, liquidity management has returned to the center of institutional fixed income strategy.`),
     ),
-    imageUrl: getImage('expert', 162),
+    imageUrl: getAnalyticsImage('liquidity-management-and-cash-segmentation-for-institutional-investors'),
     tags: ['Liquidity Management', 'Cash Segmentation', 'Fixed Income', 'Risk Management', 'Institutional Investing'],
   },
   {
@@ -4142,7 +4137,7 @@ The key to success is not avoiding EM debt, but understanding its complexity and
 
 Emerging-market (EM) sovereign debt offers investors three intertwined sources of risk and return: currency, rates, and credit.`),
     ),
-    imageUrl: getImage('markets', 163),
+    imageUrl: getAnalyticsImage('em-sovereign-debt-local-vs-hard-currency'),
     tags: ['EM Sovereign Debt', 'Local Currency', 'Hard Currency', 'Fixed Income', 'Emerging Markets'],
   },
   {
@@ -4480,7 +4475,7 @@ The municipal bond market offers attractive opportunities for tax-efficient inco
 
 Municipal bonds occupy a distinct corner of global fixed income.`),
     ),
-    imageUrl: getImage('markets', 170),
+    imageUrl: getAnalyticsImage('municipal-bond-market-dynamics-credit-quality-and-tax-efficiency'),
     tags: ['Municipal Bonds', 'Tax-Exempt Income', 'Credit Analysis', 'Duration Risk', 'Fixed Income'],
   },
   {
@@ -4887,7 +4882,7 @@ The key is understanding the credit cycle, managing risk appropriately, and main
 
 High-yield (HY) bonds offer investors elevated coupons in exchange for higher default risk.`),
     ),
-    imageUrl: getImage('markets', 176),
+    imageUrl: getAnalyticsImage('high-yield-bond-credit-cycles-default-rates-and-recovery-values'),
     tags: ['High-Yield Bonds', 'Credit Cycles', 'Default Rates', 'Recovery Values', 'Fixed Income'],
   },
   {
@@ -5265,7 +5260,7 @@ Successful implementation requires understanding mechanics, valuation, risks, an
 
 Inflation-linked bonds—US TIPS and global counterparts—were designed to protect investors from unexpected inflation.`),
     ),
-    imageUrl: getImage('markets', 182),
+    imageUrl: getAnalyticsImage('inflation-linked-bonds-tips-and-real-yield-strategies'),
     tags: ['Inflation-Linked Bonds', 'TIPS', 'Real Yields', 'Breakeven Inflation', 'Fixed Income'],
   },
   {
@@ -5746,7 +5741,7 @@ Success requires thorough due diligence, realistic return expectations, appropri
 
 Convertible bonds combine features of debt and equity, and arbitrage strategies seek to monetise pricing mismatches.`),
     ),
-    imageUrl: getImage('markets', 188),
+    imageUrl: getAnalyticsImage('convertible-bond-arbitrage-strategies-and-risk-management'),
     tags: ['Convertible Bonds', 'Arbitrage', 'Credit', 'Equity Derivatives', 'Alternative Strategies'],
   },
 ];

@@ -1,5 +1,5 @@
 import { AnalyticsArticle } from './types';
-import { getAuthorAvatar, categoryImages } from './utils';
+import { getAuthorAvatar, getAnalyticsImage } from './utils';
 import { christinaArticles } from './analytics-christina';
 import { assuntaArticles } from './analytics-assunta';
 import { lysanderArticles } from './analytics-lysander';
@@ -8,12 +8,6 @@ import { anastasiaArticles } from './analytics-anastasia';
 import { lucaArticles } from './analytics-luca';
 import { isabelleArticles } from './analytics-isabelle';
 import { xuArticles } from './analytics-xu';
-
-// Helper to get image by index cycling through available images
-const getImage = (type: string, index: number) => {
-  const images = categoryImages[type] || categoryImages.markets;
-  return images[index % images.length];
-};
 
 // Helper to format dates
 const formatDate = (offset: number) => {
@@ -279,7 +273,7 @@ Building long-term wealth through ETFs requires discipline, patience, and a well
 The key is starting early, staying consistent, and avoiding the temptation to time markets or chase performance. ETFs provide the tools; your discipline and strategy determine the outcome. With the right approach, ETFs can be the foundation of substantial long-term wealth accumulation.
 
 Remember that all investing involves risk, including potential loss of principal. Past performance doesn't guarantee future results. Consider your investment objectives, risk tolerance, and time horizon before making investment decisions.`)),
-    imageUrl: getImage('longterm', 0),
+    imageUrl: getAnalyticsImage('etf-strategies-for-long-term-wealth-building'),
     tags: ['ETF', 'Portfolio', 'Diversification', 'Long-term Investing', 'Wealth Building'],
   },
 
@@ -589,7 +583,7 @@ Investors should focus on companies with sustainable competitive advantages, str
 The AI infrastructure buildout is just beginning. As AI capabilities expand and costs decline, infrastructure requirements will grow exponentially. Investors positioned in the right companies can participate in this transformation while managing risks appropriately.
 
 Success requires understanding both technology trends and investment fundamentals. The companies that combine technological leadership with strong business models will create the most value for shareholders over the long term.`)),
-    imageUrl: getImage('expert', 1),
+    imageUrl: getAnalyticsImage('ai-infrastructure-investment-opportunities'),
     tags: ['AI Infrastructure', 'Technology', 'Semiconductors', 'Cloud Computing', 'Investment Analysis'],
   },
   
@@ -959,7 +953,7 @@ Investors should focus on companies with technology leadership, strong competiti
 Understanding industry dynamics, technology trends, and competitive positions is essential. The companies that combine these factors with strong execution will create the most value for shareholders over the long term.
 
 The semiconductor industry will continue evolving, creating both opportunities and challenges. Investors positioned in the right companies can participate in this transformation while managing risks appropriately.`)),
-    imageUrl: getImage('markets', 2),
+    imageUrl: getAnalyticsImage('semiconductor-industry-outlook-2024'),
     tags: ['Semiconductors', 'Technology', 'Market Analysis', 'Supply Chain', 'Investment'],
   },
   
@@ -1301,7 +1295,7 @@ Investors should focus on companies with strong competitive positions, sustainab
 Understanding market dynamics, competitive positions, and business models is essential. The companies that combine these factors with strong execution will create the most value for shareholders over the long term.
 
 The cloud market will continue growing and evolving. Investors positioned in the right companies can participate in this transformation while managing risks appropriately. Success requires both understanding technology trends and investment fundamentals.`)),
-    imageUrl: getImage('longterm', 3),
+    imageUrl: getAnalyticsImage('cloud-platforms-market-dynamics-investment-perspective'),
     tags: ['Cloud Computing', 'Technology', 'Market Analysis', 'SaaS', 'Investment'],
   },
   
@@ -1663,7 +1657,7 @@ Investors should focus on companies with strong products, effective go-to-market
 Understanding SaaS metrics, growth strategies, and competitive dynamics is essential. The companies that combine these factors with strong execution will create the most value for shareholders over the long term.
 
 The SaaS market will continue growing and evolving. Investors positioned in the right companies can participate in this transformation while managing risks appropriately. Success requires both understanding business models and investment fundamentals.`)),
-    imageUrl: getImage('expert', 4),
+    imageUrl: getAnalyticsImage('saas-growth-strategies-investment-framework'),
     tags: ['SaaS', 'Growth Strategy', 'Business Model', 'Technology', 'Investment Analysis'],
   },
   
@@ -2033,7 +2027,7 @@ Investors should focus on companies with strong technology, effective execution,
 Understanding market dynamics, competitive positions, and technology trends is essential. The companies that combine these factors with strong execution will create the most value for shareholders over the long term.
 
 The cybersecurity market will continue growing and evolving. Investors positioned in the right companies can participate in this transformation while managing risks appropriately. Success requires both understanding security trends and investment fundamentals.`)),
-    imageUrl: getImage('markets', 5),
+    imageUrl: getAnalyticsImage('cybersecurity-investment-landscape-2024'),
     tags: ['Cybersecurity', 'Technology', 'Market Analysis', 'Investment', 'Security'],
   },
   
@@ -2355,7 +2349,7 @@ Investors should focus on companies with strong products, sustainable business m
 Understanding market dynamics, competitive positions, and regulatory trends is essential. The companies that combine these factors with strong execution will create the most value for shareholders over the long term.
 
 The fintech market will continue growing and evolving. Investors positioned in the right companies can participate in this transformation while managing risks appropriately. Success requires both understanding financial services trends and investment fundamentals.`)),
-    imageUrl: getImage('expert', 6),
+    imageUrl: getAnalyticsImage('fintech-disruption-banking-transformation'),
     tags: ['Fintech', 'Banking', 'Financial Services', 'Technology', 'Investment Analysis'],
   },
   
@@ -2717,7 +2711,7 @@ Investors should focus on companies with strong market positions, operational ex
 Understanding market dynamics, competitive positions, and technology trends is essential. The companies that combine these factors with strong execution will create the most value for shareholders over the long term.
 
 The data center market will continue growing and evolving. Investors positioned in the right companies can participate in this transformation while managing risks appropriately. Success requires both understanding infrastructure trends and investment fundamentals.`)),
-    imageUrl: getImage('longterm', 7),
+    imageUrl: getAnalyticsImage('data-centers-infrastructure-investment-opportunities'),
     tags: ['Data Centers', 'Infrastructure', 'Real Estate', 'Technology', 'Investment'],
   },
   
@@ -3031,7 +3025,7 @@ Investors should focus on companies with strong products, effective execution, s
 Understanding market dynamics, competitive positions, and technology trends is essential. The companies that combine these factors with strong execution will create the most value for shareholders over the long term.
 
 The consumer tech market will continue growing and evolving. Investors positioned in the right companies can participate in this transformation while managing risks appropriately. Success requires both understanding technology trends and investment fundamentals.`)),
-    imageUrl: getImage('markets', 8),
+    imageUrl: getAnalyticsImage('consumer-tech-investment-trends-2024'),
     tags: ['Consumer Tech', 'Technology', 'Market Analysis', 'Investment', 'Digital Services'],
   },
   

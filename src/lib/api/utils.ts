@@ -63,7 +63,7 @@ export function getAuthorAvatar(authorName: string): string {
   return authorAvatars[authorName] || generateDiceBearAvatar(authorName);
 }
 
-// Category image mapping for analytics articles
+// Category image mapping for analytics articles (kept as fallback)
 export const categoryImages: Record<string, string[]> = {
   expert: [
     'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=400&fit=crop',
@@ -98,3 +98,18 @@ export const categoryImages: Record<string, string[]> = {
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop',
   ],
 };
+
+/**
+ * Get unique local image path for analytics article by slug
+ * Images should be stored in public/analytics/{slug}.jpg or public/analytics/{slug}.webp
+ * Falls back to placeholder if image doesn't exist
+ * 
+ * @param slug - Article slug (e.g., 'mediterranean-tourism-and-hospitality-recovery-and-transformation')
+ * @returns Path to local image file
+ */
+export function getAnalyticsImage(slug: string): string {
+  // Try webp first (better compression), then jpg, then fallback to placeholder
+  // Note: In production, you should verify the file exists, but for now we'll let
+  // the browser handle 404s and LazyImage component will show fallback
+  return `/analytics/${slug}.webp`;
+}

@@ -1,10 +1,5 @@
 import { AnalyticsArticle } from './types';
-import { getAuthorAvatar, categoryImages } from './utils';
-
-const getImage = (type: string, index: number) => {
-  const images = categoryImages[type] || categoryImages.markets;
-  return images[index % images.length];
-};
+import { getAuthorAvatar, getAnalyticsImage } from './utils';
 
 const formatDate = (offset: number) => {
   const baseDate = new Date('2024-12-31T00:00:00Z');
@@ -266,7 +261,7 @@ The integration of green finance into China's financial system will continue to 
 
 China has emerged as a global leader in green finance, driven by ambitious climate goals, strong policy support, and massive infrastructure needs.`),
     ),
-    imageUrl: getImage('markets', 368),
+    imageUrl: getAnalyticsImage('china-green-finance-and-climate-investment-frameworks'),
     tags: ['China', 'Green Finance', 'Climate Investment', 'Asia-Pacific', 'ESG'],
   },
   {
@@ -481,7 +476,7 @@ Investors who engage thoughtfully with local dynamics will be well-positioned to
 
 Southeast Asia's digital economy is one of the world's fastest-growing, driven by young populations, rising internet penetration, mobile-first adoption, and increasing consumer spending power.`),
     ),
-    imageUrl: getImage('markets', 369),
+    imageUrl: getAnalyticsImage('southeast-asia-digital-economy-and-e-commerce-growth'),
     tags: ['Southeast Asia', 'Digital Economy', 'E-Commerce', 'Asia-Pacific', 'Technology'],
   },
   {
@@ -834,7 +829,7 @@ Japan's technology sector is evolving, and investors who engage thoughtfully wit
 
 Japan has long been a global leader in semiconductors, advanced manufacturing, and industrial technology.`),
     ),
-    imageUrl: getImage('markets', 370),
+    imageUrl: getAnalyticsImage('japan-semiconductors-and-advanced-manufacturing-investment-themes'),
     tags: ['Japan', 'Semiconductors', 'Advanced Manufacturing', 'Asia-Pacific', 'Technology'],
   },
   {
@@ -1077,7 +1072,7 @@ Investors who engage thoughtfully with policy, market, and execution dynamics wi
 
 India has emerged as one of the world's largest and fastest-growing renewable energy markets, driven by ambitious policy targets, falling technology costs, and massive energy demand.`),
     ),
-    imageUrl: getImage('longterm', 371),
+    imageUrl: getAnalyticsImage('india-renewable-energy-and-climate-investment-opportunities'),
     tags: ['India', 'Renewable Energy', 'Climate Investment', 'Asia-Pacific', 'ESG'],
   },
   {
@@ -1467,7 +1462,7 @@ South Korea's battery technology and EV supply chain industries represent critic
 
 South Korea has established itself as a global leader in battery technology and electric vehicle supply chains, with companies like LG Energy Solution, Samsung SDI, and SK Innovation competing at the forefront of battery innovation and manufacturing.`),
     ),
-    imageUrl: getImage('markets', 372),
+    imageUrl: getAnalyticsImage('south-korea-battery-technology-and-electric-vehicle-supply-chains'),
     tags: ['South Korea', 'Battery Technology', 'Electric Vehicles', 'Asia-Pacific', 'Technology'],
   },
   {
@@ -1873,7 +1868,7 @@ The semiconductor industry's critical role in global technology makes Taiwan an 
 
 Taiwan is home to the world's most advanced semiconductor manufacturing, with Taiwan Semiconductor Manufacturing Company (TSMC) leading global foundry services and a comprehensive ecosystem of semiconductor companies supporting the industry.`),
     ),
-    imageUrl: getImage('markets', 373),
+    imageUrl: getAnalyticsImage('taiwan-semiconductor-supply-chain-and-technology-leadership'),
     tags: ['Taiwan', 'Semiconductors', 'Technology', 'Asia-Pacific', 'Supply Chain'],
   },
   {
@@ -2077,7 +2072,7 @@ Asian infrastructure development will continue to be a major theme, and investor
 
 Infrastructure investment is a critical driver of Asian economic development, with massive needs for transportation, energy, water, and digital infrastructure across the region.`),
     ),
-    imageUrl: getImage('longterm', 374),
+    imageUrl: getAnalyticsImage('asian-infrastructure-investment-and-belt-road-initiative-implications'),
     tags: ['Infrastructure', 'Belt and Road', 'Asia-Pacific', 'Development', 'Investment'],
   },
   {
@@ -2420,7 +2415,7 @@ Asian fintech can provide attractive risk-adjusted returns when managed properly
 
 Asia is at the forefront of fintech innovation and digital payments adoption.`),
     ),
-    imageUrl: getImage('markets', 379),
+    imageUrl: getAnalyticsImage('asian-fintech-and-digital-payments-market-evolution-and-investment-opportunities'),
     tags: ['Asian Fintech', 'Digital Payments', 'Financial Technology', 'Mobile Payments', 'Asia-Pacific'],
   },
   {
@@ -2769,7 +2764,7 @@ South Korea's tech markets can provide attractive risk-adjusted returns when man
 
 South Korea has transformed from a war-torn economy to a global technology powerhouse in just a few decades.`),
     ),
-    imageUrl: getImage('markets', 378),
+    imageUrl: getAnalyticsImage('south-korea-tech-innovation-and-market-dynamics-investment-implications'),
     tags: ['South Korea', 'Technology', 'Semiconductors', 'Innovation', 'Asia-Pacific'],
   },
   {
@@ -3116,7 +3111,7 @@ Taiwan's semiconductor industry will remain critical to global technology supply
 
 Taiwan is the world's most important semiconductor manufacturing hub.`),
     ),
-    imageUrl: getImage('markets', 377),
+    imageUrl: getAnalyticsImage('taiwan-semiconductor-supply-chain-and-geopolitical-risk-investment-implications'),
     tags: ['Taiwan', 'Semiconductors', 'Supply Chain', 'Geopolitical Risk', 'Asia-Pacific'],
   },
   {
@@ -3387,7 +3382,7 @@ The winners will be those with disciplined underwriting, stable funding, and the
 
 Southeast Asia sits at a compelling intersection: young demographics, rising incomes, rapid smartphone adoption, and historically underpenetrated formal credit.`)
     ),
-    imageUrl: getImage('markets', 1),
+    imageUrl: getAnalyticsImage('japan-governance-reform-buybacks-and-the-new-shareholder-return-regime'),
     tags: ['Asia-Pacific', 'Fintech', 'Consumer Credit', 'Banks', 'Regulation'],
     relatedMarkets: ['stocks', 'currencies'],
   },
@@ -3624,7 +3619,7 @@ If the reform regime persists, Japan can move from being a periodic tactical tra
 
 Japan’s equity market has long frustrated global allocators. Periodic rallies—often driven by a weak yen or global cyclicals—were followed by phases of disappointment as corporate behavior remained conservative.`)
     ),
-    imageUrl: getImage('longterm', 0),
+    imageUrl: getAnalyticsImage('india-equity-markets-domestic-demand-and-reform-driven-growth'),
     tags: ['Japan', 'Governance', 'Buybacks', 'ROE', 'Asia-Pacific'],
     relatedMarkets: ['stocks'],
     relatedCompanies: ['EWJ'],
@@ -3872,7 +3867,7 @@ For long‑term investors, a balanced approach—focusing on high‑quality fran
 
 India has emerged as one of the most closely watched equity markets globally, supported by strong domestic-demand potential, structural reforms, and a deepening local investor base.`)
     ),
-    imageUrl: getImage('longterm', 2),
+    imageUrl: getAnalyticsImage('ai-and-supply-chain-reconfiguration-in-asia-pacific'),
     tags: ['India', 'Equities', 'Domestic Demand', 'Reforms', 'Asia-Pacific'],
   },
   {
@@ -4226,7 +4221,7 @@ Success requires understanding the complex interactions between technology, geop
 
 Asia-Pacific has been the backbone of global manufacturing and trade for decades, with China at the center of many supply chains. Today, AI and automation are intersecting with geopolitics, trade policy, and corporate risk management to reconfigure how and where goods are produced.`)
     ),
-    imageUrl: getImage('markets', 1),
+    imageUrl: getAnalyticsImage('asia-pacific-equity-and-credit-markets-in-a-higher-rate-regime'),
     tags: ['Asia-Pacific', 'Supply Chains', 'AI', 'Manufacturing', 'Geopolitics'],
   },
   {
@@ -4406,7 +4401,7 @@ The emergence of a higher‑for‑longer global rate environment introduces a ne
 
 This article examines how a sustained higher‑rate regime reshapes Asia-Pacific equity and credit markets, with a focus on China, North Asia, and local‑currency bond markets.`)
     ),
-    imageUrl: getImage('markets', 0),
+    imageUrl: getAnalyticsImage('china-tech-investment-landscape-2024'),
     tags: ['Asia-Pacific', 'China', 'Equities', 'Credit', 'Interest Rates'],
   },
   {
@@ -4920,8 +4915,8 @@ China tech offers significant investment opportunities through large markets and
 
 Investors should focus on companies with strong market positions, effective execution, and manageable regulatory exposure. Success requires understanding both opportunities and risks.
 
-China tech will continue evolving with regulations, competition, and global dynamics. Investors who understand these factors and manage risk appropriately can navigate China tech markets successfully.`)),
-    imageUrl: getImage('markets', 371),
+China tech will continue evolving with regulations, competition, and global dynamics. Investors who understand these factors and manage risk appropriately can navigate China tech markets successfully.`)    ),
+    imageUrl: getAnalyticsImage('asean-growth-and-supply-chain-diversification'),
     tags: ['China Tech', 'Asia-Pacific', 'Technology', 'Investment', 'Market Analysis'],
   },
 
@@ -5351,7 +5346,7 @@ The ASEAN region's role in global supply chains will continue to evolve, creatin
 
 As global manufacturers reassess supply‑chain concentration risk, Southeast Asia has emerged as a critical beneficiary of diversification away from China.`),
     ),
-    imageUrl: getImage('longterm', 372),
+    imageUrl: getAnalyticsImage('india-equities-and-the-new-growth-cycle'),
     tags: ['ASEAN', 'Supply Chains', 'Emerging Markets', 'Asia-Pacific', 'Investment Themes'],
   },
   {
@@ -5590,7 +5585,7 @@ At the same time, India is not a one‑way bet. Elevated valuations, policy comp
 
 India has emerged as one of the most closely watched stories in global equities. Supportive demographics, digitalization, infrastructure build‑out, and a more stable macro framework have led many investors to frame India as a structural growth story within emerging markets.`),
     ),
-    imageUrl: getImage('markets', 373),
+    imageUrl: getAnalyticsImage('japan-equities-re-rating-and-governance-reform'),
     tags: ['India', 'Equities', 'Emerging Markets', 'Asia-Pacific', 'Macro'],
   },
   {
@@ -5825,7 +5820,7 @@ By focusing on governance progress, capital efficiency, sector positioning, and 
 
 For years, Japan was viewed as the archetype of a value trap: low growth, low inflation, and low valuations that rarely unlocked.`),
     ),
-    imageUrl: getImage('markets', 374),
+    imageUrl: getAnalyticsImage('korea-equities-and-the-chaebol-reform-debate'),
     tags: ['Japan', 'Equities', 'Governance Reform', 'Asia-Pacific', 'Macro'],
   },
   {
@@ -6283,7 +6278,7 @@ Success requires understanding the complex interaction between governance reform
 
 South Korea is a core market in Asia‑Pacific equity portfolios.`),
     ),
-    imageUrl: getImage('markets', 375),
+    imageUrl: getAnalyticsImage('australia-equities-commodities-banks-and-dividends'),
     tags: ['Korea', 'Equities', 'Chaebol', 'Governance', 'Semiconductors'],
   },
   {
@@ -6777,7 +6772,7 @@ The key is understanding the market's structure, the drivers of each major secto
 
 Australia is a key component of Asia‑Pacific equity portfolios, with a market dominated by resources, banks, and a strong dividend culture.`),
     ),
-    imageUrl: getImage('markets', 376),
+    imageUrl: getAnalyticsImage('australia-equities-commodities-banks-and-dividends'),
     tags: ['Australia', 'Equities', 'Commodities', 'Banks', 'Asia-Pacific'],
   },
 ];

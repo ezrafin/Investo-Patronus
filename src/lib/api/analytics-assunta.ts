@@ -1,10 +1,5 @@
 import { AnalyticsArticle } from './types';
-import { getAuthorAvatar, categoryImages } from './utils';
-
-const getImage = (type: string, index: number) => {
-  const images = categoryImages[type] || categoryImages.markets;
-  return images[index % images.length];
-};
+import { getAuthorAvatar, getAnalyticsImage } from './utils';
 
 const formatDate = (offset: number) => {
   const baseDate = new Date('2024-12-31T00:00:00Z');
@@ -303,7 +298,7 @@ DeFi lending will continue to evolve, creating new opportunities and risks. Part
 
 Traditional credit markets rely on intermediaries—banks, credit unions, and other financial institutions—to assess creditworthiness.`),
     ),
-    imageUrl: getImage('technical', 104),
+    imageUrl: getAnalyticsImage('defi-lending-and-borrowing-the-new-credit-markets'),
     tags: ['DeFi', 'Lending', 'Credit Markets', 'Cryptocurrency', 'Blockchain'],
   },
   {
@@ -712,7 +707,7 @@ Crypto regulation will continue to evolve, creating winners and losers. Investor
 
 For much of crypto's history, regulation was an afterthought.`),
     ),
-    imageUrl: getImage('expert', 103),
+    imageUrl: getAnalyticsImage('crypto-regulation-and-compliance-infrastructure-the-new-compliance-stack'),
     tags: ['Crypto Regulation', 'Compliance', 'KYC/AML', 'Blockchain Analytics', 'Regulatory Technology'],
   },
   {
@@ -1092,7 +1087,7 @@ The long-term implications are still unfolding, but it is clear that MEV and blo
 
 In traditional finance, market makers and exchanges profit from the spread between bid and ask prices.`),
     ),
-    imageUrl: getImage('technical', 102),
+    imageUrl: getAnalyticsImage('mev-and-block-builder-economics-the-new-order-flow-market'),
     tags: ['MEV', 'Block Builders', 'Ethereum', 'DeFi', 'Market Structure'],
   },
   {
@@ -1325,7 +1320,7 @@ Investors should analyze restaking like credit: understand what the yield compen
 
 Crypto markets are cyclical, but one pattern repeats: when prices stabilize and risk appetite returns, the ecosystem searches for yield.`)
     ),
-    imageUrl: getImage('technical', 1),
+    imageUrl: getAnalyticsImage('restaking-and-shared-security-yield-slashing-risk-and-the-new-security-budget'),
     tags: ['Crypto', 'Restaking', 'Security', 'DeFi', 'Risk'],
     relatedMarkets: ['crypto'],
   },
@@ -1583,7 +1578,7 @@ In crypto, the new liquidity cycle is increasingly a stablecoin cycle—and the 
 
 Stablecoins started as a workaround: a way to keep “dollars” on crypto exchanges without touching banks. That origin story is now outdated. Today, stablecoins are increasingly **monetary instruments** used as settlement tokens across centralized and decentralized venues, as collateral in on‑chain credit markets, and as payment rails for cross‑border commerce.`)
     ),
-    imageUrl: getImage('markets', 0),
+    imageUrl: getAnalyticsImage('on-chain-derivatives-and-volatility-in-crypto-markets'),
     tags: ['Stablecoins', 'Liquidity', 'Market Structure', 'DeFi', 'Regulation'],
     relatedMarkets: ['crypto', 'currencies'],
   },
@@ -1825,7 +1820,7 @@ Investors and traders who understand both traditional derivatives concepts and o
 
 Derivatives have long been central to price discovery, hedging, and speculation in traditional markets. Crypto is no exception: perpetual swaps, options, and structured products now drive a large share of trading volumes and open interest. Increasingly, these instruments are not only listed on centralized exchanges but are also being built directly on-chain, with smart contracts handling margining, settlement, and risk parameters.`)
     ),
-    imageUrl: getImage('technical', 2),
+    imageUrl: getAnalyticsImage('tokenized-real-world-assets-and-on-chain-yield-structures'),
     tags: ['Crypto', 'Derivatives', 'Volatility', 'DeFi', 'Risk Management'],
   },
   {
@@ -2016,7 +2011,7 @@ Investors who approach RWA opportunities with disciplined due diligence and a cl
 
 As crypto matures beyond purely endogenous yield mechanisms, tokenized real‑world assets (RWA) have emerged as a critical bridge between traditional finance and on‑chain markets. In a higher‑for‑longer rate environment, the prospect of bringing Treasury bills, credit exposures, and other income‑producing assets on‑chain is especially compelling: it aligns real economic activity with crypto infrastructure and offers new avenues for yield and collateral.`)
     ),
-    imageUrl: getImage('expert', 1),
+    imageUrl: getAnalyticsImage('crypto-in-a-higher-rate-world-liquidity-cycles-and-market-structure'),
     tags: ['Crypto', 'DeFi', 'Real-World Assets', 'Yield', 'Tokenization'],
   },
   {
@@ -2213,7 +2208,7 @@ The shift toward a “higher-for-longer” interest-rate regime is therefore mor
 
 This article examines how higher real yields, tighter liquidity, and evolving market structure are likely to shape crypto cycles going forward, and how investors can adapt their frameworks for Bitcoin, Ethereum, and DeFi in this new environment.`)
     ),
-    imageUrl: getImage('markets', 0),
+    imageUrl: getAnalyticsImage('bitcoin-cycles-investment-framework'),
     tags: ['Crypto', 'Interest Rates', 'Liquidity', 'Stablecoins', 'DeFi'],
   },
   {
@@ -2534,7 +2529,7 @@ Investors should focus on cycle positioning, risk management, and long-term valu
 Bitcoin represents a unique asset class with distinct characteristics. Investors positioned appropriately can participate in Bitcoin's potential while managing risks. Success requires understanding cycles, managing risk, and maintaining perspective despite volatility.
 
 The Bitcoin market will continue evolving. Cycles will continue, creating opportunities and challenges. Investors who understand these dynamics and manage risk appropriately can navigate Bitcoin cycles successfully.`)),
-    imageUrl: getImage('expert', 94),
+    imageUrl: getAnalyticsImage('stablecoins-liquidity-and-on-chain-risk'),
     tags: ['Bitcoin', 'Cryptocurrency', 'Cycles', 'Investment', 'Blockchain'],
   },
 
@@ -2778,7 +2773,7 @@ Stablecoins sit at the center of modern crypto market structure. They are the pr
 
 For investors and risk managers, understanding how stablecoins really work is no longer optional. Whether you hold them directly, interact with DeFi protocols, or own tokens of exchanges and issuers, your exposure to stablecoin risk is likely larger than it appears.`),
     ),
-    imageUrl: getImage('markets', 95),
+    imageUrl: getAnalyticsImage('defi-yield-and-risk-management-across-cycles'),
     tags: ['Stablecoins', 'Liquidity', 'Crypto Market Structure', 'Risk Management', 'Blockchain'],
   },
   {
@@ -2991,7 +2986,7 @@ For investors, the path forward is not to chase headline yields, but to apply th
 
 Decentralized finance (DeFi) has created an always‑on, globally accessible market for leverage, credit, and liquidity. At the peak of prior cycles, yields advertised in double or triple digits attracted capital from both crypto‑native and traditional investors.`),
     ),
-    imageUrl: getImage('expert', 96),
+    imageUrl: getAnalyticsImage('on-chain-derivatives-and-perpetual-futures-risk'),
     tags: ['DeFi', 'Yield', 'Risk Management', 'Crypto Markets', 'Blockchain'],
   },
   {
@@ -3302,7 +3297,7 @@ Deployed with discipline, on‑chain derivatives can become a flexible tool in d
 
 Perpetual futures, options, and structured products have become core building blocks of modern crypto market structure.`),
     ),
-    imageUrl: getImage('technical', 97),
+    imageUrl: getAnalyticsImage('cross-margining-and-collateral-risk-in-crypto-markets'),
     tags: ['Derivatives', 'Perpetual Futures', 'DeFi', 'Funding Rates', 'Risk Management'],
   },
   {
@@ -3602,7 +3597,7 @@ By integrating collateral and margin analysis into strategy design, investors ca
 
 Leverage is central to modern crypto markets. Perpetual futures, margin borrowing, structured products, and staking‑linked loans all depend on collateral and risk engines that determine who gets liquidated, when, and at what price.`),
     ),
-    imageUrl: getImage('expert', 98),
+    imageUrl: getAnalyticsImage('layer2-rollups-liquidity-and-bridge-risk'),
     tags: ['Margin', 'Collateral', 'Crypto Risk', 'Derivatives', 'DeFi'],
   },
   {
@@ -3936,7 +3931,7 @@ With a clear view of the L2 and bridge risk stack, multi‑chain strategies can 
 
 As blockchains scale, execution and liquidity are no longer confined to a single chain.`),
     ),
-    imageUrl: getImage('markets', 99),
+    imageUrl: getAnalyticsImage('institutional-crypto-custody-and-counterparty-risk'),
     tags: ['Layer 2', 'Rollups', 'Bridges', 'Crypto Markets', 'Risk Management'],
   },
   {
@@ -4280,7 +4275,7 @@ As the industry continues to evolve, new risks will emerge and new solutions wil
 
 For institutional investors, getting crypto price exposure is the easy part. The harder questions are where the assets are actually held and who controls the private keys.`),
     ),
-    imageUrl: getImage('expert', 100),
+    imageUrl: getAnalyticsImage('crypto-options-market-structure-centralized-vs-onchain'),
     tags: ['Crypto Custody', 'Counterparty Risk', 'Institutions', 'Exchanges', 'DeFi'],
   },
   {
@@ -4386,7 +4381,7 @@ Over the next cycle, crypto options markets are likely to look more, not less, d
 
 In traditional finance, listed options markets grew up around a fairly stable set of conventions.`),
     ),
-    imageUrl: getImage('expert', 101),
+    imageUrl: getAnalyticsImage('layer-2-scaling-solutions-arbitrum-optimism-polygon'),
     tags: ['Crypto Options', 'Derivatives', 'Market Structure', 'DeFi', 'Risk'],
   },
   {
@@ -4772,7 +4767,7 @@ Layer 2 scaling is not just about technology—it is about making blockchain acc
 
 Ethereum's success has created a scalability problem.`),
     ),
-    imageUrl: getImage('expert', 102),
+    imageUrl: getAnalyticsImage('cross-chain-bridge-security-and-risks'),
     tags: ['Layer 2', 'Ethereum', 'Scaling', 'Rollups', 'Blockchain'],
   },
   {
@@ -5141,7 +5136,7 @@ Cross-chain bridges are not just about technology—they are about securely conn
 
 The blockchain ecosystem has evolved into multiple separate networks.`),
     ),
-    imageUrl: getImage('expert', 103),
+    imageUrl: getAnalyticsImage('stablecoin-mechanisms-and-de-pegging-events'),
     tags: ['Cross-Chain', 'Bridges', 'Security', 'Interoperability', 'Blockchain'],
   },
   {
@@ -5522,7 +5517,7 @@ Stablecoins are not just about technology—they are about providing stable valu
 
 Stablecoins are cryptocurrencies designed to maintain a stable value.`),
     ),
-    imageUrl: getImage('expert', 104),
+    imageUrl: getAnalyticsImage('nft-marketplaces-and-royalty-models'),
     tags: ['Stablecoins', 'DeFi', 'Cryptocurrency', 'Risk', 'Blockchain'],
   },
   {
@@ -5883,7 +5878,7 @@ NFT marketplaces are not just about trading—they are about enabling digital ow
 
 Non-fungible tokens (NFTs) have created new markets for digital ownership.`),
     ),
-    imageUrl: getImage('expert', 105),
+    imageUrl: getAnalyticsImage('dao-governance-and-treasury-management'),
     tags: ['NFTs', 'Marketplaces', 'Royalties', 'Digital Ownership', 'Blockchain'],
   },
   {
@@ -6302,7 +6297,7 @@ DAOs are not just about decentralization—they are about new forms of organizat
 
 Decentralized Autonomous Organizations (DAOs) represent a new form of organizational structure.`),
     ),
-    imageUrl: getImage('expert', 106),
+    imageUrl: getAnalyticsImage('liquid-staking-derivatives-lsd'),
     tags: ['DAOs', 'Governance', 'Treasury Management', 'Decentralization', 'Blockchain'],
   },
   {
@@ -6737,7 +6732,7 @@ Liquid staking is not just about yield—it is about unlocking the value of stak
 
 Proof-of-stake blockchains require validators to stake tokens to secure the network.`),
     ),
-    imageUrl: getImage('expert', 107),
+    imageUrl: getAnalyticsImage('mev-and-front-running-in-defi'),
     tags: ['Liquid Staking', 'Staking', 'DeFi', 'Ethereum', 'Blockchain'],
   },
   {
@@ -7168,7 +7163,7 @@ MEV is not just a technical issue—it is about fairness and user experience in 
 
 Maximal Extractable Value (MEV) represents the value that can be extracted from block production.`),
     ),
-    imageUrl: getImage('expert', 108),
+    imageUrl: getAnalyticsImage('crypto-taxation-and-regulatory-compliance'),
     tags: ['MEV', 'DeFi', 'Front-Running', 'Blockchain', 'Cryptocurrency'],
   },
   {
@@ -7585,7 +7580,7 @@ Crypto taxation and compliance are not just about following rules—they are abo
 
 Cryptocurrency taxation and regulatory compliance have become increasingly important.`),
     ),
-    imageUrl: getImage('expert', 109),
+    imageUrl: getAnalyticsImage('bitcoin-etf-and-institutional-adoption'),
     tags: ['Taxation', 'Regulation', 'Compliance', 'Cryptocurrency', 'Legal'],
   },
   {
@@ -8026,7 +8021,7 @@ Bitcoin ETFs are not just about access—they are about mainstreaming crypto as 
 
 The approval of Bitcoin exchange-traded funds (ETFs) in the United States in early 2024 marked a significant milestone.`),
     ),
-    imageUrl: getImage('expert', 110),
+    imageUrl: getAnalyticsImage('crypto-wallet-security-and-best-practices'),
     tags: ['Bitcoin', 'ETF', 'Institutional', 'Adoption', 'Cryptocurrency'],
   },
   {
@@ -8497,7 +8492,7 @@ Wallet security is not just about technology—it is about protecting valuable d
 
 Crypto wallet security is fundamental to safely holding and using cryptocurrencies.`),
     ),
-    imageUrl: getImage('expert', 111),
+    imageUrl: getAnalyticsImage('crypto-exchange-security-and-custody'),
     tags: ['Wallet Security', 'Cryptocurrency', 'Security', 'Best Practices', 'Blockchain'],
   },
   {
@@ -8958,7 +8953,7 @@ Exchange security is not just about technology—it is about trust in centralize
 
 Cryptocurrency exchanges are the primary on-ramps for most crypto users.`),
     ),
-    imageUrl: getImage('expert', 112),
+    imageUrl: getAnalyticsImage('crypto-regulation-global-landscape'),
     tags: ['Exchanges', 'Security', 'Custody', 'Cryptocurrency', 'Risk'],
   },
   {
@@ -9427,7 +9422,7 @@ Crypto regulation is not just about rules—it is about shaping the future of di
 
 Cryptocurrency regulation varies dramatically across jurisdictions.`),
     ),
-    imageUrl: getImage('expert', 113),
+    imageUrl: getAnalyticsImage('crypto-market-manipulation-and-wash-trading'),
     tags: ['Regulation', 'Cryptocurrency', 'Legal', 'Compliance', 'Global'],
   },
   {
@@ -9882,7 +9877,7 @@ Market manipulation is not just about fake volume—it is about market integrity
 
 Market manipulation is a significant concern in cryptocurrency markets.`),
     ),
-    imageUrl: getImage('expert', 114),
+    imageUrl: getAnalyticsImage('crypto-accounting-and-financial-reporting'),
     tags: ['Market Manipulation', 'Wash Trading', 'Cryptocurrency', 'Market Integrity', 'Risk'],
   },
   {
@@ -10252,7 +10247,7 @@ Crypto accounting is not just about compliance—it is about accurate financial 
 
 As companies and institutions hold cryptocurrencies and other digital assets, proper accounting becomes essential.`),
     ),
-    imageUrl: getImage('expert', 115),
+    imageUrl: getAnalyticsImage('crypto-regulation-global-landscape'),
     tags: ['Accounting', 'Financial Reporting', 'Cryptocurrency', 'Compliance', 'Finance'],
   },
 ];

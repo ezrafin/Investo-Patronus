@@ -1,10 +1,5 @@
 import { AnalyticsArticle } from './types';
-import { getAuthorAvatar, categoryImages } from './utils';
-
-const getImage = (type: string, index: number) => {
-  const images = categoryImages[type] || categoryImages.markets;
-  return images[index % images.length];
-};
+import { getAuthorAvatar, getAnalyticsImage } from './utils';
 
 const formatDate = (offset: number) => {
   const baseDate = new Date('2024-12-31T00:00:00Z');
@@ -362,7 +357,7 @@ European healthcare and biotech can provide attractive risk-adjusted returns whe
 
 European healthcare and biotech markets have long been overshadowed by the United States.`),
     ),
-    imageUrl: getImage('longterm', 227),
+    imageUrl: getAnalyticsImage('european-healthcare-and-biotech-innovation-and-investment-opportunities'),
     tags: ['European Healthcare', 'Biotech', 'Pharmaceuticals', 'Medical Devices', 'European Markets'],
   },
   {
@@ -765,7 +760,7 @@ European real estate can provide attractive risk-adjusted returns when managed p
 
 European real estate markets have undergone significant transformation over the past two decades.`),
     ),
-    imageUrl: getImage('markets', 226),
+    imageUrl: getAnalyticsImage('european-real-estate-and-reits-navigating-property-markets-across-cycles'),
     tags: ['European Real Estate', 'REITs', 'Property Markets', 'Real Estate Investing', 'European Markets'],
   },
   {
@@ -1127,7 +1122,7 @@ The Nordic energy transition is a multi-decade theme that will create winners an
 
 The Nordic countries—Denmark, Finland, Norway, and Sweden—have long been leaders in renewable energy and environmental policy.`),
     ),
-    imageUrl: getImage('longterm', 225),
+    imageUrl: getAnalyticsImage('nordic-energy-transition-and-green-industrial-policy-investment-implications'),
     tags: ['Nordic Markets', 'Energy Transition', 'Green Technology', 'European Equities', 'ESG'],
   },
   {
@@ -1387,7 +1382,7 @@ For investors, the edge comes from moving beyond headlines and tracking the mech
 
 European autos have historically been a global strength: engineering, brand equity, and scale. For decades, incumbents competed largely with each other and with a handful of global peers.`)
     ),
-    imageUrl: getImage('markets', 1),
+    imageUrl: getAnalyticsImage('european-autos-vs-china-evs-the-margin-war-and-the-supply-chain-reset'),
     tags: ['Europe', 'Autos', 'EVs', 'China', 'Supply Chain'],
     relatedMarkets: ['stocks'],
   },
@@ -1641,7 +1636,7 @@ In defense, the product is capability—but the investable outcome is execution.
 
 European defense spending has entered a new regime. What used to be a slow, politically constrained budget category is increasingly framed as industrial policy and strategic resilience.`)
     ),
-    imageUrl: getImage('markets', 0),
+    imageUrl: getAnalyticsImage('european-small-and-mid-caps-finding-compounders-beyond-the-blue-chips'),
     tags: ['Europe', 'Defense', 'Industrial Policy', 'Supply Chain', 'Equities'],
     relatedMarkets: ['stocks'],
     relatedCompanies: ['AIR', 'RHM', 'BAESY'],
@@ -1909,7 +1904,7 @@ With the right approach, European small and mid caps can provide exposure to hig
 
 European equity markets are often viewed through the lens of large, benchmark constituents—global champions in sectors such as luxury, industrials, pharmaceuticals, and financials. Yet beneath the surface lies a diverse universe of small and mid‑cap companies that can offer differentiated growth and compounding potential.`)
     ),
-    imageUrl: getImage('longterm', 2),
+    imageUrl: getAnalyticsImage('ai-automation-and-europes-industrial-competitiveness'),
     tags: ['Europe', 'Small Caps', 'Mid Caps', 'Equities', 'Compounding'],
   },
   {
@@ -2224,7 +2219,7 @@ The European industrial sector is at an inflection point. Companies that embrace
 
 Europe’s industrial base has long been a source of economic strength, export capability, and high‑quality employment. From advanced manufacturing and machinery to autos, chemicals, and capital goods, European companies occupy critical positions in global supply chains. Today, these sectors face simultaneous pressures and opportunities driven by AI, automation, decarbonization, and geopolitics.`)
     ),
-    imageUrl: getImage('expert', 1),
+    imageUrl: getAnalyticsImage('european-banks-real-estate-and-cross-border-flows-in-a-high-rate-cycle'),
     tags: ['Europe', 'Industrials', 'AI', 'Automation', 'Competitiveness'],
   },
   {
@@ -2410,7 +2405,7 @@ The pivot to a higher‑for‑longer interest‑rate environment represents a st
 
 This article examines how a sustained high‑rate cycle reshapes European banks and real estate, and how cross‑border flows are likely to respond.`)
     ),
-    imageUrl: getImage('markets', 0),
+    imageUrl: getAnalyticsImage('eu-equities-market-outlook-2024'),
     tags: ['Europe', 'Banks', 'Real Estate', 'Interest Rates', 'Capital Flows'],
   },
   {
@@ -2903,7 +2898,7 @@ European equity markets offer diverse opportunities for investors seeking intern
 Investors should focus on quality companies, appropriate diversification, and risk management. Success requires understanding both pan-European trends and country-specific factors.
 
 European markets will continue evolving with economic conditions, regulatory changes, and geopolitical developments. Investors who understand these dynamics and manage risk appropriately can navigate European markets successfully.`)),
-    imageUrl: getImage('markets', 219),
+    imageUrl: getAnalyticsImage('european-banks-in-a-higher-rate-regime'),
     tags: ['EU Equities', 'European Markets', 'Investment', 'Market Analysis', 'Stocks'],
   },
 
@@ -3110,7 +3105,7 @@ The key is understanding which banks have sustainable competitive advantages, st
 
 After more than a decade of ultra‑low and negative interest rates, European banks are operating in a profoundly different environment. Policy rates have risen sharply, yield curves have shifted, and the economics of deposit gathering and lending have changed.`),
     ),
-    imageUrl: getImage('expert', 220),
+    imageUrl: getAnalyticsImage('european-small-and-mid-caps-opportunities-and-risks'),
     tags: ['European Banks', 'Interest Rates', 'Financials', 'Valuation', 'Risk'],
   },
   {
@@ -3394,7 +3389,7 @@ For investors prepared to commit the necessary analytical and operational resour
 
 European equity markets are often viewed through the lens of large, global champions: multinational industrials, luxury houses, universal banks, and pharma leaders.`),
     ),
-    imageUrl: getImage('expert', 221),
+    imageUrl: getAnalyticsImage('nordic-equity-markets-quality-growth-and-sustainability'),
     tags: ['Small Caps', 'Mid Caps', 'European Equities', 'Portfolio Strategy', 'Liquidity'],
   },
   {
@@ -3768,7 +3763,7 @@ The Nordic region's combination of quality companies, strong institutions, and s
 
 The Nordic countries—Sweden, Denmark, Norway, Finland, and Iceland—represent a relatively small share of global market capitalization, but exert an outsized influence in several sectors.`),
     ),
-    imageUrl: getImage('markets', 222),
+    imageUrl: getAnalyticsImage('southern-europe-equities-and-reform-premia'),
     tags: ['Nordic Markets', 'European Equities', 'Quality Growth', 'Sustainability', 'Currencies'],
   },
   {
@@ -4209,7 +4204,7 @@ The transformation of Southern European markets creates opportunities for invest
 
 Southern European markets—Italy, Spain, Portugal, and Greece—have long carried a “peripheral” label in European equity portfolios.`),
     ),
-    imageUrl: getImage('markets', 223),
+    imageUrl: getAnalyticsImage('swiss-equities-defensives-currency-and-valuation'),
     tags: ['Southern Europe', 'Equities', 'Reforms', 'Tourism', 'Banks'],
   },
   {
@@ -4615,7 +4610,7 @@ By combining sector analysis, currency strategy, and disciplined valuation work,
 
 Switzerland occupies a distinctive place in European and global equity allocations, with a market dominated by global defensives and a strong currency.`),
     ),
-    imageUrl: getImage('markets', 224),
+    imageUrl: getAnalyticsImage('european-infrastructure-investment-public-private-partnerships'),
     tags: ['Switzerland', 'European Equities', 'Defensives', 'Currency', 'Valuation'],
   },
   {
@@ -5004,7 +4999,7 @@ Infrastructure investment is not just about returns—it is about building and m
 
 European infrastructure investment has evolved significantly over the past two decades.`),
     ),
-    imageUrl: getImage('markets', 225),
+    imageUrl: getAnalyticsImage('european-infrastructure-investment-public-private-partnerships'),
     tags: ['Infrastructure', 'PPP', 'European Markets', 'Long-Term Investing', 'Defensive'],
   },
   {
@@ -5308,7 +5303,7 @@ Consumer staples are not just about defense—they are about consistent, reliabl
 
 European consumer staples have long been considered defensive investments.`),
     ),
-    imageUrl: getImage('markets', 226),
+    imageUrl: getAnalyticsImage('european-consumer-staples-resilience-and-dividend-yields'),
     tags: ['Consumer Staples', 'European Markets', 'Defensive', 'Dividends', 'Income'],
   },
   {
@@ -5564,7 +5559,7 @@ Investors who combine sector expertise with careful jurisdictional diversificati
 
 Europe is at the center of the global energy transition, with ambitious climate targets and rapidly changing power markets.`),
     ),
-    imageUrl: getImage('markets', 225),
+    imageUrl: getAnalyticsImage('nordic-markets-sustainability-leadership-and-investment-implications'),
     tags: ['Energy Transition', 'Renewables', 'Infrastructure', 'European Markets', 'Policy Risk'],
   },
   {
@@ -6051,7 +6046,7 @@ Nordic markets offer a compelling combination of quality, sustainability, and in
 
 The Nordic region punches far above its weight in global equity and sustainability indices.`),
     ),
-    imageUrl: getImage('markets', 226),
+    imageUrl: getAnalyticsImage('european-small-cap-growth-opportunities-and-liquidity-risks'),
     tags: ['Nordic Markets', 'Sustainability', 'ESG', 'European Equities', 'Governance'],
   },
   {
@@ -6512,7 +6507,7 @@ Investors who take a patient, selective, and risk-aware approach to European sma
 
 European small-cap equities provide access to segments of the economy that are often underrepresented in large-cap indices.`),
     ),
-    imageUrl: getImage('markets', 227),
+    imageUrl: getAnalyticsImage('cross-border-tax-optimization-for-european-equity-investors'),
     tags: ['Small Caps', 'European Equities', 'Liquidity', 'Growth Investing', 'Risk Management'],
   },
   {
@@ -6893,7 +6888,7 @@ Those who integrate tax considerations into strategic and portfolio construction
 
 For cross-border investors, gross returns in European equities are only part of the story.`),
     ),
-    imageUrl: getImage('markets', 228),
+    imageUrl: getAnalyticsImage('cross-border-tax-optimization-for-european-equity-investors'),
     tags: ['Tax Optimization', 'Withholding Tax', 'European Equities', 'Cross-Border Investing', 'After-Tax Returns'],
   },
 ];

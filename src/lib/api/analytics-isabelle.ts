@@ -1,10 +1,5 @@
 import { AnalyticsArticle } from './types';
-import { getAuthorAvatar, categoryImages } from './utils';
-
-const getImage = (type: string, index: number) => {
-  const images = categoryImages[type] || categoryImages.markets;
-  return images[index % images.length];
-};
+import { getAuthorAvatar, getAnalyticsImage } from './utils';
 
 const formatDate = (offset: number) => {
   const baseDate = new Date('2024-12-31T00:00:00Z');
@@ -240,7 +235,7 @@ Investors who approach blue-economy finance with rigor—demanding credible impa
 
 The ocean covers more than 70% of the Earth's surface and plays a crucial role in climate regulation, food security, and economic activity.`),
     ),
-    imageUrl: getImage('longterm', 364),
+    imageUrl: getAnalyticsImage('blue-economy-and-ocean-finance-investing-in-sustainable-ocean-resources'),
     tags: ['Blue Economy', 'Ocean Finance', 'Marine Conservation', 'ESG', 'Sustainable Finance'],
   },
   {
@@ -748,7 +743,7 @@ Just transition finance is essential for ensuring that the shift to a net-zero e
 
 The transition to a net-zero economy is not just a technological and financial challenge—it is also a social one.`),
     ),
-    imageUrl: getImage('expert', 365),
+    imageUrl: getAnalyticsImage('just-transition-finance-supporting-workers-and-communities-in-the-energy-transition'),
     tags: ['Just Transition', 'Social Finance', 'Energy Transition', 'ESG', 'Workforce Development'],
   },
   {
@@ -948,7 +943,7 @@ Investors who approach ESG data with rigor, skepticism, and a focus on materiali
 
 ESG investing has grown from a niche practice to a mainstream approach, with trillions of dollars allocated based on environmental, social, and governance criteria.`),
     ),
-    imageUrl: getImage('markets', 366),
+    imageUrl: getAnalyticsImage('esg-data-ratings-and-analytics-navigating-the-landscape-of-sustainability-information'),
     tags: ['ESG Data', 'Ratings', 'Sustainability Analytics', 'ESG', 'Investment Research'],
   },
   {
@@ -1137,7 +1132,7 @@ Investors who integrate sustainable supply chain finance into their strategies w
 
 Global supply chains are the backbone of the modern economy, connecting producers, manufacturers, and consumers across continents.`),
     ),
-    imageUrl: getImage('expert', 367),
+    imageUrl: getAnalyticsImage('sustainable-supply-chain-finance-managing-risks-and-opportunities-in-global-value-chains'),
     tags: ['Supply Chain Finance', 'ESG', 'Sustainable Finance', 'Risk Management', 'Transparency'],
   },
   {
@@ -1619,7 +1614,7 @@ As regulations tighten, consumer preferences shift, and resource constraints inc
 
 The circular economy has evolved from a niche sustainability concept to a strategic priority for corporates, regulators, and investors.`),
     ),
-    imageUrl: getImage('expert', 354),
+    imageUrl: getAnalyticsImage('circular-economy-business-models-and-investment-opportunities'),
     tags: ['Circular Economy', 'Resource Efficiency', 'ESG', 'Sustainable Finance', 'Equities'],
   },
   {
@@ -1956,7 +1951,7 @@ Water infrastructure can provide attractive risk-adjusted returns when managed p
 
 Water is essential for life, agriculture, industry, and economic development.`),
     ),
-    imageUrl: getImage('longterm', 332),
+    imageUrl: getAnalyticsImage('water-infrastructure-and-resource-management-investment-opportunities'),
     tags: ['Water Infrastructure', 'Resource Management', 'ESG', 'Sustainability', 'Infrastructure Investing'],
   },
   {
@@ -2302,7 +2297,7 @@ Sustainable agriculture will continue to evolve, creating winners and losers. In
 
 The global food system faces unprecedented challenges.`),
     ),
-    imageUrl: getImage('longterm', 331),
+    imageUrl: getAnalyticsImage('sustainable-agriculture-and-food-systems-investing-in-resilient-food-production'),
     tags: ['Sustainable Agriculture', 'Food Systems', 'ESG', 'Climate Resilience', 'Agriculture Investing'],
   },
   {
@@ -2699,7 +2694,7 @@ The circular economy is still in early stages, but the direction is clear. Inves
 
 The linear economy—take, make, dispose—is reaching its limits.`),
     ),
-    imageUrl: getImage('markets', 330),
+    imageUrl: getAnalyticsImage('circular-economy-and-waste-to-value-investing-the-new-resource-economy'),
     tags: ['Circular Economy', 'Waste Management', 'ESG', 'Sustainable Investing', 'Resource Recovery'],
   },
   {
@@ -2955,7 +2950,7 @@ For investors, the opportunity is to move beyond broad ESG narratives and focus 
 
 Sustainable finance discussions have been dominated by mitigation: decarbonization, renewable buildout, and emissions targets. Mitigation matters, but it is no longer sufficient as a financial lens.`)
     ),
-    imageUrl: getImage('longterm', 1),
+    imageUrl: getAnalyticsImage('climate-adaptation-finance-water-stress-insurance-retreat-and-infrastructure-capital'),
     tags: ['ESG', 'Adaptation', 'Water', 'Insurance', 'Infrastructure'],
     relatedMarkets: ['bonds', 'stocks'],
   },
@@ -3203,7 +3198,7 @@ The most durable edge is not enthusiasm. It is clarity: carbon is a price signal
 
 Carbon markets sit at an uncomfortable intersection of finance and politics. They are part commodity market, part regulatory instrument, part reputation mechanism.`)
     ),
-    imageUrl: getImage('expert', 0),
+    imageUrl: getAnalyticsImage('biodiversity-finance-investing-beyond-carbon'),
     tags: ['ESG', 'Carbon Markets', 'Climate Policy', 'Compliance', 'Voluntary'],
     relatedMarkets: ['commodities', 'stocks'],
   },
@@ -3432,7 +3427,7 @@ Biodiversity finance represents a critical frontier for sustainable finance, com
 
 Climate has dominated the sustainable‑finance agenda for more than a decade, but biodiversity and ecosystem services are increasingly recognized as financially material dimensions of nature-related risk and opportunity.`)
     ),
-    imageUrl: getImage('markets', 2),
+    imageUrl: getAnalyticsImage('biodiversity-finance-investing-beyond-carbon'),
     tags: ['Biodiversity', 'Nature Risk', 'Sustainable Finance', 'ESG', 'Transition'],
   },
   {
@@ -3628,7 +3623,7 @@ Used thoughtfully—within robust governance frameworks and alongside fundamenta
 
 Environmental, Social, and Governance (ESG) investing has evolved from exclusion lists to more sophisticated integration of sustainability factors into risk and return analysis. Yet practitioners continue to grapple with data gaps, inconsistent metrics, and the complexity of modeling long‑horizon climate and social risks.`)
     ),
-    imageUrl: getImage('expert', 1),
+    imageUrl: getAnalyticsImage('ai-climate-data-and-the-next-generation-of-esg-analytics'),
     tags: ['ESG', 'AI', 'Climate Data', 'Sustainable Investing', 'Analytics'],
   },
   {
@@ -3814,7 +3809,7 @@ The shift toward a higher‑for‑longer rate regime changes the calculus for bo
 
 This article analyzes how sustainable finance—and green bonds in particular—must adapt to a world where capital has a higher explicit cost.`)
     ),
-    imageUrl: getImage('expert', 0),
+    imageUrl: getAnalyticsImage('esg-integration-investment-framework'),
     tags: ['ESG', 'Green Bonds', 'Sustainable Finance', 'Interest Rates', 'Energy Transition'],
   },
   {
@@ -4148,8 +4143,8 @@ ESG integration offers opportunities to improve investment outcomes while consid
 
 Investors should focus on material ESG factors, use quality data, and integrate ESG throughout the investment process. Success requires both ESG expertise and investment discipline.
 
-ESG integration will continue evolving with data, methodologies, and stakeholder expectations. Investors who adapt effectively can navigate ESG integration successfully and create sustainable returns.`)),
-    imageUrl: getImage('longterm', 324),
+ESG integration will continue evolving with data, methodologies, and stakeholder expectations. Investors who adapt effectively can navigate ESG integration successfully and create sustainable returns.`)    ),
+    imageUrl: getAnalyticsImage('transition-finance-and-the-path-to-net-zero'),
     tags: ['ESG', 'Sustainable Finance', 'Investment', 'Sustainability', 'Governance'],
   },
 
@@ -4509,7 +4504,7 @@ Transition finance represents a critical tool in the climate finance toolkit, en
 
 Green finance has traditionally focused on pure‑play climate solutions: wind farms, solar parks, green buildings, and low‑carbon transport.`),
     ),
-    imageUrl: getImage('expert', 325),
+    imageUrl: getAnalyticsImage('stewardship-and-esg-engagement-in-public-markets'),
     tags: ['Transition Finance', 'Net Zero', 'ESG', 'Fixed Income', 'Sustainable Investing'],
   },
   {
@@ -4749,7 +4744,7 @@ By moving beyond box‑ticking and emphasizing real‑world outcomes, investors 
 
 Stewardship has become a central pillar of sustainable investing. Asset managers and asset owners increasingly publish stewardship codes, active‑ownership reports, and case studies of engagement with portfolio companies.`),
     ),
-    imageUrl: getImage('expert', 326),
+    imageUrl: getAnalyticsImage('biodiversity-finance-and-nature-related-risks'),
     tags: ['Stewardship', 'Engagement', 'ESG', 'Active Ownership', 'Sustainable Investing'],
   },
   {
@@ -4997,7 +4992,7 @@ Biodiversity finance represents a critical frontier for sustainable finance, com
 
 Climate change has dominated the sustainable‑finance agenda for more than a decade. Yet an equally critical, and deeply interconnected, challenge is now moving rapidly up the agenda: biodiversity loss and nature degradation.`),
     ),
-    imageUrl: getImage('longterm', 327),
+    imageUrl: getAnalyticsImage('social-factors-in-esg-labor-rights-and-human-capital'),
     tags: ['Biodiversity', 'TNFD', 'Nature-Related Risk', 'ESG', 'Sustainable Finance'],
   },
   {
@@ -5408,7 +5403,7 @@ The social dimension of ESG is complex and context-dependent, but it is increasi
 
 Within ESG, environmental and climate topics have dominated investor attention, while governance has long been embedded in traditional analysis.`),
     ),
-    imageUrl: getImage('expert', 328),
+    imageUrl: getAnalyticsImage('impact-investing-and-additionality-in-public-markets'),
     tags: ['Social', 'Labor Rights', 'Human Capital', 'ESG', 'Sustainable Investing'],
   },
   {
@@ -5868,7 +5863,7 @@ Impact investing in public markets is not impossible, but it is different from p
 
 Impact investing in public markets raises hard questions about what investors can genuinely influence and how additionality should be defined.`),
     ),
-    imageUrl: getImage('longterm', 329),
+    imageUrl: getAnalyticsImage('biodiversity-credits-and-nature-markets-opportunities-and-pitfalls'),
     tags: ['Impact Investing', 'Additionality', 'ESG', 'Public Markets', 'Sustainable Finance'],
   },
   {
@@ -6286,7 +6281,7 @@ The biodiversity crisis demands urgent action, and biodiversity credits have the
 
 If climate finance was the first wave of sustainable finance, biodiversity is rapidly becoming the second.`),
     ),
-    imageUrl: getImage('expert', 335),
+    imageUrl: getAnalyticsImage('social-impact-bonds-and-outcomes-based-finance'),
     tags: ['Biodiversity', 'Nature Markets', 'ESG', 'Sustainable Finance', 'Impact'],
   },
   {
@@ -6786,7 +6781,7 @@ Investors considering SIB exposure should approach with realistic expectations, 
 
 Social impact bonds and outcomes-based contracts were heralded as innovations that could modernise public-service delivery.`),
     ),
-    imageUrl: getImage('expert', 341),
+    imageUrl: getAnalyticsImage('green-bonds-market-evolution-taxonomy-and-impact-reporting'),
     tags: ['Social Impact Bonds', 'Outcomes-Based Finance', 'Impact Investing', 'ESG', 'Public Policy'],
   },
   {
@@ -7136,7 +7131,7 @@ The green bond market will continue to evolve, with improving standards, better 
 
 Green bonds have moved from the margins of fixed income to its core, but their value depends on structure and substance, not labels.`),
     ),
-    imageUrl: getImage('markets', 347),
+    imageUrl: getAnalyticsImage('carbon-capture-and-storage-investment-frameworks-and-risks'),
     tags: ['Green Bonds', 'EU Taxonomy', 'Sustainable Finance', 'ESG', 'Fixed Income'],
   },
   {
@@ -7629,7 +7624,7 @@ As the CCS market develops, investors who understand the technology, policy land
 
 Carbon capture and storage has long been a controversial element of climate strategy, but by late 2024 a growing pipeline of projects is moving beyond pilots.`),
     ),
-    imageUrl: getImage('expert', 353),
+    imageUrl: getAnalyticsImage('carbon-capture-and-storage-investment-frameworks-and-risks'),
     tags: ['CCS', 'Carbon Capture', 'Climate Transition', 'Sustainable Finance', 'Infrastructure'],
   },
 ];

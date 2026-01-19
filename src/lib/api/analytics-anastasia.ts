@@ -1,10 +1,5 @@
 import { AnalyticsArticle } from './types';
-import { getAuthorAvatar, categoryImages } from './utils';
-
-const getImage = (type: string, index: number) => {
-  const images = categoryImages[type] || categoryImages.markets;
-  return images[index % images.length];
-};
+import { getAuthorAvatar, getAnalyticsImage } from './utils';
 
 const formatDate = (offset: number) => {
   const baseDate = new Date('2024-12-31T00:00:00Z');
@@ -409,7 +404,7 @@ Latin American equity markets can provide attractive risk-adjusted returns when 
 
 Latin America has long been a challenging region for equity investors.`),
     ),
-    imageUrl: getImage('markets', 267),
+    imageUrl: getAnalyticsImage('latin-america-equity-markets-reform-cycles-and-investment-opportunities'),
     tags: ['Latin America', 'Equity Markets', 'Emerging Markets', 'Reform Cycles', 'Commodities'],
   },
   {
@@ -772,7 +767,7 @@ Southeast Asian infrastructure can provide attractive risk-adjusted returns when
 
 Southeast Asia is one of the world's fastest-growing regions, with a population of over 650 million people and rapidly expanding economies.`),
     ),
-    imageUrl: getImage('longterm', 266),
+    imageUrl: getAnalyticsImage('southeast-asia-infrastructure-investment-themes-and-opportunities'),
     tags: ['Southeast Asia', 'Infrastructure', 'Emerging Markets', 'Infrastructure Investing', 'Asia-Pacific'],
   },
   {
@@ -1090,7 +1085,7 @@ The Middle East SWF evolution is a multi-decade theme that will continue to infl
 
 The Middle East is home to some of the world's largest sovereign wealth funds (SWFs).`),
     ),
-    imageUrl: getImage('markets', 265),
+    imageUrl: getAnalyticsImage('middle-east-sovereign-wealth-funds-diversification-and-global-capital-allocation'),
     tags: ['Middle East', 'Sovereign Wealth Funds', 'Capital Allocation', 'Emerging Markets', 'Global Markets'],
   },
   {
@@ -1351,7 +1346,7 @@ For investors, the key is to treat Turkey as a regime distribution. When credibi
 
 Turkey is one of the clearest examples of how macro markets are ultimately markets in credibility.`)
     ),
-    imageUrl: getImage('markets', 1),
+    imageUrl: getAnalyticsImage('turkey-fx-stabilization-credit-transmission-and-the-repricing-of-risk'),
     tags: ['Emerging Markets', 'Turkey', 'FX', 'Inflation', 'Rates'],
     relatedMarkets: ['currencies', 'bonds', 'stocks'],
   },
@@ -1587,7 +1582,7 @@ For investors, the opportunity is not simply “buy distressed debt and wait.”
 
 Argentina is the macroeconomist’s stress test: high inflation, recurring currency crises, capital controls, and repeated sovereign restructurings.`)
     ),
-    imageUrl: getImage('markets', 0),
+    imageUrl: getAnalyticsImage('frontier-africa-debt-markets-opportunities-and-risks'),
     tags: ['Emerging Markets', 'Argentina', 'Sovereign Debt', 'FX', 'Inflation'],
     relatedMarkets: ['currencies', 'bonds'],
   },
@@ -1874,7 +1869,7 @@ In doing so, investors can participate selectively in financing Africa's growth 
 
 Frontier African economies occupy a distinctive space within emerging markets. They offer young and growing populations, significant infrastructure and development needs, and underpenetrated financial systems—but also higher macro volatility and more limited market depth.`)
     ),
-    imageUrl: getImage('markets', 2),
+    imageUrl: getAnalyticsImage('ai-and-data-infrastructure-in-emerging-markets-opportunity-and-friction'),
     tags: ['Africa', 'Frontier Markets', 'Sovereign Debt', 'Currency Risk', 'Emerging Markets'],
   },
   {
@@ -2094,7 +2089,7 @@ The key is approaching AI and data infrastructure investing in emerging markets 
 
 Artificial intelligence depends on three pillars: compute, data, and talent. Emerging markets are increasingly active in all three. From data‑center build‑outs and fiber networks to fintech, e‑commerce, and digital public infrastructure, many EM economies are investing in the foundations of an AI‑enabled future.`)
     ),
-    imageUrl: getImage('longterm', 1),
+    imageUrl: getAnalyticsImage('emerging-markets-debt-and-fx-in-a-higher-rate-global-cycle'),
     tags: ['Emerging Markets', 'AI', 'Infrastructure', 'Data', 'Investment'],
   },
   {
@@ -2318,7 +2313,7 @@ The current transition toward a higher‑for‑longer global rate regime raises 
 
 This article examines how the new rate environment reshapes EM debt and FX dynamics, with a particular focus on Eastern Europe and adjacent regions.`)
     ),
-    imageUrl: getImage('markets', 0),
+    imageUrl: getAnalyticsImage('eastern-europe-macro-economic-outlook'),
     tags: ['Emerging Markets', 'Debt', 'FX', 'Interest Rates', 'Eastern Europe'],
   },
   {
@@ -2597,7 +2592,7 @@ Eastern European markets offer diverse opportunities for investors seeking emerg
 Investors should focus on quality companies, appropriate diversification, and risk management. Success requires understanding both regional trends and country-specific factors.
 
 Eastern European markets will continue evolving with economic conditions, EU integration, and geopolitical developments. Investors who understand these dynamics and manage risk appropriately can navigate Eastern European markets successfully.`)),
-    imageUrl: getImage('markets', 259),
+    imageUrl: getAnalyticsImage('energy-exports-and-terms-of-trade-shocks-in-cee'),
     tags: ['Eastern Europe', 'Emerging Markets', 'Macro Economics', 'Investment', 'Market Analysis'],
   },
 
@@ -2774,7 +2769,7 @@ For long‑horizon investors, the transition away from concentrated fossil‑fue
 
 Central and Eastern Europe (CEE) sits at the intersection of energy markets, geopolitical tensions, and European Union integration.`),
     ),
-    imageUrl: getImage('expert', 260),
+    imageUrl: getAnalyticsImage('cee-banking-sectors-in-a-higher-rate-world'),
     tags: ['Energy', 'CEE', 'Macro', 'Emerging Markets', 'FX'],
   },
   {
@@ -3043,7 +3038,7 @@ For investors, the opportunity lies in identifying countries and banks where hig
 
 Central and Eastern Europe’s banking systems sit at the intersection of multiple forces: higher global interest rates, regional energy shocks, EU regulatory frameworks, and evolving capital‑market integration.`),
     ),
-    imageUrl: getImage('expert', 261),
+    imageUrl: getAnalyticsImage('fx-regimes-and-monetary-policy-in-central-eastern-europe'),
     tags: ['CEE Banks', 'Emerging Europe', 'Financials', 'Macro', 'Regulation'],
   },
   {
@@ -3288,7 +3283,7 @@ By integrating FX‑regime analysis with banking‑sector diagnostics, terms‑o
 
 Central & Eastern Europe (CEE) is not a single macro bloc. Countries differ materially in their exchange‑rate regimes, inflation histories, and monetary‑policy frameworks.`),
     ),
-    imageUrl: getImage('markets', 262),
+    imageUrl: getAnalyticsImage('cee-equity-markets-and-privatization-themes'),
     tags: ['FX', 'Monetary Policy', 'CEE', 'Local Currency Bonds', 'Macro'],
   },
   {
@@ -3774,7 +3769,7 @@ With a disciplined framework that accounts for liquidity constraints, governance
 
 Central & Eastern Europe (CEE) offers exposure to converging economies, open trade regimes, and integration with EU value chains.`),
     ),
-    imageUrl: getImage('markets', 263),
+    imageUrl: getAnalyticsImage('turkey-equities-and-lira-risk-new-policy-mix'),
     tags: ['CEE', 'Equities', 'Privatization', 'Emerging Europe', 'Liquidity'],
   },
   {
@@ -4158,7 +4153,7 @@ Turkey offers a combination of:
 
 Turkey has long attracted—and tested—emerging‑market investors, combining deep equity liquidity with macro and FX volatility.`),
     ),
-    imageUrl: getImage('markets', 264),
+    imageUrl: getAnalyticsImage('poland-equity-markets-eu-integration-and-growth-dynamics'),
     tags: ['Turkey', 'Emerging Markets', 'Equities', 'FX', 'Macro'],
   },
   {
@@ -4466,7 +4461,7 @@ The Polish equity market offers exposure to a large, growing economy with EU int
 
 Poland has been one of the most successful emerging market stories in Central and Eastern Europe.`),
     ),
-    imageUrl: getImage('markets', 265),
+    imageUrl: getAnalyticsImage('poland-equity-markets-eu-integration-and-growth-dynamics'),
     tags: ['Poland', 'Emerging Markets', 'Equities', 'EU Integration', 'Eastern Europe'],
   },
   {
@@ -4760,7 +4755,7 @@ Czech equity markets provide attractive opportunities for investors seeking stab
 
 The Czech Republic has established itself as one of the most stable and developed markets in Central and Eastern Europe.`),
     ),
-    imageUrl: getImage('markets', 266),
+    imageUrl: getAnalyticsImage('hungary-equity-markets-policy-uncertainty-and-investment-opportunities'),
     tags: ['Czech Republic', 'Emerging Markets', 'Equities', 'Stability', 'Eastern Europe'],
   },
   {
@@ -5045,7 +5040,7 @@ Hungarian equity markets can provide attractive risk-adjusted returns for select
 
 Hungary presents a complex investment case for emerging market investors.`),
     ),
-    imageUrl: getImage('markets', 267),
+    imageUrl: getAnalyticsImage('romania-equity-markets-growth-potential-and-structural-challenges'),
     tags: ['Hungary', 'Emerging Markets', 'Equities', 'Policy Risk', 'Eastern Europe'],
   },
   {
@@ -5329,7 +5324,7 @@ Romanian equity markets can provide attractive opportunities for selective inves
 
 Romania represents one of the larger emerging markets in Central and Eastern Europe.`),
     ),
-    imageUrl: getImage('markets', 268),
+    imageUrl: getAnalyticsImage('south-africa-equity-markets-structural-challenges-and-value-opportunities'),
     tags: ['Romania', 'Emerging Markets', 'Equities', 'Growth', 'Eastern Europe'],
   },
   {
@@ -5620,7 +5615,7 @@ South African equity markets can provide attractive opportunities for selective 
 
 South Africa presents a complex investment case for emerging market investors.`),
     ),
-    imageUrl: getImage('markets', 269),
+    imageUrl: getAnalyticsImage('mexico-equity-markets-nearshoring-and-manufacturing-opportunities'),
     tags: ['South Africa', 'Emerging Markets', 'Equities', 'Value', 'Africa'],
   },
   {
@@ -5933,7 +5928,7 @@ Mexican equity markets can provide attractive opportunities for investors focuse
 
 Mexico is experiencing a significant transformation driven by nearshoring trends.`),
     ),
-    imageUrl: getImage('markets', 270),
+    imageUrl: getAnalyticsImage('brazil-equity-markets-reform-agenda-and-sector-opportunities'),
     tags: ['Mexico', 'Emerging Markets', 'Equities', 'Nearshoring', 'Manufacturing'],
   },
   {
@@ -6232,7 +6227,7 @@ Brazilian equity markets can provide attractive opportunities for selective inve
 
 Brazil represents Latin America's largest economy and equity market.`),
     ),
-    imageUrl: getImage('markets', 271),
+    imageUrl: getAnalyticsImage('india-equity-markets-growth-story-and-structural-opportunities'),
     tags: ['Brazil', 'Emerging Markets', 'Equities', 'Reforms', 'Latin America'],
   },
   {
@@ -6532,7 +6527,7 @@ Indian equity markets can provide attractive opportunities for long-term investo
 
 India represents one of the most attractive long-term growth stories in emerging markets.`),
     ),
-    imageUrl: getImage('markets', 272),
+    imageUrl: getAnalyticsImage('indonesia-equity-markets-demographics-and-consumer-growth'),
     tags: ['India', 'Emerging Markets', 'Equities', 'Growth', 'Asia'],
   },
   {
@@ -6837,7 +6832,7 @@ Indonesian equity markets can provide attractive opportunities for long-term inv
 
 Indonesia represents Southeast Asia's largest economy and one of the most attractive demographic stories.`),
     ),
-    imageUrl: getImage('markets', 273),
+    imageUrl: getAnalyticsImage('thailand-equity-markets-tourism-recovery-and-sector-opportunities'),
     tags: ['Indonesia', 'Emerging Markets', 'Equities', 'Demographics', 'Asia'],
   },
   {
@@ -7132,7 +7127,7 @@ Thai equity markets can provide attractive opportunities for selective investors
 
 Thailand has long been a favorite destination for emerging market investors.`),
     ),
-    imageUrl: getImage('markets', 274),
+    imageUrl: getAnalyticsImage('philippines-equity-markets-consumer-growth-and-remittances'),
     tags: ['Thailand', 'Emerging Markets', 'Equities', 'Tourism', 'Asia'],
   },
   {
@@ -7434,7 +7429,7 @@ Philippine equity markets can provide attractive opportunities for long-term inv
 
 The Philippines represents an attractive consumer growth story in Southeast Asia.`),
     ),
-    imageUrl: getImage('markets', 275),
+    imageUrl: getAnalyticsImage('vietnam-equity-markets-manufacturing-hub-and-growth-opportunities'),
     tags: ['Philippines', 'Emerging Markets', 'Equities', 'Consumer', 'Asia'],
   },
   {
@@ -7724,7 +7719,7 @@ Vietnamese equity markets can provide attractive opportunities for long-term inv
 
 Vietnam has emerged as one of the most attractive manufacturing destinations in Asia.`),
     ),
-    imageUrl: getImage('markets', 276),
+    imageUrl: getAnalyticsImage('vietnam-equity-markets-manufacturing-hub-and-growth-opportunities'),
     tags: ['Vietnam', 'Emerging Markets', 'Equities', 'Manufacturing', 'Asia'],
   },
 ];

@@ -5,7 +5,11 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
-import { Shield, Trash2, Lock, Pin, CheckCircle, XCircle, MessageCircle, Star, MessageSquare, Loader2 } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Shield, Trash2, Lock, Pin, CheckCircle, XCircle, MessageCircle, Star, MessageSquare, Loader2, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -80,6 +84,12 @@ export default function ModerationPage() {
   const [approvingAllEvaluations, setApprovingAllEvaluations] = useState(false);
   const [activeTab, setActiveTab] = useState<'discussions' | 'replies' | 'evaluations' | 'reports'>('discussions');
   const [reportsTab, setReportsTab] = useState<'pending' | 'all'>('pending');
+  
+  // Email form state
+  const [emailTo, setEmailTo] = useState('');
+  const [emailSubject, setEmailSubject] = useState('');
+  const [emailMessage, setEmailMessage] = useState('');
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
 
   // Check if current user is admin
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase();
@@ -596,10 +606,121 @@ export default function ModerationPage() {
     );
   }
 
+  const handleSendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailTo)) {
+      toast.error('Please enter a valid email address');
+      return;
+    }
+    
+    if (!emailSubject.trim() || !emailMessage.trim()) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+    
+    setIsSendingEmail(true);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke('send-email', {
+        body: {
+          to: emailTo,
+          subject: emailSubject,
+          message: emailMessage,
+        },
+      });
+      
+      if (error) throw error;
+      
+      if (data?.error) {
+        throw new Error(data.error);
+      }
+      
+      toast.success('Email sent successfully');
+      setEmailTo('');
+      setEmailSubject('');
+      setEmailMessage('');
+    } catch (error: any) {
+      logger.error('Error sending email:', error);
+      toast.error(error?.message || 'Failed to send email');
+    } finally {
+      setIsSendingEmail(false);
+    }
+  };
+
   return (
     <Layout>
       <div className="section-spacing">
         <div className="container-wide max-w-6xl">
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Mail className="h-5 w-5" />
+                Send Email
+              </CardTitle>
+              <CardDescription>
+                Send an email from support@investopatronus.com
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSendEmail} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email-from">From</Label>
+                  <Input
+                    id="email-from"
+                    value="support@investopatronus.com"
+                    disabled
+                    className="bg-muted"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email-to">To *</Label>
+                  <Input
+                    id="email-to"
+                    type="email"
+                    value={emailTo}
+                    onChange={(e) => setEmailTo(e.target.value)}
+                    placeholder="recipient@example.com"
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email-subject">Subject *</Label>
+                  <Input
+                    id="email-subject"
+                    value={emailSubject}
+                    onChange={(e) => setEmailSubject(e.target.value)}
+                    placeholder="Email subject"
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email-message">Message *</Label>
+                  <Textarea
+                    id="email-message"
+                    value={emailMessage}
+                    onChange={(e) => setEmailMessage(e.target.value)}
+                    placeholder="Your message here..."
+                    rows={6}
+                    required
+                  />
+                </div>
+                <Button type="submit" disabled={isSendingEmail}>
+                  {isSendingEmail ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Email'
+                  )}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+
           <div className="flex items-center justify-between mb-8">
             <div>
               <h1 className="heading-lg mb-2">Moderation Dashboard</h1>

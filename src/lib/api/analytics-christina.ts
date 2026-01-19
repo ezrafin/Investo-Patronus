@@ -1,11 +1,5 @@
 import { AnalyticsArticle } from './types';
-import { getAuthorAvatar, categoryImages } from './utils';
-
-// Helper to get image by index cycling through available images
-const getImage = (type: string, index: number) => {
-  const images = categoryImages[type] || categoryImages.markets;
-  return images[index % images.length];
-};
+import { getAuthorAvatar, getAnalyticsImage } from './utils';
 
 // Helper to format dates
 const formatDate = (offset: number) => {
@@ -311,7 +305,7 @@ The AI hardware race is far from over, and investors who engage thoughtfully wit
 
 The AI boom has been a GPU story. NVIDIA's dominance in training and inference has been remarkable, driven by CUDA's software moat, massive scale advantages, and relentless execution.`),
     ),
-    imageUrl: getImage('expert', 375),
+    imageUrl: getAnalyticsImage('ai-hardware-race-beyond-gpus-the-emerging-accelerator-landscape'),
     tags: ['AI Hardware', 'Semiconductors', 'Technology', 'Growth Stocks', 'Innovation'],
     relatedCompanies: ['NVDA', 'AMD', 'INTC'],
   },
@@ -653,7 +647,7 @@ Spatial computing could reshape computing interfaces, and investors who engage t
 
 Spatial computing—the convergence of augmented reality, virtual reality, and mixed reality—has been "the next big thing" for over a decade.`),
     ),
-    imageUrl: getImage('expert', 377),
+    imageUrl: getAnalyticsImage('spatial-computing-and-ar-vr-platforms-the-next-computing-interface'),
     tags: ['Spatial Computing', 'AR/VR', 'Technology', 'Growth Stocks', 'Platforms'],
     relatedCompanies: ['META', 'AAPL', 'MSFT'],
   },
@@ -1048,7 +1042,7 @@ The autonomous vehicle market offers significant opportunities, but success requ
 
 Autonomous vehicles have been a promise for over a decade, with timelines repeatedly pushed back as the technical and regulatory challenges proved more complex than initially anticipated.`),
     ),
-    imageUrl: getImage('markets', 378),
+    imageUrl: getAnalyticsImage('autonomous-vehicles-and-mobility-technology-investment-themes'),
     tags: ['Autonomous Vehicles', 'Mobility', 'Technology', 'Growth Stocks', 'Transportation'],
     relatedCompanies: ['TSLA', 'GOOGL', 'UBER'],
   },
@@ -1351,7 +1345,7 @@ Cloud-native software is the future of enterprise technology, and investors who 
 
 The shift to cloud-native software has fundamentally changed how enterprise software is built, sold, and consumed.`),
     ),
-    imageUrl: getImage('expert', 379),
+    imageUrl: getAnalyticsImage('cloud-native-software-and-platform-economics-investment-framework'),
     tags: ['Cloud-Native', 'Software', 'Platforms', 'Technology', 'Growth Stocks'],
     relatedCompanies: ['SNOW', 'DDOG', 'NET'],
   },
@@ -1635,7 +1629,7 @@ Edge computing is essential for the next phase of AI deployment, and investors w
 
 The cloud has been the default home for AI workloads, with massive data centers processing training and inference at scale.`),
     ),
-    imageUrl: getImage('markets', 380),
+    imageUrl: getAnalyticsImage('edge-computing-and-distributed-ai-investment-opportunities'),
     tags: ['Edge Computing', 'AI', 'Technology', 'Growth Stocks', 'IoT'],
     relatedCompanies: ['NVDA', 'QCOM', 'ARM'],
   },
@@ -1845,7 +1839,7 @@ Data infrastructure is a critical enabler of digital transformation, and investo
 
 Data has become the lifeblood of modern businesses, with companies across industries relying on data for decision-making, product development, and competitive advantage.`),
     ),
-    imageUrl: getImage('expert', 381),
+    imageUrl: getAnalyticsImage('data-infrastructure-and-modern-data-stacks-investment-framework'),
     tags: ['Data Infrastructure', 'Data Platforms', 'Technology', 'Growth Stocks', 'Analytics'],
     relatedCompanies: ['SNOW', 'DBX', 'MDB'],
   },
@@ -2090,7 +2084,7 @@ Developer tools are critical enablers of software development, and investors who
 
 Software development is undergoing a transformation. AI-powered coding assistants, cloud-native development platforms, and modern tooling are changing how developers build, test, and deploy software.`),
     ),
-    imageUrl: getImage('markets', 382),
+    imageUrl: getAnalyticsImage('developer-tools-and-platform-productivity-investment-themes'),
     tags: ['Developer Tools', 'Software Development', 'Technology', 'Growth Stocks', 'Productivity'],
     relatedCompanies: ['MSFT', 'GOOGL', 'GTLB'],
   },
@@ -2380,7 +2374,7 @@ Cybersecurity is a critical and growing market, and investors who understand mod
 
 Cybersecurity is in a constant arms race. As organizations digitize and move to the cloud, attack surfaces expand, threats become more sophisticated, and the volume of security data explodes.`),
     ),
-    imageUrl: getImage('expert', 383),
+    imageUrl: getAnalyticsImage('cybersecurity-in-the-ai-era-investment-framework-for-modern-security'),
     tags: ['Cybersecurity', 'AI', 'Security', 'Technology', 'Growth Stocks'],
     relatedCompanies: ['CRWD', 'PANW', 'ZS'],
   },
@@ -2827,7 +2821,7 @@ As the market matures, we can expect continued innovation, consolidation, and th
 
 The generative AI wave has moved from consumer experimentation to enterprise deployment. Companies are integrating large language models, image generation, and other generative AI capabilities into workflows, products, and services.`),
     ),
-    imageUrl: getImage('markets', 376),
+    imageUrl: getAnalyticsImage('generative-ai-applications-enterprise-adoption-and-revenue-models'),
     tags: ['Generative AI', 'Enterprise Software', 'SaaS', 'Technology', 'Growth Stocks'],
     relatedCompanies: ['MSFT', 'GOOGL', 'CRM'],
   },
@@ -3263,7 +3257,7 @@ Quantum computing will continue to evolve, creating winners and losers. Investor
 
 For decades, quantum computing existed primarily in research laboratories and academic papers.`),
     ),
-    imageUrl: getImage('longterm', 19),
+    imageUrl: getAnalyticsImage('quantum-computing-applications-and-investment-horizons-the-next-computing-paradigm'),
     tags: ['Quantum Computing', 'Technology', 'Innovation', 'Long-Term Investing', 'Technology Investing'],
   },
   {
@@ -3678,7 +3672,7 @@ Edge computing and IoT infrastructure will continue to evolve, creating winners 
 
 For decades, computing followed a simple pattern: collect data, send it to a central data center, process it in the cloud, and send results back.`),
     ),
-    imageUrl: getImage('longterm', 18),
+    imageUrl: getAnalyticsImage('edge-computing-and-iot-infrastructure-the-distributed-intelligence-revolution'),
     tags: ['Edge Computing', 'IoT', 'Infrastructure', '5G', 'Technology Investing'],
   },
   {
@@ -4016,7 +4010,7 @@ The winners will be those that help enterprises navigate the complexity of globa
 
 Over the past decade, data has become the lifeblood of digital business.`),
     ),
-    imageUrl: getImage('expert', 17),
+    imageUrl: getAnalyticsImage('data-sovereignty-and-privacy-tech-infrastructure-the-new-compliance-stack'),
     tags: ['Data Sovereignty', 'Privacy Tech', 'Compliance', 'Infrastructure', 'Technology Investing'],
   },
   {
@@ -4316,7 +4310,7 @@ In the AI era, the question is no longer “what can the model say?” It is “
 
 The first wave of enterprise AI adoption was about productivity: copilots, summarization, classification, and retrieval. Much of the security discussion focused on data privacy—preventing sensitive information from leaking into prompts or being exposed through model outputs.`)
     ),
-    imageUrl: getImage('expert', 1),
+    imageUrl: getAnalyticsImage('advanced-packaging-the-quiet-bottleneck-in-ai-compute'),
     tags: ['Cybersecurity', 'AI Agents', 'Identity', 'Enterprise Software', 'Risk'],
     relatedCompanies: ['CRWD', 'PANW', 'NET'],
   },
@@ -4586,7 +4580,7 @@ In the AI era, the quiet bottlenecks are often the most valuable ones—and adva
 
 For most of the last decade, the investment narrative around semiconductors has been dominated by the node: 7nm, 5nm, 3nm, and—soon enough—2nm. The node matters. But the AI era is revealing a less glamorous truth: the biggest constraint in modern compute is not always transistor density. It is the ability to move data efficiently, reliably, and at scale.`)
     ),
-    imageUrl: getImage('expert', 0),
+    imageUrl: getAnalyticsImage('cloud-to-edge-computing-investment-opportunities-in-distributed-infrastructure'),
     tags: ['Semiconductors', 'AI Compute', 'Advanced Packaging', 'HBM', 'Supply Chain'],
     relatedCompanies: ['TSM', 'NVDA', 'AMD', 'ASML'],
   },
@@ -4889,7 +4883,7 @@ The edge computing market represents a significant opportunity for investors who
 
 Cloud computing transformed how enterprises build and run applications, abstracting away physical infrastructure in favor of elastic, on‑demand resources. Today, a new wave of architectural change is underway as workloads move closer to users, devices, and data sources. Edge computing—processing data near where it is generated—is becoming essential for low‑latency applications, bandwidth optimization, and resilience.`)
     ),
-    imageUrl: getImage('longterm', 2),
+    imageUrl: getAnalyticsImage('ai-productivity-boom-and-the-next-wave-of-software-leaders'),
     tags: ['Cloud', 'Edge Computing', 'Infrastructure', 'Technology', 'Investment'],
   },
   {
@@ -5104,7 +5098,7 @@ The companies that successfully navigate this transformation will create signifi
 
 Artificial intelligence has moved from a niche capability to a core driver of business transformation. What started as incremental automation in back‑office workflows has evolved into full‑stack productivity enhancements across development, customer service, operations, and strategic decision‑making. For technology investors, this is not simply a story about “AI companies” but about how AI changes the economics and competitive dynamics of software more broadly.`)
     ),
-    imageUrl: getImage('expert', 1),
+    imageUrl: getAnalyticsImage('higher-rates-tech-valuations-and-equity-risk-premia'),
     tags: ['AI', 'Software', 'Productivity', 'Technology', 'Investment'],
   },
   {
@@ -5317,7 +5311,7 @@ Rather than treating “tech” as a monolith, investors should think in terms o
 - **Mid-duration compounders** – Firms with visible earnings, moderate growth, and improving margins can remain attractive if their return on invested capital comfortably exceeds the higher cost of capital.
 - **Shorter-duration, cash‑rich incumbents** – Established platforms with strong free cash flow yields, buybacks, and dividends may benefit from investors re‑rating predictable cash flows relative to speculative optionality.`)
     ),
-    imageUrl: getImage('expert', 0),
+    imageUrl: getAnalyticsImage('robotics-automation-investment-opportunities'),
     tags: ['Interest Rates', 'Technology', 'Equity Risk Premium', 'Valuation', 'Macro Regime'],
   },
   {
@@ -5655,7 +5649,7 @@ Investors should focus on companies with strong technology, effective execution,
 Understanding market dynamics, competitive positions, and technology trends is essential. The companies that combine these factors with strong execution will create the most value for shareholders over the long term.
 
 The robotics and automation market will continue growing and evolving. Investors positioned in the right companies can participate in this transformation while managing risks appropriately. Success requires both understanding technology trends and investment fundamentals.`)),
-    imageUrl: getImage('technical', 9),
+    imageUrl: getAnalyticsImage('ai-infrastructure-capex-strategy-for-long-term-investors'),
     tags: ['Robotics', 'Automation', 'Technology', 'Manufacturing', 'Investment'],
   },
 
@@ -5819,7 +5813,7 @@ Capital intensity is highest in Layers 0–2. However, economic differentiation 
 
 Hyperscale cloud providers sit at the center of the AI infrastructure capex cycle. They deploy capital across nearly every layer of the stack, from land and power to custom AI accelerators and high‑level AI services.`),
     ),
-    imageUrl: getImage('expert', 10),
+    imageUrl: getAnalyticsImage('software-platform-economics-and-scalable-growth'),
     tags: ['AI Infrastructure', 'Capex', 'Cloud', 'Semiconductors', 'Long-Term Investing'],
   },
   {
@@ -6031,7 +6025,7 @@ By looking through the lens of platform economics—cohort behavior, unit econom
 
 Software has shifted from a one‑time product sale to an ongoing service relationship. Cloud delivery, subscription models, and API‑first architectures allow software companies to scale faster and serve more customers than ever before.`),
     ),
-    imageUrl: getImage('expert', 11),
+    imageUrl: getAnalyticsImage('cloud-native-observability-and-resilience-engineering'),
     tags: ['Software Platforms', 'Unit Economics', 'Growth Investing', 'SaaS', 'Technology'],
   },
 
@@ -6332,7 +6326,7 @@ As cloud and software complexity continue to rise—with more services, more dep
 
 As enterprises migrate from monolithic applications to microservices and cloud-native architectures, their operational challenges have changed fundamentally.`),
     ),
-    imageUrl: getImage('technical', 12),
+    imageUrl: getAnalyticsImage('data-infrastructure-modernization-and-analytics-platforms'),
     tags: ['Observability', 'Cloud-Native', 'DevOps', 'SRE', 'Technology Investing'],
   },
 
@@ -6714,7 +6708,7 @@ Platforms that excel across these dimensions are best positioned to lead the nex
 
 Data has long been described as the “new oil,” but for many enterprises it has behaved more like an underutilized asset—expensive to store, difficult to refine, and challenging to integrate into day‑to‑day decisions.`),
     ),
-    imageUrl: getImage('expert', 13),
+    imageUrl: getAnalyticsImage('vertical-saas-and-industry-cloud-platforms'),
     tags: ['Data Infrastructure', 'Analytics Platforms', 'Cloud', 'Technology Investing', 'Enterprise Software'],
   },
 
@@ -7142,7 +7136,7 @@ Vertical SaaS and industry cloud platforms represent a compelling intersection o
 
 Horizontal software—productivity suites, generic CRM, infrastructure platforms—has dominated technology headlines and index weights for years. Beneath that surface, a growing set of vertical SaaS and industry cloud platforms has emerged.`),
     ),
-    imageUrl: getImage('expert', 14),
+    imageUrl: getAnalyticsImage('ai-copilots-and-productivity-software-economics'),
     tags: ['Vertical SaaS', 'Industry Cloud', 'Software', 'Moats', 'Technology Investing'],
   },
 
@@ -7582,7 +7576,7 @@ AI copilots in productivity and collaboration software have the potential to:
 
 Over the past decade, productivity and collaboration software has become the digital backbone of knowledge work. The next wave is being driven by AI copilots embedded in these tools.`),
     ),
-    imageUrl: getImage('expert', 15),
+    imageUrl: getAnalyticsImage('developer-platforms-and-internal-portals'),
     tags: ['AI', 'Productivity Software', 'SaaS', 'Unit Economics', 'Technology Investing'],
   },
   {
@@ -7683,7 +7677,7 @@ For investors, the opportunity lies with the companies that understand this real
 
 If you talk to engineers in a growing organization, the complaints start to sound familiar.`),
     ),
-    imageUrl: getImage('expert', 16),
+    imageUrl: getAnalyticsImage('edge-computing-and-5g-infrastructure-investment'),
     tags: ['Developer Platforms', 'Internal Portals', 'DevEx', 'SaaS', 'Technology Investing'],
   },
   {
@@ -8014,7 +8008,7 @@ Edge computing and 5G infrastructure will reshape how we think about computing a
 
 For decades, computing followed a predictable pattern: data was generated at the edge, sent to centralized data centers for processing, and results were sent back.`),
     ),
-    imageUrl: getImage('expert', 17),
+    imageUrl: getAnalyticsImage('edge-computing-and-5g-infrastructure-investment'),
     tags: ['Edge Computing', '5G', 'Infrastructure', 'Technology Investing', 'Network Infrastructure'],
   },
   {
@@ -8301,7 +8295,7 @@ Semiconductor supply chain resilience is not just about reducing risk—it is ab
 
 The semiconductor industry has long operated on a model of extreme specialization and geographic concentration.`),
     ),
-    imageUrl: getImage('expert', 18),
+    imageUrl: getAnalyticsImage('cloud-native-software-architecture-trends'),
     tags: ['Semiconductors', 'Supply Chain', 'Manufacturing', 'Technology Investing', 'Infrastructure'],
   },
   {
@@ -8591,7 +8585,7 @@ Cloud-native architecture is not just a technology trend—it is the foundation 
 
 Software architecture has undergone a fundamental transformation over the past decade.`),
     ),
-    imageUrl: getImage('expert', 19),
+    imageUrl: getAnalyticsImage('cybersecurity-investment-landscape'),
     tags: ['Cloud-Native', 'Microservices', 'Containers', 'Kubernetes', 'Software Architecture'],
   },
   {
@@ -8913,7 +8907,7 @@ Cybersecurity is not just about technology—it is about protecting digital asse
 
 Cybersecurity has evolved from a technical concern to a strategic business imperative.`),
     ),
-    imageUrl: getImage('expert', 20),
+    imageUrl: getAnalyticsImage('quantum-cryptography-and-security'),
     tags: ['Cybersecurity', 'Information Security', 'Threat Detection', 'Zero Trust', 'Technology Investing'],
   },
   {
@@ -9210,7 +9204,7 @@ Post-quantum cryptography is not just about technology—it is about protecting 
 
 Cryptography is the foundation of digital security.`),
     ),
-    imageUrl: getImage('expert', 21),
+    imageUrl: getAnalyticsImage('autonomous-vehicle-technology-stack'),
     tags: ['Quantum Computing', 'Cryptography', 'Post-Quantum', 'Security', 'Technology Investing'],
   },
   {
@@ -9577,7 +9571,7 @@ Autonomous vehicles are not just about technology—they are about reshaping tra
 
 Autonomous vehicles represent one of the most ambitious applications of artificial intelligence, robotics, and sensor technology.`),
     ),
-    imageUrl: getImage('expert', 22),
+    imageUrl: getAnalyticsImage('ar-vr-market-evolution'),
     tags: ['Autonomous Vehicles', 'Self-Driving Cars', 'AI', 'Sensors', 'Technology Investing'],
   },
   {
@@ -9886,7 +9880,7 @@ AR/VR is not just about gaming—it is about creating new ways to work, learn, a
 
 Augmented reality (AR) and virtual reality (VR) have long been associated with gaming and entertainment.`),
     ),
-    imageUrl: getImage('expert', 23),
+    imageUrl: getAnalyticsImage('iot-platform-economics'),
     tags: ['AR', 'VR', 'Augmented Reality', 'Virtual Reality', 'Technology Investing'],
   },
   {
@@ -10220,7 +10214,7 @@ IoT platforms are not just about technology—they are about enabling businesses
 
 The Internet of Things (IoT) has grown from a concept to a reality, with billions of connected devices deployed across industries.`),
     ),
-    imageUrl: getImage('expert', 24),
+    imageUrl: getAnalyticsImage('data-center-infrastructure-investment'),
     tags: ['IoT', 'Internet of Things', 'Platforms', 'Connected Devices', 'Technology Investing'],
   },
   {
@@ -10545,7 +10539,7 @@ Data centers are not just about real estate—they are about powering the digita
 
 Data centers are the physical foundation of the digital economy.`),
     ),
-    imageUrl: getImage('expert', 25),
+    imageUrl: getAnalyticsImage('ai-chip-design-and-manufacturing'),
     tags: ['Data Centers', 'Infrastructure', 'Cloud Computing', 'Hyperscale', 'Technology Investing'],
   },
   {
@@ -10885,7 +10879,7 @@ AI chips are not just about semiconductors—they are about powering the artific
 
 Artificial intelligence workloads have fundamentally different computational requirements than traditional computing tasks.`),
     ),
-    imageUrl: getImage('expert', 26),
+    imageUrl: getAnalyticsImage('enterprise-software-consolidation'),
     tags: ['AI Chips', 'Semiconductors', 'Artificial Intelligence', 'GPU', 'Technology Investing'],
   },
   {
@@ -11183,7 +11177,7 @@ Enterprise software consolidation is not just about M&A—it is about building p
 
 The enterprise software market has experienced significant consolidation over the past decade.`),
     ),
-    imageUrl: getImage('expert', 27),
+    imageUrl: getAnalyticsImage('digital-transformation-in-traditional-industries'),
     tags: ['Enterprise Software', 'SaaS', 'M&A', 'Platform Strategy', 'Technology Investing'],
   },
   {
@@ -11535,7 +11529,7 @@ Digital transformation is not just about technology—it is about helping tradit
 
 Digital transformation is not just about technology companies—it is about traditional industries adopting digital technologies.`),
     ),
-    imageUrl: getImage('expert', 28),
+    imageUrl: getAnalyticsImage('api-economy-and-platform-business-models'),
     tags: ['Digital Transformation', 'Industry 4.0', 'Manufacturing', 'IoT', 'Technology Investing'],
   },
   {
@@ -11822,7 +11816,7 @@ APIs are not just about technology—they are about building ecosystems and crea
 
 Application Programming Interfaces (APIs) have evolved from technical integration mechanisms to strategic business tools.`),
     ),
-    imageUrl: getImage('expert', 29),
+    imageUrl: getAnalyticsImage('devsecops-and-software-security'),
     tags: ['APIs', 'Platform Business Models', 'Developer Ecosystems', 'Integration', 'Technology Investing'],
   },
   {
@@ -12114,7 +12108,7 @@ DevSecOps is not just about tools—it is about integrating security into how so
 
 Software security has traditionally been treated as a separate concern from software development.`),
     ),
-    imageUrl: getImage('expert', 30),
+    imageUrl: getAnalyticsImage('low-code-no-code-platform-markets'),
     tags: ['DevSecOps', 'Security', 'Software Development', 'Cybersecurity', 'Technology Investing'],
   },
   {
@@ -12497,7 +12491,7 @@ Low-code/no-code is not just about technology—it represents a fundamental shif
 
 Software development has traditionally required specialized skills in programming languages, frameworks, and tools.`),
     ),
-    imageUrl: getImage('expert', 31),
+    imageUrl: getAnalyticsImage('fintech-infrastructure-providers'),
     tags: ['Low-Code', 'No-Code', 'Citizen Development', 'Application Development', 'Technology Investing'],
   },
   {
@@ -12802,7 +12796,7 @@ Fintech infrastructure is not just about technology—it is about enabling finan
 
 Financial technology (fintech) has transformed how financial services are delivered, consumed, and experienced.`),
     ),
-    imageUrl: getImage('expert', 32),
+    imageUrl: getAnalyticsImage('healthcare-technology-integration'),
     tags: ['Fintech', 'Financial Technology', 'Payment Infrastructure', 'Banking', 'Technology Investing'],
   },
   {
@@ -13136,7 +13130,7 @@ Healthcare technology integration is not just about technology—it is about imp
 
 Healthcare is one of the largest and most important industries, but it has been slow to adopt digital technologies compared to other sectors.`),
     ),
-    imageUrl: getImage('expert', 33),
+    imageUrl: getAnalyticsImage('e-commerce-platform-evolution'),
     tags: ['Healthcare Technology', 'Health IT', 'Telemedicine', 'EHR', 'Technology Investing'],
   },
   {
@@ -13427,7 +13421,7 @@ E-commerce platforms are not just about technology—they are about enabling ret
 
 E-commerce has grown from a niche channel to a dominant force in retail.`),
     ),
-    imageUrl: getImage('expert', 34),
+    imageUrl: getAnalyticsImage('gaming-industry-technology-trends'),
     tags: ['E-commerce', 'Online Retail', 'Headless Commerce', 'Composable Commerce', 'Technology Investing'],
   },
   {
@@ -13734,7 +13728,7 @@ Gaming technology is not just about entertainment—it is about creating new for
 
 The gaming industry has grown from a niche hobby to one of the largest entertainment industries globally.`),
     ),
-    imageUrl: getImage('expert', 35),
+    imageUrl: getAnalyticsImage('streaming-media-infrastructure'),
     tags: ['Gaming', 'Cloud Gaming', 'VR', 'AR', 'Technology Investing'],
   },
   {
@@ -14023,7 +14017,7 @@ Streaming infrastructure is not just about technology—it is about enabling the
 
 Streaming media has transformed how we consume video, audio, and other content.`),
     ),
-    imageUrl: getImage('expert', 36),
+    imageUrl: getAnalyticsImage('digital-identity-and-authentication'),
     tags: ['Streaming', 'CDN', 'Video Infrastructure', 'Edge Computing', 'Technology Investing'],
   },
   {
@@ -14332,7 +14326,7 @@ Digital identity is not just about security—it is about enabling trust in the 
 
 Digital identity and authentication have become foundational to the digital economy.`),
     ),
-    imageUrl: getImage('expert', 37),
+    imageUrl: getAnalyticsImage('blockchain-infrastructure-for-enterprises'),
     tags: ['Digital Identity', 'Authentication', 'Security', 'Zero Trust', 'Technology Investing'],
   },
   {
@@ -14627,7 +14621,7 @@ Enterprise blockchain is not just about technology—it is about solving real bu
 
 Blockchain technology has evolved far beyond its origins in cryptocurrency.`),
     ),
-    imageUrl: getImage('expert', 38),
+    imageUrl: getAnalyticsImage('robotics-and-automation-systems'),
     tags: ['Blockchain', 'Enterprise Blockchain', 'Distributed Ledger', 'Smart Contracts', 'Technology Investing'],
   },
   {
@@ -14920,7 +14914,7 @@ Robotics is not just about automation—it is about transforming how physical wo
 
 Robotics and automation have been transforming manufacturing for decades.`),
     ),
-    imageUrl: getImage('expert', 39),
+    imageUrl: getAnalyticsImage('space-technology-commercialization'),
     tags: ['Robotics', 'Automation', 'Industrial Robotics', 'AI', 'Technology Investing'],
   },
   {
@@ -15218,7 +15212,7 @@ Space technology commercialization is not just about rockets—it is about creat
 
 Space technology has entered a new era of commercialization.`),
     ),
-    imageUrl: getImage('expert', 40),
+    imageUrl: getAnalyticsImage('metaverse-infrastructure-and-platforms'),
     tags: ['Space Technology', 'Commercial Space', 'Satellites', 'Launch Services', 'Technology Investing'],
   },
   {
@@ -15503,7 +15497,7 @@ The metaverse is not just about virtual reality—it is about creating new forms
 
 The metaverse—a term that has captured significant attention and investment—represents a vision of persistent, interconnected virtual worlds.`),
     ),
-    imageUrl: getImage('expert', 41),
+    imageUrl: getAnalyticsImage('metaverse-infrastructure-and-platforms'),
     tags: ['Metaverse', 'Virtual Worlds', 'VR', 'AR', 'Technology Investing'],
   },
 

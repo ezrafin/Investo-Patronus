@@ -1,10 +1,5 @@
 import { AnalyticsArticle } from './types';
-import { getAuthorAvatar, categoryImages } from './utils';
-
-const getImage = (type: string, index: number) => {
-  const images = categoryImages[type] || categoryImages.markets;
-  return images[index % images.length];
-};
+import { getAuthorAvatar, getAnalyticsImage } from './utils';
 
 const formatDate = (offset: number) => {
   const baseDate = new Date('2024-12-31T00:00:00Z');
@@ -30,6 +25,7 @@ export const lucaArticles: AnalyticsArticle[] = [
     title: 'Mediterranean Tourism and Hospitality: Recovery and Transformation',
     excerpt:
       'How Mediterranean tourism is recovering from the pandemic, why sustainability and digital transformation matter, and how to identify investment opportunities in Mediterranean tourism and hospitality sectors.',
+    imageUrl: getAnalyticsImage('mediterranean-tourism-and-hospitality-recovery-and-transformation'),
     content: `# Mediterranean Tourism and Hospitality: Recovery and Transformation
 
 ## Introduction
@@ -372,7 +368,6 @@ Mediterranean tourism can provide attractive investment opportunities when manag
 
 The Mediterranean has long been one of the world's premier tourism destinations.`),
     ),
-    imageUrl: getImage('markets', 307),
     tags: ['Mediterranean', 'Tourism', 'Hospitality', 'Recovery', 'European Markets'],
   },
   {
@@ -689,7 +684,7 @@ Italy's energy transition can provide attractive risk-adjusted returns when mana
 
 Italy has long been dependent on energy imports, importing over 75% of its energy needs.`),
     ),
-    imageUrl: getImage('longterm', 306),
+    imageUrl: getAnalyticsImage('italian-energy-transition-and-green-infrastructure-investment-opportunities'),
     tags: ['Italy', 'Energy Transition', 'Renewable Energy', 'Green Infrastructure', 'European Markets'],
   },
   {
@@ -1062,7 +1057,7 @@ With careful selection and risk management, Italian banks can offer attractive r
 
 Italy's banking sector has been through a long and painful restructuring.`),
     ),
-    imageUrl: getImage('markets', 305),
+    imageUrl: getAnalyticsImage('italian-banking-consolidation-and-npl-resolution-the-path-to-normalization'),
     tags: ['Italy', 'Banking', 'NPLs', 'Consolidation', 'European Markets'],
   },
   {
@@ -1250,7 +1245,7 @@ For investors, the most durable opportunities often sit in concessions and bottl
 
 For decades, global trade felt like a solved problem. Containerization, predictable shipping lanes, and an optimizing supply chain produced a simple mental model.`)
     ),
-    imageUrl: getImage('markets', 1),
+    imageUrl: getAnalyticsImage('mediterranean-ports-and-shipping-lanes-trade-rewiring-and-logistics-winners'),
     tags: ['Mediterranean', 'Logistics', 'Ports', 'Shipping', 'Trade'],
     relatedMarkets: ['stocks', 'commodities'],
   },
@@ -1475,7 +1470,7 @@ The right analytical approach is micro-to-macro: understand product and channel 
 
 European luxury is often discussed in the language of culture: heritage, craftsmanship, desirability. Investors sometimes treat it like a “category bet” that rises and falls with sentiment.`)
     ),
-    imageUrl: getImage('longterm', 0),
+    imageUrl: getAnalyticsImage('luxury-pricing-power-and-fx-a-micro-to-macro-investing-framework'),
     tags: ['Luxury', 'Europe', 'FX', 'Tourism', 'Consumer'],
     relatedMarkets: ['stocks', 'currencies'],
   },
@@ -1707,7 +1702,7 @@ Those who navigate regulation, partnership structures, and market cycles effecti
 
 Italy’s real estate market has long combined high homeownership, strong emotional attachment to property, and fragmented ownership structures. As institutional capital takes a greater interest in Italian assets, the landscape is slowly but meaningfully changing.`)
     ),
-    imageUrl: getImage('longterm', 2),
+    imageUrl: getAnalyticsImage('italian-real-estate-markets-from-family-owned-assets-to-institutional-capital'),
     tags: ['Italy', 'Real Estate', 'Institutional Investors', 'Residential', 'Hospitality'],
   },
   {
@@ -2045,7 +2040,7 @@ The Italian SMB digital transformation story is still being written, but the dir
 
 Italy’s economic fabric is woven from small and mid‑sized businesses—family‑owned firms in services, retail, manufacturing, and hospitality that collectively drive employment and regional identity. Historically, many of these firms lagged larger peers in digital adoption, constrained by limited resources, risk aversion, and fragmented markets.`)
     ),
-    imageUrl: getImage('markets', 1),
+    imageUrl: getAnalyticsImage('ai-and-digital-transformation-in-italian-smbs-and-services'),
     tags: ['Italy', 'SMB', 'AI', 'Digital Transformation', 'Services'],
   },
   {
@@ -2241,7 +2236,7 @@ A higher‑for‑longer rate regime influences Mediterranean markets through sev
 
 This article explores how these dynamics interact and how investors can position across Mediterranean consumer, luxury, and tourism exposures.`)
     ),
-    imageUrl: getImage('markets', 0),
+    imageUrl: getAnalyticsImage('mediterranean-consumer-luxury-and-tourism-under-higher-rates'),
     tags: ['Italy', 'Mediterranean', 'Consumer', 'Luxury', 'Tourism'],
   },
   {
@@ -2736,7 +2731,7 @@ Italian luxury goods offer attractive investment opportunities through strong br
 Investors should focus on companies with strong brands, effective execution, and sustainable competitive advantages. Success requires understanding both luxury sector dynamics and company-specific factors.
 
 Italian luxury markets will continue evolving with consumer preferences, competition, and economic conditions. Investors who understand these dynamics and manage risk appropriately can navigate Italian luxury markets successfully.`)),
-    imageUrl: getImage('expert', 299),
+    imageUrl: getAnalyticsImage('italian-markets-luxury-goods-investment'),
     tags: ['Italian Markets', 'Luxury Goods', 'Fashion', 'Investment', 'Brands'],
   },
 
@@ -3064,7 +3059,7 @@ The Mediterranean tourism sector will continue evolving, with sustainability, te
 
 Tourism is one of the Mediterranean region’s most important economic engines. It supports millions of jobs, anchors current-account balances, and shapes investment across transport, real estate, and services.`),
     ),
-    imageUrl: getImage('markets', 300),
+    imageUrl: getAnalyticsImage('mediterranean-tourism-recovery-and-investment-themes'),
     tags: ['Tourism', 'Mediterranean', 'Italy', 'Cyclicals', 'Equities'],
   },
   {
@@ -3304,7 +3299,7 @@ For investors, this segment offers a blend of **structural themes and company‑
 
 Italy is best known in markets for luxury goods, tourism, and sovereign‑debt headlines. Yet beneath the surface of major indices lies a broad ecosystem of mid‑cap industrial companies that play critical roles in European supply chains.`),
     ),
-    imageUrl: getImage('expert', 301),
+    imageUrl: getAnalyticsImage('italian-mid-cap-industrials-and-the-energy-transition'),
     tags: ['Italy', 'Industrials', 'Energy Transition', 'Mid Caps', 'Equities'],
   },
   {
@@ -3537,7 +3532,7 @@ For multi‑asset and fixed income portfolios, the goal is not to predict every 
 
 Italian government bonds (BTPs) are a cornerstone of the euro‑area fixed income landscape.`),
     ),
-    imageUrl: getImage('markets', 302),
+    imageUrl: getAnalyticsImage('italian-government-bonds-and-spread-dynamics-vs-bunds'),
     tags: ['Italy', 'BTP', 'Government Bonds', 'Spreads', 'Euro Area'],
   },
   {
@@ -3943,7 +3938,7 @@ Spanish and Portuguese equities sit at an interesting intersection of:
 
 While my focus is often Italy and the broader Mediterranean, Iberia—Spain and Portugal—shares many structural features with Italy.`),
     ),
-    imageUrl: getImage('markets', 303),
+    imageUrl: getAnalyticsImage('spanish-and-portuguese-equities-tourism-banks-and-infrastructure'),
     tags: ['Spain', 'Portugal', 'Tourism', 'Banks', 'Infrastructure'],
   },
   {
@@ -4407,7 +4402,7 @@ Success requires understanding the unique characteristics of the Greek market, c
 
 Greece has traveled a long road from the depths of the euro‑area sovereign crisis, and its equity market is gradually normalizing.`),
     ),
-    imageUrl: getImage('markets', 304),
+    imageUrl: getAnalyticsImage('greek-equities-tourism-banks-and-privatization'),
     tags: ['Greece', 'Equities', 'Tourism', 'Banks', 'Privatization'],
   },
   {
@@ -4823,7 +4818,7 @@ The key is selectivity: focus on brands with strong pricing power, geographic di
 
 Italian luxury is a cornerstone of the Mediterranean investment universe.`),
     ),
-    imageUrl: getImage('expert', 310),
+    imageUrl: getAnalyticsImage('italian-luxury-brands-global-demand-and-valuation-cycles'),
     tags: ['Italy', 'Luxury', 'Consumer', 'Mediterranean Markets', 'Brand Power'],
   },
   {
@@ -5377,7 +5372,7 @@ Whether considering a second home, rental property, or institutional investment,
 
 Mediterranean real estate blends lifestyle and investment in ways few other regions can replicate.`),
     ),
-    imageUrl: getImage('markets', 316),
+    imageUrl: getAnalyticsImage('mediterranean-real-estate-tourism-residential-and-second-homes'),
     tags: ['Mediterranean', 'Real Estate', 'Tourism', 'Second Homes', 'Property Markets'],
   },
   {
@@ -5896,7 +5891,7 @@ The Mediterranean's rich wine and spirits heritage, combined with growing global
 
 Wine and spirits markets in Italy, France, Spain, and other Mediterranean countries have long attracted collectors and investors.`),
     ),
-    imageUrl: getImage('expert', 322),
+    imageUrl: getAnalyticsImage('wine-and-spirits-investment-markets-in-italy-and-the-mediterranean'),
     tags: ['Wine', 'Spirits', 'Alternative Assets', 'Mediterranean', 'Consumer'],
   },
   {
@@ -6362,7 +6357,7 @@ The Italian banking sector's transformation demonstrates the potential for recov
 
 Italian banks were at the centre of market concerns during the euro-area sovereign crisis, but the sector has since undergone substantial repair.`),
     ),
-    imageUrl: getImage('markets', 328),
+    imageUrl: getAnalyticsImage('italian-banking-sector-recovery-profitability-and-npl-trends'),
     tags: ['Italy', 'Banks', 'NPLs', 'Profitability', 'Mediterranean Markets'],
   },
   {
@@ -6727,7 +6722,7 @@ The energy transition in the Mediterranean is accelerating, creating significant
 
 The Mediterranean region offers abundant solar and wind resources, making it a natural candidate for large-scale renewable energy deployment.`),
     ),
-    imageUrl: getImage('markets', 334),
+    imageUrl: getAnalyticsImage('mediterranean-renewable-energy-projects-wind-solar-and-offshore'),
     tags: ['Mediterranean', 'Renewables', 'Wind', 'Solar', 'Energy Transition'],
   },
 ];
