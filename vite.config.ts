@@ -26,9 +26,9 @@ export default defineConfig(({ mode }) => ({
           // Only split vendor libraries - let Vite handle app code
           // This prevents circular dependency issues
           if (id.includes('node_modules')) {
-            // React core + UI libraries + Charts - must be together
-            // Charts (recharts) has dependencies on React that need to be loaded together
-            // UI libs also depend on React, so keep all together to avoid initialization issues
+            // React core + all React-dependent libraries - must be together
+            // All these libraries use React.createContext, hooks, or other React APIs
+            // Keeping them together ensures React is available when they initialize
             if (
               id.includes('node_modules/react') || 
               id.includes('node_modules/react-dom') ||
@@ -36,28 +36,20 @@ export default defineConfig(({ mode }) => ({
               id.includes('node_modules/@radix-ui') ||
               id.includes('node_modules/lucide-react') ||
               id.includes('node_modules/recharts') ||
-              id.includes('node_modules/d3')
+              id.includes('node_modules/d3') ||
+              id.includes('node_modules/@tanstack/react-query') ||
+              id.includes('node_modules/framer-motion') ||
+              id.includes('node_modules/react-hook-form') ||
+              id.includes('node_modules/@hookform')
             ) {
-              return 'vendor-react-ui';
-            }
-            // Animation library - separate chunk as it's large (can be lazy loaded)
-            if (id.includes('node_modules/framer-motion')) {
-              return 'vendor-animation';
-            }
-            // Query library - used throughout app (keep separate for caching)
-            if (id.includes('node_modules/@tanstack/react-query')) {
-              return 'vendor-query';
+              return 'vendor-react';
             }
             // Supabase - large library, separate chunk (can be lazy loaded if needed)
             if (id.includes('node_modules/@supabase')) {
               return 'vendor-supabase';
             }
-            // Form libraries - used in forms, can be lazy loaded
-            if (
-              id.includes('node_modules/react-hook-form') ||
-              id.includes('node_modules/@hookform') ||
-              id.includes('node_modules/zod')
-            ) {
+            // Zod - validation library, can be separate (doesn't depend on React)
+            if (id.includes('node_modules/zod')) {
               return 'vendor-forms';
             }
             // Vercel analytics - separate as it's optional and loads async
