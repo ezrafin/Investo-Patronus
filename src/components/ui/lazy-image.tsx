@@ -51,6 +51,39 @@ export function LazyImage({
       return;
     }
 
+    // Check if element is already in viewport on mount
+    const checkIfInViewport = () => {
+      if (!imgRef.current) return false;
+      const rect = imgRef.current.getBoundingClientRect();
+      const isInViewport = 
+        rect.top < window.innerHeight + 200 && // 200px margin
+        rect.bottom > -200 && // 200px margin
+        rect.left < window.innerWidth + 200 &&
+        rect.right > -200;
+      return isInViewport;
+    };
+
+    // Check immediately and also after a small delay to handle DOM updates
+    const checkAndLoad = () => {
+      if (checkIfInViewport()) {
+        setShouldLoad(true);
+        return true;
+      }
+      return false;
+    };
+
+    // Check immediately
+    if (checkAndLoad()) {
+      return;
+    }
+
+    // Also check after a small delay to catch cases where DOM is still updating
+    const timeoutId = setTimeout(() => {
+      if (checkAndLoad()) {
+        return;
+      }
+    }, 100);
+
     // Use IntersectionObserver to trigger load when in view
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -60,7 +93,7 @@ export function LazyImage({
         }
       },
       { 
-        rootMargin: '50px', // Start loading slightly before in view (reduced for more conservative loading)
+        rootMargin: '200px', // Start loading 200px before in view for better UX
         threshold: 0.01
       }
     );
@@ -69,7 +102,10 @@ export function LazyImage({
       observer.observe(imgRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timeoutId);
+      observer.disconnect();
+    };
   }, [priority, src]); // Add src dependency to reset on page change
 
   // Reset state when src changes (important for pagination)
