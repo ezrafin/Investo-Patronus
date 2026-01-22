@@ -144,9 +144,8 @@ export function Footer() {
                 <h3 className="text-sm font-semibold mb-4">{t('navigation.markets')}</h3>
                 <ul className="space-y-3">
                   {footerLinks.markets.map(link => <li key={link.href} className="min-h-[44px] flex items-center justify-center sm:justify-start">
-                      <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2 min-h-[44px]">
-                        <link.icon className="h-3.5 w-3.5 flex-shrink-0" />
-                        <span>{link.name}</span>
+                      <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors min-h-[44px] flex items-center">
+                        {link.name}
                       </Link>
                     </li>)}
                 </ul>
@@ -157,9 +156,8 @@ export function Footer() {
                 <h3 className="text-sm font-semibold mb-4">{t('navigation.education')}</h3>
                 <ul className="space-y-3">
                   {footerLinks.education.map(link => <li key={link.href} className="min-h-[44px] flex items-center justify-center sm:justify-start">
-                      <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2 min-h-[44px]">
-                        <link.icon className="h-3.5 w-3.5 flex-shrink-0" />
-                        <span>{link.name}</span>
+                      <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors min-h-[44px] flex items-center">
+                        {link.name}
                       </Link>
                     </li>)}
                 </ul>
