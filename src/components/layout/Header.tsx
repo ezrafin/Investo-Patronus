@@ -85,26 +85,31 @@ export function Header() {
       name: t('navigation.indices'),
       href: '/markets/indices',
       icon: TrendingUp,
+      customIcon: '/logos/navigation/indices.png',
       description: t('descriptions.indices')
     }, {
       name: t('navigation.stocks'),
       href: '/markets/stocks',
       icon: BarChart3,
+      customIcon: '/logos/navigation/stocks.png',
       description: t('descriptions.stocks')
     }, {
       name: t('navigation.commodities'),
       href: '/markets/commodities',
       icon: Coins,
+      customIcon: '/logos/navigation/commodities.png',
       description: t('descriptions.commodities')
     }, {
       name: t('navigation.crypto'),
       href: '/markets/crypto',
       icon: Bitcoin,
+      customIcon: '/logos/navigation/crypto.png',
       description: t('descriptions.crypto')
     }, {
       name: t('navigation.currenciesEtfs'),
       href: '/markets/currencies',
       icon: DollarSign,
+      customIcon: '/logos/navigation/currency.png',
       description: t('descriptions.currenciesEtfs')
     }]
   }, {
