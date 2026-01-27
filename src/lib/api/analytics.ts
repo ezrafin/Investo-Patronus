@@ -9,6 +9,7 @@ import { lucaArticles } from './analytics-luca';
 import { isabelleArticles } from './analytics-isabelle';
 import { xuArticles } from './analytics-xu';
 import { radomirArticles } from './analytics-radomir';
+import { olafArticles } from './analytics-olaf';
 
 // Helper to format dates
 const formatDate = (offset: number) => {
@@ -3040,6 +3041,7 @@ The consumer tech market will continue growing and evolving. Investors positione
   ...isabelleArticles,
   ...xuArticles,
   ...radomirArticles,
+  ...olafArticles,
   
   // Note: Existing articles above will be migrated to author modules
   // New articles should be added directly to the appropriate author module
@@ -3053,11 +3055,20 @@ export async function fetchAnalytics(type?: string, language?: string): Promise<
   }
 
   // Filter by language if specified
+  // Special handling: Anastasia Petrova articles always show in Russian regardless of site language
   if (language) {
-    result = result.filter((item) => item.language === language);
+    if (language === 'ru') {
+      // Show Russian articles (including Anastasia Petrova)
+      result = result.filter((item) => item.language === 'ru');
+    } else {
+      // For other languages, show articles in that language OR Anastasia Petrova articles (which are always Russian)
+      result = result.filter((item) => 
+        item.language === language || item.author === 'Anastasia Petrova'
+      );
+    }
   } else {
-    // If no language specified, show articles without language tag (default English)
-    result = result.filter((item) => !item.language);
+    // If no language specified, show articles without language tag (default English) OR Anastasia Petrova articles (which are always Russian)
+    result = result.filter((item) => !item.language || item.author === 'Anastasia Petrova');
   }
 
   // Sort by date (newest first)

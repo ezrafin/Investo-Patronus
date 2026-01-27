@@ -183,6 +183,13 @@ export const coursePeople: CoursePerson[] = [
     role: 'author',
   },
   {
+    id: 'olaf-klein',
+    canonicalName: 'Olaf Klein',
+    nameVariations: ['Olaf Klein', 'Börsenexperte Olaf Klein'],
+    avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
+    role: 'author',
+  },
+  {
     id: 'isabelle-dubois',
     canonicalName: 'Isabelle Dubois',
     nameVariations: ['Isabelle Dubois'],

@@ -9,7 +9,13 @@ interface UseAnalyticsOptions {
 
 export function useAnalytics(options?: UseAnalyticsOptions) {
   const { language: currentLanguage } = useI18n();
-  const language = options?.language ?? (currentLanguage === 'pl' ? 'pl' : undefined);
+  // Support Polish (pl), German (de), and Russian (ru) language filtering
+  const language = options?.language ?? (
+    currentLanguage === 'pl' ? 'pl' : 
+    currentLanguage === 'de' ? 'de' : 
+    currentLanguage === 'ru' ? 'ru' : 
+    undefined
+  );
 
   return useQuery<AnalyticsArticle[], Error>({
     queryKey: ['analytics', { type: options?.type || 'all', language }],

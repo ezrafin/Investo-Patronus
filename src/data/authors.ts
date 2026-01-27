@@ -98,4 +98,15 @@ export const authors: AuthorProfile[] = [
     post_count: 47,
     comment_count: 845,
   },
+  {
+    id: 'olaf-klein',
+    username: 'olaf_klein',
+    display_name: 'Olaf Klein',
+    avatar_url:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
+    bio: 'German stock market expert and financial advisor specializing in investment education, behavioral finance, and helping individual investors overcome common investment barriers.',
+    reputation: 1780,
+    post_count: 5,
+    comment_count: 342,
+  },
 ];
