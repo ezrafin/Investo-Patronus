@@ -1880,26 +1880,26 @@ Frontier African economies occupy a distinctive space within emerging markets. T
   },
   {
     slug: 'ai-and-data-infrastructure-in-emerging-markets-opportunity-and-friction',
-    title: 'AI and Data Infrastructure in Emerging Markets: Opportunity and Friction',
+    title: 'ИИ и инфраструктура данных в развивающихся рынках: возможности и трения',
     excerpt:
-      'Overview of how emerging markets are building AI and data infrastructure, the investment opportunities this creates, and the frictions around capital, regulation, and geopolitics.',
-    content: `# AI and Data Infrastructure in Emerging Markets: Opportunity and Friction
+      'Обзор того, как развивающиеся рынки строят ИИ и инфраструктуру данных, инвестиционные возможности, которые это создает, и трения вокруг капитала, регулирования и геополитики.',
+    content: `# ИИ и инфраструктура данных в развивающихся рынках: возможности и трения
 
-## Introduction
+## Введение
 
-Artificial intelligence depends on three pillars: compute, data, and talent. Emerging markets are increasingly active in all three, creating significant investment opportunities but also facing unique challenges. From data‑center build‑outs and fiber networks to fintech, e‑commerce, and digital public infrastructure, many EM economies are investing in the foundations of an AI‑enabled future.
+Искусственный интеллект зависит от трех столпов: вычисления, данные и талант. Развивающиеся рынки все более активны во всех трех, создавая значительные инвестиционные возможности, но также сталкиваясь с уникальными вызовами. От строительства центров обработки данных и оптоволоконных сетей до финтех, электронной коммерции и цифровой публичной инфраструктуры, многие экономики развивающихся рынков инвестируют в основы ИИ-включенного будущего.
 
-The global AI revolution is not limited to developed markets. Emerging markets are playing an increasingly important role, both as consumers and producers of AI technology. Countries like India, China, Brazil, and others are building AI capabilities and infrastructure, creating opportunities for investors and challenges for policymakers.
+Глобальная революция ИИ не ограничена развитыми рынками. Развивающиеся рынки играют все более важную роль, как потребители и производители технологий ИИ. Страны, такие как Индия, Китай, Бразилия и другие, строят возможности и инфраструктуру ИИ, создавая возможности для инвесторов и вызовы для политиков.
 
-Yet these efforts unfold in a complex environment with significant frictions:
+Однако эти усилия разворачиваются в сложной среде со значительными трениями:
 
-- **Limited fiscal space and higher cost of capital**: Many emerging markets face fiscal constraints and higher borrowing costs, making it difficult to finance large infrastructure investments. This creates challenges for governments and companies seeking to build AI infrastructure, requiring creative financing solutions and partnerships.
+- **Ограниченное фискальное пространство и более высокая стоимость капитала**: Многие развивающиеся рынки сталкиваются с фискальными ограничениями и более высокими затратами на заимствование, затрудняя финансирование крупных инфраструктурных инвестиций. Это создает вызовы для правительств и компаний, стремящихся строить инфраструктуру ИИ, требуя творческих финансовых решений и партнерств.
 
-- **Regulatory and data‑sovereignty debates**: Governments are increasingly concerned about data sovereignty, privacy, and national security, leading to complex regulatory frameworks. These debates create uncertainty and can fragment markets, affecting investment opportunities and business models.
+- **Регуляторные дебаты и дебаты о суверенитете данных**: Правительства все более обеспокоены суверенитетом данных, приватностью и национальной безопасностью, приводя к сложным регуляторным рамкам. Эти дебаты создают неопределенность и могут фрагментировать рынки, влияя на инвестиционные возможности и бизнес-модели.
 
-- **Geopolitical competition over critical technologies and cloud providers**: Emerging markets are often arenas for geopolitical competition, as major powers compete for influence over critical technologies and infrastructure. This competition can affect technology choices, market access, and investment flows.
+- **Геополитическая конкуренция за критические технологии и облачных провайдеров**: Развивающиеся рынки часто являются аренами геополитической конкуренции, поскольку крупные державы конкурируют за влияние над критическими технологиями и инфраструктурой. Эта конкуренция может влиять на технологические выборы, доступ к рынку и инвестиционные потоки.
 
-This article explores how AI and data infrastructure are evolving in emerging markets, the opportunities this creates for investors, and the frictions that must be managed along the way. Understanding these dynamics is crucial for investors seeking to participate in the AI revolution in emerging markets.
+Эта статья исследует, как ИИ и инфраструктура данных эволюционируют в развивающихся рынках, возможности, которые это создает для инвесторов, и трения, которые должны управляться по пути. Понимание этой динамики критично для инвесторов, стремящихся участвовать в революции ИИ в развивающихся рынках.
 
 ## Building Blocks of AI-Ready Infrastructure
 
@@ -2101,28 +2101,28 @@ Artificial intelligence depends on three pillars: compute, data, and talent. Eme
   },
   {
     slug: 'emerging-markets-debt-and-fx-in-a-higher-rate-global-cycle',
-    title: 'Emerging Markets Debt and FX in a Higher-Rate Global Cycle',
+    title: 'Долг и валюты развивающихся рынков в глобальном цикле повышенных ставок',
     excerpt:
-      'Analysis of how a sustained period of higher global interest rates reshapes risks and opportunities across emerging markets debt and currencies, with a focus on Eastern Europe and frontier markets.',
-    content: `# Emerging Markets Debt and FX in a Higher-Rate Global Cycle
+      'Анализ того, как устойчивый период более высоких глобальных процентных ставок перестраивает риски и возможности по долгу и валютам развивающихся рынков, с фокусом на Восточную Европу и фронтирные рынки.',
+    content: `# Долг и валюты развивающихся рынков в глобальном цикле повышенных ставок
 
-## Introduction
+## Введение
 
-Emerging markets (EM) owe much of their recent history to global liquidity cycles. Periods of abundant capital, low developed‑market yields, and compressed risk premia have supported EM borrowing, currency appreciation, and asset price gains. The period from 2010-2021 was characterized by historically low interest rates in developed markets, abundant global liquidity, and compressed risk premia, creating favorable conditions for EM assets.
+Развивающиеся рынки (EM) многим обязаны своей недавней истории глобальным циклам ликвидности. Периоды обильного капитала, низких доходностей развитых рынков и сжатых премий риска поддерживали заимствования EM, укрепление валют и рост цен на активы. Период с 2010-2021 годов характеризовался исторически низкими процентными ставками на развитых рынках, обильной глобальной ликвидностью и сжатыми премиями риска, создавая благоприятные условия для активов EM.
 
-Conversely, tightening cycles, stronger dollars, and higher real yields have exposed vulnerabilities, particularly where external imbalances and policy credibility were weak. The post-pandemic period from 2022-2024 brought a dramatic shift, as central banks raised rates aggressively to combat inflation, global liquidity tightened, and risk premia widened. This created significant challenges for EM markets, particularly those with weak fundamentals.
+Наоборот, циклы ужесточения, более сильные доллары и более высокие реальные доходности выявили уязвимости, особенно там, где внешние дисбалансы и политическая надежность были слабыми. Пост-пандемический период с 2022-2024 годов принес драматический сдвиг, поскольку центральные банки агрессивно повысили ставки для борьбы с инфляцией, глобальная ликвидность ужесточилась, и премии риска расширились. Это создало значительные вызовы для рынков EM, особенно тех, у которых слабые основы.
 
-The current transition toward a higher‑for‑longer global rate regime raises critical questions for EM debt and FX. After more than a decade of low rates, markets are adjusting to a new normal where rates may remain higher for longer than initially expected. This transition creates both challenges and opportunities for EM markets and investors.
+Текущий переход к глобальному режиму повышенных ставок на более длительный срок поднимает критические вопросы для долга и валют EM. После более чем десятилетия низких ставок рынки адаптируются к новой норме, где ставки могут оставаться выше дольше, чем изначально ожидалось. Этот переход создает как вызовы, так и возможности для рынков EM и инвесторов.
 
-Eastern European and frontier markets, many of which rely on external financing and face complex geopolitical backdrops, must adapt to:
+Восточноевропейские и фронтирные рынки, многие из которых полагаются на внешнее финансирование и сталкиваются со сложными геополитическими фонами, должны адаптироваться к:
 
-- **Higher global risk‑free rates and term premia**: As developed-market rates rise, EM borrowing costs increase, making it more expensive to finance deficits and debt. This creates challenges for countries with high debt levels or large financing needs.
+- **Более высоким глобальным безрисковым ставкам и премиям за срок**: По мере роста ставок развитых рынков затраты на заимствование EM увеличиваются, делая более дорогим финансирование дефицитов и долга. Это создает вызовы для стран с высокими уровнями долга или большими потребностями в финансировании.
 
-- **Tighter dollar liquidity and more volatile capital flows**: Tighter global liquidity reduces capital flows to EM, while higher volatility increases the risk of sudden stops and capital flow reversals. This creates challenges for countries dependent on external financing.
+- **Более жесткой долларовой ликвидности и более волатильным потокам капитала**: Более жесткая глобальная ликвидность снижает потоки капитала в EM, в то время как более высокая волатильность увеличивает риск внезапных остановок и разворотов потоков капитала. Это создает вызовы для стран, зависящих от внешнего финансирования.
 
-- **Domestic policy trade‑offs between inflation control and growth**: Higher global rates force EM central banks to raise rates to maintain currency stability and control inflation, but this can slow growth. Countries must balance these competing objectives, creating policy challenges.
+- **Внутренним торговым компромиссам политики между контролем инфляции и ростом**: Более высокие глобальные ставки заставляют центральные банки EM повышать ставки для поддержания валютной стабильности и контроля инфляции, но это может замедлить рост. Страны должны балансировать эти конкурирующие цели, создавая политические вызовы.
 
-This article examines how the new rate environment reshapes EM debt and FX dynamics, with a particular focus on Eastern Europe and adjacent regions. Understanding these dynamics is crucial for investors seeking to navigate the opportunities and risks in EM markets.
+Эта статья исследует, как новая среда ставок перестраивает динамику долга и валют EM, с особым фокусом на Восточную Европу и смежные регионы. Понимание этой динамики критично для инвесторов, стремящихся навигации по возможностям и рискам на рынках EM.
 
 ## Global Rate Regime and EM Transmission Channels
 
@@ -4776,24 +4776,24 @@ The Czech Republic has established itself as one of the most stable and develope
   },
   {
     slug: 'hungary-equity-markets-policy-uncertainty-and-investment-opportunities',
-    title: 'Hungary Equity Markets: Policy Uncertainty and Selective Opportunities',
+    title: 'Рынки акций Венгрии: политическая неопределенность и селективные возможности',
     excerpt:
-      'How Hungarian equity markets navigate policy uncertainty, why selective opportunities exist despite challenges, and which sectors offer the best risk-adjusted returns.',
-    content: `# Hungary Equity Markets: Policy Uncertainty and Selective Opportunities
+      'Как рынки акций Венгрии навигают по политической неопределенности, почему существуют селективные возможности, несмотря на вызовы, и какие секторы предлагают лучшую скорректированную на риск доходность.',
+    content: `# Рынки акций Венгрии: политическая неопределенность и селективные возможности
 
-## Introduction
+## Введение
 
-Hungary presents a complex investment case for emerging market investors. The country benefits from EU membership, a skilled workforce, and strategic location in Central Europe. However, policy uncertainty, EU relations, and governance concerns have created volatility and limited foreign investment. Despite these challenges, selective opportunities exist in sectors less exposed to policy risk, with attractive valuations reflecting the uncertainty.
+Венгрия представляет сложный инвестиционный случай для инвесторов развивающихся рынков. Страна выигрывает от членства в ЕС, квалифицированной рабочей силы и стратегического расположения в Центральной Европе. Однако политическая неопределенность, отношения с ЕС и заботы управления создали волатильность и ограничили иностранные инвестиции. Несмотря на эти вызовы, селективные возможности существуют в секторах, менее подверженных политическому риску, с привлекательными оценками, отражающими неопределенность.
 
-As of late 2024, Hungarian equities face a challenging environment. EU funds have been suspended due to rule of law concerns, creating fiscal pressure. Policy uncertainty continues to impact investor confidence. Yet, the economy has shown resilience, with strong fundamentals in some sectors. Corporate earnings have been mixed, with some companies performing well despite macro headwinds. For investors, Hungary requires careful stock selection and risk management.
+По состоянию на конец 2024 года венгерские акции сталкиваются со сложной средой. Фонды ЕС были приостановлены из-за забот о верховенстве закона, создавая фискальное давление. Политическая неопределенность продолжает влиять на уверенность инвесторов. Тем не менее, экономика показала устойчивость, с сильными основами в некоторых секторах. Корпоративная прибыль была смешанной, с некоторыми компаниями, показывающими хорошие результаты, несмотря на макро-встречные ветры. Для инвесторов Венгрия требует тщательного отбора акций и управления рисками.
 
-This evolution creates selective opportunities:
-- **Export-oriented companies** – less exposed to domestic policy.
-- **Defensive sectors** – sectors with stable demand.
-- **Undervalued assets** – assets trading at discounts.
-- **Selective quality** – high-quality companies with strong fundamentals.
+Эта эволюция создает селективные возможности:
+- **Экспортно-ориентированные компании** – менее подверженные внутренней политике.
+- **Защитные секторы** – секторы со стабильным спросом.
+- **Недооцененные активы** – активы, торгующиеся со скидками.
+- **Селективное качество** – высококачественные компании с сильными основами.
 
-This article explores how Hungarian equity markets are positioned, which factors drive performance, what risks exist, and how investors should approach selective opportunities in this challenging market.
+Эта статья исследует, как позиционированы рынки акций Венгрии, какие факторы движут производительностью, какие риски существуют, и как инвесторы должны подходить к селективным возможностям на этом сложном рынке.
 
 ## Market Fundamentals
 
@@ -5062,24 +5062,24 @@ Hungary presents a complex investment case for emerging market investors.`),
   },
   {
     slug: 'romania-equity-markets-growth-potential-and-structural-challenges',
-    title: 'Romania Equity Markets: Growth Potential and Structural Challenges',
+    title: 'Рынки акций Румынии: потенциал роста и структурные вызовы',
     excerpt:
-      'How Romanian equity markets balance growth potential with structural challenges, why Romania offers opportunities despite limitations, and which sectors present the best investment cases.',
-    content: `# Romania Equity Markets: Growth Potential and Structural Challenges
+      'Как рынки акций Румынии балансируют потенциал роста со структурными вызовами, почему Румыния предлагает возможности, несмотря на ограничения, и какие секторы представляют лучшие инвестиционные случаи.',
+    content: `# Рынки акций Румынии: потенциал роста и структурные вызовы
 
-## Introduction
+## Введение
 
-Romania represents one of the larger emerging markets in Central and Eastern Europe, with significant growth potential driven by EU membership, a large population, and catch-up development needs. However, structural challenges including governance issues, infrastructure gaps, and institutional weaknesses have limited foreign investment and market development. This combination of growth potential and structural challenges creates a complex investment case requiring careful evaluation of opportunities and risks.
+Румыния представляет один из крупнейших развивающихся рынков в Центральной и Восточной Европе, с значительным потенциалом роста, движимым членством в ЕС, большим населением и потребностями догоняющего развития. Однако структурные вызовы, включая проблемы управления, инфраструктурные пробелы и институциональные слабости, ограничили иностранные инвестиции и развитие рынка. Эта комбинация потенциала роста и структурных вызовов создает сложный инвестиционный случай, требующий тщательной оценки возможностей и рисков.
 
-As of late 2024, Romanian equities face a mixed environment. EU membership provides access to structural funds and market integration benefits. The economy has shown growth potential. Corporate earnings have been improving in some sectors. Yet, governance concerns, infrastructure limitations, and institutional weaknesses continue to constrain market development and foreign investment. For investors, Romania offers growth potential but requires careful risk assessment and selective approach.
+По состоянию на конец 2024 года румынские акции сталкиваются со смешанной средой. Членство в ЕС предоставляет доступ к структурным фондам и преимуществам интеграции рынка. Экономика показала потенциал роста. Корпоративная прибыль улучшалась в некоторых секторах. Однако заботы управления, инфраструктурные ограничения и институциональные слабости продолжают ограничивать развитие рынка и иностранные инвестиции. Для инвесторов Румыния предлагает потенциал роста, но требует тщательной оценки рисков и селективного подхода.
 
-This evolution creates opportunities in specific sectors:
-- **Financials** – banking sector with growth potential.
-- **Consumer** – growing consumer market.
-- **Energy** – energy sector opportunities.
-- **Selective quality** – high-quality companies with strong fundamentals.
+Эта эволюция создает возможности в конкретных секторах:
+- **Финансы** – банковский сектор с потенциалом роста.
+- **Потребители** – растущий потребительский рынок.
+- **Энергетика** – возможности энергетического сектора.
+- **Селективное качество** – высококачественные компании с сильными основами.
 
-This article explores how Romanian equity markets are positioned, which factors drive performance, what structural challenges exist, and how investors should evaluate opportunities in this growth market with structural limitations.
+Эта статья исследует, как позиционированы рынки акций Румынии, какие факторы движут производительностью, какие структурные вызовы существуют, и как инвесторы должны оценивать возможности на этом растущем рынке со структурными ограничениями.
 
 ## Market Fundamentals
 
@@ -5347,24 +5347,24 @@ Romania represents one of the larger emerging markets in Central and Eastern Eur
   },
   {
     slug: 'south-africa-equity-markets-structural-challenges-and-value-opportunities',
-    title: 'South Africa Equity Markets: Structural Challenges and Value Opportunities',
+    title: 'Рынки акций Южной Африки: структурные вызовы и возможности стоимости',
     excerpt:
-      'How South African equity markets navigate structural challenges, why value opportunities exist despite headwinds, and which sectors offer the best risk-adjusted returns.',
-    content: `# South Africa Equity Markets: Structural Challenges and Value Opportunities
+      'Как рынки акций Южной Африки навигают по структурным вызовам, почему существуют возможности стоимости, несмотря на встречные ветры, и какие секторы предлагают лучшую скорректированную на риск доходность.',
+    content: `# Рынки акций Южной Африки: структурные вызовы и возможности стоимости
 
-## Introduction
+## Введение
 
-South Africa presents a complex investment case for emerging market investors. The country has deep, liquid equity markets, strong corporate governance, and world-class companies in mining, financial services, and consumer sectors. However, structural challenges including energy crises, infrastructure constraints, governance issues, and slow growth have created persistent headwinds. This combination of quality companies and structural challenges has created value opportunities, with many stocks trading at significant discounts to intrinsic value.
+Южная Африка представляет сложный инвестиционный случай для инвесторов развивающихся рынков. Страна имеет глубокие, ликвидные рынки акций, сильное корпоративное управление и компании мирового класса в горнодобывающей промышленности, финансовых услугах и потребительских секторах. Однако структурные вызовы, включая энергетические кризисы, инфраструктурные ограничения, проблемы управления и медленный рост, создали устойчивые встречные ветры. Эта комбинация качественных компаний и структурных вызовов создала возможности стоимости, со многими акциями, торгующимися со значительными скидками к внутренней стоимости.
 
-As of late 2024, South African equities face ongoing challenges. Load shedding (power outages) continues to constrain economic activity. Infrastructure limitations impact growth. Governance concerns persist. Yet, many companies have adapted, with strong management teams navigating challenges effectively. Valuations remain attractive, reflecting the structural headwinds. For investors, South Africa offers value opportunities but requires careful stock selection and risk management.
+По состоянию на конец 2024 года акции Южной Африки сталкиваются с продолжающимися вызовами. Отключения электроэнергии продолжают ограничивать экономическую активность. Инфраструктурные ограничения влияют на рост. Заботы управления сохраняются. Тем не менее, многие компании адаптировались, с сильными управленческими командами, эффективно навигающими по вызовам. Оценки остаются привлекательными, отражая структурные встречные ветры. Для инвесторов Южная Африка предлагает возможности стоимости, но требует тщательного отбора акций и управления рисками.
 
-This evolution creates selective opportunities:
-- **Quality companies** – world-class companies at discounts.
-- **Export-oriented** – companies less exposed to domestic challenges.
-- **Defensive sectors** – sectors with stable demand.
-- **Value** – deep value opportunities.
+Эта эволюция создает селективные возможности:
+- **Качественные компании** – компании мирового класса со скидками.
+- **Экспортно-ориентированные** – компании, менее подверженные внутренним вызовам.
+- **Защитные секторы** – секторы со стабильным спросом.
+- **Стоимость** – глубокие возможности стоимости.
 
-This article explores how South African equity markets are positioned, which factors drive performance, what structural challenges exist, and how investors should evaluate value opportunities in this challenging but potentially rewarding market.
+Эта статья исследует, как позиционированы рынки акций Южной Африки, какие факторы движут производительностью, какие структурные вызовы существуют, и как инвесторы должны оценивать возможности стоимости на этом сложном, но потенциально вознаграждающем рынке.
 
 ## Market Fundamentals
 
@@ -5639,24 +5639,24 @@ South Africa presents a complex investment case for emerging market investors.`)
   },
   {
     slug: 'mexico-equity-markets-nearshoring-and-manufacturing-opportunities',
-    title: 'Mexico Equity Markets: Nearshoring and Manufacturing Opportunities',
+    title: 'Рынки акций Мексики: ближний аутсорсинг и производственные возможности',
     excerpt:
-      'How Mexican equity markets benefit from nearshoring trends, why manufacturing opportunities are growing, and which sectors offer the best exposure to these trends.',
-    content: `# Mexico Equity Markets: Nearshoring and Manufacturing Opportunities
+      'Как рынки акций Мексики выигрывают от трендов ближнего аутсорсинга, почему производственные возможности растут, и какие секторы предлагают лучший доступ к этим трендам.',
+    content: `# Рынки акций Мексики: ближний аутсорсинг и производственные возможности
 
-## Introduction
+## Введение
 
-Mexico is experiencing a significant transformation driven by nearshoring trends, as companies relocate manufacturing from Asia to be closer to North American markets. This shift, accelerated by supply chain disruptions, trade tensions, and cost considerations, is creating substantial investment opportunities in Mexican equities. The country's strategic location, trade agreements, skilled workforce, and manufacturing capabilities position it well to benefit from these trends.
+Мексика переживает значительную трансформацию, движимую трендами ближнего аутсорсинга, поскольку компании перемещают производство из Азии, чтобы быть ближе к североамериканским рынкам. Этот сдвиг, ускоренный нарушениями цепочек поставок, торговыми напряжениями и соображениями затрат, создает существенные инвестиционные возможности в мексиканских акциях. Стратегическое расположение страны, торговые соглашения, квалифицированная рабочая сила и производственные возможности позиционируют её хорошо для выгоды от этих трендов.
 
-As of late 2024, Mexican equities are benefiting from nearshoring momentum. Manufacturing investment is increasing. Industrial real estate is in high demand. Infrastructure development is accelerating. Corporate earnings are improving in manufacturing and related sectors. Yet, challenges remain including security concerns, infrastructure gaps, and policy uncertainty. For investors, Mexico offers exposure to nearshoring trends but requires careful evaluation of opportunities and risks.
+По состоянию на конец 2024 года мексиканские акции выигрывают от импульса ближнего аутсорсинга. Производственные инвестиции увеличиваются. Промышленная недвижимость пользуется высоким спросом. Развитие инфраструктуры ускоряется. Корпоративная прибыль улучшается в производстве и связанных секторах. Однако вызовы остаются, включая заботы безопасности, инфраструктурные пробелы и неопределенность политики. Для инвесторов Мексика предлагает доступ к трендам ближнего аутсорсинга, но требует тщательной оценки возможностей и рисков.
 
-This evolution creates opportunities across multiple sectors:
-- **Manufacturing** – manufacturing companies benefiting from nearshoring.
-- **Industrial real estate** – industrial real estate development.
-- **Infrastructure** – infrastructure companies.
-- **Consumer** – consumer companies benefiting from economic growth.
+Эта эволюция создает возможности по множественным секторам:
+- **Производство** – производственные компании, выигрывающие от ближнего аутсорсинга.
+- **Промышленная недвижимость** – развитие промышленной недвижимости.
+- **Инфраструктура** – инфраструктурные компании.
+- **Потребители** – потребительские компании, выигрывающие от экономического роста.
 
-This article explores how Mexican equity markets are positioned, which factors drive nearshoring opportunities, what challenges exist, and how investors should evaluate opportunities in this transforming market.
+Эта статья исследует, как позиционированы рынки акций Мексики, какие факторы движут возможностями ближнего аутсорсинга, какие вызовы существуют, и как инвесторы должны оценивать возможности на этом трансформирующемся рынке.
 
 ## Market Fundamentals
 
@@ -6253,24 +6253,24 @@ Brazil represents Latin America's largest economy and equity market.`),
   },
   {
     slug: 'india-equity-markets-growth-story-and-structural-opportunities',
-    title: 'India Equity Markets: Growth Story and Structural Opportunities',
+    title: 'Рынки акций Индии: история роста и структурные возможности',
     excerpt:
-      'How Indian equity markets benefit from structural growth drivers, why India offers long-term opportunities, and which sectors present the best investment cases in Asia\'s growth engine.',
-    content: `# India Equity Markets: Growth Story and Structural Opportunities
+      'Как рынки акций Индии выигрывают от структурных драйверов роста, почему Индия предлагает долгосрочные возможности, и какие секторы представляют лучшие инвестиционные случаи в двигателе роста Азии.',
+    content: `# Рынки акций Индии: история роста и структурные возможности
 
-## Introduction
+## Введение
 
-India represents one of the most attractive long-term growth stories in emerging markets, with its equity markets benefiting from structural growth drivers including demographic trends, economic reforms, infrastructure development, and digital transformation. The country's large and growing population, rising middle class, and ongoing economic liberalization create substantial investment opportunities. However, valuations can be demanding, and execution risks exist.
+Индия представляет одну из самых привлекательных долгосрочных историй роста в развивающихся рынках, с её рынками акций, выигрывающими от структурных драйверов роста, включая демографические тренды, экономические реформы, развитие инфраструктуры и цифровую трансформацию. Большое и растущее население страны, растущий средний класс и продолжающаяся экономическая либерализация создают существенные инвестиционные возможности. Однако оценки могут быть требовательными, и существуют риски выполнения.
 
-As of late 2024, Indian equities continue to attract significant foreign investment, with strong corporate earnings growth and structural tailwinds. The economy has shown resilience. Reform progress has been positive. Corporate governance has improved. Yet, valuations are elevated, and execution of growth plans remains critical. For investors, India offers exposure to a structural growth story but requires careful stock selection and valuation discipline.
+По состоянию на конец 2024 года индийские акции продолжают привлекать значительные иностранные инвестиции, с сильным ростом корпоративной прибыли и структурными попутными ветрами. Экономика показала устойчивость. Прогресс реформ был позитивным. Корпоративное управление улучшилось. Однако оценки повышены, и выполнение планов роста остается критичным. Для инвесторов Индия предлагает доступ к структурной истории роста, но требует тщательного отбора акций и дисциплины оценки.
 
-This evolution creates opportunities across multiple sectors:
-- **Financials** – banking and financial services with growth potential.
-- **Consumer** – large and growing consumer market.
-- **Technology** – technology and digital transformation.
-- **Infrastructure** – infrastructure development.
+Эта эволюция создает возможности по множественным секторам:
+- **Финансы** – банковские и финансовые услуги с потенциалом роста.
+- **Потребители** – крупный и растущий потребительский рынок.
+- **Технологии** – технологии и цифровая трансформация.
+- **Инфраструктура** – развитие инфраструктуры.
 
-This article explores how Indian equity markets are positioned, which structural drivers support growth, what opportunities exist, and how investors should evaluate this long-term growth market.
+Эта статья исследует, как позиционированы рынки акций Индии, какие структурные драйверы поддерживают рост, какие возможности существуют, и как инвесторы должны оценивать этот долгосрочный растущий рынок.
 
 ## Market Fundamentals
 
@@ -6554,24 +6554,24 @@ India represents one of the most attractive long-term growth stories in emerging
   },
   {
     slug: 'indonesia-equity-markets-demographics-and-consumer-growth',
-    title: 'Indonesia Equity Markets: Demographics and Consumer Growth Story',
+    title: 'Рынки акций Индонезии: демография и история роста потребителей',
     excerpt:
-      'How Indonesian equity markets benefit from favorable demographics, why consumer growth offers opportunities, and which sectors present the best investment cases in Southeast Asia\'s largest economy.',
-    content: `# Indonesia Equity Markets: Demographics and Consumer Growth Story
+      'Как рынки акций Индонезии выигрывают от благоприятной демографии, почему рост потребителей предлагает возможности, и какие секторы представляют лучшие инвестиционные случаи в крупнейшей экономике Юго-Восточной Азии.',
+    content: `# Рынки акций Индонезии: демография и история роста потребителей
 
-## Introduction
+## Введение
 
-Indonesia represents Southeast Asia's largest economy and one of the most attractive demographic stories in emerging markets. The country's large and young population, growing middle class, and urbanization trends create substantial consumer growth opportunities. Combined with rich natural resources, strategic location, and improving infrastructure, Indonesia offers compelling long-term investment opportunities. However, structural challenges including infrastructure gaps, governance issues, and policy uncertainty create risks.
+Индонезия представляет крупнейшую экономику Юго-Восточной Азии и одну из самых привлекательных демографических историй в развивающихся рынках. Большое и молодое население страны, растущий средний класс и тренды урбанизации создают существенные возможности роста потребителей. В сочетании с богатыми природными ресурсами, стратегическим расположением и улучшающейся инфраструктурой, Индонезия предлагает убедительные долгосрочные инвестиционные возможности. Однако структурные вызовы, включая инфраструктурные пробелы, проблемы управления и неопределенность политики, создают риски.
 
-As of late 2024, Indonesian equities are benefiting from demographic trends and consumer growth. The economy has shown resilience. Corporate earnings have been solid in consumer and resource sectors. Infrastructure development is progressing. Yet, valuations can be demanding, and execution of growth plans remains critical. For investors, Indonesia offers exposure to a demographic growth story but requires careful stock selection and risk management.
+По состоянию на конец 2024 года индонезийские акции выигрывают от демографических трендов и роста потребителей. Экономика показала устойчивость. Корпоративная прибыль была солидной в потребительских и ресурсных секторах. Развитие инфраструктуры прогрессирует. Однако оценки могут быть требовательными, и выполнение планов роста остается критичным. Для инвесторов Индонезия предлагает доступ к демографической истории роста, но требует тщательного отбора акций и управления рисками.
 
-This evolution creates opportunities across multiple sectors:
-- **Consumer** – large and growing consumer market.
-- **Financials** – banking sector with growth potential.
-- **Resources** – natural resource sector.
-- **Infrastructure** – infrastructure development.
+Эта эволюция создает возможности по множественным секторам:
+- **Потребители** – крупный и растущий потребительский рынок.
+- **Финансы** – банковский сектор с потенциалом роста.
+- **Ресурсы** – сектор природных ресурсов.
+- **Инфраструктура** – развитие инфраструктуры.
 
-This article explores how Indonesian equity markets are positioned, which demographic drivers support growth, what opportunities exist, and how investors should evaluate this demographic growth market.
+Эта статья исследует, как позиционированы рынки акций Индонезии, какие демографические драйверы поддерживают рост, какие возможности существуют, и как инвесторы должны оценивать этот демографический растущий рынок.
 
 ## Market Fundamentals
 
@@ -6860,24 +6860,24 @@ Indonesia represents Southeast Asia's largest economy and one of the most attrac
   },
   {
     slug: 'thailand-equity-markets-tourism-recovery-and-sector-opportunities',
-    title: 'Thailand Equity Markets: Tourism Recovery and Sector Opportunities',
+    title: 'Рынки акций Таиланда: восстановление туризма и отраслевые возможности',
     excerpt:
-      'How Thai equity markets benefit from tourism recovery, why sector-specific opportunities exist, and which sectors offer the best investment cases in Southeast Asia.',
-    content: `# Thailand Equity Markets: Tourism Recovery and Sector Opportunities
+      'Как рынки акций Таиланда выигрывают от восстановления туризма, почему существуют отраслевые возможности, и какие секторы предлагают лучшие инвестиционные случаи в Юго-Восточной Азии.',
+    content: `# Рынки акций Таиланда: восстановление туризма и отраслевые возможности
 
-## Introduction
+## Введение
 
-Thailand has long been a favorite destination for emerging market investors, offering exposure to Southeast Asia with relative stability, developed infrastructure, and diverse economic base. The country's equity markets have been significantly impacted by tourism, which represents a major economic driver. As tourism recovers from pandemic disruptions, Thai equities are benefiting from this recovery while also offering opportunities in other sectors including manufacturing, agriculture, and services.
+Таиланд долгое время был любимым направлением для инвесторов развивающихся рынков, предлагая доступ к Юго-Восточной Азии с относительной стабильностью, развитой инфраструктурой и разнообразной экономической базой. Рынки акций страны значительно пострадали от туризма, который представляет собой крупный экономический драйвер. По мере восстановления туризма от пандемических нарушений, тайские акции выигрывают от этого восстановления, одновременно предлагая возможности в других секторах, включая производство, сельское хозяйство и услуги.
 
-As of late 2024, Thai equities face a mixed environment. Tourism recovery has been strong, supporting related sectors. The economy has shown resilience. Corporate earnings have improved in tourism-exposed sectors. Yet, political uncertainty, currency volatility, and structural challenges persist. For investors, Thailand offers exposure to a recovering tourism economy with sector opportunities but requires careful evaluation of risks.
+По состоянию на конец 2024 года тайские акции сталкиваются со смешанной средой. Восстановление туризма было сильным, поддерживая связанные секторы. Экономика показала устойчивость. Корпоративная прибыль улучшилась в секторах, подверженных туризму. Однако политическая неопределенность, валютная волатильность и структурные вызовы сохраняются. Для инвесторов Таиланд предлагает доступ к восстанавливающейся туристической экономике с отраслевыми возможностями, но требует тщательной оценки рисков.
 
-This evolution creates opportunities in specific sectors:
-- **Tourism** – tourism and hospitality recovery.
-- **Consumer** – consumer sector benefiting from recovery.
-- **Manufacturing** – manufacturing sector opportunities.
-- **Agriculture** – agricultural sector.
+Эта эволюция создает возможности в конкретных секторах:
+- **Туризм** – восстановление туризма и гостеприимства.
+- **Потребители** – потребительский сектор, выигрывающий от восстановления.
+- **Производство** – возможности производственного сектора.
+- **Сельское хозяйство** – сельскохозяйственный сектор.
 
-This article explores how Thai equity markets are positioned, which factors drive tourism recovery, what sector opportunities exist, and how investors should evaluate this Southeast Asian market.
+Эта статья исследует, как позиционированы рынки акций Таиланда, какие факторы движут восстановлением туризма, какие отраслевые возможности существуют, и как инвесторы должны оценивать этот рынок Юго-Восточной Азии.
 
 ## Market Fundamentals
 
@@ -7156,24 +7156,24 @@ Thailand has long been a favorite destination for emerging market investors.`),
   },
   {
     slug: 'philippines-equity-markets-consumer-growth-and-remittances',
-    title: 'Philippines Equity Markets: Consumer Growth and Remittance Economy',
+    title: 'Рынки акций Филиппин: рост потребителей и экономика денежных переводов',
     excerpt:
-      'How Philippine equity markets benefit from consumer growth and remittances, why the consumer story offers opportunities, and which sectors present the best investment cases.',
-    content: `# Philippines Equity Markets: Consumer Growth and Remittance Economy
+      'Как рынки акций Филиппин выигрывают от роста потребителей и денежных переводов, почему история потребителей предлагает возможности, и какие секторы представляют лучшие инвестиционные случаи.',
+    content: `# Рынки акций Филиппин: рост потребителей и экономика денежных переводов
 
-## Introduction
+## Введение
 
-The Philippines represents an attractive consumer growth story in Southeast Asia, with its equity markets benefiting from a large and growing population, rising remittances, and expanding middle class. The country's economy is significantly supported by remittances from overseas Filipino workers, which drive consumer spending and support economic growth. Combined with favorable demographics, urbanization trends, and improving infrastructure, the Philippines offers compelling investment opportunities, particularly in consumer and financial sectors.
+Филиппины представляют привлекательную историю роста потребителей в Юго-Восточной Азии, с её рынками акций, выигрывающими от большого и растущего населения, растущих денежных переводов и расширяющегося среднего класса. Экономика страны значительно поддерживается денежными переводами от филиппинских рабочих за рубежом, которые движут потребительскими расходами и поддерживают экономический рост. В сочетании с благоприятной демографией, трендами урбанизации и улучшающейся инфраструктурой, Филиппины предлагают убедительные инвестиционные возможности, особенно в потребительских и финансовых секторах.
 
-As of late 2024, Philippine equities face a mixed environment. Remittances have remained strong, supporting consumer spending. The economy has shown resilience. Corporate earnings have been solid in consumer-exposed sectors. Infrastructure development is progressing. Yet, valuations can be demanding, and structural challenges including infrastructure gaps and governance issues persist. For investors, the Philippines offers exposure to a consumer growth story but requires careful stock selection and risk management.
+По состоянию на конец 2024 года филиппинские акции сталкиваются со смешанной средой. Денежные переводы оставались сильными, поддерживая потребительские расходы. Экономика показала устойчивость. Корпоративная прибыль была солидной в секторах, подверженных потребителям. Развитие инфраструктуры прогрессирует. Однако оценки могут быть требовательными, и структурные вызовы, включая инфраструктурные пробелы и проблемы управления, сохраняются. Для инвесторов Филиппины предлагают доступ к истории роста потребителей, но требуют тщательного отбора акций и управления рисками.
 
-This evolution creates opportunities across multiple sectors:
-- **Consumer** – large and growing consumer market.
-- **Financials** – banking sector with growth potential.
-- **Real estate** – real estate development.
-- **Infrastructure** – infrastructure development.
+Эта эволюция создает возможности по множественным секторам:
+- **Потребители** – крупный и растущий потребительский рынок.
+- **Финансы** – банковский сектор с потенциалом роста.
+- **Недвижимость** – развитие недвижимости.
+- **Инфраструктура** – развитие инфраструктуры.
 
-This article explores how Philippine equity markets are positioned, which factors drive consumer growth, what opportunities exist, and how investors should evaluate this consumer growth market.
+Эта статья исследует, как позиционированы рынки акций Филиппин, какие факторы движут ростом потребителей, какие возможности существуют, и как инвесторы должны оценивать этот растущий рынок потребителей.
 
 ## Market Fundamentals
 
@@ -7459,24 +7459,24 @@ The Philippines represents an attractive consumer growth story in Southeast Asia
   },
   {
     slug: 'vietnam-equity-markets-manufacturing-hub-and-growth-opportunities',
-    title: 'Vietnam Equity Markets: Manufacturing Hub and Growth Opportunities',
+    title: 'Рынки акций Вьетнама: производственный центр и возможности роста',
     excerpt:
-      'How Vietnamese equity markets benefit from manufacturing relocation, why Vietnam offers manufacturing opportunities, and which sectors present the best investment cases.',
-    content: `# Vietnam Equity Markets: Manufacturing Hub and Growth Opportunities
+      'Как рынки акций Вьетнама выигрывают от перемещения производства, почему Вьетнам предлагает производственные возможности, и какие секторы представляют лучшие инвестиционные случаи.',
+    content: `# Рынки акций Вьетнама: производственный центр и возможности роста
 
-## Introduction
+## Введение
 
-Vietnam has emerged as one of the most attractive manufacturing destinations in Asia, benefiting from supply chain diversification, trade tensions, and cost advantages. The country's equity markets are benefiting from manufacturing investment, infrastructure development, and economic growth driven by export-oriented manufacturing. Combined with favorable demographics, improving infrastructure, and trade agreements, Vietnam offers compelling investment opportunities, particularly in manufacturing, real estate, and financial sectors.
+Вьетнам стал одним из самых привлекательных производственных направлений в Азии, выигрывая от диверсификации цепочек поставок, торговых напряжений и преимуществ затрат. Рынки акций страны выигрывают от производственных инвестиций, развития инфраструктуры и экономического роста, движимого экспортно-ориентированным производством. В сочетании с благоприятной демографией, улучшающейся инфраструктурой и торговыми соглашениями, Вьетнам предлагает убедительные инвестиционные возможности, особенно в производстве, недвижимости и финансовых секторах.
 
-As of late 2024, Vietnamese equities are benefiting from manufacturing momentum. Foreign direct investment in manufacturing is strong. Infrastructure development is progressing. Corporate earnings have improved in manufacturing-exposed sectors. Yet, market development remains early stage, and liquidity can be limited. For investors, Vietnam offers exposure to a manufacturing growth story but requires careful stock selection and understanding of market limitations.
+По состоянию на конец 2024 года вьетнамские акции выигрывают от производственного импульса. Прямые иностранные инвестиции в производство сильны. Развитие инфраструктуры прогрессирует. Корпоративная прибыль улучшилась в секторах, подверженных производству. Однако развитие рынка остается на ранней стадии, и ликвидность может быть ограничена. Для инвесторов Вьетнам предлагает доступ к истории производственного роста, но требует тщательного отбора акций и понимания ограничений рынка.
 
-This evolution creates opportunities across multiple sectors:
-- **Manufacturing** – manufacturing companies benefiting from investment.
-- **Real estate** – real estate development.
-- **Financials** – banking sector with growth potential.
-- **Infrastructure** – infrastructure companies.
+Эта эволюция создает возможности по множественным секторам:
+- **Производство** – производственные компании, выигрывающие от инвестиций.
+- **Недвижимость** – развитие недвижимости.
+- **Финансы** – банковский сектор с потенциалом роста.
+- **Инфраструктура** – инфраструктурные компании.
 
-This article explores how Vietnamese equity markets are positioned, which factors drive manufacturing opportunities, what challenges exist, and how investors should evaluate this manufacturing growth market.
+Эта статья исследует, как позиционированы рынки акций Вьетнама, какие факторы движут производственными возможностями, какие вызовы существуют, и как инвесторы должны оценивать этот растущий производственный рынок.
 
 ## Market Fundamentals
 
