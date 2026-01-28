@@ -70,7 +70,7 @@ export const authors: AuthorProfile[] = [
     username: 'radomir_klosek',
     display_name: 'Radomir Kłosek',
     avatar_url:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
     bio: 'Polish markets analyst specializing in Central European economies, long-term investment strategies, and financial education for individual investors.',
     reputation: 1850,
     post_count: 27,

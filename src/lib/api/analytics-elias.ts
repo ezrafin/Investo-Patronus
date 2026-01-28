@@ -6891,4 +6891,80 @@ For cross-border investors, gross returns in European equities are only part of 
     imageUrl: getAnalyticsImage('cross-border-tax-optimization-for-european-equity-investors'),
     tags: ['Tax Optimization', 'Withholding Tax', 'European Equities', 'Cross-Border Investing', 'After-Tax Returns'],
   },
+
+  {
+    slug: 'if-this-really-worked-everyone-would-be-rich-investment-myths-and-discipline',
+    title: '“If This Really Worked, Everyone Would Be Rich”: Investment Myths and Discipline',
+    excerpt:
+      'Why the phrase “if this really worked, everyone would be rich” explains nothing about markets, what it reveals about decision avoidance, and how disciplined frameworks separate real opportunity from empty promises.',
+    content: `# “If This Really Worked, Everyone Would Be Rich”: Investment Myths and Discipline
+
+## Introduction
+
+Advisors hear it frequently: *“If this really worked, everyone would be rich.”* The sentence sounds calm and rational, almost philosophical, as if it were the final word in the discussion. In practice, it explains nothing about markets, strategies, or risks. Instead, it functions as a convenient exit: a way to avoid making a decision.
+
+This article unpacks what is usually hiding behind that phrase and offers a more productive lens: not **whether** markets work (they do, with all their imperfections), but whether an individual investor is prepared to make decisions, act consistently, and accept responsibility for outcomes.
+
+## Markets Work; Human Behaviour Often Doesn’t
+
+### The Fitness Analogy
+
+Consider a more familiar domain: physical fitness. Gyms are everywhere, information is free, trainers are accessible, and training plans can be downloaded within minutes. Yet when you walk down any street, you see far more people who are out of shape than people in peak condition.
+
+No serious observer concludes that sport \"does not work\". The problem is not the gym but the **gap between knowledge and consistent action**:
+
+- some people prefer comfort and established routines;
+- others explain outcomes with genetics, lack of time, or stress;
+- many start but stop at the first plateau or setback.
+
+Investing works the same way. Capital markets are open, instruments are available, and risk/return trade-offs are well documented. What is scarce is not opportunity, but discipline.
+
+### Decision Avoidance in Finance
+
+The phrase \"if this really worked…\" often signals:
+
+- **fear of regret** – avoiding the possibility of later saying \"I made a mistake\";\n- **status quo bias** – preferring current habits even when they are objectively sub‑optimal;\n- **cognitive laziness** – using a clever‑sounding sentence to avoid the work of genuine due diligence.
+
+Recognising these patterns is the first step toward more rational portfolio decisions.
+
+## The Role of Professional Guidance
+
+### Why Few Investors Succeed Alone
+
+In both sport and investing, only a minority reach their goals entirely on their own. Most successful cases involve a coach or expert:
+
+- someone who has already walked the path;\n- someone who provides structure, accountability, and an external perspective;\n- someone who helps avoid classic, costly mistakes.
+
+In markets, this role is played by a **competent, transparent advisor or portfolio manager**. They do not remove risk and they do not guarantee outcomes, but they dramatically increase the probability that an investor:
+
+- stays invested through inevitable drawdowns;\n- avoids concentration in fashionable themes at the worst possible time;\n- aligns portfolio structure with time horizon and risk capacity.
+
+### Separating Signal from Noise
+
+A disciplined process focuses on:
+
+- clear investment objectives and constraints;\n- evidence‑based strategies with realistic return expectations;\n- robust risk management and diversification;\n- transparent, comprehensible fee structures.
+
+What it explicitly avoids is the promise of effortless riches, \"secret\" strategies, or linear projections of recent performance.
+
+## Conclusion
+
+When someone says “If this really worked, everyone would be rich,” the relevant question is not whether markets function, but whether the person speaking is ready to take responsibility for **their own** decisions.
+
+Capital markets reward patience, diversification, and disciplined risk management — not slogans. Those who understand this and commit to a structured process rarely become instantly rich, but they are vastly more likely to achieve their long‑term financial goals. The real puzzle is not whether it works, but why, given this, so many people still prefer the comfort of inaction.`,
+    date: formatDate(240),
+    author: 'Elias Wolfenstein',
+    authorAvatar: getAuthorAvatar('Elias Wolfenstein'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# “If This Really Worked, Everyone Would Be Rich”: Investment Myths and Discipline
+
+## Introduction
+
+Advisors hear it frequently: “If this really worked, everyone would be rich.”`),
+    ),
+    imageUrl:
+      'https://images.unsplash.com/photo-1523287562758-66c7fc58967a?w=800&h=400&fit=crop&auto=format&q=80',
+    tags: ['Investor Psychology', 'Behavioral Finance', 'Decision Making', 'Wealth Management'],
+  },
 ];

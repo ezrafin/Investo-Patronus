@@ -7627,4 +7627,76 @@ Carbon capture and storage has long been a controversial element of climate stra
     imageUrl: getAnalyticsImage('carbon-capture-and-storage-investment-frameworks-and-risks'),
     tags: ['CCS', 'Carbon Capture', 'Climate Transition', 'Sustainable Finance', 'Infrastructure'],
   },
+
+  {
+    slug: 'reviews-in-the-investment-sector-help-or-trap-for-beginners',
+    title: 'Reviews in the Investment Sector: Help or Trap for Beginners?',
+    excerpt:
+      'Why online reviews and testimonials can be both useful and dangerous in investing, how to separate genuine insight from noise, and which objective criteria matter more than star ratings.',
+    content: `# Reviews in the Investment Sector: Help or Trap for Beginners?
+
+## Introduction
+
+When choosing an investment firm, most people start with reviews. Star ratings, comments, and testimonials feel like a shortcut to safety: *“If others are happy, I will be fine as well.”* Behind this often lies a very human fear — the fear of making a wrong decision with money.
+
+But in finance, relying exclusively on the opinions of others can be risky. The same provider can receive glowing praise and harsh criticism, often from clients with completely different expectations, risk profiles, or time horizons. This article explains how to read reviews through a sustainable‑finance lens and which **hard signals** matter more than anecdotes.
+
+## Why Reviews Are Not a Neutral Data Source
+
+### Emotion, Selection Bias, and Incentives
+
+Online reviews are shaped by dynamics that have little to do with objective investment quality:
+
+- **Emotion‑driven feedback** – extremely positive or negative experiences are more likely to be shared than solid, uneventful service;\n- **Expectation mismatch** – a client who expected guaranteed returns will be disappointed even by a competent, transparent provider;\n- **Incentivised content** – in some cases, reviews may be influenced by referral schemes or even paid campaigns.
+
+In investing, performance always reflects a combination of **market conditions, product design, and client behaviour**. Reviews rarely distinguish clearly between these components.
+
+### The Risk of Outsourcing Responsibility
+
+Relying solely on reviews can lead to a subtle but dangerous outcome: **outsourcing the investment decision to strangers on the internet**. Beginners may:
+
+- ignore offers that actually fit their goals because of a few emotional comments;\n- follow fashionable providers whose marketing is excellent but whose risk management is weak;\n- underestimate the importance of their own discipline and behaviour.
+
+For sustainable finance allocators, this is the opposite of what we want: responsible, informed decisions based on transparent information and clear objectives.
+
+## What to Look at Instead: Objective Due Diligence
+
+### Structural and Governance Signals
+
+More reliable indicators than reviews include:
+
+- **Regulatory status and licences** – is the provider properly supervised and authorised in relevant jurisdictions?\n- **Ownership and governance** – who controls the firm, and how are conflicts of interest managed?\n- **Fee transparency** – are fee structures clear, simple, and disclosed in plain language?\n- **Track record and reporting** – does the firm provide consistent, comprehensible reporting on performance and risk?
+
+For ESG‑oriented investors, additional questions matter:
+
+- Are sustainability claims backed by **published methodologies** and **portfolio data**?\n- Are impact statements linked to measurable outcomes, or are they purely marketing language?
+
+### Using Reviews as a Complement, Not a Basis
+
+Reviews can still play a role — but as a **secondary** input:
+
+- scan them for recurring operational themes (service quality, communication, responsiveness);\n- treat emotional extremes with caution;\n- pay attention to how the firm responds to criticism when responses are public.
+
+The goal is not to find a provider with zero negative comments (an impossible standard), but to combine soft signals from reviews with hard evidence from documentation, governance, and regulatory disclosures.
+
+## Conclusion
+
+In the investment world, reviews are a bit like headlines: they can point you toward interesting questions, but they are a poor substitute for thorough analysis. Real security does not come from five stars on a platform, but from **transparent structures, clear conditions, strong partners, and verifiable presence in the market**.
+
+For beginners, the healthiest approach is to treat testimonials as **orientation**, not **decision criteria**. The actual decision should rest on documented facts, alignment with personal goals, and, ideally, a conversation with a professional who can translate complex information into plain language.`,
+    date: formatDate(190),
+    author: 'Isabelle Dubois',
+    authorAvatar: getAuthorAvatar('Isabelle Dubois'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Reviews in the Investment Sector: Help or Trap for Beginners?
+
+## Introduction
+
+When choosing an investment firm, most people start with reviews.`),
+    ),
+    imageUrl:
+      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=400&fit=crop&auto=format&q=80',
+    tags: ['Sustainable Finance', 'Due Diligence', 'Investor Protection', 'Client Communication'],
+  },
 ];

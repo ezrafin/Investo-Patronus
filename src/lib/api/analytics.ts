@@ -3061,14 +3061,28 @@ export async function fetchAnalytics(type?: string, language?: string): Promise<
       // Show Russian articles (including Anastasia Petrova)
       result = result.filter((item) => item.language === 'ru');
     } else {
-      // For other languages, show articles in that language OR Anastasia Petrova articles (which are always Russian)
-      result = result.filter((item) => 
-        item.language === language || item.author === 'Anastasia Petrova'
+      // For other languages, show articles in that language
+      // OR articles by Anastasia Petrova (always Russian)
+      // OR articles by Radomir Kłosek (Polish) and Olaf Klein (German),
+      // which we want to surface regardless of site language
+      result = result.filter(
+        (item) =>
+          item.language === language ||
+          item.author === 'Anastasia Petrova' ||
+          item.author === 'Radomir Kłosek' ||
+          item.author === 'Olaf Klein'
       );
     }
   } else {
-    // If no language specified, show articles without language tag (default English) OR Anastasia Petrova articles (which are always Russian)
-    result = result.filter((item) => !item.language || item.author === 'Anastasia Petrova');
+    // If no language specified, show default-language (no language tag) articles
+    // OR articles by Anastasia Petrova, Radomir Kłosek, and Olaf Klein
+    result = result.filter(
+      (item) =>
+        !item.language ||
+        item.author === 'Anastasia Petrova' ||
+        item.author === 'Radomir Kłosek' ||
+        item.author === 'Olaf Klein'
+    );
   }
 
   // Sort by date (newest first)

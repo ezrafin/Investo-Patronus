@@ -15501,6 +15501,159 @@ The metaverse—a term that has captured significant attention and investment—
     tags: ['Metaverse', 'Virtual Worlds', 'VR', 'AR', 'Technology Investing'],
   },
 
-  // Progress: 41/50 articles in this module (25 new articles added)
+  {
+    slug: 'initial-amount-funding-your-trading-account-is-not-a-fee',
+    title: 'Initial Amount: Funding Your Trading Account Is Not a Fee',
+    excerpt:
+      'Why the initial amount on a trading account is not a fee, how the commission model really works, and how to explain this clearly to clients who worry about hidden charges.',
+    content: `# Initial Amount: Funding Your Trading Account Is Not a Fee
+
+## Introduction
+
+When new investors see a \"minimum amount\" to start, many instinctively read it as a **fee** for opening an account. In reality, for a properly structured trading account, the initial amount is **not a payment to the provider** but a transfer to the client's own account — regulatory capital that remains fully theirs.
+
+This distinction sounds subtle, but in practice it changes how clients perceive risk, trust, and economics. Confusion here often blocks people from starting at all. In this note we unpack the mechanics of funding, explain how a performance-fee model works, and provide a simple framework you can use when talking to clients.
+
+## What the Initial Amount Really Is
+
+### A Balance Sheet Transfer, Not a Charge
+
+From a balance‑sheet perspective, the initial amount behaves like this:
+
+- **Source**: funds leave the client’s bank account;
+- **Destination**: funds arrive on the client’s trading account;
+- **Ownership**: the full amount remains the client’s asset;
+- **Provider**: acts as an intermediary and risk manager, not as the owner of the deposit.
+
+There is no revenue event for the provider at the moment of funding. No fee is recognized, no commission is booked. Economically, this is closer to moving money between two of your own bank accounts than paying an invoice.
+
+### Why Clients Misinterpret It
+
+Behaviorally, several biases are at work:
+
+- **Loss aversion** – any outflow from the current account feels like a loss, even if the economic ownership does not change;
+- **Mistrust of financial products** – many clients have seen opaque fee structures elsewhere and project this experience onto all providers;
+- **Framing effects** – language like \"minimum payment\" or \"entry amount\" reinforces the idea of a fee.
+
+Good investor education explicitly reframes the initial amount as **working capital**: money that must be present in the system so that trades can be executed and risk can be managed.
+
+## How the Commission Model Actually Works
+
+### Performance Fee Instead of Upfront Costs
+
+A transparent model links the provider’s income to the client’s profit:
+
+- **Commission only on realised profit** – for example 10% of net profit on the trading account;
+- **No fee on deposits** – the principal and any unrealized gains are not charged;
+- **Fee charged only on withdrawal of profits** – until profits are taken out, the full amount continues to compound.
+
+This aligns incentives: the provider earns more only if the client’s account grows over time. There is no economic benefit in encouraging unnecessary trading volume or short‑term speculation just to generate commissions.
+
+### Why This Matters for Long-Term Returns
+
+From a compounding perspective, avoiding unnecessary fixed fees is crucial. Every euro that is not removed by upfront charges can:
+
+- stay invested longer,
+- participate in market returns,
+- and generate additional return through compounding.
+
+For many long‑horizon investors this difference is worth **tens of thousands of euros** over a multi‑decade period.
+
+## Explaining It Clearly to Clients
+
+When you next talk to a cautious client, keep the message simple:
+
+1. **“This is your money, not our fee.”** – the initial amount is a transfer to the client’s own trading account.
+2. **“We earn only on your profit.”** – the provider’s commission is calculated on realised profits, not on deposits.
+3. **“Until you withdraw, you pay nothing.”** – there are no running costs until profits are actually taken out of the system.
+
+Once clients understand this structure, resistance usually drops. The question is no longer \"Why should I pay to open an account?\" but \"Do I trust this process enough to let my capital work?\" — which is exactly where a professional, transparent advisor can add value.`,
+    date: formatDate(10),
+    author: 'Christina Summerbell',
+    authorAvatar: getAuthorAvatar('Christina Summerbell'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# Initial Amount: Funding Your Trading Account Is Not a Fee
+
+## Introduction
+
+When new investors see a \"minimum amount\" to start, many instinctively read it as a fee for opening an account.`),
+    ),
+    imageUrl:
+      'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=400&fit=crop&auto=format&q=80',
+    tags: ['Trading Accounts', 'Client Education', 'Fees', 'Commission Model', 'Behavioral Finance'],
+  },
+
+  {
+    slug: 'investment-procrastination-why-starting-next-week-can-cost-a-fortune',
+    title: '“I Will Start Investing Next Week”: Why Procrastination Can Cost a Fortune',
+    excerpt:
+      'How investment procrastination destroys long-term wealth, why “waiting for the right moment” is a behavioral trap, and how to frame compounding so clients start with small, systematic contributions.',
+    content: `# “I Will Start Investing Next Week”: Why Procrastination Can Cost a Fortune
+
+## Introduction
+
+Almost every advisor has heard some version of the sentence: **“I will start next week.”** On the surface it sounds harmless and rational. In reality it is a classic form of procrastination that, over a full market cycle, can cost clients tens of thousands of euros in missed compounding.
+
+Private investors rarely decide *not* to invest. More often, they simply never decide to start. They wait for the \"right moment\", for more information, for higher income, or for the next bonus. The data, however, are clear: **time in the market** is a far more powerful driver of wealth than the exact entry point.
+
+## The Mathematics of Delay
+
+### One Year of Delay, Decades of Impact
+
+Assume a broadly diversified portfolio with an 8–10% average annual return — in line with long-term equity market history. The difference between starting today and starting one year later compounds over 20–30 years:
+
+- starting with €10,000 today and earning 8% for 30 years can grow the capital to **over €100,000**;
+- starting with the same €10,000 one year later (29 years of compounding) leaves the investor with **roughly 8–15% less**;
+- for higher starting amounts or systematic monthly contributions, the absolute gap easily reaches **tens of thousands of euros**.
+
+Mathematically, procrastination is equivalent to imposing a permanent, self‑inflicted fee on your future self — a fee that can never be recovered.
+
+### Behavioral Drivers Behind “Next Week”
+
+Several well-documented biases combine here:
+
+- **Present bias** – immediate consumption and convenience are overweighted relative to future benefits;
+- **Loss aversion** – investors perceive the risk of a short‑term drawdown as more painful than the long‑term cost of not investing;
+- **Choice overload** – too many options (ETFs, funds, strategies) push people toward inaction;
+- **Perfectionism** – the search for the \"perfect\" entry point blocks good, simple decisions.
+
+Understanding these drivers allows advisors to design processes that lower psychological friction rather than simply repeating that \"markets go up over the long run\".
+
+## Practical Framework for Advisors
+
+### Start Small, Automate, and De‑dramatise
+
+Effective interventions are surprisingly simple:
+
+1. **Lower the entry hurdle** – show that even modest, regular contributions matter.
+2. **Automate decisions** – set up standing orders or savings plans so that investing becomes default behaviour.
+3. **De‑dramatise timing** – illustrate with historical charts that missing the exact bottom is irrelevant compared to missing years of compounding.
+4. **Reframe risk** – highlight the risk of *not* investing: inflation, opportunity cost, and the erosion of purchasing power.
+
+A powerful line that often unlocks the conversation: *“You do not have to invest perfectly. You just have to start — and stay consistent.”*
+
+## Conclusion
+
+Investment procrastination is one of the most destructive, yet most underestimated, obstacles to building wealth. The problem is rarely a lack of information about markets; it is the combination of fear, indecision, and the illusion that there will always be a better moment later.
+
+For advisors and platforms, the key is to translate abstract concepts like compound interest into **concrete, emotionally resonant stories** and to design systems that make the first step as easy as possible. Every week of delay is real money that the future investor will never see again.`,
+    date: formatDate(18),
+    author: 'Christina Summerbell',
+    authorAvatar: getAuthorAvatar('Christina Summerbell'),
+    type: 'expert',
+    readTime: calculateReadTime(
+      countWords(`# “I Will Start Investing Next Week”: Why Procrastination Can Cost a Fortune
+
+## Introduction
+
+Almost every advisor has heard some version of the sentence: “I will start next week.”`),
+    ),
+    imageUrl:
+      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop&auto=format&q=80',
+    tags: ['Behavioral Finance', 'Compound Interest', 'Wealth Building', 'Investor Education'],
+  },
+
+  // Progress: 43/50 articles in this module (27 new articles added)
   // Note: 9 additional articles exist in analytics.ts and will remain there for now
 ];

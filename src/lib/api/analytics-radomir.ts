@@ -25,7 +25,8 @@ export const radomirArticles: AnalyticsArticle[] = [
     title: '"Zacznę inwestować za tydzień" – dlaczego zwłoka może kosztować fortunę',
     excerpt:
       'Prokrastynacja inwestycyjna to jeden z największych wrogów budowania bogactwa. Dowiedz się, jak opóźnienie startu o zaledwie rok może kosztować inwestora dziesiątki tysięcy złotych w perspektywie długoterminowej dzięki efektowi składanemu.',
-    imageUrl: getAnalyticsImage('zacznę-inwestować-za-tydzień-zwłoka-kosztuje-fortunę'),
+    imageUrl:
+      'https://images.unsplash.com/photo-1523287562758-66c7fc58967a?w=800&h=400&fit=crop&auto=format&q=80',
     date: formatDate(5),
     author: 'Radomir Kłosek',
     authorAvatar: getAuthorAvatar('Radomir Kłosek'),
@@ -162,7 +163,8 @@ Aby przezwyciężyć zwłokę, wystarczy pierwszy krok: aktywuj konto już dziś
     title: 'Inwestowanie stało się jedną z najbardziej dochodowych branż świata. Dlaczego mimo to tak wielu wciąż pozostaje na uboczu?',
     excerpt:
       'Zarządzanie kapitałem i inwestowanie należą dziś do najszybciej rozwijających się segmentów globalnej gospodarki. Dlaczego więc tak wielu potencjalnych inwestorów pozostaje w fazie obserwacji zamiast aktywnie uczestniczyć w rynku?',
-    imageUrl: getAnalyticsImage('inwestowanie-jedna-z-najbardziej-dochodowych-branż'),
+    imageUrl:
+      'https://images.unsplash.com/photo-1523287562758-66c7fc58967a?w=800&h=400&fit=crop&auto=format&q=80',
     date: formatDate(3),
     author: 'Radomir Kłosek',
     authorAvatar: getAuthorAvatar('Radomir Kłosek'),

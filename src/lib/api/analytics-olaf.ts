@@ -25,7 +25,8 @@ export const olafArticles: AnalyticsArticle[] = [
     title: 'Anfangssumme: Warum die Aufladung Ihres Handelskontos keine Zahlung ist',
     excerpt:
       'Viele Kunden missverstehen die Anfangssumme für ihr Handelskonto. Erfahren Sie, warum es sich dabei nicht um eine Gebühr handelt, sondern um eine Überweisung auf Ihr persönliches Konto – und wie unser Provisionsmodell wirklich funktioniert.',
-    imageUrl: getAnalyticsImage('anfangssumme-handelskonto-aufladen-keine-zahlung'),
+    imageUrl:
+      'https://images.unsplash.com/photo-1523287562758-66c7fc58967a?w=800&h=400&fit=crop&auto=format&q=80',
     date: formatDate(10),
     author: 'Olaf Klein',
     authorAvatar: getAuthorAvatar('Olaf Klein'),
@@ -134,7 +135,8 @@ Wenn Sie Ihr Handelskonto aufladen, handelt es sich nicht um eine Zahlung im eig
     title: '"Ich fange nächste Woche an zu investieren" – warum Aufschieben ein Vermögen kosten kann',
     excerpt:
       'Prokrastination beim Investieren kann langfristig zehntausende Euro kosten. Erfahren Sie, wie der Zinseszinseffekt funktioniert und warum jeder Tag des Aufschiebens reales Geld bedeutet, das für immer verloren geht.',
-    imageUrl: getAnalyticsImage('ich-fange-nächste-woche-an-zu-investieren-prokrastination-kosten'),
+    imageUrl:
+      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&auto=format&q=80',
     date: formatDate(8),
     author: 'Olaf Klein',
     authorAvatar: getAuthorAvatar('Olaf Klein'),
@@ -248,7 +250,8 @@ Viele potenzielle Anleger sagen sich: "Ich beginne nächste Woche."`)
     title: '"Wenn das wirklich funktionieren würde, wären alle reich" – ein Blick hinter die Mythen der Investmentwelt',
     excerpt:
       'Dieses häufig gehörte Argument erklärt nichts – es nimmt nur die Verantwortung für Entscheidungen. Erfahren Sie, warum Investieren funktioniert und warum trotzdem nicht alle reich sind.',
-    imageUrl: getAnalyticsImage('wenn-das-wirklich-funktionieren-würde-wären-alle-reich-mythen'),
+    imageUrl:
+      'https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&h=400&fit=crop&auto=format&q=80',
     date: formatDate(6),
     author: 'Olaf Klein',
     authorAvatar: getAuthorAvatar('Olaf Klein'),
@@ -368,7 +371,8 @@ Dieses Argument höre ich häufiger als jede Frage zu Risiken oder Strategien.`)
     title: 'Bewertungen im Investmentbereich: Hilfe oder Falle für Einsteiger?',
     excerpt:
       'Bewertungen können hilfreich sein, sollten aber nie die Grundlage für Investitionsentscheidungen sein. Erfahren Sie, wie Sie Investmentgesellschaften richtig bewerten und welche Kriterien wirklich wichtig sind.',
-    imageUrl: getAnalyticsImage('bewertungen-im-investmentbereich-hilfe-oder-falle'),
+    imageUrl:
+      'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=400&fit=crop&auto=format&q=80',
     date: formatDate(4),
     author: 'Olaf Klein',
     authorAvatar: getAuthorAvatar('Olaf Klein'),
@@ -529,7 +533,8 @@ Bei der Wahl einer Investmentgesellschaft achten die meisten Menschen zuerst auf
     title: 'IP-Telefonie: Warum Unternehmen mit mehreren Nummern anrufen',
     excerpt:
       'Wenn Sie Anrufe von verschiedenen Telefonnummern erhalten, ist das meist kein Fehler, sondern moderne Technologie. Erfahren Sie, wie IP-Telefonie funktioniert und warum sie für professionelle Unternehmen Standard ist.',
-    imageUrl: getAnalyticsImage('ip-telefonie-warum-unternehmen-mehrere-nummern-anrufen'),
+    imageUrl:
+      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=400&fit=crop&auto=format&q=80',
     date: formatDate(2),
     author: 'Olaf Klein',
     authorAvatar: getAuthorAvatar('Olaf Klein'),
