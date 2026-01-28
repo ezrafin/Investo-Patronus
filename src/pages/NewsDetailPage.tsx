@@ -15,6 +15,7 @@ import { toast } from 'sonner';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { LegendaryBillSpawn } from '@/components/collectibles/LegendaryBillSpawn';
 import { useTranslation } from '@/hooks/useTranslation';
+import { formatNewsDate, safeParseDate } from '@/utils/formatNewsDate';
 
 const marketLabels: Record<string, string> = {
   indices: 'Indices',
@@ -26,7 +27,7 @@ const marketLabels: Record<string, string> = {
 };
 
 export default function NewsDetailPage() {
-  const { t } = useTranslation({ namespace: 'ui' });
+  const { t, language } = useTranslation({ namespace: 'ui' });
   const { id } = useParams();
   const [news, setNews] = useState<NewsItem | null>(null);
   const [relatedNews, setRelatedNews] = useState<NewsItem[]>([]);
@@ -95,6 +96,8 @@ export default function NewsDetailPage() {
   const articleUrl = `${window.location.origin}/news/${id}`;
   const articleImage = news.imageUrl || 'https://investopatronus.com/investo.png';
   const articleAuthor = news.source || 'Unknown';
+  const formattedDate = formatNewsDate(news.date, language, false);
+  const isoPublished = safeParseDate(news.date)?.toISOString();
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -134,7 +137,7 @@ export default function NewsDetailPage() {
         image={articleImage}
         type="article"
         author={articleAuthor}
-        publishedTime={news.date}
+        publishedTime={isoPublished}
         keywords={`${news.market} news, financial news, market news, ${news.title}, investment news, trading news`}
         isNewsPage={true}
       />
@@ -145,7 +148,7 @@ export default function NewsDetailPage() {
             news.title,
             news.excerpt,
             articleImage,
-            news.date,
+            isoPublished,
             articleAuthor,
             articleUrl
           ),
@@ -159,14 +162,12 @@ export default function NewsDetailPage() {
             <span className="px-3 py-1 text-sm font-medium rounded bg-secondary text-secondary-foreground">
               {marketLabels[news.market]}
             </span>
-            <span className="flex items-center gap-1 text-sm text-muted-foreground">
-              <Calendar className="h-4 w-4" />
-              {new Date(news.date).toLocaleDateString('en-US', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              })}
-            </span>
+            {formattedDate && (
+              <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                <Calendar className="h-4 w-4" />
+                {formattedDate}
+              </span>
+            )}
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">

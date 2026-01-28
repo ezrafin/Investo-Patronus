@@ -5,6 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { getAuthorAvatar } from '@/lib/api/utils';
 import { LazyImage } from '@/components/ui/lazy-image';
+import { useTranslation } from '@/hooks/useTranslation';
+import { formatNewsDate } from '@/utils/formatNewsDate';
 
 interface NewsCardRealProps {
   article: NewsArticle;
@@ -82,12 +84,12 @@ const getInitials = (name: string) => {
 };
 
 export function NewsCardReal({ article, featured = false, index = 0 }: NewsCardRealProps) {
-  const formattedDate = new Date(article.published_at).toLocaleDateString('en-US', {
-    day: 'numeric',
-    month: 'short',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+  const { language } = useTranslation({ namespace: 'ui' });
+
+  const formattedDate =
+    formatNewsDate(article.published_at, language, true) ??
+    formatNewsDate(article.fetched_at, language, true) ??
+    null;
 
   const isBreakingNews = () => {
     const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000);
@@ -173,10 +175,12 @@ export function NewsCardReal({ article, featured = false, index = 0 }: NewsCardR
         <div className="p-4 sm:p-6 flex flex-col">
           {/* Meta */}
           <div className="flex items-center gap-2 mb-2 sm:mb-3">
-            <span className="text-xs text-muted-foreground flex items-center gap-1">
-              <Clock className="h-3 w-3" />
-              {formattedDate}
-            </span>
+            {formattedDate && (
+              <span className="text-xs text-muted-foreground flex items-center gap-1">
+                <Clock className="h-3 w-3" />
+                {formattedDate}
+              </span>
+            )}
           </div>
 
           {/* Title */}
