@@ -158,8 +158,8 @@ export function LazyImage({
       {/* Actual image - only load when queued */}
       {shouldLoad && (
         <picture>
-          {/* WebP source - skip for analytics images (they are JPG only) */}
-          {src && !src.includes('.svg') && !src.includes('.gif') && !src.includes('/analytics/') && (
+          {/* WebP source - skip for analytics images (they are JPG only) and skip for fallback URLs */}
+          {src && !src.includes('.svg') && !src.includes('.gif') && !src.includes('/analytics/') && !error && !src.startsWith('https://') && (
             <source
               srcSet={srcSet || src.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
               type="image/webp"
@@ -175,8 +175,8 @@ export function LazyImage({
             fetchPriority={priority ? 'high' : 'auto'}
             width={width}
             height={height}
-            srcSet={srcSet}
-            sizes={sizes}
+            srcSet={error ? undefined : srcSet}
+            sizes={error ? undefined : sizes}
             onLoad={handleLoad}
             onError={handleError}
             className={cn(

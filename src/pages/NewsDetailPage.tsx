@@ -144,14 +144,14 @@ export default function NewsDetailPage() {
       <StructuredData
         data={[
           generateOrganizationSchema(),
-          generateArticleSchema(
+          ...(isoPublished ? [generateArticleSchema(
             news.title,
             news.excerpt,
             articleImage,
             isoPublished,
             articleAuthor,
             articleUrl
-          ),
+          )] : []),
         ]}
       />
       <article className="section-spacing">
