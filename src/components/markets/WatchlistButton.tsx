@@ -35,16 +35,18 @@ export function WatchlistButton({ symbol, marketType }: WatchlistButtonProps) {
     );
   }
 
+  const isInList = isInWatchlist(symbol, marketType);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          variant={isInWatchlist ? 'default' : 'outline'}
+          variant={isInList ? 'default' : 'outline'}
           size="sm"
           disabled={loading}
         >
-          <Star className={`h-4 w-4 mr-2 ${isInWatchlist ? 'fill-current' : ''}`} />
-          {isInWatchlist ? t('watchlist.inWatchlist') : t('watchlist.addToWatchlist')}
+          <Star className={`h-4 w-4 mr-2 ${isInList ? 'fill-current' : ''}`} />
+          {isInList ? t('watchlist.inWatchlist') : t('watchlist.addToWatchlist')}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -4,6 +4,7 @@ import { ArrowUpRight, Clock } from 'lucide-react';
 import { AnalyticsArticle } from '@/lib/api/types';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { LazyImage } from '@/components/ui/lazy-image';
+import { categoryImages } from '@/lib/api/utils';
 
 interface AnalyticsCardProps {
   article: AnalyticsArticle;
@@ -30,6 +31,12 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
     return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
   };
 
+  // Get fallback image from category
+  const getFallbackImage = () => {
+    const images = categoryImages[article.type] || categoryImages.expert;
+    return images[index % images.length];
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -52,6 +59,7 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
               src={article.imageUrl}
               alt={article.title}
               aspectRatio="wide"
+              fallback={getFallbackImage()}
               className="w-full h-full group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
