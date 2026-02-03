@@ -14,7 +14,8 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { GlobalSearch } from '@/components/GlobalSearch';
 import { useI18n } from '@/context/I18nContext';
 import { LANGUAGE_NAMES, type SupportedLanguage } from '@/lib/i18n';
-import { themes, ALL_THEME_CLASSES } from '@/components/layout/ThemeSwitcher';
+import { themes } from '@/components/layout/ThemeSwitcher';
+import { applyTheme } from '@/lib/themeLoader';
 import { cn } from '@/lib/utils';
 import { preloadImages } from '@/lib/utils/preloadImages';
 import {
@@ -220,11 +221,9 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    // Sync theme when preferences change
-    const html = document.documentElement;
+    // Sync theme when preferences change using dynamic loader
     const currentTheme = preferences.theme || 'dark';
-    ALL_THEME_CLASSES.forEach(cls => html.classList.remove(cls));
-    html.classList.add(currentTheme);
+    applyTheme(currentTheme);
   }, [preferences.theme]);
 
   const isActive = (href: string) => {
