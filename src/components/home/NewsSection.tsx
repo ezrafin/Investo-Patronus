@@ -1,6 +1,7 @@
-import { memo, useState, useEffect } from 'react';
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useQuery } from '@tanstack/react-query';
 import { NewsCard } from '@/components/NewsCard';
 import { SkeletonCard } from '@/components/ui/skeleton-card';
 import { fetchNews, NewsItem } from '@/lib/api/index';
@@ -8,16 +9,15 @@ import { ArrowRight, Newspaper } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 
 export const NewsSection = memo(function NewsSection() {
-  const [news, setNews] = useState<NewsItem[]>([]);
-  const [loading, setLoading] = useState(true);
   const { t } = useTranslation({ namespace: 'ui' });
-
-  useEffect(() => {
-    fetchNews().then(data => {
-      setNews(data);
-      setLoading(false);
-    });
-  }, []);
+  
+  // Use React Query for caching and automatic refetching
+  const { data: news = [], isLoading } = useQuery<NewsItem[]>({
+    queryKey: ['news', 'homepage'],
+    queryFn: () => fetchNews(),
+    staleTime: 2 * 60 * 1000, // 2 minutes
+    gcTime: 10 * 60 * 1000, // 10 minutes cache
+  });
 
   return (
     <section className="section-spacing">
@@ -37,7 +37,7 @@ export const NewsSection = memo(function NewsSection() {
           </Link>
         </motion.div>
 
-        {loading ? (
+        {isLoading ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} lines={3} />)}
           </div>

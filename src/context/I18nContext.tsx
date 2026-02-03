@@ -25,30 +25,50 @@ export function I18nProvider({ children }: I18nProviderProps) {
   const [isInitialized, setIsInitialized] = useState(false);
   const [loadTimeout, setLoadTimeout] = useState(false);
 
+  // Load secondary namespaces in background after initial render
+  const loadSecondaryNamespaces = useCallback(async (lang: SupportedLanguage) => {
+    const [forum, education, analytics, profile, companies] = await Promise.all([
+      loadTranslation(lang, 'forum').catch(() => ({})),
+      loadTranslation(lang, 'education').catch(() => ({})),
+      loadTranslation(lang, 'analytics').catch(() => ({})),
+      loadTranslation(lang, 'profile').catch(() => ({})),
+      loadTranslation(lang, 'companies').catch(() => ({})),
+    ]);
+    
+    setTranslations(prev => ({
+      ...prev,
+      forum,
+      education,
+      analytics,
+      profile,
+      companies,
+    }));
+  }, []);
+
   const loadTranslationsForLanguage = useCallback(async (lang: SupportedLanguage) => {
     setLoading(true);
     try {
-      // Load all base namespaces in parallel for better performance
-      // This prevents namespace-specific translation key flashes
-      const [common, ui, forum, education, analytics, profile, companies] = await Promise.all([
+      // Load only critical namespaces for first render (common + ui)
+      // This speeds up initial page load significantly
+      const [common, ui] = await Promise.all([
         loadTranslation(lang, 'common'),
         loadTranslation(lang, 'ui'),
-        loadTranslation(lang, 'forum').catch(() => ({})), // Graceful fallback if namespace doesn't exist
-        loadTranslation(lang, 'education').catch(() => ({})),
-        loadTranslation(lang, 'analytics').catch(() => ({})),
-        loadTranslation(lang, 'profile').catch(() => ({})),
-        loadTranslation(lang, 'companies').catch(() => ({})),
       ]);
 
+      // Set critical translations immediately
       setTranslations({
         common,
         ui,
-        forum,
-        education,
-        analytics,
-        profile,
-        companies,
+        forum: {},
+        education: {},
+        analytics: {},
+        profile: {},
+        companies: {},
       });
+      
+      // Load remaining namespaces in background (non-blocking)
+      loadSecondaryNamespaces(lang);
+      
       return true; // Success
     } catch (error) {
       logger.error('Error loading translations:', error);
@@ -66,7 +86,7 @@ export function I18nProvider({ children }: I18nProviderProps) {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [loadSecondaryNamespaces]);
 
   // Initialize language on mount
   useEffect(() => {

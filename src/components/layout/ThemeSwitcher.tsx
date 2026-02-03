@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useUserPreferences, type Theme } from '@/hooks/useUserPreferences';
 import { cn } from '@/lib/utils';
+import { applyTheme } from '@/lib/themeLoader';
 
 export const themes: { value: Theme; label: string; icon: typeof Moon; color: string }[] = [
   { value: 'dark', label: 'Default', icon: Moon, color: 'bg-indigo-500' },
@@ -41,10 +42,8 @@ export function ThemeSwitcher() {
   const [currentTheme, setCurrentTheme] = useState<Theme>(preferences.theme || 'dark');
 
   useEffect(() => {
-    // Apply theme to html element
-    const html = document.documentElement;
-    ALL_THEME_CLASSES.forEach(cls => html.classList.remove(cls));
-    html.classList.add(currentTheme);
+    // Apply theme using dynamic loader
+    applyTheme(currentTheme);
   }, [currentTheme]);
 
   useEffect(() => {

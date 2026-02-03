@@ -1,6 +1,10 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { registerServiceWorker } from "./lib/registerSW";
+
+// Register service worker for caching (production only)
+registerServiceWorker();
 
 // All available theme classes
 const ALL_THEMES = ['dark', 'glacier', 'harvest', 'lavender', 'brutalist', 'obsidian', 'orchid', 'solar', 'tide', 'verdant'];
@@ -45,8 +49,14 @@ function applyInitialTheme() {
       }
     }
     
-    // Apply theme or default to dark
-    html.classList.add(theme || 'dark');
+    // Apply theme - for non-dark themes, load themes.css dynamically
+    const selectedTheme = theme || 'dark';
+    html.classList.add(selectedTheme);
+    
+    // If user has a non-default theme, preload themes CSS
+    if (selectedTheme !== 'dark') {
+      import('./styles/themes.css').catch(() => {});
+    }
   } catch (e) {
     // If error, default to dark
     document.documentElement.classList.add('dark');
