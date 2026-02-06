@@ -160,6 +160,7 @@
     "next": "下一题",
     "questionXOfY": "第 {{current}} 题，共 {{total}} 题",
     "quizCompleted": "测验完成！",
+    "noQuestionsAvailable": "期末考试没有可用的测验问题。请先完成课程测验。",
     "masteryCheckCompleted": "掌握度检查完成！",
     "examCompleted": "考试完成！",
     "seoCourseTitle": "{{title}} - 在线课程 | INVESTOPATRONUS",

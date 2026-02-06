@@ -122,3 +122,109 @@ export function getCourseFolder(courseId: string): string {
   return COURSE_FOLDERS[courseId] || courseId;
 }
 
+/**
+ * Generate subtitle filename based on course, unit, lesson, video number, and language
+ * 
+ * @param courseId - Course ID (e.g., 'macroeconomics')
+ * @param unitIndex - Unit index (0-based, will be converted to 1-based for filename)
+ * @param lessonIndex - Lesson index (0-based, will be converted to 1-based for filename)
+ * @param videoIndex - Video index (0-based, will be converted to 1-based for filename)
+ * @param language - Language code (e.g., 'en', 'ru', 'es')
+ * @returns Generated filename (e.g., 'Macroeconomics-U1-L1-V1-en.vtt')
+ */
+export function generateSubtitleFilename(
+  courseId: string,
+  unitIndex: number,
+  lessonIndex: number,
+  videoIndex: number,
+  language: string
+): string {
+  const prefix = COURSE_PREFIXES[courseId] || courseId;
+  const unit = unitIndex + 1; // Convert to 1-based
+  const lesson = lessonIndex + 1; // Convert to 1-based
+  const video = videoIndex + 1; // Convert to 1-based
+  
+  return `${prefix}-U${unit}-L${lesson}-V${video}-${language}.vtt`;
+}
+
+/**
+ * Generate full R2 URL for a subtitle file
+ * 
+ * @param courseId - Course ID
+ * @param unitIndex - Unit index (0-based)
+ * @param lessonIndex - Lesson index (0-based)
+ * @param videoIndex - Video index (0-based)
+ * @param language - Language code (e.g., 'en', 'ru', 'es')
+ * @returns Full R2 URL to the subtitle file
+ */
+export function getSubtitleUrl(
+  courseId: string,
+  unitIndex: number,
+  lessonIndex: number,
+  videoIndex: number,
+  language: string
+): string {
+  const folder = COURSE_FOLDERS[courseId] || courseId;
+  const filename = generateSubtitleFilename(courseId, unitIndex, lessonIndex, videoIndex, language);
+  
+  // Encode the filename to handle special characters like & in URL
+  const encodedFilename = encodeURIComponent(filename);
+  
+  return `${R2_PUBLIC_URL}/${folder}/${encodedFilename}`;
+}
+
+/**
+ * Get subtitle URL for a VideoContent item
+ * 
+ * @param courseId - Course ID
+ * @param unitIndex - Unit index (0-based)
+ * @param lessonIndex - Lesson index (0-based)
+ * @param videoContent - VideoContent item with videoIndex
+ * @param language - Language code (e.g., 'en', 'ru', 'es')
+ * @returns Full R2 URL to the subtitle file
+ */
+export function getVideoContentSubtitleUrl(
+  courseId: string,
+  unitIndex: number,
+  lessonIndex: number,
+  videoContent: { videoIndex: number },
+  language: string
+): string {
+  return getSubtitleUrl(courseId, unitIndex, lessonIndex, videoContent.videoIndex, language);
+}
+
+/**
+ * Supported subtitle languages (matching the app's supported languages)
+ */
+export const SUPPORTED_SUBTITLE_LANGUAGES = ['en', 'zh', 'es', 'ru', 'de', 'fr', 'pl'] as const;
+
+/**
+ * Check which subtitle languages are available for a video
+ * This function attempts to fetch subtitle files and returns available languages
+ * 
+ * @param courseId - Course ID
+ * @param unitIndex - Unit index (0-based)
+ * @param lessonIndex - Lesson index (0-based)
+ * @param videoIndex - Video index (0-based)
+ * @returns Promise that resolves to array of available language codes
+ */
+export async function getAvailableSubtitleLanguages(
+  courseId: string,
+  unitIndex: number,
+  lessonIndex: number,
+  videoIndex: number
+): Promise<string[]> {
+  const checkPromises = SUPPORTED_SUBTITLE_LANGUAGES.map(async (lang) => {
+    const subtitleUrl = getSubtitleUrl(courseId, unitIndex, lessonIndex, videoIndex, lang);
+    try {
+      const response = await fetch(subtitleUrl, { method: 'HEAD' });
+      return response.ok ? lang : null;
+    } catch {
+      return null;
+    }
+  });
+
+  const results = await Promise.all(checkPromises);
+  return results.filter((lang): lang is string => lang !== null);
+}
+

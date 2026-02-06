@@ -160,6 +160,7 @@
     "next": "Далее",
     "questionXOfY": "Вопрос {{current}} из {{total}}",
     "quizCompleted": "Викторина завершена!",
+    "noQuestionsAvailable": "Вопросы для финального экзамена недоступны. Пожалуйста, сначала завершите квизы курса.",
     "masteryCheckCompleted": "Проверка знаний завершена!",
     "examCompleted": "Экзамен завершён!",
     "seoCourseTitle": "{{title}} - Онлайн курс | INVESTOPATRONUS",

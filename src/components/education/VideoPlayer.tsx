@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { 
   Play, Pause, Volume2, VolumeX, Maximize, Loader2, 
-  PictureInPicture, Gauge, RotateCcw 
+  PictureInPicture, Gauge, RotateCcw, Subtitles 
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -17,6 +17,13 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { logger } from '@/lib/logger';
+import { useI18n } from '@/context/I18nContext';
+import { useTranslation } from '@/hooks/useTranslation';
+import { 
+  getVideoContentSubtitleUrl, 
+  getAvailableSubtitleLanguages
+} from '@/lib/r2VideoUtils';
+import type { SupportedLanguage } from '@/lib/i18n';
 
 interface VideoPlayerProps {
   src: string;
@@ -24,6 +31,10 @@ interface VideoPlayerProps {
   className?: string;
   videoId?: string;
   nextVideoUrl?: string;
+  courseId?: string;
+  unitIndex?: number;
+  lessonIndex?: number;
+  videoContent?: { videoIndex: number };
   onEnded?: () => void;
   onError?: (error: Error) => void;
 }
@@ -39,6 +50,10 @@ export function VideoPlayer({
   className = '', 
   videoId,
   nextVideoUrl,
+  courseId,
+  unitIndex,
+  lessonIndex,
+  videoContent,
   onEnded,
   onError 
 }: VideoPlayerProps) {
@@ -47,6 +62,8 @@ export function VideoPlayer({
   const progressSaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const prefetchLinkRef = useRef<HTMLLinkElement | null>(null);
+  const { language } = useI18n();
+  const { t } = useTranslation({ namespace: 'ui' });
   
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -63,6 +80,68 @@ export function VideoPlayer({
   const [showControls, setShowControls] = useState(false);
   const [isPiP, setIsPiP] = useState(false);
   const [wasPlayingBeforeTabSwitch, setWasPlayingBeforeTabSwitch] = useState(false);
+  
+  // Subtitle state
+  const [availableSubtitleLanguages, setAvailableSubtitleLanguages] = useState<string[]>([]);
+  const [subtitleLanguage, setSubtitleLanguage] = useState<string>('');
+  const [subtitleEnabled, setSubtitleEnabled] = useState(() => {
+    const saved = localStorage.getItem('video_subtitles_enabled');
+    return saved === 'true';
+  });
+  const [isCheckingSubtitles, setIsCheckingSubtitles] = useState(false);
+
+  // Check available subtitle languages and set initial language
+  useEffect(() => {
+    if (!courseId || unitIndex === undefined || lessonIndex === undefined || !videoContent) {
+      setAvailableSubtitleLanguages([]);
+      setSubtitleLanguage('');
+      return;
+    }
+
+    const checkSubtitles = async () => {
+      setIsCheckingSubtitles(true);
+      try {
+        const available = await getAvailableSubtitleLanguages(
+          courseId,
+          unitIndex,
+          lessonIndex,
+          videoContent.videoIndex
+        );
+        setAvailableSubtitleLanguages(available);
+        
+        // Set subtitle language: prefer current UI language, fallback to first available
+        if (available.length > 0) {
+          const preferredLang = available.includes(language) ? language : available[0];
+          setSubtitleLanguage(preferredLang);
+          
+          // Auto-enable subtitles if they were enabled before and language is available
+          if (subtitleEnabled && available.includes(language)) {
+            // Subtitles will be enabled via track element
+          }
+        } else {
+          setSubtitleLanguage('');
+        }
+      } catch (error) {
+        logger.error('Error checking subtitle availability:', error);
+        setAvailableSubtitleLanguages([]);
+        setSubtitleLanguage('');
+      } finally {
+        setIsCheckingSubtitles(false);
+      }
+    };
+
+    checkSubtitles();
+  }, [courseId, unitIndex, lessonIndex, videoContent, language, subtitleEnabled]);
+
+  // Update subtitle language when UI language changes
+  useEffect(() => {
+    if (availableSubtitleLanguages.length > 0 && availableSubtitleLanguages.includes(language)) {
+      setSubtitleLanguage(language);
+    } else if (availableSubtitleLanguages.length > 0 && subtitleLanguage && !availableSubtitleLanguages.includes(subtitleLanguage)) {
+      // Current subtitle language is no longer available, switch to first available
+      setSubtitleLanguage(availableSubtitleLanguages[0]);
+    }
+  }, [language, availableSubtitleLanguages, subtitleLanguage]);
 
   // Restore saved progress
   useEffect(() => {
@@ -190,6 +269,26 @@ export function VideoPlayer({
         saveProgress();
       }
     };
+    const handleEnded = () => {
+      setIsPlaying(false);
+      // Clear saved progress when video ends
+      if (videoId) {
+        localStorage.removeItem(`video_progress_${videoId}`);
+      }
+      onEnded?.();
+    };
+    const handleError = () => {
+      setIsLoading(false);
+      const errorMsg = video.error?.message || t('ui.videoPlayer.failedToLoad');
+      setError(errorMsg);
+      onError?.(new Error(errorMsg));
+    };
+    const handleVolumeChange = () => {
+      setVolume(video.volume);
+      setIsMuted(video.muted);
+    };
+    const handleEnterPictureInPicture = () => setIsPiP(true);
+    const handleLeavePictureInPicture = () => setIsPiP(false);
     const handleLoadedMetadata = () => {
       if (video.duration) {
         setDuration(video.duration);
@@ -203,28 +302,29 @@ export function VideoPlayer({
             }
           }
         }
+        
+        // Set up subtitle tracks after metadata loads
+        if (subtitleLanguage && subtitleEnabled) {
+          const tracks = video.textTracks;
+          for (let i = 0; i < tracks.length; i++) {
+            const track = tracks[i];
+            if (track.language === subtitleLanguage) {
+              track.mode = 'showing';
+            } else {
+              track.mode = 'hidden';
+            }
+          }
+        }
       }
     };
-    const handleEnded = () => {
-      setIsPlaying(false);
-      // Clear saved progress when video ends
-      if (videoId) {
-        localStorage.removeItem(`video_progress_${videoId}`);
+    const handleTrackError = (e: Event) => {
+      const track = e.target as HTMLTrackElement;
+      if (track && track.track) {
+        logger.warn(`Subtitle track error for language ${track.srclang}:`, track.error);
+        // Remove failed language from available languages
+        setAvailableSubtitleLanguages(prev => prev.filter(lang => lang !== track.srclang));
       }
-      onEnded?.();
     };
-    const handleError = () => {
-      setIsLoading(false);
-      const errorMsg = video.error?.message || 'Failed to load video';
-      setError(errorMsg);
-      onError?.(new Error(errorMsg));
-    };
-    const handleVolumeChange = () => {
-      setVolume(video.volume);
-      setIsMuted(video.muted);
-    };
-    const handleEnterPictureInPicture = () => setIsPiP(true);
-    const handleLeavePictureInPicture = () => setIsPiP(false);
 
     video.addEventListener('loadstart', handleLoadStart);
     video.addEventListener('canplay', handleCanPlay);
@@ -237,6 +337,12 @@ export function VideoPlayer({
     video.addEventListener('volumechange', handleVolumeChange);
     video.addEventListener('enterpictureinpicture', handleEnterPictureInPicture);
     video.addEventListener('leavepictureinpicture', handleLeavePictureInPicture);
+    
+    // Listen for track errors
+    const trackElements = video.querySelectorAll('track');
+    trackElements.forEach(track => {
+      track.addEventListener('error', handleTrackError);
+    });
 
     return () => {
       video.removeEventListener('loadstart', handleLoadStart);
@@ -250,8 +356,14 @@ export function VideoPlayer({
       video.removeEventListener('volumechange', handleVolumeChange);
       video.removeEventListener('enterpictureinpicture', handleEnterPictureInPicture);
       video.removeEventListener('leavepictureinpicture', handleLeavePictureInPicture);
+      
+      // Remove track error listeners
+      const trackElements = video.querySelectorAll('track');
+      trackElements.forEach(track => {
+        track.removeEventListener('error', handleTrackError);
+      });
     };
-  }, [onEnded, onError, saveProgress, videoId]);
+  }, [onEnded, onError, saveProgress, videoId, subtitleLanguage, subtitleEnabled]);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -342,7 +454,7 @@ export function VideoPlayer({
     } else {
       video.play().catch(err => {
         logger.error('Error playing video:', err);
-        setError('Failed to play video');
+        setError(t('ui.videoPlayer.failedToPlay'));
       });
     }
     resetControlsTimeout();
@@ -427,6 +539,52 @@ export function VideoPlayer({
     }
   };
 
+  const toggleSubtitles = () => {
+    const newEnabled = !subtitleEnabled;
+    setSubtitleEnabled(newEnabled);
+    localStorage.setItem('video_subtitles_enabled', newEnabled.toString());
+    
+    // Enable/disable subtitle track
+    if (videoRef.current) {
+      const tracks = videoRef.current.textTracks;
+      for (let i = 0; i < tracks.length; i++) {
+        const track = tracks[i];
+        if (track.language === subtitleLanguage) {
+          track.mode = newEnabled ? 'showing' : 'hidden';
+        } else {
+          track.mode = 'hidden';
+        }
+      }
+    }
+    resetControlsTimeout();
+  };
+
+  const handleSubtitleLanguageChange = (lang: string) => {
+    setSubtitleLanguage(lang);
+    
+    // Switch subtitle track
+    if (videoRef.current) {
+      const tracks = videoRef.current.textTracks;
+      for (let i = 0; i < tracks.length; i++) {
+        const track = tracks[i];
+        if (track.language === lang) {
+          track.mode = subtitleEnabled ? 'showing' : 'hidden';
+        } else {
+          track.mode = 'hidden';
+        }
+      }
+    }
+    resetControlsTimeout();
+  };
+
+  // Get subtitle URL for current language
+  const getSubtitleUrl = (lang: string): string | null => {
+    if (!courseId || unitIndex === undefined || lessonIndex === undefined || !videoContent) {
+      return null;
+    }
+    return getVideoContentSubtitleUrl(courseId, unitIndex, lessonIndex, videoContent, lang);
+  };
+
   const formatTime = (seconds: number): string => {
     if (isNaN(seconds) || !isFinite(seconds)) return '0:00';
     const mins = Math.floor(seconds / 60);
@@ -466,11 +624,11 @@ export function VideoPlayer({
     return (
       <div className={`aspect-video bg-secondary flex items-center justify-center ${className}`}>
         <div className="text-center p-6">
-          <p className="text-sm text-destructive mb-2">Error loading video</p>
+          <p className="text-sm text-destructive mb-2">{t('ui.videoPlayer.errorLoading')}</p>
           <p className="text-xs text-muted-foreground mb-4">{error}</p>
           <Button onClick={handleRetry} variant="outline" size="sm">
             <RotateCcw className="h-4 w-4 mr-2" />
-            Retry
+            {t('ui.videoPlayer.retry')}
           </Button>
         </div>
       </div>
@@ -504,6 +662,21 @@ export function VideoPlayer({
           preload="metadata"
         >
           Your browser does not support the video tag.
+          {availableSubtitleLanguages.map((lang) => {
+            const subtitleUrl = getSubtitleUrl(lang);
+            if (!subtitleUrl) return null;
+            
+            return (
+              <track
+                key={lang}
+                kind="subtitles"
+                srcLang={lang}
+                label={lang.toUpperCase()}
+                src={subtitleUrl}
+                default={lang === subtitleLanguage && subtitleEnabled}
+              />
+            );
+          })}
         </video>
 
         {/* Loading overlay */}
@@ -549,7 +722,7 @@ export function VideoPlayer({
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{isPlaying ? 'Pause' : 'Play'} (Space)</p>
+                  <p>{isPlaying ? t('ui.videoPlayer.pause') : t('ui.videoPlayer.play')} (Space)</p>
                 </TooltipContent>
               </Tooltip>
 
@@ -583,7 +756,7 @@ export function VideoPlayer({
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Volume (↑/↓)</p>
+                  <p>{t('ui.videoPlayer.volume')} (↑/↓)</p>
                 </TooltipContent>
               </Tooltip>
 
@@ -621,9 +794,70 @@ export function VideoPlayer({
                   </DropdownMenu>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Playback Speed</p>
+                  <p>{t('ui.videoPlayer.playbackSpeed')}</p>
                 </TooltipContent>
               </Tooltip>
+
+              {/* Subtitles button - only show if subtitles are available */}
+              {availableSubtitleLanguages.length > 0 && (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    {availableSubtitleLanguages.length > 1 ? (
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className={`text-white hover:text-white hover:bg-white/20 ${
+                              subtitleEnabled ? 'bg-white/20' : ''
+                            }`}
+                          >
+                            <Subtitles className="h-5 w-5" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="bg-black/90 text-white border-white/20">
+                          <DropdownMenuItem
+                            onClick={toggleSubtitles}
+                            className={!subtitleEnabled ? 'bg-white/20' : ''}
+                          >
+                            {subtitleEnabled ? '✓ ' : ''}{subtitleEnabled ? t('ui.videoPlayer.subtitlesOn') : t('ui.videoPlayer.subtitlesOff')}
+                          </DropdownMenuItem>
+                          <div className="border-t border-white/20 my-1" />
+                          {availableSubtitleLanguages.map((lang) => (
+                            <DropdownMenuItem
+                              key={lang}
+                              onClick={() => {
+                                if (!subtitleEnabled) {
+                                  setSubtitleEnabled(true);
+                                  localStorage.setItem('video_subtitles_enabled', 'true');
+                                }
+                                handleSubtitleLanguageChange(lang);
+                              }}
+                              className={subtitleLanguage === lang ? 'bg-white/20' : ''}
+                            >
+                              {lang.toUpperCase()} {subtitleLanguage === lang && '✓'}
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    ) : (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={toggleSubtitles}
+                        className={`text-white hover:text-white hover:bg-white/20 ${
+                          subtitleEnabled ? 'bg-white/20' : ''
+                        }`}
+                      >
+                        <Subtitles className="h-5 w-5" />
+                      </Button>
+                    )}
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{subtitleEnabled ? t('ui.videoPlayer.subtitlesOn') : t('ui.videoPlayer.subtitlesOff')}</p>
+                  </TooltipContent>
+                </Tooltip>
+              )}
 
               {isPiPSupported && (
                 <Tooltip>
@@ -638,7 +872,7 @@ export function VideoPlayer({
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Picture-in-Picture</p>
+                    <p>{t('ui.videoPlayer.pictureInPicture')}</p>
                   </TooltipContent>
                 </Tooltip>
               )}
@@ -655,7 +889,7 @@ export function VideoPlayer({
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Fullscreen (F)</p>
+                  <p>{t('ui.videoPlayer.fullscreen')} (F)</p>
                 </TooltipContent>
               </Tooltip>
             </div>

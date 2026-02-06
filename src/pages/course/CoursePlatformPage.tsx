@@ -536,6 +536,10 @@ export default function CoursePlatformPage() {
                           className="aspect-video"
                           videoId={videoId}
                           nextVideoUrl={nextVideoUrl}
+                          courseId={course.id}
+                          unitIndex={unitIndex}
+                          lessonIndex={lessonIndex}
+                          videoContent={selectedContentItem as VideoContent}
                           onError={(error) => {
                             logger.error('Video loading error:', error);
                           }}

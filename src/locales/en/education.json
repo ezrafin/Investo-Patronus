@@ -167,6 +167,7 @@
     "next": "Next",
     "questionXOfY": "Question {{current}} of {{total}}",
     "quizCompleted": "Quiz completed!",
+    "noQuestionsAvailable": "No quiz questions are available for the final exam. Please complete the course quizzes first.",
     "masteryCheckCompleted": "Mastery Check completed!",
     "examCompleted": "Exam completed!",
     "seoCourseTitle": "{{title}} - Online Course | INVESTOPATRONUS",

@@ -233,6 +233,15 @@
     "meetAllRequirements": "Please meet all password requirements",
     "alreadyHaveAccount": "Already have an account?",
     "checkEmail": "Check your email",
+    "passwordResetLinkSent": "We've sent a password reset link to:",
+    "clickResetLink": "Click the link in the email to reset your password.",
+    "checkSpamFolder": "If you don't see the email, check your spam folder.",
+    "tryAnotherEmail": "Try another email",
+    "backToSignIn": "Back to sign in",
+    "forgotPasswordDescription": "Enter your email and we'll send you a link to reset your password",
+    "sending": "Sending...",
+    "sendResetLink": "Send reset link",
+    "emailAddress": "Email address",
     "verificationSent": "We've sent a verification link to:",
     "whatsNext": "What's next?",
     "openEmailInbox": "Open your email inbox",
@@ -1043,6 +1052,22 @@
   "offline": {
     "title": "You are offline",
     "message": "Some features may be limited. Content will refresh when you reconnect."
+  },
+  "videoPlayer": {
+    "subtitles": "Subtitles",
+    "subtitlesOn": "Subtitles On",
+    "subtitlesOff": "Subtitles Off",
+    "noSubtitlesAvailable": "No subtitles available",
+    "playbackSpeed": "Playback Speed",
+    "pause": "Pause",
+    "play": "Play",
+    "volume": "Volume",
+    "pictureInPicture": "Picture-in-Picture",
+    "fullscreen": "Fullscreen",
+    "errorLoading": "Error loading video",
+    "failedToLoad": "Failed to load video",
+    "failedToPlay": "Failed to play video",
+    "retry": "Retry"
   }
 }
 

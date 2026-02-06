@@ -49,16 +49,16 @@ export default function ForgotPasswordPage() {
               </div>
               
               <div>
-                <h1 className="heading-md mb-2">Check your email</h1>
+                <h1 className="heading-md mb-2">{t('auth.checkEmail')}</h1>
                 <p className="text-muted-foreground">
-                  We've sent a password reset link to:
+                  {t('auth.passwordResetLinkSent')}
                 </p>
                 <p className="font-medium mt-2">{email}</p>
               </div>
 
               <div className="text-sm text-muted-foreground space-y-2">
-                <p>Click the link in the email to reset your password.</p>
-                <p>If you don't see the email, check your spam folder.</p>
+                <p>{t('auth.clickResetLink')}</p>
+                <p>{t('auth.checkSpamFolder')}</p>
               </div>
 
               <div className="pt-4 space-y-3">
@@ -67,12 +67,12 @@ export default function ForgotPasswordPage() {
                   className="w-full"
                   onClick={() => setEmailSent(false)}
                 >
-                  Try another email
+                  {t('auth.tryAnotherEmail')}
                 </Button>
                 <Link to="/auth/login" className="block">
                   <Button variant="ghost" className="w-full">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to sign in
+                    {t('auth.backToSignIn')}
                   </Button>
                 </Link>
               </div>
@@ -88,16 +88,16 @@ export default function ForgotPasswordPage() {
       <div className="min-h-[80vh] flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
-            <h1 className="heading-lg mb-2">Forgot password?</h1>
+            <h1 className="heading-lg mb-2">{t('auth.forgotPassword')}</h1>
             <p className="text-muted-foreground">
-              Enter your email and we'll send you a link to reset your password
+              {t('auth.forgotPasswordDescription')}
             </p>
           </div>
 
           <div className="premium-card p-8 space-y-6">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email address</Label>
+                <Label htmlFor="email">{t('auth.emailAddress')}</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
@@ -114,7 +114,7 @@ export default function ForgotPasswordPage() {
               </div>
 
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? 'Sending...' : 'Send reset link'}
+                {loading ? t('auth.sending') : t('auth.sendResetLink')}
               </Button>
             </form>
 
@@ -123,7 +123,7 @@ export default function ForgotPasswordPage() {
               className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to sign in
+              {t('auth.backToSignIn')}
             </Link>
           </div>
         </div>

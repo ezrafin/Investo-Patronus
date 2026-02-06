@@ -160,6 +160,7 @@
     "next": "Następne",
     "questionXOfY": "Pytanie {{current}} z {{total}}",
     "quizCompleted": "Quiz zakończony!",
+    "noQuestionsAvailable": "Brak dostępnych pytań quizowych do egzaminu końcowego. Najpierw ukończ quizy kursu.",
     "masteryCheckCompleted": "Sprawdzenie opanowania zakończone!",
     "examCompleted": "Egzamin zakończony!",
     "seoCourseTitle": "{{title}} - Kurs Online | INVESTOPATRONUS",

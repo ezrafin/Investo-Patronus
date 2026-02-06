@@ -222,6 +222,15 @@
     },
     "meetAllRequirements": "Пожалуйста, выполните все требования к паролю",
     "checkEmail": "Проверьте почту",
+    "passwordResetLinkSent": "Мы отправили ссылку для сброса пароля на:",
+    "clickResetLink": "Нажмите на ссылку в письме, чтобы сбросить пароль.",
+    "checkSpamFolder": "Если вы не видите письмо, проверьте папку со спамом.",
+    "tryAnotherEmail": "Попробовать другой email",
+    "backToSignIn": "Вернуться к входу",
+    "forgotPasswordDescription": "Введите ваш email, и мы отправим вам ссылку для сброса пароля",
+    "sending": "Отправка...",
+    "sendResetLink": "Отправить ссылку для сброса",
+    "emailAddress": "Адрес электронной почты",
     "verificationSent": "Мы отправили ссылку для подтверждения на:",
     "whatsNext": "Что дальше?",
     "openEmailInbox": "Откройте почтовый ящик",
@@ -967,5 +976,21 @@
     "visibilityPublic": "Публичный - Любой может просматривать",
     "visibilityFriends": "Друзья - Только подписанные пользователи",
     "visibilityPrivate": "Приватный - Только вы"
+  },
+  "videoPlayer": {
+    "subtitles": "Субтитры",
+    "subtitlesOn": "Субтитры включены",
+    "subtitlesOff": "Субтитры выключены",
+    "noSubtitlesAvailable": "Субтитры недоступны",
+    "playbackSpeed": "Скорость воспроизведения",
+    "pause": "Пауза",
+    "play": "Воспроизвести",
+    "volume": "Громкость",
+    "pictureInPicture": "Картинка в картинке",
+    "fullscreen": "Полный экран",
+    "errorLoading": "Ошибка загрузки видео",
+    "failedToLoad": "Не удалось загрузить видео",
+    "failedToPlay": "Не удалось воспроизвести видео",
+    "retry": "Повторить"
   }
 }

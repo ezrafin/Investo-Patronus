@@ -222,6 +222,15 @@
     },
     "meetAllRequirements": "请满足所有密码要求",
     "checkEmail": "查收邮件",
+    "passwordResetLinkSent": "我们已发送密码重置链接至：",
+    "clickResetLink": "点击邮件中的链接以重置密码。",
+    "checkSpamFolder": "如果您没有看到邮件，请检查垃圾邮件文件夹。",
+    "tryAnotherEmail": "尝试其他邮箱",
+    "backToSignIn": "返回登录",
+    "forgotPasswordDescription": "输入您的邮箱，我们将向您发送密码重置链接",
+    "sending": "发送中...",
+    "sendResetLink": "发送重置链接",
+    "emailAddress": "电子邮件地址",
     "verificationSent": "我们已发送验证链接至：",
     "whatsNext": "下一步？",
     "openEmailInbox": "打开邮箱",
@@ -966,5 +975,21 @@
     "visibilityPublic": "公开 - 任何人都可以查看",
     "visibilityFriends": "朋友 - 仅关注用户",
     "visibilityPrivate": "私密 - 仅你自己"
+  },
+  "videoPlayer": {
+    "subtitles": "字幕",
+    "subtitlesOn": "字幕已开启",
+    "subtitlesOff": "字幕已关闭",
+    "noSubtitlesAvailable": "字幕不可用",
+    "playbackSpeed": "播放速度",
+    "pause": "暂停",
+    "play": "播放",
+    "volume": "音量",
+    "pictureInPicture": "画中画",
+    "fullscreen": "全屏",
+    "errorLoading": "加载视频时出错",
+    "failedToLoad": "无法加载视频",
+    "failedToPlay": "无法播放视频",
+    "retry": "重试"
   }
 }

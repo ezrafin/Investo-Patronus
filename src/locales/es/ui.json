@@ -229,6 +229,15 @@
     },
     "meetAllRequirements": "Por favor cumple todos los requisitos de contraseña",
     "checkEmail": "Revisa tu email",
+    "passwordResetLinkSent": "Hemos enviado un enlace para restablecer la contraseña a:",
+    "clickResetLink": "Haz clic en el enlace del email para restablecer tu contraseña.",
+    "checkSpamFolder": "Si no ves el email, revisa tu carpeta de spam.",
+    "tryAnotherEmail": "Probar otro email",
+    "backToSignIn": "Volver al inicio de sesión",
+    "forgotPasswordDescription": "Ingresa tu email y te enviaremos un enlace para restablecer tu contraseña",
+    "sending": "Enviando...",
+    "sendResetLink": "Enviar enlace de restablecimiento",
+    "emailAddress": "Dirección de email",
     "verificationSent": "Hemos enviado un enlace de verificación a:",
     "whatsNext": "¿Qué sigue?",
     "openEmailInbox": "Abre tu bandeja de entrada",
@@ -966,5 +975,21 @@
     "visibilityPublic": "Público - Cualquiera puede ver",
     "visibilityFriends": "Amigos - Solo usuarios seguidos",
     "visibilityPrivate": "Privado - Solo tú"
+  },
+  "videoPlayer": {
+    "subtitles": "Subtítulos",
+    "subtitlesOn": "Subtítulos activados",
+    "subtitlesOff": "Subtítulos desactivados",
+    "noSubtitlesAvailable": "Subtítulos no disponibles",
+    "playbackSpeed": "Velocidad de reproducción",
+    "pause": "Pausar",
+    "play": "Reproducir",
+    "volume": "Volumen",
+    "pictureInPicture": "Imagen en imagen",
+    "fullscreen": "Pantalla completa",
+    "errorLoading": "Error al cargar el video",
+    "failedToLoad": "No se pudo cargar el video",
+    "failedToPlay": "No se pudo reproducir el video",
+    "retry": "Reintentar"
   }
 }

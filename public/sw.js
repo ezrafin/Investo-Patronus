@@ -20,9 +20,12 @@ const CACHE_STRATEGIES = {
   networkFirst: async (request, cacheName) => {
     try {
       const networkResponse = await fetch(request);
-      if (networkResponse.ok) {
+      if (networkResponse.ok && networkResponse.status !== 206) {
+        // Don't cache partial responses (206) - they're not supported by Cache API
         const cache = await caches.open(cacheName);
-        cache.put(request, networkResponse.clone());
+        cache.put(request, networkResponse.clone()).catch(err => {
+          console.warn('SW: Failed to cache response:', err);
+        });
       }
       return networkResponse;
     } catch {
@@ -37,9 +40,12 @@ const CACHE_STRATEGIES = {
 
     try {
       const networkResponse = await fetch(request);
-      if (networkResponse.ok) {
+      if (networkResponse.ok && networkResponse.status !== 206) {
+        // Don't cache partial responses (206) - they're not supported by Cache API
         const cache = await caches.open(cacheName);
-        cache.put(request, networkResponse.clone());
+        cache.put(request, networkResponse.clone()).catch(err => {
+          console.warn('SW: Failed to cache response:', err);
+        });
       }
       return networkResponse;
     } catch {
@@ -52,8 +58,8 @@ const CACHE_STRATEGIES = {
     const cached = await caches.match(request);
     
     const fetchPromise = fetch(request).then(async networkResponse => {
-      if (networkResponse.ok) {
-        // Clone response immediately before it's used
+      if (networkResponse.ok && networkResponse.status !== 206) {
+        // Don't cache partial responses (206) - they're not supported by Cache API
         const clonedResponse = networkResponse.clone();
         const cache = await caches.open(cacheName);
         // Put cloned response in cache (don't await to avoid blocking)
@@ -104,6 +110,11 @@ self.addEventListener('fetch', event => {
 
   // Skip chrome-extension and other non-http(s) requests
   if (!url.protocol.startsWith('http')) return;
+
+  // Skip range requests (partial content requests) - they return 206 and can't be cached
+  if (request.headers.get('range')) {
+    return; // Let browser handle range requests directly
+  }
 
   // Skip Supabase realtime and auth
   if (url.hostname.includes('supabase') && 

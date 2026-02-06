@@ -222,6 +222,15 @@
     },
     "meetAllRequirements": "Veuillez respecter toutes les exigences du mot de passe",
     "checkEmail": "Vérifiez votre email",
+    "passwordResetLinkSent": "Nous avons envoyé un lien de réinitialisation du mot de passe à :",
+    "clickResetLink": "Cliquez sur le lien dans l'email pour réinitialiser votre mot de passe.",
+    "checkSpamFolder": "Si vous ne voyez pas l'email, vérifiez votre dossier spam.",
+    "tryAnotherEmail": "Essayer un autre email",
+    "backToSignIn": "Retour à la connexion",
+    "forgotPasswordDescription": "Entrez votre email et nous vous enverrons un lien pour réinitialiser votre mot de passe",
+    "sending": "Envoi...",
+    "sendResetLink": "Envoyer le lien de réinitialisation",
+    "emailAddress": "Adresse email",
     "verificationSent": "Nous avons envoyé un lien de vérification à :",
     "whatsNext": "Étapes suivantes ?",
     "openEmailInbox": "Ouvrez votre boîte de réception",
@@ -966,5 +975,21 @@
     "visibilityPublic": "Public - N'importe qui peut voir",
     "visibilityFriends": "Amis - Seulement les utilisateurs suivis",
     "visibilityPrivate": "Privé - Seulement toi"
+  },
+  "videoPlayer": {
+    "subtitles": "Sous-titres",
+    "subtitlesOn": "Sous-titres activés",
+    "subtitlesOff": "Sous-titres désactivés",
+    "noSubtitlesAvailable": "Sous-titres non disponibles",
+    "playbackSpeed": "Vitesse de lecture",
+    "pause": "Pause",
+    "play": "Lecture",
+    "volume": "Volume",
+    "pictureInPicture": "Image dans l'image",
+    "fullscreen": "Plein écran",
+    "errorLoading": "Erreur lors du chargement de la vidéo",
+    "failedToLoad": "Échec du chargement de la vidéo",
+    "failedToPlay": "Échec de la lecture de la vidéo",
+    "retry": "Réessayer"
   }
 }
