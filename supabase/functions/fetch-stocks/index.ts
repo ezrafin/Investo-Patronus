@@ -1044,8 +1044,10 @@ async function fetchTwelveDataQuotes(type: string, apiKey: string): Promise<any[
 }
 
 // ExchangeRate-API (free, no key required for base pairs)
+// Fetches latest rates and uses frankfurter.app for historical data to calculate daily change
 async function fetchExchangeRateAPI(): Promise<any[]> {
   try {
+    // Fetch latest rates
     const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
     
     if (!response.ok) {
@@ -1055,6 +1057,30 @@ async function fetchExchangeRateAPI(): Promise<any[]> {
     const data = await response.json();
     const rates = data.rates || {};
     
+    // Fetch previous day rates from frankfurter.app (free historical API)
+    let prevRates: Record<string, number> = {};
+    for (let daysBack = 1; daysBack <= 7; daysBack++) {
+      const targetDate = new Date();
+      targetDate.setUTCDate(targetDate.getUTCDate() - daysBack);
+      const dateStr = targetDate.toISOString().split('T')[0];
+      
+      try {
+        const prevResp = await fetch(`https://api.frankfurter.app/${dateStr}?from=USD`);
+        if (prevResp.ok) {
+          const prevData = await prevResp.json();
+          prevRates = prevData.rates || {};
+          if (Object.keys(prevRates).length > 0) {
+            console.log(`ExchangeRate-API: fetched historical rates from frankfurter.app (${dateStr})`);
+            break;
+          }
+        }
+      } catch (e) {
+        if (daysBack === 7) {
+          console.warn('ExchangeRate-API historical fetch failed:', e);
+        }
+      }
+    }
+    
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
         // For cross pairs like EUR/GBP, calculate from USD rates
@@ -1062,14 +1088,22 @@ async function fetchExchangeRateAPI(): Promise<any[]> {
           const eurRate = rates['EUR'] || 1;
           const gbpRate = rates['GBP'] || 1;
           const price = eurRate / gbpRate;
+          
+          const eurPrev = prevRates['EUR'] || eurRate;
+          const gbpPrev = prevRates['GBP'] || gbpRate;
+          const prevPrice = eurPrev / gbpPrev;
+          
+          const change = price - prevPrice;
+          const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+          
           return {
             symbol: 'EUR/GBP',
             name: item.name,
             price,
-            change: 0,
-            changePercent: 0,
-            high: price,
-            low: price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
           };
         }
         return null;
@@ -1078,20 +1112,27 @@ async function fetchExchangeRateAPI(): Promise<any[]> {
       const rate = rates[item.exchangeRate];
       if (!rate) return null;
       
+      const prevRate = prevRates[item.exchangeRate] || rate;
+      
       // For USD pairs, use direct rate; for others, calculate
       let price = rate;
+      let prevPrice = prevRate;
       if (item.symbol.startsWith('USD')) {
         price = 1 / rate; // Invert for USD/XXX pairs
+        prevPrice = 1 / prevRate;
       }
+      
+      const change = price - prevPrice;
+      const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
       
       return {
         symbol: formatSymbol(item.symbol, 'currencies'),
         name: item.name,
         price,
-        change: 0,
-        changePercent: 0,
-        high: price,
-        low: price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
       };
     }).filter(Boolean);
   } catch (error) {
@@ -1100,7 +1141,9 @@ async function fetchExchangeRateAPI(): Promise<any[]> {
   }
 }
 
+
 // exchangerate.host (completely free, no API key required)
+// Now fetches historical data to calculate daily change
 async function fetchExchangeRateHost(): Promise<any[]> {
   try {
     const response = await fetch('https://api.exchangerate.host/latest?base=USD');
@@ -1112,20 +1155,54 @@ async function fetchExchangeRateHost(): Promise<any[]> {
     const data = await response.json();
     const rates = data.rates || {};
     
+    // Fetch previous day rates for change calculation
+    let prevRates: Record<string, number> = {};
+    for (let daysBack = 1; daysBack <= 7; daysBack++) {
+      const targetDate = new Date();
+      targetDate.setUTCDate(targetDate.getUTCDate() - daysBack);
+      const dateStr = targetDate.toISOString().split('T')[0];
+      
+      try {
+        const prevResp = await fetch(`https://api.exchangerate.host/${dateStr}?base=USD`);
+        if (prevResp.ok) {
+          const prevData = await prevResp.json();
+          prevRates = prevData.rates || {};
+          if (Object.keys(prevRates).length > 0) {
+            if (daysBack > 1) {
+              console.log(`exchangerate.host: using ${daysBack} days ago for historical rates`);
+            }
+            break;
+          }
+        }
+      } catch (e) {
+        if (daysBack === 7) {
+          console.warn('exchangerate.host historical fetch failed:', e);
+        }
+      }
+    }
+    
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
         if (item.symbol === 'EURGBP') {
           const eurRate = rates['EUR'] || 1;
           const gbpRate = rates['GBP'] || 1;
           const price = eurRate / gbpRate;
+          
+          const eurPrev = prevRates['EUR'] || eurRate;
+          const gbpPrev = prevRates['GBP'] || gbpRate;
+          const prevPrice = eurPrev / gbpPrev;
+          
+          const change = price - prevPrice;
+          const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+          
           return {
             symbol: 'EUR/GBP',
             name: item.name,
             price,
-            change: 0,
-            changePercent: 0,
-            high: price,
-            low: price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
           };
         }
         return null;
@@ -1134,19 +1211,26 @@ async function fetchExchangeRateHost(): Promise<any[]> {
       const rate = rates[item.exchangeRate];
       if (!rate) return null;
       
+      const prevRate = prevRates[item.exchangeRate] || rate;
+      
       let price = rate;
+      let prevPrice = prevRate;
       if (item.symbol.startsWith('USD')) {
         price = 1 / rate;
+        prevPrice = 1 / prevRate;
       }
+      
+      const change = price - prevPrice;
+      const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
       
       return {
         symbol: formatSymbol(item.symbol, 'currencies'),
         name: item.name,
         price,
-        change: 0,
-        changePercent: 0,
-        high: price,
-        low: price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
       };
     }).filter(Boolean);
   } catch (error) {
@@ -1156,10 +1240,11 @@ async function fetchExchangeRateHost(): Promise<any[]> {
 }
 
 // Fixer.io (free tier: 100 requests/month, no API key for basic endpoint)
+// Now calculates daily change using cached previous rates
 async function fetchFixerIO(): Promise<any[]> {
   try {
     // Using fixer.io's free endpoint (limited but works without key)
-    // Note: May require API key for production use
+    // Note: Fixer.io free tier doesn't support historical data, so we estimate change from cached DB data
     const response = await fetch('https://data.fixer.io/api/latest?access_key=free&base=USD&symbols=EUR,GBP,JPY,CHF,AUD,CAD,NZD,CNY,SGD');
     
     if (!response.ok) {
@@ -1173,20 +1258,48 @@ async function fetchFixerIO(): Promise<any[]> {
     
     const rates = data.rates || {};
     
+    // Try to get previous rates from DB for change calculation
+    let prevRatesFromDB: Record<string, number> = {};
+    try {
+      const supabase = getSupabaseClient();
+      const { data: cachedData } = await supabase
+        .from('market_prices')
+        .select('symbol, price')
+        .eq('market_type', 'currencies');
+      
+      if (cachedData) {
+        cachedData.forEach((item: any) => {
+          // Store by currency code (extract from symbol like EUR/USD -> EUR)
+          const currency = item.symbol?.split('/')?.[0];
+          if (currency && item.price) {
+            prevRatesFromDB[currency] = item.price;
+          }
+        });
+      }
+    } catch (e) {
+      console.warn('Fixer.io: Could not fetch previous rates from DB:', e);
+    }
+    
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
         if (item.symbol === 'EURGBP') {
           const eurRate = rates['EUR'] || 1;
           const gbpRate = rates['GBP'] || 1;
           const price = eurRate / gbpRate;
+          
+          // Estimate change from cached DB data
+          const prevPrice = prevRatesFromDB['EUR'] ? prevRatesFromDB['EUR'] / (prevRatesFromDB['GBP'] || 1) : price;
+          const change = price - prevPrice;
+          const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+          
           return {
             symbol: 'EUR/GBP',
             name: item.name,
             price,
-            change: 0,
-            changePercent: 0,
-            high: price,
-            low: price,
+            change,
+            changePercent,
+            high: Math.max(price, prevPrice),
+            low: Math.min(price, prevPrice),
           };
         }
         return null;
@@ -1200,14 +1313,20 @@ async function fetchFixerIO(): Promise<any[]> {
         price = 1 / rate;
       }
       
+      // Get previous price from DB cache for change calculation
+      const currencyCode = item.symbol.startsWith('USD') ? item.exchangeRate : item.symbol.split('/')[0];
+      const prevPrice = prevRatesFromDB[currencyCode] || price;
+      const change = price - prevPrice;
+      const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+      
       return {
         symbol: formatSymbol(item.symbol, 'currencies'),
         name: item.name,
         price,
-        change: 0,
-        changePercent: 0,
-        high: price,
-        low: price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
       };
     }).filter(Boolean);
   } catch (error) {
