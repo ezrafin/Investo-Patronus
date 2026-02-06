@@ -513,6 +513,17 @@ export function Header() {
           role="navigation"
           aria-label="Mobile navigation">
             <div className="container-wide py-4 space-y-1">
+              {/* Auth buttons for non-authenticated users - moved to top */}
+              {!user && (
+                <div className="px-4 mb-4 space-y-2">
+                  <Link to="/auth/login" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 text-sm font-medium border border-border rounded-lg">
+                    {t('buttons.signIn')}
+                  </Link>
+                  <Link to="/auth/register" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-lg">
+                    {t('buttons.register')}
+                  </Link>
+                </div>
+              )}
               {/* Mobile Search */}
               <div className="px-4 mb-4">
                 <GlobalSearch />
@@ -658,16 +669,7 @@ export function Header() {
                       {t('buttons.signOut')}
                     </button>
                   </>
-                ) : (
-                  <>
-                    <Link to="/auth/login" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 text-sm font-medium border border-border rounded-lg">
-                      {t('buttons.signIn')}
-                    </Link>
-                    <Link to="/auth/register" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-lg">
-                      {t('buttons.register')}
-                    </Link>
-                  </>
-                )}
+                ) : null}
               </div>
             </div>
           </motion.nav>
