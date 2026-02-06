@@ -28,6 +28,33 @@ export function ArticleCard({ article, isCompleted = false, onToggleCompleted }:
     }
   };
 
+  const translateDifficulty = (difficulty: string): string => {
+    switch (difficulty) {
+      case 'Beginner':
+        return t('learningHub.difficultyBeginner');
+      case 'Intermediate':
+        return t('learningHub.difficultyIntermediate');
+      case 'Advanced':
+        return t('learningHub.difficultyAdvanced');
+      case 'Expert':
+        return t('learningHub.difficultyExpert');
+      default:
+        return difficulty;
+    }
+  };
+
+  const translateCategory = (category: string): string => {
+    return t(`categories.${category}`, { defaultValue: category });
+  };
+
+  const translateTitle = (id: string, defaultTitle: string): string => {
+    return t(`articles.${id}.title`, { defaultValue: defaultTitle });
+  };
+
+  const translateDescription = (id: string, defaultDescription: string): string => {
+    return t(`articles.${id}.description`, { defaultValue: defaultDescription });
+  };
+
   return (
     <article className={`glass-card p-6 flex flex-col h-full transition-colors ${
       isCompleted ? 'border-2 border-emerald-500' : ''
@@ -35,21 +62,21 @@ export function ArticleCard({ article, isCompleted = false, onToggleCompleted }:
       {/* Header badges */}
       <div className="flex items-center gap-2 mb-4">
         <span className="text-xs px-2.5 py-1 rounded-full bg-secondary/80 text-foreground font-medium">
-          {article.category}
+          {translateCategory(article.category)}
         </span>
         <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${getDifficultyColor(article.difficulty)}`}>
-          {article.difficulty}
+          {translateDifficulty(article.difficulty)}
         </span>
       </div>
 
       {/* Title */}
       <h3 className="text-lg font-semibold text-foreground mb-2 leading-tight">
-        {article.title}
+        {translateTitle(article.id, article.title)}
       </h3>
 
       {/* Description */}
       <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-grow">
-        {article.description}
+        {translateDescription(article.id, article.description)}
       </p>
 
       {/* Author info (only for advanced) */}

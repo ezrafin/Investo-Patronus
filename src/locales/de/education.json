@@ -60,6 +60,38 @@
     "unmark": "Markierung entfernen",
     "read": "Lesen"
   },
+  "categories": {
+    "All": "Alle",
+    "Getting Started": "Erste Schritte",
+    "Stock Basics": "Aktiengrundlagen",
+    "Investment Terms": "Anlagebegriffe",
+    "Risk Management": "Risikomanagement",
+    "Portfolio Basics": "Portfolio-Grundlagen",
+    "Account Types": "Kontotypen",
+    "Technical Analysis": "Technische Analyse",
+    "Options Trading": "Optionshandel",
+    "Quantitative Strategies": "Quantitative Strategien",
+    "Portfolio Theory": "Portfoliotheorie",
+    "Derivatives": "Derivate"
+  },
+  "articles": {
+    "what-is-stock-market": {
+      "title": "Was ist der Aktienmarkt?",
+      "description": "Eine umfassende Einführung in die Funktionsweise von Aktienmärkten, ihre Geschichte und warum sie für Anleger aller Ebenen wichtig sind."
+    },
+    "stocks-vs-bonds": {
+      "title": "Aktien vs. Anleihen verstehen",
+      "description": "Lernen Sie die wichtigsten Unterschiede zwischen Aktien und Anleihen, ihre Risikoprofile und wie Sie beide in Ihrem Portfolio verwenden können."
+    },
+    "how-to-read-quote": {
+      "title": "Wie man Aktienkurse liest",
+      "description": "Entschlüsseln Sie Aktienkurse und verstehen Sie, was Geld, Brief, Volumen und andere Zahlen für Ihre Investitionen bedeuten."
+    },
+    "market-indices-intro": {
+      "title": "Einführung in Marktindizes",
+      "description": "Verstehen Sie, was S&P 500, Dow Jones, NASDAQ und andere Indizes für die Verfolgung der Marktleistung bedeuten."
+    }
+  },
   "articleDetail": {
     "notFoundTitle": "Artikel nicht gefunden",
     "notFoundDescription": "Der gesuchte Artikel existiert nicht oder wurde verschoben.",

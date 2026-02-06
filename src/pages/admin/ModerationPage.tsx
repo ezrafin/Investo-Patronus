@@ -56,7 +56,7 @@ interface PendingReply {
 
 interface PendingEvaluation {
   id: string;
-  user_id: string;
+  user_id: string | null;
   company_slug: string;
   rating: number;
   comment: string | null;
@@ -204,20 +204,24 @@ export default function ModerationPage() {
       if (error) throw error;
 
       // Get user names for each evaluation - include username as fallback
-      const userIds = [...new Set((data || []).map((e: any) => e.user_id))];
-      const { data: profiles } = await supabase
-        .from('profiles')
-        .select('id, display_name, username')
-        .in('id', userIds);
-
-      const profileMap = new Map((profiles || []).map(p => [
-        p.id, 
-        p.display_name || p.username || 'Anonymous'
-      ]));
+      // Filter out NULL user_ids (anonymous evaluations)
+      const userIds = [...new Set((data || []).map((e: any) => e.user_id).filter((id: any): id is string => id !== null))];
+      const profileMap = new Map();
+      
+      if (userIds.length > 0) {
+        const { data: profiles } = await supabase
+          .from('profiles')
+          .select('id, display_name, username')
+          .in('id', userIds);
+        
+        (profiles || []).forEach(p => profileMap.set(p.id, p.display_name || p.username || 'Unknown User'));
+      }
 
       const evaluationsWithNames = (data || []).map((evaluation: any) => ({
         ...evaluation,
-        user_name: profileMap.get(evaluation.user_id) || 'Anonymous',
+        user_name: evaluation.user_id 
+          ? (profileMap.get(evaluation.user_id) || 'Unknown User')
+          : 'Anonymous User',
       }));
 
       setPendingEvaluations(evaluationsWithNames as PendingEvaluation[]);

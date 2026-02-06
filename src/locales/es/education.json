@@ -60,6 +60,38 @@
     "unmark": "Quitar marca",
     "read": "Leer"
   },
+  "categories": {
+    "All": "Todos",
+    "Getting Started": "Primeros pasos",
+    "Stock Basics": "Conceptos básicos de acciones",
+    "Investment Terms": "Términos de inversión",
+    "Risk Management": "Gestión de riesgos",
+    "Portfolio Basics": "Conceptos básicos de cartera",
+    "Account Types": "Tipos de cuentas",
+    "Technical Analysis": "Análisis técnico",
+    "Options Trading": "Operaciones con opciones",
+    "Quantitative Strategies": "Estrategias cuantitativas",
+    "Portfolio Theory": "Teoría de cartera",
+    "Derivatives": "Derivados"
+  },
+  "articles": {
+    "what-is-stock-market": {
+      "title": "¿Qué es el mercado de valores?",
+      "description": "Una introducción completa a cómo funcionan los mercados de valores, su historia y por qué son importantes para inversores de todos los niveles."
+    },
+    "stocks-vs-bonds": {
+      "title": "Entender acciones vs bonos",
+      "description": "Aprende las diferencias clave entre acciones y bonos, sus perfiles de riesgo y cómo usar ambos en tu cartera."
+    },
+    "how-to-read-quote": {
+      "title": "Cómo leer una cotización de acciones",
+      "description": "Descifra las cotizaciones de acciones y entiende qué significan la oferta, la demanda, el volumen y otros números para tus inversiones."
+    },
+    "market-indices-intro": {
+      "title": "Introducción a los índices de mercado",
+      "description": "Entiende qué significan el S&P 500, el Dow Jones, el NASDAQ y otros índices para seguir el rendimiento del mercado."
+    }
+  },
   "articleDetail": {
     "notFoundTitle": "Artículo no encontrado",
     "notFoundDescription": "El artículo que buscas no existe o se movió.",

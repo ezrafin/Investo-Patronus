@@ -60,6 +60,38 @@
     "unmark": "Retirer la marque",
     "read": "Lire"
   },
+  "categories": {
+    "All": "Tous",
+    "Getting Started": "Pour commencer",
+    "Stock Basics": "Bases des actions",
+    "Investment Terms": "Termes d'investissement",
+    "Risk Management": "Gestion des risques",
+    "Portfolio Basics": "Bases du portefeuille",
+    "Account Types": "Types de comptes",
+    "Technical Analysis": "Analyse technique",
+    "Options Trading": "Trading d'options",
+    "Quantitative Strategies": "Stratégies quantitatives",
+    "Portfolio Theory": "Théorie du portefeuille",
+    "Derivatives": "Produits dérivés"
+  },
+  "articles": {
+    "what-is-stock-market": {
+      "title": "Qu'est-ce que le marché boursier ?",
+      "description": "Une introduction complète au fonctionnement des marchés boursiers, leur histoire et leur importance pour les investisseurs de tous niveaux."
+    },
+    "stocks-vs-bonds": {
+      "title": "Comprendre les actions vs les obligations",
+      "description": "Apprenez les différences clés entre les actions et les obligations, leurs profils de risque et comment utiliser les deux dans votre portefeuille."
+    },
+    "how-to-read-quote": {
+      "title": "Comment lire une cotation boursière",
+      "description": "Décodez les cotations boursières et comprenez ce que signifient l'offre, la demande, le volume et d'autres chiffres pour vos investissements."
+    },
+    "market-indices-intro": {
+      "title": "Introduction aux indices boursiers",
+      "description": "Comprenez ce que signifient le S&P 500, le Dow Jones, le NASDAQ et d'autres indices pour suivre la performance du marché."
+    }
+  },
   "articleDetail": {
     "notFoundTitle": "Article introuvable",
     "notFoundDescription": "L'article recherché n'existe pas ou a été déplacé.",

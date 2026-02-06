@@ -60,6 +60,38 @@
     "unmark": "Usuń oznaczenie",
     "read": "Czytaj"
   },
+  "categories": {
+    "All": "Wszystkie",
+    "Getting Started": "Rozpoczęcie",
+    "Stock Basics": "Podstawy akcji",
+    "Investment Terms": "Terminy inwestycyjne",
+    "Risk Management": "Zarządzanie ryzykiem",
+    "Portfolio Basics": "Podstawy portfela",
+    "Account Types": "Typy kont",
+    "Technical Analysis": "Analiza techniczna",
+    "Options Trading": "Handel opcjami",
+    "Quantitative Strategies": "Strategie ilościowe",
+    "Portfolio Theory": "Teoria portfela",
+    "Derivatives": "Instrumenty pochodne"
+  },
+  "articles": {
+    "what-is-stock-market": {
+      "title": "Czym jest giełda?",
+      "description": "Kompleksowe wprowadzenie do funkcjonowania giełd, ich historii i dlaczego są ważne dla inwestorów na wszystkich poziomach."
+    },
+    "stocks-vs-bonds": {
+      "title": "Zrozumienie akcji vs obligacji",
+      "description": "Poznaj kluczowe różnice między akcjami a obligacjami, ich profile ryzyka i jak wykorzystać oba w swoim portfelu."
+    },
+    "how-to-read-quote": {
+      "title": "Jak czytać notowania giełdowe",
+      "description": "Odszyfruj notowania giełdowe i zrozum, co oznaczają cena kupna, cena sprzedaży, wolumen i inne liczby dla Twoich inwestycji."
+    },
+    "market-indices-intro": {
+      "title": "Wprowadzenie do indeksów giełdowych",
+      "description": "Zrozum, co oznaczają S&P 500, Dow Jones, NASDAQ i inne indeksy dla śledzenia wyników rynku."
+    }
+  },
   "articleDetail": {
     "notFoundTitle": "Nie znaleziono artykułu",
     "notFoundDescription": "Artykuł, którego szukasz, nie istnieje lub został przeniesiony.",

@@ -60,6 +60,38 @@
     "unmark": "取消标记",
     "read": "阅读"
   },
+  "categories": {
+    "All": "全部",
+    "Getting Started": "入门指南",
+    "Stock Basics": "股票基础",
+    "Investment Terms": "投资术语",
+    "Risk Management": "风险管理",
+    "Portfolio Basics": "投资组合基础",
+    "Account Types": "账户类型",
+    "Technical Analysis": "技术分析",
+    "Options Trading": "期权交易",
+    "Quantitative Strategies": "量化策略",
+    "Portfolio Theory": "投资组合理论",
+    "Derivatives": "衍生品"
+  },
+  "articles": {
+    "what-is-stock-market": {
+      "title": "什么是股票市场？",
+      "description": "全面介绍股票市场的运作方式、历史以及为什么它对各级投资者都很重要。"
+    },
+    "stocks-vs-bonds": {
+      "title": "理解股票与债券",
+      "description": "了解股票和债券之间的主要区别、它们的风险特征以及如何在投资组合中使用两者。"
+    },
+    "how-to-read-quote": {
+      "title": "如何阅读股票报价",
+      "description": "解读股票报价，了解买入价、卖出价、成交量和其他数字对您的投资意味着什么。"
+    },
+    "market-indices-intro": {
+      "title": "市场指数介绍",
+      "description": "了解标普500、道琼斯、纳斯达克和其他指数对跟踪市场表现的意义。"
+    }
+  },
   "articleDetail": {
     "notFoundTitle": "未找到文章",
     "notFoundDescription": "你要找的文章不存在或已被移动。",

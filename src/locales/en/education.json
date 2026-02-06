@@ -60,6 +60,38 @@
     "unmark": "Unmark",
     "read": "Read"
   },
+  "categories": {
+    "All": "All",
+    "Getting Started": "Getting Started",
+    "Stock Basics": "Stock Basics",
+    "Investment Terms": "Investment Terms",
+    "Risk Management": "Risk Management",
+    "Portfolio Basics": "Portfolio Basics",
+    "Account Types": "Account Types",
+    "Technical Analysis": "Technical Analysis",
+    "Options Trading": "Options Trading",
+    "Quantitative Strategies": "Quantitative Strategies",
+    "Portfolio Theory": "Portfolio Theory",
+    "Derivatives": "Derivatives"
+  },
+  "articles": {
+    "what-is-stock-market": {
+      "title": "What is the Stock Market?",
+      "description": "A comprehensive introduction to how stock markets work, their history, and why they matter for investors of all levels."
+    },
+    "stocks-vs-bonds": {
+      "title": "Understanding Stocks vs Bonds",
+      "description": "Learn the key differences between stocks and bonds, their risk profiles, and how to use both in your portfolio."
+    },
+    "how-to-read-quote": {
+      "title": "How to Read a Stock Quote",
+      "description": "Decode stock quotes and understand what bid, ask, volume, and other numbers mean for your investments."
+    },
+    "market-indices-intro": {
+      "title": "Introduction to Market Indices",
+      "description": "Understand what S&P 500, Dow Jones, NASDAQ, and other indices mean for tracking market performance."
+    }
+  },
   "articleDetail": {
     "notFoundTitle": "Article Not Found",
     "notFoundDescription": "The article you're looking for doesn't exist or has been moved.",

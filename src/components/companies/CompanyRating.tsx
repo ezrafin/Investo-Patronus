@@ -21,14 +21,14 @@ interface CompanyRatingProps {
 
 interface Evaluation {
   id: string;
-  user_id: string;
+  user_id: string | null;
   rating: number;
   comment: string | null;
   created_at: string;
   profiles?: {
     display_name: string | null;
     avatar_url: string | null;
-  };
+  } | null;
 }
 
 export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
@@ -62,24 +62,35 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
 
       if (error) throw error;
 
-      // Fetch profiles for evaluations
+      // Fetch profiles for evaluations (only for registered users)
       if (evals && evals.length > 0) {
-        const userIds = [...new Set(evals.map(e => e.user_id))];
-        const { data: profiles } = await supabase
-          .from('profiles')
-          .select('id, display_name, avatar_url')
-          .in('id', userIds);
+        const userIds = [...new Set(evals.map(e => e.user_id).filter((id): id is string => id !== null))];
+        const profileMap = new Map();
         
-        const profileMap = new Map(profiles?.map(p => [p.id, p]) || []);
+        if (userIds.length > 0) {
+          const { data: profiles } = await supabase
+            .from('profiles')
+            .select('id, display_name, avatar_url')
+            .in('id', userIds);
+          
+          profiles?.forEach(p => profileMap.set(p.id, p));
+        }
         
         let evalsWithProfiles = evals.map(e => ({
           ...e,
-          profiles: profileMap.get(e.user_id) || null
+          profiles: e.user_id ? (profileMap.get(e.user_id) || null) : null
         }));
 
         // If user has following, prioritize evaluations from followed users
         if (user && followingIds.length > 0) {
           evalsWithProfiles.sort((a, b) => {
+            if (!a.user_id || !b.user_id) {
+              // Anonymous evaluations go to the end
+              if (!a.user_id && b.user_id) return 1;
+              if (a.user_id && !b.user_id) return -1;
+              return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+            }
+            
             const aIsFollowed = followingIds.includes(a.user_id);
             const bIsFollowed = followingIds.includes(b.user_id);
             
@@ -119,11 +130,6 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
   };
 
   const handleSubmit = async () => {
-    if (!user) {
-      toast.error(t('toast.pleaseSignInToRate', { ns: 'ui' }));
-      return;
-    }
-
     if (userRating === 0) {
       toast.error(t('toast.pleaseSelectRating', { ns: 'ui' }));
       return;
@@ -131,8 +137,8 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
 
     setSubmitting(true);
     try {
-      if (existingEvaluation) {
-        // Update existing evaluation
+      if (user && existingEvaluation) {
+        // Update existing evaluation (only for registered users)
         const { error } = await supabase
           .from('company_evaluations')
           .update({
@@ -144,23 +150,46 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
         if (error) throw error;
         toast.success(t('toast.evaluationUpdated', { ns: 'ui' }));
       } else {
-        // Create new evaluation - requires moderation if has comment
+        // Create new evaluation
         const hasComment = userComment.trim().length > 0;
-        const { error } = await supabase
-          .from('company_evaluations')
-          .insert({
-            user_id: user.id,
-            company_slug: companySlug,
-            rating: userRating,
-            comment: userComment.trim() || null,
-            is_approved: !hasComment, // Auto-approve if no comment, otherwise needs moderation
-          });
+        
+        if (user) {
+          // Registered user: auto-approve if no comment, otherwise needs moderation
+          const { error } = await supabase
+            .from('company_evaluations')
+            .insert({
+              user_id: user.id,
+              company_slug: companySlug,
+              rating: userRating,
+              comment: userComment.trim() || null,
+              is_approved: !hasComment,
+            });
 
-        if (error) throw error;
-        toast.success(hasComment ? t('toast.reviewSubmittedForModeration', { ns: 'ui' }) : t('toast.thankYouForEvaluation', { ns: 'ui' }));
+          if (error) throw error;
+          toast.success(hasComment ? t('toast.reviewSubmittedForModeration', { ns: 'ui' }) : t('toast.thankYouForEvaluation', { ns: 'ui' }));
+        } else {
+          // Anonymous user: always requires moderation (trigger will set is_approved = false)
+          const { error } = await supabase
+            .from('company_evaluations')
+            .insert({
+              user_id: null,
+              company_slug: companySlug,
+              rating: userRating,
+              comment: userComment.trim() || null,
+              is_approved: false, // Always false for anonymous users
+            });
+
+          if (error) throw error;
+          toast.success(t('toast.reviewSubmittedForModeration', { ns: 'ui' }) || 'Your evaluation has been submitted and will be reviewed by moderators.');
+        }
       }
 
       setShowCommentForm(false);
+      // Reset form for anonymous users (they can't see their pending evaluation)
+      if (!user) {
+        setUserRating(0);
+        setUserComment('');
+      }
       loadEvaluations();
     } catch (error: any) {
       toast.error(error.message || t('errors.failedToPost'));
@@ -210,11 +239,12 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
       </div>
 
       {/* User Rating Section */}
-      {user ? (
-        <div className="p-4 rounded-lg border border-border bg-secondary/30">
-          <p className="text-sm text-muted-foreground mb-3">
-            {existingEvaluation ? t('toast.updateRating') : t('toast.rateOrganization')}
-          </p>
+      <div className="p-4 rounded-lg border border-border bg-secondary/30">
+        {user ? (
+          <>
+            <p className="text-sm text-muted-foreground mb-3">
+              {existingEvaluation ? t('toast.updateRating') : t('toast.rateOrganization')}
+            </p>
           <div className="space-y-4 mb-3">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
@@ -302,17 +332,105 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
               {submitting ? t('editor.submitting', { ns: 'forum' }) : t('toast.submitRating')}
             </Button>
           )}
-        </div>
-      ) : (
-        <div className="p-4 rounded-lg border border-border bg-secondary/30 text-center">
-          <p className="text-sm text-muted-foreground mb-2">
-            Sign in to rate this organization
-          </p>
-          <Link to="/auth/login">
-            <Button size="sm">Sign In</Button>
-          </Link>
-        </div>
-      )}
+          </>
+        ) : (
+          <>
+            <p className="text-sm text-muted-foreground mb-3">
+              {t('toast.rateOrganization') || 'Rate this organization'}
+            </p>
+            <p className="text-xs text-muted-foreground mb-3">
+              You can submit an evaluation without signing in. All anonymous evaluations require moderation before being published.
+            </p>
+            <div className="space-y-4 mb-3">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="rating-slider-anonymous">Rating (0-100)</Label>
+                  <span className={cn('text-lg font-bold', getRatingColor(userRating))}>
+                    {userRating}/100
+                  </span>
+                </div>
+                <Slider
+                  id="rating-slider-anonymous"
+                  min={0}
+                  max={100}
+                  step={1}
+                  value={[userRating]}
+                  onValueChange={(value) => setUserRating(value[0])}
+                  className="w-full"
+                />
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span>0</span>
+                  <span>50</span>
+                  <span>100</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Input
+                  type="number"
+                  min={0}
+                  max={100}
+                  value={userRating}
+                  onChange={(e) => {
+                    const value = parseInt(e.target.value) || 0;
+                    setUserRating(Math.max(0, Math.min(100, value)));
+                  }}
+                  className="w-20"
+                  placeholder="0-100"
+                />
+                <span className="text-sm text-muted-foreground">/ 100</span>
+              </div>
+            </div>
+            
+            {!showCommentForm && userRating > 0 && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowCommentForm(true)}
+              >
+                {t('toast.addComment') || 'Add Comment'}
+              </Button>
+            )}
+
+            {showCommentForm && (
+              <div className="space-y-3 mt-3">
+                <Textarea
+                  placeholder={t('toast.shareExperience') || 'Share your experience...'}
+                  value={userComment}
+                  onChange={(e) => setUserComment(e.target.value)}
+                  rows={3}
+                />
+                <div className="flex gap-2">
+                  <Button
+                    size="sm"
+                    onClick={handleSubmit}
+                    disabled={submitting || userRating === 0}
+                  >
+                    {submitting ? (t('editor.submitting', { ns: 'forum' }) || 'Submitting...') : (t('editor.submit', { ns: 'forum' }) || 'Submit')}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setShowCommentForm(false)}
+                  >
+                    {t('editor.cancel', { ns: 'forum' }) || 'Cancel'}
+                  </Button>
+                </div>
+              </div>
+            )}
+
+            {!showCommentForm && userRating > 0 && (
+              <Button
+                size="sm"
+                className="ml-2"
+                onClick={handleSubmit}
+                disabled={submitting}
+              >
+                {submitting ? (t('editor.submitting', { ns: 'forum' }) || 'Submitting...') : (t('toast.submitRating') || 'Submit Rating')}
+              </Button>
+            )}
+          </>
+        )}
+      </div>
 
       {/* Evaluations List */}
       {evaluations.length > 0 ? (
@@ -334,7 +452,7 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
                     )}
                     <div>
                       <span className="text-sm font-medium">
-                        {evaluation.profiles?.display_name || 'Anonymous'}
+                        {evaluation.user_id ? (evaluation.profiles?.display_name || 'Anonymous') : 'Anonymous User'}
                       </span>
                       <div className="flex items-center gap-2">
                         <span className={cn('text-lg font-bold', getRatingColor(evaluation.rating))}>

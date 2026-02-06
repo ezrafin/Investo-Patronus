@@ -118,7 +118,7 @@ export default function LearningPage() {
                         <span>
                           {category.name === 'All'
                             ? t('learningHub.filterAllLevels')
-                            : category.name}
+                            : t(`categories.${category.name}`, { defaultValue: category.name })}
                         </span>
                         <span className="bg-secondary px-2 py-0.5 rounded-full text-xs">{category.count}</span>
                       </button>
@@ -216,7 +216,7 @@ export default function LearningPage() {
                     ? t('learningHub.articlesCountSingle', { count: filteredArticles.length })
                     : t('learningHub.articlesCount', { count: filteredArticles.length })}
                   {selectedCategory && selectedCategory !== 'All' &&
-                    ` ${t('learningHub.articlesInCategory', { category: selectedCategory })}`}
+                    ` ${t('learningHub.articlesInCategory', { category: t(`categories.${selectedCategory}`, { defaultValue: selectedCategory }) })}`}
                 </span>
               </div>
               <div className="grid sm:grid-cols-2 gap-6">
