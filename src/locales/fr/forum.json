@@ -147,7 +147,9 @@
     "emptyDescription": "Soyez le premier participant et gagnez de la réputation !",
     "labelReputation": "Réputation",
     "labelPosts": "Messages",
-    "anonymous": "Anonyme"
+    "anonymous": "Anonyme",
+    "signInToSee": "Connectez-vous pour voir le classement",
+    "signIn": "Se connecter"
   },
   "notifications": {
     "replyTitle": "Nouvelle réponse dans votre discussion",

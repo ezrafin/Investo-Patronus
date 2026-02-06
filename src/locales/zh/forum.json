@@ -112,7 +112,9 @@
     "emptyDescription": "成为第一个参与者并赚取声望！",
     "labelReputation": "声望",
     "labelPosts": "帖子",
-    "anonymous": "匿名"
+    "anonymous": "匿名",
+    "signInToSee": "登录以查看排行榜",
+    "signIn": "登录"
   },
   "notifications": {
     "replyTitle": "您的讨论有新回复",

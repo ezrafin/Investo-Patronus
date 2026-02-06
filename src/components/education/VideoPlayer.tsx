@@ -89,9 +89,12 @@ export function VideoPlayer({
     if (!nextVideoUrl) return;
 
     // Remove existing prefetch link if any (with safety check)
-    if (prefetchLinkRef.current && document.head.contains(prefetchLinkRef.current)) {
+    if (prefetchLinkRef.current) {
       try {
-        document.head.removeChild(prefetchLinkRef.current);
+        // Check if element still has a parent before removing
+        if (prefetchLinkRef.current.parentNode === document.head) {
+          document.head.removeChild(prefetchLinkRef.current);
+        }
       } catch (error) {
         // Element may have been removed already, ignore error
         logger.warn('Failed to remove prefetch link:', error);
@@ -107,9 +110,12 @@ export function VideoPlayer({
     prefetchLinkRef.current = link;
 
     return () => {
-      if (prefetchLinkRef.current && document.head.contains(prefetchLinkRef.current)) {
+      if (prefetchLinkRef.current) {
         try {
-          document.head.removeChild(prefetchLinkRef.current);
+          // Check if element still has a parent before removing
+          if (prefetchLinkRef.current.parentNode === document.head) {
+            document.head.removeChild(prefetchLinkRef.current);
+          }
         } catch (error) {
           // Element may have been removed already, ignore error
           logger.warn('Failed to remove prefetch link in cleanup:', error);
@@ -441,9 +447,12 @@ export function VideoPlayer({
       if (controlsTimeoutRef.current) {
         clearTimeout(controlsTimeoutRef.current);
       }
-      if (prefetchLinkRef.current && document.head.contains(prefetchLinkRef.current)) {
+      if (prefetchLinkRef.current) {
         try {
-          document.head.removeChild(prefetchLinkRef.current);
+          // Check if element still has a parent before removing
+          if (prefetchLinkRef.current.parentNode === document.head) {
+            document.head.removeChild(prefetchLinkRef.current);
+          }
         } catch (error) {
           // Element may have been removed already, ignore error
           logger.warn('Failed to remove prefetch link in component unmount:', error);

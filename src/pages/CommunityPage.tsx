@@ -16,7 +16,6 @@ export default function CommunityPage() {
       <SEOHead
         title={t('communityPage.seoTitle')}
         description={t('communityPage.seoDescription')}
-        keywords="investment community, financial community, trading community, investor community, financial social network, investment social platform"
       />
       <div className="section-spacing">
         <div className="container-wide">

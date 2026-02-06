@@ -147,7 +147,9 @@
     "emptyDescription": "Станьте первым участником и заработайте репутацию!",
     "labelReputation": "Репутация",
     "labelPosts": "Посты",
-    "anonymous": "Аноним"
+    "anonymous": "Аноним",
+    "signInToSee": "Войдите, чтобы увидеть таблицу лидеров",
+    "signIn": "Войти"
   },
   "notifications": {
     "replyTitle": "Новый ответ в вашем обсуждении",

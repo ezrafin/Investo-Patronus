@@ -147,7 +147,9 @@
     "emptyDescription": "¡Sé el primer participante y gana reputación!",
     "labelReputation": "Reputación",
     "labelPosts": "Publicaciones",
-    "anonymous": "Anónimo"
+    "anonymous": "Anónimo",
+    "signInToSee": "Inicia sesión para ver la tabla de líderes",
+    "signIn": "Iniciar sesión"
   },
   "notifications": {
     "replyTitle": "Nueva respuesta en tu discusión",

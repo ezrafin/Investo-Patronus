@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useUser } from '@/context/UserContext';
 import { supabase } from '@/integrations/supabase/client';
 import { Trophy, Medal, Award, TrendingUp } from 'lucide-react';
 import { UserAvatar } from '@/components/user/UserAvatar';
@@ -21,6 +23,7 @@ interface LeaderboardEntry {
 type LeaderboardType = 'reputation' | 'posts';
 
 export function Leaderboard() {
+  const { user } = useUser();
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [type, setType] = useState<LeaderboardType>('reputation');
@@ -28,10 +31,16 @@ export function Leaderboard() {
   const locale = getLocaleForLanguage(language);
 
   useEffect(() => {
-    loadLeaderboard();
-  }, [type]);
+    if (user) {
+      loadLeaderboard();
+    } else {
+      setLoading(false);
+    }
+  }, [type, user]);
 
   const loadLeaderboard = async () => {
+    if (!user) return;
+
     setLoading(true);
     try {
       let query = (supabase
@@ -87,6 +96,17 @@ export function Leaderboard() {
         return '';
     }
   };
+
+  if (!user) {
+    return (
+      <div className="premium-card p-6 text-center">
+        <p className="text-muted-foreground mb-4">{t('leaderboard.signInToSee')}</p>
+        <Link to="/auth/login" className="text-primary hover:underline">
+          {t('leaderboard.signIn')}
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="premium-card p-6">

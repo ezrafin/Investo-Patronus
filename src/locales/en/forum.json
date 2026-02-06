@@ -112,7 +112,9 @@
     "emptyDescription": "Be the first participant and earn reputation!",
     "labelReputation": "Reputation",
     "labelPosts": "Posts",
-    "anonymous": "Anonymous"
+    "anonymous": "Anonymous",
+    "signInToSee": "Sign in to see leaderboard",
+    "signIn": "Sign in"
   },
   "notifications": {
     "replyTitle": "New reply in your discussion",

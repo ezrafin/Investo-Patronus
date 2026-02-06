@@ -146,7 +146,6 @@ export default function NewsPage() {
       <SEOHead
         title="Financial News & Market Updates"
         description="Stay informed with the latest financial news, market updates, and economic insights. Get real-time news covering stocks, indices, crypto, commodities, and political events affecting global markets."
-        keywords="financial news, market news, stock market news, crypto news, economic news, market updates, financial market analysis, investment news, trading news, market insights"
         isNewsPage={true}
       />
       <section ref={sectionRef} className="section-spacing">

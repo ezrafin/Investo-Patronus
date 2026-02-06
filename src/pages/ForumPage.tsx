@@ -195,7 +195,6 @@ export default function ForumPage() {
       <SEOHead 
         title={t('pageTitle')} 
         description={t('pageDescription')}
-        keywords="financial forum, investment discussion, trading forum, stock market discussion, crypto forum, investment community, financial community, trading community, market discussion"
         isForumPage={true}
       />
       {/* Hero */}

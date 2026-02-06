@@ -221,7 +221,6 @@ export default function CoursePlatformPage() {
       <SEOHead
         title={seoTitle}
         description={seoDescription}
-        keywords="investment courses, financial education, trading courses, economics courses, finance courses, investment education, financial market courses, online finance courses"
         isCoursePage={true}
       />
       <div className="pt-20 pb-8 min-h-screen">

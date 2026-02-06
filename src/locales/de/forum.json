@@ -147,7 +147,9 @@
     "emptyDescription": "Seien Sie der erste Teilnehmer und verdienen Sie Reputation!",
     "labelReputation": "Reputation",
     "labelPosts": "Beiträge",
-    "anonymous": "Anonym"
+    "anonymous": "Anonym",
+    "signInToSee": "Melden Sie sich an, um die Bestenliste zu sehen",
+    "signIn": "Anmelden"
   },
   "notifications": {
     "replyTitle": "Neue Antwort in Ihrer Diskussion",

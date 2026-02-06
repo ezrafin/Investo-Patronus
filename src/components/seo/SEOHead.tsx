@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import { SEOData, updateDocumentHead } from '@/utils/seo';
+import { SEOData, updateDocumentHead, getKeywordsForLanguage, type PageType } from '@/utils/seo';
 import { useI18n } from '@/context/I18nContext';
 import { SUPPORTED_LANGUAGES, type SupportedLanguage } from '@/lib/i18n';
 import { logger } from '@/lib/logger';
@@ -83,6 +83,32 @@ export function SEOHead({
     location = { pathname: typeof window !== 'undefined' ? window.location.pathname : '/' };
   }
 
+  // Determine page type for keyword generation
+  const pageType: PageType = useMemo(() => {
+    if (isHomepage) return 'home';
+    if (isNewsPage) return 'news';
+    if (isCoursePage) return 'courses';
+    if (isForumPage) return 'forum';
+    const pathname = location?.pathname || (typeof window !== 'undefined' ? window.location.pathname : '/');
+    if (pathname.includes('/markets')) return 'markets';
+    if (pathname.includes('/analytics')) return 'analytics';
+    if (pathname.includes('/companies')) return 'companies';
+    if (pathname.includes('/community')) return 'community';
+    if (pathname.includes('/about')) return 'about';
+    return 'default';
+  }, [isHomepage, isNewsPage, isCoursePage, isForumPage, location?.pathname]);
+
+  // Generate language-specific keywords if not provided explicitly
+  // If keywords are provided, combine them with language-specific ones
+  const finalKeywords = useMemo(() => {
+    const languageKeywords = getKeywordsForLanguage(language, pageType);
+    if (keywords) {
+      // Combine provided keywords with language-specific ones
+      return `${keywords}, ${languageKeywords}`;
+    }
+    return languageKeywords;
+  }, [keywords, language, pageType]);
+
   useEffect(() => {
     try {
       // Get pathname - prefer location from hook, fallback to window
@@ -102,7 +128,7 @@ export function SEOHead({
       updateDocumentHead({
         title,
         description,
-        keywords,
+        keywords: finalKeywords,
         image,
         url: fullUrl,
         canonical: fullUrl,
@@ -127,7 +153,7 @@ export function SEOHead({
     language,
     title,
     description,
-    keywords,
+    finalKeywords,
     image,
     type,
     author,
