@@ -26,6 +26,7 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
   });
 
   const isDark = variant === 'dark';
+  const isPriority = index < 6; // Load first 6 images immediately
 
   const getInitials = (name: string) => {
     return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
@@ -60,6 +61,7 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
               alt={article.title}
               aspectRatio="wide"
               fallback={getFallbackImage()}
+              priority={isPriority}
               className="w-full h-full group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />

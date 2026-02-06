@@ -12,9 +12,8 @@ import { UserAvatar } from '@/components/user/UserAvatar';
 import { EDUCATION_BASE_PATH, educationRoutes } from '@/lib/educationRoutes';
 import { useTranslation } from '@/hooks/useTranslation';
 import { GlobalSearch } from '@/components/GlobalSearch';
-import { useI18n } from '@/context/I18nContext';
-import { LANGUAGE_NAMES, type SupportedLanguage } from '@/lib/i18n';
 import { themes } from '@/components/layout/ThemeSwitcher';
+import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
 import { applyTheme } from '@/lib/themeLoader';
 import { cn } from '@/lib/utils';
 import { preloadImages } from '@/lib/utils/preloadImages';
@@ -31,13 +30,11 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [themeMenuOpen, setThemeMenuOpen] = useState(false);
   const location = useLocation();
   const { user, profile, signOut } = useUser();
   const navigate = useNavigate();
   const { preferences, updatePreferences } = useUserPreferences();
-  const { changeLanguage, language } = useI18n();
 
   // Block body scroll when mobile menu is open
   useEffect(() => {
@@ -302,6 +299,7 @@ export function Header() {
           {/* Live indicator + CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <GlobalSearch />
+            <LanguageSwitcher />
             {user && <NotificationDropdown />}
             {user ? (
               <DropdownMenu modal={false}>
@@ -334,60 +332,6 @@ export function Header() {
                     <BookOpen className="mr-2 h-4 w-4" />
                     {t('buttons.bookmarks')}
                   </DropdownMenuItem>
-                  
-                  {/* Language Toggle */}
-                  <div>
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setLanguageMenuOpen(!languageMenuOpen);
-                        setThemeMenuOpen(false);
-                      }}
-                      className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors w-full hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                    >
-                      <Globe className="mr-2 h-4 w-4" />
-                      {t('common.language')}
-                      <ChevronDown className={`ml-auto h-4 w-4 transition-transform duration-200 ${languageMenuOpen ? 'rotate-180' : ''}`} />
-                    </button>
-                    
-                    <AnimatePresence>
-                      {languageMenuOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="overflow-hidden"
-                        >
-                          <div className="py-1 pl-4 space-y-0.5">
-                            {Object.entries(LANGUAGE_NAMES).map(([code, name]) => (
-                              <button
-                                key={code}
-                                type="button"
-                                onClick={async (e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  await changeLanguage(code as SupportedLanguage);
-                                  setLanguageMenuOpen(false);
-                                }}
-                                className={`w-full flex items-center gap-2 px-2 py-1.5 text-sm rounded-sm transition-colors text-left hover:bg-accent hover:text-accent-foreground ${
-                                  language === code ? 'bg-secondary/50' : ''
-                                }`}
-                              >
-                                <Globe className="h-3.5 w-3.5 text-muted-foreground" />
-                                <span className="flex-1">{name}</span>
-                                {language === code && (
-                                  <span className="text-primary text-xs">✓</span>
-                                )}
-                              </button>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
                   
                   {/* Theme Toggle Submenu */}
                   <div>
@@ -486,18 +430,20 @@ export function Header() {
             )}
           </div>
 
-          {/* Mobile menu button */}
-          <button 
-            type="button" 
-            className="lg:hidden p-2 text-muted-foreground hover:text-foreground transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center" 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? t('common.closeMenu') : t('common.openMenu')}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-navigation"
-          >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
+          {/* Mobile: Language switcher and menu button */}
+          <div className="lg:hidden flex items-center gap-2">
+            <LanguageSwitcher />
+            <button 
+              type="button" 
+              className="p-2 text-muted-foreground hover:text-foreground transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center" 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? t('common.closeMenu') : t('common.openMenu')}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
       </nav>
 
       {/* Mobile Navigation */}
@@ -572,40 +518,6 @@ export function Header() {
                       <BookOpen className="h-4 w-4" />
                       {t('buttons.bookmarks')}
                     </Link>
-                    
-                    {/* Language Toggle */}
-                    <button
-                      onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                      className="flex items-center gap-2 w-full px-4 py-3 text-sm font-medium border border-border rounded-lg"
-                    >
-                      <Globe className="h-4 w-4" />
-                      {t('common.language')}
-                      <span className="ml-auto">{languageMenuOpen ? '▼' : '▶'}</span>
-                    </button>
-                    
-                    {languageMenuOpen && (
-                      <div className="pl-4 space-y-1">
-                        {Object.entries(LANGUAGE_NAMES).map(([code, name]) => (
-                          <button
-                            key={code}
-                            onClick={async () => {
-                              await changeLanguage(code as SupportedLanguage);
-                              await updatePreferences({ language: code as SupportedLanguage });
-                              setLanguageMenuOpen(false);
-                              setMobileMenuOpen(false);
-                            }}
-                            className={`flex items-center gap-2 w-full px-4 py-2 text-sm rounded-lg border transition-colors ${
-                              language === code
-                                ? 'bg-secondary border-border'
-                                : 'border-border hover:bg-secondary/30'
-                            }`}
-                          >
-                            {name}
-                            {language === code && <span className="ml-auto">✓</span>}
-                          </button>
-                        ))}
-                      </div>
-                    )}
                     
                     {/* Mobile Theme Toggle */}
                     <button
