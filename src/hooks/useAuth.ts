@@ -65,7 +65,7 @@ interface UseAuthReturn {
   signIn: (email: string, password: string) => Promise<{ error: any }>;
   signUp: (email: string, password: string, username?: string) => Promise<{ error: any }>;
   signOut: () => Promise<void>;
-  signInWithOAuth: (provider: 'google' | 'github') => Promise<void>;
+  signInWithOAuth: (provider: 'google' | 'github' | 'apple') => Promise<void>;
   updateProfile: (updates: Partial<UserProfile>) => Promise<{ error: any }>;
 }
 
@@ -325,9 +325,23 @@ export function useAuth(): UseAuthReturn {
     setLoading(false);
   };
 
-  const signInWithOAuth = async (provider: 'google' | 'github') => {
+  const signInWithOAuth = async (provider: 'google' | 'github' | 'apple') => {
     try {
-      // Use production domain for OAuth redirect
+      // Use Lovable Cloud for Google and Apple
+      if (provider === 'google' || provider === 'apple') {
+        const { lovable } = await import('@/integrations/lovable');
+        const result = await lovable.auth.signInWithOAuth(provider, {
+          redirect_uri: window.location.origin,
+        });
+        
+        if (result.error) {
+          logger.error('OAuth error:', result.error);
+          throw result.error;
+        }
+        return;
+      }
+      
+      // Fallback for other providers (GitHub)
       const productionDomain = window.location.origin.includes('localhost') 
         ? window.location.origin 
         : 'https://investopatronus.com';
@@ -338,8 +352,7 @@ export function useAuth(): UseAuthReturn {
         options: { 
           redirectTo: redirectUrl,
           skipBrowserRedirect: false,
-          // Request additional scopes if needed
-          scopes: provider === 'google' ? 'email profile' : 'user:email',
+          scopes: 'user:email',
         },
       });
       
