@@ -443,6 +443,7 @@ export function Header() {
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
+        </div>
       </nav>
 
       {/* Mobile Navigation */}
