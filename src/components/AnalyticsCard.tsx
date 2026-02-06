@@ -45,6 +45,10 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
     return images[index % images.length];
   };
 
+  // Always show image section - use fallback if article.imageUrl is not provided or fails
+  const fallbackImage = getFallbackImage();
+  const imageToUse = article.imageUrl || fallbackImage;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -60,46 +64,31 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
             : 'premium-card hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5'
         }`}
       >
-        {/* Article Image */}
-        {article.imageUrl && (
-          <div className="relative h-32 sm:h-40 w-full overflow-hidden bg-muted">
-            <LazyImage
-              src={article.imageUrl}
-              alt={article.title}
-              aspectRatio="wide"
-              fallback={getFallbackImage()}
-              priority={isPriority}
-              className="w-full h-full group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-            <span className={`absolute bottom-2 sm:bottom-3 left-2 sm:left-3 badge-outline text-xs bg-background/80 backdrop-blur-sm ${isDark ? 'border-border/50 text-muted-foreground' : ''}`}>
-              {typeLabels[article.type] || article.type}
-            </span>
-          </div>
-        )}
+        {/* Article Image - always show, use fallback if needed */}
+        <div className="relative h-32 sm:h-40 w-full overflow-hidden bg-muted">
+          <LazyImage
+            src={imageToUse}
+            alt={article.title}
+            aspectRatio="wide"
+            fallback={fallbackImage}
+            priority={isPriority}
+            className="w-full h-full group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+          <span className={`absolute bottom-2 sm:bottom-3 left-2 sm:left-3 badge-outline text-xs bg-background/80 backdrop-blur-sm ${isDark ? 'border-border/50 text-muted-foreground' : ''}`}>
+            {typeLabels[article.type] || article.type}
+          </span>
+        </div>
 
         <div className="p-4 sm:p-6 flex flex-col h-full">
-          {/* Meta - only show if no image */}
-          {!article.imageUrl && (
-            <div className="flex items-center gap-3 mb-4">
-              <span className={`badge-outline text-xs ${isDark ? 'border-border/50 text-muted-foreground' : ''}`}>
-                {typeLabels[article.type] || article.type}
-              </span>
-              <span className="text-xs text-muted-foreground flex items-center gap-1">
-                <Clock className="h-3 w-3" />
-                {article.readTime}
-              </span>
-            </div>
-          )}
-
           {/* Title */}
           <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2">
             {translatedTitle}
           </h3>
 
           {/* Excerpt */}
-          <p className="text-xs sm:text-sm text-muted-foreground flex-1 leading-relaxed line-clamp-4">
-            {translatedExcerpt}
+          <p className="text-xs sm:text-sm text-muted-foreground flex-1 leading-relaxed line-clamp-4 break-words overflow-hidden">
+            {translatedExcerpt || article.excerpt || ''}
           </p>
 
           {/* Footer */}

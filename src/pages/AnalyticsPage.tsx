@@ -11,6 +11,9 @@ import { authors } from '@/data/authors';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { usePageBillCollection } from '@/hooks/usePageBillCollection';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { useI18n } from '@/context/I18nContext';
+import { getArticleLanguage } from '@/lib/api/utils';
+import { AnalyticsArticle } from '@/lib/api/types';
 
 const ITEMS_PER_PAGE = 15;
 
@@ -19,6 +22,7 @@ export default function AnalyticsPage() {
   const { CoinComponent } = usePageBillCollection({ billId: 'analytics_page_visit' });
   const { t } = useTranslation({ namespace: 'analytics' });
   const { t: tUi } = useTranslation({ namespace: 'ui' });
+  const { language } = useI18n();
   const [activeFilter, setActiveFilter] = useState('all');
   const [activeAuthor, setActiveAuthor] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,11 +32,36 @@ export default function AnalyticsPage() {
     type: activeFilter === 'all' ? undefined : activeFilter,
   });
 
-  // Filter articles by author
+  // Filter articles by author and sort by language when "all authors" is selected
   const filteredArticles = useMemo(() => {
-    if (!activeAuthor) return articles;
-    return articles.filter((article) => article.author === activeAuthor);
-  }, [articles, activeAuthor]);
+    let result = articles;
+    
+    // Filter by author if specific author is selected
+    if (activeAuthor) {
+      result = result.filter((article) => article.author === activeAuthor);
+    }
+    
+    // When "all authors" is selected, sort by language (current language first)
+    if (!activeAuthor) {
+      const currentLangArticles = result.filter(
+        (article) => getArticleLanguage(article) === language
+      );
+      const otherArticles = result.filter(
+        (article) => getArticleLanguage(article) !== language
+      );
+      
+      // Sort each group by date (newest first)
+      const sortByDate = (a: AnalyticsArticle, b: AnalyticsArticle) => 
+        new Date(b.date).getTime() - new Date(a.date).getTime();
+      
+      result = [
+        ...currentLangArticles.sort(sortByDate),
+        ...otherArticles.sort(sortByDate)
+      ];
+    }
+    
+    return result;
+  }, [articles, activeAuthor, language]);
 
   // Calculate article counts per author dynamically
   const authorCounts = useMemo(() => {

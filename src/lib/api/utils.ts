@@ -114,3 +114,27 @@ export function getAnalyticsImage(slug: string): string {
   // LazyImage component will handle fallback if image doesn't exist
   return `/analytics/${slug}.jpg`;
 }
+
+// Маппинг авторов на их основные языки
+export const AUTHOR_LANGUAGES: Record<string, string> = {
+  'Radomir Kłosek': 'pl',
+  'Radomir Klosek': 'pl', // альтернативное написание
+  'Anastasia Petrova': 'ru',
+  'Olaf Klein': 'de',
+  // Остальные по умолчанию 'en'
+};
+
+/**
+ * Определяет язык статьи на основе поля language или языка автора
+ * @param article - Статья аналитики
+ * @returns Код языка статьи ('en', 'pl', 'ru', 'de', и т.д.)
+ */
+export function getArticleLanguage(article: { language?: string; author: string }): string {
+  // Если у статьи явно указан язык, используем его
+  if (article.language) {
+    return article.language;
+  }
+  
+  // Иначе используем язык автора из маппинга
+  return AUTHOR_LANGUAGES[article.author] || 'en';
+}
