@@ -331,7 +331,7 @@ export function useAuth(): UseAuthReturn {
       if (provider === 'google' || provider === 'apple') {
         const { lovable } = await import('@/integrations/lovable');
         const result = await lovable.auth.signInWithOAuth(provider, {
-          redirect_uri: window.location.origin,
+          redirect_uri: `${window.location.origin}/auth/callback`,
         });
         
         if (result.error) {

@@ -11,19 +11,26 @@ export default function AuthCallbackPage() {
   useEffect(() => {
     const handleAuthCallback = async () => {
       try {
-        // Check for error in URL hash (OAuth errors)
+        // Check for error in URL hash (OAuth errors - Supabase format)
         const hashParams = new URLSearchParams(window.location.hash.substring(1));
         const errorParam = hashParams.get('error');
         const errorDescription = hashParams.get('error_description');
         
-        if (errorParam) {
-          logger.error('OAuth error:', errorParam, errorDescription);
-          setError(errorDescription || errorParam);
+        // Check for error in URL query params (OAuth errors - Lovable/other formats)
+        const queryParams = new URLSearchParams(window.location.search);
+        const queryError = queryParams.get('error');
+        const queryErrorDescription = queryParams.get('error_description');
+        
+        if (errorParam || queryError) {
+          const error = errorParam || queryError;
+          const description = errorDescription || queryErrorDescription;
+          logger.error('OAuth error:', error, description);
+          setError(description || error || 'Authentication failed');
           setTimeout(() => navigate('/auth/login'), 3000);
           return;
         }
 
-        // Check for access_token in hash (successful OAuth)
+        // Check for access_token in hash (successful OAuth - Supabase format)
         const accessToken = hashParams.get('access_token');
         const refreshToken = hashParams.get('refresh_token');
         
@@ -46,7 +53,19 @@ export default function AuthCallbackPage() {
           return;
         }
 
-        // Fallback: Check current session
+        // Check for Lovable callback format (tokens might already be set, check session)
+        // Also check query params for any token-related parameters
+        const queryCode = queryParams.get('code');
+        const queryState = queryParams.get('state');
+        
+        // If there are query params but no hash, might be Lovable callback
+        // Lovable should have already set the session, so check current session
+        if (queryCode || queryState || (!accessToken && !refreshToken && (window.location.search || window.location.hash))) {
+          // Small delay to allow Lovable to process the callback
+          await new Promise(resolve => setTimeout(resolve, 500));
+        }
+
+        // Fallback: Check current session (works for Lovable and other providers)
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         
         if (sessionError) {
@@ -57,8 +76,12 @@ export default function AuthCallbackPage() {
         }
 
         if (session) {
+          // Clear any query params or hash from URL
+          window.history.replaceState(null, '', window.location.pathname);
           navigate('/');
         } else {
+          // No session found, redirect to login
+          logger.warn('No session found after OAuth callback');
           navigate('/auth/login');
         }
       } catch (error: any) {
