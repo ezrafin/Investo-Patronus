@@ -5,6 +5,7 @@ import { AnalyticsArticle } from '@/lib/api/types';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { LazyImage } from '@/components/ui/lazy-image';
 import { categoryImages } from '@/lib/api/utils';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface AnalyticsCardProps {
   article: AnalyticsArticle;
@@ -20,6 +21,8 @@ const typeLabels: Record<string, string> = {
 };
 
 export function AnalyticsCard({ article, variant = 'default', index = 0 }: AnalyticsCardProps) {
+  const { t } = useTranslation({ namespace: 'analytics' });
+  
   const formattedDate = new Date(article.date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'short',
@@ -27,6 +30,10 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
 
   const isDark = variant === 'dark';
   const isPriority = index < 6; // Load first 6 images immediately
+  
+  // Get translated title and excerpt
+  const translatedTitle = t(`articles.${article.slug}_title`, { defaultValue: article.title });
+  const translatedExcerpt = t(`articles.${article.slug}_excerpt`, { defaultValue: article.excerpt });
 
   const getInitials = (name: string) => {
     return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
@@ -87,12 +94,12 @@ export function AnalyticsCard({ article, variant = 'default', index = 0 }: Analy
 
           {/* Title */}
           <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2">
-            {article.title}
+            {translatedTitle}
           </h3>
 
           {/* Excerpt */}
           <p className="text-xs sm:text-sm text-muted-foreground flex-1 leading-relaxed line-clamp-4">
-            {article.excerpt}
+            {translatedExcerpt}
           </p>
 
           {/* Footer */}

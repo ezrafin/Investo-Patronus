@@ -90,6 +90,98 @@
     "market-indices-intro": {
       "title": "Introduction to Market Indices",
       "description": "Understand what S&P 500, Dow Jones, NASDAQ, and other indices mean for tracking market performance."
+    },
+    "what-is-diversification": {
+      "title": "What is Diversification?",
+      "description": "Learn why spreading your investments across different assets is crucial for managing risk and building wealth."
+    },
+    "pe-ratio": {
+      "title": "Understanding P/E Ratio",
+      "description": "A beginner-friendly guide to one of the most common stock valuation metrics and how to use it."
+    },
+    "investment-accounts-types": {
+      "title": "Types of Investment Accounts",
+      "description": "Compare brokerage accounts, IRAs, 401(k)s, and HSAs to choose the right accounts for your goals."
+    },
+    "how-dividends-work": {
+      "title": "How Dividends Work",
+      "description": "Everything you need to know about dividend payments, yield, reinvestment, and dividend investing strategies."
+    },
+    "bull-vs-bear": {
+      "title": "Bull vs Bear Markets Explained",
+      "description": "Understand market cycles, what drives them, and how to navigate both up and down markets successfully."
+    },
+    "what-is-mutual-fund": {
+      "title": "What is a Mutual Fund?",
+      "description": "Discover how mutual funds pool investor money, their fee structures, and when they make sense for your portfolio."
+    },
+    "etf-expense-ratios": {
+      "title": "Understanding ETF Expense Ratios",
+      "description": "Learn why expense ratios matter, how they impact returns over time, and what to look for when choosing ETFs."
+    },
+    "dollar-cost-averaging": {
+      "title": "Dollar-Cost Averaging Explained",
+      "description": "Master this simple but powerful investment strategy that helps reduce timing risk and build wealth steadily."
+    },
+    "how-to-set-goals": {
+      "title": "How to Set Investment Goals",
+      "description": "Create clear, actionable investment goals based on your timeline, risk tolerance, and financial objectives."
+    },
+    "market-orders-intro": {
+      "title": "Introduction to Market Orders",
+      "description": "Learn the difference between market orders, limit orders, stop orders, and when to use each type."
+    },
+    "what-is-brokerage-account": {
+      "title": "What is a Brokerage Account?",
+      "description": "Everything you need to know about opening and managing a brokerage account for investing."
+    },
+    "advanced-candlestick-patterns": {
+      "title": "Advanced Candlestick Patterns",
+      "description": "Master complex candlestick formations including morning/evening stars, three white soldiers, and harami patterns."
+    },
+    "black-scholes-model": {
+      "title": "The Black-Scholes Model Explained",
+      "description": "Understanding the mathematical foundation of options pricing, its assumptions, limitations, and practical applications."
+    },
+    "factor-investing-strategies": {
+      "title": "Factor Investing Strategies",
+      "description": "Learn to build portfolios based on factors like value, momentum, quality, size, and low volatility for consistent alpha."
+    },
+    "var-calculations": {
+      "title": "Value at Risk (VaR) Calculations",
+      "description": "Quantify potential portfolio losses using historical, parametric, and Monte Carlo VaR methodologies."
+    },
+    "modern-portfolio-theory": {
+      "title": "Modern Portfolio Theory Deep Dive",
+      "description": "Explore the mathematics behind efficient frontier, capital allocation line, and optimal portfolio construction."
+    },
+    "iron-condor-spreads": {
+      "title": "Iron Condor and Advanced Spreads",
+      "description": "Multi-leg options strategies for generating income in sideways markets with defined risk parameters."
+    },
+    "elliott-wave-theory": {
+      "title": "Elliott Wave Theory",
+      "description": "Analyze market cycles and predict price movements using wave patterns, Fibonacci retracements, and extensions."
+    },
+    "monte-carlo-simulations": {
+      "title": "Monte Carlo Simulations in Finance",
+      "description": "Apply probability modeling to forecast portfolio performance, retirement planning, and complex derivatives pricing."
+    },
+    "hedging-strategies-portfolio-protection": {
+      "title": "Hedging Strategies for Portfolio Protection",
+      "description": "Advanced techniques including protective puts, collars, and tail-risk hedging to protect during downturns."
+    },
+    "covered-call-strategies": {
+      "title": "Covered Call Strategies for Income",
+      "description": "Generate consistent income from your stock holdings using covered calls, including strike selection and roll techniques."
+    },
+    "understanding-greeks": {
+      "title": "Understanding Greeks in Options",
+      "description": "Master delta, gamma, theta, vega, and rho to better manage options positions and predict price movements."
+    },
+    "pairs-trading-strategies": {
+      "title": "Pairs Trading Strategies",
+      "description": "Implement statistical arbitrage using cointegration analysis, spread trading, and mean reversion techniques."
     }
   },
   "articleDetail": {

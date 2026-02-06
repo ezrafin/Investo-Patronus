@@ -59,14 +59,14 @@ const testimonials = [
   {
     name: 'Jennifer Adams',
     role: 'Software Engineer',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop&crop=face',
     quote: 'This course transformed my understanding of the markets. The practical exercises and real-world case studies made complex concepts accessible.',
     rating: 5,
   },
   {
     name: 'Robert Kim',
     role: 'Small Business Owner',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1508214751196-b9d1d5b8e93e?w=100&h=100&fit=crop&crop=face',
     quote: 'Finally, an investment course that goes beyond basics without being overwhelming. The instructor support is exceptional.',
     rating: 5,
   },

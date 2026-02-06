@@ -90,6 +90,98 @@
     "market-indices-intro": {
       "title": "市场指数介绍",
       "description": "了解标普500、道琼斯、纳斯达克和其他指数对跟踪市场表现的意义。"
+    },
+    "what-is-diversification": {
+      "title": "什么是多元化？",
+      "description": "了解为什么将投资分散到不同资产对于管理风险和积累财富至关重要。"
+    },
+    "pe-ratio": {
+      "title": "理解市盈率",
+      "description": "初学者友好的指南，介绍最常见的股票估值指标之一及其使用方法。"
+    },
+    "investment-accounts-types": {
+      "title": "投资账户类型",
+      "description": "比较经纪账户、IRA、401(k)和HSA，为您的目标选择合适的账户。"
+    },
+    "how-dividends-work": {
+      "title": "股息如何运作",
+      "description": "关于股息支付、收益率、再投资和股息投资策略您需要了解的一切。"
+    },
+    "bull-vs-bear": {
+      "title": "牛市与熊市解释",
+      "description": "了解市场周期、推动因素以及如何在上涨和下跌市场中成功导航。"
+    },
+    "what-is-mutual-fund": {
+      "title": "什么是共同基金？",
+      "description": "了解共同基金如何汇集投资者资金、其费用结构以及何时适合您的投资组合。"
+    },
+    "etf-expense-ratios": {
+      "title": "理解ETF费用比率",
+      "description": "了解为什么费用比率很重要、它们如何随时间影响回报，以及选择ETF时应注意什么。"
+    },
+    "dollar-cost-averaging": {
+      "title": "美元成本平均法解释",
+      "description": "掌握这种简单而强大的投资策略，有助于降低时机风险并稳步积累财富。"
+    },
+    "how-to-set-goals": {
+      "title": "如何设定投资目标",
+      "description": "根据您的时间范围、风险承受能力和财务目标创建清晰、可操作的投资目标。"
+    },
+    "market-orders-intro": {
+      "title": "市场订单介绍",
+      "description": "了解市价单、限价单、止损单之间的区别以及何时使用每种类型。"
+    },
+    "what-is-brokerage-account": {
+      "title": "什么是经纪账户？",
+      "description": "关于开设和管理用于投资的经纪账户您需要了解的一切。"
+    },
+    "advanced-candlestick-patterns": {
+      "title": "高级蜡烛图形态",
+      "description": "掌握复杂的蜡烛图形态，包括晨星/暮星、三白兵和孕线形态。"
+    },
+    "black-scholes-model": {
+      "title": "布莱克-斯科尔斯模型解释",
+      "description": "了解期权定价的数学基础、其假设、局限性和实际应用。"
+    },
+    "factor-investing-strategies": {
+      "title": "因子投资策略",
+      "description": "学习基于价值、动量、质量、规模和低波动性等因子构建投资组合，以获得稳定的超额收益。"
+    },
+    "var-calculations": {
+      "title": "风险价值（VaR）计算",
+      "description": "使用历史、参数和蒙特卡洛VaR方法量化潜在投资组合损失。"
+    },
+    "modern-portfolio-theory": {
+      "title": "现代投资组合理论深入探讨",
+      "description": "探索有效前沿、资本配置线和最优投资组合构建背后的数学原理。"
+    },
+    "iron-condor-spreads": {
+      "title": "铁秃鹰和高级价差",
+      "description": "在横盘市场中通过多腿期权策略产生收入，具有明确的风险参数。"
+    },
+    "elliott-wave-theory": {
+      "title": "艾略特波浪理论",
+      "description": "使用波浪模式、斐波那契回撤和扩展分析市场周期并预测价格走势。"
+    },
+    "monte-carlo-simulations": {
+      "title": "金融中的蒙特卡洛模拟",
+      "description": "应用概率建模来预测投资组合表现、退休规划和复杂衍生品定价。"
+    },
+    "hedging-strategies-portfolio-protection": {
+      "title": "投资组合保护的对冲策略",
+      "description": "高级技术，包括保护性看跌期权、领子策略和尾部风险对冲，以在下跌期间提供保护。"
+    },
+    "covered-call-strategies": {
+      "title": "备兑看涨期权收入策略",
+      "description": "使用备兑看涨期权从您的股票持仓中产生稳定收入，包括行权价选择和滚动技术。"
+    },
+    "understanding-greeks": {
+      "title": "理解期权中的希腊字母",
+      "description": "掌握delta、gamma、theta、vega和rho，以更好地管理期权头寸并预测价格走势。"
+    },
+    "pairs-trading-strategies": {
+      "title": "配对交易策略",
+      "description": "使用协整分析、价差交易和均值回归技术实施统计套利。"
     }
   },
   "articleDetail": {

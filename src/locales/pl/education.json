@@ -90,6 +90,98 @@
     "market-indices-intro": {
       "title": "Wprowadzenie do indeksów giełdowych",
       "description": "Zrozum, co oznaczają S&P 500, Dow Jones, NASDAQ i inne indeksy dla śledzenia wyników rynku."
+    },
+    "what-is-diversification": {
+      "title": "Czym jest dywersyfikacja?",
+      "description": "Dowiedz się, dlaczego rozłożenie inwestycji na różne aktywa jest kluczowe dla zarządzania ryzykiem i budowania majątku."
+    },
+    "pe-ratio": {
+      "title": "Zrozumienie wskaźnika P/E",
+      "description": "Przyjazny przewodnik dla początkujących dotyczący jednej z najczęstszych metryk wyceny akcji i jak jej używać."
+    },
+    "investment-accounts-types": {
+      "title": "Rodzaje kont inwestycyjnych",
+      "description": "Porównaj konta maklerskie, IRA, 401(k) i HSA, aby wybrać odpowiednie konta dla swoich celów."
+    },
+    "how-dividends-work": {
+      "title": "Jak działają dywidendy",
+      "description": "Wszystko, co musisz wiedzieć o wypłatach dywidend, zyskowności, reinwestycji i strategiach inwestowania w dywidendy."
+    },
+    "bull-vs-bear": {
+      "title": "Rynki byka i niedźwiedzia wyjaśnione",
+      "description": "Zrozum cykle rynkowe, co je napędza i jak skutecznie poruszać się po rynkach wzrostowych i spadkowych."
+    },
+    "what-is-mutual-fund": {
+      "title": "Czym jest fundusz inwestycyjny?",
+      "description": "Odkryj, jak fundusze inwestycyjne łączą pieniądze inwestorów, ich struktury opłat i kiedy mają sens dla Twojego portfela."
+    },
+    "etf-expense-ratios": {
+      "title": "Zrozumienie wskaźników kosztów ETF",
+      "description": "Dowiedz się, dlaczego wskaźniki kosztów są ważne, jak wpływają na zwroty w czasie i na co zwracać uwagę przy wyborze ETF."
+    },
+    "dollar-cost-averaging": {
+      "title": "Uśrednianie kosztu dolara wyjaśnione",
+      "description": "Opanuj tę prostą, ale potężną strategię inwestycyjną, która pomaga zmniejszyć ryzyko czasowe i systematycznie budować majątek."
+    },
+    "how-to-set-goals": {
+      "title": "Jak wyznaczać cele inwestycyjne",
+      "description": "Twórz jasne, wykonalne cele inwestycyjne oparte na Twoim horyzoncie czasowym, tolerancji ryzyka i celach finansowych."
+    },
+    "market-orders-intro": {
+      "title": "Wprowadzenie do zleceń rynkowych",
+      "description": "Poznaj różnicę między zleceniami rynkowymi, limitowymi, stop i kiedy używać każdego typu."
+    },
+    "what-is-brokerage-account": {
+      "title": "Czym jest konto maklerskie?",
+      "description": "Wszystko, co musisz wiedzieć o otwieraniu i zarządzaniu kontem maklerskim do inwestowania."
+    },
+    "advanced-candlestick-patterns": {
+      "title": "Zaawansowane wzorce świecowe",
+      "description": "Opanuj złożone formacje świecowe, w tym gwiazdy poranne/wieczorne, trzech białych żołnierzy i wzorce harami."
+    },
+    "black-scholes-model": {
+      "title": "Model Blacka-Scholesa wyjaśniony",
+      "description": "Zrozumienie matematycznych podstaw wyceny opcji, ich założeń, ograniczeń i praktycznych zastosowań."
+    },
+    "factor-investing-strategies": {
+      "title": "Strategie inwestowania czynnikowego",
+      "description": "Naucz się budować portfele oparte na czynnikach takich jak wartość, momentum, jakość, rozmiar i niska zmienność dla stałej alfy."
+    },
+    "var-calculations": {
+      "title": "Obliczenia Value at Risk (VaR)",
+      "description": "Określ potencjalne straty portfela za pomocą historycznych, parametrycznych i metodologii VaR Monte Carlo."
+    },
+    "modern-portfolio-theory": {
+      "title": "Dogłębne spojrzenie na nowoczesną teorię portfela",
+      "description": "Zbadaj matematykę stojącą za efektywną granicą, linią alokacji kapitału i optymalną konstrukcją portfela."
+    },
+    "iron-condor-spreads": {
+      "title": "Iron Condor i zaawansowane spready",
+      "description": "Wielonóżne strategie opcyjne do generowania dochodu na rynkach bocznych z określonymi parametrami ryzyka."
+    },
+    "elliott-wave-theory": {
+      "title": "Teoria fal Elliotta",
+      "description": "Analizuj cykle rynkowe i przewiduj ruchy cen za pomocą wzorców falowych, korekt Fibonacciego i rozszerzeń."
+    },
+    "monte-carlo-simulations": {
+      "title": "Symulacje Monte Carlo w finansach",
+      "description": "Zastosuj modelowanie probabilistyczne do prognozowania wyników portfela, planowania emerytury i wyceny złożonych instrumentów pochodnych."
+    },
+    "hedging-strategies-portfolio-protection": {
+      "title": "Strategie zabezpieczające dla ochrony portfela",
+      "description": "Zaawansowane techniki, w tym ochronne opcje sprzedaży, kołnierze i zabezpieczenie ryzyka ogonowego, aby chronić podczas spadków."
+    },
+    "covered-call-strategies": {
+      "title": "Strategie covered call dla dochodu",
+      "description": "Generuj stały dochód z posiadanych akcji, używając covered call, w tym wyboru ceny wykonania i technik roll."
+    },
+    "understanding-greeks": {
+      "title": "Zrozumienie greckich wskaźników w opcjach",
+      "description": "Opanuj delta, gamma, theta, vega i rho, aby lepiej zarządzać pozycjami opcyjnymi i przewidywać ruchy cen."
+    },
+    "pairs-trading-strategies": {
+      "title": "Strategie handlu parami",
+      "description": "Wdrażaj arbitraż statystyczny za pomocą analizy kointegracji, handlu spreadami i technik powrotu do średniej."
     }
   },
   "articleDetail": {

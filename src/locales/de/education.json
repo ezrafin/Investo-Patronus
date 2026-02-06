@@ -90,6 +90,98 @@
     "market-indices-intro": {
       "title": "Einführung in Marktindizes",
       "description": "Verstehen Sie, was S&P 500, Dow Jones, NASDAQ und andere Indizes für die Verfolgung der Marktleistung bedeuten."
+    },
+    "what-is-diversification": {
+      "title": "Was ist Diversifikation?",
+      "description": "Erfahren Sie, warum die Streuung Ihrer Investitionen über verschiedene Vermögenswerte entscheidend für das Risikomanagement und den Vermögensaufbau ist."
+    },
+    "pe-ratio": {
+      "title": "KGV verstehen",
+      "description": "Ein anfängerfreundlicher Leitfaden zu einer der häufigsten Aktienbewertungskennzahlen und wie man sie verwendet."
+    },
+    "investment-accounts-types": {
+      "title": "Arten von Anlagekonten",
+      "description": "Vergleichen Sie Brokerkonten, IRAs, 401(k)s und HSAs, um die richtigen Konten für Ihre Ziele zu wählen."
+    },
+    "how-dividends-work": {
+      "title": "Wie Dividenden funktionieren",
+      "description": "Alles, was Sie über Dividendenzahlungen, Rendite, Reinvestition und Dividendenanlagestrategien wissen müssen."
+    },
+    "bull-vs-bear": {
+      "title": "Hausse- und Baisse-Märkte erklärt",
+      "description": "Verstehen Sie Marktzyklen, was sie antreibt und wie Sie sich erfolgreich in steigenden und fallenden Märkten zurechtfinden."
+    },
+    "what-is-mutual-fund": {
+      "title": "Was ist ein Investmentfonds?",
+      "description": "Entdecken Sie, wie Investmentfonds Anlegergelder bündeln, ihre Gebührenstrukturen und wann sie für Ihr Portfolio sinnvoll sind."
+    },
+    "etf-expense-ratios": {
+      "title": "ETF-Kostenquoten verstehen",
+      "description": "Erfahren Sie, warum Kostenquoten wichtig sind, wie sie die Rendite im Laufe der Zeit beeinflussen und worauf Sie bei der Auswahl von ETFs achten sollten."
+    },
+    "dollar-cost-averaging": {
+      "title": "Dollar-Cost-Averaging erklärt",
+      "description": "Meistern Sie diese einfache aber mächtige Anlagestrategie, die hilft, Timing-Risiken zu reduzieren und kontinuierlich Vermögen aufzubauen."
+    },
+    "how-to-set-goals": {
+      "title": "Wie man Anlageziele setzt",
+      "description": "Erstellen Sie klare, umsetzbare Anlageziele basierend auf Ihrem Zeithorizont, Ihrer Risikotoleranz und Ihren finanziellen Zielen."
+    },
+    "market-orders-intro": {
+      "title": "Einführung in Marktaufträge",
+      "description": "Lernen Sie den Unterschied zwischen Marktaufträgen, Limitaufträgen, Stop-Aufträgen und wann Sie jeden Typ verwenden sollten."
+    },
+    "what-is-brokerage-account": {
+      "title": "Was ist ein Brokerkonto?",
+      "description": "Alles, was Sie über die Eröffnung und Verwaltung eines Brokerkontos für Investitionen wissen müssen."
+    },
+    "advanced-candlestick-patterns": {
+      "title": "Fortgeschrittene Kerzenmuster",
+      "description": "Meistern Sie komplexe Kerzenformationen einschließlich Morgen-/Abendsterne, drei weiße Soldaten und Harami-Muster."
+    },
+    "black-scholes-model": {
+      "title": "Das Black-Scholes-Modell erklärt",
+      "description": "Verstehen Sie die mathematische Grundlage der Optionspreisbildung, ihre Annahmen, Einschränkungen und praktischen Anwendungen."
+    },
+    "factor-investing-strategies": {
+      "title": "Faktor-Investitionsstrategien",
+      "description": "Lernen Sie, Portfolios auf der Grundlage von Faktoren wie Wert, Momentum, Qualität, Größe und niedriger Volatilität für konsistentes Alpha aufzubauen."
+    },
+    "var-calculations": {
+      "title": "Value at Risk (VaR) Berechnungen",
+      "description": "Quantifizieren Sie potenzielle Portfolioverluste mit historischen, parametrischen und Monte-Carlo-VaR-Methoden."
+    },
+    "modern-portfolio-theory": {
+      "title": "Moderne Portfoliotheorie im Detail",
+      "description": "Erkunden Sie die Mathematik hinter der effizienten Grenze, der Kapitalallokationslinie und dem optimalen Portfoliobau."
+    },
+    "iron-condor-spreads": {
+      "title": "Iron Condor und fortgeschrittene Spreads",
+      "description": "Mehrbeinige Optionsstrategien zur Einkommensgenerierung in Seitwärtsmärkten mit definierten Risikoparametern."
+    },
+    "elliott-wave-theory": {
+      "title": "Elliott-Wellen-Theorie",
+      "description": "Analysieren Sie Marktzyklen und prognostizieren Sie Preisbewegungen mit Wellenmustern, Fibonacci-Rückzügen und Erweiterungen."
+    },
+    "monte-carlo-simulations": {
+      "title": "Monte-Carlo-Simulationen in der Finanzwelt",
+      "description": "Wenden Sie Wahrscheinlichkeitsmodellierung an, um Portfolioperformance, Rentenplanung und komplexe Derivatepreise zu prognostizieren."
+    },
+    "hedging-strategies-portfolio-protection": {
+      "title": "Absicherungsstrategien für Portfolioschutz",
+      "description": "Fortgeschrittene Techniken einschließlich Schutz-Puts, Collars und Tail-Risk-Absicherung zum Schutz während Abschwüngen."
+    },
+    "covered-call-strategies": {
+      "title": "Covered-Call-Strategien für Einkommen",
+      "description": "Generieren Sie konsistentes Einkommen aus Ihren Aktienbeständen mit gedeckten Calls, einschließlich Strike-Auswahl und Roll-Techniken."
+    },
+    "understanding-greeks": {
+      "title": "Griechen in Optionen verstehen",
+      "description": "Meistern Sie Delta, Gamma, Theta, Vega und Rho, um Optionspositionen besser zu verwalten und Preisbewegungen vorherzusagen."
+    },
+    "pairs-trading-strategies": {
+      "title": "Pairs-Trading-Strategien",
+      "description": "Implementieren Sie statistische Arbitrage mit Kointegrationsanalyse, Spread-Trading und Mean-Reversion-Techniken."
     }
   },
   "articleDetail": {

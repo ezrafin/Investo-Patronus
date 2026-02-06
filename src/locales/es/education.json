@@ -90,6 +90,98 @@
     "market-indices-intro": {
       "title": "Introducción a los índices de mercado",
       "description": "Entiende qué significan el S&P 500, el Dow Jones, el NASDAQ y otros índices para seguir el rendimiento del mercado."
+    },
+    "what-is-diversification": {
+      "title": "¿Qué es la diversificación?",
+      "description": "Aprende por qué distribuir tus inversiones en diferentes activos es crucial para gestionar el riesgo y construir riqueza."
+    },
+    "pe-ratio": {
+      "title": "Entender la relación P/E",
+      "description": "Una guía amigable para principiantes sobre una de las métricas de valoración de acciones más comunes y cómo usarla."
+    },
+    "investment-accounts-types": {
+      "title": "Tipos de cuentas de inversión",
+      "description": "Compara cuentas de corretaje, IRA, 401(k) y HSA para elegir las cuentas adecuadas para tus objetivos."
+    },
+    "how-dividends-work": {
+      "title": "Cómo funcionan los dividendos",
+      "description": "Todo lo que necesitas saber sobre los pagos de dividendos, el rendimiento, la reinversión y las estrategias de inversión en dividendos."
+    },
+    "bull-vs-bear": {
+      "title": "Mercados alcistas y bajistas explicados",
+      "description": "Entiende los ciclos del mercado, qué los impulsa y cómo navegar con éxito tanto en mercados alcistas como bajistas."
+    },
+    "what-is-mutual-fund": {
+      "title": "¿Qué es un fondo mutuo?",
+      "description": "Descubre cómo los fondos mutuos agrupan el dinero de los inversores, sus estructuras de tarifas y cuándo tienen sentido para tu cartera."
+    },
+    "etf-expense-ratios": {
+      "title": "Entender los ratios de gastos de ETF",
+      "description": "Aprende por qué los ratios de gastos son importantes, cómo afectan los rendimientos con el tiempo y qué buscar al elegir ETF."
+    },
+    "dollar-cost-averaging": {
+      "title": "Promedio de costo en dólares explicado",
+      "description": "Domina esta estrategia de inversión simple pero poderosa que ayuda a reducir el riesgo de timing y construir riqueza de manera constante."
+    },
+    "how-to-set-goals": {
+      "title": "Cómo establecer objetivos de inversión",
+      "description": "Crea objetivos de inversión claros y accionables basados en tu horizonte temporal, tolerancia al riesgo y objetivos financieros."
+    },
+    "market-orders-intro": {
+      "title": "Introducción a las órdenes de mercado",
+      "description": "Aprende la diferencia entre órdenes de mercado, órdenes límite, órdenes stop y cuándo usar cada tipo."
+    },
+    "what-is-brokerage-account": {
+      "title": "¿Qué es una cuenta de corretaje?",
+      "description": "Todo lo que necesitas saber sobre abrir y gestionar una cuenta de corretaje para invertir."
+    },
+    "advanced-candlestick-patterns": {
+      "title": "Patrones avanzados de velas",
+      "description": "Domina formaciones complejas de velas, incluyendo estrellas matutinas/vespertinas, tres soldados blancos y patrones harami."
+    },
+    "black-scholes-model": {
+      "title": "El modelo Black-Scholes explicado",
+      "description": "Comprender los fundamentos matemáticos de la fijación de precios de opciones, sus supuestos, limitaciones y aplicaciones prácticas."
+    },
+    "factor-investing-strategies": {
+      "title": "Estrategias de inversión por factores",
+      "description": "Aprende a construir carteras basadas en factores como valor, momentum, calidad, tamaño y baja volatilidad para alfa consistente."
+    },
+    "var-calculations": {
+      "title": "Cálculos de Value at Risk (VaR)",
+      "description": "Cuantifica las pérdidas potenciales de la cartera utilizando metodologías VaR históricas, paramétricas y de Monte Carlo."
+    },
+    "modern-portfolio-theory": {
+      "title": "Inmersión profunda en la teoría moderna de carteras",
+      "description": "Explora las matemáticas detrás de la frontera eficiente, la línea de asignación de capital y la construcción óptima de carteras."
+    },
+    "iron-condor-spreads": {
+      "title": "Iron Condor y spreads avanzados",
+      "description": "Estrategias de opciones multi-pierna para generar ingresos en mercados laterales con parámetros de riesgo definidos."
+    },
+    "elliott-wave-theory": {
+      "title": "Teoría de ondas de Elliott",
+      "description": "Analiza los ciclos del mercado y predice los movimientos de precios usando patrones de ondas, retrocesos de Fibonacci y extensiones."
+    },
+    "monte-carlo-simulations": {
+      "title": "Simulaciones de Monte Carlo en finanzas",
+      "description": "Aplica modelado probabilístico para pronosticar el rendimiento de la cartera, la planificación de jubilación y la fijación de precios de derivados complejos."
+    },
+    "hedging-strategies-portfolio-protection": {
+      "title": "Estrategias de cobertura para protección de cartera",
+      "description": "Técnicas avanzadas que incluyen puts protectores, collares y cobertura de riesgo de cola para proteger durante las caídas."
+    },
+    "covered-call-strategies": {
+      "title": "Estrategias de call cubierto para ingresos",
+      "description": "Genera ingresos consistentes de tus tenencias de acciones usando calls cubiertos, incluyendo selección de strike y técnicas de roll."
+    },
+    "understanding-greeks": {
+      "title": "Entender los griegos en opciones",
+      "description": "Domina delta, gamma, theta, vega y rho para gestionar mejor las posiciones de opciones y predecir movimientos de precios."
+    },
+    "pairs-trading-strategies": {
+      "title": "Estrategias de trading por pares",
+      "description": "Implementa arbitraje estadístico usando análisis de cointegración, trading de spreads y técnicas de reversión a la media."
     }
   },
   "articleDetail": {

@@ -339,8 +339,10 @@ export function useAuth(): UseAuthReturn {
       // Use Lovable Cloud for Google and Apple
       if (provider === 'google' || provider === 'apple') {
         const { lovable } = await import('@/integrations/lovable');
+        // Lovable OAuth callback должен быть на Lovable домене
+        const redirectUri = 'https://investo-patronus.lovable.app/~oauth/callback';
         const result = await lovable.auth.signInWithOAuth(provider, {
-          redirect_uri: `${window.location.origin}/auth/callback`,
+          redirect_uri: redirectUri,
         });
         
         if (result.error) {
@@ -350,11 +352,18 @@ export function useAuth(): UseAuthReturn {
         return;
       }
       
-      // Fallback for other providers (GitHub)
-      const productionDomain = window.location.origin.includes('localhost') 
-        ? window.location.origin 
-        : 'https://investopatronus.com';
-      const redirectUrl = `${productionDomain}/auth/callback`;
+      // Use Supabase OAuth for other providers (GitHub)
+      const normalizeDomain = (url: string): string => {
+        // Для localhost оставляем как есть
+        if (url.includes('localhost')) {
+          return url;
+        }
+        // Для production убираем www для консистентности
+        return url.replace('www.', '');
+      };
+      
+      const currentOrigin = normalizeDomain(window.location.origin);
+      const redirectUrl = `${currentOrigin}/auth/callback`;
       
       const { error } = await supabase.auth.signInWithOAuth({
         provider,

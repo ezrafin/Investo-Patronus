@@ -90,6 +90,98 @@
     "market-indices-intro": {
       "title": "Introduction aux indices boursiers",
       "description": "Comprenez ce que signifient le S&P 500, le Dow Jones, le NASDAQ et d'autres indices pour suivre la performance du marché."
+    },
+    "what-is-diversification": {
+      "title": "Qu'est-ce que la diversification ?",
+      "description": "Découvrez pourquoi la répartition de vos investissements sur différents actifs est cruciale pour gérer les risques et construire la richesse."
+    },
+    "pe-ratio": {
+      "title": "Comprendre le ratio P/E",
+      "description": "Un guide convivial pour débutants sur l'une des métriques d'évaluation d'actions les plus courantes et comment l'utiliser."
+    },
+    "investment-accounts-types": {
+      "title": "Types de comptes d'investissement",
+      "description": "Comparez les comptes de courtage, les IRA, les 401(k) et les HSA pour choisir les bons comptes pour vos objectifs."
+    },
+    "how-dividends-work": {
+      "title": "Comment fonctionnent les dividendes",
+      "description": "Tout ce que vous devez savoir sur les paiements de dividendes, le rendement, la réinvestissement et les stratégies d'investissement en dividendes."
+    },
+    "bull-vs-bear": {
+      "title": "Marchés haussiers et baissiers expliqués",
+      "description": "Comprenez les cycles du marché, ce qui les motive et comment naviguer avec succès dans les marchés à la hausse et à la baisse."
+    },
+    "what-is-mutual-fund": {
+      "title": "Qu'est-ce qu'un fonds mutuel ?",
+      "description": "Découvrez comment les fonds mutuels regroupent l'argent des investisseurs, leurs structures de frais et quand ils ont du sens pour votre portefeuille."
+    },
+    "etf-expense-ratios": {
+      "title": "Comprendre les ratios de frais des ETF",
+      "description": "Découvrez pourquoi les ratios de frais sont importants, comment ils affectent les rendements au fil du temps et ce qu'il faut rechercher lors du choix des ETF."
+    },
+    "dollar-cost-averaging": {
+      "title": "Moyennage du coût en dollars expliqué",
+      "description": "Maîtrisez cette stratégie d'investissement simple mais puissante qui aide à réduire le risque de timing et à construire la richesse régulièrement."
+    },
+    "how-to-set-goals": {
+      "title": "Comment fixer des objectifs d'investissement",
+      "description": "Créez des objectifs d'investissement clairs et actionnables basés sur votre horizon temporel, votre tolérance au risque et vos objectifs financiers."
+    },
+    "market-orders-intro": {
+      "title": "Introduction aux ordres de marché",
+      "description": "Apprenez la différence entre les ordres au marché, les ordres à cours limité, les ordres stop et quand utiliser chaque type."
+    },
+    "what-is-brokerage-account": {
+      "title": "Qu'est-ce qu'un compte de courtage ?",
+      "description": "Tout ce que vous devez savoir sur l'ouverture et la gestion d'un compte de courtage pour investir."
+    },
+    "advanced-candlestick-patterns": {
+      "title": "Motifs de chandeliers avancés",
+      "description": "Maîtrisez les formations complexes de chandeliers, y compris les étoiles du matin/soir, les trois soldats blancs et les motifs harami."
+    },
+    "black-scholes-model": {
+      "title": "Le modèle Black-Scholes expliqué",
+      "description": "Comprendre les fondements mathématiques de la tarification des options, ses hypothèses, ses limitations et ses applications pratiques."
+    },
+    "factor-investing-strategies": {
+      "title": "Stratégies d'investissement factoriel",
+      "description": "Apprenez à construire des portefeuilles basés sur des facteurs comme la valeur, le momentum, la qualité, la taille et la faible volatilité pour un alpha constant."
+    },
+    "var-calculations": {
+      "title": "Calculs de Value at Risk (VaR)",
+      "description": "Quantifiez les pertes potentielles du portefeuille en utilisant les méthodologies VaR historiques, paramétriques et Monte Carlo."
+    },
+    "modern-portfolio-theory": {
+      "title": "Plongée dans la théorie moderne du portefeuille",
+      "description": "Explorez les mathématiques derrière la frontière efficace, la ligne d'allocation du capital et la construction optimale du portefeuille."
+    },
+    "iron-condor-spreads": {
+      "title": "Iron Condor et spreads avancés",
+      "description": "Stratégies d'options multi-jambes pour générer des revenus sur les marchés latéraux avec des paramètres de risque définis."
+    },
+    "elliott-wave-theory": {
+      "title": "Théorie des vagues d'Elliott",
+      "description": "Analysez les cycles du marché et prévoyez les mouvements de prix en utilisant les motifs de vagues, les retracements de Fibonacci et les extensions."
+    },
+    "monte-carlo-simulations": {
+      "title": "Simulations de Monte Carlo en finance",
+      "description": "Appliquez la modélisation probabiliste pour prévoir la performance du portefeuille, la planification de la retraite et la tarification des dérivés complexes."
+    },
+    "hedging-strategies-portfolio-protection": {
+      "title": "Stratégies de couverture pour la protection du portefeuille",
+      "description": "Techniques avancées incluant les puts de protection, les colliers et la couverture du risque de queue pour protéger pendant les ralentissements."
+    },
+    "covered-call-strategies": {
+      "title": "Stratégies de call couvert pour le revenu",
+      "description": "Générez un revenu constant à partir de vos avoirs en actions en utilisant des calls couverts, y compris la sélection du strike et les techniques de roll."
+    },
+    "understanding-greeks": {
+      "title": "Comprendre les Grecs dans les options",
+      "description": "Maîtrisez delta, gamma, thêta, vega et rho pour mieux gérer les positions d'options et prédire les mouvements de prix."
+    },
+    "pairs-trading-strategies": {
+      "title": "Stratégies de trading par paires",
+      "description": "Implémentez l'arbitrage statistique en utilisant l'analyse de cointégration, le trading de spreads et les techniques de retour à la moyenne."
     }
   },
   "articleDetail": {
