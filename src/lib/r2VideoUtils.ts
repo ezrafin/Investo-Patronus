@@ -225,6 +225,6 @@ export async function getAvailableSubtitleLanguages(
   });
 
   const results = await Promise.all(checkPromises);
-  return results.filter((lang): lang is string => lang !== null);
+  return results.filter((lang): lang is typeof SUPPORTED_SUBTITLE_LANGUAGES[number] => lang !== null) as string[];
 }
 

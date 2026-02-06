@@ -169,15 +169,15 @@ export function CompanyRating({ companySlug, className }: CompanyRatingProps) {
           toast.success(hasComment ? t('toast.reviewSubmittedForModeration', { ns: 'ui' }) : t('toast.thankYouForEvaluation', { ns: 'ui' }));
         } else {
           // Anonymous user: always requires moderation (trigger will set is_approved = false)
+          // Note: user_id is nullable in DB but typed as required - use type assertion
           const { error } = await supabase
-            .from('company_evaluations')
+            .from('company_evaluations' as any)
             .insert({
-              user_id: null,
               company_slug: companySlug,
               rating: userRating,
               comment: userComment.trim() || null,
               is_approved: false, // Always false for anonymous users
-            });
+            } as any);
 
           if (error) throw error;
           toast.success(t('toast.reviewSubmittedForModeration', { ns: 'ui' }) || 'Your evaluation has been submitted and will be reviewed by moderators.');

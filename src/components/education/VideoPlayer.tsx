@@ -320,7 +320,7 @@ export function VideoPlayer({
     const handleTrackError = (e: Event) => {
       const track = e.target as HTMLTrackElement;
       if (track && track.track) {
-        logger.warn(`Subtitle track error for language ${track.srclang}:`, track.error);
+        logger.warn(`Subtitle track error for language ${track.srclang}`);
         // Remove failed language from available languages
         setAvailableSubtitleLanguages(prev => prev.filter(lang => lang !== track.srclang));
       }
