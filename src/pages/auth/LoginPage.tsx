@@ -218,12 +218,15 @@ export default function LoginPage() {
                     required
                     disabled={loading}
                     error={!!error}
-                    className="pr-10"
+                    className={error ? "pr-20" : "pr-10"}
                   />
                   <motion.button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                    className={cn(
+                      "absolute top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors z-10",
+                      error ? "right-10" : "right-3"
+                    )}
                     whileHover={!prefersReducedMotion() ? { scale: 1.1 } : undefined}
                     whileTap={!prefersReducedMotion() ? { scale: 0.95 } : undefined}
                   >

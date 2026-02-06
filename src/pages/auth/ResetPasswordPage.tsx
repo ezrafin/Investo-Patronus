@@ -31,12 +31,35 @@ export default function ResetPasswordPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user came from email link
+    // Check if user came from email link and set session
     const hashParams = new URLSearchParams(window.location.hash.substring(1));
-    if (!hashParams.get('access_token')) {
+    const accessToken = hashParams.get('access_token');
+    const refreshToken = hashParams.get('refresh_token');
+    
+    if (!accessToken || !refreshToken) {
       toast.error(t('toast.invalidResetLink'));
       navigate('/auth/forgot-password');
+      return;
     }
+
+    // Set session explicitly from recovery tokens
+    const setRecoverySession = async () => {
+      const { error } = await supabase.auth.setSession({
+        access_token: accessToken,
+        refresh_token: refreshToken,
+      });
+
+      if (error) {
+        toast.error(error.message || t('toast.invalidResetLink'));
+        navigate('/auth/forgot-password');
+        return;
+      }
+
+      // Clear hash from URL after setting session
+      window.history.replaceState(null, '', window.location.pathname);
+    };
+
+    setRecoverySession();
   }, [navigate, t]);
 
   const allRequirementsMet = passwordRequirements.every((req) => req.test(password));
@@ -61,11 +84,15 @@ export default function ResetPasswordPage() {
 
     if (error) {
       toast.error(error.message || t('settings.passwordChangeError'));
-    } else {
-      toast.success(t('toast.passwordResetSuccess'));
-      navigate('/auth/login');
+      setLoading(false);
+      return;
     }
 
+    // Sign out user after successful password reset
+    await supabase.auth.signOut();
+    
+    toast.success(t('toast.passwordResetSuccess'));
+    navigate('/auth/login');
     setLoading(false);
   };
 

@@ -134,6 +134,7 @@
     "courseNotification": "You will be notified when the course launches!",
     "notifyMe": "Notify me",
     "joinWaitlist": "Join waitlist",
+    "errorOccurred": "An error occurred. Please try again.",
     "pleaseSignInToFollowAuthors": "Please sign in to follow authors",
     "followingAuthor": "Following author",
     "unfollowedAuthor": "Unfollowed author",
@@ -737,7 +738,9 @@
     "openMenu": "Open menu",
     "bookmark": "Bookmark",
     "bookmarked": "Bookmarked",
-    "skipToMainContent": "Skip to main content"
+    "skipToMainContent": "Skip to main content",
+    "loading": "Loading...",
+    "error": "Error"
   },
   "articles": {
     "keyTakeaways": "Key Takeaways",

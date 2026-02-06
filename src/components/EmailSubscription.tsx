@@ -3,27 +3,46 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Mail, Check } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { useTranslation } from '@/hooks/useTranslation';
+import { supabase } from '@/integrations/supabase/client';
+import { logger } from '@/lib/logger';
 
 export function EmailSubscription() {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { t } = useTranslation({ namespace: 'ui' });
+  const { t, language } = useTranslation({ namespace: 'ui' });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
     setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsLoading(false);
-    setIsSubmitted(true);
-    
-    toast({
-      title: t('emailSubscription.successTitle'),
-      description: t('emailSubscription.successDesc'),
-    });
+    try {
+      const { error } = await supabase.functions.invoke('send-subscription-email', {
+        body: {
+          email,
+          language,
+          type: 'newsletter',
+        },
+      });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: t('emailSubscription.successTitle'),
+        description: t('emailSubscription.successDesc'),
+      });
+    } catch (error: any) {
+      logger.error('Error sending newsletter email:', error);
+      toast({
+        title: t('common.error') || 'Error',
+        description: error?.message || t('toast.errorOccurred') || 'Failed to send notification',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

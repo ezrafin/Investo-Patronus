@@ -122,6 +122,7 @@
     "submitRating": "提交评分",
     "notifyMe": "通知我",
     "joinWaitlist": "加入等待列表",
+    "errorOccurred": "发生错误。请重试。",
     "pleaseSignInToWatchlist": "请登录以添加到观察列表",
     "addedToWatchlist": "已添加到观察列表",
     "alreadyInWatchlist": "已在观察列表中",
@@ -682,7 +683,9 @@
     "openMenu": "打开菜单",
     "bookmark": "书签",
     "bookmarked": "已收藏",
-    "skipToMainContent": "跳转到主要内容"
+    "skipToMainContent": "跳转到主要内容",
+    "loading": "加载中...",
+    "error": "错误"
   },
   "articles": {
     "keyTakeaways": "要点总结",

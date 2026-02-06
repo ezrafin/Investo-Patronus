@@ -122,6 +122,7 @@
     "submitRating": "Soumettre l'évaluation",
     "notifyMe": "Me notifier",
     "joinWaitlist": "Rejoindre la liste d'attente",
+    "errorOccurred": "Une erreur s'est produite. Veuillez réessayer.",
     "pleaseSignInToWatchlist": "Veuillez vous connecter pour ajouter à la liste de surveillance",
     "addedToWatchlist": "Ajouté à la liste de surveillance",
     "alreadyInWatchlist": "Déjà dans la liste de surveillance",
@@ -682,7 +683,9 @@
     "openMenu": "Ouvrir le menu",
     "bookmark": "Marquer",
     "bookmarked": "Enregistré",
-    "skipToMainContent": "Aller au contenu principal"
+    "skipToMainContent": "Aller au contenu principal",
+    "loading": "Chargement...",
+    "error": "Erreur"
   },
   "articles": {
     "keyTakeaways": "Points clés",

@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import { useTranslation } from '@/hooks/useTranslation';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { supabase } from '@/integrations/supabase/client';
+import { logger } from '@/lib/logger';
 
 const courseModules = [
   { title: 'Introduction to Financial Markets', lessons: 8, duration: '2 hours' },
@@ -82,12 +84,31 @@ export default function LearningCoursePage() {
   const { t, language } = useTranslation({ namespace: 'education' });
   const { t: tUi } = useTranslation({ namespace: 'ui' });
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleNotify = (e: React.FormEvent) => {
+  const handleNotify = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setLoading(true);
+    try {
+      const { error } = await supabase.functions.invoke('send-subscription-email', {
+        body: {
+          email,
+          language,
+          type: 'waitlist',
+        },
+      });
+
+      if (error) throw error;
+
       toast.success(tUi('toast.courseNotification'));
       setEmail('');
+    } catch (error: any) {
+      logger.error('Error sending waitlist email:', error);
+      toast.error(error?.message || tUi('toast.errorOccurred') || 'Failed to send notification');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -117,11 +138,12 @@ export default function LearningCoursePage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                disabled={loading}
                 className="flex-1"
               />
-              <Button type="submit">
+              <Button type="submit" disabled={loading}>
                 <Bell className="h-4 w-4 mr-2" />
-                {tUi('toast.notifyMe')}
+                {loading ? tUi('common.loading') || 'Loading...' : tUi('toast.notifyMe')}
               </Button>
             </form>
           </div>
@@ -284,10 +306,11 @@ export default function LearningCoursePage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                disabled={loading}
                 className="flex-1"
               />
-              <Button type="submit" size="lg">
-                {tUi('toast.joinWaitlist')}
+              <Button type="submit" size="lg" disabled={loading}>
+                {loading ? tUi('common.loading') || 'Loading...' : tUi('toast.joinWaitlist')}
               </Button>
             </form>
           </div>

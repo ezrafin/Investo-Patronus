@@ -122,6 +122,7 @@
     "submitRating": "Wyślij ocenę",
     "notifyMe": "Powiadom mnie",
     "joinWaitlist": "Dołącz do listy oczekujących",
+    "errorOccurred": "Wystąpił błąd. Spróbuj ponownie.",
     "pleaseSignInToWatchlist": "Proszę się zalogować, aby dodać do listy obserwowanych",
     "addedToWatchlist": "Dodano do listy obserwowanych",
     "alreadyInWatchlist": "Już na liście obserwowanych",
@@ -682,7 +683,9 @@
     "openMenu": "Otwórz menu",
     "bookmark": "Zakładka",
     "bookmarked": "Zapisane",
-    "skipToMainContent": "Przejdź do treści głównej"
+    "skipToMainContent": "Przejdź do treści głównej",
+    "loading": "Ładowanie...",
+    "error": "Błąd"
   },
   "articles": {
     "keyTakeaways": "Kluczowe wnioski",

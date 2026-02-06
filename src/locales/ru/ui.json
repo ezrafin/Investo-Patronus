@@ -122,6 +122,7 @@
     "submitRating": "Отправить оценку",
     "notifyMe": "Уведомить меня",
     "joinWaitlist": "Присоединиться к списку ожидания",
+    "errorOccurred": "Произошла ошибка. Пожалуйста, попробуйте снова.",
     "pleaseSignInToWatchlist": "Пожалуйста, войдите, чтобы добавить в список наблюдения",
     "addedToWatchlist": "Добавлено в список наблюдения",
     "alreadyInWatchlist": "Уже в списке наблюдения",
@@ -683,7 +684,9 @@
     "openMenu": "Открыть меню",
     "bookmark": "Закладка",
     "bookmarked": "В закладках",
-    "skipToMainContent": "Перейти к основному содержимому"
+    "skipToMainContent": "Перейти к основному содержимому",
+    "loading": "Загрузка...",
+    "error": "Ошибка"
   },
   "articles": {
     "keyTakeaways": "Ключевые выводы",

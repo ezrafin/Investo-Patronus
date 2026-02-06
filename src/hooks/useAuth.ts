@@ -128,6 +128,15 @@ export function useAuth(): UseAuthReturn {
         return;
       }
 
+      // Handle password recovery - don't load profile, allow user to reset password
+      if (event === 'PASSWORD_RECOVERY') {
+        // User is on password reset page, don't load profile to prevent auto-login
+        // Session is set but profile loading is skipped
+        setLoading(false);
+        clearLoadingTimeout();
+        return;
+      }
+
       // Handle token refresh
       if (event === 'TOKEN_REFRESHED' && currentSession) {
         // Session is already updated, just ensure profile is loaded
