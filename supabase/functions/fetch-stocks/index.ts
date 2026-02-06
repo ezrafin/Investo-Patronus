@@ -1217,6 +1217,40 @@ async function fetchFixerIO(): Promise<any[]> {
 }
 
 // CurrencyAPI (free tier: 300 requests/month, requires API key but has free tier)
+// Helper function to fetch historical currency data with fallback to 7 days ago
+// Returns the rates object or null if all attempts failed
+async function fetchHistoricalRatesWithFallback(
+  fetchFn: (date: string) => Promise<Response>,
+  maxDaysBack: number = 7
+): Promise<any> {
+  // Try yesterday first
+  for (let daysBack = 1; daysBack <= maxDaysBack; daysBack++) {
+    const targetDate = new Date();
+    targetDate.setUTCDate(targetDate.getUTCDate() - daysBack);
+    const y = targetDate.getUTCFullYear();
+    const m = String(targetDate.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(targetDate.getUTCDate()).padStart(2, '0');
+    const dateStr = `${y}-${m}-${d}`;
+
+    try {
+      const resp = await fetchFn(dateStr);
+      if (resp.ok) {
+        const json = await resp.json();
+        if (daysBack > 1) {
+          console.log(`Currency historical data: using ${daysBack} days ago (${dateStr}) as fallback`);
+        }
+        return json;
+      }
+    } catch (error) {
+      // Continue to next day
+      if (daysBack === maxDaysBack) {
+        console.warn(`Currency historical fetch failed for all dates up to ${maxDaysBack} days back:`, error);
+      }
+    }
+  }
+  return null;
+}
+
 // We fetch latest + previous day's rates to compute proper daily change/changePercent.
 async function fetchCurrencyAPI(apiKey?: string): Promise<any[]> {
   if (!apiKey) {
@@ -1236,28 +1270,14 @@ async function fetchCurrencyAPI(apiKey?: string): Promise<any[]> {
     const latestJson = await latestResp.json();
     const latestRates: Record<string, { value: number }> = latestJson.data || {};
 
-    // Previous day (T-1) for daily change
-    const yesterday = new Date();
-    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const y = yesterday.getUTCFullYear();
-    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
-    const d = String(yesterday.getUTCDate()).padStart(2, '0');
-    const prevDate = `${y}-${m}-${d}`;
-
-    let prevRates: Record<string, { value: number }> = {};
-    try {
-      const prevResp = await fetch(
-        `https://api.currencyapi.com/v3/historical?apikey=${apiKey}&base_currency=USD&date=${prevDate}`
+    // Previous day (T-1) for daily change, with fallback to 7 days ago
+    const prevJson = await fetchHistoricalRatesWithFallback(async (dateStr) => {
+      return await fetch(
+        `https://api.currencyapi.com/v3/historical?apikey=${apiKey}&base_currency=USD&date=${dateStr}`
       );
-      if (prevResp.ok) {
-        const prevJson = await prevResp.json();
-        prevRates = (prevJson.data || {}) as Record<string, { value: number }>;
-      } else {
-        console.warn('CurrencyAPI historical error:', prevResp.status);
-      }
-    } catch (historicalError) {
-      console.error('CurrencyAPI historical fetch failed:', historicalError);
-    }
+    }, 7);
+
+    const prevRates: Record<string, { value: number }> = prevJson?.data || {};
 
     return CURRENCY_SYMBOLS.map((item) => {
       // Cross pair EUR/GBP: compute from EUR and GBP
@@ -1319,6 +1339,8 @@ async function fetchCurrencyAPI(apiKey?: string): Promise<any[]> {
 }
 
 // Open Exchange Rates (free tier: 1000 requests/month, requires API key)
+
+// Open Exchange Rates (free tier: 1000 requests/month, requires API key)
 // Similar to CurrencyAPI: fetch latest + previous day and compute daily change.
 async function fetchOpenExchangeRates(apiKey?: string): Promise<any[]> {
   if (!apiKey) {
@@ -1338,28 +1360,14 @@ async function fetchOpenExchangeRates(apiKey?: string): Promise<any[]> {
     const latestJson = await latestResp.json();
     const latestRates: Record<string, number> = latestJson.rates || {};
 
-    // Previous day for daily change
-    const yesterday = new Date();
-    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const y = yesterday.getUTCFullYear();
-    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
-    const d = String(yesterday.getUTCDate()).padStart(2, '0');
-    const prevDate = `${y}-${m}-${d}`;
-
-    let prevRates: Record<string, number> = {};
-    try {
-      const prevResp = await fetch(
-        `https://openexchangerates.org/api/historical/${prevDate}.json?app_id=${apiKey}`
+    // Previous day for daily change, with fallback to 7 days ago
+    const prevJson = await fetchHistoricalRatesWithFallback(async (dateStr) => {
+      return await fetch(
+        `https://openexchangerates.org/api/historical/${dateStr}.json?app_id=${apiKey}`
       );
-      if (prevResp.ok) {
-        const prevJson = await prevResp.json();
-        prevRates = (prevJson.rates || {}) as Record<string, number>;
-      } else {
-        console.warn('Open Exchange Rates historical error:', prevResp.status);
-      }
-    } catch (historicalError) {
-      console.error('Open Exchange Rates historical fetch failed:', historicalError);
-    }
+    }, 7);
+
+    const prevRates: Record<string, number> = prevJson?.rates || {};
 
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
@@ -1390,7 +1398,11 @@ async function fetchOpenExchangeRates(apiKey?: string): Promise<any[]> {
 
       const latest = latestRates[item.exchangeRate];
       const prev = prevRates[item.exchangeRate];
-      if (!latest || !prev) return null;
+      // If no historical data available, skip this currency pair
+      if (!latest || !prev) {
+        console.warn(`Open Exchange Rates: Missing historical data for ${item.symbol}, skipping`);
+        return null;
+      }
 
       let price = latest;
       let prevPrice = prev;
@@ -1448,28 +1460,14 @@ async function fetchCurrencyFreaks(apiKey?: string): Promise<any[]> {
     const latestJson = await latestResp.json();
     const latestRates: Record<string, string> = latestJson.rates || {};
 
-    // Previous day
-    const yesterday = new Date();
-    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const y = yesterday.getUTCFullYear();
-    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
-    const d = String(yesterday.getUTCDate()).padStart(2, '0');
-    const prevDate = `${y}-${m}-${d}`;
-
-    let prevRates: Record<string, string> = {};
-    try {
-      const prevResp = await fetch(
-        `https://api.currencyfreaks.com/v2.0/rates/historical?apikey=${apiKey}&date=${prevDate}&symbols=${encodeURIComponent(symbolsParam)}`
+    // Previous day, with fallback to 7 days ago
+    const prevJson = await fetchHistoricalRatesWithFallback(async (dateStr) => {
+      return await fetch(
+        `https://api.currencyfreaks.com/v2.0/rates/historical?apikey=${apiKey}&date=${dateStr}&symbols=${encodeURIComponent(symbolsParam)}`
       );
-      if (prevResp.ok) {
-        const prevJson = await prevResp.json();
-        prevRates = (prevJson.rates || {}) as Record<string, string>;
-      } else {
-        console.warn('CurrencyFreaks historical error:', prevResp.status);
-      }
-    } catch (historicalError) {
-      console.error('CurrencyFreaks historical fetch failed:', historicalError);
-    }
+    }, 7);
+
+    const prevRates: Record<string, string> = prevJson?.rates || {};
 
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
@@ -1500,7 +1498,11 @@ async function fetchCurrencyFreaks(apiKey?: string): Promise<any[]> {
 
       const latestStr = latestRates[item.exchangeRate];
       const prevStr = prevRates[item.exchangeRate];
-      if (!latestStr || !prevStr) return null;
+      // If no historical data available, skip this currency pair
+      if (!latestStr || !prevStr) {
+        console.warn(`CurrencyFreaks: Missing historical data for ${item.symbol}, skipping`);
+        return null;
+      }
 
       let price = parseFloat(latestStr);
       let prevPrice = parseFloat(prevStr);
@@ -1552,28 +1554,14 @@ async function fetchCurrencyLayer(apiKey?: string): Promise<any[]> {
 
     const latestRates: Record<string, number> = latestJson.quotes || {};
 
-    // Previous day for change calculation
-    const yesterday = new Date();
-    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const y = yesterday.getUTCFullYear();
-    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
-    const d = String(yesterday.getUTCDate()).padStart(2, '0');
-    const prevDate = `${y}-${m}-${d}`;
-
-    let prevRates: Record<string, number> = {};
-    try {
-      const prevResp = await fetch(
-        `http://api.currencylayer.com/historical?access_key=${apiKey}&date=${prevDate}&source=USD`
+    // Previous day for change calculation, with fallback to 7 days ago
+    const prevJson = await fetchHistoricalRatesWithFallback(async (dateStr) => {
+      return await fetch(
+        `http://api.currencylayer.com/historical?access_key=${apiKey}&date=${dateStr}&source=USD`
       );
-      if (prevResp.ok) {
-        const prevJson = await prevResp.json();
-        if (prevJson.success) {
-          prevRates = prevJson.quotes || {};
-        }
-      }
-    } catch (historicalError) {
-      console.error('CurrencyLayer historical fetch failed:', historicalError);
-    }
+    }, 7);
+
+    const prevRates: Record<string, number> = (prevJson?.success && prevJson?.quotes) ? prevJson.quotes : {};
 
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
@@ -1603,9 +1591,15 @@ async function fetchCurrencyLayer(apiKey?: string): Promise<any[]> {
       const rate = latestRates[quoteKey];
       if (!rate) return null;
 
-      let price = 1 / rate; // Invert for USD/XXX pairs
       const prevRate = prevRates[quoteKey];
-      const prevPrice = prevRate ? 1 / prevRate : price;
+      // If no historical data available, skip this currency pair
+      if (!prevRate) {
+        console.warn(`CurrencyLayer: Missing historical data for ${item.symbol}, skipping`);
+        return null;
+      }
+
+      let price = 1 / rate; // Invert for USD/XXX pairs
+      const prevPrice = 1 / prevRate;
       const change = price - prevPrice;
       const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
 
@@ -1647,28 +1641,14 @@ async function fetchExchangeRatesData(apiKey?: string): Promise<any[]> {
 
     const latestRates: Record<string, number> = latestJson.rates || {};
 
-    // Previous day for change calculation
-    const yesterday = new Date();
-    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const y = yesterday.getUTCFullYear();
-    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
-    const d = String(yesterday.getUTCDate()).padStart(2, '0');
-    const prevDate = `${y}-${m}-${d}`;
-
-    let prevRates: Record<string, number> = {};
-    try {
-      const prevResp = await fetch(
-        `https://api.exchangeratesdata.io/v1/${prevDate}?access_key=${apiKey}&base=USD`
+    // Previous day for change calculation, with fallback to 7 days ago
+    const prevJson = await fetchHistoricalRatesWithFallback(async (dateStr) => {
+      return await fetch(
+        `https://api.exchangeratesdata.io/v1/${dateStr}?access_key=${apiKey}&base=USD`
       );
-      if (prevResp.ok) {
-        const prevJson = await prevResp.json();
-        if (prevJson.success) {
-          prevRates = prevJson.rates || {};
-        }
-      }
-    } catch (historicalError) {
-      console.error('Exchange Rates Data API historical fetch failed:', historicalError);
-    }
+    }, 7);
+
+    const prevRates: Record<string, number> = (prevJson?.success && prevJson?.rates) ? prevJson.rates : {};
 
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
@@ -1697,9 +1677,15 @@ async function fetchExchangeRatesData(apiKey?: string): Promise<any[]> {
       const rate = latestRates[item.exchangeRate];
       if (!rate) return null;
 
-      let price = 1 / rate; // Invert for USD/XXX pairs
       const prevRate = prevRates[item.exchangeRate];
-      const prevPrice = prevRate ? 1 / prevRate : price;
+      // If no historical data available, skip this currency pair
+      if (!prevRate) {
+        console.warn(`Exchange Rates Data API: Missing historical data for ${item.symbol}, skipping`);
+        return null;
+      }
+
+      let price = 1 / rate; // Invert for USD/XXX pairs
+      const prevPrice = 1 / prevRate;
       const change = price - prevPrice;
       const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
 
@@ -1741,28 +1727,14 @@ async function fetchCurrencyScoop(apiKey?: string): Promise<any[]> {
 
     const latestRates: Record<string, number> = latestJson.response?.rates || {};
 
-    // Previous day for change calculation
-    const yesterday = new Date();
-    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const y = yesterday.getUTCFullYear();
-    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
-    const d = String(yesterday.getUTCDate()).padStart(2, '0');
-    const prevDate = `${y}-${m}-${d}`;
-
-    let prevRates: Record<string, number> = {};
-    try {
-      const prevResp = await fetch(
-        `https://api.currencyscoop.com/v1/historical?api_key=${apiKey}&base=USD&date=${prevDate}`
+    // Previous day for change calculation, with fallback to 7 days ago
+    const prevJson = await fetchHistoricalRatesWithFallback(async (dateStr) => {
+      return await fetch(
+        `https://api.currencyscoop.com/v1/historical?api_key=${apiKey}&base=USD&date=${dateStr}`
       );
-      if (prevResp.ok) {
-        const prevJson = await prevResp.json();
-        if (prevJson.meta?.code === 200) {
-          prevRates = prevJson.response?.rates || {};
-        }
-      }
-    } catch (historicalError) {
-      console.error('CurrencyScoop historical fetch failed:', historicalError);
-    }
+    }, 7);
+
+    const prevRates: Record<string, number> = (prevJson?.meta?.code === 200 && prevJson?.response?.rates) ? prevJson.response.rates : {};
 
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
@@ -1791,9 +1763,15 @@ async function fetchCurrencyScoop(apiKey?: string): Promise<any[]> {
       const rate = latestRates[item.exchangeRate];
       if (!rate) return null;
 
-      let price = 1 / rate; // Invert for USD/XXX pairs
       const prevRate = prevRates[item.exchangeRate];
-      const prevPrice = prevRate ? 1 / prevRate : price;
+      // If no historical data available, skip this currency pair
+      if (!prevRate) {
+        console.warn(`CurrencyScoop: Missing historical data for ${item.symbol}, skipping`);
+        return null;
+      }
+
+      let price = 1 / rate; // Invert for USD/XXX pairs
+      const prevPrice = 1 / prevRate;
       const change = price - prevPrice;
       const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
 
@@ -1887,24 +1865,12 @@ async function fetchFrankfurter(): Promise<any[]> {
     const latestJson = await latestResp.json();
     const latestRates: Record<string, number> = latestJson.rates || {};
 
-    // Previous day for change calculation
-    const yesterday = new Date();
-    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const y = yesterday.getUTCFullYear();
-    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
-    const d = String(yesterday.getUTCDate()).padStart(2, '0');
-    const prevDate = `${y}-${m}-${d}`;
+    // Previous day for change calculation, with fallback to 7 days ago
+    const prevJson = await fetchHistoricalRatesWithFallback(async (dateStr) => {
+      return await fetch(`https://api.frankfurter.app/${dateStr}?from=USD`);
+    }, 7);
 
-    let prevRates: Record<string, number> = {};
-    try {
-      const prevResp = await fetch(`https://api.frankfurter.app/${prevDate}?from=USD`);
-      if (prevResp.ok) {
-        const prevJson = await prevResp.json();
-        prevRates = prevJson.rates || {};
-      }
-    } catch (historicalError) {
-      console.error('Frankfurter historical fetch failed:', historicalError);
-    }
+    const prevRates: Record<string, number> = prevJson?.rates || {};
 
     return CURRENCY_SYMBOLS.map((item) => {
       if (!item.exchangeRate) {
@@ -1933,9 +1899,15 @@ async function fetchFrankfurter(): Promise<any[]> {
       const rate = latestRates[item.exchangeRate];
       if (!rate) return null;
 
-      let price = 1 / rate; // Invert for USD/XXX pairs
       const prevRate = prevRates[item.exchangeRate];
-      const prevPrice = prevRate ? 1 / prevRate : price;
+      // If no historical data available, skip this currency pair
+      if (!prevRate) {
+        console.warn(`Frankfurter: Missing historical data for ${item.symbol}, skipping`);
+        return null;
+      }
+
+      let price = 1 / rate; // Invert for USD/XXX pairs
+      const prevPrice = 1 / prevRate;
       const change = price - prevPrice;
       const changePercent = prevPrice > 0 ? (change / prevPrice) * 100 : 0;
 

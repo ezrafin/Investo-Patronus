@@ -51,10 +51,15 @@ const CACHE_STRATEGIES = {
   staleWhileRevalidate: async (request, cacheName) => {
     const cached = await caches.match(request);
     
-    const fetchPromise = fetch(request).then(networkResponse => {
+    const fetchPromise = fetch(request).then(async networkResponse => {
       if (networkResponse.ok) {
-        const cache = caches.open(cacheName);
-        cache.then(c => c.put(request, networkResponse.clone()));
+        // Clone response immediately before it's used
+        const clonedResponse = networkResponse.clone();
+        const cache = await caches.open(cacheName);
+        // Put cloned response in cache (don't await to avoid blocking)
+        cache.put(request, clonedResponse).catch(err => {
+          console.warn('SW: Failed to cache response:', err);
+        });
       }
       return networkResponse;
     }).catch(() => cached);
