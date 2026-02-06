@@ -1,154 +1,140 @@
 
+# План исправления двух проблем
 
-# Анализ логов и оптимизация скорости сайта INVESTOPATRONUS
+## Проблема 1: Ошибка 404 при входе через Google/Apple
 
-## Результаты анализа логов за последний день
-
-### Ошибки и проблемы
-
-**Критических ошибок не обнаружено:**
-- База данных: 0 ошибок уровня ERROR/FATAL/PANIC
-- Аутентификация: 0 ошибок или неудачных запросов (4xx)
-- Edge Functions: 0 HTTP ошибок (status >= 400)
-- Консоль браузера: только информационные сообщения Vercel Analytics
-
-**Обнаруженные особенности:**
-- `fetch-guardian-news`: среднее время выполнения ~9.8 секунд (одноразовый batch-процесс для загрузки новостей, не влияет на пользователей)
-- `fetch-stocks`: работает стабильно, ~380ms в среднем
-
-### Состояние базы данных
-
-| Таблица | Размер | Записей | Примечание |
-|---------|--------|---------|------------|
-| profiles | 44 MB | 7,716 | ~4.5 KB/запись (большой объём) |
-| news_articles | 25 MB | 6,899 | Нормально |
-| forum_discussions | 256 KB | 114 | Нормально |
-
-**Обнаружена проблема:** таблица `profiles` занимает 44 MB при 7,716 записях (~4.5 KB на запись) - это избыточно для простых профилей. Возможно, хранятся большие данные в полях `avatar_url` или `bio`.
-
----
-
-## План оптимизации скорости
-
-### 1. Добавить Service Worker для кэширования статических ресурсов
-
-**Проблема:** Сайт не использует Service Worker для офлайн-кэширования.
-
-**Решение:**
-- Создать `public/sw.js` с Workbox-подобной логикой
-- Регистрировать SW в `src/main.tsx`
-- Кэшировать: шрифты, изображения, JSON переводов, API ответы
-
-**Выигрыш:** Мгновенная загрузка повторных визитов, офлайн-работа
-
-### 2. Оптимизировать загрузку переводов
-
-**Проблема:** В `I18nContext.tsx` загружается 7 namespace-ов параллельно (common, ui, forum, education, analytics, profile, companies), что блокирует рендеринг.
-
-**Решение:**
-```typescript
-// Загружать только критические namespace-ы для первого рендера
-const [common, ui] = await Promise.all([
-  loadTranslation(lang, 'common'),
-  loadTranslation(lang, 'ui'),
-]);
-
-// Остальные загружать в фоне после рендера
-Promise.all([
-  loadTranslation(lang, 'forum'),
-  loadTranslation(lang, 'education'),
-  // ...
-]).then(setSecondaryTranslations);
+### Диагностика
+Из скриншота видно, что при OAuth-входе происходит редирект на URL:
+```
+investopatronus.com/~oauth/initiate?provider=google&redirect_uri=https%3A%2F%2Fwww.investopatronus.com%2Fauth%2Fcallback...
 ```
 
-**Выигрыш:** Ускорение первого рендера на ~200-400ms
+Этот URL (`/~oauth/initiate`) — это endpoint Lovable Cloud OAuth, но в нём указан `redirect_uri` с `www.investopatronus.com`, что может вызывать несоответствие доменов.
 
-### 3. Отложить загрузку рыночных данных
+**Ключевая причина**: Redirect URI отправляется как `window.location.origin`, но в данном случае это может быть `www.investopatronus.com`, тогда как OAuth настроен для `investopatronus.com` (без www). Также нужно указывать полный путь `/auth/callback`, а не просто origin.
 
-**Проблема:** В `MarketDataSection` используется IntersectionObserver с `rootMargin: '200px'`, но на главной странице секция почти сразу видна.
+### Решение
 
-**Решение:**
-- Использовать `staleWhileRevalidate` паттерн с localStorage кэшем (уже частично реализован в `useMarketDataQuery`)
-- Показывать кэшированные данные мгновенно
-- Увеличить `staleTime` до 60 секунд для менее частого рефреша
+1. **Изменить `src/hooks/useAuth.ts`**:
+   - Для `redirect_uri` использовать полный путь `${window.location.origin}/auth/callback`
+   - Убедиться что домен соответствует настройкам OAuth провайдера
 
-### 4. Оптимизировать NewsSection
-
-**Проблема:** `NewsSection` использует `useState` + `useEffect` + `fetchNews()` вместо React Query, что не использует кэширование.
-
-**Решение:**
 ```typescript
-// Заменить на useQuery для использования общего кэша
-const { data: news = [], isLoading } = useQuery({
-  queryKey: ['news', 'homepage'],
-  queryFn: () => fetchNews(),
-  staleTime: 2 * 60 * 1000,
+const result = await lovable.auth.signInWithOAuth(provider, {
+  redirect_uri: `${window.location.origin}/auth/callback`,
 });
 ```
 
-**Выигрыш:** Мгновенный рендер при возврате на главную страницу
+---
 
-### 5. Предзагрузка критических ресурсов
+## Проблема 2: Фиатные валюты показывают 0.00% изменения
 
-**Уже реализовано в `index.html`:**
-- Preload навигационных иконок
-- Prefetch основных страниц
-- Preconnect к Google Fonts
+### Диагностика
 
-**Дополнительно добавить:**
-```html
-<!-- Preload критического CSS для первого экрана -->
-<link rel="preload" href="/src/index.css" as="style" />
-
-<!-- Preload hero-фона если используется -->
-<link rel="preload" href="/hero-background.jpg" as="image" fetchpriority="high" />
+Из логов Edge Function видно:
+```
+Returning 10 items from source: exchangerate for type: currencies
 ```
 
-### 6. Оптимизировать CSS
+Функция `fetchExchangeRateAPI()` возвращает данные, но **не вычисляет изменение цены**. Это бесплатный API который даёт только текущие курсы без исторических данных:
 
-**Проблема:** `src/index.css` содержит 1029 строк с 10+ темами (Glacier, Harvest, Lavender, Brutalist, Obsidian, Orchid, Solar, Tide, Verdant), большинство из которых редко используются.
+```typescript
+// Строки 1087-1095 в fetch-stocks/index.ts
+return {
+  symbol: formatSymbol(item.symbol, 'currencies'),
+  name: item.name,
+  price,
+  change: 0,           // ← Всегда 0!
+  changePercent: 0,    // ← Всегда 0!
+  high: price,
+  low: price,
+};
+```
 
-**Решение:**
-- Вынести дополнительные темы в отдельный файл `themes.css`
-- Загружать темы динамически при выборе пользователем
-- Основной CSS уменьшится на ~60%
+**Проблема**: API с ключами (которые вычисляют daily change) возвращают недостаточно данных и система падает на бесплатный API ExchangeRate-API, который не предоставляет исторические данные.
 
-### 7. Сжатие изображений
+Логи показывают цепочку fallback:
+```
+Finnhub API failed → Twelve Data API failed → Yahoo Finance API failed →
+Open Exchange Rates failed → CurrencyFreaks failed → ExchangeRate-API ✓ (0% change)
+```
 
-**Рекомендации:**
-- Конвертировать все изображения в WebP формат (уже поддерживается в `LazyImage`)
-- Добавить AVIF как ещё более современный формат
-- Оптимизировать `hero-background.jpg` и `bg.mp4`
+### Решение
+
+Модифицировать `fetchExchangeRateAPI()` для получения предыдущего дня данных, аналогично тому, как это сделано в `fetchOpenExchangeRates()` и `fetchCurrencyFreaks()`.
+
+ExchangeRate-API поддерживает бесплатный исторический endpoint:
+`https://api.exchangerate-api.com/v4/<date>/USD`
+
+Пример исправления:
+
+```typescript
+async function fetchExchangeRateAPI(): Promise<any[]> {
+  try {
+    // Fetch latest rates
+    const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+    if (!response.ok) throw new Error(`ExchangeRate-API error: ${response.status}`);
+    const data = await response.json();
+    const rates = data.rates || {};
+    
+    // Fetch previous day rates for change calculation
+    const yesterday = new Date();
+    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+    const y = yesterday.getUTCFullYear();
+    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(yesterday.getUTCDate()).padStart(2, '0');
+    const prevDate = `${y}-${m}-${d}`;
+    
+    let prevRates: Record<string, number> = {};
+    try {
+      const prevResp = await fetch(`https://api.exchangerate-api.com/v4/${prevDate}/USD`);
+      if (prevResp.ok) {
+        const prevData = await prevResp.json();
+        prevRates = prevData.rates || {};
+      }
+    } catch (e) {
+      console.warn('ExchangeRate-API historical fetch failed:', e);
+    }
+    
+    return CURRENCY_SYMBOLS.map((item) => {
+      // ... calculate price and prevPrice
+      const change = price - prevPrice;
+      const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
+      
+      return {
+        symbol: formatSymbol(item.symbol, 'currencies'),
+        name: item.name,
+        price,
+        change,
+        changePercent,
+        high: Math.max(price, prevPrice),
+        low: Math.min(price, prevPrice),
+      };
+    }).filter(Boolean);
+  } catch (error) {
+    console.error('ExchangeRate-API error:', error);
+    return [];
+  }
+}
+```
+
+Аналогичные изменения нужны для `fetchExchangeRateHost()` и `fetchFixerIO()`.
 
 ---
 
-## Технический план реализации
+## Файлы для изменения
 
-### Файлы для создания:
-1. `public/sw.js` - Service Worker
-2. `src/lib/registerSW.ts` - регистрация SW
-
-### Файлы для изменения:
-1. `src/main.tsx` - добавить регистрацию SW
-2. `src/context/I18nContext.tsx` - отложенная загрузка переводов
-3. `src/components/home/NewsSection.tsx` - миграция на useQuery
-4. `src/index.css` - вынести темы
-5. `index.html` - добавить preload критических ресурсов
-
-### Порядок выполнения:
-1. NewsSection → useQuery (быстрая победа)
-2. I18nContext оптимизация (заметное улучшение)
-3. Service Worker (долгосрочный эффект)
-4. CSS разделение (уменьшение bundle)
+| Файл | Изменение |
+|------|-----------|
+| `src/hooks/useAuth.ts` | Исправить `redirect_uri` для OAuth |
+| `supabase/functions/fetch-stocks/index.ts` | Добавить вычисление daily change в функциях `fetchExchangeRateAPI()`, `fetchExchangeRateHost()`, `fetchFixerIO()`, `fetchFrankfurter()` |
 
 ---
 
-## Метрики улучшения (ожидаемые)
+## Ожидаемый результат
 
-| Метрика | Текущее | После оптимизации |
-|---------|---------|-------------------|
-| First Contentful Paint | ~1.5s | ~1.0s |
-| Largest Contentful Paint | ~2.5s | ~1.8s |
-| Повторный визит | ~1.2s | ~0.3s (SW cache) |
-| Bundle Size (CSS) | ~45KB | ~18KB |
+1. **OAuth**: Вход через Google и Apple будет корректно перенаправлять на `/auth/callback` после авторизации
 
+2. **Валюты**: Процент изменения будет вычисляться как разница между сегодняшним и вчерашним курсом, например:
+   - EUR/USD: 0.8480 → **~0.15%** (вместо 0.00%)
+   - USD/JPY: 154.85 → **~0.35%** (вместо 0.00%)
