@@ -36,21 +36,21 @@ const instructors = [
     name: 'Dr. Michael Torres',
     title: 'Lead Instructor',
     credentials: 'CFA, CMT, PhD Finance',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=200&h=200&fit=crop&crop=face',
     bio: '20+ years of experience in institutional asset management. Former portfolio manager at Fidelity Investments.',
   },
   {
     name: 'Sarah Mitchell',
     title: 'Technical Analysis Expert',
     credentials: 'CMT, Market Technician',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=200&h=200&fit=crop&crop=face',
     bio: 'Author of "Chart Patterns That Work" and regular contributor to technical analysis publications.',
   },
   {
     name: 'James Chen',
     title: 'Portfolio Strategy Instructor',
     credentials: 'CFA, CAIA',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1539571696357-5a69c17d67?w=200&h=200&fit=crop&crop=face',
     bio: 'Former quantitative strategist at Goldman Sachs. Specializes in factor investing and portfolio optimization.',
   },
 ];
@@ -66,7 +66,7 @@ const testimonials = [
   {
     name: 'Robert Kim',
     role: 'Small Business Owner',
-    image: 'https://images.unsplash.com/photo-1508214751196-b9d1d5b8e93e?w=100&h=100&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-156860247112-55e0e5e0f97e?w=100&h=100&fit=crop&crop=face',
     quote: 'Finally, an investment course that goes beyond basics without being overwhelming. The instructor support is exceptional.',
     rating: 5,
   },
