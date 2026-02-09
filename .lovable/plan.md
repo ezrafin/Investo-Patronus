@@ -1,124 +1,55 @@
 
-# План исправления двух проблем
 
-## Проблема 1: Ошибка 404 при входе через Google/Apple
+# Исправление входа через Google и Apple OAuth
 
-### Диагностика
-Из скриншота видно, что при OAuth-входе происходит редирект на URL:
-```
-investopatronus.com/~oauth/initiate?provider=google&redirect_uri=https%3A%2F%2Fwww.investopatronus.com%2Fauth%2Fcallback...
-```
+## Диагностика проблемы
 
-Этот URL (`/~oauth/initiate`) — это endpoint Lovable Cloud OAuth, но в нём указан `redirect_uri` с `www.investopatronus.com`, что может вызывать несоответствие доменов.
+Из скриншотов видно:
 
-**Ключевая причина**: Redirect URI отправляется как `window.location.origin`, но в данном случае это может быть `www.investopatronus.com`, тогда как OAuth настроен для `investopatronus.com` (без www). Также нужно указывать полный путь `/auth/callback`, а не просто origin.
+1. **Ошибка**: `oauth.lovable.app/callback` возвращает 400 "Missing state parameter"
+2. **Google Console**: Redirect URI настроен как `https://investo-patronus.lovable.app/~oauth/callback`
+3. **Фактический callback**: Браузер попадает на `https://oauth.lovable.app/callback` (другой URL!)
 
-### Решение
+### Как работает Lovable Cloud OAuth
 
-1. **Изменить `src/hooks/useAuth.ts`**:
-   - Для `redirect_uri` использовать полный путь `${window.location.origin}/auth/callback`
-   - Убедиться что домен соответствует настройкам OAuth провайдера
+Библиотека `@lovable.dev/cloud-auth-js` работает так:
+1. Открывает `investo-patronus.lovable.app/~oauth/initiate` (брокер)
+2. Брокер перенаправляет на Google
+3. Google перенаправляет на callback URL (настроенный в Google Console)
+4. Callback обрабатывает токены и перенаправляет пользователя на `redirect_uri`
 
+**Проблема**: Брокер Lovable использует `oauth.lovable.app/callback` как внутренний callback, но в Google Console указан `investo-patronus.lovable.app/~oauth/callback`. Из-за несоответствия теряется параметр `state`.
+
+## Решение
+
+### Шаг 1: Исправить код — убрать `/auth/callback` из `redirect_uri`
+
+Согласно документации библиотеки, `redirect_uri` должен быть просто `window.location.origin` (без пути). Библиотека сама обрабатывает callback через брокер и возвращает пользователя на указанный origin.
+
+**Файл: `src/hooks/useAuth.ts`**
+
+Текущий код (строка 344):
 ```typescript
-const result = await lovable.auth.signInWithOAuth(provider, {
-  redirect_uri: `${window.location.origin}/auth/callback`,
-});
+const redirectUri = `${currentOrigin}/auth/callback`;
 ```
 
----
-
-## Проблема 2: Фиатные валюты показывают 0.00% изменения
-
-### Диагностика
-
-Из логов Edge Function видно:
-```
-Returning 10 items from source: exchangerate for type: currencies
-```
-
-Функция `fetchExchangeRateAPI()` возвращает данные, но **не вычисляет изменение цены**. Это бесплатный API который даёт только текущие курсы без исторических данных:
-
+Исправить на:
 ```typescript
-// Строки 1087-1095 в fetch-stocks/index.ts
-return {
-  symbol: formatSymbol(item.symbol, 'currencies'),
-  name: item.name,
-  price,
-  change: 0,           // ← Всегда 0!
-  changePercent: 0,    // ← Всегда 0!
-  high: price,
-  low: price,
-};
+const redirectUri = currentOrigin;
 ```
 
-**Проблема**: API с ключами (которые вычисляют daily change) возвращают недостаточно данных и система падает на бесплатный API ExchangeRate-API, который не предоставляет исторические данные.
+### Шаг 2: Обновить Authorized redirect URIs в Google Console
 
-Логи показывают цепочку fallback:
+В Google Console нужно **добавить** URL:
 ```
-Finnhub API failed → Twelve Data API failed → Yahoo Finance API failed →
-Open Exchange Rates failed → CurrencyFreaks failed → ExchangeRate-API ✓ (0% change)
-```
-
-### Решение
-
-Модифицировать `fetchExchangeRateAPI()` для получения предыдущего дня данных, аналогично тому, как это сделано в `fetchOpenExchangeRates()` и `fetchCurrencyFreaks()`.
-
-ExchangeRate-API поддерживает бесплатный исторический endpoint:
-`https://api.exchangerate-api.com/v4/<date>/USD`
-
-Пример исправления:
-
-```typescript
-async function fetchExchangeRateAPI(): Promise<any[]> {
-  try {
-    // Fetch latest rates
-    const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
-    if (!response.ok) throw new Error(`ExchangeRate-API error: ${response.status}`);
-    const data = await response.json();
-    const rates = data.rates || {};
-    
-    // Fetch previous day rates for change calculation
-    const yesterday = new Date();
-    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const y = yesterday.getUTCFullYear();
-    const m = String(yesterday.getUTCMonth() + 1).padStart(2, '0');
-    const d = String(yesterday.getUTCDate()).padStart(2, '0');
-    const prevDate = `${y}-${m}-${d}`;
-    
-    let prevRates: Record<string, number> = {};
-    try {
-      const prevResp = await fetch(`https://api.exchangerate-api.com/v4/${prevDate}/USD`);
-      if (prevResp.ok) {
-        const prevData = await prevResp.json();
-        prevRates = prevData.rates || {};
-      }
-    } catch (e) {
-      console.warn('ExchangeRate-API historical fetch failed:', e);
-    }
-    
-    return CURRENCY_SYMBOLS.map((item) => {
-      // ... calculate price and prevPrice
-      const change = price - prevPrice;
-      const changePercent = prevPrice !== 0 ? (change / prevPrice) * 100 : 0;
-      
-      return {
-        symbol: formatSymbol(item.symbol, 'currencies'),
-        name: item.name,
-        price,
-        change,
-        changePercent,
-        high: Math.max(price, prevPrice),
-        low: Math.min(price, prevPrice),
-      };
-    }).filter(Boolean);
-  } catch (error) {
-    console.error('ExchangeRate-API error:', error);
-    return [];
-  }
-}
+https://oauth.lovable.app/callback
 ```
 
-Аналогичные изменения нужны для `fetchExchangeRateHost()` и `fetchFixerIO()`.
+Это внутренний callback Lovable OAuth брокера, который используется для обработки ответа Google. Текущий `https://investo-patronus.lovable.app/~oauth/callback` может быть удалён или оставлен.
+
+### Шаг 3: Проверить Apple Sign-In
+
+Apple использует тот же Lovable Cloud OAuth брокер. Если Apple Sign-In управляется Lovable (managed), дополнительная настройка не требуется — он будет работать после исправления кода в шаге 1.
 
 ---
 
@@ -126,15 +57,18 @@ async function fetchExchangeRateAPI(): Promise<any[]> {
 
 | Файл | Изменение |
 |------|-----------|
-| `src/hooks/useAuth.ts` | Исправить `redirect_uri` для OAuth |
-| `supabase/functions/fetch-stocks/index.ts` | Добавить вычисление daily change в функциях `fetchExchangeRateAPI()`, `fetchExchangeRateHost()`, `fetchFixerIO()`, `fetchFrankfurter()` |
+| `src/hooks/useAuth.ts` | Убрать `/auth/callback` из `redirect_uri` для OAuth — использовать просто `window.location.origin` |
 
----
+## Действия пользователя (вне кода)
+
+В Google Cloud Console добавить в "Authorized redirect URIs":
+```
+https://oauth.lovable.app/callback
+```
 
 ## Ожидаемый результат
 
-1. **OAuth**: Вход через Google и Apple будет корректно перенаправлять на `/auth/callback` после авторизации
-
-2. **Валюты**: Процент изменения будет вычисляться как разница между сегодняшним и вчерашним курсом, например:
-   - EUR/USD: 0.8480 → **~0.15%** (вместо 0.00%)
-   - USD/JPY: 154.85 → **~0.35%** (вместо 0.00%)
+1. При нажатии "Continue with Google" пользователь перенаправляется на Google
+2. После авторизации Google перенаправляет на `oauth.lovable.app/callback`
+3. Брокер обрабатывает токены и перенаправляет на `investopatronus.com`
+4. Пользователь залогинен на сайте
