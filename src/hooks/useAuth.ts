@@ -339,10 +339,10 @@ export function useAuth(): UseAuthReturn {
       // Use Lovable Cloud for Google and Apple
       if (provider === 'google' || provider === 'apple') {
         const { lovable } = await import('@/integrations/lovable');
-        // Lovable OAuth callback должен быть на Lovable домене
-        const redirectUri = 'https://investo-patronus.lovable.app/~oauth/callback';
+        // redirect_uri должен быть просто origin — брокер сам обработает callback
+        const currentOrigin = window.location.origin.replace('www.', '');
         const result = await lovable.auth.signInWithOAuth(provider, {
-          redirect_uri: redirectUri,
+          redirect_uri: currentOrigin,
         });
         
         if (result.error) {
