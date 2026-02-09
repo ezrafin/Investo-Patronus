@@ -2,7 +2,11 @@
 
 import { createLovableAuth } from "@lovable.dev/cloud-auth-js";
 import { supabase } from "../supabase/client";
-const lovableAuth = createLovableAuth({});
+
+// For custom domains, use the full Lovable OAuth broker URL
+const lovableAuth = createLovableAuth({
+  oauthBrokerUrl: "https://investo-patronus.lovable.app/~oauth/initiate",
+});
 
 type SignInOptions = {
   redirect_uri?: string;
