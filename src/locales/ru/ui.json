@@ -189,6 +189,7 @@
     "hoursAgo": "{{count}} часов назад"
   },
   "auth": {
+    "comingSoon": "Скоро...",
     "welcomeBack": "С возвращением",
     "signInToContinue": "Войдите в аккаунт, чтобы продолжить",
     "continueWithGoogle": "Продолжить с Google",

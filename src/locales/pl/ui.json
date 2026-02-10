@@ -189,6 +189,7 @@
     "hoursAgo": "{{count}} godzin temu"
   },
   "auth": {
+    "comingSoon": "Wkrótce...",
     "welcomeBack": "Witaj ponownie",
     "signInToContinue": "Zaloguj się, aby kontynuować",
     "continueWithGoogle": "Kontynuuj przez Google",
