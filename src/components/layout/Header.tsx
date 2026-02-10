@@ -25,6 +25,54 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+
+// Critical navigation icons that should be preloaded and loaded eagerly
+const CRITICAL_NAV_ICONS = new Set([
+  '/logos/navigation/indices.png',
+  '/logos/navigation/stocks.png',
+  '/logos/navigation/commodities.png',
+  '/logos/navigation/crypto.png',
+  '/logos/navigation/currency.png'
+]);
+
+// Helper function to get WebP path from PNG path
+function getWebPPath(pngPath: string): string {
+  return pngPath.replace(/\.png$/i, '.webp');
+}
+
+// Helper function to check if icon is critical
+function isCriticalIcon(iconPath: string): boolean {
+  return CRITICAL_NAV_ICONS.has(iconPath);
+}
+
+// Optimized image component for navigation icons
+function NavIconImage({ 
+  src, 
+  alt, 
+  className 
+}: { 
+  src: string; 
+  alt: string; 
+  className?: string;
+}) {
+  const isCritical = isCriticalIcon(src);
+  const webpSrc = getWebPPath(src);
+  
+  return (
+    <picture>
+      <source srcSet={webpSrc} type="image/webp" />
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        loading={isCritical ? 'eager' : 'lazy'}
+        fetchPriority={isCritical ? 'high' : 'auto'}
+        decoding="async"
+      />
+    </picture>
+  );
+}
+
 export function Header() {
   const { t } = useTranslation({ namespace: 'ui' });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -189,23 +237,40 @@ export function Header() {
   useEffect(() => {
     if (navigationIconUrls.length === 0) return;
 
-    // Use requestIdleCallback if available for low-priority preloading
-    // Otherwise use setTimeout to avoid blocking initial render
-    const preloadIcons = () => {
-      preloadImages(navigationIconUrls).then(() => {
-        logger.debug(`Preloaded ${navigationIconUrls.length} navigation icons`);
+    // Separate critical and non-critical icons
+    const criticalIcons = navigationIconUrls.filter(url => isCriticalIcon(url));
+    const nonCriticalIcons = navigationIconUrls.filter(url => !isCriticalIcon(url));
+    
+    // Preload critical icons immediately with high priority
+    if (criticalIcons.length > 0) {
+      // Preload WebP versions of critical icons
+      const criticalWebPIcons = criticalIcons.map(getWebPPath);
+      preloadImages([...criticalIcons, ...criticalWebPIcons]).then(() => {
+        logger.debug(`Preloaded ${criticalIcons.length} critical navigation icons`);
       }).catch(error => {
-        logger.warn('Failed to preload some navigation icons:', error);
+        logger.warn('Failed to preload some critical navigation icons:', error);
       });
-    };
+    }
 
-    if ('requestIdleCallback' in window) {
-      const idleCallbackId = (window as any).requestIdleCallback(preloadIcons, { timeout: 2000 });
-      return () => (window as any).cancelIdleCallback(idleCallbackId);
-    } else {
-      // Fallback for browsers without requestIdleCallback
-      const timeoutId = setTimeout(preloadIcons, 100);
-      return () => clearTimeout(timeoutId);
+    // Preload non-critical icons with lower priority (using requestIdleCallback)
+    if (nonCriticalIcons.length > 0) {
+      const preloadNonCritical = () => {
+        const nonCriticalWebPIcons = nonCriticalIcons.map(getWebPPath);
+        preloadImages([...nonCriticalIcons, ...nonCriticalWebPIcons]).then(() => {
+          logger.debug(`Preloaded ${nonCriticalIcons.length} non-critical navigation icons`);
+        }).catch(error => {
+          logger.warn('Failed to preload some non-critical navigation icons:', error);
+        });
+      };
+
+      if ('requestIdleCallback' in window) {
+        const idleCallbackId = (window as any).requestIdleCallback(preloadNonCritical, { timeout: 2000 });
+        return () => (window as any).cancelIdleCallback(idleCallbackId);
+      } else {
+        // Fallback for browsers without requestIdleCallback
+        const timeoutId = setTimeout(preloadNonCritical, 100);
+        return () => clearTimeout(timeoutId);
+      }
     }
   }, [navigationIconUrls]);
 
@@ -276,7 +341,7 @@ export function Header() {
                         {item.children.map(child => <Link key={child.href} to={child.href} className="flex items-start gap-3 px-4 py-3 hover:bg-secondary/50 transition-colors">
                             <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                               {(child as any).customIcon ? (
-                                <img 
+                                <NavIconImage 
                                   src={(child as any).customIcon} 
                                   alt={child.name}
                                   className="h-full w-full object-contain p-1"
@@ -487,7 +552,7 @@ export function Header() {
                         className={`flex flex-col items-center justify-center gap-2 px-3 py-3 text-xs rounded-lg transition-colors ${isActive(child.href) ? 'text-foreground bg-secondary/50' : 'text-muted-foreground hover:text-foreground hover:bg-secondary/30'}`}>
                           {(child as any).customIcon ? (
                             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                              <img 
+                              <NavIconImage 
                                 src={(child as any).customIcon} 
                                 alt={child.name}
                                 className="h-full w-full object-contain p-1.5"

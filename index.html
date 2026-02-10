@@ -51,6 +51,19 @@
     <!-- Removed favicon preload as it's not critical and causes warnings -->
     
     <!-- Preload critical navigation icons for instant menu display -->
+    <!-- Critical market icons (most important - loaded with high priority) -->
+    <link rel="preload" as="image" href="/logos/navigation/indices.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/logos/navigation/stocks.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/logos/navigation/commodities.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/logos/navigation/crypto.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/logos/navigation/currency.webp" fetchpriority="high" />
+    <!-- Fallback PNG versions for browsers without WebP support -->
+    <link rel="preload" as="image" href="/logos/navigation/indices.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/logos/navigation/stocks.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/logos/navigation/commodities.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/logos/navigation/crypto.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/logos/navigation/currency.png" fetchpriority="high" />
+    <!-- Other navigation icons (lower priority) -->
     <link rel="preload" as="image" href="/logos/navigation/news.png" />
     <link rel="preload" as="image" href="/logos/navigation/analytics.png" />
     <link rel="preload" as="image" href="/logos/navigation/forum.png" />
