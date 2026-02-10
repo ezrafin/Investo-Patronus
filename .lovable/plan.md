@@ -1,74 +1,46 @@
 
 
-# Исправление OAuth и других ошибок
+# Деактивация кнопок Google и Apple OAuth с тултипом "Coming soon..."
 
-## Проблема 1: "redirect_uri is not allowed" (Google и Apple)
+## Что будет сделано
 
-### Диагностика
+На страницах входа и регистрации кнопки "Continue with Google" и "Continue with Apple" станут неактивными (disabled). При наведении курсора на кнопку будет показываться тултип с текстом "Coming soon..." на текущем языке.
 
-Ошибка происходит **не на стороне Google**, а на стороне **Lovable OAuth брокера** (`oauth.lovable.app`). Брокер получает `redirect_uri=https://investopatronus.com` и отвечает "redirect_uri is not allowed", потому что кастомный домен не зарегистрирован как разрешённый для OAuth редиректов.
+## Изменения
 
-Код приложения **корректный** — `redirect_uri` правильно формируется как `window.location.origin` (без `/auth/callback`). Настройки Google Console тоже верные.
+### 1. Добавить перевод `auth.comingSoon` во все 7 языковых файлов
 
-### Решение (действия пользователя, не код)
+| Язык | Текст |
+|------|-------|
+| en | Coming soon... |
+| ru | Скоро... |
+| de | Demnachst... |
+| es | Proximamente... |
+| fr | Bientot... |
+| pl | Wkrotce... |
+| zh | 即将推出... |
 
-**Шаг 1**: Убедитесь что кастомный домен `investopatronus.com` правильно подключён в настройках проекта Lovable:
-- Зайдите в **Settings** -> **Domains** в проекте Lovable
-- Проверьте что `investopatronus.com` имеет статус **Active**
-- Если домен в статусе "Verifying", "Offline" или другом — нужно исправить DNS записи
+### 2. Обновить `LoginPage.tsx`
 
-**Шаг 2**: Если домен Active, но OAuth всё равно не работает — **переподключите домен**:
-- Удалите домен из настроек
-- Добавьте заново `investopatronus.com`
-- Дождитесь статуса Active
+- Обернуть обе OAuth кнопки в `<Tooltip>` (уже есть в проекте из `@radix-ui/react-tooltip`)
+- Установить `disabled` на обе кнопки (без привязки к `loading`)
+- Убрать `onClick` обработчики
 
-**Шаг 3**: Убедитесь что `investopatronus.com` установлен как **Primary** домен (а не `www.investopatronus.com`).
+### 3. Обновить `RegisterPage.tsx`
 
-**Шаг 4**: Также добавьте `www.investopatronus.com` как отдельный домен, чтобы он редиректил на Primary.
+- Аналогичные изменения: обернуть в `<Tooltip>`, сделать `disabled`, убрать `onClick`
 
-### Изменения в коде
+## Файлы для изменения
 
-Код менять **не нужно** — текущая реализация корректна. Файл `src/hooks/useAuth.ts` правильно использует:
-```typescript
-const currentOrigin = window.location.origin.replace('www.', '');
-const result = await lovable.auth.signInWithOAuth(provider, {
-  redirect_uri: currentOrigin,
-});
-```
-
-Файл `src/integrations/lovable/index.ts` корректно настроен с `oauthBrokerUrl`.
-
----
-
-## Проблема 2: Ошибки Edge Functions (fetch-stocks)
-
-### Диагностика из логов
-
-Обнаружены следующие ошибки в логах:
-
-| API | Ошибка | Причина |
-|-----|--------|---------|
-| Yahoo Finance | 401 Unauthorized | Недействительный или отсутствующий API ключ |
-| Open Exchange Rates | 429 Too Many Requests | Превышен лимит бесплатного тарифа |
-| CurrencyFreaks | 429 Too Many Requests | Превышен лимит бесплатного тарифа |
-
-Цепочка fallback работает корректно — система падает на бесплатный ExchangeRate-API, который отдаёт данные. Но из-за частых вызовов платные API возвращают 429.
-
-### Рекомендации
-
-1. **Yahoo Finance API ключ** — проверить что ключ `YAHOO_FINANCE_API_KEY` валиден и не истёк
-2. **Кеширование** — увеличить интервал кеширования для валют (они обновляются редко, достаточно раз в час)
-3. **Rate limit backoff** — добавить экспоненциальный backoff при 429 ошибках чтобы не тратить оставшийся лимит
-
-Эти ошибки **не критичны** — сайт работает благодаря fallback на бесплатные API. Но для стабильности стоит решить.
-
----
-
-## Итого
-
-| Проблема | Тип | Действие |
-|----------|-----|----------|
-| OAuth "redirect_uri not allowed" | Конфигурация проекта | Переподключить кастомный домен в Settings -> Domains |
-| Yahoo Finance 401 | API ключ | Проверить/обновить YAHOO_FINANCE_API_KEY |
-| CurrencyFreaks/OER 429 | Rate limiting | Некритично, работает fallback |
+| Файл | Изменение |
+|------|-----------|
+| `src/locales/en/ui.json` | Добавить `auth.comingSoon` |
+| `src/locales/ru/ui.json` | Добавить `auth.comingSoon` |
+| `src/locales/de/ui.json` | Добавить `auth.comingSoon` |
+| `src/locales/es/ui.json` | Добавить `auth.comingSoon` |
+| `src/locales/fr/ui.json` | Добавить `auth.comingSoon` |
+| `src/locales/pl/ui.json` | Добавить `auth.comingSoon` |
+| `src/locales/zh/ui.json` | Добавить `auth.comingSoon` |
+| `src/pages/auth/LoginPage.tsx` | Disabled кнопки + Tooltip |
+| `src/pages/auth/RegisterPage.tsx` | Disabled кнопки + Tooltip |
 
