@@ -1,74 +1,74 @@
 
 
-# Исправление входа через Google и Apple OAuth
+# Исправление OAuth и других ошибок
 
-## Диагностика проблемы
+## Проблема 1: "redirect_uri is not allowed" (Google и Apple)
 
-Из скриншотов видно:
+### Диагностика
 
-1. **Ошибка**: `oauth.lovable.app/callback` возвращает 400 "Missing state parameter"
-2. **Google Console**: Redirect URI настроен как `https://investo-patronus.lovable.app/~oauth/callback`
-3. **Фактический callback**: Браузер попадает на `https://oauth.lovable.app/callback` (другой URL!)
+Ошибка происходит **не на стороне Google**, а на стороне **Lovable OAuth брокера** (`oauth.lovable.app`). Брокер получает `redirect_uri=https://investopatronus.com` и отвечает "redirect_uri is not allowed", потому что кастомный домен не зарегистрирован как разрешённый для OAuth редиректов.
 
-### Как работает Lovable Cloud OAuth
+Код приложения **корректный** — `redirect_uri` правильно формируется как `window.location.origin` (без `/auth/callback`). Настройки Google Console тоже верные.
 
-Библиотека `@lovable.dev/cloud-auth-js` работает так:
-1. Открывает `investo-patronus.lovable.app/~oauth/initiate` (брокер)
-2. Брокер перенаправляет на Google
-3. Google перенаправляет на callback URL (настроенный в Google Console)
-4. Callback обрабатывает токены и перенаправляет пользователя на `redirect_uri`
+### Решение (действия пользователя, не код)
 
-**Проблема**: Брокер Lovable использует `oauth.lovable.app/callback` как внутренний callback, но в Google Console указан `investo-patronus.lovable.app/~oauth/callback`. Из-за несоответствия теряется параметр `state`.
+**Шаг 1**: Убедитесь что кастомный домен `investopatronus.com` правильно подключён в настройках проекта Lovable:
+- Зайдите в **Settings** -> **Domains** в проекте Lovable
+- Проверьте что `investopatronus.com` имеет статус **Active**
+- Если домен в статусе "Verifying", "Offline" или другом — нужно исправить DNS записи
 
-## Решение
+**Шаг 2**: Если домен Active, но OAuth всё равно не работает — **переподключите домен**:
+- Удалите домен из настроек
+- Добавьте заново `investopatronus.com`
+- Дождитесь статуса Active
 
-### Шаг 1: Исправить код — убрать `/auth/callback` из `redirect_uri`
+**Шаг 3**: Убедитесь что `investopatronus.com` установлен как **Primary** домен (а не `www.investopatronus.com`).
 
-Согласно документации библиотеки, `redirect_uri` должен быть просто `window.location.origin` (без пути). Библиотека сама обрабатывает callback через брокер и возвращает пользователя на указанный origin.
+**Шаг 4**: Также добавьте `www.investopatronus.com` как отдельный домен, чтобы он редиректил на Primary.
 
-**Файл: `src/hooks/useAuth.ts`**
+### Изменения в коде
 
-Текущий код (строка 344):
+Код менять **не нужно** — текущая реализация корректна. Файл `src/hooks/useAuth.ts` правильно использует:
 ```typescript
-const redirectUri = `${currentOrigin}/auth/callback`;
+const currentOrigin = window.location.origin.replace('www.', '');
+const result = await lovable.auth.signInWithOAuth(provider, {
+  redirect_uri: currentOrigin,
+});
 ```
 
-Исправить на:
-```typescript
-const redirectUri = currentOrigin;
-```
-
-### Шаг 2: Обновить Authorized redirect URIs в Google Console
-
-В Google Console нужно **добавить** URL:
-```
-https://oauth.lovable.app/callback
-```
-
-Это внутренний callback Lovable OAuth брокера, который используется для обработки ответа Google. Текущий `https://investo-patronus.lovable.app/~oauth/callback` может быть удалён или оставлен.
-
-### Шаг 3: Проверить Apple Sign-In
-
-Apple использует тот же Lovable Cloud OAuth брокер. Если Apple Sign-In управляется Lovable (managed), дополнительная настройка не требуется — он будет работать после исправления кода в шаге 1.
+Файл `src/integrations/lovable/index.ts` корректно настроен с `oauthBrokerUrl`.
 
 ---
 
-## Файлы для изменения
+## Проблема 2: Ошибки Edge Functions (fetch-stocks)
 
-| Файл | Изменение |
-|------|-----------|
-| `src/hooks/useAuth.ts` | Убрать `/auth/callback` из `redirect_uri` для OAuth — использовать просто `window.location.origin` |
+### Диагностика из логов
 
-## Действия пользователя (вне кода)
+Обнаружены следующие ошибки в логах:
 
-В Google Cloud Console добавить в "Authorized redirect URIs":
-```
-https://oauth.lovable.app/callback
-```
+| API | Ошибка | Причина |
+|-----|--------|---------|
+| Yahoo Finance | 401 Unauthorized | Недействительный или отсутствующий API ключ |
+| Open Exchange Rates | 429 Too Many Requests | Превышен лимит бесплатного тарифа |
+| CurrencyFreaks | 429 Too Many Requests | Превышен лимит бесплатного тарифа |
 
-## Ожидаемый результат
+Цепочка fallback работает корректно — система падает на бесплатный ExchangeRate-API, который отдаёт данные. Но из-за частых вызовов платные API возвращают 429.
 
-1. При нажатии "Continue with Google" пользователь перенаправляется на Google
-2. После авторизации Google перенаправляет на `oauth.lovable.app/callback`
-3. Брокер обрабатывает токены и перенаправляет на `investopatronus.com`
-4. Пользователь залогинен на сайте
+### Рекомендации
+
+1. **Yahoo Finance API ключ** — проверить что ключ `YAHOO_FINANCE_API_KEY` валиден и не истёк
+2. **Кеширование** — увеличить интервал кеширования для валют (они обновляются редко, достаточно раз в час)
+3. **Rate limit backoff** — добавить экспоненциальный backoff при 429 ошибках чтобы не тратить оставшийся лимит
+
+Эти ошибки **не критичны** — сайт работает благодаря fallback на бесплатные API. Но для стабильности стоит решить.
+
+---
+
+## Итого
+
+| Проблема | Тип | Действие |
+|----------|-----|----------|
+| OAuth "redirect_uri not allowed" | Конфигурация проекта | Переподключить кастомный домен в Settings -> Domains |
+| Yahoo Finance 401 | API ключ | Проверить/обновить YAHOO_FINANCE_API_KEY |
+| CurrencyFreaks/OER 429 | Rate limiting | Некритично, работает fallback |
+
