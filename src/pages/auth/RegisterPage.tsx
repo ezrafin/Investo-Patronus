@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 import { useTranslation } from '@/hooks/useTranslation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getMotionVariant, transitions, prefersReducedMotion, STAGGER } from '@/lib/animations';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 // Google icon component
 const GoogleIcon = () => (
@@ -215,28 +216,42 @@ export default function RegisterPage() {
             </AnimatePresence>
 
             {/* OAuth Buttons */}
-            <div className="space-y-3">
-              <Button
-                type="button"
-                variant="outline"
-                className="w-full"
-                onClick={handleGoogleSignup}
-                disabled={loading}
-              >
-                <GoogleIcon />
-                {t('auth.continueWithGoogle')}
-              </Button>
-              <Button
-                type="button"
-                variant="outline"
-                className="w-full"
-                onClick={handleAppleSignup}
-                disabled={loading}
-              >
-                <AppleIcon />
-                {t('auth.continueWithApple')}
-              </Button>
-            </div>
+            <TooltipProvider>
+              <div className="space-y-3">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <span className="w-full">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="w-full pointer-events-none"
+                        disabled
+                      >
+                        <GoogleIcon />
+                        {t('auth.continueWithGoogle')}
+                      </Button>
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent>{t('auth.comingSoon')}</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <span className="w-full">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="w-full pointer-events-none"
+                        disabled
+                      >
+                        <AppleIcon />
+                        {t('auth.continueWithApple')}
+                      </Button>
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent>{t('auth.comingSoon')}</TooltipContent>
+                </Tooltip>
+              </div>
+            </TooltipProvider>
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t border-border" />

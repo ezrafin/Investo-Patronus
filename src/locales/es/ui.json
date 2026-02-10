@@ -196,6 +196,7 @@
     "hoursAgo": "hace {{count}} horas"
   },
   "auth": {
+    "comingSoon": "Próximamente...",
     "welcomeBack": "Bienvenido de nuevo",
     "signInToContinue": "Inicia sesión para continuar",
     "continueWithGoogle": "Continuar con Google",

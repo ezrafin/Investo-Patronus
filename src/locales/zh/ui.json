@@ -189,6 +189,7 @@
     "hoursAgo": "{{count}} 小时前"
   },
   "auth": {
+    "comingSoon": "即将推出...",
     "welcomeBack": "欢迎回来",
     "signInToContinue": "登录以继续",
     "continueWithGoogle": "使用Google继续",
