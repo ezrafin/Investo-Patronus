@@ -14,7 +14,7 @@ export const NewsSection = memo(function NewsSection() {
   // Use React Query for caching and automatic refetching
   const { data: news = [], isLoading } = useQuery<NewsItem[]>({
     queryKey: ['news', 'homepage'],
-    queryFn: () => fetchNews(),
+    queryFn: () => fetchNews({ limit: 6 }),
     staleTime: 2 * 60 * 1000, // 2 minutes
     gcTime: 10 * 60 * 1000, // 10 minutes cache
   });

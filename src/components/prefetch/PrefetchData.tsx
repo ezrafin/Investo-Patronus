@@ -20,14 +20,11 @@ export function PrefetchData() {
     // Prefetch critical data for Index page
     const prefetchCriticalData = async () => {
       try {
-        // Prefetch news data (used in NewsSection)
+        // Prefetch news data (used in NewsSection on homepage)
         const { fetchNews } = await import('@/lib/api/index');
         queryClient.prefetchQuery({
-          queryKey: ['news', 'all', 1, 15],
-          queryFn: async () => {
-            const news = await fetchNews();
-            return { articles: news.slice(0, 15), lastUpdated: new Date().toISOString(), totalCount: news.length };
-          },
+          queryKey: ['news', 'homepage'],
+          queryFn: () => fetchNews({ limit: 6 }),
           staleTime: 2 * 60 * 1000, // 2 minutes
         }).catch((error) => {
           logger.warn('Failed to prefetch news:', error);
