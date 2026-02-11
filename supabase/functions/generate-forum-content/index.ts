@@ -161,7 +161,6 @@ Example: ["First reply content here...", "Second reply content...", "Third reply
   const text = data.choices?.[0]?.message?.content || "[]";
   
   try {
-    // Try to parse JSON directly
     const jsonMatch = text.match(/\[[\s\S]*\]/);
     if (jsonMatch) {
       return JSON.parse(jsonMatch[0]);
@@ -179,11 +178,45 @@ serve(async (req) => {
   }
 
   try {
+    // Authentication: require admin
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader?.startsWith('Bearer ')) {
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized' }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    const authSupabase = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_ANON_KEY")!,
+      { global: { headers: { Authorization: authHeader } } }
+    );
+
+    const token = authHeader.replace('Bearer ', '');
+    const { data: claimsData, error: claimsError } = await authSupabase.auth.getClaims(token);
+    if (claimsError || !claimsData?.claims) {
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized' }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    const userId = claimsData.claims.sub;
+    const { data: isAdmin } = await authSupabase.rpc('is_admin', { _user_id: userId });
+    if (!isAdmin) {
+      return new Response(
+        JSON.stringify({ error: 'Forbidden - Admin access required' }),
+        { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     const { count = 10, withReplies = true, repliesPerTopic = 5 } = await req.json();
     
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+    );
 
     const results = [];
     const topicsToGenerate = forumTopics.slice(0, Math.min(count, forumTopics.length));
@@ -199,7 +232,6 @@ serve(async (req) => {
       const daysAgo = Math.floor(Math.random() * 90) + 1;
       const createdAt = new Date(Date.now() - daysAgo * 24 * 60 * 60 * 1000).toISOString();
       
-      // Insert discussion
       const { data: discussion, error: discussionError } = await supabase
         .from("forum_discussions")
         .insert({
@@ -246,7 +278,6 @@ serve(async (req) => {
           }
         }
 
-        // Update reply count
         await supabase
           .from("forum_discussions")
           .update({ 
@@ -262,7 +293,6 @@ serve(async (req) => {
         repliesGenerated,
       });
 
-      // Small delay to avoid rate limiting
       await new Promise(r => setTimeout(r, 1000));
     }
 
@@ -276,9 +306,8 @@ serve(async (req) => {
     );
   } catch (error: unknown) {
     console.error("Error in generate-forum-content:", error);
-    const message = error instanceof Error ? error.message : "Unknown error";
     return new Response(
-      JSON.stringify({ error: message }),
+      JSON.stringify({ error: 'An error occurred while generating content' }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
