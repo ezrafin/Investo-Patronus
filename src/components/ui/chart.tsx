@@ -65,18 +65,38 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null;
   }
 
+  // Sanitize id to prevent CSS injection
+  const sanitizedId = id.replace(/[^a-zA-Z0-9-_]/g, '');
+
+  // Validate colors: only allow valid CSS color values
+  const sanitizeColor = (color: string): string | null => {
+    if (!color) return null;
+    // Allow hex, rgb, hsl, named colors, and CSS custom properties
+    if (/^(#[0-9A-Fa-f]{3,8}|rgb\(|rgba\(|hsl\(|hsla\(|var\(--)[a-zA-Z0-9\s,().%_-]*\)?$/.test(color)) {
+      return color;
+    }
+    // Allow simple named colors
+    if (/^[a-zA-Z]+$/.test(color)) {
+      return color;
+    }
+    return null;
+  };
+
   return (
     <style
       dangerouslySetInnerHTML={{
         __html: Object.entries(THEMES)
           .map(
             ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
+${prefix} [data-chart=${sanitizedId}] {
 ${colorConfig
   .map(([key, itemConfig]) => {
     const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
-    return color ? `  --color-${key}: ${color};` : null;
+    const sanitizedColor = color ? sanitizeColor(color) : null;
+    const sanitizedKey = key.replace(/[^a-zA-Z0-9-_]/g, '');
+    return sanitizedColor ? `  --color-${sanitizedKey}: ${sanitizedColor};` : null;
   })
+  .filter(Boolean)
   .join("\n")}
 }
 `,
