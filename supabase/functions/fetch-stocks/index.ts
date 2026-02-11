@@ -100,6 +100,52 @@ serve(async (req) => {
     
     console.log(`Fetching ${type} data with multiple fallbacks...`);
 
+    // === CACHE-FIRST for currencies: check DB cache (30 min TTL) ===
+    if (type === 'currencies') {
+      try {
+        const supabaseClient = getSupabaseClient();
+        const { data: cached, error: cacheError } = await supabaseClient
+          .from('market_prices')
+          .select('*')
+          .eq('market_type', 'currencies')
+          .order('updated_at', { ascending: false })
+          .limit(1);
+        
+        if (!cacheError && cached && cached.length > 0) {
+          const cacheAge = Date.now() - new Date(cached[0].updated_at).getTime();
+          const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+          
+          if (cacheAge < CACHE_TTL) {
+            // Cache is fresh — return from DB
+            const allCached = await loadPricesFromDB('currencies');
+            if (allCached && allCached.length >= 3) {
+              console.log(`Returning ${allCached.length} currencies from fresh DB cache (age: ${Math.round(cacheAge/1000)}s)`);
+              return new Response(
+                JSON.stringify({
+                  data: allCached,
+                  timestamp: new Date().toISOString(),
+                  source: 'db_cache',
+                  isDemo: false,
+                  isCached: true,
+                }),
+                {
+                  headers: {
+                    ...corsHeaders,
+                    'Content-Type': 'application/json',
+                    'Cache-Control': 'public, max-age=60',
+                  },
+                }
+              );
+            }
+          } else {
+            console.log(`Currency cache expired (age: ${Math.round(cacheAge/1000)}s), fetching fresh data...`);
+          }
+        }
+      } catch (cacheErr) {
+        console.log('Currency cache check failed, proceeding to APIs:', cacheErr);
+      }
+    }
+
     const FINNHUB_API_KEY = Deno.env.get('FINNHUB_API_KEY');
     const ALPHA_VANTAGE_API_KEY = Deno.env.get('ALPHA_VANTAGE_API_KEY');
     const IEX_CLOUD_API_KEY = Deno.env.get('IEX_CLOUD_API_KEY');
@@ -269,8 +315,8 @@ serve(async (req) => {
       }
     }
 
-    // 6. Try improved Yahoo Finance
-    if (!marketData || !hasMinimumData(marketData.data, 3)) {
+    // 6. Try improved Yahoo Finance (skip for currencies — consistently returns 401)
+    if ((!marketData || !hasMinimumData(marketData.data, 3)) && type !== 'currencies') {
       try {
         console.log(`Attempting Yahoo Finance API for ${type}...`);
         marketData = await retryWithBackoffConditional(

@@ -21,7 +21,7 @@ const mockNews: NewsItem[] = [
   },
 ];
 
-export async function fetchNews(filters?: { market?: string; source?: string }): Promise<NewsItem[]> {
+export async function fetchNews(filters?: { market?: string; source?: string; limit?: number }): Promise<NewsItem[]> {
   try {
     const { supabase } = await import('@/integrations/supabase/client');
     
@@ -29,7 +29,7 @@ export async function fetchNews(filters?: { market?: string; source?: string }):
       .from('news_articles')
       .select('*')
       .order('published_at', { ascending: false })
-      .limit(100);
+      .limit(filters?.limit || 100);
     
     if (filters?.market && filters.market !== 'all') {
       query = query.eq('market', filters.market);

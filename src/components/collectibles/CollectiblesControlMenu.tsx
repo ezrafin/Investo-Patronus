@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { useCollectibleBills } from '@/hooks/useCollectibleBills';
@@ -7,38 +7,36 @@ import { X, Trophy, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useQuery } from '@tanstack/react-query';
 
 export function CollectiblesControlMenu() {
   const { t } = useTranslation({ namespace: 'ui' });
   const { user } = useUser();
   const { progress, collectedBills, legendarySpawn, hasAllRegularBills, loading } = useCollectibleBills();
   const [open, setOpen] = useState(false);
-  const [allBills, setAllBills] = useState<Array<{ bill_id: string; name: string; rarity: 'regular' | 'legendary' }>>([]);
 
-  // Function to get translated bill name
-  const getBillName = (billId: string, fallbackName: string): string => {
-    const translationKey = `billCollection.billNames.${billId}`;
-    const translated = t(translationKey);
-    // If translation exists and is different from the key, use it; otherwise use fallback
-    return translated !== translationKey ? translated : fallbackName;
-  };
-
-  // Load all bills
-  useEffect(() => {
-    const loadBills = async () => {
+  // Cache collectible_bills with long staleTime (static data)
+  const { data: allBills = [] } = useQuery({
+    queryKey: ['collectible_bills'],
+    queryFn: async () => {
       const { data, error } = await supabase
         .from('collectible_bills')
         .select('bill_id, name, rarity')
         .order('rarity', { ascending: true })
         .order('bill_id', { ascending: true });
+      if (error) throw error;
+      return (data || []) as Array<{ bill_id: string; name: string; rarity: 'regular' | 'legendary' }>;
+    },
+    staleTime: 30 * 60 * 1000, // 30 minutes - static data
+    gcTime: 60 * 60 * 1000, // 1 hour
+  });
 
-      if (!error && data) {
-        setAllBills(data as Array<{ bill_id: string; name: string; rarity: 'regular' | 'legendary' }>);
-      }
-    };
-
-    loadBills();
-  }, []);
+  // Function to get translated bill name
+  const getBillName = (billId: string, fallbackName: string): string => {
+    const translationKey = `billCollection.billNames.${billId}`;
+    const translated = t(translationKey);
+    return translated !== translationKey ? translated : fallbackName;
+  };
 
   if (!user || loading) {
     return null;
