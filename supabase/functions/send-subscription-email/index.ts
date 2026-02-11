@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -326,6 +327,29 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Rate limiting via IP
+    const clientIp = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
+                     req.headers.get('cf-connecting-ip') || '0.0.0.0';
+    
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL')!,
+      Deno.env.get('SUPABASE_ANON_KEY')!
+    );
+
+    const { data: allowed } = await supabase.rpc('check_rate_limit', {
+      p_ip_address: clientIp,
+      p_action_type: 'subscription_email',
+      p_max_attempts: 3,
+      p_window_seconds: 3600,
+    });
+
+    if (allowed === false) {
+      return new Response(
+        JSON.stringify({ error: 'Too many requests. Please try again later.' }),
+        { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
     let requestData: SubscriptionEmailRequest;
     try {
       requestData = await req.json();
@@ -404,16 +428,16 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error(emailResponse.error.message || 'Failed to send email');
     }
 
-    console.log(`Subscription email sent successfully to ${email} (${type}, ${templateLang})`);
+    console.log(`Subscription email sent successfully (${type}, ${templateLang})`);
 
-    return new Response(JSON.stringify({ success: true, ...emailResponse }), {
+    return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { "Content-Type": "application/json", ...corsHeaders },
     });
   } catch (error: any) {
     console.error("Error in send-subscription-email function:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: 'An error occurred while processing your request' }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },

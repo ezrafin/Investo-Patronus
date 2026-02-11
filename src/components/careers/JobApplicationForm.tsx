@@ -24,11 +24,27 @@ export function JobApplicationForm({ position, onClose }: JobApplicationFormProp
   const [cvFile, setCvFile] = useState<File | null>(null);
   const [links, setLinks] = useState<string[]>(['']);
 
+  const allowedMimeTypes = [
+    'application/pdf',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  ];
+  const allowedExtensions = ['pdf', 'doc', 'docx'];
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       if (file.size > 10 * 1024 * 1024) {
         toast.error(t('careersPage.form.fileTooLarge'));
+        return;
+      }
+      const ext = file.name.split('.').pop()?.toLowerCase();
+      if (!ext || !allowedExtensions.includes(ext)) {
+        toast.error(t('careersPage.form.invalidFileType') || 'Only PDF, DOC, DOCX files are allowed');
+        return;
+      }
+      if (!allowedMimeTypes.includes(file.type)) {
+        toast.error(t('careersPage.form.invalidFileType') || 'Only PDF, DOC, DOCX files are allowed');
         return;
       }
       setCvFile(file);
