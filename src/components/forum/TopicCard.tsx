@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
-import { MessageCircle, Clock, ThumbsUp } from 'lucide-react';
+import { MessageCircle, Clock, ThumbsUp, AlertCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ForumTopic } from '@/lib/api/index';
 import { AssetBadge } from './AssetBadge';
 import { TopicStatusBadge } from './TopicStatusBadge';
 import { formatRelativeTime } from '@/lib/utils/date';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useUser } from '@/context/UserContext';
+import { Badge } from '@/components/ui/badge';
 
 interface TopicCardProps {
   topic: ForumTopic;
@@ -17,9 +19,11 @@ interface TopicCardProps {
 
 export function TopicCard({ topic, categoryName, index = 0, language = 'en', showExcerpt = true }: TopicCardProps) {
   const { t } = useTranslation({ namespace: 'forum' });
+  const { user } = useUser();
   const isNew = new Date(topic.date).getTime() > Date.now() - 24 * 60 * 60 * 1000;
   const isHot = topic.replies > 10;
   const excerpt = topic.content ? topic.content.substring(0, 100).trim() + (topic.content.length > 100 ? '...' : '') : '';
+  const isOwnPending = user && (topic as any).user_id === user.id && !(topic as any).is_featured;
 
   return (
     <Link
@@ -56,6 +60,12 @@ export function TopicCard({ topic, categoryName, index = 0, language = 'en', sho
             isHot={isHot}
             className="flex-shrink-0"
           />
+          {isOwnPending && (
+            <Badge variant="outline" className="text-[10px] border-yellow-500/50 text-yellow-600 dark:text-yellow-400 flex-shrink-0">
+              <AlertCircle className="h-3 w-3 mr-1" />
+              {t('moderation.pendingTitle').split(' ')[0]}
+            </Badge>
+          )}
         </div>
 
         {/* Excerpt */}

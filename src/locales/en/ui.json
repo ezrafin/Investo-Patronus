@@ -1030,7 +1030,21 @@
     "profileVisibility": "Profile Visibility",
     "visibilityPublic": "Public - Anyone can view",
     "visibilityFriends": "Friends - Only followed users",
-    "visibilityPrivate": "Private - Only you"
+    "visibilityPrivate": "Private - Only you",
+    "tabSettings": "Settings",
+    "tabContent": "My Content",
+    "tabNotifications": "Notifications",
+    "myDiscussions": "Discussions",
+    "myReplies": "Replies",
+    "myBookmarks": "Bookmarks",
+    "noDiscussions": "You haven't created any discussions yet",
+    "noReplies": "You haven't posted any replies yet",
+    "noBookmarks": "You haven't bookmarked anything yet",
+    "statusApproved": "Approved",
+    "statusPending": "Pending",
+    "bookmarkTypeForum": "Forum",
+    "bookmarkTypeNews": "News",
+    "bookmarkTypeAnalytics": "Analytics"
   },
   "careersPage": {
     "badge": "Careers",

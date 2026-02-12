@@ -976,7 +976,21 @@
     "profileVisibility": "Видимость профиля",
     "visibilityPublic": "Публичный - Любой может просматривать",
     "visibilityFriends": "Друзья - Только подписанные пользователи",
-    "visibilityPrivate": "Приватный - Только вы"
+    "visibilityPrivate": "Приватный - Только вы",
+    "tabSettings": "Настройки",
+    "tabContent": "Мой контент",
+    "tabNotifications": "Уведомления",
+    "myDiscussions": "Дискуссии",
+    "myReplies": "Ответы",
+    "myBookmarks": "Закладки",
+    "noDiscussions": "Вы ещё не создали ни одной дискуссии",
+    "noReplies": "Вы ещё не оставили ни одного ответа",
+    "noBookmarks": "У вас пока нет закладок",
+    "statusApproved": "Одобрено",
+    "statusPending": "На проверке",
+    "bookmarkTypeForum": "Форум",
+    "bookmarkTypeNews": "Новости",
+    "bookmarkTypeAnalytics": "Аналитика"
   },
   "videoPlayer": {
     "subtitles": "Субтитры",

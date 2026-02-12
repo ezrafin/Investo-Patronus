@@ -975,7 +975,21 @@
     "profileVisibility": "个人资料可见性",
     "visibilityPublic": "公开 - 任何人都可以查看",
     "visibilityFriends": "朋友 - 仅关注用户",
-    "visibilityPrivate": "私密 - 仅你自己"
+    "visibilityPrivate": "私密 - 仅你自己",
+    "tabSettings": "设置",
+    "tabContent": "我的内容",
+    "tabNotifications": "通知",
+    "myDiscussions": "讨论",
+    "myReplies": "回复",
+    "myBookmarks": "收藏",
+    "noDiscussions": "您还没有创建任何讨论",
+    "noReplies": "您还没有发表任何回复",
+    "noBookmarks": "您还没有收藏任何内容",
+    "statusApproved": "已批准",
+    "statusPending": "审核中",
+    "bookmarkTypeForum": "论坛",
+    "bookmarkTypeNews": "新闻",
+    "bookmarkTypeAnalytics": "分析"
   },
   "videoPlayer": {
     "subtitles": "字幕",

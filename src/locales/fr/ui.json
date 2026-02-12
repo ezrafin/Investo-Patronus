@@ -975,7 +975,21 @@
     "profileVisibility": "Visibilité du Profil",
     "visibilityPublic": "Public - N'importe qui peut voir",
     "visibilityFriends": "Amis - Seulement les utilisateurs suivis",
-    "visibilityPrivate": "Privé - Seulement toi"
+    "visibilityPrivate": "Privé - Seulement toi",
+    "tabSettings": "Paramètres",
+    "tabContent": "Mon contenu",
+    "tabNotifications": "Notifications",
+    "myDiscussions": "Discussions",
+    "myReplies": "Réponses",
+    "myBookmarks": "Signets",
+    "noDiscussions": "Vous n'avez encore créé aucune discussion",
+    "noReplies": "Vous n'avez encore posté aucune réponse",
+    "noBookmarks": "Vous n'avez encore rien ajouté aux signets",
+    "statusApproved": "Approuvé",
+    "statusPending": "En attente",
+    "bookmarkTypeForum": "Forum",
+    "bookmarkTypeNews": "Actualités",
+    "bookmarkTypeAnalytics": "Analyses"
   },
   "videoPlayer": {
     "subtitles": "Sous-titres",

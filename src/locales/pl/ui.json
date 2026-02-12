@@ -975,7 +975,21 @@
     "profileVisibility": "Widoczność Profilu",
     "visibilityPublic": "Publiczny - Każdy może zobaczyć",
     "visibilityFriends": "Przyjaciele - Tylko obserwowani użytkownicy",
-    "visibilityPrivate": "Prywatny - Tylko ty"
+    "visibilityPrivate": "Prywatny - Tylko ty",
+    "tabSettings": "Ustawienia",
+    "tabContent": "Moje treści",
+    "tabNotifications": "Powiadomienia",
+    "myDiscussions": "Dyskusje",
+    "myReplies": "Odpowiedzi",
+    "myBookmarks": "Zakładki",
+    "noDiscussions": "Nie utworzyłeś jeszcze żadnych dyskusji",
+    "noReplies": "Nie opublikowałeś jeszcze żadnych odpowiedzi",
+    "noBookmarks": "Nie masz jeszcze żadnych zakładek",
+    "statusApproved": "Zatwierdzone",
+    "statusPending": "Oczekuje",
+    "bookmarkTypeForum": "Forum",
+    "bookmarkTypeNews": "Wiadomości",
+    "bookmarkTypeAnalytics": "Analityka"
   },
   "videoPlayer": {
     "subtitles": "Napisy",
