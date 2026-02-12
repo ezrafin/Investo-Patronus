@@ -975,7 +975,21 @@
     "profileVisibility": "Profil-Sichtbarkeit",
     "visibilityPublic": "Öffentlich - Jeder kann ansehen",
     "visibilityFriends": "Freunde - Nur gefolgte Benutzer",
-    "visibilityPrivate": "Privat - Nur du"
+    "visibilityPrivate": "Privat - Nur du",
+    "tabSettings": "Einstellungen",
+    "tabContent": "Meine Inhalte",
+    "tabNotifications": "Benachrichtigungen",
+    "myDiscussions": "Diskussionen",
+    "myReplies": "Antworten",
+    "myBookmarks": "Lesezeichen",
+    "noDiscussions": "Sie haben noch keine Diskussionen erstellt",
+    "noReplies": "Sie haben noch keine Antworten gepostet",
+    "noBookmarks": "Sie haben noch nichts gespeichert",
+    "statusApproved": "Genehmigt",
+    "statusPending": "Ausstehend",
+    "bookmarkTypeForum": "Forum",
+    "bookmarkTypeNews": "Nachrichten",
+    "bookmarkTypeAnalytics": "Analysen"
   },
   "videoPlayer": {
     "subtitles": "Untertitel",
