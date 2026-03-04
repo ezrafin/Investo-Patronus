@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { useTranslation } from '@/hooks/useTranslation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getMotionVariant, transitions, prefersReducedMotion, STAGGER } from '@/lib/animations';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+
 
 // Google icon component
 const GoogleIcon = () => (
