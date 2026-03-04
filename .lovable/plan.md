@@ -1,24 +1,103 @@
+# Улучшение личного кабинета и форума
+
+## Обзор текущего состояния
+
+Личный кабинет содержит базовые настройки (имя, био, email, приватность, аватар, достижения). Форум полностью модерируемый (дискуссии и ответы требуют одобрения). Профили других пользователей показывают статистику и активность.
+
+---
+
+## Предлагаемые улучшения
+
+### Личный кабинет
+
+#### 1. Вкладка "Мои дискуссии" и "Мои ответы"
+
+Сейчас пользователь не видит свои посты и ответы из профиля. Добавить в личный кабинет (`ProfilePage.tsx`) секцию с табами:
+
+- **Мои дискуссии** -- список созданных пользователем дискуссий с их статусом модерации (одобрено / на проверке)
+- **Мои ответы** -- список ответов с индикацией статуса (одобрен / ожидает модерации)
+- **Мои закладки** -- дискуссии, добавленные в закладки
+
+Пользователь впервые сможет видеть, какие его посты ожидают модерации, а какие уже одобрены.
+
+#### 2. Смена пароля
+
+Сейчас в профиле есть только смена email, но нет смены пароля. Добавить секцию "Change Password" с полями:
+
+- Новый пароль
+- Подтверждение нового пароля
+
+Используется `supabase.auth.updateUser({ password })`.
+
+#### 3. Уведомления в профиле
+
+Добавить секцию/вкладку "Уведомления" в профиле, где пользователь видит:
+
+- Ответы на его дискуссии (одобренные)
+- Реакции на его посты
+- Новые подписчики
+
+Данные уже хранятся в таблице `notifications`. Сейчас они нигде не отображаются в личном кабинете.
+
+#### 4. Удаление аккаунта
+
+Добавить кнопку "Delete Account" с подтверждением. При удалении:
+
+- Запрос к `supabase.auth.admin.deleteUser()` через edge function
+- Или пометка аккаунта как деактивированного
+
+---
+
+### Форум
+
+#### 5. Статус модерации для автора
+
+Сейчас после создания дискуссии пользователь видит страницу "Pending moderation", но потом не может отследить статус. Добавить:
+
+- Индикатор "Pending" рядом с постами пользователя, которые ещё не одобрены
+- В списке "Мои дискуссии" в профиле -- чётко показывать статус каждой дискуссии
+
+---
+
+## Технические детали
+
+### Новые файлы
 
 
-# Enable Google & Apple OAuth Buttons
+| Файл                                            | Описание                                |
+| ----------------------------------------------- | --------------------------------------- |
+| `src/components/profile/MyDiscussions.tsx`      | Компонент списка дискуссий пользователя |
+| `src/components/profile/MyReplies.tsx`          | Компонент списка ответов пользователя   |
+| `src/components/profile/MyBookmarks.tsx`        | Компонент списка закладок               |
+| `src/components/profile/ChangePassword.tsx`     | Форма смены пароля                      |
+| `src/components/profile/NotificationsPanel.tsx` | Панель уведомлений                      |
 
-The backend logic (`useAuth.ts`) already correctly uses `lovable.auth.signInWithOAuth()` for Google and Apple. The buttons are simply disabled with `pointer-events-none` and `disabled` props, wrapped in "Coming soon" tooltips.
 
-## Changes
+### Изменяемые файлы
 
-### 1. `src/pages/auth/LoginPage.tsx` (lines 130-166)
-- Remove `<TooltipProvider>`, `<Tooltip>`, `<TooltipTrigger>`, `<TooltipContent>` wrappers
-- Remove `disabled` and `pointer-events-none` from both buttons
-- Add `onClick={handleGoogleLogin}` and `onClick={handleAppleLogin}`
-- Add `disabled={loading}` for loading state only
 
-### 2. `src/pages/auth/RegisterPage.tsx` (lines ~220-255)
-- Same changes: remove tooltip wrappers, enable buttons
-- Wire `onClick={handleGoogleSignup}` and `onClick={handleAppleSignup}`
-- Add `disabled={loading}`
+| Файл                                  | Изменение                                                                 |
+| ------------------------------------- | ------------------------------------------------------------------------- |
+| `src/pages/auth/ProfilePage.tsx`      | Добавить табы: Настройки / Мой контент / Уведомления, секцию смены пароля |
+| &nbsp;                                | &nbsp;                                                                    |
+| `src/components/forum/TopicCard.tsx`  | Индикатор статуса модерации для автора                                    |
+| `src/locales/*/ui.json` (7 файлов)    | Переводы для новых элементов                                              |
+| `src/locales/*/forum.json` (7 файлов) | Переводы для Edit/Delete/Sort                                             |
 
-### 3. `src/locales/*/ui.json` (7 files)
-- Remove `auth.comingSoon` key (no longer needed)
 
-No backend or database changes required -- the Lovable Cloud managed OAuth is already configured.
+### Изменения в БД
 
+Не требуются -- все нужные таблицы и RLS-политики уже существуют:
+
+- `forum_discussions` -- SELECT/UPDATE/DELETE для своих записей
+- `forum_replies` -- SELECT/UPDATE/DELETE для своих записей
+- `user_bookmarks` -- SELECT для своих записей
+- `notifications` -- SELECT/UPDATE/DELETE для своих записей
+
+### Сохранение полной модерации
+
+Все улучшения сохраняют модерируемый поток:
+
+- Редактирование сбрасывает статус одобрения, контент возвращается на модерацию
+- Создание новых дискуссий/ответов по-прежнему требует одобрения
+- Пользователь видит свой контент (через RLS `auth.uid() = user_id`), но другие пользователи видят только одобренный контент
