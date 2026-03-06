@@ -320,6 +320,7 @@
   "notFound": {
     "title": "404",
     "message": "Página no encontrada",
+    "subtitle": "La página que buscas no existe o ha sido movida. Prueba uno de los enlaces a continuación.",
     "backHome": "Volver al inicio"
   },
   "marketsPage": {
@@ -989,7 +990,15 @@
     "statusPending": "Pendiente",
     "bookmarkTypeForum": "Foro",
     "bookmarkTypeNews": "Noticias",
-    "bookmarkTypeAnalytics": "Análisis"
+    "bookmarkTypeAnalytics": "Análisis",
+    "deleteAccount": "Eliminar cuenta",
+    "deleteAccountWarning": "Esta acción es permanente y no se puede deshacer. Todos sus datos, publicaciones y configuraciones se eliminarán permanentemente.",
+    "deleteConfirmTitle": "¿Está absolutamente seguro?",
+    "deleteConfirmDescription": "Esto eliminará permanentemente su cuenta y eliminará todos sus datos de nuestros servidores. Esta acción no se puede deshacer.",
+    "deleteConfirmButton": "Sí, eliminar mi cuenta",
+    "deleting": "Eliminando...",
+    "accountDeleted": "Su cuenta ha sido eliminada.",
+    "deleteError": "No se pudo eliminar la cuenta. Inténtelo de nuevo."
   },
   "videoPlayer": {
     "subtitles": "Subtítulos",

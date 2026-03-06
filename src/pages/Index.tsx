@@ -78,7 +78,9 @@ export default function Index() {
         </Suspense>
       )}
       
-      <EmailSubscription />
+      <Suspense fallback={<div className="section-spacing"><div className="container-wide"><SkeletonCard lines={3} /></div></div>}>
+        <EmailSubscription />
+      </Suspense>
     </Layout>
   );
 }

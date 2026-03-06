@@ -67,6 +67,10 @@ export default function ContactPage() {
 
   return (
     <Layout>
+      <SEOHead
+        title={t('contactPage.heroTitle')}
+        description={t('contactPage.heroSubtitle')}
+      />
       <div className="pt-24 pb-16">
         <section className="container-wide section-spacing-sm">
           <div className="max-w-3xl mx-auto text-center mb-12">

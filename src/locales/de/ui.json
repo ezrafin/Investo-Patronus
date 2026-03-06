@@ -320,6 +320,7 @@
   "notFound": {
     "title": "404",
     "message": "Seite nicht gefunden",
+    "subtitle": "Die Seite, die Sie suchen, existiert nicht oder wurde verschoben. Probieren Sie einen der Links unten.",
     "backHome": "Zur Startseite"
   },
   "marketsPage": {
@@ -989,7 +990,15 @@
     "statusPending": "Ausstehend",
     "bookmarkTypeForum": "Forum",
     "bookmarkTypeNews": "Nachrichten",
-    "bookmarkTypeAnalytics": "Analysen"
+    "bookmarkTypeAnalytics": "Analysen",
+    "deleteAccount": "Konto löschen",
+    "deleteAccountWarning": "Diese Aktion ist dauerhaft und kann nicht rückgängig gemacht werden. Alle Ihre Daten, Beiträge und Einstellungen werden unwiderruflich gelöscht.",
+    "deleteConfirmTitle": "Sind Sie absolut sicher?",
+    "deleteConfirmDescription": "Dies wird Ihr Konto dauerhaft löschen und alle Ihre Daten von unseren Servern entfernen. Diese Aktion kann nicht rückgängig gemacht werden.",
+    "deleteConfirmButton": "Ja, mein Konto löschen",
+    "deleting": "Wird gelöscht...",
+    "accountDeleted": "Ihr Konto wurde gelöscht.",
+    "deleteError": "Konto konnte nicht gelöscht werden. Bitte versuchen Sie es erneut."
   },
   "videoPlayer": {
     "subtitles": "Untertitel",

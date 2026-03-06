@@ -6,10 +6,11 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { useUser } from '@/context/UserContext';
 import { toast } from 'sonner';
-import { Save, User, Shield, TrendingUp, MessageSquare, BookOpen, Trophy, Camera, Mail, Bell, FileText } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Save, User, Shield, TrendingUp, MessageSquare, BookOpen, Trophy, Camera, Mail, Bell, FileText, Trash2 } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { AchievementList } from '@/components/forum/AchievementList';
 import { ReputationBadge } from '@/components/forum/ReputationBadge';
 import { AvatarSelector } from '@/components/user/AvatarSelector';
@@ -29,6 +30,7 @@ export default function ProfilePage() {
   const { user, profile, loading: authLoading, updateProfile } = useUser();
   const { t } = useTranslation({ namespace: 'ui' });
   const { data: unreadCount } = useUnreadNotificationCount();
+  const navigate = useNavigate();
   const [displayName, setDisplayName] = useState('');
   const [bio, setBio] = useState('');
   const [privacyLevel, setPrivacyLevel] = useState<'public' | 'private' | 'friends'>('public');
@@ -38,6 +40,7 @@ export default function ProfilePage() {
   const [loadingTimeout, setLoadingTimeout] = useState(false);
   const [newEmail, setNewEmail] = useState('');
   const [changingEmail, setChangingEmail] = useState(false);
+  const [deletingAccount, setDeletingAccount] = useState(false);
 
   useEffect(() => {
     if (authLoading) {
@@ -291,10 +294,60 @@ export default function ProfilePage() {
                     </div>
                   </div>
 
-                  <Button onClick={handleSave} disabled={saving} className="w-full md:w-auto">
-                    <Save className="mr-2 h-4 w-4" />
-                    {saving ? t('profilePage.saving') : t('profilePage.saveChanges')}
-                  </Button>
+                   <Button onClick={handleSave} disabled={saving} className="w-full md:w-auto">
+                     <Save className="mr-2 h-4 w-4" />
+                     {saving ? t('profilePage.saving') : t('profilePage.saveChanges')}
+                   </Button>
+
+                   {/* Delete Account */}
+                   <div className="premium-card p-6 border-destructive/30 mt-6">
+                     <h2 className="font-heading font-semibold text-lg mb-2 flex items-center gap-2 text-destructive">
+                       <Trash2 className="h-5 w-5" />
+                       {t('profilePage.deleteAccount')}
+                     </h2>
+                     <p className="text-sm text-muted-foreground mb-4">
+                       {t('profilePage.deleteAccountWarning')}
+                     </p>
+                     <AlertDialog>
+                       <AlertDialogTrigger asChild>
+                         <Button variant="destructive" size="sm">
+                           <Trash2 className="h-4 w-4 mr-2" />
+                           {t('profilePage.deleteAccount')}
+                         </Button>
+                       </AlertDialogTrigger>
+                       <AlertDialogContent>
+                         <AlertDialogHeader>
+                           <AlertDialogTitle>{t('profilePage.deleteConfirmTitle')}</AlertDialogTitle>
+                           <AlertDialogDescription>
+                             {t('profilePage.deleteConfirmDescription')}
+                           </AlertDialogDescription>
+                         </AlertDialogHeader>
+                         <AlertDialogFooter>
+                           <AlertDialogCancel>{t('buttons.cancel')}</AlertDialogCancel>
+                           <AlertDialogAction
+                             onClick={async () => {
+                               setDeletingAccount(true);
+                               try {
+                                 const { error } = await supabase.functions.invoke('delete-account');
+                                 if (error) throw error;
+                                 toast.success(t('profilePage.accountDeleted'));
+                                 await supabase.auth.signOut();
+                                 navigate('/');
+                               } catch {
+                                 toast.error(t('profilePage.deleteError'));
+                               } finally {
+                                 setDeletingAccount(false);
+                               }
+                             }}
+                             disabled={deletingAccount}
+                             className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                           >
+                             {deletingAccount ? t('profilePage.deleting') : t('profilePage.deleteConfirmButton')}
+                           </AlertDialogAction>
+                         </AlertDialogFooter>
+                       </AlertDialogContent>
+                     </AlertDialog>
+                   </div>
                 </TabsContent>
 
                 {/* Content Tab */}
