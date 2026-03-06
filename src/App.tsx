@@ -20,6 +20,7 @@ import { OfflineIndicator } from "@/components/layout/OfflineIndicator";
 import { logger } from "@/lib/logger";
 import { useRoutePrefetch } from "@/hooks/useRoutePrefetch";
 import { PrefetchData } from "@/components/prefetch/PrefetchData";
+import { ScrollToTop } from "@/components/navigation/ScrollToTop";
 
 // Eager load critical pages
 import Index from "./pages/Index";
@@ -142,6 +143,7 @@ const AppContent = () => {
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         {/* Skip to main content link is handled in Layout component */}
         <OfflineIndicator />
         <Suspense fallback={<PageSkeleton />}>

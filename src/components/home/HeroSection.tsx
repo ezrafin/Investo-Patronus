@@ -7,19 +7,19 @@ export function HeroSection() {
   const { t } = useTranslation({ namespace: 'ui' });
 
   return (
-    <section className="min-h-[80vh] flex items-center relative overflow-hidden">
+    <section className="min-h-[60vh] md:min-h-[80vh] flex items-center relative overflow-hidden">
       <div className="absolute inset-0 hero-gradient" />
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
+        className="absolute inset-0 w-full h-full object-cover opacity-30 hidden md:block"
       >
         <source src="/bg.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-      <div className="container-wide py-20 md:py-32 relative z-10">
+      <div className="container-wide py-16 md:py-32 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 30 }} 
           animate={{ opacity: 1, y: 0 }} 

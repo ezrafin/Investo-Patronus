@@ -33,8 +33,8 @@ export default function CareersPage() {
   return (
     <Layout>
       <SEOHead
-        title="Careers - Join Our Team"
-        description="Join INVESTOPATRONUS and help shape the future of financial analytics. Explore career opportunities in fintech, data analysis, product design, and more. Build innovative solutions for global markets."
+        title={t('careersPage.heroTitle')}
+        description={t('careersPage.heroSubtitle')}
       />
       <div className="pt-24 pb-16">
         {/* Hero */}
