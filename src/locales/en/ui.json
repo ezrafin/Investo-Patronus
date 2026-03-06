@@ -324,6 +324,7 @@
   "notFound": {
     "title": "404",
     "message": "Page not found",
+    "subtitle": "The page you're looking for doesn't exist or has been moved. Try one of the links below.",
     "backHome": "Return to homepage"
   },
   "marketsPage": {
@@ -1044,7 +1045,15 @@
     "statusPending": "Pending",
     "bookmarkTypeForum": "Forum",
     "bookmarkTypeNews": "News",
-    "bookmarkTypeAnalytics": "Analytics"
+    "bookmarkTypeAnalytics": "Analytics",
+    "deleteAccount": "Delete Account",
+    "deleteAccountWarning": "This action is permanent and cannot be undone. All your data, posts, and settings will be permanently deleted.",
+    "deleteConfirmTitle": "Are you absolutely sure?",
+    "deleteConfirmDescription": "This will permanently delete your account and remove all your data from our servers. This action cannot be undone.",
+    "deleteConfirmButton": "Yes, delete my account",
+    "deleting": "Deleting...",
+    "accountDeleted": "Your account has been deleted.",
+    "deleteError": "Failed to delete account. Please try again."
   },
   "careersPage": {
     "badge": "Careers",
