@@ -313,6 +313,7 @@
   "notFound": {
     "title": "404",
     "message": "页面未找到",
+    "subtitle": "您查找的页面不存在或已被移动。请尝试以下链接之一。",
     "backHome": "返回主页"
   },
   "marketsPage": {
@@ -989,7 +990,15 @@
     "statusPending": "审核中",
     "bookmarkTypeForum": "论坛",
     "bookmarkTypeNews": "新闻",
-    "bookmarkTypeAnalytics": "分析"
+    "bookmarkTypeAnalytics": "分析",
+    "deleteAccount": "删除账户",
+    "deleteAccountWarning": "此操作是永久性的，无法撤销。您的所有数据、帖子和设置将被永久删除。",
+    "deleteConfirmTitle": "您确定吗？",
+    "deleteConfirmDescription": "这将永久删除您的账户并从我们的服务器中删除所有数据。此操作无法撤销。",
+    "deleteConfirmButton": "是的，删除我的账户",
+    "deleting": "删除中...",
+    "accountDeleted": "您的账户已被删除。",
+    "deleteError": "删除账户失败。请重试。"
   },
   "videoPlayer": {
     "subtitles": "字幕",

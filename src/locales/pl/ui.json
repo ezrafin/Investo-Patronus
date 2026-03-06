@@ -313,6 +313,7 @@
   "notFound": {
     "title": "404",
     "message": "Strona nie została znaleziona",
+    "subtitle": "Strona, której szukasz, nie istnieje lub została przeniesiona. Wypróbuj jeden z poniższych linków.",
     "backHome": "Powrót na stronę główną"
   },
   "marketsPage": {
@@ -989,7 +990,15 @@
     "statusPending": "Oczekuje",
     "bookmarkTypeForum": "Forum",
     "bookmarkTypeNews": "Wiadomości",
-    "bookmarkTypeAnalytics": "Analityka"
+    "bookmarkTypeAnalytics": "Analityka",
+    "deleteAccount": "Usuń konto",
+    "deleteAccountWarning": "Ta akcja jest nieodwracalna. Wszystkie Twoje dane, posty i ustawienia zostaną trwale usunięte.",
+    "deleteConfirmTitle": "Czy jesteś absolutnie pewien?",
+    "deleteConfirmDescription": "To trwale usunie Twoje konto i usunie wszystkie dane z naszych serwerów. Tej akcji nie można cofnąć.",
+    "deleteConfirmButton": "Tak, usuń moje konto",
+    "deleting": "Usuwanie...",
+    "accountDeleted": "Twoje konto zostało usunięte.",
+    "deleteError": "Nie udało się usunąć konta. Spróbuj ponownie."
   },
   "videoPlayer": {
     "subtitles": "Napisy",
