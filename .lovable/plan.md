@@ -1,31 +1,103 @@
+# Улучшение личного кабинета и форума
+
+## Обзор текущего состояния
+
+Личный кабинет содержит базовые настройки (имя, био, email, приватность, аватар, достижения). Форум полностью модерируемый (дискуссии и ответы требуют одобрения). Профили других пользователей показывают статистику и активность.
+
+---
+
+## Предлагаемые улучшения
+
+### Личный кабинет
+
+#### 1. Вкладка "Мои дискуссии" и "Мои ответы"
+
+Сейчас пользователь не видит свои посты и ответы из профиля. Добавить в личный кабинет (`ProfilePage.tsx`) секцию с табами:
+
+- **Мои дискуссии** -- список созданных пользователем дискуссий с их статусом модерации (одобрено / на проверке)
+- **Мои ответы** -- список ответов с индикацией статуса (одобрен / ожидает модерации)
+- **Мои закладки** -- дискуссии, добавленные в закладки
+
+Пользователь впервые сможет видеть, какие его посты ожидают модерации, а какие уже одобрены.
+
+#### 2. Смена пароля
+
+Сейчас в профиле есть только смена email, но нет смены пароля. Добавить секцию "Change Password" с полями:
+
+- Новый пароль
+- Подтверждение нового пароля
+
+Используется `supabase.auth.updateUser({ password })`.
+
+#### 3. Уведомления в профиле
+
+Добавить секцию/вкладку "Уведомления" в профиле, где пользователь видит:
+
+- Ответы на его дискуссии (одобренные)
+- Реакции на его посты
+- Новые подписчики
+
+Данные уже хранятся в таблице `notifications`. Сейчас они нигде не отображаются в личном кабинете.
+
+#### 4. Удаление аккаунта
+
+Добавить кнопку "Delete Account" с подтверждением. При удалении:
+
+- Запрос к `supabase.auth.admin.deleteUser()` через edge function
+- Или пометка аккаунта как деактивированного
+
+---
+
+### Форум
+
+#### 5. Статус модерации для автора
+
+Сейчас после создания дискуссии пользователь видит страницу "Pending moderation", но потом не может отследить статус. Добавить:
+
+- Индикатор "Pending" рядом с постами пользователя, которые ещё не одобрены
+- В списке "Мои дискуссии" в профиле -- чётко показывать статус каждой дискуссии
+
+---
+
+## Технические детали
+
+### Новые файлы
 
 
-# Generate New Forum Discussions + Diversify Avatars
+| Файл                                            | Описание                                |
+| ----------------------------------------------- | --------------------------------------- |
+| `src/components/profile/MyDiscussions.tsx`      | Компонент списка дискуссий пользователя |
+| `src/components/profile/MyReplies.tsx`          | Компонент списка ответов пользователя   |
+| `src/components/profile/MyBookmarks.tsx`        | Компонент списка закладок               |
+| `src/components/profile/ChangePassword.tsx`     | Форма смены пароля                      |
+| `src/components/profile/NotificationsPanel.tsx` | Панель уведомлений                      |
 
-## Current State
-- 346 discussions exist, many profiles (~40+) use identical `dicebear/7.x/adventurer` avatar style with same background colors
-- Existing `generate-forum-content` edge function uses fake author names without linking to real `user_id`s
-- Need: 5-6 new topics with 2-12 replies from real users, and avatar diversification
 
-## Plan
+### Изменяемые файлы
 
-### 1. Update existing profile avatars via SQL (insert tool)
-Run an UPDATE on `profiles` table to replace the uniform `adventurer` avatars with `notionists` style using varied background gradient colors per user. Each profile gets a unique seed + different background color combination from the palette (`ffd5dc`, `c0aede`, `d1d4f9`, `b6e3f4`, `ffdfbf`, `ffd5dc`). Will use each profile's `id` as the seed (already unique) and assign rotating background configs.
 
-### 2. Update `generate-forum-content` edge function
-Modify the function to:
-- Query real profiles from `profiles` table (with `user_id`)
-- Pick random real users as discussion authors and reply authors
-- Set `user_id` on both `forum_discussions` and `forum_replies`
-- Set `is_approved = true` on replies so they're immediately visible
-- Add 6 new fresh topic templates (2025-relevant: tariffs, AI bubble, rate cuts, gold rally, emerging markets rebound, portfolio rebalancing in volatile markets)
-- Generate 2-12 random replies per topic
+| Файл                                  | Изменение                                                                 |
+| ------------------------------------- | ------------------------------------------------------------------------- |
+| `src/pages/auth/ProfilePage.tsx`      | Добавить табы: Настройки / Мой контент / Уведомления, секцию смены пароля |
+| &nbsp;                                | &nbsp;                                                                    |
+| `src/components/forum/TopicCard.tsx`  | Индикатор статуса модерации для автора                                    |
+| `src/locales/*/ui.json` (7 файлов)    | Переводы для новых элементов                                              |
+| `src/locales/*/forum.json` (7 файлов) | Переводы для Edit/Delete/Sort                                             |
 
-### 3. Invoke the edge function
-Call the updated function to generate the 6 new discussions with replies.
 
-### Technical Details
-- Avatar UPDATE: single SQL statement with `CASE` or pattern replacement, changing `adventurer` to `notionists` and varying `backgroundType=gradientLinear` with different color combos
-- Edge function changes: add `fetchRealUsers()` helper, modify insert logic to include `user_id`, `is_featured: true` (so they're visible), and `is_approved: true` for replies
-- No schema changes needed
+### Изменения в БД
 
+Не требуются -- все нужные таблицы и RLS-политики уже существуют:
+
+- `forum_discussions` -- SELECT/UPDATE/DELETE для своих записей
+- `forum_replies` -- SELECT/UPDATE/DELETE для своих записей
+- `user_bookmarks` -- SELECT для своих записей
+- `notifications` -- SELECT/UPDATE/DELETE для своих записей
+
+### Сохранение полной модерации
+
+Все улучшения сохраняют модерируемый поток:
+
+- Редактирование сбрасывает статус одобрения, контент возвращается на модерацию
+- Создание новых дискуссий/ответов по-прежнему требует одобрения
+- Пользователь видит свой контент (через RLS `auth.uid() = user_id`), но другие пользователи видят только одобренный контент
