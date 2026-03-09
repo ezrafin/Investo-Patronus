@@ -168,7 +168,7 @@ serve(async (req) => {
       );
     }
 
-    const { count = 6, withReplies = true, minReplies = 2, maxReplies = 12 } = await req.json();
+    const { count = 6, withReplies = true, minReplies = 2, maxReplies = 12, offset = 0 } = await req.json();
     
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL")!,
