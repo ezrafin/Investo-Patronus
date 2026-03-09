@@ -185,7 +185,7 @@ serve(async (req) => {
     }
 
     const results = [];
-    const topicsToGenerate = newTopics.slice(0, Math.min(count, newTopics.length));
+    const topicsToGenerate = newTopics.slice(offset, Math.min(offset + count, newTopics.length));
     
     for (let i = 0; i < topicsToGenerate.length; i++) {
       const topic = topicsToGenerate[i];
